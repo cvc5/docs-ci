@@ -1,16 +1,16 @@
 
 
-* [Documentation for PR #8941](docs-pr8941/) (built from [524376c](https://github.com/cvc5/cvc5/commit/524376c) @ [PR #8941](https://github.com/cvc5/cvc5/pull/8941), Jul Sat 09, 04:27 UTC)
+* [Documentation for main](docs-main/) (built from [2812687](https://github.com/cvc5/cvc5/commit/2812687) @ [main](https://github.com/cvc5/cvc5/tree/main), Jul Sat 09, 04:28 UTC)
 
 ***
 
 
-* [Documentation for main](docs-main/) (built from [5750f28](https://github.com/cvc5/cvc5/commit/5750f28) @ [main](https://github.com/cvc5/cvc5/tree/main), 59 minutes ago)
+* [Documentation for main](docs-main/) (built from [2812687](https://github.com/cvc5/cvc5/commit/2812687) @ [main](https://github.com/cvc5/cvc5/tree/main), now)
 * [Documentation for PR #8949](docs-pr8949/) (built from [3fc3104](https://github.com/cvc5/cvc5/commit/3fc3104) @ [PR #8949](https://github.com/cvc5/cvc5/pull/8949), 4 hours ago)
 * [Documentation for PR #8947](docs-pr8947/) (built from [febc892](https://github.com/cvc5/cvc5/commit/febc892) @ [PR #8947](https://github.com/cvc5/cvc5/pull/8947), 8 hours ago)
 * [Documentation for PR #8945](docs-pr8945/) (built from [dc53d47](https://github.com/cvc5/cvc5/commit/dc53d47) @ [PR #8945](https://github.com/cvc5/cvc5/pull/8945), 11 hours ago)
 * [Documentation for PR #8942](docs-pr8942/) (built from [a182719](https://github.com/cvc5/cvc5/commit/a182719) @ [PR #8942](https://github.com/cvc5/cvc5/pull/8942), 2 days ago)
-* [Documentation for PR #8941](docs-pr8941/) (built from [524376c](https://github.com/cvc5/cvc5/commit/524376c) @ [PR #8941](https://github.com/cvc5/cvc5/pull/8941), now)
+* [Documentation for PR #8941](docs-pr8941/) (built from [524376c](https://github.com/cvc5/cvc5/commit/524376c) @ [PR #8941](https://github.com/cvc5/cvc5/pull/8941), 8 seconds ago)
 * [Documentation for PR #8940](docs-pr8940/) (built from [b397351](https://github.com/cvc5/cvc5/commit/b397351) @ [PR #8940](https://github.com/cvc5/cvc5/pull/8940), 32 hours ago)
 * [Documentation for PR #8939](docs-pr8939/) (built from [55bf14c](https://github.com/cvc5/cvc5/commit/55bf14c) @ [PR #8939](https://github.com/cvc5/cvc5/pull/8939), 34 hours ago)
 * [Documentation for PR #8938](docs-pr8938/) (built from [8326f5c](https://github.com/cvc5/cvc5/commit/8326f5c) @ [PR #8938](https://github.com/cvc5/cvc5/pull/8938), 3 days ago)
