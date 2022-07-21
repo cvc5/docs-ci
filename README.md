@@ -1,6 +1,6 @@
 
 
-* [Documentation for PR #8968](docs-pr8968/) (built from [9d4d55f](https://github.com/cvc5/cvc5/commit/9d4d55f) @ [PR #8968](https://github.com/cvc5/cvc5/pull/8968), Jul Thu 21, 22:06 UTC)
+* [Documentation for PR #8966](docs-pr8966/) (built from [8702b46](https://github.com/cvc5/cvc5/commit/8702b46) @ [PR #8966](https://github.com/cvc5/cvc5/pull/8966), Jul Thu 21, 22:06 UTC)
 
 ***
 
@@ -13,8 +13,9 @@
 * [Documentation for PR #8977](docs-pr8977/) (built from [cefb6f4](https://github.com/cvc5/cvc5/commit/cefb6f4) @ [PR #8977](https://github.com/cvc5/cvc5/pull/8977), 6 minutes ago)
 * [Documentation for PR #8973](docs-pr8973/) (built from [13b780f](https://github.com/cvc5/cvc5/commit/13b780f) @ [PR #8973](https://github.com/cvc5/cvc5/pull/8973), 2 days ago)
 * [Documentation for PR #8971](docs-pr8971/) (built from [40fa7d1](https://github.com/cvc5/cvc5/commit/40fa7d1) @ [PR #8971](https://github.com/cvc5/cvc5/pull/8971), 2 days ago)
-* [Documentation for PR #8968](docs-pr8968/) (built from [9d4d55f](https://github.com/cvc5/cvc5/commit/9d4d55f) @ [PR #8968](https://github.com/cvc5/cvc5/pull/8968), now)
+* [Documentation for PR #8968](docs-pr8968/) (built from [9d4d55f](https://github.com/cvc5/cvc5/commit/9d4d55f) @ [PR #8968](https://github.com/cvc5/cvc5/pull/8968), 13 seconds ago)
 * [Documentation for PR #8967](docs-pr8967/) (built from [c53e708](https://github.com/cvc5/cvc5/commit/c53e708) @ [PR #8967](https://github.com/cvc5/cvc5/pull/8967), 6 hours ago)
+* [Documentation for PR #8966](docs-pr8966/) (built from [8702b46](https://github.com/cvc5/cvc5/commit/8702b46) @ [PR #8966](https://github.com/cvc5/cvc5/pull/8966), now)
 * [Documentation for PR #8962](docs-pr8962/) (built from [c54b172](https://github.com/cvc5/cvc5/commit/c54b172) @ [PR #8962](https://github.com/cvc5/cvc5/pull/8962), 7 days ago)
 * [Documentation for PR #8961](docs-pr8961/) (built from [412debf](https://github.com/cvc5/cvc5/commit/412debf) @ [PR #8961](https://github.com/cvc5/cvc5/pull/8961), 3 days ago)
 * [Documentation for PR #8957](docs-pr8957/) (built from [f8ea384](https://github.com/cvc5/cvc5/commit/f8ea384) @ [PR #8957](https://github.com/cvc5/cvc5/pull/8957), 2 days ago)
