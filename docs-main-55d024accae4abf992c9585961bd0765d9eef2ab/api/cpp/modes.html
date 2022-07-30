@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modes &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../static/documentation_options.js"></script>
+        <script src="../../static/jquery.js"></script>
+        <script src="../../static/underscore.js"></script>
+        <script src="../../static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../static/doctools.js"></script>
+    <script src="../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Op" href="op.html" />
+    <link rel="prev" title="Kind" href="kind.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="cpp.html">C++ API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exceptions.html">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatype.html">Datatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypeconstructor.html">DatatypeConstructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypeconstructordecl.html">DatatypeConstructorDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypedecl.html">DatatypeDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypeselector.html">DatatypeSelector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="driveroptions.html">DriverOptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="grammar.html">Grammar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kind.html">Kind</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="op.html">Op</a></li>
+<li class="toctree-l3"><a class="reference internal" href="optioninfo.html">OptionInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="result.html">Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="roundingmode.html">RoundingMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solver.html">Solver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sort.html">Sort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistics.html">Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="synthresult.html">SynthResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="term.html">Term</a></li>
+<li class="toctree-l3"><a class="reference internal" href="unknownexplanation.html">UnknownExplanation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp.html#class-hierarchy">Class hierarchy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../java/java.html">Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/python.html">Python API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proofs/proofs.html">Proof production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">API Documentation</a> &raquo;</li>
+          <li><a href="cpp.html">C++ API</a> &raquo;</li>
+      <li>Modes</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="modes">
+<h1>Modes<a class="headerlink" href="#modes" title="Permalink to this heading"></a></h1>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc55modesE">
+<span id="_CPPv3N4cvc55modesE"></span><span id="_CPPv2N4cvc55modesE"></span><span id="cvc5::modes"></span><span class="target" id="namespacecvc5_1_1modes"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">modes</span></span></span><a class="headerlink" href="#_CPPv4N4cvc55modesE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-enums">Enums</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc55modes15BlockModelsModeE">
+<span id="_CPPv3N4cvc55modes15BlockModelsModeE"></span><span id="_CPPv2N4cvc55modes15BlockModelsModeE"></span><span class="target" id="namespacecvc5_1_1modes_1afe533584488fe6cb0bc054f844fb1ebd"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BlockModelsMode</span></span></span><a class="headerlink" href="#_CPPv4N4cvc55modes15BlockModelsModeE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Mode for blocking models.</p>
+<p>Specifies how models are blocked in <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1adfb443fdba6a495fa6734ea4ac574291"><span class="std std-ref">Solver::blockModel</span></a> and <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1a6aed1dbd0b856db5fb2ec713f4c68826"><span class="std std-ref">Solver::blockModelValues</span></a>. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc55modes15BlockModelsMode8LITERALSE">
+<span id="_CPPv3N4cvc55modes15BlockModelsMode8LITERALSE"></span><span id="_CPPv2N4cvc55modes15BlockModelsMode8LITERALSE"></span><span class="target" id="namespacecvc5_1_1modes_1afe533584488fe6cb0bc054f844fb1ebda70112da2769d587a0c4a7b619566a7aa"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LITERALS</span></span></span><a class="headerlink" href="#_CPPv4N4cvc55modes15BlockModelsMode8LITERALSE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Block models based on the SAT skeleton. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc55modes15BlockModelsMode6VALUESE">
+<span id="_CPPv3N4cvc55modes15BlockModelsMode6VALUESE"></span><span id="_CPPv2N4cvc55modes15BlockModelsMode6VALUESE"></span><span class="target" id="namespacecvc5_1_1modes_1afe533584488fe6cb0bc054f844fb1ebda76f5c890e3efcf960f7496c592e043dd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VALUES</span></span></span><a class="headerlink" href="#_CPPv4N4cvc55modes15BlockModelsMode6VALUESE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Block models based on the concrete model values for the free variables. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc55modes14LearnedLitTypeE">
+<span id="_CPPv3N4cvc55modes14LearnedLitTypeE"></span><span id="_CPPv2N4cvc55modes14LearnedLitTypeE"></span><span class="target" id="namespacecvc5_1_1modes_1a9b21c25b30fcb1db832662365cc98a59"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LearnedLitType</span></span></span><a class="headerlink" href="#_CPPv4N4cvc55modes14LearnedLitTypeE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Types of learned literals.</p>
+<p>Specifies categories of literals learned for the method <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1acb9b61b36df51afb611dd014d615f4e7"><span class="std std-ref">Solver::getLearnedLiterals</span></a>.</p>
+<p>Note that a literal may conceptually belong to multiple categories. We classify literals based on the first criteria in this list that they meet. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc55modes14LearnedLitType17PREPROCESS_SOLVEDE">
+<span id="_CPPv3N4cvc55modes14LearnedLitType17PREPROCESS_SOLVEDE"></span><span id="_CPPv2N4cvc55modes14LearnedLitType17PREPROCESS_SOLVEDE"></span><span class="target" id="namespacecvc5_1_1modes_1a9b21c25b30fcb1db832662365cc98a59ac0f2433d073f3488e4d1a48caf453357"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PREPROCESS_SOLVED</span></span></span><a class="headerlink" href="#_CPPv4N4cvc55modes14LearnedLitType17PREPROCESS_SOLVEDE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>An equality that was turned into a substitution during preprocessing.</p>
+<p>In particular, literals in this category are of the form (= x t) where x does not occur in t. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc55modes14LearnedLitType10PREPROCESSE">
+<span id="_CPPv3N4cvc55modes14LearnedLitType10PREPROCESSE"></span><span id="_CPPv2N4cvc55modes14LearnedLitType10PREPROCESSE"></span><span class="target" id="namespacecvc5_1_1modes_1a9b21c25b30fcb1db832662365cc98a59a4c7af2645461bd6a76cae4679f3addac"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PREPROCESS</span></span></span><a class="headerlink" href="#_CPPv4N4cvc55modes14LearnedLitType10PREPROCESSE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>A top-level literal (unit clause) from the preprocessed set of input formulas. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc55modes14LearnedLitType5INPUTE">
+<span id="_CPPv3N4cvc55modes14LearnedLitType5INPUTE"></span><span id="_CPPv2N4cvc55modes14LearnedLitType5INPUTE"></span><span class="target" id="namespacecvc5_1_1modes_1a9b21c25b30fcb1db832662365cc98a59aee3f557f2de5b58505d66853bf468997"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INPUT</span></span></span><a class="headerlink" href="#_CPPv4N4cvc55modes14LearnedLitType5INPUTE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>A literal from the preprocessed set of input formulas that does not occur at top-level after preprocessing.</p>
+<p>Typically, this is the most interesting category of literals to learn. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc55modes14LearnedLitType8SOLVABLEE">
+<span id="_CPPv3N4cvc55modes14LearnedLitType8SOLVABLEE"></span><span id="_CPPv2N4cvc55modes14LearnedLitType8SOLVABLEE"></span><span class="target" id="namespacecvc5_1_1modes_1a9b21c25b30fcb1db832662365cc98a59a9015a78e04f3123529faccca86fa76dc"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SOLVABLE</span></span></span><a class="headerlink" href="#_CPPv4N4cvc55modes14LearnedLitType8SOLVABLEE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>An internal literal that is solvable for an input variable.</p>
+<p>In particular, literals in this category are of the form (= x t) where x does not occur in t, the preprocessed set of input formulas contains the term x, but not the literal (= x t).</p>
+<p>Note that solvable literals can be turned into substitutions during preprocessing. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc55modes14LearnedLitType13CONSTANT_PROPE">
+<span id="_CPPv3N4cvc55modes14LearnedLitType13CONSTANT_PROPE"></span><span id="_CPPv2N4cvc55modes14LearnedLitType13CONSTANT_PROPE"></span><span class="target" id="namespacecvc5_1_1modes_1a9b21c25b30fcb1db832662365cc98a59af063e12c273cd2f2765a8f7fd6c49521"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONSTANT_PROP</span></span></span><a class="headerlink" href="#_CPPv4N4cvc55modes14LearnedLitType13CONSTANT_PROPE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>An internal literal that can be made into a constant propagation for an input term.</p>
+<p>In particular, literals in this category are of the form (= t c) where c is a constant, the preprocessed set of input formulas contains the term t, but not the literal (= t c). </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc55modes14LearnedLitType8INTERNALE">
+<span id="_CPPv3N4cvc55modes14LearnedLitType8INTERNALE"></span><span id="_CPPv2N4cvc55modes14LearnedLitType8INTERNALE"></span><span class="target" id="namespacecvc5_1_1modes_1a9b21c25b30fcb1db832662365cc98a59aa3d426f4a659b5ba2533d7c3ebbbdd80"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INTERNAL</span></span></span><a class="headerlink" href="#_CPPv4N4cvc55modes14LearnedLitType8INTERNALE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Any internal literal that does not fall into the above categories. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc55modes14LearnedLitType7UNKNOWNE">
+<span id="_CPPv3N4cvc55modes14LearnedLitType7UNKNOWNE"></span><span id="_CPPv2N4cvc55modes14LearnedLitType7UNKNOWNE"></span><span class="target" id="namespacecvc5_1_1modes_1a9b21c25b30fcb1db832662365cc98a59abb4ff063e899f35003db868f9305ab3c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UNKNOWN</span></span></span><a class="headerlink" href="#_CPPv4N4cvc55modes14LearnedLitType7UNKNOWNE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Special case for when produce-learned-literals is not set. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc55modeslsERNSt7ostreamE14LearnedLitType">
+<span id="_CPPv3N4cvc55modeslsERNSt7ostreamE14LearnedLitType"></span><span id="_CPPv2N4cvc55modeslsERNSt7ostreamE14LearnedLitType"></span><span id="cvc5::modes::lshift-operator__osR.LearnedLitType"></span><span class="target" id="namespacecvc5_1_1modes_1a77e6500881e273287f2e0f6421009784"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;&lt;</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span>, <a class="reference internal" href="#_CPPv4N4cvc55modes14LearnedLitTypeE" title="cvc5::modes::LearnedLitType"><span class="n"><span class="pre">LearnedLitType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">ltype</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc55modeslsERNSt7ostreamE14LearnedLitType" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Writes a learned literal type to a stream. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="kind.html" class="btn btn-neutral float-left" title="Kind" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="op.html" class="btn btn-neutral float-right" title="Op" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
