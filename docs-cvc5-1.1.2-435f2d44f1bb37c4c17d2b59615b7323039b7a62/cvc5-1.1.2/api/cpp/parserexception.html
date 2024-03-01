@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   ParserException — cvc5  documentation
+  </title>
+  <link href="../../static/pygments.css" rel="stylesheet" type="text/css"/>
+  <link href="../../static/css/theme.css" rel="stylesheet" type="text/css"/>
+  <link href="../../static/tabs.css" rel="stylesheet" type="text/css"/>
+  <link href="../../static/custom.css" rel="stylesheet" type="text/css"/>
+  <!--[if lt IE 9]>
+    <script src="../../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script src="../../static/jquery.js?v=5d32c60e">
+  </script>
+  <script src="../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c">
+  </script>
+  <script data-url_root="../../" id="documentation_options" src="../../static/documentation_options.js?v=b3ba4146">
+  </script>
+  <script src="../../static/doctools.js?v=888ff710">
+  </script>
+  <script src="../../static/sphinx_highlight.js?v=4825356b">
+  </script>
+  <script src="../../static/js/theme.js">
+  </script>
+  <link href="../../genindex.html" rel="index" title="Index"/>
+  <link href="../../search.html" rel="search" title="Search"/>
+ </head>
+ <body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+   <nav class="wy-nav-side" data-toggle="wy-nav-shift">
+    <div class="wy-side-scroll">
+     <div class="wy-side-nav-search">
+      <a class="icon icon-home" href="../../index.html">
+       cvc5
+      </a>
+      <div role="search">
+       <form action="../../search.html" class="wy-form" id="rtd-search-form" method="get">
+        <input aria-label="Search docs" name="q" placeholder="Search docs" type="text"/>
+        <input name="check_keywords" type="hidden" value="yes"/>
+        <input name="area" type="hidden" value="default"/>
+       </form>
+      </div>
+     </div>
+     <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+      <ul>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../installation/installation.html">
+         Installation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../binary/binary.html">
+         Binary Documentation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../api.html">
+         API Documentation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../options.html">
+         Options
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../output-tags.html">
+         Output tags
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../proofs/proofs.html">
+         Proof production
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../resource-limits.html">
+         Resource limits
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../statistics.html">
+         Statistics
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../examples/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../theories/theories.html">
+         Theory References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../references.html">
+         References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../genindex.html">
+         Index
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div aria-label="versions" class="rst-versions shift-up" data-toggle="rst-versions" id="cvc5-versions" role="note">
+     <span class="rst-current-version" data-toggle="rst-current-version">
+      <i class="fas fa-tags">
+      </i>
+      Other versions
+     </span>
+     <div class="rst-other-versions">
+      <dl>
+       <dd>
+        <a href="https://cvc5.github.io/docs-ci/docs-main/">
+         cvc5-main
+        </a>
+       </dd>
+       <dd>
+        <strong>
+         <a href="../../../cvc5-1.1.2/">
+          cvc5-1.1.2
+         </a>
+        </strong>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.1.1/">
+         cvc5-1.1.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.1.0/">
+         cvc5-1.1.0
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.9/">
+         cvc5-1.0.9
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.8/">
+         cvc5-1.0.8
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.7/">
+         cvc5-1.0.7
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.2/">
+         cvc5-1.0.2
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.1/">
+         cvc5-1.0.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.0/">
+         cvc5-1.0.0
+        </a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </nav>
+   <section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+    <nav aria-label="Mobile navigation menu" class="wy-nav-top">
+     <i class="fa fa-bars" data-toggle="wy-nav-top">
+     </i>
+     <a href="../../index.html">
+      cvc5
+     </a>
+    </nav>
+    <div class="wy-nav-content">
+     <div class="rst-content">
+      <div aria-label="Page navigation" role="navigation">
+       <ul class="wy-breadcrumbs">
+        <li>
+         <a aria-label="Home" class="icon icon-home" href="../../index.html">
+         </a>
+        </li>
+        <li class="breadcrumb-item active">
+         ParserException
+        </li>
+        <li class="wy-breadcrumbs-aside">
+        </li>
+       </ul>
+       <hr/>
+      </div>
+      <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+       <div itemprop="articleBody">
+        <section id="parserexception">
+         <h1>
+          ParserException
+          <a class="headerlink" href="#parserexception" title="Permalink to this heading">
+           
+          </a>
+         </h1>
+         <blockquote>
+          <div>
+           <p>
+            Base class for all Parser exceptions. If thrown, API objects can still be used
+           </p>
+          </div>
+         </blockquote>
+         <hr class="docutils"/>
+         <dl class="cpp class">
+          <dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser15ParserExceptionE">
+           <span id="_CPPv3N4cvc56parser15ParserExceptionE">
+           </span>
+           <span id="_CPPv2N4cvc56parser15ParserExceptionE">
+           </span>
+           <span id="cvc5::parser::ParserException">
+           </span>
+           <span class="target" id="classcvc5_1_1parser_1_1ParserException">
+           </span>
+           <span class="k">
+            <span class="pre">
+             class
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              ParserException
+             </span>
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             :
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="k">
+            <span class="pre">
+             public
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="n">
+            <span class="pre">
+             cvc5
+            </span>
+           </span>
+           <span class="p">
+            <span class="pre">
+             ::
+            </span>
+           </span>
+           <a class="reference internal" href="exceptions.html#_CPPv4N4cvc516CVC5ApiExceptionE" title="cvc5::CVC5ApiException">
+            <span class="n">
+             <span class="pre">
+              CVC5ApiException
+             </span>
+            </span>
+           </a>
+           <a class="headerlink" href="#_CPPv4N4cvc56parser15ParserExceptionE" title="Permalink to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Base class for all Parser exceptions. If thrown, API objects can still be used
+           </p>
+           <p>
+            Subclassed by cvc5::parser::ParserEndOfFileException
+           </p>
+           <div class="breathe-sectiondef docutils container">
+            <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">
+             Public Functions
+            </p>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser15ParserException15ParserExceptionEv">
+              <span id="_CPPv3N4cvc56parser15ParserException15ParserExceptionEv">
+              </span>
+              <span id="_CPPv2N4cvc56parser15ParserException15ParserExceptionEv">
+              </span>
+              <span id="cvc5::parser::ParserException::ParserException">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1ParserException_1a1364703ef4254a5a7862d4153a2b14d6">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 ParserException
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#_CPPv4N4cvc56parser15ParserException15ParserExceptionEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Default constructor
+              </p>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser15ParserException15ParserExceptionERKNSt6stringE">
+              <span id="_CPPv3N4cvc56parser15ParserException15ParserExceptionERKNSt6stringE">
+              </span>
+              <span id="_CPPv2N4cvc56parser15ParserException15ParserExceptionERKNSt6stringE">
+              </span>
+              <span id="cvc5::parser::ParserException::ParserException__ssCR">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1ParserException_1a30026bc34cd8b19f0f3a56395829ef27">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 ParserException
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                string
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                &amp;
+               </span>
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                msg
+               </span>
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#_CPPv4N4cvc56parser15ParserException15ParserExceptionERKNSt6stringE" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Construct with message from a string.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Parameters
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 <strong>
+                  msg
+                 </strong>
+                 – The error message.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser15ParserException15ParserExceptionEPKc">
+              <span id="_CPPv3N4cvc56parser15ParserException15ParserExceptionEPKc">
+              </span>
+              <span id="_CPPv2N4cvc56parser15ParserException15ParserExceptionEPKc">
+              </span>
+              <span id="cvc5::parser::ParserException::ParserException__cCP">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1ParserException_1a363b23f4a7d0d10e8a3ceb3794b3ffa2">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 ParserException
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="kt">
+               <span class="pre">
+                char
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                *
+               </span>
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                msg
+               </span>
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#_CPPv4N4cvc56parser15ParserException15ParserExceptionEPKc" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Construct with message from a C string.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Parameters
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 <strong>
+                  msg
+                 </strong>
+                 – The error message.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser15ParserException15ParserExceptionERKNSt6stringERKNSt6stringEmm">
+              <span id="_CPPv3N4cvc56parser15ParserException15ParserExceptionERKNSt6stringERKNSt6stringEmm">
+              </span>
+              <span id="_CPPv2N4cvc56parser15ParserException15ParserExceptionERKNSt6stringERKNSt6stringEmm">
+              </span>
+              <span id="cvc5::parser::ParserException::ParserException__ssCR.ssCR.unsigned-l.unsigned-l">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1ParserException_1ad3bf058bcedc0ea7a4bd38c436f873d5">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 ParserException
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                string
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                &amp;
+               </span>
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                msg
+               </span>
+              </span>
+              ,
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                string
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                &amp;
+               </span>
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                filename
+               </span>
+              </span>
+              ,
+              <span class="kt">
+               <span class="pre">
+                unsigned
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="kt">
+               <span class="pre">
+                long
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                line
+               </span>
+              </span>
+              ,
+              <span class="kt">
+               <span class="pre">
+                unsigned
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="kt">
+               <span class="pre">
+                long
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                column
+               </span>
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#_CPPv4N4cvc56parser15ParserException15ParserExceptionERKNSt6stringERKNSt6stringEmm" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Construct with message from a string.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Parameters
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <ul class="simple">
+                 <li>
+                  <p>
+                   <strong>
+                    msg
+                   </strong>
+                   – The error message.
+                  </p>
+                 </li>
+                 <li>
+                  <p>
+                   <strong>
+                    filename
+                   </strong>
+                   – name of the file.
+                  </p>
+                 </li>
+                 <li>
+                  <p>
+                   <strong>
+                    line
+                   </strong>
+                   – The error line number.
+                  </p>
+                 </li>
+                 <li>
+                  <p>
+                   <strong>
+                    column
+                   </strong>
+                   – The error column number.
+                  </p>
+                 </li>
+                </ul>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc56parser15ParserException8toStreamERNSt7ostreamE">
+              <span id="_CPPv3NK4cvc56parser15ParserException8toStreamERNSt7ostreamE">
+              </span>
+              <span id="_CPPv2NK4cvc56parser15ParserException8toStreamERNSt7ostreamE">
+              </span>
+              <span id="cvc5::parser::ParserException::toStream__osRC">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1ParserException_1ac31436ea95461388fd70348425fa373f">
+              </span>
+              <span class="k">
+               <span class="pre">
+                virtual
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="kt">
+               <span class="pre">
+                void
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 toStream
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                ostream
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                &amp;
+               </span>
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                os
+               </span>
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                override
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc56parser15ParserException8toStreamERNSt7ostreamE" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Print error to output stream.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Parameters
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 <strong>
+                  os
+                 </strong>
+                 – The output stream to write the error on.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc56parser15ParserException11getFilenameEv">
+              <span id="_CPPv3NK4cvc56parser15ParserException11getFilenameEv">
+              </span>
+              <span id="_CPPv2NK4cvc56parser15ParserException11getFilenameEv">
+              </span>
+              <span id="cvc5::parser::ParserException::getFilenameC">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1ParserException_1aa6f11bdfd7960b8b71b90eaa24be5399">
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                string
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 getFilename
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc56parser15ParserException11getFilenameEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 The file name.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc56parser15ParserException7getLineEv">
+              <span id="_CPPv3NK4cvc56parser15ParserException7getLineEv">
+              </span>
+              <span id="_CPPv2NK4cvc56parser15ParserException7getLineEv">
+              </span>
+              <span id="cvc5::parser::ParserException::getLineC">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1ParserException_1a02097c9a6ae1b63ee432d354c8dd076b">
+              </span>
+              <span class="kt">
+               <span class="pre">
+                unsigned
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="kt">
+               <span class="pre">
+                long
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 getLine
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc56parser15ParserException7getLineEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 The line number of the parsing error.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc56parser15ParserException9getColumnEv">
+              <span id="_CPPv3NK4cvc56parser15ParserException9getColumnEv">
+              </span>
+              <span id="_CPPv2NK4cvc56parser15ParserException9getColumnEv">
+              </span>
+              <span id="cvc5::parser::ParserException::getColumnC">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1ParserException_1ae0cdbfa6d26ac61e273c0ba7246a880d">
+              </span>
+              <span class="kt">
+               <span class="pre">
+                unsigned
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="kt">
+               <span class="pre">
+                long
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 getColumn
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc56parser15ParserException9getColumnEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 The column number of the parsing error.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+           </div>
+          </dd>
+         </dl>
+        </section>
+       </div>
+      </div>
+      <footer>
+       <hr/>
+       <div role="contentinfo">
+        <p>
+         © Copyright 2024, the authors of cvc5.
+        </p>
+       </div>
+       Built with
+       <a href="https://www.sphinx-doc.org/">
+        Sphinx
+       </a>
+       using a
+       <a href="https://github.com/readthedocs/sphinx_rtd_theme">
+        theme
+       </a>
+       provided by
+       <a href="https://readthedocs.org">
+        Read the Docs
+       </a>
+       .
+      </footer>
+     </div>
+    </div>
+   </section>
+  </div>
+  <script>
+   jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ </body>
+</html>

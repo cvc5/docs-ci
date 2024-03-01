@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Proof format: Alethe — cvc5  documentation
+  </title>
+  <link href="../static/pygments.css" rel="stylesheet" type="text/css"/>
+  <link href="../static/css/theme.css" rel="stylesheet" type="text/css"/>
+  <link href="../static/tabs.css" rel="stylesheet" type="text/css"/>
+  <link href="../static/custom.css" rel="stylesheet" type="text/css"/>
+  <!--[if lt IE 9]>
+    <script src="../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script src="../static/jquery.js?v=5d32c60e">
+  </script>
+  <script src="../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c">
+  </script>
+  <script data-url_root="../" id="documentation_options" src="../static/documentation_options.js?v=b3ba4146">
+  </script>
+  <script src="../static/doctools.js?v=888ff710">
+  </script>
+  <script src="../static/sphinx_highlight.js?v=4825356b">
+  </script>
+  <script src="../static/js/theme.js">
+  </script>
+  <link href="../genindex.html" rel="index" title="Index"/>
+  <link href="../search.html" rel="search" title="Search"/>
+  <link href="output_lfsc.html" rel="next" title="Proof format: LFSC"/>
+  <link href="output_alf.html" rel="prev" title="Proof format: AletheLF"/>
+ </head>
+ <body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+   <nav class="wy-nav-side" data-toggle="wy-nav-shift">
+    <div class="wy-side-scroll">
+     <div class="wy-side-nav-search">
+      <a class="icon icon-home" href="../index.html">
+       cvc5
+      </a>
+      <div role="search">
+       <form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+        <input aria-label="Search docs" name="q" placeholder="Search docs" type="text"/>
+        <input name="check_keywords" type="hidden" value="yes"/>
+        <input name="area" type="hidden" value="default"/>
+       </form>
+      </div>
+     </div>
+     <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+      <ul class="current">
+       <li class="toctree-l1">
+        <a class="reference internal" href="../installation/installation.html">
+         Installation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../binary/binary.html">
+         Binary Documentation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../api/api.html">
+         API Documentation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../options.html">
+         Options
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../output-tags.html">
+         Output tags
+        </a>
+       </li>
+       <li class="toctree-l1 current">
+        <a class="reference internal" href="proofs.html">
+         Proof production
+        </a>
+        <ul class="current">
+         <li class="toctree-l2">
+          <a class="reference internal" href="proof_rules.html">
+           Proof rules
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="output_alf.html">
+           AletheLF
+          </a>
+         </li>
+         <li class="toctree-l2 current">
+          <a class="current reference internal" href="#">
+           Alethe
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="output_lfsc.html">
+           LFSC
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="output_dot.html">
+           DOT
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../resource-limits.html">
+         Resource limits
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../statistics.html">
+         Statistics
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../examples/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../theories/theories.html">
+         Theory References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../references.html">
+         References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../genindex.html">
+         Index
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div aria-label="versions" class="rst-versions shift-up" data-toggle="rst-versions" id="cvc5-versions" role="note">
+     <span class="rst-current-version" data-toggle="rst-current-version">
+      <i class="fas fa-tags">
+      </i>
+      Other versions
+     </span>
+     <div class="rst-other-versions">
+      <dl>
+       <dd>
+        <a href="https://cvc5.github.io/docs-ci/docs-main/">
+         cvc5-main
+        </a>
+       </dd>
+       <dd>
+        <strong>
+         <a href="../../cvc5-1.1.2/">
+          cvc5-1.1.2
+         </a>
+        </strong>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.1.1/">
+         cvc5-1.1.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.1.0/">
+         cvc5-1.1.0
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.0.9/">
+         cvc5-1.0.9
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.0.8/">
+         cvc5-1.0.8
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.0.7/">
+         cvc5-1.0.7
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.0.2/">
+         cvc5-1.0.2
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.0.1/">
+         cvc5-1.0.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.0.0/">
+         cvc5-1.0.0
+        </a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </nav>
+   <section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+    <nav aria-label="Mobile navigation menu" class="wy-nav-top">
+     <i class="fa fa-bars" data-toggle="wy-nav-top">
+     </i>
+     <a href="../index.html">
+      cvc5
+     </a>
+    </nav>
+    <div class="wy-nav-content">
+     <div class="rst-content">
+      <div aria-label="Page navigation" role="navigation">
+       <ul class="wy-breadcrumbs">
+        <li>
+         <a aria-label="Home" class="icon icon-home" href="../index.html">
+         </a>
+        </li>
+        <li class="breadcrumb-item">
+         <a href="proofs.html">
+          Proof production
+         </a>
+        </li>
+        <li class="breadcrumb-item active">
+         Proof format: Alethe
+        </li>
+        <li class="wy-breadcrumbs-aside">
+        </li>
+       </ul>
+       <hr/>
+      </div>
+      <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+       <div itemprop="articleBody">
+        <section id="proof-format-alethe">
+         <h1>
+          Proof format: Alethe
+          <a class="headerlink" href="#proof-format-alethe" title="Permalink to this heading">
+           
+          </a>
+         </h1>
+         <p>
+          Using the flag
+          <a class="reference internal" href="../options.html#lbl-option-proof-format-mode">
+           <span class="std std-ref">
+            proof-format-mode=alethe
+           </span>
+          </a>
+          ,
+cvc5 outputs proofs in the
+          <a class="reference external" href="https://verit.loria.fr/documentation/alethe-spec.pdf">
+           Alethe proof format
+          </a>
+          . Additonally, the
+following additional flags are currently required:
+          <a class="reference internal" href="../options.html#lbl-option-simplification">
+           <span class="std std-ref">
+            simplification=none
+           </span>
+          </a>
+          ,
+          <a class="reference internal" href="../options.html#lbl-option-dag-thresh">
+           <span class="std std-ref">
+            dag-thresh=0
+           </span>
+          </a>
+          ,
+          <a class="reference internal" href="../options.html#lbl-option-proof-granularity">
+           <span class="std std-ref">
+            proof-granularity=theory-rewrite
+           </span>
+          </a>
+          . These requirements are due to not yet
+supporting printing proofs with term sharing and proofs with non-detailed steps.
+         </p>
+         <p>
+          The Alethe proof format is a flexible proof format for SMT solvers based on
+SMT-LIB.  It includes both coarse- and fine-grained steps and was first
+implemented in the veriT solver
+          <span id="id1">
+           [
+           <a class="reference internal" href="../references.html#id11" title="Thomas Bouton, Diego Caminha B. de Oliveira, David Déharbe, and Pascal Fontaine. veriT: An Open, Trustable and Efficient SMT-Solver. In Renate A. Schmidt, editor, Conference on Automated Deduction (CADE), volume 5663 of Lecture Notes in Computer Science, 151–156. Springer, 2009. URL: http://dx.doi.org/10.1007/978-3-642-02959-2_12, doi:10.1007/978-3-642-02959-2_12.">
+            BdODeharbeF09
+           </a>
+           ]
+          </span>
+          .  Alethe proofs can be
+checked via reconstruction within Isabelle/HOL
+          <span id="id2">
+           [
+           <a class="reference internal" href="../references.html#id14" title="Haniel Barbosa, Jasmin Christian Blanchette, Mathias Fleury, and Pascal Fontaine. Scalable fine-grained proofs for formula processing. Journal of Automated Reasoning, 64(3):485–510, 2020. URL: https://doi.org/10.1007/s10817-018-09502-y, doi:10.1007/s10817-018-09502-y.">
+            BBFF20
+           </a>
+           ,
+           <a class="reference internal" href="../references.html#id15" title="Hans-Jörg Schurr, Mathias Fleury, and Martin Desharnais. Reliable reconstruction of fine-grained proofs in a proof assistant. In André Platzer and Geoff Sutcliffe, editors, Conference on Automated Deduction (CADE), volume 12699 of Lecture Notes in Computer Science, 450–467. Springer, 2021. URL: https://doi.org/10.1007/978-3-030-79876-5_26, doi:10.1007/978-3-030-79876-5_26.">
+            SFD21
+           </a>
+           ]
+          </span>
+          as well as within Coq, the latter via the SMTCoq plugin
+          <span id="id3">
+           [
+           <a class="reference internal" href="../references.html#id12" title="Michaël Armand, Germain Faure, Benjamin Grégoire, Chantal Keller, Laurent Théry, and Benjamin Werner. A modular integration of SAT\slash SMT solvers to Coq through proof witnesses. In Jean-Pierre Jouannaud and Zhong Shao, editors, Certified Programs and Proofs (CPP), volume 7086 of Lecture Notes in Computer Science, 135–150. Springer, 2011. doi:10.1007/978-3-642-25379-9_12.">
+            AFGregoire+11
+           </a>
+           ,
+           <a class="reference internal" href="../references.html#id13" title="Burak Ekici, Alain Mebsout, Cesare Tinelli, Chantal Keller, Guy Katz, Andrew Reynolds, and Clark W. Barrett. Smtcoq: A plug-in for integrating SMT solvers into coq. In Rupak Majumdar and Viktor Kuncak, editors, Computer Aided Verification (CAV), volume 10427 of Lecture Notes in Computer Science, 126–133. Springer, 2017. URL: https://doi.org/10.1007/978-3-319-63390-9_7, doi:10.1007/978-3-319-63390-9_7.">
+            EMT+17
+           </a>
+           ]
+          </span>
+          . There is also a high performance Rust proof checker for Alethe,
+available
+          <a class="reference external" href="https://github.com/ufmg-smite/alethe-proof-checker">
+           here
+          </a>
+          .
+         </p>
+         <p>
+          Currently, only the theory of equality with uninterpreted functions, parts of
+the theory of arithmetic and parts of the theory of quantifiers are supported in
+cvc5’s Alethe proofs.
+         </p>
+         <p>
+          A simple example of cvc5 producing a proof in the Alethe proof format:
+         </p>
+         <div class="highlight-text notranslate">
+          <div class="highlight">
+           <pre><span></span>$ bin/cvc5 --dump-proofs --proof-format-mode=alethe --simplification=none --dag-thresh=0 --proof-granularity=theory-rewrite ../test/regress/cli/regress0/proofs/qgu-fuzz-1-bool-sat.smt2
+unsat
+(assume a0 (and (or d b) (= c d) (not (ite d c false)) (= (or b d) (= b d))))
+(step t1 (cl (not (= (not (ite d c false)) (not (and d c)))) (not (not (ite d c false))) (not (and d c))) :rule equiv_pos2)
+(step t2 (cl (= (ite d c false) (and d c))) :rule all_simplify)
+(step t3 (cl (= (not (ite d c false)) (not (and d c)))) :rule cong :premises (t2))
+(step t4 (cl (not (ite d c false))) :rule and :premises (a0))
+(step t5 (cl (not (and d c))) :rule resolution :premises (t1 t3 t4))
+(step t6 (cl (not d) (not c)) :rule not_and :premises (t5))
+(step t7 (cl (= c d)) :rule and :premises (a0))
+(step t8 (cl c (not d)) :rule equiv2 :premises (t7))
+(step t9 (cl (= (or b d) (= b d))) :rule and :premises (a0))
+(step t10 (cl (not (or b d)) (= b d)) :rule equiv1 :premises (t9))
+(step t11 (cl (= b d) (not (or b d))) :rule reordering :premises (t10))
+(step t12 (cl (not (= b d)) (not b) d) :rule equiv_pos2)
+(step t13 (cl d (not b) (not (= b d))) :rule reordering :premises (t12))
+(step t14 (cl (or b d) (not b)) :rule or_neg)
+(step t15 (cl d (not b) (not b)) :rule resolution :premises (t11 t13 t14))
+(step t16 (cl d (not b)) :rule contraction :premises (t15))
+(step t17 (cl (or d b)) :rule and :premises (a0))
+(step t18 (cl d b) :rule or :premises (t17))
+(step t19 (cl b d) :rule reordering :premises (t18))
+(step t20 (cl d d) :rule resolution :premises (t16 t19))
+(step t21 (cl d) :rule contraction :premises (t20))
+(step t22 (cl c) :rule resolution :premises (t8 t21))
+(step t23 (cl) :rule resolution :premises (t6 t22 t21))
+</pre>
+          </div>
+         </div>
+        </section>
+       </div>
+      </div>
+      <footer>
+       <div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+        <a accesskey="p" class="btn btn-neutral float-left" href="output_alf.html" rel="prev" title="Proof format: AletheLF">
+         <span aria-hidden="true" class="fa fa-arrow-circle-left">
+         </span>
+         Previous
+        </a>
+        <a accesskey="n" class="btn btn-neutral float-right" href="output_lfsc.html" rel="next" title="Proof format: LFSC">
+         Next
+         <span aria-hidden="true" class="fa fa-arrow-circle-right">
+         </span>
+        </a>
+       </div>
+       <hr/>
+       <div role="contentinfo">
+        <p>
+         © Copyright 2024, the authors of cvc5.
+        </p>
+       </div>
+       Built with
+       <a href="https://www.sphinx-doc.org/">
+        Sphinx
+       </a>
+       using a
+       <a href="https://github.com/readthedocs/sphinx_rtd_theme">
+        theme
+       </a>
+       provided by
+       <a href="https://readthedocs.org">
+        Read the Docs
+       </a>
+       .
+      </footer>
+     </div>
+    </div>
+   </section>
+  </div>
+  <script>
+   jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ </body>
+</html>

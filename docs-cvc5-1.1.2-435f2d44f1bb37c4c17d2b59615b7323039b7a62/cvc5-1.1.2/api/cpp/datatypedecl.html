@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   DatatypeDecl — cvc5  documentation
+  </title>
+  <link href="../../static/pygments.css" rel="stylesheet" type="text/css"/>
+  <link href="../../static/css/theme.css" rel="stylesheet" type="text/css"/>
+  <link href="../../static/tabs.css" rel="stylesheet" type="text/css"/>
+  <link href="../../static/custom.css" rel="stylesheet" type="text/css"/>
+  <!--[if lt IE 9]>
+    <script src="../../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script src="../../static/jquery.js?v=5d32c60e">
+  </script>
+  <script src="../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c">
+  </script>
+  <script data-url_root="../../" id="documentation_options" src="../../static/documentation_options.js?v=b3ba4146">
+  </script>
+  <script src="../../static/doctools.js?v=888ff710">
+  </script>
+  <script src="../../static/sphinx_highlight.js?v=4825356b">
+  </script>
+  <script src="../../static/js/theme.js">
+  </script>
+  <link href="../../genindex.html" rel="index" title="Index"/>
+  <link href="../../search.html" rel="search" title="Search"/>
+  <link href="datatypeselector.html" rel="next" title="DatatypeSelector"/>
+  <link href="datatypeconstructordecl.html" rel="prev" title="DatatypeConstructorDecl"/>
+ </head>
+ <body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+   <nav class="wy-nav-side" data-toggle="wy-nav-shift">
+    <div class="wy-side-scroll">
+     <div class="wy-side-nav-search">
+      <a class="icon icon-home" href="../../index.html">
+       cvc5
+      </a>
+      <div role="search">
+       <form action="../../search.html" class="wy-form" id="rtd-search-form" method="get">
+        <input aria-label="Search docs" name="q" placeholder="Search docs" type="text"/>
+        <input name="check_keywords" type="hidden" value="yes"/>
+        <input name="area" type="hidden" value="default"/>
+       </form>
+      </div>
+     </div>
+     <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+      <ul class="current">
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../installation/installation.html">
+         Installation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../binary/binary.html">
+         Binary Documentation
+        </a>
+       </li>
+       <li class="toctree-l1 current">
+        <a class="reference internal" href="../api.html">
+         API Documentation
+        </a>
+        <ul class="current">
+         <li class="toctree-l2 current">
+          <a class="reference internal" href="cpp.html">
+           C++ API
+          </a>
+          <ul class="current">
+           <li class="toctree-l3">
+            <a class="reference internal" href="quickstart.html">
+             Quickstart Guide
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="exceptions.html">
+             Exceptions
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatype.html">
+             Datatype
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatypeconstructor.html">
+             DatatypeConstructor
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatypeconstructordecl.html">
+             DatatypeConstructorDecl
+            </a>
+           </li>
+           <li class="toctree-l3 current">
+            <a class="current reference internal" href="#">
+             DatatypeDecl
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatypeselector.html">
+             DatatypeSelector
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="driveroptions.html">
+             DriverOptions
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="grammar.html">
+             Grammar
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="kind.html">
+             Kind
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="modes.html">
+             Modes
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="op.html">
+             Op
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="optioninfo.html">
+             OptionInfo
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="result.html">
+             Result
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="roundingmode.html">
+             RoundingMode
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="solver.html">
+             Solver
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="sort.html">
+             Sort
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="sortkind.html">
+             SortKind
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="statistics.html">
+             Statistics
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="synthresult.html">
+             SynthResult
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="term.html">
+             Term
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="unknownexplanation.html">
+             UnknownExplanation
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cpp.html#class-hierarchy">
+             Class hierarchy
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../java/java.html">
+           Java API
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../python/python.html">
+           Python API
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../options.html">
+         Options
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../output-tags.html">
+         Output tags
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../proofs/proofs.html">
+         Proof production
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../resource-limits.html">
+         Resource limits
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../statistics.html">
+         Statistics
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../examples/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../theories/theories.html">
+         Theory References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../references.html">
+         References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../genindex.html">
+         Index
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div aria-label="versions" class="rst-versions shift-up" data-toggle="rst-versions" id="cvc5-versions" role="note">
+     <span class="rst-current-version" data-toggle="rst-current-version">
+      <i class="fas fa-tags">
+      </i>
+      Other versions
+     </span>
+     <div class="rst-other-versions">
+      <dl>
+       <dd>
+        <a href="https://cvc5.github.io/docs-ci/docs-main/">
+         cvc5-main
+        </a>
+       </dd>
+       <dd>
+        <strong>
+         <a href="../../../cvc5-1.1.2/">
+          cvc5-1.1.2
+         </a>
+        </strong>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.1.1/">
+         cvc5-1.1.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.1.0/">
+         cvc5-1.1.0
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.9/">
+         cvc5-1.0.9
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.8/">
+         cvc5-1.0.8
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.7/">
+         cvc5-1.0.7
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.2/">
+         cvc5-1.0.2
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.1/">
+         cvc5-1.0.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.0/">
+         cvc5-1.0.0
+        </a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </nav>
+   <section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+    <nav aria-label="Mobile navigation menu" class="wy-nav-top">
+     <i class="fa fa-bars" data-toggle="wy-nav-top">
+     </i>
+     <a href="../../index.html">
+      cvc5
+     </a>
+    </nav>
+    <div class="wy-nav-content">
+     <div class="rst-content">
+      <div aria-label="Page navigation" role="navigation">
+       <ul class="wy-breadcrumbs">
+        <li>
+         <a aria-label="Home" class="icon icon-home" href="../../index.html">
+         </a>
+        </li>
+        <li class="breadcrumb-item">
+         <a href="../api.html">
+          API Documentation
+         </a>
+        </li>
+        <li class="breadcrumb-item">
+         <a href="cpp.html">
+          C++ API
+         </a>
+        </li>
+        <li class="breadcrumb-item active">
+         DatatypeDecl
+        </li>
+        <li class="wy-breadcrumbs-aside">
+        </li>
+       </ul>
+       <hr/>
+      </div>
+      <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+       <div itemprop="articleBody">
+        <section id="datatypedecl">
+         <h1>
+          DatatypeDecl
+          <a class="headerlink" href="#datatypedecl" title="Permalink to this heading">
+           
+          </a>
+         </h1>
+         <p>
+          This class encapsulates a datatype declaration. A datatype declaration is
+constructed via
+          <a class="reference internal" href="solver.html#_CPPv4N4cvc56Solver14mkDatatypeDeclERKNSt6stringEb" title="cvc5::Solver::mkDatatypeDecl">
+           <code class="xref cpp cpp-func docutils literal notranslate">
+            <span class="pre">
+             cvc5::Solver::mkDatatypeDecl()
+            </span>
+           </code>
+          </a>
+          . This is not a
+datatype itself (see
+          <a class="reference internal" href="datatype.html">
+           <span class="doc">
+            Datatype
+           </span>
+          </a>
+          ), but the representation of the
+specification for creating a datatype
+          <a class="reference internal" href="sort.html#_CPPv4N4cvc54SortE" title="cvc5::Sort">
+           <code class="xref cpp cpp-class docutils literal notranslate">
+            <span class="pre">
+             Sort
+            </span>
+           </code>
+          </a>
+          (see
+          <a class="reference internal" href="solver.html#_CPPv4NK4cvc56Solver14mkDatatypeSortERK12DatatypeDecl" title="cvc5::Solver::mkDatatypeSort">
+           <code class="xref cpp cpp-func docutils literal notranslate">
+            <span class="pre">
+             cvc5::Solver::mkDatatypeSort()
+            </span>
+           </code>
+          </a>
+          and
+          <a class="reference internal" href="solver.html#_CPPv4NK4cvc56Solver15mkDatatypeSortsERKNSt6vectorI12DatatypeDeclEE" title="cvc5::Solver::mkDatatypeSorts">
+           <code class="xref cpp cpp-func docutils literal notranslate">
+            <span class="pre">
+             cvc5::Solver::mkDatatypeSorts()
+            </span>
+           </code>
+          </a>
+          ).
+         </p>
+         <hr class="docutils"/>
+         <ul class="simple">
+          <li>
+           <p>
+            class
+            <a class="reference internal" href="#_CPPv4N4cvc512DatatypeDeclE" title="cvc5::DatatypeDecl">
+             <code class="xref cpp cpp-class docutils literal notranslate">
+              <span class="pre">
+               cvc5::DatatypeDecl
+              </span>
+             </code>
+            </a>
+           </p>
+          </li>
+          <li>
+           <p>
+            <a class="reference internal" href="#_CPPv4N4cvc5lsERNSt7ostreamERK12DatatypeDecl" title="std::ostream &amp;cvc5::operator&lt;&lt;(std::ostream &amp;out, const DatatypeDecl &amp;decl)">
+             <code class="xref cpp cpp-func docutils literal notranslate">
+              <span class="pre">
+               std::ostream&amp;
+              </span>
+              <span class="pre">
+               cvc5::operator&lt;&lt;
+              </span>
+              <span class="pre">
+               (std::ostream&amp;
+              </span>
+              <span class="pre">
+               out,
+              </span>
+              <span class="pre">
+               const
+              </span>
+              <span class="pre">
+               DatatypeDecl&amp;
+              </span>
+              <span class="pre">
+               decl)
+              </span>
+             </code>
+            </a>
+           </p>
+          </li>
+         </ul>
+         <hr class="docutils"/>
+         <dl class="cpp class">
+          <dt class="sig sig-object cpp" id="_CPPv4N4cvc512DatatypeDeclE">
+           <span id="_CPPv3N4cvc512DatatypeDeclE">
+           </span>
+           <span id="_CPPv2N4cvc512DatatypeDeclE">
+           </span>
+           <span id="cvc5::DatatypeDecl">
+           </span>
+           <span class="target" id="classcvc5_1_1DatatypeDecl">
+           </span>
+           <span class="k">
+            <span class="pre">
+             class
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              DatatypeDecl
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#_CPPv4N4cvc512DatatypeDeclE" title="Permalink to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            A cvc5 datatype declaration. A datatype declaration is not itself a datatype (see
+            <a class="reference internal" href="datatype.html#classcvc5_1_1Datatype">
+             <span class="std std-ref">
+              Datatype
+             </span>
+            </a>
+            ), but a specification for creating a datatype sort.
+           </p>
+           <p>
+            The interface for a datatype declaration coincides with the syntax for the SMT-LIB 2.6 command
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              declare-datatype
+             </span>
+            </code>
+            , or a single datatype within the
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              declare-datatypes
+             </span>
+            </code>
+            command.
+           </p>
+           <p>
+            <a class="reference internal" href="datatype.html#classcvc5_1_1Datatype">
+             <span class="std std-ref">
+              Datatype
+             </span>
+            </a>
+            sorts can be constructed from a
+            <a class="reference internal" href="#classcvc5_1_1DatatypeDecl">
+             <span class="std std-ref">
+              DatatypeDecl
+             </span>
+            </a>
+            using:
+           </p>
+           <ul class="simple">
+            <li>
+             <p>
+              <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1a208135f2615a21900d61e4ff2bfc7f44">
+               <span class="std std-ref">
+                Solver::mkDatatypeSort()
+               </span>
+              </a>
+             </p>
+            </li>
+            <li>
+             <p>
+              <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1aaf30970f0fb9b4edb8596aab46160a92">
+               <span class="std std-ref">
+                Solver::mkDatatypeSorts()
+               </span>
+              </a>
+             </p>
+            </li>
+           </ul>
+           <div class="breathe-sectiondef docutils container">
+            <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">
+             Public Functions
+            </p>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4N4cvc512DatatypeDecl12DatatypeDeclEv">
+              <span id="_CPPv3N4cvc512DatatypeDecl12DatatypeDeclEv">
+              </span>
+              <span id="_CPPv2N4cvc512DatatypeDecl12DatatypeDeclEv">
+              </span>
+              <span id="cvc5::DatatypeDecl::DatatypeDecl">
+              </span>
+              <span class="target" id="classcvc5_1_1DatatypeDecl_1a617935032d443e04091a4143de07aa16">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 DatatypeDecl
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#_CPPv4N4cvc512DatatypeDecl12DatatypeDeclEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Constructor.
+              </p>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4N4cvc512DatatypeDeclD0Ev">
+              <span id="_CPPv3N4cvc512DatatypeDeclD0Ev">
+              </span>
+              <span id="_CPPv2N4cvc512DatatypeDeclD0Ev">
+              </span>
+              <span id="cvc5::DatatypeDecl::~DatatypeDecl">
+              </span>
+              <span class="target" id="classcvc5_1_1DatatypeDecl_1a2cd56a1051a45f308d6bfd1ed4dd03d3">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 ~DatatypeDecl
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#_CPPv4N4cvc512DatatypeDeclD0Ev" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Destructor.
+              </p>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4N4cvc512DatatypeDecl14addConstructorERK23DatatypeConstructorDecl">
+              <span id="_CPPv3N4cvc512DatatypeDecl14addConstructorERK23DatatypeConstructorDecl">
+              </span>
+              <span id="_CPPv2N4cvc512DatatypeDecl14addConstructorERK23DatatypeConstructorDecl">
+              </span>
+              <span id="cvc5::DatatypeDecl::addConstructor__DatatypeConstructorDeclCR">
+              </span>
+              <span class="target" id="classcvc5_1_1DatatypeDecl_1a19781887145181d5ef47808dd573ee93">
+              </span>
+              <span class="kt">
+               <span class="pre">
+                void
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 addConstructor
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <a class="reference internal" href="datatypeconstructordecl.html#_CPPv4N4cvc523DatatypeConstructorDeclE" title="cvc5::DatatypeConstructorDecl">
+               <span class="n">
+                <span class="pre">
+                 DatatypeConstructorDecl
+                </span>
+               </span>
+              </a>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                &amp;
+               </span>
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                ctor
+               </span>
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#_CPPv4N4cvc512DatatypeDecl14addConstructorERK23DatatypeConstructorDecl" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Add datatype constructor declaration.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Parameters
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 <strong>
+                  ctor
+                 </strong>
+                 – The datatype constructor declaration to add.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc512DatatypeDecl18getNumConstructorsEv">
+              <span id="_CPPv3NK4cvc512DatatypeDecl18getNumConstructorsEv">
+              </span>
+              <span id="_CPPv2NK4cvc512DatatypeDecl18getNumConstructorsEv">
+              </span>
+              <span id="cvc5::DatatypeDecl::getNumConstructorsC">
+              </span>
+              <span class="target" id="classcvc5_1_1DatatypeDecl_1a3b5df499753589144ebe8f2f6f1df7b0">
+              </span>
+              <span class="n">
+               <span class="pre">
+                size_t
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 getNumConstructors
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc512DatatypeDecl18getNumConstructorsEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Get the number of constructors (so far) for this
+               <a class="reference internal" href="datatype.html#classcvc5_1_1Datatype">
+                <span class="std std-ref">
+                 Datatype
+                </span>
+               </a>
+               declaration.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 The number of constructors.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc512DatatypeDecl12isParametricEv">
+              <span id="_CPPv3NK4cvc512DatatypeDecl12isParametricEv">
+              </span>
+              <span id="_CPPv2NK4cvc512DatatypeDecl12isParametricEv">
+              </span>
+              <span id="cvc5::DatatypeDecl::isParametricC">
+              </span>
+              <span class="target" id="classcvc5_1_1DatatypeDecl_1a7e7e8d3473a786c498e865db3cdf062a">
+              </span>
+              <span class="kt">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 isParametric
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc512DatatypeDecl12isParametricEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Determine if this
+               <a class="reference internal" href="datatype.html#classcvc5_1_1Datatype">
+                <span class="std std-ref">
+                 Datatype
+                </span>
+               </a>
+               declaration is parametric.
+              </p>
+              <div class="admonition warning">
+               <p class="admonition-title">
+                Warning
+               </p>
+               <p>
+                This function is experimental and may change in future versions.
+               </p>
+              </div>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 True if this datatype declaration is parametric.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc512DatatypeDecl10isResolvedEv">
+              <span id="_CPPv3NK4cvc512DatatypeDecl10isResolvedEv">
+              </span>
+              <span id="_CPPv2NK4cvc512DatatypeDecl10isResolvedEv">
+              </span>
+              <span id="cvc5::DatatypeDecl::isResolvedC">
+              </span>
+              <span class="target" id="classcvc5_1_1DatatypeDecl_1a2edfcd3608c13fc5a77a7f09bd5455af">
+              </span>
+              <span class="kt">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 isResolved
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc512DatatypeDecl10isResolvedEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Determine if this datatype declaration is resolved (has already been used to declare a datatype).
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 True if this datatype declaration is resolved.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc512DatatypeDecl6isNullEv">
+              <span id="_CPPv3NK4cvc512DatatypeDecl6isNullEv">
+              </span>
+              <span id="_CPPv2NK4cvc512DatatypeDecl6isNullEv">
+              </span>
+              <span id="cvc5::DatatypeDecl::isNullC">
+              </span>
+              <span class="target" id="classcvc5_1_1DatatypeDecl_1acb0eb58fb0e4acce22681cd6a59e2dc1">
+              </span>
+              <span class="kt">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 isNull
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc512DatatypeDecl6isNullEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Determine if this datatype declaration is nullary.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 True if this
+                 <a class="reference internal" href="#classcvc5_1_1DatatypeDecl">
+                  <span class="std std-ref">
+                   DatatypeDecl
+                  </span>
+                 </a>
+                 is a null object.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc512DatatypeDecl8toStringEv">
+              <span id="_CPPv3NK4cvc512DatatypeDecl8toStringEv">
+              </span>
+              <span id="_CPPv2NK4cvc512DatatypeDecl8toStringEv">
+              </span>
+              <span id="cvc5::DatatypeDecl::toStringC">
+              </span>
+              <span class="target" id="classcvc5_1_1DatatypeDecl_1abbb826a7602c32fa0ad6b88c40c657a7">
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                string
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 toString
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc512DatatypeDecl8toStringEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Get a string representation of this datatype declaration.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 A string representation.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc512DatatypeDecl7getNameEv">
+              <span id="_CPPv3NK4cvc512DatatypeDecl7getNameEv">
+              </span>
+              <span id="_CPPv2NK4cvc512DatatypeDecl7getNameEv">
+              </span>
+              <span id="cvc5::DatatypeDecl::getNameC">
+              </span>
+              <span class="target" id="classcvc5_1_1DatatypeDecl_1aabe842a6ea593bac735717ef450cfa4c">
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                string
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 getName
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc512DatatypeDecl7getNameEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Get the name of this datatype declaration.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 The name.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+           </div>
+          </dd>
+         </dl>
+         <hr class="docutils"/>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv4N4cvc5lsERNSt7ostreamERK12DatatypeDecl">
+           <span id="_CPPv3N4cvc5lsERNSt7ostreamERK12DatatypeDecl">
+           </span>
+           <span id="_CPPv2N4cvc5lsERNSt7ostreamERK12DatatypeDecl">
+           </span>
+           <span id="cvc5::lshift-operator__osR.DatatypeDeclCR">
+           </span>
+           <span class="target" id="namespacecvc5_1aca162ae8b4fe5770ca123085280c5510">
+           </span>
+           <span class="n">
+            <span class="pre">
+             std
+            </span>
+           </span>
+           <span class="p">
+            <span class="pre">
+             ::
+            </span>
+           </span>
+           <span class="n">
+            <span class="pre">
+             ostream
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             &amp;
+            </span>
+           </span>
+           <span class="sig-prename descclassname">
+            <span class="n">
+             <span class="pre">
+              cvc5
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              ::
+             </span>
+            </span>
+           </span>
+           <span class="sig-name descname">
+            <span class="k">
+             <span class="pre">
+              operator
+             </span>
+            </span>
+            <span class="o">
+             <span class="pre">
+              &lt;&lt;
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <span class="n">
+            <span class="pre">
+             std
+            </span>
+           </span>
+           <span class="p">
+            <span class="pre">
+             ::
+            </span>
+           </span>
+           <span class="n">
+            <span class="pre">
+             ostream
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             &amp;
+            </span>
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             out
+            </span>
+           </span>
+           ,
+           <span class="k">
+            <span class="pre">
+             const
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <a class="reference internal" href="#_CPPv4N4cvc512DatatypeDeclE" title="cvc5::DatatypeDecl">
+            <span class="n">
+             <span class="pre">
+              DatatypeDecl
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             &amp;
+            </span>
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             dtdecl
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv4N4cvc5lsERNSt7ostreamERK12DatatypeDecl" title="Permalink to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Serialize a datatype declaration to given stream.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 out
+                </strong>
+                – The output stream.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 dtdecl
+                </strong>
+                – The datatype declaration to be serialized to the given stream.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              The output stream.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+        </section>
+       </div>
+      </div>
+      <footer>
+       <div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+        <a accesskey="p" class="btn btn-neutral float-left" href="datatypeconstructordecl.html" rel="prev" title="DatatypeConstructorDecl">
+         <span aria-hidden="true" class="fa fa-arrow-circle-left">
+         </span>
+         Previous
+        </a>
+        <a accesskey="n" class="btn btn-neutral float-right" href="datatypeselector.html" rel="next" title="DatatypeSelector">
+         Next
+         <span aria-hidden="true" class="fa fa-arrow-circle-right">
+         </span>
+        </a>
+       </div>
+       <hr/>
+       <div role="contentinfo">
+        <p>
+         © Copyright 2024, the authors of cvc5.
+        </p>
+       </div>
+       Built with
+       <a href="https://www.sphinx-doc.org/">
+        Sphinx
+       </a>
+       using a
+       <a href="https://github.com/readthedocs/sphinx_rtd_theme">
+        theme
+       </a>
+       provided by
+       <a href="https://readthedocs.org">
+        Read the Docs
+       </a>
+       .
+      </footer>
+     </div>
+    </div>
+   </section>
+  </div>
+  <script>
+   jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ </body>
+</html>

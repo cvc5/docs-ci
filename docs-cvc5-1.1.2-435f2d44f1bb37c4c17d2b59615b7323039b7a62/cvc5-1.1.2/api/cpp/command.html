@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Command — cvc5  documentation
+  </title>
+  <link href="../../static/pygments.css" rel="stylesheet" type="text/css"/>
+  <link href="../../static/css/theme.css" rel="stylesheet" type="text/css"/>
+  <link href="../../static/tabs.css" rel="stylesheet" type="text/css"/>
+  <link href="../../static/custom.css" rel="stylesheet" type="text/css"/>
+  <!--[if lt IE 9]>
+    <script src="../../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script src="../../static/jquery.js?v=5d32c60e">
+  </script>
+  <script src="../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c">
+  </script>
+  <script data-url_root="../../" id="documentation_options" src="../../static/documentation_options.js?v=b3ba4146">
+  </script>
+  <script src="../../static/doctools.js?v=888ff710">
+  </script>
+  <script src="../../static/sphinx_highlight.js?v=4825356b">
+  </script>
+  <script src="../../static/js/theme.js">
+  </script>
+  <link href="../../genindex.html" rel="index" title="Index"/>
+  <link href="../../search.html" rel="search" title="Search"/>
+ </head>
+ <body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+   <nav class="wy-nav-side" data-toggle="wy-nav-shift">
+    <div class="wy-side-scroll">
+     <div class="wy-side-nav-search">
+      <a class="icon icon-home" href="../../index.html">
+       cvc5
+      </a>
+      <div role="search">
+       <form action="../../search.html" class="wy-form" id="rtd-search-form" method="get">
+        <input aria-label="Search docs" name="q" placeholder="Search docs" type="text"/>
+        <input name="check_keywords" type="hidden" value="yes"/>
+        <input name="area" type="hidden" value="default"/>
+       </form>
+      </div>
+     </div>
+     <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+      <ul>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../installation/installation.html">
+         Installation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../binary/binary.html">
+         Binary Documentation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../api.html">
+         API Documentation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../options.html">
+         Options
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../output-tags.html">
+         Output tags
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../proofs/proofs.html">
+         Proof production
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../resource-limits.html">
+         Resource limits
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../statistics.html">
+         Statistics
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../examples/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../theories/theories.html">
+         Theory References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../references.html">
+         References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../genindex.html">
+         Index
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div aria-label="versions" class="rst-versions shift-up" data-toggle="rst-versions" id="cvc5-versions" role="note">
+     <span class="rst-current-version" data-toggle="rst-current-version">
+      <i class="fas fa-tags">
+      </i>
+      Other versions
+     </span>
+     <div class="rst-other-versions">
+      <dl>
+       <dd>
+        <a href="https://cvc5.github.io/docs-ci/docs-main/">
+         cvc5-main
+        </a>
+       </dd>
+       <dd>
+        <strong>
+         <a href="../../../cvc5-1.1.2/">
+          cvc5-1.1.2
+         </a>
+        </strong>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.1.1/">
+         cvc5-1.1.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.1.0/">
+         cvc5-1.1.0
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.9/">
+         cvc5-1.0.9
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.8/">
+         cvc5-1.0.8
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.7/">
+         cvc5-1.0.7
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.2/">
+         cvc5-1.0.2
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.1/">
+         cvc5-1.0.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.0/">
+         cvc5-1.0.0
+        </a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </nav>
+   <section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+    <nav aria-label="Mobile navigation menu" class="wy-nav-top">
+     <i class="fa fa-bars" data-toggle="wy-nav-top">
+     </i>
+     <a href="../../index.html">
+      cvc5
+     </a>
+    </nav>
+    <div class="wy-nav-content">
+     <div class="rst-content">
+      <div aria-label="Page navigation" role="navigation">
+       <ul class="wy-breadcrumbs">
+        <li>
+         <a aria-label="Home" class="icon icon-home" href="../../index.html">
+         </a>
+        </li>
+        <li class="breadcrumb-item active">
+         Command
+        </li>
+        <li class="wy-breadcrumbs-aside">
+        </li>
+       </ul>
+       <hr/>
+      </div>
+      <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+       <div itemprop="articleBody">
+        <section id="command">
+         <h1>
+          Command
+          <a class="headerlink" href="#command" title="Permalink to this heading">
+           
+          </a>
+         </h1>
+         <p>
+          Encapsulation of a command.
+Commands are constructed by the input parser and can be invoked on
+the solver and symbol manager.
+         </p>
+         <hr class="docutils"/>
+         <dl class="cpp class">
+          <dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser7CommandE">
+           <span id="_CPPv3N4cvc56parser7CommandE">
+           </span>
+           <span id="_CPPv2N4cvc56parser7CommandE">
+           </span>
+           <span id="cvc5::parser::Command">
+           </span>
+           <span class="target" id="classcvc5_1_1parser_1_1Command">
+           </span>
+           <span class="k">
+            <span class="pre">
+             class
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              Command
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#_CPPv4N4cvc56parser7CommandE" title="Permalink to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Encapsulation of a command.
+           </p>
+           <p>
+            Commands are constructed by the input parser and can be invoked on the solver and symbol manager.
+           </p>
+           <div class="breathe-sectiondef docutils container">
+            <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">
+             Public Functions
+            </p>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser7Command7CommandEv">
+              <span id="_CPPv3N4cvc56parser7Command7CommandEv">
+              </span>
+              <span id="_CPPv2N4cvc56parser7Command7CommandEv">
+              </span>
+              <span id="cvc5::parser::Command::Command">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1Command_1adbc2343d8c8e636f29fb74bdfafe2c4b">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 Command
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#_CPPv4N4cvc56parser7Command7CommandEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser7Command6invokeEPN4cvc56SolverEPN6parser13SymbolManagerERNSt7ostreamE">
+              <span id="_CPPv3N4cvc56parser7Command6invokeEPN4cvc56SolverEPN6parser13SymbolManagerERNSt7ostreamE">
+              </span>
+              <span id="_CPPv2N4cvc56parser7Command6invokeEPN4cvc56SolverEPN6parser13SymbolManagerERNSt7ostreamE">
+              </span>
+              <span id="cvc5::parser::Command::invoke__cvc5::SolverP.parser::SymbolManagerP.osR">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1Command_1a4cb1c0fd9a8ccb244df6aa8372cc23ca">
+              </span>
+              <span class="kt">
+               <span class="pre">
+                void
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 invoke
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="n">
+               <span class="pre">
+                cvc5
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <a class="reference internal" href="solver.html#_CPPv4N4cvc56SolverE" title="cvc5::Solver">
+               <span class="n">
+                <span class="pre">
+                 Solver
+                </span>
+               </span>
+              </a>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                *
+               </span>
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                solver
+               </span>
+              </span>
+              ,
+              <span class="n">
+               <span class="pre">
+                parser
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <a class="reference internal" href="symbolmanager.html#_CPPv4N4cvc56parser13SymbolManagerE" title="cvc5::parser::SymbolManager">
+               <span class="n">
+                <span class="pre">
+                 SymbolManager
+                </span>
+               </span>
+              </a>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                *
+               </span>
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                sm
+               </span>
+              </span>
+              ,
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                ostream
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                &amp;
+               </span>
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                out
+               </span>
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#_CPPv4N4cvc56parser7Command6invokeEPN4cvc56SolverEPN6parser13SymbolManagerERNSt7ostreamE" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Invoke the command on the solver and symbol manager sm, prints the result to output stream out.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Parameters
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <ul class="simple">
+                 <li>
+                  <p>
+                   <strong>
+                    solver
+                   </strong>
+                   – The solver to invoke the command on.
+                  </p>
+                 </li>
+                 <li>
+                  <p>
+                   <strong>
+                    sm
+                   </strong>
+                   – The symbol manager to invoke the command on.
+                  </p>
+                 </li>
+                 <li>
+                  <p>
+                   <strong>
+                    out
+                   </strong>
+                   – The output stream to write the result of the command on.
+                  </p>
+                 </li>
+                </ul>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc56parser7Command8toStringEv">
+              <span id="_CPPv3NK4cvc56parser7Command8toStringEv">
+              </span>
+              <span id="_CPPv2NK4cvc56parser7Command8toStringEv">
+              </span>
+              <span id="cvc5::parser::Command::toStringC">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1Command_1a28e15200a483e751c6c858d272e8abf2">
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                string
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 toString
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc56parser7Command8toStringEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 A string representation of this result.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc56parser7Command14getCommandNameEv">
+              <span id="_CPPv3NK4cvc56parser7Command14getCommandNameEv">
+              </span>
+              <span id="_CPPv2NK4cvc56parser7Command14getCommandNameEv">
+              </span>
+              <span id="cvc5::parser::Command::getCommandNameC">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1Command_1ab6741d664488f9d42bb696b701c59c13">
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                string
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 getCommandName
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc56parser7Command14getCommandNameEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Get the name for this command, e.g. “assert”.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 The name of this command.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc56parser7Command6isNullEv">
+              <span id="_CPPv3NK4cvc56parser7Command6isNullEv">
+              </span>
+              <span id="_CPPv2NK4cvc56parser7Command6isNullEv">
+              </span>
+              <span id="cvc5::parser::Command::isNullC">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1Command_1ab3c7e978d877763c0cfa0cb964c35dd6">
+              </span>
+              <span class="kt">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 isNull
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc56parser7Command6isNullEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 True if this command is null.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+           </div>
+           <div class="breathe-sectiondef docutils container">
+            <p class="breathe-sectiondef-title rubric" id="breathe-section-title-friends">
+             Friends
+            </p>
+            <dl>
+             <dt class="sig sig-object cpp">
+              <em class="property">
+               <span class="pre">
+                friend
+               </span>
+               <span class="pre">
+                class
+               </span>
+              </em>
+              <span class="pre">
+               main::CommandExecutor
+              </span>
+             </dt>
+            </dl>
+            <dl>
+             <dt class="sig sig-object cpp">
+              <em class="property">
+               <span class="pre">
+                friend
+               </span>
+               <span class="pre">
+                class
+               </span>
+              </em>
+              <span class="pre">
+               internal::InteractiveShell
+              </span>
+             </dt>
+            </dl>
+            <dl>
+             <dt class="sig sig-object cpp">
+              <em class="property">
+               <span class="pre">
+                friend
+               </span>
+               <span class="pre">
+                class
+               </span>
+              </em>
+              <span class="pre">
+               main::ExecutionContext
+              </span>
+             </dt>
+            </dl>
+           </div>
+          </dd>
+         </dl>
+        </section>
+       </div>
+      </div>
+      <footer>
+       <hr/>
+       <div role="contentinfo">
+        <p>
+         © Copyright 2024, the authors of cvc5.
+        </p>
+       </div>
+       Built with
+       <a href="https://www.sphinx-doc.org/">
+        Sphinx
+       </a>
+       using a
+       <a href="https://github.com/readthedocs/sphinx_rtd_theme">
+        theme
+       </a>
+       provided by
+       <a href="https://readthedocs.org">
+        Read the Docs
+       </a>
+       .
+      </footer>
+     </div>
+    </div>
+   </section>
+  </div>
+  <script>
+   jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ </body>
+</html>

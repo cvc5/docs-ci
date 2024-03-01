@@ -1,0 +1,2180 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   SortKind — cvc5  documentation
+  </title>
+  <link href="../../static/pygments.css" rel="stylesheet" type="text/css"/>
+  <link href="../../static/css/theme.css" rel="stylesheet" type="text/css"/>
+  <link href="../../static/tabs.css" rel="stylesheet" type="text/css"/>
+  <link href="../../static/custom.css" rel="stylesheet" type="text/css"/>
+  <!--[if lt IE 9]>
+    <script src="../../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script src="../../static/jquery.js?v=5d32c60e">
+  </script>
+  <script src="../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c">
+  </script>
+  <script data-url_root="../../" id="documentation_options" src="../../static/documentation_options.js?v=b3ba4146">
+  </script>
+  <script src="../../static/doctools.js?v=888ff710">
+  </script>
+  <script src="../../static/sphinx_highlight.js?v=4825356b">
+  </script>
+  <script src="../../static/js/theme.js">
+  </script>
+  <link href="../../genindex.html" rel="index" title="Index"/>
+  <link href="../../search.html" rel="search" title="Search"/>
+  <link href="statistics.html" rel="next" title="Statistics"/>
+  <link href="sort.html" rel="prev" title="Sort"/>
+ </head>
+ <body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+   <nav class="wy-nav-side" data-toggle="wy-nav-shift">
+    <div class="wy-side-scroll">
+     <div class="wy-side-nav-search">
+      <a class="icon icon-home" href="../../index.html">
+       cvc5
+      </a>
+      <div role="search">
+       <form action="../../search.html" class="wy-form" id="rtd-search-form" method="get">
+        <input aria-label="Search docs" name="q" placeholder="Search docs" type="text"/>
+        <input name="check_keywords" type="hidden" value="yes"/>
+        <input name="area" type="hidden" value="default"/>
+       </form>
+      </div>
+     </div>
+     <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+      <ul class="current">
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../installation/installation.html">
+         Installation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../binary/binary.html">
+         Binary Documentation
+        </a>
+       </li>
+       <li class="toctree-l1 current">
+        <a class="reference internal" href="../api.html">
+         API Documentation
+        </a>
+        <ul class="current">
+         <li class="toctree-l2 current">
+          <a class="reference internal" href="cpp.html">
+           C++ API
+          </a>
+          <ul class="current">
+           <li class="toctree-l3">
+            <a class="reference internal" href="quickstart.html">
+             Quickstart Guide
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="exceptions.html">
+             Exceptions
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatype.html">
+             Datatype
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatypeconstructor.html">
+             DatatypeConstructor
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatypeconstructordecl.html">
+             DatatypeConstructorDecl
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatypedecl.html">
+             DatatypeDecl
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatypeselector.html">
+             DatatypeSelector
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="driveroptions.html">
+             DriverOptions
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="grammar.html">
+             Grammar
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="kind.html">
+             Kind
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="modes.html">
+             Modes
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="op.html">
+             Op
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="optioninfo.html">
+             OptionInfo
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="result.html">
+             Result
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="roundingmode.html">
+             RoundingMode
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="solver.html">
+             Solver
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="sort.html">
+             Sort
+            </a>
+           </li>
+           <li class="toctree-l3 current">
+            <a class="current reference internal" href="#">
+             SortKind
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="statistics.html">
+             Statistics
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="synthresult.html">
+             SynthResult
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="term.html">
+             Term
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="unknownexplanation.html">
+             UnknownExplanation
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cpp.html#class-hierarchy">
+             Class hierarchy
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../java/java.html">
+           Java API
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../python/python.html">
+           Python API
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../options.html">
+         Options
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../output-tags.html">
+         Output tags
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../proofs/proofs.html">
+         Proof production
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../resource-limits.html">
+         Resource limits
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../statistics.html">
+         Statistics
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../examples/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../theories/theories.html">
+         Theory References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../references.html">
+         References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../genindex.html">
+         Index
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div aria-label="versions" class="rst-versions shift-up" data-toggle="rst-versions" id="cvc5-versions" role="note">
+     <span class="rst-current-version" data-toggle="rst-current-version">
+      <i class="fas fa-tags">
+      </i>
+      Other versions
+     </span>
+     <div class="rst-other-versions">
+      <dl>
+       <dd>
+        <a href="https://cvc5.github.io/docs-ci/docs-main/">
+         cvc5-main
+        </a>
+       </dd>
+       <dd>
+        <strong>
+         <a href="../../../cvc5-1.1.2/">
+          cvc5-1.1.2
+         </a>
+        </strong>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.1.1/">
+         cvc5-1.1.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.1.0/">
+         cvc5-1.1.0
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.9/">
+         cvc5-1.0.9
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.8/">
+         cvc5-1.0.8
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.7/">
+         cvc5-1.0.7
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.2/">
+         cvc5-1.0.2
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.1/">
+         cvc5-1.0.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.0/">
+         cvc5-1.0.0
+        </a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </nav>
+   <section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+    <nav aria-label="Mobile navigation menu" class="wy-nav-top">
+     <i class="fa fa-bars" data-toggle="wy-nav-top">
+     </i>
+     <a href="../../index.html">
+      cvc5
+     </a>
+    </nav>
+    <div class="wy-nav-content">
+     <div class="rst-content">
+      <div aria-label="Page navigation" role="navigation">
+       <ul class="wy-breadcrumbs">
+        <li>
+         <a aria-label="Home" class="icon icon-home" href="../../index.html">
+         </a>
+        </li>
+        <li class="breadcrumb-item">
+         <a href="../api.html">
+          API Documentation
+         </a>
+        </li>
+        <li class="breadcrumb-item">
+         <a href="cpp.html">
+          C++ API
+         </a>
+        </li>
+        <li class="breadcrumb-item active">
+         SortKind
+        </li>
+        <li class="wy-breadcrumbs-aside">
+        </li>
+       </ul>
+       <hr/>
+      </div>
+      <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+       <div itemprop="articleBody">
+        <section id="sortkind">
+         <h1>
+          SortKind
+          <a class="headerlink" href="#sortkind" title="Permalink to this heading">
+           
+          </a>
+         </h1>
+         <p>
+          Every
+          <a class="reference internal" href="sort.html#_CPPv4N4cvc54SortE" title="cvc5::Sort">
+           <code class="xref cpp cpp-class docutils literal notranslate">
+            <span class="pre">
+             Sort
+            </span>
+           </code>
+          </a>
+          has an associated kind, represented
+as enum class
+          <a class="reference internal" href="#_CPPv4N4cvc58SortKindE" title="cvc5::SortKind">
+           <code class="xref cpp cpp-enum docutils literal notranslate">
+            <span class="pre">
+             cvc5::SortKind
+            </span>
+           </code>
+          </a>
+          .
+         </p>
+         <hr class="docutils"/>
+         <ul class="simple">
+          <li>
+           <p>
+            enum class
+            <a class="reference internal" href="#_CPPv4N4cvc58SortKindE" title="cvc5::SortKind">
+             <code class="xref cpp cpp-enum docutils literal notranslate">
+              <span class="pre">
+               cvc5::SortKind
+              </span>
+             </code>
+            </a>
+           </p>
+          </li>
+          <li>
+           <p>
+            <a class="reference internal" href="#_CPPv4N4cvc5lsERNSt7ostreamE8SortKind" title="std::ostream &amp;cvc5::operator&lt;&lt;(std::ostream &amp;out, SortKind kind)">
+             <code class="xref cpp cpp-func docutils literal notranslate">
+              <span class="pre">
+               std::ostream&amp;
+              </span>
+              <span class="pre">
+               cvc5::operator&lt;&lt;
+              </span>
+              <span class="pre">
+               (std::ostream&amp;
+              </span>
+              <span class="pre">
+               out,
+              </span>
+              <span class="pre">
+               SortKind
+              </span>
+              <span class="pre">
+               kind)
+              </span>
+             </code>
+            </a>
+           </p>
+          </li>
+          <li>
+           <p>
+            <a class="reference internal" href="#_CPPv4IENSt4hashIN4cvc58SortKindEEE" title="std::hash&lt;cvc5::SortKind&gt;">
+             <code class="xref cpp cpp-struct docutils literal notranslate">
+              <span class="pre">
+               std::hash&lt;cvc5::SortKind&gt;
+              </span>
+             </code>
+            </a>
+           </p>
+          </li>
+         </ul>
+         <hr class="docutils"/>
+         <dl class="cpp enum-class">
+          <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKindE">
+           <span id="_CPPv3N4cvc58SortKindE">
+           </span>
+           <span id="_CPPv2N4cvc58SortKindE">
+           </span>
+           <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8">
+           </span>
+           <span class="k">
+            <span class="pre">
+             enum
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="k">
+            <span class="pre">
+             class
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-prename descclassname">
+            <span class="n">
+             <span class="pre">
+              cvc5
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              ::
+             </span>
+            </span>
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              SortKind
+             </span>
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             :
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="n">
+            <span class="pre">
+             int32_t
+            </span>
+           </span>
+           <a class="headerlink" href="#_CPPv4N4cvc58SortKindE" title="Permalink to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            The kind of a cvc5
+            <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+             <span class="std std-ref">
+              Sort
+             </span>
+            </a>
+            .
+           </p>
+           <p>
+            <em>
+             Values:
+            </em>
+           </p>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind18INTERNAL_SORT_KINDE">
+             <span id="_CPPv3N4cvc58SortKind18INTERNAL_SORT_KINDE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind18INTERNAL_SORT_KINDE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8a10cec49c2500255742f165c33f1b0f0d">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                INTERNAL_SORT_KIND
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind18INTERNAL_SORT_KINDE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              Internal kind.
+             </p>
+             <p>
+              This kind serves as an abstraction for internal kinds that are not exposed via the API but may appear in terms returned by API functions, e.g., when querying the simplified form of a term.
+             </p>
+             <div class="admonition note">
+              <p class="admonition-title">
+               Note
+              </p>
+              <p>
+               Should never be created via the API.
+              </p>
+             </div>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind19UNDEFINED_SORT_KINDE">
+             <span id="_CPPv3N4cvc58SortKind19UNDEFINED_SORT_KINDE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind19UNDEFINED_SORT_KINDE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8a7eab88392ac76259c507d23d7e26caec">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                UNDEFINED_SORT_KIND
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind19UNDEFINED_SORT_KINDE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              Undefined kind.
+             </p>
+             <div class="admonition note">
+              <p class="admonition-title">
+               Note
+              </p>
+              <p>
+               Should never be exposed or created via the API.
+              </p>
+             </div>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind9NULL_SORTE">
+             <span id="_CPPv3N4cvc58SortKind9NULL_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind9NULL_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8a510d88aa4ce276af5b46e9e9fe411df4">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                NULL_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind9NULL_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              Null kind.
+             </p>
+             <p>
+              The kind of a null sort (
+              <a class="reference internal" href="sort.html#classcvc5_1_1Sort_1ac242e6658455b51b925b7f59450ccca0">
+               <span class="std std-ref">
+                Sort::Sort()
+               </span>
+              </a>
+              ).
+             </p>
+             <div class="admonition note">
+              <p class="admonition-title">
+               Note
+              </p>
+              <p>
+               May not be explicitly created via API functions other than
+               <a class="reference internal" href="sort.html#_CPPv4N4cvc54Sort4SortEv" title="cvc5::Sort::Sort">
+                <code class="xref cpp cpp-func docutils literal notranslate">
+                 <span class="pre">
+                  Sort::Sort()
+                 </span>
+                </code>
+               </a>
+               .
+              </p>
+             </div>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind13ABSTRACT_SORTE">
+             <span id="_CPPv3N4cvc58SortKind13ABSTRACT_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind13ABSTRACT_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8a7ece4473a0cb4e53b5fe15e827c6cdd0">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                ABSTRACT_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind13ABSTRACT_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              An abstract sort.
+             </p>
+             <p>
+              An abstract sort represents a sort whose parameters or argument sorts are unspecified. For example,
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                mkAbstractSort(BITVECTOR_SORT)
+               </span>
+              </code>
+              returns a sort that represents the sort of bit-vectors whose bit-width is unspecified.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1a96499004138c9e2636259f4b2039f4ad">
+                   <span class="std std-ref">
+                    Solver::mkAbstractSort(SortKind) const
+                   </span>
+                  </a>
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind10ARRAY_SORTE">
+             <span id="_CPPv3N4cvc58SortKind10ARRAY_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind10ARRAY_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8ab979c6a25159ecf1371e623cdd1cabd9">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                ARRAY_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind10ARRAY_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              An array sort, whose argument sorts are the index and element sorts of the array.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  Solver::mkArraySort(Sort, Sort) const
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind8BAG_SORTE">
+             <span id="_CPPv3N4cvc58SortKind8BAG_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind8BAG_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8ad9c4e1c408a3d784ce86334614e137a6">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                BAG_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind8BAG_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              A bag sort, whose argument sort is the element sort of the bag.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  Solver::mkBagSort(Sort) const
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind12BOOLEAN_SORTE">
+             <span id="_CPPv3N4cvc58SortKind12BOOLEAN_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind12BOOLEAN_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8a81bb0667e8c77c7f1821a3746406912f">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                BOOLEAN_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind12BOOLEAN_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              The Boolean sort.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1aee2a2b4686c7797d749a467f8700df57">
+                   <span class="std std-ref">
+                    Solver::getBooleanSort() const
+                   </span>
+                  </a>
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind14BITVECTOR_SORTE">
+             <span id="_CPPv3N4cvc58SortKind14BITVECTOR_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind14BITVECTOR_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8a2694ca1f5f78af3d7d73e438f1e002c4">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                BITVECTOR_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind14BITVECTOR_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              A bit-vector sort, parameterized by an integer denoting its bit-width.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1af4369b94f310942a0f83103482b15ef9">
+                   <span class="std std-ref">
+                    Solver::mkBitVectorSort(uint32_t) const
+                   </span>
+                  </a>
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind13DATATYPE_SORTE">
+             <span id="_CPPv3N4cvc58SortKind13DATATYPE_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind13DATATYPE_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8a93d6cf7755cf6543dc1db955f582b97e">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                DATATYPE_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind13DATATYPE_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              A datatype sort.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  Solver::mkDatatypeSort(DatatypeDecl)
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Solver::mkDatatypeSorts(const std::vector&lt;DatatypeDecl&gt;&amp;)
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind17FINITE_FIELD_SORTE">
+             <span id="_CPPv3N4cvc58SortKind17FINITE_FIELD_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind17FINITE_FIELD_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8a13db678fe9a177d48797114cf3040b0b">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                FINITE_FIELD_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind17FINITE_FIELD_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              A finite field sort, parameterized by a size.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1ab1f4ccc7c5097e519eb63d8e50e9349e">
+                   <span class="std std-ref">
+                    Solver::mkFiniteFieldSort(const std::string&amp;, uint32_t base) const
+                   </span>
+                  </a>
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind18FLOATINGPOINT_SORTE">
+             <span id="_CPPv3N4cvc58SortKind18FLOATINGPOINT_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind18FLOATINGPOINT_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8a94bc9809963e0f67d714e2503c30a257">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                FLOATINGPOINT_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind18FLOATINGPOINT_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              A floating-point sort, parameterized by two integers denoting its exponent and significand bit-widths.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1a0242d7e96d891cea937bbdc2c0609386">
+                   <span class="std std-ref">
+                    Solver::mkFloatingPointSort(uint32_t, uint32_t) const
+                   </span>
+                  </a>
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind13FUNCTION_SORTE">
+             <span id="_CPPv3N4cvc58SortKind13FUNCTION_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind13FUNCTION_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8a64ded6c9f0b4e31bdcc8768c060b7533">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                FUNCTION_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind13FUNCTION_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              A function sort with given domain sorts and codomain sort.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  Solver::mkFunctionSort(const std::vector&lt;Sort&gt;&amp;, Sort) const
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind12INTEGER_SORTE">
+             <span id="_CPPv3N4cvc58SortKind12INTEGER_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind12INTEGER_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8a0486344b7fca5143a2735a4da2bf0d34">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                INTEGER_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind12INTEGER_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              The integer sort.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1aaf1156f6b8b33125ceab35dedb6209bb">
+                   <span class="std std-ref">
+                    Solver::getIntegerSort() const
+                   </span>
+                  </a>
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind9REAL_SORTE">
+             <span id="_CPPv3N4cvc58SortKind9REAL_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind9REAL_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8ab7b3920a0bfdd12aaaca93baab40b062">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                REAL_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind9REAL_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              The real sort.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1a1712e925621a9e955350d62b010c4abb">
+                   <span class="std std-ref">
+                    Solver::getRealSort() const
+                   </span>
+                  </a>
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind11REGLAN_SORTE">
+             <span id="_CPPv3N4cvc58SortKind11REGLAN_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind11REGLAN_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8a7b89733237a4175cb4264f48f9ff9ae4">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                REGLAN_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind11REGLAN_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              The regular language sort.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1accdc715f3e307e0ba5e2e74ee1290387">
+                   <span class="std std-ref">
+                    Solver::getRegExpSort() const
+                   </span>
+                  </a>
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind17ROUNDINGMODE_SORTE">
+             <span id="_CPPv3N4cvc58SortKind17ROUNDINGMODE_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind17ROUNDINGMODE_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8ab42da4a3fa537f3cd832a332a7bed33b">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                ROUNDINGMODE_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind17ROUNDINGMODE_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              The rounding mode sort.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1a6a1bb6ca8b3642b83e13d42758ed0b40">
+                   <span class="std std-ref">
+                    Solver::getRoundingModeSort() const
+                   </span>
+                  </a>
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind13SEQUENCE_SORTE">
+             <span id="_CPPv3N4cvc58SortKind13SEQUENCE_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind13SEQUENCE_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8ac9b1325d205059632b3ab2a1051ca85f">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                SEQUENCE_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind13SEQUENCE_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              A sequence sort, whose argument sort is the element sort of the sequence.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  Solver::mkSequenceSort(Sort) const
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind8SET_SORTE">
+             <span id="_CPPv3N4cvc58SortKind8SET_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind8SET_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8a07f33f892cc8d9ff0512084596ece429">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                SET_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind8SET_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              A set sort, whose argument sort is the element sort of the set.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  Solver::mkSetSort(Sort) const
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind11STRING_SORTE">
+             <span id="_CPPv3N4cvc58SortKind11STRING_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind11STRING_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8a2e9d15f07f4f63e2feb85c2bf73ce745">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                STRING_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind11STRING_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              The string sort.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1ac832df6aedd09f1408b7c43d396fb99c">
+                   <span class="std std-ref">
+                    Solver::getStringSort() const
+                   </span>
+                  </a>
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind10TUPLE_SORTE">
+             <span id="_CPPv3N4cvc58SortKind10TUPLE_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind10TUPLE_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8a687e969f28052df946656f713bd399de">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                TUPLE_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind10TUPLE_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              A tuple sort, whose argument sorts denote the sorts of the direct children of the tuple.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1ad7c98fcb506f976f9fc6a47e6ee5f169">
+                   <span class="std std-ref">
+                    Solver::mkTupleSort(const std::vector&lt;Sort&gt;&amp;) const
+                   </span>
+                  </a>
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind13NULLABLE_SORTE">
+             <span id="_CPPv3N4cvc58SortKind13NULLABLE_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind13NULLABLE_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8aa3f464789c68e3e0b52bf1928d61fc52">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                NULLABLE_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind13NULLABLE_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              A nullable sort, whose argument sort denotes the sort of the direct child of the nullable.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1a914d015925257fe47ba1ad6c953c886e">
+                   <span class="std std-ref">
+                    Solver::mkNullableSort(const Sort&amp;) const
+                   </span>
+                  </a>
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind18UNINTERPRETED_SORTE">
+             <span id="_CPPv3N4cvc58SortKind18UNINTERPRETED_SORTE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind18UNINTERPRETED_SORTE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8ab221f194ccf5aa812d7a99c0de7c0b9b">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                UNINTERPRETED_SORT
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind18UNINTERPRETED_SORTE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              An uninterpreted sort.
+             </p>
+             <p>
+             </p>
+             <ul class="simple">
+              <li>
+               <p>
+                Create
+                <a class="reference internal" href="sort.html#classcvc5_1_1Sort">
+                 <span class="std std-ref">
+                  Sort
+                 </span>
+                </a>
+                of this Kind with:
+               </p>
+               <ul>
+                <li>
+                 <p>
+                  <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1ad43f83c9c7d47d6a817eefea261971ad">
+                   <span class="std std-ref">
+                    Solver::mkUninterpretedSort(const std::optional&lt;std::string&gt;&amp;) const
+                   </span>
+                  </a>
+                 </p>
+                </li>
+               </ul>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+           <dl class="cpp enumerator">
+            <dt class="sig sig-object cpp" id="_CPPv4N4cvc58SortKind14LAST_SORT_KINDE">
+             <span id="_CPPv3N4cvc58SortKind14LAST_SORT_KINDE">
+             </span>
+             <span id="_CPPv2N4cvc58SortKind14LAST_SORT_KINDE">
+             </span>
+             <span class="target" id="namespacecvc5_1a2336a9f93836a90a3183d7a2145f53e8a7badea6ae1699890242fd73176cbd1f0">
+             </span>
+             <span class="k">
+              <span class="pre">
+               enumerator
+              </span>
+             </span>
+             <span class="w">
+             </span>
+             <span class="sig-name descname">
+              <span class="n">
+               <span class="pre">
+                LAST_SORT_KIND
+               </span>
+              </span>
+             </span>
+             <a class="headerlink" href="#_CPPv4N4cvc58SortKind14LAST_SORT_KINDE" title="Permalink to this definition">
+              
+             </a>
+             <br/>
+            </dt>
+            <dd>
+             <p>
+              Marks the upper-bound of this enumeration.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <hr class="docutils"/>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv4N4cvc5lsERNSt7ostreamE8SortKind">
+           <span id="_CPPv3N4cvc5lsERNSt7ostreamE8SortKind">
+           </span>
+           <span id="_CPPv2N4cvc5lsERNSt7ostreamE8SortKind">
+           </span>
+           <span id="cvc5::lshift-operator__osR.SortKind">
+           </span>
+           <span class="target" id="namespacecvc5_1aa0acba85ee08c5fe46a03c34a3552df0">
+           </span>
+           <span class="n">
+            <span class="pre">
+             std
+            </span>
+           </span>
+           <span class="p">
+            <span class="pre">
+             ::
+            </span>
+           </span>
+           <span class="n">
+            <span class="pre">
+             ostream
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             &amp;
+            </span>
+           </span>
+           <span class="sig-prename descclassname">
+            <span class="n">
+             <span class="pre">
+              cvc5
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              ::
+             </span>
+            </span>
+           </span>
+           <span class="sig-name descname">
+            <span class="k">
+             <span class="pre">
+              operator
+             </span>
+            </span>
+            <span class="o">
+             <span class="pre">
+              &lt;&lt;
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <span class="n">
+            <span class="pre">
+             std
+            </span>
+           </span>
+           <span class="p">
+            <span class="pre">
+             ::
+            </span>
+           </span>
+           <span class="n">
+            <span class="pre">
+             ostream
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             &amp;
+            </span>
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             out
+            </span>
+           </span>
+           ,
+           <a class="reference internal" href="#_CPPv4N4cvc58SortKindE" title="cvc5::SortKind">
+            <span class="n">
+             <span class="pre">
+              SortKind
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             k
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv4N4cvc5lsERNSt7ostreamE8SortKind" title="Permalink to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Serialize a kind to given stream.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 out
+                </strong>
+                – the output stream
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 k
+                </strong>
+                – the sort kind to be serialized to the given output stream
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              the output stream
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <hr class="docutils"/>
+         <dl class="cpp struct">
+          <dt class="sig sig-object cpp" id="_CPPv4IENSt4hashIN4cvc58SortKindEEE">
+           <span id="_CPPv3IENSt4hashIN4cvc58SortKindEEE">
+           </span>
+           <span id="_CPPv2IENSt4hashIN4cvc58SortKindEEE">
+           </span>
+           <span class="k">
+            <span class="pre">
+             template
+            </span>
+           </span>
+           <span class="p">
+            <span class="pre">
+             &lt;
+            </span>
+           </span>
+           <span class="p">
+            <span class="pre">
+             &gt;
+            </span>
+           </span>
+           <br/>
+           <span class="target" id="structstd_1_1hash_3_01cvc5_1_1SortKind_01_4">
+           </span>
+           <span class="k">
+            <span class="pre">
+             struct
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              hash
+             </span>
+            </span>
+           </span>
+           <span class="p">
+            <span class="pre">
+             &lt;
+            </span>
+           </span>
+           <span class="n">
+            <span class="pre">
+             cvc5
+            </span>
+           </span>
+           <span class="p">
+            <span class="pre">
+             ::
+            </span>
+           </span>
+           <a class="reference internal" href="#_CPPv4N4cvc58SortKindE" title="cvc5::SortKind">
+            <span class="n">
+             <span class="pre">
+              SortKind
+             </span>
+            </span>
+           </a>
+           <span class="p">
+            <span class="pre">
+             &gt;
+            </span>
+           </span>
+           <a class="headerlink" href="#_CPPv4IENSt4hashIN4cvc58SortKindEEE" title="Permalink to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Hash function for SortKinds.
+           </p>
+           <div class="breathe-sectiondef docutils container">
+            <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">
+             Public Functions
+            </p>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NKSt4hashIN4cvc58SortKindEEclEN4cvc58SortKindE">
+              <span id="_CPPv3NKSt4hashIN4cvc58SortKindEEclEN4cvc58SortKindE">
+              </span>
+              <span id="_CPPv2NKSt4hashIN4cvc58SortKindEEclEN4cvc58SortKindE">
+              </span>
+              <span id="std::hash:cvc5::SortKind:::call-operator__cvc5::SortKindC">
+              </span>
+              <span class="target" id="structstd_1_1hash_3_01cvc5_1_1SortKind_01_4_1a6ddf99ec2c3db9b83b798cf583d357f4">
+              </span>
+              <span class="n">
+               <span class="pre">
+                size_t
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="k">
+                <span class="pre">
+                 operator
+                </span>
+               </span>
+               <span class="o">
+                <span class="pre">
+                 ()
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="n">
+               <span class="pre">
+                cvc5
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <a class="reference internal" href="#_CPPv4N4cvc58SortKindE" title="cvc5::SortKind">
+               <span class="n">
+                <span class="pre">
+                 SortKind
+                </span>
+               </span>
+              </a>
+              <span class="w">
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                kind
+               </span>
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NKSt4hashIN4cvc58SortKindEEclEN4cvc58SortKindE" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Hashes a SortKind to a size_t.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Parameters
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 <strong>
+                  kind
+                 </strong>
+                 – The kind.
+                </p>
+               </dd>
+               <dt class="field-even">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-even">
+                <p>
+                 The hash value.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+           </div>
+          </dd>
+         </dl>
+        </section>
+       </div>
+      </div>
+      <footer>
+       <div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+        <a accesskey="p" class="btn btn-neutral float-left" href="sort.html" rel="prev" title="Sort">
+         <span aria-hidden="true" class="fa fa-arrow-circle-left">
+         </span>
+         Previous
+        </a>
+        <a accesskey="n" class="btn btn-neutral float-right" href="statistics.html" rel="next" title="Statistics">
+         Next
+         <span aria-hidden="true" class="fa fa-arrow-circle-right">
+         </span>
+        </a>
+       </div>
+       <hr/>
+       <div role="contentinfo">
+        <p>
+         © Copyright 2024, the authors of cvc5.
+        </p>
+       </div>
+       Built with
+       <a href="https://www.sphinx-doc.org/">
+        Sphinx
+       </a>
+       using a
+       <a href="https://github.com/readthedocs/sphinx_rtd_theme">
+        theme
+       </a>
+       provided by
+       <a href="https://readthedocs.org">
+        Read the Docs
+       </a>
+       .
+      </footer>
+     </div>
+    </div>
+   </section>
+  </div>
+  <script>
+   jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ </body>
+</html>
