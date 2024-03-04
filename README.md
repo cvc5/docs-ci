@@ -1,14 +1,14 @@
 
 
-* [Documentation for PR #10448](docs-pr10448/) (built from [1f07fd7](https://github.com/cvc5/cvc5/commit/1f07fd7) @ [PR #10448](https://github.com/cvc5/cvc5/pull/10448), Mar Mon 04, 16:16 UTC)
+* [Documentation for proof-new](docs-proof-new/) (built from [59ba112](https://github.com/cvc5/cvc5/commit/59ba112) @ [proof-new](https://github.com/cvc5/cvc5/tree/proof-new), Mar Mon 04, 18:10 UTC)
 
 ***
 
 
 * [Documentation for cvc5-1.1.2](docs-cvc5-1.1.2/) (built from [435f2d4](https://github.com/cvc5/cvc5/commit/435f2d4) @ [cvc5-1.1.2](https://github.com/cvc5/cvc5/tree/cvc5-1.1.2), 3 days ago)
 * [Documentation for main](docs-main/) (built from [2e60503](https://github.com/cvc5/cvc5/commit/2e60503) @ [main](https://github.com/cvc5/cvc5/tree/main), 3 days ago)
-* [Documentation for proof-new](docs-proof-new/) (built from [4885a07](https://github.com/cvc5/cvc5/commit/4885a07) @ [proof-new](https://github.com/cvc5/cvc5/tree/proof-new), 27 hours ago)
-* [Documentation for PR #10448](docs-pr10448/) (built from [1f07fd7](https://github.com/cvc5/cvc5/commit/1f07fd7) @ [PR #10448](https://github.com/cvc5/cvc5/pull/10448), now)
+* [Documentation for proof-new](docs-proof-new/) (built from [59ba112](https://github.com/cvc5/cvc5/commit/59ba112) @ [proof-new](https://github.com/cvc5/cvc5/tree/proof-new), now)
+* [Documentation for PR #10448](docs-pr10448/) (built from [1f07fd7](https://github.com/cvc5/cvc5/commit/1f07fd7) @ [PR #10448](https://github.com/cvc5/cvc5/pull/10448), 2 hours ago)
 * [Documentation for PR #10446](docs-pr10446/) (built from [09a42ac](https://github.com/cvc5/cvc5/commit/09a42ac) @ [PR #10446](https://github.com/cvc5/cvc5/pull/10446), 3 days ago)
 * [Documentation for PR #10445](docs-pr10445/) (built from [a3c8ce2](https://github.com/cvc5/cvc5/commit/a3c8ce2) @ [PR #10445](https://github.com/cvc5/cvc5/pull/10445), 3 days ago)
 * [Documentation for PR #10438](docs-pr10438/) (built from [1aeff17](https://github.com/cvc5/cvc5/commit/1aeff17) @ [PR #10438](https://github.com/cvc5/cvc5/pull/10438), 4 days ago)
