@@ -1,13 +1,14 @@
 
 
-* [Documentation for PR #10544](docs-pr10544/) (built from [3ae7cf9](https://github.com/cvc5/cvc5/commit/3ae7cf9) @ [PR #10544](https://github.com/cvc5/cvc5/pull/10544), Mar Mon 25, 16:06 UTC)
+* [Documentation for PR #10546](docs-pr10546/) (built from [d20fbd6](https://github.com/cvc5/cvc5/commit/d20fbd6) @ [PR #10546](https://github.com/cvc5/cvc5/pull/10546), Mar Mon 25, 20:01 UTC)
 
 ***
 
 
-* [Documentation for main](docs-main/) (built from [a40d28f](https://github.com/cvc5/cvc5/commit/a40d28f) @ [main](https://github.com/cvc5/cvc5/tree/main), 2 hours ago)
-* [Documentation for PR #10544](docs-pr10544/) (built from [3ae7cf9](https://github.com/cvc5/cvc5/commit/3ae7cf9) @ [PR #10544](https://github.com/cvc5/cvc5/pull/10544), now)
-* [Documentation for PR #10539](docs-pr10539/) (built from [30d1abb](https://github.com/cvc5/cvc5/commit/30d1abb) @ [PR #10539](https://github.com/cvc5/cvc5/pull/10539), 2 hours ago)
+* [Documentation for main](docs-main/) (built from [a40d28f](https://github.com/cvc5/cvc5/commit/a40d28f) @ [main](https://github.com/cvc5/cvc5/tree/main), 6 hours ago)
+* [Documentation for PR #10546](docs-pr10546/) (built from [d20fbd6](https://github.com/cvc5/cvc5/commit/d20fbd6) @ [PR #10546](https://github.com/cvc5/cvc5/pull/10546), now)
+* [Documentation for PR #10544](docs-pr10544/) (built from [3ae7cf9](https://github.com/cvc5/cvc5/commit/3ae7cf9) @ [PR #10544](https://github.com/cvc5/cvc5/pull/10544), 4 hours ago)
+* [Documentation for PR #10539](docs-pr10539/) (built from [30d1abb](https://github.com/cvc5/cvc5/commit/30d1abb) @ [PR #10539](https://github.com/cvc5/cvc5/pull/10539), 6 hours ago)
 * [Documentation for PR #10538](docs-pr10538/) (built from [e9ad9f5](https://github.com/cvc5/cvc5/commit/e9ad9f5) @ [PR #10538](https://github.com/cvc5/cvc5/pull/10538), 3 days ago)
 * [Documentation for PR #10531](docs-pr10531/) (built from [1d7bb60](https://github.com/cvc5/cvc5/commit/1d7bb60) @ [PR #10531](https://github.com/cvc5/cvc5/pull/10531), 4 days ago)
 * [Documentation for PR #10530](docs-pr10530/) (built from [ec205bd](https://github.com/cvc5/cvc5/commit/ec205bd) @ [PR #10530](https://github.com/cvc5/cvc5/pull/10530), 4 days ago)
