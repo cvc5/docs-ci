@@ -1,26 +1,27 @@
 
 
-* [Documentation for PR #10944](docs-pr10944/) (built from [3e9727f](https://github.com/cvc5/cvc5/commit/3e9727f) @ [PR #10944](https://github.com/cvc5/cvc5/pull/10944), Jun Sat 22, 06:34 UTC)
+* [Documentation for PR #10947](docs-pr10947/) (built from [33047e3](https://github.com/cvc5/cvc5/commit/33047e3) @ [PR #10947](https://github.com/cvc5/cvc5/pull/10947), Jun Sat 22, 06:36 UTC)
 
 ***
 
 
 * [Documentation for main](docs-main/) (built from [fe2d58f](https://github.com/cvc5/cvc5/commit/fe2d58f) @ [main](https://github.com/cvc5/cvc5/tree/main), 2 hours ago)
 * [Documentation for PR #10948](docs-pr10948/) (built from [dbf9654](https://github.com/cvc5/cvc5/commit/dbf9654) @ [PR #10948](https://github.com/cvc5/cvc5/pull/10948), 17 hours ago)
+* [Documentation for PR #10947](docs-pr10947/) (built from [33047e3](https://github.com/cvc5/cvc5/commit/33047e3) @ [PR #10947](https://github.com/cvc5/cvc5/pull/10947), now)
 * [Documentation for PR #10945](docs-pr10945/) (built from [9def410](https://github.com/cvc5/cvc5/commit/9def410) @ [PR #10945](https://github.com/cvc5/cvc5/pull/10945), 3 days ago)
-* [Documentation for PR #10944](docs-pr10944/) (built from [3e9727f](https://github.com/cvc5/cvc5/commit/3e9727f) @ [PR #10944](https://github.com/cvc5/cvc5/pull/10944), now)
+* [Documentation for PR #10944](docs-pr10944/) (built from [3e9727f](https://github.com/cvc5/cvc5/commit/3e9727f) @ [PR #10944](https://github.com/cvc5/cvc5/pull/10944), 3 minutes ago)
 * [Documentation for PR #10942](docs-pr10942/) (built from [d2e3dc5](https://github.com/cvc5/cvc5/commit/d2e3dc5) @ [PR #10942](https://github.com/cvc5/cvc5/pull/10942), 4 days ago)
 * [Documentation for PR #10939](docs-pr10939/) (built from [dff8905](https://github.com/cvc5/cvc5/commit/dff8905) @ [PR #10939](https://github.com/cvc5/cvc5/pull/10939), 3 days ago)
-* [Documentation for PR #10938](docs-pr10938/) (built from [c3485bd](https://github.com/cvc5/cvc5/commit/c3485bd) @ [PR #10938](https://github.com/cvc5/cvc5/pull/10938), 19 minutes ago)
-* [Documentation for PR #10936](docs-pr10936/) (built from [77fcdda](https://github.com/cvc5/cvc5/commit/77fcdda) @ [PR #10936](https://github.com/cvc5/cvc5/pull/10936), 37 minutes ago)
-* [Documentation for PR #10935](docs-pr10935/) (built from [debd059](https://github.com/cvc5/cvc5/commit/debd059) @ [PR #10935](https://github.com/cvc5/cvc5/pull/10935), 35 minutes ago)
+* [Documentation for PR #10938](docs-pr10938/) (built from [c3485bd](https://github.com/cvc5/cvc5/commit/c3485bd) @ [PR #10938](https://github.com/cvc5/cvc5/pull/10938), 22 minutes ago)
+* [Documentation for PR #10936](docs-pr10936/) (built from [77fcdda](https://github.com/cvc5/cvc5/commit/77fcdda) @ [PR #10936](https://github.com/cvc5/cvc5/pull/10936), 40 minutes ago)
+* [Documentation for PR #10935](docs-pr10935/) (built from [debd059](https://github.com/cvc5/cvc5/commit/debd059) @ [PR #10935](https://github.com/cvc5/cvc5/pull/10935), 38 minutes ago)
 * [Documentation for PR #10934](docs-pr10934/) (built from [195939c](https://github.com/cvc5/cvc5/commit/195939c) @ [PR #10934](https://github.com/cvc5/cvc5/pull/10934), 7 days ago)
-* [Documentation for PR #10933](docs-pr10933/) (built from [f7b1562](https://github.com/cvc5/cvc5/commit/f7b1562) @ [PR #10933](https://github.com/cvc5/cvc5/pull/10933), 47 minutes ago)
-* [Documentation for PR #10931](docs-pr10931/) (built from [7441741](https://github.com/cvc5/cvc5/commit/7441741) @ [PR #10931](https://github.com/cvc5/cvc5/pull/10931), 66 minutes ago)
-* [Documentation for PR #10930](docs-pr10930/) (built from [a7576a7](https://github.com/cvc5/cvc5/commit/a7576a7) @ [PR #10930](https://github.com/cvc5/cvc5/pull/10930), 71 minutes ago)
+* [Documentation for PR #10933](docs-pr10933/) (built from [f7b1562](https://github.com/cvc5/cvc5/commit/f7b1562) @ [PR #10933](https://github.com/cvc5/cvc5/pull/10933), 50 minutes ago)
+* [Documentation for PR #10931](docs-pr10931/) (built from [7441741](https://github.com/cvc5/cvc5/commit/7441741) @ [PR #10931](https://github.com/cvc5/cvc5/pull/10931), 68 minutes ago)
+* [Documentation for PR #10930](docs-pr10930/) (built from [a7576a7](https://github.com/cvc5/cvc5/commit/a7576a7) @ [PR #10930](https://github.com/cvc5/cvc5/pull/10930), 73 minutes ago)
 * [Documentation for PR #10926](docs-pr10926/) (built from [e8c1f3e](https://github.com/cvc5/cvc5/commit/e8c1f3e) @ [PR #10926](https://github.com/cvc5/cvc5/pull/10926), 8 days ago)
-* [Documentation for PR #10922](docs-pr10922/) (built from [3cf5534](https://github.com/cvc5/cvc5/commit/3cf5534) @ [PR #10922](https://github.com/cvc5/cvc5/pull/10922), 81 minutes ago)
-* [Documentation for PR #10921](docs-pr10921/) (built from [7a7c8dc](https://github.com/cvc5/cvc5/commit/7a7c8dc) @ [PR #10921](https://github.com/cvc5/cvc5/pull/10921), 89 minutes ago)
+* [Documentation for PR #10922](docs-pr10922/) (built from [3cf5534](https://github.com/cvc5/cvc5/commit/3cf5534) @ [PR #10922](https://github.com/cvc5/cvc5/pull/10922), 84 minutes ago)
+* [Documentation for PR #10921](docs-pr10921/) (built from [7a7c8dc](https://github.com/cvc5/cvc5/commit/7a7c8dc) @ [PR #10921](https://github.com/cvc5/cvc5/pull/10921), 2 hours ago)
 * [Documentation for PR #10920](docs-pr10920/) (built from [d7968c9](https://github.com/cvc5/cvc5/commit/d7968c9) @ [PR #10920](https://github.com/cvc5/cvc5/pull/10920), 6 hours ago)
 * [Documentation for PR #10917](docs-pr10917/) (built from [98d9c83](https://github.com/cvc5/cvc5/commit/98d9c83) @ [PR #10917](https://github.com/cvc5/cvc5/pull/10917), 6 hours ago)
 * [Documentation for PR #10916](docs-pr10916/) (built from [a6b5b08](https://github.com/cvc5/cvc5/commit/a6b5b08) @ [PR #10916](https://github.com/cvc5/cvc5/pull/10916), 6 hours ago)
