@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+  </script>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   C API — cvc5  documentation
+  </title>
+  <link href="../../static/pygments.css?v=80d5e7a1" rel="stylesheet" type="text/css"/>
+  <link href="../../static/css/theme.css?v=19f00094" rel="stylesheet" type="text/css"/>
+  <link href="../../static/tabs.css?v=a5c4661c" rel="stylesheet" type="text/css"/>
+  <link href="../../static/custom.css?v=b9602cbe" rel="stylesheet" type="text/css"/>
+  <!--[if lt IE 9]>
+    <script src="../../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script src="../../static/jquery.js?v=5d32c60e">
+  </script>
+  <script src="../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c">
+  </script>
+  <script data-url_root="../../" id="documentation_options" src="../../static/documentation_options.js?v=b3ba4146">
+  </script>
+  <script src="../../static/doctools.js?v=888ff710">
+  </script>
+  <script src="../../static/sphinx_highlight.js?v=4825356b">
+  </script>
+  <script src="../../static/js/theme.js">
+  </script>
+  <link href="../../genindex.html" rel="index" title="Index"/>
+  <link href="../../search.html" rel="search" title="Search"/>
+  <link href="quickstart.html" rel="next" title="Quickstart Guide"/>
+  <link href="../cpp/enums/unknownexplanation.html" rel="prev" title="UnknownExplanation"/>
+ </head>
+ <body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+   <nav class="wy-nav-side" data-toggle="wy-nav-shift">
+    <div class="wy-side-scroll">
+     <div class="wy-side-nav-search">
+      <a class="icon icon-home" href="../../index.html">
+       cvc5
+      </a>
+      <div role="search">
+       <form action="../../search.html" class="wy-form" id="rtd-search-form" method="get">
+        <input aria-label="Search docs" name="q" placeholder="Search docs" type="text"/>
+        <input name="check_keywords" type="hidden" value="yes"/>
+        <input name="area" type="hidden" value="default"/>
+       </form>
+      </div>
+     </div>
+     <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+      <ul class="current">
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../installation/installation.html">
+         Installation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../binary/binary.html">
+         Binary Documentation
+        </a>
+       </li>
+       <li class="toctree-l1 current">
+        <a class="reference internal" href="../api.html">
+         API Documentation
+        </a>
+        <ul class="current">
+         <li class="toctree-l2">
+          <a class="reference internal" href="../cpp/cpp.html">
+           C++ API
+          </a>
+         </li>
+         <li class="toctree-l2 current">
+          <a class="current reference internal" href="#">
+           C API
+          </a>
+          <ul>
+           <li class="toctree-l3">
+            <a class="reference internal" href="quickstart.html">
+             Quickstart Guide
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5.html">
+             Cvc5
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5command.html">
+             Cvc5Command
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5datatype.html">
+             Cvc5Datatype
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5datatypedecl.html">
+             Cvc5DatatypeDecl
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5datatypeconstructor.html">
+             Cvc5DatatypeConstructor
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5datatypeconstructordecl.html">
+             Cvc5DatatypeConstructorDecl
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5datatypeselector.html">
+             Cvc5DatatypeSelector
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5grammar.html">
+             Cvc5Grammar
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5inputparser.html">
+             Cvc5InputParser
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5op.html">
+             Cvc5Op
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5proof.html">
+             Cvc5Proof
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5result.html">
+             Cvc5Result
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5sort.html">
+             Cvc5Sort
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5statistics.html">
+             Cvc5Statistics
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5symbolmanager.html">
+             Cvc5SymbolManager
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5synthresult.html">
+             Cvc5SynthResult
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5term.html">
+             Cvc5Term
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="types/cvc5termmanager.html">
+             Cvc5TermManager
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="structs/cvc5optioninfo.html">
+             Cvc5OptionInfo
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="structs/cvc5plugin.html">
+             Cvc5Plugin
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="enums/cvc5kind.html">
+             Cvc5Kind
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="enums/cvc5proofrule.html">
+             Cvc5ProofRule and Cvc5ProofRewriteRule
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="enums/cvc5sortkind.html">
+             Cvc5SortKind
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="enums/cvc5roundingmode.html">
+             Cvc5RoundingMode
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="enums/cvc5unknownexplanation.html">
+             Cvc5UnknownExplanation
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="enums/modes.html">
+             Modes
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="#types">
+             Types
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="#structs">
+             Structs
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="#enums">
+             Enums
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../java/java.html">
+           Java API
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../python/python.html">
+           Python API
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../options.html">
+         Options
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../output-tags.html">
+         Output tags
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../proofs/proofs.html">
+         Proof Production
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../resource-limits.html">
+         Resource limits
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../skolem-ids.html">
+         Skolem Identifiers
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../statistics.html">
+         Statistics
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../examples/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../theories/theories.html">
+         Theory References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../references.html">
+         References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../genindex.html">
+         Index
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div aria-label="versions" class="rst-versions shift-up" data-toggle="rst-versions" id="cvc5-versions" role="note">
+     <span class="rst-current-version" data-toggle="rst-current-version">
+      <i class="fas fa-tags">
+      </i>
+      Other versions
+     </span>
+     <div class="rst-other-versions">
+      <dl>
+       <dd>
+        <a href="https://cvc5.github.io/docs-ci/docs-main/">
+         cvc5-main
+        </a>
+       </dd>
+       <dd>
+        <strong>
+         <a href="../../../cvc5-1.2.0/">
+          cvc5-1.2.0
+         </a>
+        </strong>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.1.2/">
+         cvc5-1.1.2
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.1.1/">
+         cvc5-1.1.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.1.0/">
+         cvc5-1.1.0
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.9/">
+         cvc5-1.0.9
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.8/">
+         cvc5-1.0.8
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.7/">
+         cvc5-1.0.7
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.2/">
+         cvc5-1.0.2
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.1/">
+         cvc5-1.0.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.0/">
+         cvc5-1.0.0
+        </a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </nav>
+   <section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+    <nav aria-label="Mobile navigation menu" class="wy-nav-top">
+     <i class="fa fa-bars" data-toggle="wy-nav-top">
+     </i>
+     <a href="../../index.html">
+      cvc5
+     </a>
+    </nav>
+    <div class="wy-nav-content">
+     <div class="rst-content">
+      <div aria-label="Page navigation" role="navigation">
+       <ul class="wy-breadcrumbs">
+        <li>
+         <a aria-label="Home" class="icon icon-home" href="../../index.html">
+         </a>
+        </li>
+        <li class="breadcrumb-item">
+         <a href="../api.html">
+          API Documentation
+         </a>
+        </li>
+        <li class="breadcrumb-item active">
+         C API
+        </li>
+        <li class="wy-breadcrumbs-aside">
+        </li>
+       </ul>
+       <hr/>
+      </div>
+      <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+       <div itemprop="articleBody">
+        <section id="c-api">
+         <h1>
+          C API
+          <a class="headerlink" href="#c-api" title="Permalink to this heading">
+           
+          </a>
+         </h1>
+         <p>
+          The C API of cvc5 is based on its
+          <a class="reference internal" href="../cpp/cpp.html">
+           <span class="doc">
+            C++ API
+           </span>
+          </a>
+          and is
+          <strong>
+           feature complete
+          </strong>
+          , within the limits of the C language.
+The
+          <a class="reference internal" href="quickstart.html">
+           <span class="doc">
+            quickstart guide
+           </span>
+          </a>
+          gives a short introduction of how
+to use cvc5 via its C API.
+For most applications, the
+          <a class="reference internal" href="types/cvc5.html#_CPPv44Cvc5" title="Cvc5">
+           <code class="xref cpp cpp-type docutils literal notranslate">
+            <span class="pre">
+             Cvc5
+            </span>
+           </code>
+          </a>
+          solver struct is the main
+entry point to cvc5.
+         </p>
+         <p>
+          One of the key differences is the way
+          <strong>
+           how memory is managed
+          </strong>
+          . While users of
+the C++ API can rely on memory being efficiently managed automatically, on the
+C level, management to maintain a low overhead needs
+          <strong>
+           more manual
+intervention
+          </strong>
+          .
+         </p>
+         <p>
+          The C API offers
+          <strong>
+           two modes
+          </strong>
+          of memory management:
+         </p>
+         <ol class="arabic simple">
+          <li>
+           <p>
+            Let cvc5 handle memory management without manual intervention. All memory
+allocated by the C API via a term manager (
+            <a class="reference internal" href="types/cvc5termmanager.html#_CPPv415Cvc5TermManager" title="Cvc5TermManager">
+             <code class="xref cpp cpp-type docutils literal notranslate">
+              <span class="pre">
+               Cvc5TermManager
+              </span>
+             </code>
+            </a>
+            ) or
+solver (
+            <a class="reference internal" href="types/cvc5.html#_CPPv44Cvc5" title="Cvc5">
+             <code class="xref cpp cpp-type docutils literal notranslate">
+              <span class="pre">
+               Cvc5
+              </span>
+             </code>
+            </a>
+            ) instance will only be released when these
+instances are deleted via
+            <a class="reference internal" href="types/cvc5.html#_CPPv411cvc5_deleteP4Cvc5" title="cvc5_delete">
+             <code class="xref cpp cpp-func docutils literal notranslate">
+              <span class="pre">
+               cvc5_delete()
+              </span>
+             </code>
+            </a>
+            and
+            <code class="xref cpp cpp-func docutils literal notranslate">
+             <span class="pre">
+              cvc5_term_manager_delete()
+             </span>
+            </code>
+            . For example:
+           </p>
+          </li>
+         </ol>
+         <div class="highlight-c notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">Cvc5TermManager</span><span class="o">*</span><span class="w"> </span><span class="n">tm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_term_manager_new</span><span class="p">();</span>
+<span class="n">Cvc5</span><span class="o">*</span><span class="w"> </span><span class="n">cvc5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_new</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+<span class="n">Cvc5Term</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_get_integer_sort</span><span class="p">(</span><span class="n">tm</span><span class="p">),</span><span class="w"> </span><span class="s">"a"</span><span class="p">);</span>
+<span class="n">Cvc5Term</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_integer_int64</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="n">Cvc5Term</span><span class="w"> </span><span class="n">args1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">two</span><span class="p">};</span>
+<span class="n">cvc5_assert_formula</span><span class="p">(</span><span class="n">cvc5</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_EQUAL</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args1</span><span class="p">));</span>
+<span class="n">Cvc5Term</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_get_integer_sort</span><span class="p">(</span><span class="n">tm</span><span class="p">),</span><span class="w"> </span><span class="s">"b"</span><span class="p">);</span>
+<span class="n">Cvc5Term</span><span class="w"> </span><span class="n">args2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">two</span><span class="p">};</span>
+<span class="n">cvc5_assert_formula</span><span class="p">(</span><span class="n">cvc5</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_DISTINCT</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args2</span><span class="p">));</span>
+<span class="n">cvc5_check_sat</span><span class="p">(</span><span class="n">cvc5</span><span class="p">);</span>
+<span class="n">cvc5_delete</span><span class="p">(</span><span class="n">cvc5</span><span class="p">);</span>
+<span class="n">cvc5_term_manager_delete</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+</pre>
+          </div>
+         </div>
+         <ol class="arabic simple" start="2">
+          <li>
+           <p>
+            Introduce a more fine-grained, user-level memory management for objects
+created via a term manager or solver via the corresponding
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              cvc5_*_copy()
+             </span>
+            </code>
+            and
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              cvc5_*_release()
+             </span>
+            </code>
+            functions. The copy functions increment the
+reference counter of an object, the release functions decrement the
+reference counter and free its allocated memory when the counter reaches 0.
+For example:
+           </p>
+          </li>
+         </ol>
+         <div class="highlight-c notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">Cvc5TermManager</span><span class="o">*</span><span class="w"> </span><span class="n">tm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_term_manager_new</span><span class="p">();</span>
+<span class="n">Cvc5</span><span class="o">*</span><span class="w"> </span><span class="n">cvc5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_new</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+<span class="n">Cvc5Term</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_get_integer_sort</span><span class="p">(</span><span class="n">tm</span><span class="p">),</span><span class="w"> </span><span class="s">"a"</span><span class="p">);</span>
+<span class="n">Cvc5Term</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_integer_int64</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="n">Cvc5Term</span><span class="w"> </span><span class="n">args1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">two</span><span class="p">};</span>
+<span class="n">cvc5_assert_formula</span><span class="p">(</span><span class="n">cvc5</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_EQUAL</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args1</span><span class="p">));</span>
+<span class="c1">// we can release 'a' here, not needed anymore</span>
+<span class="n">cvc5_term_release</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="n">Cvc5Term</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_get_integer_sort</span><span class="p">(</span><span class="n">tm</span><span class="p">),</span><span class="w"> </span><span class="s">"b"</span><span class="p">);</span>
+<span class="n">Cvc5Term</span><span class="w"> </span><span class="n">args2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">two</span><span class="p">};</span>
+<span class="n">cvc5_assert_formula</span><span class="p">(</span><span class="n">cvc5</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_DISTINCT</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args2</span><span class="p">));</span>
+<span class="n">cvc5_check_sat</span><span class="p">(</span><span class="n">cvc5</span><span class="p">);</span>
+<span class="n">cvc5_delete</span><span class="p">(</span><span class="n">cvc5</span><span class="p">);</span>
+<span class="n">cvc5_term_manager_delete</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+</pre>
+          </div>
+         </div>
+         <div class="hide-toctree docutils container">
+          <div class="toctree-wrapper compound">
+           <ul>
+            <li class="toctree-l1">
+             <a class="reference internal" href="quickstart.html">
+              Quickstart Guide
+             </a>
+             <ul>
+              <li class="toctree-l2">
+               <a class="reference internal" href="quickstart.html#example">
+                Example
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5.html">
+              Cvc5
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5command.html">
+              Cvc5Command
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5datatype.html">
+              Cvc5Datatype
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5datatypedecl.html">
+              Cvc5DatatypeDecl
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5datatypeconstructor.html">
+              Cvc5DatatypeConstructor
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5datatypeconstructordecl.html">
+              Cvc5DatatypeConstructorDecl
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5datatypeselector.html">
+              Cvc5DatatypeSelector
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5grammar.html">
+              Cvc5Grammar
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5inputparser.html">
+              Cvc5InputParser
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5op.html">
+              Cvc5Op
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5proof.html">
+              Cvc5Proof
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5result.html">
+              Cvc5Result
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5sort.html">
+              Cvc5Sort
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5statistics.html">
+              Cvc5Statistics
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5symbolmanager.html">
+              Cvc5SymbolManager
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5synthresult.html">
+              Cvc5SynthResult
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5term.html">
+              Cvc5Term
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="types/cvc5termmanager.html">
+              Cvc5TermManager
+             </a>
+             <ul>
+              <li class="toctree-l2">
+               <a class="reference internal" href="types/cvc5termmanager.html#sort-creation">
+                Sort Creation
+               </a>
+              </li>
+              <li class="toctree-l2">
+               <a class="reference internal" href="types/cvc5termmanager.html#operator-creation">
+                Operator Creation
+               </a>
+              </li>
+              <li class="toctree-l2">
+               <a class="reference internal" href="types/cvc5termmanager.html#term-creation">
+                Term Creation
+               </a>
+              </li>
+              <li class="toctree-l2">
+               <a class="reference internal" href="types/cvc5termmanager.html#datatype-declaration-creation">
+                Datatype Declaration Creation
+               </a>
+              </li>
+              <li class="toctree-l2">
+               <a class="reference internal" href="types/cvc5termmanager.html#datatype-constructor-declaration-creation">
+                Datatype Constructor Declaration Creation
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="structs/cvc5optioninfo.html">
+              Cvc5OptionInfo
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="structs/cvc5plugin.html">
+              Cvc5Plugin
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="enums/cvc5kind.html">
+              Cvc5Kind
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="enums/cvc5proofrule.html">
+              Cvc5ProofRule and Cvc5ProofRewriteRule
+             </a>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="enums/cvc5sortkind.html">
+              Cvc5SortKind
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="enums/cvc5roundingmode.html">
+              Cvc5RoundingMode
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="enums/cvc5unknownexplanation.html">
+              Cvc5UnknownExplanation
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+            <li class="toctree-l1">
+             <a class="reference internal" href="enums/modes.html">
+              Modes
+             </a>
+             <ul class="simple">
+             </ul>
+            </li>
+           </ul>
+          </div>
+         </div>
+         <hr class="docutils"/>
+         <section id="types">
+          <h2>
+           Types
+           <a class="headerlink" href="#types" title="Permalink to this heading">
+            
+           </a>
+          </h2>
+          <p>
+           The following types are defined via typedefs but used as black boxes, their
+internals are hidden.
+          </p>
+          <ul class="simple">
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5.html">
+              <span class="doc">
+               Cvc5
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5command.html">
+              <span class="doc">
+               Cvc5Command
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5datatype.html">
+              <span class="doc">
+               Cvc5Datatype
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5datatypedecl.html">
+              <span class="doc">
+               Cvc5DatatypeDecl
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5datatypeconstructor.html">
+              <span class="doc">
+               Cvc5DatatypeConstructor
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5datatypeconstructordecl.html">
+              <span class="doc">
+               Cvc5DatatypeConstructorDecl
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5datatypeselector.html">
+              <span class="doc">
+               Cvc5DatatypeSelector
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5grammar.html">
+              <span class="doc">
+               Cvc5Grammar
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5inputparser.html">
+              <span class="doc">
+               Cvc5InputParser
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5op.html">
+              <span class="doc">
+               Cvc5Op
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5proof.html">
+              <span class="doc">
+               Cvc5Proof
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5result.html">
+              <span class="doc">
+               Cvc5Result
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5sort.html">
+              <span class="doc">
+               Cvc5Sort
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5statistics.html#_CPPv48Cvc5Stat" title="Cvc5Stat">
+              <code class="xref cpp cpp-type docutils literal notranslate">
+               <span class="pre">
+                Cvc5Stat
+               </span>
+              </code>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5statistics.html">
+              <span class="doc">
+               Cvc5Statistics
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5symbolmanager.html">
+              <span class="doc">
+               Cvc5SymbolManager
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5synthresult.html">
+              <span class="doc">
+               Cvc5SynthResult
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5term.html">
+              <span class="doc">
+               Cvc5Term
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             typedef struct
+             <a class="reference internal" href="types/cvc5termmanager.html">
+              <span class="doc">
+               Cvc5TermManager
+              </span>
+             </a>
+            </p>
+           </li>
+          </ul>
+         </section>
+         <section id="structs">
+          <h2>
+           Structs
+           <a class="headerlink" href="#structs" title="Permalink to this heading">
+            
+           </a>
+          </h2>
+          <p>
+           The following structs are fully exposed via the API.
+          </p>
+          <ul class="simple">
+           <li>
+            <p>
+             struct
+             <a class="reference internal" href="structs/cvc5optioninfo.html">
+              <span class="doc">
+               Cvc5OptionInfo
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             struct
+             <a class="reference internal" href="structs/cvc5plugin.html">
+              <span class="doc">
+               Cvc5Plugin
+              </span>
+             </a>
+            </p>
+           </li>
+          </ul>
+         </section>
+         <section id="enums">
+          <h2>
+           Enums
+           <a class="headerlink" href="#enums" title="Permalink to this heading">
+            
+           </a>
+          </h2>
+          <ul class="simple">
+           <li>
+            <p>
+             enum
+             <a class="reference internal" href="enums/cvc5kind.html">
+              <span class="doc">
+               Cvc5Kind
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             enum
+             <a class="reference internal" href="enums/cvc5sortkind.html">
+              <span class="doc">
+               Cvc5SortKind
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             enum
+             <a class="reference internal" href="structs/cvc5optioninfo.html#_CPPv418Cvc5OptionInfoKind" title="Cvc5OptionInfoKind">
+              <code class="xref cpp cpp-enum docutils literal notranslate">
+               <span class="pre">
+                Cvc5OptionInfoKind
+               </span>
+              </code>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             enum
+             <a class="reference internal" href="enums/cvc5proofrule.html#_CPPv413Cvc5ProofRule" title="Cvc5ProofRule">
+              <code class="xref cpp cpp-enum docutils literal notranslate">
+               <span class="pre">
+                Cvc5ProofRule
+               </span>
+              </code>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             enum
+             <a class="reference internal" href="enums/cvc5proofrule.html#_CPPv420Cvc5ProofRewriteRule" title="Cvc5ProofRewriteRule">
+              <code class="xref cpp cpp-enum docutils literal notranslate">
+               <span class="pre">
+                Cvc5ProofRewriteRule
+               </span>
+              </code>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             enum
+             <a class="reference internal" href="enums/cvc5roundingmode.html">
+              <span class="doc">
+               Cvc5RoundingMode
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             enum
+             <a class="reference internal" href="enums/cvc5unknownexplanation.html">
+              <span class="doc">
+               Cvc5UnknownExplanation
+              </span>
+             </a>
+            </p>
+           </li>
+           <li>
+            <p>
+             enums for
+             <a class="reference internal" href="enums/modes.html">
+              <span class="doc">
+               configuration modes
+              </span>
+             </a>
+            </p>
+            <ul>
+             <li>
+              <p>
+               enum
+               <a class="reference internal" href="enums/modes.html#_CPPv419Cvc5BlockModelsMode" title="Cvc5BlockModelsMode">
+                <code class="xref cpp cpp-enum docutils literal notranslate">
+                 <span class="pre">
+                  Cvc5BlockModelsMode
+                 </span>
+                </code>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               enum
+               <a class="reference internal" href="enums/modes.html#_CPPv418Cvc5LearnedLitType" title="Cvc5LearnedLitType">
+                <code class="xref cpp cpp-enum docutils literal notranslate">
+                 <span class="pre">
+                  Cvc5LearnedLitType
+                 </span>
+                </code>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               enum
+               <a class="reference internal" href="enums/modes.html#_CPPv418Cvc5ProofComponent" title="Cvc5ProofComponent">
+                <code class="xref cpp cpp-enum docutils literal notranslate">
+                 <span class="pre">
+                  Cvc5ProofComponent
+                 </span>
+                </code>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               enum
+               <a class="reference internal" href="enums/modes.html#_CPPv415Cvc5ProofFormat" title="Cvc5ProofFormat">
+                <code class="xref cpp cpp-enum docutils literal notranslate">
+                 <span class="pre">
+                  Cvc5ProofFormat
+                 </span>
+                </code>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               enum
+               <a class="reference internal" href="enums/modes.html#_CPPv419Cvc5FindSynthTarget" title="Cvc5FindSynthTarget">
+                <code class="xref cpp cpp-enum docutils literal notranslate">
+                 <span class="pre">
+                  Cvc5FindSynthTarget
+                 </span>
+                </code>
+               </a>
+              </p>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </section>
+        </section>
+       </div>
+      </div>
+      <footer>
+       <div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+        <a accesskey="p" class="btn btn-neutral float-left" href="../cpp/enums/unknownexplanation.html" rel="prev" title="UnknownExplanation">
+         <span aria-hidden="true" class="fa fa-arrow-circle-left">
+         </span>
+         Previous
+        </a>
+        <a accesskey="n" class="btn btn-neutral float-right" href="quickstart.html" rel="next" title="Quickstart Guide">
+         Next
+         <span aria-hidden="true" class="fa fa-arrow-circle-right">
+         </span>
+        </a>
+       </div>
+       <hr/>
+       <div role="contentinfo">
+        <p>
+         © Copyright 2024, the authors of cvc5.
+        </p>
+       </div>
+       Built with
+       <a href="https://www.sphinx-doc.org/">
+        Sphinx
+       </a>
+       using a
+       <a href="https://github.com/readthedocs/sphinx_rtd_theme">
+        theme
+       </a>
+       provided by
+       <a href="https://readthedocs.org">
+        Read the Docs
+       </a>
+       .
+      </footer>
+     </div>
+    </div>
+   </section>
+  </div>
+  <script>
+   jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ </body>
+</html>

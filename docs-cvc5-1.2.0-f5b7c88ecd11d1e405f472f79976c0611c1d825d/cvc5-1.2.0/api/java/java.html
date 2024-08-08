@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+  </script>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Java API — cvc5  documentation
+  </title>
+  <link href="../../static/pygments.css?v=80d5e7a1" rel="stylesheet" type="text/css"/>
+  <link href="../../static/css/theme.css?v=19f00094" rel="stylesheet" type="text/css"/>
+  <link href="../../static/tabs.css?v=a5c4661c" rel="stylesheet" type="text/css"/>
+  <link href="../../static/custom.css?v=b9602cbe" rel="stylesheet" type="text/css"/>
+  <!--[if lt IE 9]>
+    <script src="../../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script src="../../static/jquery.js?v=5d32c60e">
+  </script>
+  <script src="../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c">
+  </script>
+  <script data-url_root="../../" id="documentation_options" src="../../static/documentation_options.js?v=b3ba4146">
+  </script>
+  <script src="../../static/doctools.js?v=888ff710">
+  </script>
+  <script src="../../static/sphinx_highlight.js?v=4825356b">
+  </script>
+  <script src="../../static/js/theme.js">
+  </script>
+  <link href="../../genindex.html" rel="index" title="Index"/>
+  <link href="../../search.html" rel="search" title="Search"/>
+  <link href="quickstart.html" rel="next" title="Quickstart Guide"/>
+  <link href="../c/enums/modes.html" rel="prev" title="Modes"/>
+ </head>
+ <body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+   <nav class="wy-nav-side" data-toggle="wy-nav-shift">
+    <div class="wy-side-scroll">
+     <div class="wy-side-nav-search">
+      <a class="icon icon-home" href="../../index.html">
+       cvc5
+      </a>
+      <div role="search">
+       <form action="../../search.html" class="wy-form" id="rtd-search-form" method="get">
+        <input aria-label="Search docs" name="q" placeholder="Search docs" type="text"/>
+        <input name="check_keywords" type="hidden" value="yes"/>
+        <input name="area" type="hidden" value="default"/>
+       </form>
+      </div>
+     </div>
+     <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+      <ul class="current">
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../installation/installation.html">
+         Installation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../binary/binary.html">
+         Binary Documentation
+        </a>
+       </li>
+       <li class="toctree-l1 current">
+        <a class="reference internal" href="../api.html">
+         API Documentation
+        </a>
+        <ul class="current">
+         <li class="toctree-l2">
+          <a class="reference internal" href="../cpp/cpp.html">
+           C++ API
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../c/c.html">
+           C API
+          </a>
+         </li>
+         <li class="toctree-l2 current">
+          <a class="current reference internal" href="#">
+           Java API
+          </a>
+          <ul>
+           <li class="toctree-l3">
+            <a class="reference internal" href="quickstart.html">
+             Quickstart Guide
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="#building-cvc5-java-api">
+             Building cvc5 Java API
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="#id1">
+             Javadoc API Documentation
+            </a>
+            <ul>
+             <li class="toctree-l4">
+              <a class="reference internal" href="#id2">
+               Package io.github.cvc5
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="#id4">
+               Package io.github.cvc5.modes
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../python/python.html">
+           Python API
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../options.html">
+         Options
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../output-tags.html">
+         Output tags
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../proofs/proofs.html">
+         Proof Production
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../resource-limits.html">
+         Resource limits
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../skolem-ids.html">
+         Skolem Identifiers
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../statistics.html">
+         Statistics
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../examples/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../theories/theories.html">
+         Theory References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../references.html">
+         References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../genindex.html">
+         Index
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div aria-label="versions" class="rst-versions shift-up" data-toggle="rst-versions" id="cvc5-versions" role="note">
+     <span class="rst-current-version" data-toggle="rst-current-version">
+      <i class="fas fa-tags">
+      </i>
+      Other versions
+     </span>
+     <div class="rst-other-versions">
+      <dl>
+       <dd>
+        <a href="https://cvc5.github.io/docs-ci/docs-main/">
+         cvc5-main
+        </a>
+       </dd>
+       <dd>
+        <strong>
+         <a href="../../../cvc5-1.2.0/">
+          cvc5-1.2.0
+         </a>
+        </strong>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.1.2/">
+         cvc5-1.1.2
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.1.1/">
+         cvc5-1.1.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.1.0/">
+         cvc5-1.1.0
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.9/">
+         cvc5-1.0.9
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.8/">
+         cvc5-1.0.8
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.7/">
+         cvc5-1.0.7
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.2/">
+         cvc5-1.0.2
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.1/">
+         cvc5-1.0.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.0/">
+         cvc5-1.0.0
+        </a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </nav>
+   <section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+    <nav aria-label="Mobile navigation menu" class="wy-nav-top">
+     <i class="fa fa-bars" data-toggle="wy-nav-top">
+     </i>
+     <a href="../../index.html">
+      cvc5
+     </a>
+    </nav>
+    <div class="wy-nav-content">
+     <div class="rst-content">
+      <div aria-label="Page navigation" role="navigation">
+       <ul class="wy-breadcrumbs">
+        <li>
+         <a aria-label="Home" class="icon icon-home" href="../../index.html">
+         </a>
+        </li>
+        <li class="breadcrumb-item">
+         <a href="../api.html">
+          API Documentation
+         </a>
+        </li>
+        <li class="breadcrumb-item active">
+         Java API
+        </li>
+        <li class="wy-breadcrumbs-aside">
+        </li>
+       </ul>
+       <hr/>
+      </div>
+      <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+       <div itemprop="articleBody">
+        <section id="java-api">
+         <h1>
+          Java API
+          <a class="headerlink" href="#java-api" title="Permalink to this heading">
+           
+          </a>
+         </h1>
+         <p>
+          The Java API of cvc5 mostly mirrors the
+          <a class="reference internal" href="../cpp/cpp.html">
+           <span class="doc">
+            C++ API
+           </span>
+          </a>
+          and
+supports operator overloading, iterators, and exceptions.
+There are a few differences from the C++ API, such as using arbitrary-precision
+integer pairs, specifically, pairs of Java
+          <cite>
+           BigInteger
+          </cite>
+          objects, to represent
+rational numbers.
+The
+          <a class="reference internal" href="quickstart.html">
+           <span class="doc">
+            quickstart guide
+           </span>
+          </a>
+          gives a short introduction,
+and more examples can be found
+          <a class="reference external" href="../../examples/examples.html">
+           here
+          </a>
+          .
+         </p>
+         <p>
+          For most applications, the
+          <a class="reference external" href="io/github/cvc5/Solver.html">
+           Solver
+          </a>
+          class is the
+main entry point to cvc5.
+The class hierarchy of
+          <a class="reference external" href="io/github/cvc5/package-summary.html">
+           cvc5 package
+          </a>
+          provides more details on the individual classes.
+         </p>
+         <div class="toctree-wrapper compound">
+         </div>
+         <hr class="docutils"/>
+         <section id="building-cvc5-java-api">
+          <h2>
+           Building cvc5 Java API
+           <a class="headerlink" href="#building-cvc5-java-api" title="Permalink to this heading">
+            
+           </a>
+          </h2>
+          <div class="highlight-bash notranslate">
+           <div class="highlight">
+            <pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/cvc5/cvc5
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>cvc5
+$<span class="w"> </span>./configure.sh<span class="w"> </span>production<span class="w"> </span>--java-bindings<span class="w"> </span>--auto-download<span class="w"> </span>--prefix<span class="o">=</span>build/install
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+$<span class="w"> </span>make
+$<span class="w"> </span>make<span class="w"> </span>install
+
+$<span class="w"> </span>ls<span class="w"> </span>install/lib
+<span class="w">  </span>cmake<span class="w">  </span>libcvc5jni.so<span class="w">  </span>libcvc5parser.so<span class="w">  </span>libcvc5parser.so.1<span class="w">  </span>libcvc5.so
+<span class="w">  </span>libpicpoly.a<span class="w">  </span>libpicpolyxx.a<span class="w">  </span>libpoly.so<span class="w"> </span>libpoly.so.0<span class="w">  </span>libpoly.so.0.1.9
+<span class="w">  </span>libpolyxx.so<span class="w">  </span>libpolyxx.so.0<span class="w">  </span>libpolyxx.so.0.1.9<span class="w">  </span>objects-Production
+$<span class="w"> </span>ls<span class="w"> </span>install/share/java/
+<span class="w">  </span>cvc5-0.0.5-dev.jar<span class="w">  </span>cvc5.jar
+
+<span class="c1"># compile example QuickStart.java with cvc5 jar file</span>
+$<span class="w"> </span>javac<span class="w"> </span>-cp<span class="w"> </span><span class="s2">"install/share/java/cvc5.jar"</span><span class="w"> </span>../examples/api/java/QuickStart.java<span class="w"> </span>-d<span class="w"> </span>.
+
+<span class="c1"># run example QuickStart with cvc5 jar file and cvc5 shared libraries</span>
+$<span class="w"> </span>java<span class="w"> </span>-cp<span class="w"> </span><span class="s2">"install/share/java/cvc5.jar:."</span><span class="w"> </span><span class="s2">"-Djava.library.path=install/lib"</span><span class="w"> </span>QuickStart
+<span class="w">  </span>expected:<span class="w"> </span>sat
+<span class="w">  </span>result:<span class="w"> </span>sat
+<span class="w">  </span>value<span class="w"> </span><span class="k">for</span><span class="w"> </span>x:<span class="w"> </span><span class="m">1</span>/6
+<span class="w">  </span>value<span class="w"> </span><span class="k">for</span><span class="w"> </span>y:<span class="w"> </span><span class="m">1</span>/6
+<span class="w">  </span>expected:<span class="w"> </span>unsat
+<span class="w">  </span>result:<span class="w"> </span>unsat
+<span class="w">  </span>unsat<span class="w"> </span>core<span class="w"> </span>size:<span class="w"> </span><span class="m">3</span>
+<span class="w">  </span>unsat<span class="w"> </span>core:
+<span class="w">  </span><span class="o">(</span>&lt;<span class="w"> </span><span class="m">0</span><span class="w"> </span>a<span class="o">)</span>
+<span class="w">  </span><span class="o">(</span>&lt;<span class="w"> </span><span class="m">0</span><span class="w"> </span>b<span class="o">)</span>
+<span class="w">  </span><span class="o">(</span>&lt;<span class="w"> </span><span class="o">(</span>+<span class="w"> </span>a<span class="w"> </span>b<span class="o">)</span><span class="w"> </span><span class="m">1</span><span class="o">)</span>
+</pre>
+           </div>
+          </div>
+         </section>
+         <hr class="docutils"/>
+         <section id="id1">
+          <h2>
+           <a class="reference external" href="index.html">
+            Javadoc API Documentation
+           </a>
+           <a class="headerlink" href="#id1" title="Permalink to this heading">
+            
+           </a>
+          </h2>
+          <section id="id2">
+           <h3>
+            <a class="reference external" href="io/github/cvc5/package-summary.html">
+             Package io.github.cvc5
+            </a>
+            <a class="headerlink" href="#id2" title="Permalink to this heading">
+             
+            </a>
+           </h3>
+           <blockquote>
+            <div>
+             <ul class="simple">
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/AbstractPlugin.html">
+                 AbstractPlugin
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/Command.html">
+                 Command
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/Datatype.html">
+                 Datatype
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/DatatypeConstructor.html">
+                 DatatypeConstructor
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/DatatypeConstructorDecl.html">
+                 DatatypeConstructorDecl
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/DatatypeDecl.html">
+                 DatatypeDecl
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/DatatypeSelector.html">
+                 DatatypeSelector
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/Grammar.html">
+                 Grammar
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/InputParser.html">
+                 InputParser
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/Op.html">
+                 Op
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/OptionInfo.html">
+                 OptionInfo
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/Pair.html">
+                 Pair&lt;K,V&gt;
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/Proof.html">
+                 Proof
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/Result.html">
+                 Result
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/Solver.html">
+                 Solver
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/Sort.html">
+                 Sort
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/Stat.html">
+                 Stat
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/Statistics.html">
+                 Statistics
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/SymbolManager.html">
+                 SymbolManager
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/SynthResult.html">
+                 SynthResult
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/Term.html">
+                 Term
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/TermManager.html">
+                 TermManager
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/Triplet.html">
+                 Triplet&lt;A,B,C&gt;
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                class
+                <a class="reference external" href="io/github/cvc5/Utils.html">
+                 Utils
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                enum
+                <a class="reference external" href="io/github/cvc5/Kind.html">
+                 Kind
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                enum
+                <a class="reference external" href="io/github/cvc5/Result.UnknownExplanation.html">
+                 Result.UnknownExplanation
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                enum
+                <a class="reference external" href="io/github/cvc5/RoundingMode.html">
+                 RoundingMode
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                enum
+                <a class="reference external" href="io/github/cvc5/ProofRule.html">
+                 ProofRule
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                exception
+                <a class="reference external" href="io/github/cvc5/CVC5ApiException.html">
+                 CVC5ApiException
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                exception
+                <a class="reference external" href="io/github/cvc5/CVC5ApiOptionException.html">
+                 CVC5ApiOptionException
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                exception
+                <a class="reference external" href="io/github/cvc5/CVC5ApiRecoverableException.html">
+                 CVC5ApiRecoverableException
+                </a>
+               </p>
+              </li>
+             </ul>
+            </div>
+           </blockquote>
+          </section>
+          <section id="id4">
+           <h3>
+            <a class="reference external" href="io/github/cvc5/modes/package-summary.html">
+             Package io.github.cvc5.modes
+            </a>
+            <a class="headerlink" href="#id4" title="Permalink to this heading">
+             
+            </a>
+           </h3>
+           <blockquote>
+            <div>
+             <ul class="simple">
+              <li>
+               <p>
+                enum
+                <a class="reference external" href="io/github/cvc5/modes/BlockModelsMode.html">
+                 BlockModelsMode
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                enum
+                <a class="reference external" href="io/github/cvc5/modes/FindSynthTarget.html">
+                 FindSynthTarget
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                enum
+                <a class="reference external" href="io/github/cvc5/modes/InputLanguage.html">
+                 InputLanguage
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                enum
+                <a class="reference external" href="io/github/cvc5/modes/LearnedLitType.html">
+                 LearnedLitType
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                enum
+                <a class="reference external" href="io/github/cvc5/modes/ProofComponent.html">
+                 ProofComponent
+                </a>
+               </p>
+              </li>
+              <li>
+               <p>
+                enum
+                <a class="reference external" href="io/github/cvc5/modes/ProofFormat.html">
+                 ProofFormat
+                </a>
+               </p>
+              </li>
+             </ul>
+            </div>
+           </blockquote>
+          </section>
+         </section>
+        </section>
+       </div>
+      </div>
+      <footer>
+       <div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+        <a accesskey="p" class="btn btn-neutral float-left" href="../c/enums/modes.html" rel="prev" title="Modes">
+         <span aria-hidden="true" class="fa fa-arrow-circle-left">
+         </span>
+         Previous
+        </a>
+        <a accesskey="n" class="btn btn-neutral float-right" href="quickstart.html" rel="next" title="Quickstart Guide">
+         Next
+         <span aria-hidden="true" class="fa fa-arrow-circle-right">
+         </span>
+        </a>
+       </div>
+       <hr/>
+       <div role="contentinfo">
+        <p>
+         © Copyright 2024, the authors of cvc5.
+        </p>
+       </div>
+       Built with
+       <a href="https://www.sphinx-doc.org/">
+        Sphinx
+       </a>
+       using a
+       <a href="https://github.com/readthedocs/sphinx_rtd_theme">
+        theme
+       </a>
+       provided by
+       <a href="https://readthedocs.org">
+        Read the Docs
+       </a>
+       .
+      </footer>
+     </div>
+    </div>
+   </section>
+  </div>
+  <script>
+   jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ </body>
+</html>

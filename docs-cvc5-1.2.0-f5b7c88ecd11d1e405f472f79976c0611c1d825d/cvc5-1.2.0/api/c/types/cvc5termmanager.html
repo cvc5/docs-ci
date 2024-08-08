@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+  </script>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Cvc5TermManager — cvc5  documentation
+  </title>
+  <link href="../../../static/pygments.css?v=80d5e7a1" rel="stylesheet" type="text/css"/>
+  <link href="../../../static/css/theme.css?v=19f00094" rel="stylesheet" type="text/css"/>
+  <link href="../../../static/tabs.css?v=a5c4661c" rel="stylesheet" type="text/css"/>
+  <link href="../../../static/custom.css?v=b9602cbe" rel="stylesheet" type="text/css"/>
+  <!--[if lt IE 9]>
+    <script src="../../../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script src="../../../static/jquery.js?v=5d32c60e">
+  </script>
+  <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c">
+  </script>
+  <script data-url_root="../../../" id="documentation_options" src="../../../static/documentation_options.js?v=b3ba4146">
+  </script>
+  <script src="../../../static/doctools.js?v=888ff710">
+  </script>
+  <script src="../../../static/sphinx_highlight.js?v=4825356b">
+  </script>
+  <script src="../../../static/js/theme.js">
+  </script>
+  <link href="../../../genindex.html" rel="index" title="Index"/>
+  <link href="../../../search.html" rel="search" title="Search"/>
+  <link href="../structs/cvc5optioninfo.html" rel="next" title="Cvc5OptionInfo"/>
+  <link href="cvc5term.html" rel="prev" title="Cvc5Term"/>
+ </head>
+ <body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+   <nav class="wy-nav-side" data-toggle="wy-nav-shift">
+    <div class="wy-side-scroll">
+     <div class="wy-side-nav-search">
+      <a class="icon icon-home" href="../../../index.html">
+       cvc5
+      </a>
+      <div role="search">
+       <form action="../../../search.html" class="wy-form" id="rtd-search-form" method="get">
+        <input aria-label="Search docs" name="q" placeholder="Search docs" type="text"/>
+        <input name="check_keywords" type="hidden" value="yes"/>
+        <input name="area" type="hidden" value="default"/>
+       </form>
+      </div>
+     </div>
+     <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+      <ul class="current">
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../installation/installation.html">
+         Installation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../binary/binary.html">
+         Binary Documentation
+        </a>
+       </li>
+       <li class="toctree-l1 current">
+        <a class="reference internal" href="../../api.html">
+         API Documentation
+        </a>
+        <ul class="current">
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../cpp/cpp.html">
+           C++ API
+          </a>
+         </li>
+         <li class="toctree-l2 current">
+          <a class="reference internal" href="../c.html">
+           C API
+          </a>
+          <ul class="current">
+           <li class="toctree-l3">
+            <a class="reference internal" href="../quickstart.html">
+             Quickstart Guide
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cvc5.html">
+             Cvc5
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cvc5command.html">
+             Cvc5Command
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cvc5datatype.html">
+             Cvc5Datatype
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cvc5datatypedecl.html">
+             Cvc5DatatypeDecl
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cvc5datatypeconstructor.html">
+             Cvc5DatatypeConstructor
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cvc5datatypeconstructordecl.html">
+             Cvc5DatatypeConstructorDecl
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cvc5datatypeselector.html">
+             Cvc5DatatypeSelector
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cvc5grammar.html">
+             Cvc5Grammar
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cvc5inputparser.html">
+             Cvc5InputParser
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cvc5op.html">
+             Cvc5Op
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cvc5proof.html">
+             Cvc5Proof
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cvc5result.html">
+             Cvc5Result
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cvc5sort.html">
+             Cvc5Sort
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cvc5statistics.html">
+             Cvc5Statistics
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cvc5symbolmanager.html">
+             Cvc5SymbolManager
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cvc5synthresult.html">
+             Cvc5SynthResult
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cvc5term.html">
+             Cvc5Term
+            </a>
+           </li>
+           <li class="toctree-l3 current">
+            <a class="current reference internal" href="#">
+             Cvc5TermManager
+            </a>
+            <ul>
+             <li class="toctree-l4">
+              <a class="reference internal" href="#sort-creation">
+               Sort Creation
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="#operator-creation">
+               Operator Creation
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="#term-creation">
+               Term Creation
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="#datatype-declaration-creation">
+               Datatype Declaration Creation
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="#datatype-constructor-declaration-creation">
+               Datatype Constructor Declaration Creation
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../structs/cvc5optioninfo.html">
+             Cvc5OptionInfo
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../structs/cvc5plugin.html">
+             Cvc5Plugin
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../enums/cvc5kind.html">
+             Cvc5Kind
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../enums/cvc5proofrule.html">
+             Cvc5ProofRule and Cvc5ProofRewriteRule
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../enums/cvc5sortkind.html">
+             Cvc5SortKind
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../enums/cvc5roundingmode.html">
+             Cvc5RoundingMode
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../enums/cvc5unknownexplanation.html">
+             Cvc5UnknownExplanation
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../enums/modes.html">
+             Modes
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../c.html#types">
+             Types
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../c.html#structs">
+             Structs
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../c.html#enums">
+             Enums
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../java/java.html">
+           Java API
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../python/python.html">
+           Python API
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../options.html">
+         Options
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../output-tags.html">
+         Output tags
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../proofs/proofs.html">
+         Proof Production
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../resource-limits.html">
+         Resource limits
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../skolem-ids.html">
+         Skolem Identifiers
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../statistics.html">
+         Statistics
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../examples/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../theories/theories.html">
+         Theory References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../references.html">
+         References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../genindex.html">
+         Index
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div aria-label="versions" class="rst-versions shift-up" data-toggle="rst-versions" id="cvc5-versions" role="note">
+     <span class="rst-current-version" data-toggle="rst-current-version">
+      <i class="fas fa-tags">
+      </i>
+      Other versions
+     </span>
+     <div class="rst-other-versions">
+      <dl>
+       <dd>
+        <a href="https://cvc5.github.io/docs-ci/docs-main/">
+         cvc5-main
+        </a>
+       </dd>
+       <dd>
+        <strong>
+         <a href="../../../../cvc5-1.2.0/">
+          cvc5-1.2.0
+         </a>
+        </strong>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.1.2/">
+         cvc5-1.1.2
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.1.1/">
+         cvc5-1.1.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.1.0/">
+         cvc5-1.1.0
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.0.9/">
+         cvc5-1.0.9
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.0.8/">
+         cvc5-1.0.8
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.0.7/">
+         cvc5-1.0.7
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.0.2/">
+         cvc5-1.0.2
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.0.1/">
+         cvc5-1.0.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.0.0/">
+         cvc5-1.0.0
+        </a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </nav>
+   <section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+    <nav aria-label="Mobile navigation menu" class="wy-nav-top">
+     <i class="fa fa-bars" data-toggle="wy-nav-top">
+     </i>
+     <a href="../../../index.html">
+      cvc5
+     </a>
+    </nav>
+    <div class="wy-nav-content">
+     <div class="rst-content">
+      <div aria-label="Page navigation" role="navigation">
+       <ul class="wy-breadcrumbs">
+        <li>
+         <a aria-label="Home" class="icon icon-home" href="../../../index.html">
+         </a>
+        </li>
+        <li class="breadcrumb-item">
+         <a href="../../api.html">
+          API Documentation
+         </a>
+        </li>
+        <li class="breadcrumb-item">
+         <a href="../c.html">
+          C API
+         </a>
+        </li>
+        <li class="breadcrumb-item active">
+         Cvc5TermManager
+        </li>
+        <li class="wy-breadcrumbs-aside">
+        </li>
+       </ul>
+       <hr/>
+      </div>
+      <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+       <div itemprop="articleBody">
+        <section id="cvc5termmanager">
+         <h1>
+          Cvc5TermManager
+          <a class="headerlink" href="#cvc5termmanager" title="Permalink to this heading">
+           
+          </a>
+         </h1>
+         <p>
+          This struct represents a cvc5 term manager instance.
+         </p>
+         <p>
+          <a class="reference internal" href="cvc5term.html#_CPPv48Cvc5Term" title="Cvc5Term">
+           <code class="xref cpp cpp-type docutils literal notranslate">
+            <span class="pre">
+             Terms
+            </span>
+           </code>
+          </a>
+          ,
+          <a class="reference internal" href="cvc5sort.html#_CPPv48Cvc5Sort" title="Cvc5Sort">
+           <code class="xref cpp cpp-type docutils literal notranslate">
+            <span class="pre">
+             Sorts
+            </span>
+           </code>
+          </a>
+          and
+          <a class="reference internal" href="cvc5op.html#_CPPv46Cvc5Op" title="Cvc5Op">
+           <code class="xref cpp cpp-type docutils literal notranslate">
+            <span class="pre">
+             Ops
+            </span>
+           </code>
+          </a>
+          are not tied to a
+          <a class="reference internal" href="cvc5.html#_CPPv44Cvc5" title="Cvc5">
+           <code class="xref cpp cpp-type docutils literal notranslate">
+            <span class="pre">
+             Cvc5
+            </span>
+           </code>
+          </a>
+          but associated with a
+          <a class="reference internal" href="#_CPPv415Cvc5TermManager" title="Cvc5TermManager">
+           <code class="xref cpp cpp-type docutils literal notranslate">
+            <span class="pre">
+             Cvc5TermManager
+            </span>
+           </code>
+          </a>
+          instance, which can be
+shared between solver instances (and thus allows sharing of terms and sorts
+between solver instances).
+         </p>
+         <p>
+          Term kinds are defined via enum
+          <a class="reference internal" href="../enums/cvc5kind.html">
+           <span class="doc">
+            Cvc5Kind
+           </span>
+          </a>
+          , and sort
+kinds via enum
+          <a class="reference internal" href="../enums/cvc5sortkind.html">
+           <span class="doc">
+            Cvc5SortKind
+           </span>
+          </a>
+          .
+         </p>
+         <p>
+          Solver options are configured via
+          <a class="reference internal" href="cvc5.html#_CPPv415cvc5_set_optionP4Cvc5PKcPKc" title="cvc5_set_option">
+           <code class="xref cpp cpp-func docutils literal notranslate">
+            <span class="pre">
+             cvc5_set_option()
+            </span>
+           </code>
+          </a>
+          and queried via
+          <a class="reference internal" href="cvc5.html#_CPPv415cvc5_get_optionP4Cvc5PKc" title="cvc5_get_option">
+           <code class="xref cpp cpp-func docutils literal notranslate">
+            <span class="pre">
+             cvc5_get_option()
+            </span>
+           </code>
+          </a>
+          (for more information on configuration options, see
+          <a class="reference internal" href="../../../options.html">
+           <span class="doc">
+            Options
+           </span>
+          </a>
+          ).
+Information about a specific option can be retrieved via
+          <a class="reference internal" href="cvc5.html#_CPPv420cvc5_get_option_infoP4Cvc5PKcP14Cvc5OptionInfo" title="cvc5_get_option_info">
+           <code class="xref cpp cpp-func docutils literal notranslate">
+            <span class="pre">
+             cvc5_get_option_info()
+            </span>
+           </code>
+          </a>
+          (see
+          <a class="reference internal" href="../structs/cvc5optioninfo.html">
+           <span class="doc">
+            Cvc5OptionInfo
+           </span>
+          </a>
+          ).
+         </p>
+         <div class="hide-toctree docutils container">
+          <div class="toctree-wrapper compound">
+          </div>
+         </div>
+         <hr class="docutils"/>
+         <dl class="cpp type">
+          <dt class="sig sig-object cpp" id="_CPPv415Cvc5TermManager">
+           <span id="_CPPv315Cvc5TermManager">
+           </span>
+           <span id="_CPPv215Cvc5TermManager">
+           </span>
+           <span id="Cvc5TermManager">
+           </span>
+           <span class="target" id="cvc5_8h_1a8bedc84b587fc20bc7a917aea0470040">
+           </span>
+           <span class="k">
+            <span class="pre">
+             typedef
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="k">
+            <span class="pre">
+             struct
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <a class="reference internal" href="#_CPPv415Cvc5TermManager" title="Cvc5TermManager">
+            <span class="n">
+             <span class="pre">
+              Cvc5TermManager
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              Cvc5TermManager
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#_CPPv415Cvc5TermManager" title="Permalink to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            A cvc5 term (and sort) manager.
+           </p>
+          </dd>
+         </dl>
+         <hr class="docutils"/>
+         <div class="admonition warning">
+          <p class="admonition-title">
+           Warning
+          </p>
+          <p>
+           doxygengroup: Cannot find group “c_cvc5termmanager” in doxygen xml output for project “cvc5_c” from directory: /home/runner/work/cvc5/cvc5/build-shared/docs/api/c/doxygen/xml
+          </p>
+         </div>
+         <hr class="docutils"/>
+         <section id="sort-creation">
+          <h2>
+           Sort Creation
+           <a class="headerlink" href="#sort-creation" title="Permalink to this heading">
+            
+           </a>
+          </h2>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <p>
+            doxygengroup: Cannot find group “c_sort_creation” in doxygen xml output for project “cvc5_c” from directory: /home/runner/work/cvc5/cvc5/build-shared/docs/api/c/doxygen/xml
+           </p>
+          </div>
+         </section>
+         <hr class="docutils"/>
+         <section id="operator-creation">
+          <h2>
+           Operator Creation
+           <a class="headerlink" href="#operator-creation" title="Permalink to this heading">
+            
+           </a>
+          </h2>
+          <dl class="cpp function">
+           <dt class="sig sig-object cpp" id="_CPPv410cvc5_mk_opP15Cvc5TermManager8Cvc5Kind6size_tA_K8uint32_t">
+            <span id="_CPPv310cvc5_mk_opP15Cvc5TermManager8Cvc5Kind6size_tA_K8uint32_t">
+            </span>
+            <span id="_CPPv210cvc5_mk_opP15Cvc5TermManager8Cvc5Kind6size_tA_K8uint32_t">
+            </span>
+            <span id="cvc5_mk_op__Cvc5TermManagerP.Cvc5Kind.s.uint32_tCA">
+            </span>
+            <span class="target" id="group__c__op__creation_1gaa44b2faa1587728fef6b1c77173ee0f5">
+            </span>
+            <a class="reference internal" href="cvc5op.html#_CPPv46Cvc5Op" title="Cvc5Op">
+             <span class="n">
+              <span class="pre">
+               Cvc5Op
+              </span>
+             </span>
+            </a>
+            <span class="w">
+            </span>
+            <span class="sig-name descname">
+             <span class="n">
+              <span class="pre">
+               cvc5_mk_op
+              </span>
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <a class="reference internal" href="#_CPPv415Cvc5TermManager" title="Cvc5TermManager">
+             <span class="n">
+              <span class="pre">
+               Cvc5TermManager
+              </span>
+             </span>
+            </a>
+            <span class="w">
+            </span>
+            <span class="p">
+             <span class="pre">
+              *
+             </span>
+            </span>
+            <span class="n sig-param">
+             <span class="pre">
+              tm
+             </span>
+            </span>
+            ,
+            <a class="reference internal" href="../enums/cvc5kind.html#_CPPv48Cvc5Kind" title="Cvc5Kind">
+             <span class="n">
+              <span class="pre">
+               Cvc5Kind
+              </span>
+             </span>
+            </a>
+            <span class="w">
+            </span>
+            <span class="n sig-param">
+             <span class="pre">
+              kind
+             </span>
+            </span>
+            ,
+            <span class="n">
+             <span class="pre">
+              size_t
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n sig-param">
+             <span class="pre">
+              size
+             </span>
+            </span>
+            ,
+            <span class="k">
+             <span class="pre">
+              const
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n">
+             <span class="pre">
+              uint32_t
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="n sig-param">
+             <span class="pre">
+              idxs
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              [
+             </span>
+            </span>
+            <span class="p">
+             <span class="pre">
+              ]
+             </span>
+            </span>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#_CPPv410cvc5_mk_opP15Cvc5TermManager8Cvc5Kind6size_tA_K8uint32_t" title="Permalink to this definition">
+             
+            </a>
+            <br/>
+           </dt>
+           <dd>
+            <p>
+             Create operator of Kind:
+            </p>
+            <ul class="simple">
+             <li>
+              <p>
+               <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fa660128e062baeb49daa8d69d8e959f0e">
+                <span class="std std-ref">
+                 CVC5_KIND_BITVECTOR_EXTRACT
+                </span>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fa3e1463b3f0fff8323cbb4eeeb285c200">
+                <span class="std std-ref">
+                 CVC5_KIND_BITVECTOR_REPEAT
+                </span>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fab608e31af0a8d9cd3a43b449c4de82f0">
+                <span class="std std-ref">
+                 CVC5_KIND_BITVECTOR_ROTATE_LEFT
+                </span>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fa5dca98d403c484104039ecab43eab570">
+                <span class="std std-ref">
+                 CVC5_KIND_BITVECTOR_ROTATE_RIGHT
+                </span>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fa4af42c6dda1d2a4baaeb8e5c6f7fcef4">
+                <span class="std std-ref">
+                 CVC5_KIND_BITVECTOR_SIGN_EXTEND
+                </span>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fa83f55ad567c1a47e88f888c10c153665">
+                <span class="std std-ref">
+                 CVC5_KIND_BITVECTOR_ZERO_EXTEND
+                </span>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fa2df8140201fba1ee2a662af16ad929ae">
+                <span class="std std-ref">
+                 CVC5_KIND_DIVISIBLE
+                </span>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fae9420b98134b979bb3cdec02dd15783e">
+                <span class="std std-ref">
+                 CVC5_KIND_FLOATINGPOINT_TO_FP_FROM_FP
+                </span>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fac578acdcb2d91a9609e5145ca7e918e0">
+                <span class="std std-ref">
+                 CVC5_KIND_FLOATINGPOINT_TO_FP_FROM_IEEE_BV
+                </span>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fa8908bfae72c29076ce4d5fc918e7b886">
+                <span class="std std-ref">
+                 CVC5_KIND_FLOATINGPOINT_TO_FP_FROM_REAL
+                </span>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fa511e768846b5ee7bfe8cf878cfaeb00c">
+                <span class="std std-ref">
+                 CVC5_KIND_FLOATINGPOINT_TO_FP_FROM_SBV
+                </span>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fa85d87c7fb9cafb9ee8244e9da465daae">
+                <span class="std std-ref">
+                 CVC5_KIND_FLOATINGPOINT_TO_FP_FROM_UBV
+                </span>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fa12293107a0a809af1fc723adcd2e5d0f">
+                <span class="std std-ref">
+                 CVC5_KIND_FLOATINGPOINT_TO_SBV
+                </span>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fa6add1b32da33a33646ac5b8555050232">
+                <span class="std std-ref">
+                 CVC5_KIND_FLOATINGPOINT_TO_UBV
+                </span>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237facaeee095afffe6bd79c2b0fa354ae2da">
+                <span class="std std-ref">
+                 CVC5_KIND_INT_TO_BITVECTOR
+                </span>
+               </a>
+              </p>
+             </li>
+             <li>
+              <p>
+               <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fac38dafd67fcc028f982cc0eabfc85725">
+                <span class="std std-ref">
+                 CVC5_KIND_TUPLE_PROJECT
+                </span>
+               </a>
+              </p>
+             </li>
+            </ul>
+            <p>
+             See
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               Cvc5Kind
+              </span>
+             </code>
+             for a description of the parameters.
+            </p>
+            <div class="admonition note">
+             <p class="admonition-title">
+              Note
+             </p>
+             <p>
+              If
+              <code class="docutils literal notranslate">
+               <span class="pre">
+                idxs
+               </span>
+              </code>
+              is empty, the Cvc5Op simply wraps the Cvc5Kind. The Cvc5Kind can be used in cvc5_mk_term directly without creating a Cvc5Op first.
+             </p>
+            </div>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+              <span class="colon">
+               :
+              </span>
+             </dt>
+             <dd class="field-odd">
+              <ul class="simple">
+               <li>
+                <p>
+                 <strong>
+                  tm
+                 </strong>
+                 – The term manager instance.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  kind
+                 </strong>
+                 – The kind of the operator.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  size
+                 </strong>
+                 – The number of indices of the operator.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  idxs
+                 </strong>
+                 – The indices.
+                </p>
+               </li>
+              </ul>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="cpp function">
+           <dt class="sig sig-object cpp" id="_CPPv419cvc5_mk_op_from_strP15Cvc5TermManager8Cvc5KindPKc">
+            <span id="_CPPv319cvc5_mk_op_from_strP15Cvc5TermManager8Cvc5KindPKc">
+            </span>
+            <span id="_CPPv219cvc5_mk_op_from_strP15Cvc5TermManager8Cvc5KindPKc">
+            </span>
+            <span id="cvc5_mk_op_from_str__Cvc5TermManagerP.Cvc5Kind.cCP">
+            </span>
+            <span class="target" id="group__c__op__creation_1gaab377162ae40e581f46ed0447bc9f65b">
+            </span>
+            <a class="reference internal" href="cvc5op.html#_CPPv46Cvc5Op" title="Cvc5Op">
+             <span class="n">
+              <span class="pre">
+               Cvc5Op
+              </span>
+             </span>
+            </a>
+            <span class="w">
+            </span>
+            <span class="sig-name descname">
+             <span class="n">
+              <span class="pre">
+               cvc5_mk_op_from_str
+              </span>
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <a class="reference internal" href="#_CPPv415Cvc5TermManager" title="Cvc5TermManager">
+             <span class="n">
+              <span class="pre">
+               Cvc5TermManager
+              </span>
+             </span>
+            </a>
+            <span class="w">
+            </span>
+            <span class="p">
+             <span class="pre">
+              *
+             </span>
+            </span>
+            <span class="n sig-param">
+             <span class="pre">
+              tm
+             </span>
+            </span>
+            ,
+            <a class="reference internal" href="../enums/cvc5kind.html#_CPPv48Cvc5Kind" title="Cvc5Kind">
+             <span class="n">
+              <span class="pre">
+               Cvc5Kind
+              </span>
+             </span>
+            </a>
+            <span class="w">
+            </span>
+            <span class="n sig-param">
+             <span class="pre">
+              kind
+             </span>
+            </span>
+            ,
+            <span class="k">
+             <span class="pre">
+              const
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="kt">
+             <span class="pre">
+              char
+             </span>
+            </span>
+            <span class="w">
+            </span>
+            <span class="p">
+             <span class="pre">
+              *
+             </span>
+            </span>
+            <span class="n sig-param">
+             <span class="pre">
+              arg
+             </span>
+            </span>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#_CPPv419cvc5_mk_op_from_strP15Cvc5TermManager8Cvc5KindPKc" title="Permalink to this definition">
+             
+            </a>
+            <br/>
+           </dt>
+           <dd>
+            <p>
+             Create operator of kind:
+            </p>
+            <ul class="simple">
+             <li>
+              <p>
+               <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fa2df8140201fba1ee2a662af16ad929ae">
+                <span class="std std-ref">
+                 CVC5_KIND_DIVISIBLE
+                </span>
+               </a>
+               (to support arbitrary precision integers)
+              </p>
+             </li>
+            </ul>
+            <p>
+             See CKind for a description of the parameters.
+            </p>
+            <dl class="field-list simple">
+             <dt class="field-odd">
+              Parameters
+              <span class="colon">
+               :
+              </span>
+             </dt>
+             <dd class="field-odd">
+              <ul class="simple">
+               <li>
+                <p>
+                 <strong>
+                  tm
+                 </strong>
+                 – The term manager instance.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  kind
+                 </strong>
+                 – The kind of the operator.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  arg
+                 </strong>
+                 – The string argument to this operator.
+                </p>
+               </li>
+              </ul>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </section>
+         <hr class="docutils"/>
+         <section id="term-creation">
+          <h2>
+           Term Creation
+           <a class="headerlink" href="#term-creation" title="Permalink to this heading">
+            
+           </a>
+          </h2>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <p>
+            doxygengroup: Cannot find group “c_term_creation” in doxygen xml output for project “cvc5_c” from directory: /home/runner/work/cvc5/cvc5/build-shared/docs/api/c/doxygen/xml
+           </p>
+          </div>
+         </section>
+         <hr class="docutils"/>
+         <section id="datatype-declaration-creation">
+          <h2>
+           Datatype Declaration Creation
+           <a class="headerlink" href="#datatype-declaration-creation" title="Permalink to this heading">
+            
+           </a>
+          </h2>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <p>
+            doxygengroup: Cannot find group “c_dt_decl_creation” in doxygen xml output for project “cvc5_c” from directory: /home/runner/work/cvc5/cvc5/build-shared/docs/api/c/doxygen/xml
+           </p>
+          </div>
+         </section>
+         <hr class="docutils"/>
+         <section id="datatype-constructor-declaration-creation">
+          <h2>
+           Datatype Constructor Declaration Creation
+           <a class="headerlink" href="#datatype-constructor-declaration-creation" title="Permalink to this heading">
+            
+           </a>
+          </h2>
+          <div class="admonition warning">
+           <p class="admonition-title">
+            Warning
+           </p>
+           <p>
+            doxygengroup: Cannot find group “c_dt_cons_decl_creation” in doxygen xml output for project “cvc5_c” from directory: /home/runner/work/cvc5/cvc5/build-shared/docs/api/c/doxygen/xml
+           </p>
+          </div>
+         </section>
+        </section>
+       </div>
+      </div>
+      <footer>
+       <div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+        <a accesskey="p" class="btn btn-neutral float-left" href="cvc5term.html" rel="prev" title="Cvc5Term">
+         <span aria-hidden="true" class="fa fa-arrow-circle-left">
+         </span>
+         Previous
+        </a>
+        <a accesskey="n" class="btn btn-neutral float-right" href="../structs/cvc5optioninfo.html" rel="next" title="Cvc5OptionInfo">
+         Next
+         <span aria-hidden="true" class="fa fa-arrow-circle-right">
+         </span>
+        </a>
+       </div>
+       <hr/>
+       <div role="contentinfo">
+        <p>
+         © Copyright 2024, the authors of cvc5.
+        </p>
+       </div>
+       Built with
+       <a href="https://www.sphinx-doc.org/">
+        Sphinx
+       </a>
+       using a
+       <a href="https://github.com/readthedocs/sphinx_rtd_theme">
+        theme
+       </a>
+       provided by
+       <a href="https://readthedocs.org">
+        Read the Docs
+       </a>
+       .
+      </footer>
+     </div>
+    </div>
+   </section>
+  </div>
+  <script>
+   jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ </body>
+</html>
