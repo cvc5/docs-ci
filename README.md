@@ -1,17 +1,13 @@
 
 
-* [Documentation for main](docs-main/) (built from [b5ddd93](https://github.com/cvc5/cvc5/commit/b5ddd93) @ [main](https://github.com/cvc5/cvc5/tree/main), Sep Mon 23, 20:45 UTC)
 
-***
-
-
-* [Documentation for main](docs-main/) (built from [b5ddd93](https://github.com/cvc5/cvc5/commit/b5ddd93) @ [main](https://github.com/cvc5/cvc5/tree/main), now)
+* [Documentation for main](docs-main/) (built from [b5ddd93](https://github.com/cvc5/cvc5/commit/b5ddd93) @ [main](https://github.com/cvc5/cvc5/tree/main), 5 hours ago)
 * [Documentation for PR #11219](docs-pr11219/) (built from [b3e427e](https://github.com/cvc5/cvc5/commit/b3e427e) @ [PR #11219](https://github.com/cvc5/cvc5/pull/11219), 4 days ago)
 * [Documentation for PR #11218](docs-pr11218/) (built from [a3b1376](https://github.com/cvc5/cvc5/commit/a3b1376) @ [PR #11218](https://github.com/cvc5/cvc5/pull/11218), 4 days ago)
 * [Documentation for PR #11217](docs-pr11217/) (built from [01a88dc](https://github.com/cvc5/cvc5/commit/01a88dc) @ [PR #11217](https://github.com/cvc5/cvc5/pull/11217), 4 days ago)
 * [Documentation for PR #11216](docs-pr11216/) (built from [15d6b25](https://github.com/cvc5/cvc5/commit/15d6b25) @ [PR #11216](https://github.com/cvc5/cvc5/pull/11216), 4 days ago)
 * [Documentation for PR #11215](docs-pr11215/) (built from [2bdc161](https://github.com/cvc5/cvc5/commit/2bdc161) @ [PR #11215](https://github.com/cvc5/cvc5/pull/11215), 5 days ago)
-* [Documentation for PR #11214](docs-pr11214/) (built from [0847eae](https://github.com/cvc5/cvc5/commit/0847eae) @ [PR #11214](https://github.com/cvc5/cvc5/pull/11214), 2 hours ago)
+* [Documentation for PR #11214](docs-pr11214/) (built from [0847eae](https://github.com/cvc5/cvc5/commit/0847eae) @ [PR #11214](https://github.com/cvc5/cvc5/pull/11214), 7 hours ago)
 * [Documentation for PR #11213](docs-pr11213/) (built from [2d014a9](https://github.com/cvc5/cvc5/commit/2d014a9) @ [PR #11213](https://github.com/cvc5/cvc5/pull/11213), 5 days ago)
 * [Documentation for PR #11212](docs-pr11212/) (built from [c6d8115](https://github.com/cvc5/cvc5/commit/c6d8115) @ [PR #11212](https://github.com/cvc5/cvc5/pull/11212), 5 days ago)
 * [Documentation for PR #11210](docs-pr11210/) (built from [4239999](https://github.com/cvc5/cvc5/commit/4239999) @ [PR #11210](https://github.com/cvc5/cvc5/pull/11210), 5 days ago)
