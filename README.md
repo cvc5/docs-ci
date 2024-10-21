@@ -1,13 +1,14 @@
 
 
-* [Documentation for PR #11295](docs-pr11295/) (built from [ac48f45](https://github.com/cvc5/cvc5/commit/ac48f45) @ [PR #11295](https://github.com/cvc5/cvc5/pull/11295), Oct Mon 21, 15:05 UTC)
+* [Documentation for PR #11296](docs-pr11296/) (built from [87aa8a4](https://github.com/cvc5/cvc5/commit/87aa8a4) @ [PR #11296](https://github.com/cvc5/cvc5/pull/11296), Oct Mon 21, 15:32 UTC)
 
 ***
 
 
 * [Documentation for main](docs-main/) (built from [79b5507](https://github.com/cvc5/cvc5/commit/79b5507) @ [main](https://github.com/cvc5/cvc5/tree/main), 2 days ago)
-* [Documentation for PR #11295](docs-pr11295/) (built from [ac48f45](https://github.com/cvc5/cvc5/commit/ac48f45) @ [PR #11295](https://github.com/cvc5/cvc5/pull/11295), now)
-* [Documentation for PR #11294](docs-pr11294/) (built from [216133a](https://github.com/cvc5/cvc5/commit/216133a) @ [PR #11294](https://github.com/cvc5/cvc5/pull/11294), 42 minutes ago)
+* [Documentation for PR #11296](docs-pr11296/) (built from [87aa8a4](https://github.com/cvc5/cvc5/commit/87aa8a4) @ [PR #11296](https://github.com/cvc5/cvc5/pull/11296), now)
+* [Documentation for PR #11295](docs-pr11295/) (built from [ac48f45](https://github.com/cvc5/cvc5/commit/ac48f45) @ [PR #11295](https://github.com/cvc5/cvc5/pull/11295), 27 minutes ago)
+* [Documentation for PR #11294](docs-pr11294/) (built from [216133a](https://github.com/cvc5/cvc5/commit/216133a) @ [PR #11294](https://github.com/cvc5/cvc5/pull/11294), 69 minutes ago)
 * [Documentation for PR #11293](docs-pr11293/) (built from [a6d4857](https://github.com/cvc5/cvc5/commit/a6d4857) @ [PR #11293](https://github.com/cvc5/cvc5/pull/11293), 3 days ago)
 * [Documentation for PR #11292](docs-pr11292/) (built from [0f3f440](https://github.com/cvc5/cvc5/commit/0f3f440) @ [PR #11292](https://github.com/cvc5/cvc5/pull/11292), 4 days ago)
 * [Documentation for PR #11291](docs-pr11291/) (built from [5d9b24f](https://github.com/cvc5/cvc5/commit/5d9b24f) @ [PR #11291](https://github.com/cvc5/cvc5/pull/11291), 5 days ago)
