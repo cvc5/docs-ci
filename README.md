@@ -1,11 +1,11 @@
 
 
-* [Documentation for main](docs-main/) (built from [dede2ea](https://github.com/cvc5/cvc5/commit/dede2ea) @ [main](https://github.com/cvc5/cvc5/tree/main), Dec Fri 20, 18:11 UTC)
+* [Documentation for main](docs-main/) (built from [5ee60a5](https://github.com/cvc5/cvc5/commit/5ee60a5) @ [main](https://github.com/cvc5/cvc5/tree/main), Dec Fri 20, 18:15 UTC)
 
 ***
 
 
-* [Documentation for main](docs-main/) (built from [dede2ea](https://github.com/cvc5/cvc5/commit/dede2ea) @ [main](https://github.com/cvc5/cvc5/tree/main), now)
+* [Documentation for main](docs-main/) (built from [5ee60a5](https://github.com/cvc5/cvc5/commit/5ee60a5) @ [main](https://github.com/cvc5/cvc5/tree/main), now)
 * [Documentation for PR #11464](docs-pr11464/) (built from [65f588c](https://github.com/cvc5/cvc5/commit/65f588c) @ [PR #11464](https://github.com/cvc5/cvc5/pull/11464), 25 hours ago)
 * [Documentation for PR #11462](docs-pr11462/) (built from [83452f3](https://github.com/cvc5/cvc5/commit/83452f3) @ [PR #11462](https://github.com/cvc5/cvc5/pull/11462), 2 days ago)
 * [Documentation for PR #11461](docs-pr11461/) (built from [675eed1](https://github.com/cvc5/cvc5/commit/675eed1) @ [PR #11461](https://github.com/cvc5/cvc5/pull/11461), 20 hours ago)
