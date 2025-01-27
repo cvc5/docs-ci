@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+  </script>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   SymbolManager — cvc5  documentation
+  </title>
+  <link href="../../../static/pygments.css?v=b86133f3" rel="stylesheet" type="text/css"/>
+  <link href="../../../static/css/theme.css?v=e59714d7" rel="stylesheet" type="text/css"/>
+  <link href="../../../static/custom.css?v=b9602cbe" rel="stylesheet" type="text/css"/>
+  <script src="../../../static/jquery.js?v=5d32c60e">
+  </script>
+  <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c">
+  </script>
+  <script data-url_root="../../../" id="documentation_options" src="../../../static/documentation_options.js?v=b3ba4146">
+  </script>
+  <script src="../../../static/doctools.js?v=888ff710">
+  </script>
+  <script src="../../../static/sphinx_highlight.js?v=4825356b">
+  </script>
+  <script src="../../../static/js/theme.js">
+  </script>
+  <link href="../../../genindex.html" rel="index" title="Index"/>
+  <link href="../../../search.html" rel="search" title="Search"/>
+  <link href="synthresult.html" rel="next" title="SynthResult"/>
+  <link href="statistics.html" rel="prev" title="Statistics"/>
+ </head>
+ <body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+   <nav class="wy-nav-side" data-toggle="wy-nav-shift">
+    <div class="wy-side-scroll">
+     <div class="wy-side-nav-search">
+      <a class="icon icon-home" href="../../../index.html">
+       cvc5
+      </a>
+      <div role="search">
+       <form action="../../../search.html" class="wy-form" id="rtd-search-form" method="get">
+        <input aria-label="Search docs" name="q" placeholder="Search docs" type="text"/>
+        <input name="check_keywords" type="hidden" value="yes"/>
+        <input name="area" type="hidden" value="default"/>
+       </form>
+      </div>
+     </div>
+     <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+      <ul class="current">
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../installation/installation.html">
+         Installation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../binary/binary.html">
+         Binary Documentation
+        </a>
+       </li>
+       <li class="toctree-l1 current">
+        <a class="reference internal" href="../../api.html">
+         API Documentation
+        </a>
+        <ul class="current">
+         <li class="toctree-l2 current">
+          <a class="reference internal" href="../cpp.html">
+           C++ API
+          </a>
+          <ul class="current">
+           <li class="toctree-l3">
+            <a class="reference internal" href="../quickstart.html">
+             Quickstart Guide
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../exceptions/exceptions.html">
+             Exceptions
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="command.html">
+             Command
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatype.html">
+             Datatype
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatypeconstructor.html">
+             DatatypeConstructor
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatypeconstructordecl.html">
+             DatatypeConstructorDecl
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatypedecl.html">
+             DatatypeDecl
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatypeselector.html">
+             DatatypeSelector
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="driveroptions.html">
+             DriverOptions
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="grammar.html">
+             Grammar
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="inputparser.html">
+             InputParser
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../enums/kind.html">
+             Kind
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../enums/modes.html">
+             Modes
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="op.html">
+             Op
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="optioninfo.html">
+             OptionInfo
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="plugin.html">
+             Plugin
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="proof.html">
+             Proof
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../enums/proofrule.html">
+             ProofRule and ProofRewriteRule
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="result.html">
+             Result
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../enums/roundingmode.html">
+             RoundingMode
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="solver.html">
+             Solver
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="sort.html">
+             Sort
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../enums/sortkind.html">
+             SortKind
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="statistics.html">
+             Statistics
+            </a>
+           </li>
+           <li class="toctree-l3 current">
+            <a class="current reference internal" href="#">
+             SymbolManager
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="synthresult.html">
+             SynthResult
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="term.html">
+             Term
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="termmanager.html">
+             TermManager
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../enums/unknownexplanation.html">
+             UnknownExplanation
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../cpp.html#class-hierarchy">
+             Class hierarchy
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../c/c.html">
+           C API
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../java/java.html">
+           Java API
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../python/python.html">
+           Python API
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../options.html">
+         Options
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../output-tags.html">
+         Output tags
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../proofs/proofs.html">
+         Proof Production
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../resource-limits.html">
+         Resource limits
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../skolem-ids.html">
+         Skolem Identifiers
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../statistics.html">
+         Statistics
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../examples/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../theories/theories.html">
+         Theory References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../references.html">
+         References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../genindex.html">
+         Index
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div aria-label="versions" class="rst-versions shift-up" data-toggle="rst-versions" id="cvc5-versions" role="note">
+     <span class="rst-current-version" data-toggle="rst-current-version">
+      <i class="fas fa-tags">
+      </i>
+      Other versions
+     </span>
+     <div class="rst-other-versions">
+      <dl>
+       <dd>
+        <a href="https://cvc5.github.io/docs-ci/docs-main/">
+         cvc5-main
+        </a>
+       </dd>
+       <dd>
+        <strong>
+         <a href="../../../../cvc5-1.2.1/">
+          cvc5-1.2.1
+         </a>
+        </strong>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.2.0/">
+         cvc5-1.2.0
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.1.2/">
+         cvc5-1.1.2
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.1.1/">
+         cvc5-1.1.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.1.0/">
+         cvc5-1.1.0
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.0.9/">
+         cvc5-1.0.9
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.0.8/">
+         cvc5-1.0.8
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.0.7/">
+         cvc5-1.0.7
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.0.2/">
+         cvc5-1.0.2
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.0.1/">
+         cvc5-1.0.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-1.0.0/">
+         cvc5-1.0.0
+        </a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </nav>
+   <section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+    <nav aria-label="Mobile navigation menu" class="wy-nav-top">
+     <i class="fa fa-bars" data-toggle="wy-nav-top">
+     </i>
+     <a href="../../../index.html">
+      cvc5
+     </a>
+    </nav>
+    <div class="wy-nav-content">
+     <div class="rst-content">
+      <div aria-label="Page navigation" role="navigation">
+       <ul class="wy-breadcrumbs">
+        <li>
+         <a aria-label="Home" class="icon icon-home" href="../../../index.html">
+         </a>
+        </li>
+        <li class="breadcrumb-item">
+         <a href="../../api.html">
+          API Documentation
+         </a>
+        </li>
+        <li class="breadcrumb-item">
+         <a href="../cpp.html">
+          C++ API
+         </a>
+        </li>
+        <li class="breadcrumb-item active">
+         SymbolManager
+        </li>
+        <li class="wy-breadcrumbs-aside">
+        </li>
+       </ul>
+       <hr/>
+      </div>
+      <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+       <div itemprop="articleBody">
+        <section id="symbolmanager">
+         <h1>
+          SymbolManager
+          <a class="headerlink" href="#symbolmanager" title="Permalink to this heading">
+           
+          </a>
+         </h1>
+         <p>
+          This class manages a symbol table and other meta-information pertaining to
+SMT-LIB v2 inputs (e.g., named assertions, declared functions, etc.).
+         </p>
+         <hr class="docutils"/>
+         <dl class="cpp class">
+          <dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser13SymbolManagerE">
+           <span id="_CPPv3N4cvc56parser13SymbolManagerE">
+           </span>
+           <span id="_CPPv2N4cvc56parser13SymbolManagerE">
+           </span>
+           <span id="cvc5::parser::SymbolManager">
+           </span>
+           <span class="target" id="classcvc5_1_1parser_1_1SymbolManager">
+           </span>
+           <span class="k">
+            <span class="pre">
+             class
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              SymbolManager
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#_CPPv4N4cvc56parser13SymbolManagerE" title="Permalink to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Symbol manager. Internally, this class manages a symbol table and other meta-information pertaining to SMT2 file inputs (e.g. named assertions, declared functions, etc.).
+           </p>
+           <p>
+            A symbol manager can be modified by invoking commands, see
+            <a class="reference internal" href="command.html#classcvc5_1_1parser_1_1Command_1a4cb1c0fd9a8ccb244df6aa8372cc23ca">
+             <span class="std std-ref">
+              Command::invoke
+             </span>
+            </a>
+            .
+           </p>
+           <p>
+            A symbol manager can be provided when constructing an
+            <a class="reference internal" href="inputparser.html#classcvc5_1_1parser_1_1InputParser">
+             <span class="std std-ref">
+              InputParser
+             </span>
+            </a>
+            , in which case that
+            <a class="reference internal" href="inputparser.html#classcvc5_1_1parser_1_1InputParser">
+             <span class="std std-ref">
+              InputParser
+             </span>
+            </a>
+            has symbols of this symbol manager preloaded.
+           </p>
+           <p>
+            The symbol manager’s interface is otherwise not publicly available.
+           </p>
+           <div class="breathe-sectiondef docutils container">
+            <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">
+             Public Functions
+            </p>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser13SymbolManager13SymbolManagerERN4cvc511TermManagerE">
+              <span id="_CPPv3N4cvc56parser13SymbolManager13SymbolManagerERN4cvc511TermManagerE">
+              </span>
+              <span id="_CPPv2N4cvc56parser13SymbolManager13SymbolManagerERN4cvc511TermManagerE">
+              </span>
+              <span id="cvc5::parser::SymbolManager::SymbolManager__cvc5::TermManagerR">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1SymbolManager_1a8ff5124ba6b5c86b200a39acb0c2ae99">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 SymbolManager
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="n">
+               <span class="pre">
+                cvc5
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <a class="reference internal" href="termmanager.html#_CPPv4N4cvc511TermManagerE" title="cvc5::TermManager">
+               <span class="n">
+                <span class="pre">
+                 TermManager
+                </span>
+               </span>
+              </a>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                &amp;
+               </span>
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                tm
+               </span>
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#_CPPv4N4cvc56parser13SymbolManager13SymbolManagerERN4cvc511TermManagerE" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Constructor.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Parameters
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 <strong>
+                  tm
+                 </strong>
+                 – The associated term manager instance.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser13SymbolManager13SymbolManagerEPN4cvc56SolverE">
+              <span id="_CPPv3N4cvc56parser13SymbolManager13SymbolManagerEPN4cvc56SolverE">
+              </span>
+              <span id="_CPPv2N4cvc56parser13SymbolManager13SymbolManagerEPN4cvc56SolverE">
+              </span>
+              <span id="cvc5::parser::SymbolManager::SymbolManager__cvc5::SolverP">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1SymbolManager_1a95a1627d90b75e372204c944a693d70c">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 SymbolManager
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="n">
+               <span class="pre">
+                cvc5
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <a class="reference internal" href="solver.html#_CPPv4N4cvc56SolverE" title="cvc5::Solver">
+               <span class="n">
+                <span class="pre">
+                 Solver
+                </span>
+               </span>
+              </a>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                *
+               </span>
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                slv
+               </span>
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#_CPPv4N4cvc56parser13SymbolManager13SymbolManagerEPN4cvc56SolverE" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Constructor.
+              </p>
+              <div class="admonition warning">
+               <p class="admonition-title">
+                Warning
+               </p>
+               <p>
+                This constructor is deprecated and replaced by
+                <code class="docutils literal notranslate">
+                 <a class="reference internal" href="#classcvc5_1_1parser_1_1SymbolManager_1a8ff5124ba6b5c86b200a39acb0c2ae99">
+                  <span class="std std-ref">
+                   <span class="pre">
+                    SymbolManager::SymbolManager(TermManager&amp;)
+                   </span>
+                  </span>
+                 </a>
+                </code>
+                . It will be removed in a future release.
+               </p>
+              </div>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Parameters
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 <strong>
+                  slv
+                 </strong>
+                 – The solver instance.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser13SymbolManagerD0Ev">
+              <span id="_CPPv3N4cvc56parser13SymbolManagerD0Ev">
+              </span>
+              <span id="_CPPv2N4cvc56parser13SymbolManagerD0Ev">
+              </span>
+              <span id="cvc5::parser::SymbolManager::~SymbolManager">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1SymbolManager_1aeea984c03d91dfb842e79855b5c7a4e2">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 ~SymbolManager
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#_CPPv4N4cvc56parser13SymbolManagerD0Ev" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Destructor.
+              </p>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc56parser13SymbolManager10isLogicSetEv">
+              <span id="_CPPv3NK4cvc56parser13SymbolManager10isLogicSetEv">
+              </span>
+              <span id="_CPPv2NK4cvc56parser13SymbolManager10isLogicSetEv">
+              </span>
+              <span id="cvc5::parser::SymbolManager::isLogicSetC">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1SymbolManager_1a33e9508b2a3b5a57eed87dc35ee1ab07">
+              </span>
+              <span class="kt">
+               <span class="pre">
+                bool
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 isLogicSet
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc56parser13SymbolManager10isLogicSetEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Determine if the logic of this symbol manager has been set.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 True if the logic has been set.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc56parser13SymbolManager8getLogicEv">
+              <span id="_CPPv3NK4cvc56parser13SymbolManager8getLogicEv">
+              </span>
+              <span id="_CPPv2NK4cvc56parser13SymbolManager8getLogicEv">
+              </span>
+              <span id="cvc5::parser::SymbolManager::getLogicC">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1SymbolManager_1a8484cd103844694d4cbcf71f7b9cd0e5">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                string
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                &amp;
+               </span>
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 getLogic
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc56parser13SymbolManager8getLogicEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Get the logic configured for this symbol manager.
+              </p>
+              <div class="admonition note">
+               <p class="admonition-title">
+                Note
+               </p>
+               <p>
+                Asserts
+                <a class="reference internal" href="#classcvc5_1_1parser_1_1SymbolManager_1a33e9508b2a3b5a57eed87dc35ee1ab07">
+                 <span class="std std-ref">
+                  isLogicSet()
+                 </span>
+                </a>
+                .
+               </p>
+              </div>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 The configured logic.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc56parser13SymbolManager16getDeclaredSortsEv">
+              <span id="_CPPv3NK4cvc56parser13SymbolManager16getDeclaredSortsEv">
+              </span>
+              <span id="_CPPv2NK4cvc56parser13SymbolManager16getDeclaredSortsEv">
+              </span>
+              <span id="cvc5::parser::SymbolManager::getDeclaredSortsC">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1SymbolManager_1a0a466c755ad7e3a78c8e8ac5ac9a9354">
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                vector
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                &lt;
+               </span>
+              </span>
+              <a class="reference internal" href="sort.html#_CPPv4N4cvc54SortE" title="cvc5::Sort">
+               <span class="n">
+                <span class="pre">
+                 Sort
+                </span>
+               </span>
+              </a>
+              <span class="p">
+               <span class="pre">
+                &gt;
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 getDeclaredSorts
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc56parser13SymbolManager16getDeclaredSortsEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Get the list of sorts that have been declared via
+               <code class="docutils literal notranslate">
+                <span class="pre">
+                 declare-sort
+                </span>
+               </code>
+               commands. These are the sorts that are printed as part of a response to a
+               <code class="docutils literal notranslate">
+                <span class="pre">
+                 get-model
+                </span>
+               </code>
+               command.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 The declared sorts.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc56parser13SymbolManager16getDeclaredTermsEv">
+              <span id="_CPPv3NK4cvc56parser13SymbolManager16getDeclaredTermsEv">
+              </span>
+              <span id="_CPPv2NK4cvc56parser13SymbolManager16getDeclaredTermsEv">
+              </span>
+              <span id="cvc5::parser::SymbolManager::getDeclaredTermsC">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1SymbolManager_1a8e25e888a0c7456b2196603318802b98">
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                vector
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                &lt;
+               </span>
+              </span>
+              <a class="reference internal" href="term.html#_CPPv4N4cvc54TermE" title="cvc5::Term">
+               <span class="n">
+                <span class="pre">
+                 Term
+                </span>
+               </span>
+              </a>
+              <span class="p">
+               <span class="pre">
+                &gt;
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 getDeclaredTerms
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc56parser13SymbolManager16getDeclaredTermsEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Get the list of terms that have been declared via
+               <code class="docutils literal notranslate">
+                <span class="pre">
+                 declare-fun
+                </span>
+               </code>
+               and
+               <code class="docutils literal notranslate">
+                <span class="pre">
+                 declare-const
+                </span>
+               </code>
+               . These are the terms that are printed in response to a
+               <code class="docutils literal notranslate">
+                <span class="pre">
+                 get-model
+                </span>
+               </code>
+               command.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 The declared terms.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4NK4cvc56parser13SymbolManager13getNamedTermsEv">
+              <span id="_CPPv3NK4cvc56parser13SymbolManager13getNamedTermsEv">
+              </span>
+              <span id="_CPPv2NK4cvc56parser13SymbolManager13getNamedTermsEv">
+              </span>
+              <span id="cvc5::parser::SymbolManager::getNamedTermsC">
+              </span>
+              <span class="target" id="classcvc5_1_1parser_1_1SymbolManager_1a419811aa178fbe92905c8e0eaa7be7ad">
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                map
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                &lt;
+               </span>
+              </span>
+              <a class="reference internal" href="term.html#_CPPv4N4cvc54TermE" title="cvc5::Term">
+               <span class="n">
+                <span class="pre">
+                 Term
+                </span>
+               </span>
+              </a>
+              <span class="p">
+               <span class="pre">
+                ,
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                string
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                &gt;
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="sig-name descname">
+               <span class="n">
+                <span class="pre">
+                 getNamedTerms
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <span class="w">
+              </span>
+              <span class="k">
+               <span class="pre">
+                const
+               </span>
+              </span>
+              <a class="headerlink" href="#_CPPv4NK4cvc56parser13SymbolManager13getNamedTermsEv" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Get a mapping from terms to names that have been given to them via the :named attribute.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <p>
+                 A map of the named terms to their names.
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+           </div>
+           <div class="breathe-sectiondef docutils container">
+            <p class="breathe-sectiondef-title rubric" id="breathe-section-title-friends">
+             Friends
+            </p>
+            <dl>
+             <dt class="sig sig-object cpp">
+              <em class="property">
+               <span class="pre">
+                friend
+               </span>
+               <span class="pre">
+                class
+               </span>
+              </em>
+              <span class="pre">
+               internal::InteractiveShell
+              </span>
+             </dt>
+            </dl>
+            <dl>
+             <dt class="sig sig-object cpp">
+              <em class="property">
+               <span class="pre">
+                friend
+               </span>
+               <span class="pre">
+                class
+               </span>
+              </em>
+              <span class="pre">
+               main::CommandExecutor
+              </span>
+             </dt>
+            </dl>
+           </div>
+          </dd>
+         </dl>
+        </section>
+       </div>
+      </div>
+      <footer>
+       <div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+        <a accesskey="p" class="btn btn-neutral float-left" href="statistics.html" rel="prev" title="Statistics">
+         <span aria-hidden="true" class="fa fa-arrow-circle-left">
+         </span>
+         Previous
+        </a>
+        <a accesskey="n" class="btn btn-neutral float-right" href="synthresult.html" rel="next" title="SynthResult">
+         Next
+         <span aria-hidden="true" class="fa fa-arrow-circle-right">
+         </span>
+        </a>
+       </div>
+       <hr/>
+       <div role="contentinfo">
+        <p>
+         © Copyright 2025, the authors of cvc5.
+        </p>
+       </div>
+       Built with
+       <a href="https://www.sphinx-doc.org/">
+        Sphinx
+       </a>
+       using a
+       <a href="https://github.com/readthedocs/sphinx_rtd_theme">
+        theme
+       </a>
+       provided by
+       <a href="https://readthedocs.org">
+        Read the Docs
+       </a>
+       .
+      </footer>
+     </div>
+    </div>
+   </section>
+  </div>
+  <script>
+   jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ </body>
+</html>
