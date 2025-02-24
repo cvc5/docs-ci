@@ -1,8 +1,13 @@
 
 
+* [Documentation for PR #11670](docs-pr11670/) (built from [7fcf2e5](https://github.com/cvc5/cvc5/commit/7fcf2e5) @ [PR #11670](https://github.com/cvc5/cvc5/pull/11670), Feb Mon 24, 02:37 UTC)
+
+***
+
 
 * [Documentation for main](docs-main/) (built from [a69fba7](https://github.com/cvc5/cvc5/commit/a69fba7) @ [main](https://github.com/cvc5/cvc5/tree/main), 3 days ago)
-* [Documentation for PR #11669](docs-pr11669/) (built from [4887de6](https://github.com/cvc5/cvc5/commit/4887de6) @ [PR #11669](https://github.com/cvc5/cvc5/pull/11669), 21 hours ago)
+* [Documentation for PR #11670](docs-pr11670/) (built from [7fcf2e5](https://github.com/cvc5/cvc5/commit/7fcf2e5) @ [PR #11670](https://github.com/cvc5/cvc5/pull/11670), now)
+* [Documentation for PR #11669](docs-pr11669/) (built from [4887de6](https://github.com/cvc5/cvc5/commit/4887de6) @ [PR #11669](https://github.com/cvc5/cvc5/pull/11669), 22 hours ago)
 * [Documentation for PR #11668](docs-pr11668/) (built from [8ba9f88](https://github.com/cvc5/cvc5/commit/8ba9f88) @ [PR #11668](https://github.com/cvc5/cvc5/pull/11668), 2 days ago)
 * [Documentation for PR #11666](docs-pr11666/) (built from [830ce7b](https://github.com/cvc5/cvc5/commit/830ce7b) @ [PR #11666](https://github.com/cvc5/cvc5/pull/11666), 2 days ago)
 * [Documentation for PR #11665](docs-pr11665/) (built from [bccc0f3](https://github.com/cvc5/cvc5/commit/bccc0f3) @ [PR #11665](https://github.com/cvc5/cvc5/pull/11665), 4 days ago)
