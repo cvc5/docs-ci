@@ -1,14 +1,15 @@
 
 
-* [Documentation for PR #11773](docs-pr11773/) (built from [3254e03](https://github.com/cvc5/cvc5/commit/3254e03) @ [PR #11773](https://github.com/cvc5/cvc5/pull/11773), Apr Wed 02, 16:23 UTC)
+* [Documentation for PR #11776](docs-pr11776/) (built from [4056deb](https://github.com/cvc5/cvc5/commit/4056deb) @ [PR #11776](https://github.com/cvc5/cvc5/pull/11776), Apr Wed 02, 16:28 UTC)
 
 ***
 
 
-* [Documentation for main](docs-main/) (built from [3f84ac1](https://github.com/cvc5/cvc5/commit/3f84ac1) @ [main](https://github.com/cvc5/cvc5/tree/main), 29 minutes ago)
+* [Documentation for main](docs-main/) (built from [3f84ac1](https://github.com/cvc5/cvc5/commit/3f84ac1) @ [main](https://github.com/cvc5/cvc5/tree/main), 33 minutes ago)
+* [Documentation for PR #11776](docs-pr11776/) (built from [4056deb](https://github.com/cvc5/cvc5/commit/4056deb) @ [PR #11776](https://github.com/cvc5/cvc5/pull/11776), now)
 * [Documentation for PR #11775](docs-pr11775/) (built from [a152140](https://github.com/cvc5/cvc5/commit/a152140) @ [PR #11775](https://github.com/cvc5/cvc5/pull/11775), 2 hours ago)
 * [Documentation for PR #11774](docs-pr11774/) (built from [3c542a1](https://github.com/cvc5/cvc5/commit/3c542a1) @ [PR #11774](https://github.com/cvc5/cvc5/pull/11774), 2 hours ago)
-* [Documentation for PR #11773](docs-pr11773/) (built from [3254e03](https://github.com/cvc5/cvc5/commit/3254e03) @ [PR #11773](https://github.com/cvc5/cvc5/pull/11773), now)
+* [Documentation for PR #11773](docs-pr11773/) (built from [3254e03](https://github.com/cvc5/cvc5/commit/3254e03) @ [PR #11773](https://github.com/cvc5/cvc5/pull/11773), 5 minutes ago)
 * [Documentation for PR #11772](docs-pr11772/) (built from [c124e93](https://github.com/cvc5/cvc5/commit/c124e93) @ [PR #11772](https://github.com/cvc5/cvc5/pull/11772), 20 hours ago)
 * [Documentation for PR #11771](docs-pr11771/) (built from [5d1bd34](https://github.com/cvc5/cvc5/commit/5d1bd34) @ [PR #11771](https://github.com/cvc5/cvc5/pull/11771), 20 hours ago)
 * [Documentation for PR #11770](docs-pr11770/) (built from [9f29a08](https://github.com/cvc5/cvc5/commit/9f29a08) @ [PR #11770](https://github.com/cvc5/cvc5/pull/11770), 22 hours ago)
