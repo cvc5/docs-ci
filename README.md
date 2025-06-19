@@ -1,14 +1,15 @@
 
 
-* [Documentation for PR #11998](docs-pr11998/) (built from [ddae263](https://github.com/cvc5/cvc5/commit/ddae263) @ [PR #11998](https://github.com/cvc5/cvc5/pull/11998), Jun Thu 19, 21:02 UTC)
+* [Documentation for smtcomp2025](docs-smtcomp2025/) (built from [02c4e43](https://github.com/cvc5/cvc5/commit/02c4e43) @ [smtcomp2025](https://github.com/cvc5/cvc5/tree/smtcomp2025), Jun Thu 19, 21:13 UTC)
 
 ***
 
 
-* [Documentation for cvc5-1.3.0](docs-cvc5-1.3.0/) (built from [02c4e43](https://github.com/cvc5/cvc5/commit/02c4e43) @ [cvc5-1.3.0](https://github.com/cvc5/cvc5/tree/cvc5-1.3.0), 19 hours ago)
+* [Documentation for cvc5-1.3.0](docs-cvc5-1.3.0/) (built from [02c4e43](https://github.com/cvc5/cvc5/commit/02c4e43) @ [cvc5-1.3.0](https://github.com/cvc5/cvc5/tree/cvc5-1.3.0), 20 hours ago)
 * [Documentation for main](docs-main/) (built from [cdbe052](https://github.com/cvc5/cvc5/commit/cdbe052) @ [main](https://github.com/cvc5/cvc5/tree/main), 6 hours ago)
-* [Documentation for PR #11999](docs-pr11999/) (built from [ab842b6](https://github.com/cvc5/cvc5/commit/ab842b6) @ [PR #11999](https://github.com/cvc5/cvc5/pull/11999), 31 minutes ago)
-* [Documentation for PR #11998](docs-pr11998/) (built from [ddae263](https://github.com/cvc5/cvc5/commit/ddae263) @ [PR #11998](https://github.com/cvc5/cvc5/pull/11998), now)
+* [Documentation for smtcomp2025](docs-smtcomp2025/) (built from [02c4e43](https://github.com/cvc5/cvc5/commit/02c4e43) @ [smtcomp2025](https://github.com/cvc5/cvc5/tree/smtcomp2025), now)
+* [Documentation for PR #11999](docs-pr11999/) (built from [ab842b6](https://github.com/cvc5/cvc5/commit/ab842b6) @ [PR #11999](https://github.com/cvc5/cvc5/pull/11999), 42 minutes ago)
+* [Documentation for PR #11998](docs-pr11998/) (built from [ddae263](https://github.com/cvc5/cvc5/commit/ddae263) @ [PR #11998](https://github.com/cvc5/cvc5/pull/11998), 11 minutes ago)
 * [Documentation for PR #11995](docs-pr11995/) (built from [7177534](https://github.com/cvc5/cvc5/commit/7177534) @ [PR #11995](https://github.com/cvc5/cvc5/pull/11995), 22 hours ago)
 * [Documentation for PR #11994](docs-pr11994/) (built from [55899ee](https://github.com/cvc5/cvc5/commit/55899ee) @ [PR #11994](https://github.com/cvc5/cvc5/pull/11994), 9 hours ago)
 * [Documentation for PR #11993](docs-pr11993/) (built from [edf1cf8](https://github.com/cvc5/cvc5/commit/edf1cf8) @ [PR #11993](https://github.com/cvc5/cvc5/pull/11993), 25 hours ago)
