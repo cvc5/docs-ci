@@ -1,7 +1,12 @@
 
 
+* [Documentation for cvc5-1.3.0](docs-cvc5-1.3.0/) (built from [02c4e43](https://github.com/cvc5/cvc5/commit/02c4e43) @ [cvc5-1.3.0](https://github.com/cvc5/cvc5/tree/cvc5-1.3.0), Jun Thu 19, 01:37 UTC)
 
-* [Documentation for main](docs-main/) (built from [15c808f](https://github.com/cvc5/cvc5/commit/15c808f) @ [main](https://github.com/cvc5/cvc5/tree/main), 35 minutes ago)
+***
+
+
+* [Documentation for cvc5-1.3.0](docs-cvc5-1.3.0/) (built from [02c4e43](https://github.com/cvc5/cvc5/commit/02c4e43) @ [cvc5-1.3.0](https://github.com/cvc5/cvc5/tree/cvc5-1.3.0), now)
+* [Documentation for main](docs-main/) (built from [15c808f](https://github.com/cvc5/cvc5/commit/15c808f) @ [main](https://github.com/cvc5/cvc5/tree/main), 39 minutes ago)
 * [Documentation for PR #11995](docs-pr11995/) (built from [7177534](https://github.com/cvc5/cvc5/commit/7177534) @ [PR #11995](https://github.com/cvc5/cvc5/pull/11995), 3 hours ago)
 * [Documentation for PR #11994](docs-pr11994/) (built from [092c7f6](https://github.com/cvc5/cvc5/commit/092c7f6) @ [PR #11994](https://github.com/cvc5/cvc5/pull/11994), 4 hours ago)
 * [Documentation for PR #11993](docs-pr11993/) (built from [edf1cf8](https://github.com/cvc5/cvc5/commit/edf1cf8) @ [PR #11993](https://github.com/cvc5/cvc5/pull/11993), 5 hours ago)
