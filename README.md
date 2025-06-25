@@ -1,13 +1,13 @@
 
 
-* [Documentation for main](docs-main/) (built from [58cda4c](https://github.com/cvc5/cvc5/commit/58cda4c) @ [main](https://github.com/cvc5/cvc5/tree/main), Jun Wed 25, 22:44 UTC)
+* [Documentation for smtcomp2025](docs-smtcomp2025/) (built from [b75ccda](https://github.com/cvc5/cvc5/commit/b75ccda) @ [smtcomp2025](https://github.com/cvc5/cvc5/tree/smtcomp2025), Jun Wed 25, 22:50 UTC)
 
 ***
 
 
 * [Documentation for cvc5-1.3.0](docs-cvc5-1.3.0/) (built from [02c4e43](https://github.com/cvc5/cvc5/commit/02c4e43) @ [cvc5-1.3.0](https://github.com/cvc5/cvc5/tree/cvc5-1.3.0), 7 days ago)
-* [Documentation for main](docs-main/) (built from [58cda4c](https://github.com/cvc5/cvc5/commit/58cda4c) @ [main](https://github.com/cvc5/cvc5/tree/main), now)
-* [Documentation for smtcomp2025](docs-smtcomp2025/) (built from [02c4e43](https://github.com/cvc5/cvc5/commit/02c4e43) @ [smtcomp2025](https://github.com/cvc5/cvc5/tree/smtcomp2025), 6 days ago)
+* [Documentation for main](docs-main/) (built from [58cda4c](https://github.com/cvc5/cvc5/commit/58cda4c) @ [main](https://github.com/cvc5/cvc5/tree/main), 6 minutes ago)
+* [Documentation for smtcomp2025](docs-smtcomp2025/) (built from [b75ccda](https://github.com/cvc5/cvc5/commit/b75ccda) @ [smtcomp2025](https://github.com/cvc5/cvc5/tree/smtcomp2025), now)
 * [Documentation for PR #12012](docs-pr12012/) (built from [5168363](https://github.com/cvc5/cvc5/commit/5168363) @ [PR #12012](https://github.com/cvc5/cvc5/pull/12012), 12 hours ago)
 * [Documentation for PR #12011](docs-pr12011/) (built from [bdb3c40](https://github.com/cvc5/cvc5/commit/bdb3c40) @ [PR #12011](https://github.com/cvc5/cvc5/pull/12011), 23 hours ago)
 * [Documentation for PR #12009](docs-pr12009/) (built from [50e1382](https://github.com/cvc5/cvc5/commit/50e1382) @ [PR #12009](https://github.com/cvc5/cvc5/pull/12009), 33 hours ago)
