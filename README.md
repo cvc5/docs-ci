@@ -1,11 +1,11 @@
 
 
-* [Documentation for main](docs-main/) (built from [db2da02](https://github.com/cvc5/cvc5/commit/db2da02) @ [main](https://github.com/cvc5/cvc5/tree/main), Jul Tue 15, 17:11 UTC)
+* [Documentation for main](docs-main/) (built from [77d024a](https://github.com/cvc5/cvc5/commit/77d024a) @ [main](https://github.com/cvc5/cvc5/tree/main), Jul Tue 15, 17:16 UTC)
 
 ***
 
 
-* [Documentation for main](docs-main/) (built from [db2da02](https://github.com/cvc5/cvc5/commit/db2da02) @ [main](https://github.com/cvc5/cvc5/tree/main), now)
+* [Documentation for main](docs-main/) (built from [77d024a](https://github.com/cvc5/cvc5/commit/77d024a) @ [main](https://github.com/cvc5/cvc5/tree/main), now)
 * [Documentation for PR #12022](docs-pr12022/) (built from [5baf986](https://github.com/cvc5/cvc5/commit/5baf986) @ [PR #12022](https://github.com/cvc5/cvc5/pull/12022), 6 days ago)
 * [Documentation for PR #12021](docs-pr12021/) (built from [f644b81](https://github.com/cvc5/cvc5/commit/f644b81) @ [PR #12021](https://github.com/cvc5/cvc5/pull/12021), 6 days ago)
 * [Documentation for PR #12020](docs-pr12020/) (built from [0caf9ad](https://github.com/cvc5/cvc5/commit/0caf9ad) @ [PR #12020](https://github.com/cvc5/cvc5/pull/12020), 6 days ago)
