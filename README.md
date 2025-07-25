@@ -1,13 +1,14 @@
 
 
-* [Documentation for PR #12033](docs-pr12033/) (built from [fc7a294](https://github.com/cvc5/cvc5/commit/fc7a294) @ [PR #12033](https://github.com/cvc5/cvc5/pull/12033), Jul Fri 25, 17:10 UTC)
+* [Documentation for PR #12034](docs-pr12034/) (built from [4af62fc](https://github.com/cvc5/cvc5/commit/4af62fc) @ [PR #12034](https://github.com/cvc5/cvc5/pull/12034), Jul Fri 25, 17:11 UTC)
 
 ***
 
 
 * [Documentation for main](docs-main/) (built from [bc009af](https://github.com/cvc5/cvc5/commit/bc009af) @ [main](https://github.com/cvc5/cvc5/tree/main), 24 hours ago)
-* [Documentation for PR #12033](docs-pr12033/) (built from [fc7a294](https://github.com/cvc5/cvc5/commit/fc7a294) @ [PR #12033](https://github.com/cvc5/cvc5/pull/12033), now)
-* [Documentation for PR #12032](docs-pr12032/) (built from [c17ee39](https://github.com/cvc5/cvc5/commit/c17ee39) @ [PR #12032](https://github.com/cvc5/cvc5/pull/12032), 73 minutes ago)
+* [Documentation for PR #12034](docs-pr12034/) (built from [4af62fc](https://github.com/cvc5/cvc5/commit/4af62fc) @ [PR #12034](https://github.com/cvc5/cvc5/pull/12034), now)
+* [Documentation for PR #12033](docs-pr12033/) (built from [fc7a294](https://github.com/cvc5/cvc5/commit/fc7a294) @ [PR #12033](https://github.com/cvc5/cvc5/pull/12033), 75 seconds ago)
+* [Documentation for PR #12032](docs-pr12032/) (built from [c17ee39](https://github.com/cvc5/cvc5/commit/c17ee39) @ [PR #12032](https://github.com/cvc5/cvc5/pull/12032), 75 minutes ago)
 * [Documentation for PR #12030](docs-pr12030/) (built from [402299b](https://github.com/cvc5/cvc5/commit/402299b) @ [PR #12030](https://github.com/cvc5/cvc5/pull/12030), 25 hours ago)
 * [Documentation for PR #12028](docs-pr12028/) (built from [7f95205](https://github.com/cvc5/cvc5/commit/7f95205) @ [PR #12028](https://github.com/cvc5/cvc5/pull/12028), 27 hours ago)
 * [Documentation for PR #12025](docs-pr12025/) (built from [aff952c](https://github.com/cvc5/cvc5/commit/aff952c) @ [PR #12025](https://github.com/cvc5/cvc5/pull/12025), 7 days ago)
