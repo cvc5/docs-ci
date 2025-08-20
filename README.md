@@ -1,15 +1,15 @@
 
 
-* [Documentation for main](docs-main/) (built from [92d3ebf](https://github.com/cvc5/cvc5/commit/92d3ebf) @ [main](https://github.com/cvc5/cvc5/tree/main), Aug Wed 20, 17:11 UTC)
+* [Documentation for main](docs-main/) (built from [13e624a](https://github.com/cvc5/cvc5/commit/13e624a) @ [main](https://github.com/cvc5/cvc5/tree/main), Aug Wed 20, 17:24 UTC)
 
 ***
 
 
-* [Documentation for main](docs-main/) (built from [92d3ebf](https://github.com/cvc5/cvc5/commit/92d3ebf) @ [main](https://github.com/cvc5/cvc5/tree/main), now)
+* [Documentation for main](docs-main/) (built from [13e624a](https://github.com/cvc5/cvc5/commit/13e624a) @ [main](https://github.com/cvc5/cvc5/tree/main), now)
 * [Documentation for PR #12076](docs-pr12076/) (built from [856fe1c](https://github.com/cvc5/cvc5/commit/856fe1c) @ [PR #12076](https://github.com/cvc5/cvc5/pull/12076), 6 days ago)
 * [Documentation for PR #12075](docs-pr12075/) (built from [4cc48dd](https://github.com/cvc5/cvc5/commit/4cc48dd) @ [PR #12075](https://github.com/cvc5/cvc5/pull/12075), 6 days ago)
 * [Documentation for PR #12073](docs-pr12073/) (built from [1d42872](https://github.com/cvc5/cvc5/commit/1d42872) @ [PR #12073](https://github.com/cvc5/cvc5/pull/12073), 6 days ago)
-* [Documentation for PR #12072](docs-pr12072/) (built from [a7a309d](https://github.com/cvc5/cvc5/commit/a7a309d) @ [PR #12072](https://github.com/cvc5/cvc5/pull/12072), 71 minutes ago)
+* [Documentation for PR #12072](docs-pr12072/) (built from [a7a309d](https://github.com/cvc5/cvc5/commit/a7a309d) @ [PR #12072](https://github.com/cvc5/cvc5/pull/12072), 84 minutes ago)
 * [Documentation for PR #12071](docs-pr12071/) (built from [2b1cf14](https://github.com/cvc5/cvc5/commit/2b1cf14) @ [PR #12071](https://github.com/cvc5/cvc5/pull/12071), 7 days ago)
 * [Documentation for PR #12070](docs-pr12070/) (built from [a17cdac](https://github.com/cvc5/cvc5/commit/a17cdac) @ [PR #12070](https://github.com/cvc5/cvc5/pull/12070), 7 days ago)
 * [Documentation for PR #12069](docs-pr12069/) (built from [e5dbfb6](https://github.com/cvc5/cvc5/commit/e5dbfb6) @ [PR #12069](https://github.com/cvc5/cvc5/pull/12069), 7 days ago)
