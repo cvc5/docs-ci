@@ -1,16 +1,17 @@
 
 
-* [Documentation for wheels-1.3.1](docs-wheels-1.3.1/) (built from [9d8c2b8](https://github.com/cvc5/cvc5/commit/9d8c2b8) @ [wheels-1.3.1](https://github.com/cvc5/cvc5/tree/wheels-1.3.1), Sep Wed 24, 21:04 UTC)
+* [Documentation for PR #12150](docs-pr12150/) (built from [9245158](https://github.com/cvc5/cvc5/commit/9245158) @ [PR #12150](https://github.com/cvc5/cvc5/pull/12150), Sep Wed 24, 21:58 UTC)
 
 ***
 
 
-* [Documentation for cvc5-1.3.1](docs-cvc5-1.3.1/) (built from [ea1b484](https://github.com/cvc5/cvc5/commit/ea1b484) @ [cvc5-1.3.1](https://github.com/cvc5/cvc5/tree/cvc5-1.3.1), 67 minutes ago)
-* [Documentation for main](docs-main/) (built from [967bdac](https://github.com/cvc5/cvc5/commit/967bdac) @ [main](https://github.com/cvc5/cvc5/tree/main), 2 hours ago)
-* [Documentation for wheels-1.3.1](docs-wheels-1.3.1/) (built from [9d8c2b8](https://github.com/cvc5/cvc5/commit/9d8c2b8) @ [wheels-1.3.1](https://github.com/cvc5/cvc5/tree/wheels-1.3.1), now)
-* [Documentation for PR #12149](docs-pr12149/) (built from [72bbe48](https://github.com/cvc5/cvc5/commit/72bbe48) @ [PR #12149](https://github.com/cvc5/cvc5/pull/12149), 13 minutes ago)
-* [Documentation for PR #12148](docs-pr12148/) (built from [4b95470](https://github.com/cvc5/cvc5/commit/4b95470) @ [PR #12148](https://github.com/cvc5/cvc5/pull/12148), 24 minutes ago)
-* [Documentation for PR #12146](docs-pr12146/) (built from [a4b01c5](https://github.com/cvc5/cvc5/commit/a4b01c5) @ [PR #12146](https://github.com/cvc5/cvc5/pull/12146), 3 hours ago)
+* [Documentation for cvc5-1.3.1](docs-cvc5-1.3.1/) (built from [ea1b484](https://github.com/cvc5/cvc5/commit/ea1b484) @ [cvc5-1.3.1](https://github.com/cvc5/cvc5/tree/cvc5-1.3.1), 2 hours ago)
+* [Documentation for main](docs-main/) (built from [967bdac](https://github.com/cvc5/cvc5/commit/967bdac) @ [main](https://github.com/cvc5/cvc5/tree/main), 3 hours ago)
+* [Documentation for wheels-1.3.1](docs-wheels-1.3.1/) (built from [9d8c2b8](https://github.com/cvc5/cvc5/commit/9d8c2b8) @ [wheels-1.3.1](https://github.com/cvc5/cvc5/tree/wheels-1.3.1), 54 minutes ago)
+* [Documentation for PR #12150](docs-pr12150/) (built from [9245158](https://github.com/cvc5/cvc5/commit/9245158) @ [PR #12150](https://github.com/cvc5/cvc5/pull/12150), now)
+* [Documentation for PR #12149](docs-pr12149/) (built from [72bbe48](https://github.com/cvc5/cvc5/commit/72bbe48) @ [PR #12149](https://github.com/cvc5/cvc5/pull/12149), 67 minutes ago)
+* [Documentation for PR #12148](docs-pr12148/) (built from [4b95470](https://github.com/cvc5/cvc5/commit/4b95470) @ [PR #12148](https://github.com/cvc5/cvc5/pull/12148), 78 minutes ago)
+* [Documentation for PR #12146](docs-pr12146/) (built from [a4b01c5](https://github.com/cvc5/cvc5/commit/a4b01c5) @ [PR #12146](https://github.com/cvc5/cvc5/pull/12146), 4 hours ago)
 * [Documentation for PR #12142](docs-pr12142/) (built from [1adc185](https://github.com/cvc5/cvc5/commit/1adc185) @ [PR #12142](https://github.com/cvc5/cvc5/pull/12142), 2 days ago)
 * [Documentation for PR #12141](docs-pr12141/) (built from [fb6b745](https://github.com/cvc5/cvc5/commit/fb6b745) @ [PR #12141](https://github.com/cvc5/cvc5/pull/12141), 2 days ago)
 * [Documentation for PR #12138](docs-pr12138/) (built from [618587f](https://github.com/cvc5/cvc5/commit/618587f) @ [PR #12138](https://github.com/cvc5/cvc5/pull/12138), 5 days ago)
