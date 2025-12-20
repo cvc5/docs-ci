@@ -1,10 +1,15 @@
 
 
+* [Documentation for PR #12318](docs-pr12318/) (built from [ee88dbe](https://github.com/cvc5/cvc5/commit/ee88dbe) @ [PR #12318](https://github.com/cvc5/cvc5/pull/12318), Dec Sat 20, 02:26 UTC)
+
+***
+
 
 * [Documentation for cvc5-1.3.2](docs-cvc5-1.3.2/) (built from [86cecd8](https://github.com/cvc5/cvc5/commit/86cecd8) @ [cvc5-1.3.2](https://github.com/cvc5/cvc5/tree/cvc5-1.3.2), 7 days ago)
-* [Documentation for main](docs-main/) (built from [4c6f395](https://github.com/cvc5/cvc5/commit/4c6f395) @ [main](https://github.com/cvc5/cvc5/tree/main), 6 hours ago)
-* [Documentation for PR #12317](docs-pr12317/) (built from [e54a835](https://github.com/cvc5/cvc5/commit/e54a835) @ [PR #12317](https://github.com/cvc5/cvc5/pull/12317), 21 hours ago)
-* [Documentation for PR #12316](docs-pr12316/) (built from [6d45258](https://github.com/cvc5/cvc5/commit/6d45258) @ [PR #12316](https://github.com/cvc5/cvc5/pull/12316), 28 hours ago)
+* [Documentation for main](docs-main/) (built from [4c6f395](https://github.com/cvc5/cvc5/commit/4c6f395) @ [main](https://github.com/cvc5/cvc5/tree/main), 7 hours ago)
+* [Documentation for PR #12318](docs-pr12318/) (built from [ee88dbe](https://github.com/cvc5/cvc5/commit/ee88dbe) @ [PR #12318](https://github.com/cvc5/cvc5/pull/12318), now)
+* [Documentation for PR #12317](docs-pr12317/) (built from [e54a835](https://github.com/cvc5/cvc5/commit/e54a835) @ [PR #12317](https://github.com/cvc5/cvc5/pull/12317), 22 hours ago)
+* [Documentation for PR #12316](docs-pr12316/) (built from [6d45258](https://github.com/cvc5/cvc5/commit/6d45258) @ [PR #12316](https://github.com/cvc5/cvc5/pull/12316), 29 hours ago)
 * [Documentation for PR #12315](docs-pr12315/) (built from [9c54379](https://github.com/cvc5/cvc5/commit/9c54379) @ [PR #12315](https://github.com/cvc5/cvc5/pull/12315), 2 days ago)
 * [Documentation for PR #12313](docs-pr12313/) (built from [42e9497](https://github.com/cvc5/cvc5/commit/42e9497) @ [PR #12313](https://github.com/cvc5/cvc5/pull/12313), 9 hours ago)
 * [Documentation for PR #12312](docs-pr12312/) (built from [3cae0e0](https://github.com/cvc5/cvc5/commit/3cae0e0) @ [PR #12312](https://github.com/cvc5/cvc5/pull/12312), 2 days ago)
