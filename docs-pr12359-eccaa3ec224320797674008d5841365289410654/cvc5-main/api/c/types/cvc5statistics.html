@@ -1,0 +1,484 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cvc5Statistics &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Cvc5SymbolManager" href="cvc5symbolmanager.html" />
+    <link rel="prev" title="Cvc5Sort" href="cvc5sort.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../cpp/cpp.html">C++ API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../c.html">C API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5.html">Cvc5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5command.html">Cvc5Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatype.html">Cvc5Datatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypedecl.html">Cvc5DatatypeDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypeconstructor.html">Cvc5DatatypeConstructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypeconstructordecl.html">Cvc5DatatypeConstructorDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypeselector.html">Cvc5DatatypeSelector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5grammar.html">Cvc5Grammar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5inputparser.html">Cvc5InputParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5op.html">Cvc5Op</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5proof.html">Cvc5Proof</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5result.html">Cvc5Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5sort.html">Cvc5Sort</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Cvc5Statistics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv48Cvc5Stat"><code class="docutils literal notranslate"><span class="pre">Cvc5Stat</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv421cvc5_stat_is_internal8Cvc5Stat"><code class="docutils literal notranslate"><span class="pre">cvc5_stat_is_internal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv420cvc5_stat_is_default8Cvc5Stat"><code class="docutils literal notranslate"><span class="pre">cvc5_stat_is_default()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv416cvc5_stat_is_int8Cvc5Stat"><code class="docutils literal notranslate"><span class="pre">cvc5_stat_is_int()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv417cvc5_stat_get_int8Cvc5Stat"><code class="docutils literal notranslate"><span class="pre">cvc5_stat_get_int()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv419cvc5_stat_is_double8Cvc5Stat"><code class="docutils literal notranslate"><span class="pre">cvc5_stat_is_double()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv420cvc5_stat_get_double8Cvc5Stat"><code class="docutils literal notranslate"><span class="pre">cvc5_stat_get_double()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv419cvc5_stat_is_string8Cvc5Stat"><code class="docutils literal notranslate"><span class="pre">cvc5_stat_is_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv420cvc5_stat_get_string8Cvc5Stat"><code class="docutils literal notranslate"><span class="pre">cvc5_stat_get_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv422cvc5_stat_is_histogram8Cvc5Stat"><code class="docutils literal notranslate"><span class="pre">cvc5_stat_is_histogram()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv423cvc5_stat_get_histogram8Cvc5StatA_PPKcA_P8uint64_tP6size_t"><code class="docutils literal notranslate"><span class="pre">cvc5_stat_get_histogram()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv419cvc5_stat_to_string8Cvc5Stat"><code class="docutils literal notranslate"><span class="pre">cvc5_stat_to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv414Cvc5Statistics"><code class="docutils literal notranslate"><span class="pre">Cvc5Statistics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv420cvc5_stats_iter_init14Cvc5Statisticsbb"><code class="docutils literal notranslate"><span class="pre">cvc5_stats_iter_init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv424cvc5_stats_iter_has_next14Cvc5Statistics"><code class="docutils literal notranslate"><span class="pre">cvc5_stats_iter_has_next()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv420cvc5_stats_iter_next14Cvc5StatisticsPPKc"><code class="docutils literal notranslate"><span class="pre">cvc5_stats_iter_next()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv414cvc5_stats_get14Cvc5StatisticsPKc"><code class="docutils literal notranslate"><span class="pre">cvc5_stats_get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv420cvc5_stats_to_string14Cvc5Statistics"><code class="docutils literal notranslate"><span class="pre">cvc5_stats_to_string()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5symbolmanager.html">Cvc5SymbolManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5synthresult.html">Cvc5SynthResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5term.html">Cvc5Term</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5termmanager.html">Cvc5TermManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../structs/cvc5optioninfo.html">Cvc5OptionInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../structs/cvc5plugin.html">Cvc5Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5kind.html">Cvc5Kind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5sortkind.html">Cvc5SortKind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5roundingmode.html">Cvc5RoundingMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5unknownexplanation.html">Cvc5UnknownExplanation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/modes.html">Modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#types">Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#structs">Structs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#enums">Enums</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/python.html">Python API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../c.html">C API</a></li>
+      <li class="breadcrumb-item active">Cvc5Statistics</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cvc5statistics">
+<h1>Cvc5Statistics<a class="headerlink" href="#cvc5statistics" title="Link to this heading"></a></h1>
+<p>See <a class="reference internal" href="../../../statistics.html"><span class="doc">Statistics</span></a> for general information on statistics in cvc5.</p>
+<p>Struct <a class="reference internal" href="../../cpp/classes/statistics.html#_CPPv4N4cvc510StatisticsE" title="cvc5::Statistics"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">cvc5::Statistics</span></code></a> represents a mapping from statistic names
+to statistic values, which are represented by struct <a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat"><code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">Cvc5Stat</span></code></a>. A
+<a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat"><code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">Cvc5Stat</span></code></a> may hold values of different
+types (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">int64_t</span></code>, <code class="docutils literal notranslate"><span class="pre">uint64_t</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char*</span></code> and
+histograms) and can be inspected by identifying the type via functions
+<code class="docutils literal notranslate"><span class="pre">cvc5_stat_is_&lt;type&gt;</span></code> and obtaining
+the actual value via functions <code class="docutils literal notranslate"><span class="pre">cvc5_stat_get_&lt;type&gt;</span></code>.
+Histograms are represented as a paar of arrays (<code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char**</span> <span class="pre">keys[]</span></code> and
+<code class="docutils literal notranslate"><span class="pre">uint64_t*</span> <span class="pre">values[]</span></code>) where the key is the string representation of one
+enumeration value and the value is the frequency of this particular value.</p>
+<p>A statistics iterator can be initialized via <a class="reference internal" href="#_CPPv420cvc5_stats_iter_init14Cvc5Statisticsbb" title="cvc5_stats_iter_init"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5_stats_iter_init()</span></code></a>,
+which allows to configure the visbility of internal and unchanged statistic
+entries. Iteration over statistics entries is then provided via functions
+<a class="reference internal" href="#_CPPv424cvc5_stats_iter_has_next14Cvc5Statistics" title="cvc5_stats_iter_has_next"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5_stats_iter_has_next()</span></code></a> and <a class="reference internal" href="#_CPPv420cvc5_stats_iter_next14Cvc5StatisticsPPKc" title="cvc5_stats_iter_next"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5_stats_iter_next()</span></code></a>.</p>
+<div class="hide-toctree docutils container">
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<hr class="docutils" />
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv48Cvc5Stat">
+<span id="_CPPv38Cvc5Stat"></span><span id="_CPPv28Cvc5Stat"></span><span id="Cvc5Stat"></span><span class="target" id="cvc5_8h_1a7f4a4b19f503835e559595640aaeeb1f"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">cvc5_stat_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Cvc5Stat</span></span></span><a class="headerlink" href="#_CPPv48Cvc5Stat" title="Link to this definition"></a><br /></dt>
+<dd><p>A cvc5 statistic. </p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv421cvc5_stat_is_internal8Cvc5Stat">
+<span id="_CPPv321cvc5_stat_is_internal8Cvc5Stat"></span><span id="_CPPv221cvc5_stat_is_internal8Cvc5Stat"></span><span id="cvc5_stat_is_internal__Cvc5Stat"></span><span class="target" id="group__c__cvc5stat_1ga1d3916511f157f7c9a98b4225f2d66e1"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stat_is_internal</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat"><span class="n"><span class="pre">Cvc5Stat</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421cvc5_stat_is_internal8Cvc5Stat" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if a given statistic is intended for internal use only. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stat</strong> – The statistic. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if this is an internal statistic. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv420cvc5_stat_is_default8Cvc5Stat">
+<span id="_CPPv320cvc5_stat_is_default8Cvc5Stat"></span><span id="_CPPv220cvc5_stat_is_default8Cvc5Stat"></span><span id="cvc5_stat_is_default__Cvc5Stat"></span><span class="target" id="group__c__cvc5stat_1gad24bf29127f7e84e571c94cd75a294b0"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stat_is_default</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat"><span class="n"><span class="pre">Cvc5Stat</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cvc5_stat_is_default8Cvc5Stat" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if a given statistics statistic holds the default value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stat</strong> – The statistic. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if this is a defaulted statistic. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv416cvc5_stat_is_int8Cvc5Stat">
+<span id="_CPPv316cvc5_stat_is_int8Cvc5Stat"></span><span id="_CPPv216cvc5_stat_is_int8Cvc5Stat"></span><span id="cvc5_stat_is_int__Cvc5Stat"></span><span class="target" id="group__c__cvc5stat_1gaa24ff482c8776ae18ef537a0173f8e61"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stat_is_int</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat"><span class="n"><span class="pre">Cvc5Stat</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416cvc5_stat_is_int8Cvc5Stat" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if a given statistic holds an integer value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stat</strong> – The statistic. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if this value is an integer. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv417cvc5_stat_get_int8Cvc5Stat">
+<span id="_CPPv317cvc5_stat_get_int8Cvc5Stat"></span><span id="_CPPv217cvc5_stat_get_int8Cvc5Stat"></span><span id="cvc5_stat_get_int__Cvc5Stat"></span><span class="target" id="group__c__cvc5stat_1ga776dd5acc3d546e2e041950cadc1ff2f"></span><span class="n"><span class="pre">int64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stat_get_int</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat"><span class="n"><span class="pre">Cvc5Stat</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417cvc5_stat_get_int8Cvc5Stat" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the value of an integer statistic. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stat</strong> – The statistic. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The integer value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419cvc5_stat_is_double8Cvc5Stat">
+<span id="_CPPv319cvc5_stat_is_double8Cvc5Stat"></span><span id="_CPPv219cvc5_stat_is_double8Cvc5Stat"></span><span id="cvc5_stat_is_double__Cvc5Stat"></span><span class="target" id="group__c__cvc5stat_1ga5505e203bc2c6ea8d8393677d6cfe550"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stat_is_double</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat"><span class="n"><span class="pre">Cvc5Stat</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419cvc5_stat_is_double8Cvc5Stat" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if a given statistic holds a double value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stat</strong> – The statistic. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if this value is a double. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv420cvc5_stat_get_double8Cvc5Stat">
+<span id="_CPPv320cvc5_stat_get_double8Cvc5Stat"></span><span id="_CPPv220cvc5_stat_get_double8Cvc5Stat"></span><span id="cvc5_stat_get_double__Cvc5Stat"></span><span class="target" id="group__c__cvc5stat_1ga488c213f4969d113c6f02ec291bb9822"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stat_get_double</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat"><span class="n"><span class="pre">Cvc5Stat</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cvc5_stat_get_double8Cvc5Stat" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the value of a double statistic. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stat</strong> – The statistic. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The double value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419cvc5_stat_is_string8Cvc5Stat">
+<span id="_CPPv319cvc5_stat_is_string8Cvc5Stat"></span><span id="_CPPv219cvc5_stat_is_string8Cvc5Stat"></span><span id="cvc5_stat_is_string__Cvc5Stat"></span><span class="target" id="group__c__cvc5stat_1ga616c125cf72b76f5d9365feede13ae7f"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stat_is_string</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat"><span class="n"><span class="pre">Cvc5Stat</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419cvc5_stat_is_string8Cvc5Stat" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if a given statistic holds a string value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stat</strong> – The statistic. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if this value is a string. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv420cvc5_stat_get_string8Cvc5Stat">
+<span id="_CPPv320cvc5_stat_get_string8Cvc5Stat"></span><span id="_CPPv220cvc5_stat_get_string8Cvc5Stat"></span><span id="cvc5_stat_get_string__Cvc5Stat"></span><span class="target" id="group__c__cvc5stat_1ga2381c64b366c20fea4bd4e695c04b293"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stat_get_string</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat"><span class="n"><span class="pre">Cvc5Stat</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cvc5_stat_get_string8Cvc5Stat" title="Link to this definition"></a><br /></dt>
+<dd><p>Get value of a string statistic. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The returned char pointer is only valid until the next call to this function. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stat</strong> – The statistic. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The string value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv422cvc5_stat_is_histogram8Cvc5Stat">
+<span id="_CPPv322cvc5_stat_is_histogram8Cvc5Stat"></span><span id="_CPPv222cvc5_stat_is_histogram8Cvc5Stat"></span><span id="cvc5_stat_is_histogram__Cvc5Stat"></span><span class="target" id="group__c__cvc5stat_1ga1318ceb5e28315c22a3e52ffaf46acb8"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stat_is_histogram</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat"><span class="n"><span class="pre">Cvc5Stat</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422cvc5_stat_is_histogram8Cvc5Stat" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if a given statistic holds a histogram. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stat</strong> – The statistic. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if this value is a histogram. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv423cvc5_stat_get_histogram8Cvc5StatA_PPKcA_P8uint64_tP6size_t">
+<span id="_CPPv323cvc5_stat_get_histogram8Cvc5StatA_PPKcA_P8uint64_tP6size_t"></span><span id="_CPPv223cvc5_stat_get_histogram8Cvc5StatA_PPKcA_P8uint64_tP6size_t"></span><span id="cvc5_stat_get_histogram__Cvc5Stat.cCPPA.uint64_tPA.sP"></span><span class="target" id="group__c__cvc5stat_1ga99a4eabe6d767a9b12b3ca0e2af7ddc1"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stat_get_histogram</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat"><span class="n"><span class="pre">Cvc5Stat</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">keys</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423cvc5_stat_get_histogram8Cvc5StatA_PPKcA_P8uint64_tP6size_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the value of a histogram statistic. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stat</strong> – The statistic. </p></li>
+<li><p><strong>keys</strong> – The resulting arrays with the keys of the statistic, map to the values given in the resulting <code class="docutils literal notranslate"><span class="pre">values</span></code> array.. </p></li>
+<li><p><strong>values</strong> – The resulting arrays with the values of the statistic. </p></li>
+<li><p><strong>size</strong> – The size of the resulting keys/values arrays. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419cvc5_stat_to_string8Cvc5Stat">
+<span id="_CPPv319cvc5_stat_to_string8Cvc5Stat"></span><span id="_CPPv219cvc5_stat_to_string8Cvc5Stat"></span><span id="cvc5_stat_to_string__Cvc5Stat"></span><span class="target" id="group__c__cvc5stat_1gadc4de9d958f5e003296d9e425b05436d"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stat_to_string</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat"><span class="n"><span class="pre">Cvc5Stat</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419cvc5_stat_to_string8Cvc5Stat" title="Link to this definition"></a><br /></dt>
+<dd><p>Get a string representation of a given statistic. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The returned char* pointer is only valid until the next call to this function. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stat</strong> – The statistic. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The string representation. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv414Cvc5Statistics">
+<span id="_CPPv314Cvc5Statistics"></span><span id="_CPPv214Cvc5Statistics"></span><span id="Cvc5Statistics"></span><span class="target" id="cvc5_8h_1a97417f2b79dc94a6b6d9f648103fdcd2"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">cvc5_stats_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Cvc5Statistics</span></span></span><a class="headerlink" href="#_CPPv414Cvc5Statistics" title="Link to this definition"></a><br /></dt>
+<dd><p>A cvc5 statistics instance. </p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv420cvc5_stats_iter_init14Cvc5Statisticsbb">
+<span id="_CPPv320cvc5_stats_iter_init14Cvc5Statisticsbb"></span><span id="_CPPv220cvc5_stats_iter_init14Cvc5Statisticsbb"></span><span id="cvc5_stats_iter_init__Cvc5Statistics.b.b"></span><span class="target" id="group__c__cvc5statistics_1ga532a5a89fc38366d263e03546fba5ac5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stats_iter_init</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414Cvc5Statistics" title="Cvc5Statistics"><span class="n"><span class="pre">Cvc5Statistics</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">internal</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dflt</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cvc5_stats_iter_init14Cvc5Statisticsbb" title="Link to this definition"></a><br /></dt>
+<dd><p>Initialize iteration over the statistics values. By default, only entries that are public and have been set are visible while the others are skipped. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stat</strong> – The statistics. </p></li>
+<li><p><strong>internal</strong> – If set to true, internal statistics are shown as well. </p></li>
+<li><p><strong>dflt</strong> – If set to true, defaulted statistics are shown as well. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv424cvc5_stats_iter_has_next14Cvc5Statistics">
+<span id="_CPPv324cvc5_stats_iter_has_next14Cvc5Statistics"></span><span id="_CPPv224cvc5_stats_iter_has_next14Cvc5Statistics"></span><span id="cvc5_stats_iter_has_next__Cvc5Statistics"></span><span class="target" id="group__c__cvc5statistics_1ga32f5f4ebf88587fe03f881665e865664"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stats_iter_has_next</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414Cvc5Statistics" title="Cvc5Statistics"><span class="n"><span class="pre">Cvc5Statistics</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424cvc5_stats_iter_has_next14Cvc5Statistics" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if statistics iterator has more statitics to query. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Requires that iterator was initialized with <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5statistics_1ga532a5a89fc38366d263e03546fba5ac5"><span class="std std-ref"><span class="pre">cvc5_stats_iter_init()</span></span></a></code>. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stat</strong> – The statistics. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the iterator has more statistics to query. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv420cvc5_stats_iter_next14Cvc5StatisticsPPKc">
+<span id="_CPPv320cvc5_stats_iter_next14Cvc5StatisticsPPKc"></span><span id="_CPPv220cvc5_stats_iter_next14Cvc5StatisticsPPKc"></span><span id="cvc5_stats_iter_next__Cvc5Statistics.cCPP"></span><span class="target" id="group__c__cvc5statistics_1gada3f397367e6c8b98ce46baedf8f9a21"></span><a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat"><span class="n"><span class="pre">Cvc5Stat</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stats_iter_next</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414Cvc5Statistics" title="Cvc5Statistics"><span class="n"><span class="pre">Cvc5Statistics</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cvc5_stats_iter_next14Cvc5StatisticsPPKc" title="Link to this definition"></a><br /></dt>
+<dd><p>Get next statistic and increment iterator. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Requires that iterator was initialized with <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5statistics_1ga532a5a89fc38366d263e03546fba5ac5"><span class="std std-ref"><span class="pre">cvc5_stats_iter_init()</span></span></a></code> and that <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5statistics_1ga32f5f4ebf88587fe03f881665e865664"><span class="std std-ref"><span class="pre">cvc5_stats_iter_has_next()</span></span></a></code>. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The returned char* pointer are only valid until the next call to this function. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stat</strong> – The statistics. </p></li>
+<li><p><strong>name</strong> – The output parameter for the name of the returned statistic. May be NULL to ignore. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The next statistic. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv414cvc5_stats_get14Cvc5StatisticsPKc">
+<span id="_CPPv314cvc5_stats_get14Cvc5StatisticsPKc"></span><span id="_CPPv214cvc5_stats_get14Cvc5StatisticsPKc"></span><span id="cvc5_stats_get__Cvc5Statistics.cCP"></span><span class="target" id="group__c__cvc5statistics_1gaa4725b290d2f23cea1b7de3c623239f1"></span><a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat"><span class="n"><span class="pre">Cvc5Stat</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stats_get</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414Cvc5Statistics" title="Cvc5Statistics"><span class="n"><span class="pre">Cvc5Statistics</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414cvc5_stats_get14Cvc5StatisticsPKc" title="Link to this definition"></a><br /></dt>
+<dd><p>Retrieve the statistic with the given name. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Requires that a statistic with the given name actually exists. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stat</strong> – The statistics. </p></li>
+<li><p><strong>name</strong> – The name of the statistic. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The statistic with the given name. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv420cvc5_stats_to_string14Cvc5Statistics">
+<span id="_CPPv320cvc5_stats_to_string14Cvc5Statistics"></span><span id="_CPPv220cvc5_stats_to_string14Cvc5Statistics"></span><span id="cvc5_stats_to_string__Cvc5Statistics"></span><span class="target" id="group__c__cvc5statistics_1ga5c5ce4e043f5302b774bd15189b08cf9"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stats_to_string</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414Cvc5Statistics" title="Cvc5Statistics"><span class="n"><span class="pre">Cvc5Statistics</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cvc5_stats_to_string14Cvc5Statistics" title="Link to this definition"></a><br /></dt>
+<dd><p>Get a string representation of a given statistics object. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The returned char* pointer is only valid until the next call to this function. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stat</strong> – The statistics. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The string representation. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cvc5sort.html" class="btn btn-neutral float-left" title="Cvc5Sort" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cvc5symbolmanager.html" class="btn btn-neutral float-right" title="Cvc5SymbolManager" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
