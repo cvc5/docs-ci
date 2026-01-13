@@ -1,0 +1,529 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cvc5SortKind &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Cvc5RoundingMode" href="cvc5roundingmode.html" />
+    <link rel="prev" title="Cvc5Kind" href="cvc5kind.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../cpp/cpp.html">C++ API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../c.html">C API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5.html">Cvc5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5command.html">Cvc5Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5datatype.html">Cvc5Datatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5datatypedecl.html">Cvc5DatatypeDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5datatypeconstructor.html">Cvc5DatatypeConstructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5datatypeconstructordecl.html">Cvc5DatatypeConstructorDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5datatypeselector.html">Cvc5DatatypeSelector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5grammar.html">Cvc5Grammar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5inputparser.html">Cvc5InputParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5op.html">Cvc5Op</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5proof.html">Cvc5Proof</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5result.html">Cvc5Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5sort.html">Cvc5Sort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5statistics.html">Cvc5Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5symbolmanager.html">Cvc5SymbolManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5synthresult.html">Cvc5SynthResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5term.html">Cvc5Term</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types/cvc5termmanager.html">Cvc5TermManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../structs/cvc5optioninfo.html">Cvc5OptionInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../structs/cvc5plugin.html">Cvc5Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5kind.html">Cvc5Kind</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Cvc5SortKind</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv412Cvc5SortKind"><code class="docutils literal notranslate"><span class="pre">Cvc5SortKind</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind33CVC5_SORT_KIND_INTERNAL_SORT_KINDE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_INTERNAL_SORT_KIND</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind34CVC5_SORT_KIND_UNDEFINED_SORT_KINDE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_UNDEFINED_SORT_KIND</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind24CVC5_SORT_KIND_NULL_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_NULL_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind28CVC5_SORT_KIND_ABSTRACT_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_ABSTRACT_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind25CVC5_SORT_KIND_ARRAY_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_ARRAY_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind23CVC5_SORT_KIND_BAG_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_BAG_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind27CVC5_SORT_KIND_BOOLEAN_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_BOOLEAN_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind29CVC5_SORT_KIND_BITVECTOR_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_BITVECTOR_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind28CVC5_SORT_KIND_DATATYPE_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_DATATYPE_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind32CVC5_SORT_KIND_FINITE_FIELD_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_FINITE_FIELD_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind33CVC5_SORT_KIND_FLOATINGPOINT_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_FLOATINGPOINT_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind28CVC5_SORT_KIND_FUNCTION_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_FUNCTION_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind27CVC5_SORT_KIND_INTEGER_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_INTEGER_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind24CVC5_SORT_KIND_REAL_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_REAL_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind26CVC5_SORT_KIND_REGLAN_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_REGLAN_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind32CVC5_SORT_KIND_ROUNDINGMODE_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_ROUNDINGMODE_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind28CVC5_SORT_KIND_SEQUENCE_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_SEQUENCE_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind23CVC5_SORT_KIND_SET_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_SET_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind26CVC5_SORT_KIND_STRING_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_STRING_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind25CVC5_SORT_KIND_TUPLE_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_TUPLE_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind28CVC5_SORT_KIND_NULLABLE_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_NULLABLE_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind33CVC5_SORT_KIND_UNINTERPRETED_SORTE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_UNINTERPRETED_SORT</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N12Cvc5SortKind29CVC5_SORT_KIND_LAST_SORT_KINDE"><code class="docutils literal notranslate"><span class="pre">CVC5_SORT_KIND_LAST_SORT_KIND</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv424cvc5_sort_kind_to_string12Cvc5SortKind"><code class="docutils literal notranslate"><span class="pre">cvc5_sort_kind_to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv419cvc5_sort_kind_hash12Cvc5SortKind"><code class="docutils literal notranslate"><span class="pre">cvc5_sort_kind_hash()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5roundingmode.html">Cvc5RoundingMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5unknownexplanation.html">Cvc5UnknownExplanation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modes.html">Modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#types">Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#structs">Structs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#enums">Enums</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/python.html">Python API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../c.html">C API</a></li>
+      <li class="breadcrumb-item active">Cvc5SortKind</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cvc5sortkind">
+<h1>Cvc5SortKind<a class="headerlink" href="#cvc5sortkind" title="Link to this heading"></a></h1>
+<p>Every <a class="reference internal" href="../types/cvc5sort.html#_CPPv48Cvc5Sort" title="Cvc5Sort"><code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">Cvc5Sort</span></code></a> has an associated kind, represented
+as enum <a class="reference internal" href="#_CPPv412Cvc5SortKind" title="Cvc5SortKind"><code class="xref cpp cpp-enum docutils literal notranslate"><span class="pre">Cvc5SortKind</span></code></a>.</p>
+<div class="hide-toctree docutils container">
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<hr class="docutils" />
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv412Cvc5SortKind">
+<span id="_CPPv312Cvc5SortKind"></span><span id="_CPPv212Cvc5SortKind"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3e"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Cvc5SortKind</span></span></span><a class="headerlink" href="#_CPPv412Cvc5SortKind" title="Link to this definition"></a><br /></dt>
+<dd><p>The kind of a cvc5 Sort. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind33CVC5_SORT_KIND_INTERNAL_SORT_KINDE">
+<span id="_CPPv3N12Cvc5SortKind33CVC5_SORT_KIND_INTERNAL_SORT_KINDE"></span><span id="_CPPv2N12Cvc5SortKind33CVC5_SORT_KIND_INTERNAL_SORT_KINDE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3ea51620302d625ce8c069aef34e200f3e2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_INTERNAL_SORT_KIND</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind33CVC5_SORT_KIND_INTERNAL_SORT_KINDE" title="Link to this definition"></a><br /></dt>
+<dd><p>Internal kind.</p>
+<p>This kind serves as an abstraction for internal kinds that are not exposed via the API but may appear in terms returned by API functions, e.g., when querying the simplified form of a term.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Should never be created via the API.</p>
+</div>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind34CVC5_SORT_KIND_UNDEFINED_SORT_KINDE">
+<span id="_CPPv3N12Cvc5SortKind34CVC5_SORT_KIND_UNDEFINED_SORT_KINDE"></span><span id="_CPPv2N12Cvc5SortKind34CVC5_SORT_KIND_UNDEFINED_SORT_KINDE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3eaf5a353fdfe55a0f59606514ba4910c22"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_UNDEFINED_SORT_KIND</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind34CVC5_SORT_KIND_UNDEFINED_SORT_KINDE" title="Link to this definition"></a><br /></dt>
+<dd><p>Undefined kind.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Should never be exposed or created via the API.</p>
+</div>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind24CVC5_SORT_KIND_NULL_SORTE">
+<span id="_CPPv3N12Cvc5SortKind24CVC5_SORT_KIND_NULL_SORTE"></span><span id="_CPPv2N12Cvc5SortKind24CVC5_SORT_KIND_NULL_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3ea5a9f055079ac287afccf3c11ba6aa44b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_NULL_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind24CVC5_SORT_KIND_NULL_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>Null kind.</p>
+<p>The kind of a null sort (Sort::Sort()).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>May not be explicitly created via API functions other than
+<code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Sort::Sort()</span></code>.</p>
+</div>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind28CVC5_SORT_KIND_ABSTRACT_SORTE">
+<span id="_CPPv3N12Cvc5SortKind28CVC5_SORT_KIND_ABSTRACT_SORTE"></span><span id="_CPPv2N12Cvc5SortKind28CVC5_SORT_KIND_ABSTRACT_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3ea3e3d531861746f71eee946a21fc630a2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_ABSTRACT_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind28CVC5_SORT_KIND_ABSTRACT_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>An abstract sort.</p>
+<p>An abstract sort represents a sort whose parameters or argument sorts are unspecified. For example, <code class="docutils literal notranslate"><span class="pre">mkAbstractSort(BITVECTOR_SORT)</span></code> returns a sort that represents the sort of bit-vectors whose bit-width is unspecified.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::mkAbstractSort(SortKind) </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind25CVC5_SORT_KIND_ARRAY_SORTE">
+<span id="_CPPv3N12Cvc5SortKind25CVC5_SORT_KIND_ARRAY_SORTE"></span><span id="_CPPv2N12Cvc5SortKind25CVC5_SORT_KIND_ARRAY_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3eafa4e30b7f752425438ae8c8ebce6f7a4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_ARRAY_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind25CVC5_SORT_KIND_ARRAY_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>An array sort, whose argument sorts are the index and element sorts of the array.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::mkArraySort(Sort, Sort) </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind23CVC5_SORT_KIND_BAG_SORTE">
+<span id="_CPPv3N12Cvc5SortKind23CVC5_SORT_KIND_BAG_SORTE"></span><span id="_CPPv2N12Cvc5SortKind23CVC5_SORT_KIND_BAG_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3eaaa9f52ac475a3a635fb5d5ec228eda49"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_BAG_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind23CVC5_SORT_KIND_BAG_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>A bag sort, whose argument sort is the element sort of the bag.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::mkBagSort(Sort) </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind27CVC5_SORT_KIND_BOOLEAN_SORTE">
+<span id="_CPPv3N12Cvc5SortKind27CVC5_SORT_KIND_BOOLEAN_SORTE"></span><span id="_CPPv2N12Cvc5SortKind27CVC5_SORT_KIND_BOOLEAN_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3ea18e68bc523540241ad42143b58cd649a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_BOOLEAN_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind27CVC5_SORT_KIND_BOOLEAN_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>The Boolean sort.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::getBooleanSort() </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind29CVC5_SORT_KIND_BITVECTOR_SORTE">
+<span id="_CPPv3N12Cvc5SortKind29CVC5_SORT_KIND_BITVECTOR_SORTE"></span><span id="_CPPv2N12Cvc5SortKind29CVC5_SORT_KIND_BITVECTOR_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3eaa3bdd6a692085c9b8301a155d62fa8f4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_BITVECTOR_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind29CVC5_SORT_KIND_BITVECTOR_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>A bit-vector sort, parameterized by an integer denoting its bit-width.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::mkBitVectorSort(uint32_t) </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind28CVC5_SORT_KIND_DATATYPE_SORTE">
+<span id="_CPPv3N12Cvc5SortKind28CVC5_SORT_KIND_DATATYPE_SORTE"></span><span id="_CPPv2N12Cvc5SortKind28CVC5_SORT_KIND_DATATYPE_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3ea4c9b246edcc59128325435f2fd652c3e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_DATATYPE_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind28CVC5_SORT_KIND_DATATYPE_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>A datatype sort.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::mkDatatypeSort(DatatypeDecl)</p></li>
+<li><p>TermManager::mkDatatypeSorts(const std::vector&lt;DatatypeDecl&gt;&amp;) </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind32CVC5_SORT_KIND_FINITE_FIELD_SORTE">
+<span id="_CPPv3N12Cvc5SortKind32CVC5_SORT_KIND_FINITE_FIELD_SORTE"></span><span id="_CPPv2N12Cvc5SortKind32CVC5_SORT_KIND_FINITE_FIELD_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3ea5ff4ef155b4bd39e46d7eb71ce1d00b5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_FINITE_FIELD_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind32CVC5_SORT_KIND_FINITE_FIELD_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>A finite field sort, parameterized by a size.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::mkFiniteFieldSort(const std::string&amp;, uint32_t base) </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind33CVC5_SORT_KIND_FLOATINGPOINT_SORTE">
+<span id="_CPPv3N12Cvc5SortKind33CVC5_SORT_KIND_FLOATINGPOINT_SORTE"></span><span id="_CPPv2N12Cvc5SortKind33CVC5_SORT_KIND_FLOATINGPOINT_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3eac852240a55a5c69f64365ea6a1ba8d85"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_FLOATINGPOINT_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind33CVC5_SORT_KIND_FLOATINGPOINT_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>A floating-point sort, parameterized by two integers denoting its exponent and significand bit-widths.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::mkFloatingPointSort(uint32_t, uint32_t) </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind28CVC5_SORT_KIND_FUNCTION_SORTE">
+<span id="_CPPv3N12Cvc5SortKind28CVC5_SORT_KIND_FUNCTION_SORTE"></span><span id="_CPPv2N12Cvc5SortKind28CVC5_SORT_KIND_FUNCTION_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3eab22b25a1b5345c2d6d708d5c6896598e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_FUNCTION_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind28CVC5_SORT_KIND_FUNCTION_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>A function sort with given domain sorts and codomain sort.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::mkFunctionSort(const std::vector&lt;Sort&gt;&amp;, Sort) </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind27CVC5_SORT_KIND_INTEGER_SORTE">
+<span id="_CPPv3N12Cvc5SortKind27CVC5_SORT_KIND_INTEGER_SORTE"></span><span id="_CPPv2N12Cvc5SortKind27CVC5_SORT_KIND_INTEGER_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3ea4a47fee8749717f5b06880cd6a61c068"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_INTEGER_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind27CVC5_SORT_KIND_INTEGER_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>The integer sort.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::getIntegerSort() </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind24CVC5_SORT_KIND_REAL_SORTE">
+<span id="_CPPv3N12Cvc5SortKind24CVC5_SORT_KIND_REAL_SORTE"></span><span id="_CPPv2N12Cvc5SortKind24CVC5_SORT_KIND_REAL_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3ea4139b0d5e419072251e89ced3a6dc451"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_REAL_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind24CVC5_SORT_KIND_REAL_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>The real sort.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::getRealSort() </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind26CVC5_SORT_KIND_REGLAN_SORTE">
+<span id="_CPPv3N12Cvc5SortKind26CVC5_SORT_KIND_REGLAN_SORTE"></span><span id="_CPPv2N12Cvc5SortKind26CVC5_SORT_KIND_REGLAN_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3eadf2928cff9b813c6c1333213cfe01375"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_REGLAN_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind26CVC5_SORT_KIND_REGLAN_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>The regular language sort.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::getRegExpSort() </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind32CVC5_SORT_KIND_ROUNDINGMODE_SORTE">
+<span id="_CPPv3N12Cvc5SortKind32CVC5_SORT_KIND_ROUNDINGMODE_SORTE"></span><span id="_CPPv2N12Cvc5SortKind32CVC5_SORT_KIND_ROUNDINGMODE_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3ea8966c852f9b3d80d6fc4a6f5b265eb54"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_ROUNDINGMODE_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind32CVC5_SORT_KIND_ROUNDINGMODE_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>The rounding mode sort.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::getRoundingModeSort() </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind28CVC5_SORT_KIND_SEQUENCE_SORTE">
+<span id="_CPPv3N12Cvc5SortKind28CVC5_SORT_KIND_SEQUENCE_SORTE"></span><span id="_CPPv2N12Cvc5SortKind28CVC5_SORT_KIND_SEQUENCE_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3eaa01eb59b2af1a68e6b2f35b6e9e6340d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_SEQUENCE_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind28CVC5_SORT_KIND_SEQUENCE_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>A sequence sort, whose argument sort is the element sort of the sequence.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::mkSequenceSort(Sort) </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind23CVC5_SORT_KIND_SET_SORTE">
+<span id="_CPPv3N12Cvc5SortKind23CVC5_SORT_KIND_SET_SORTE"></span><span id="_CPPv2N12Cvc5SortKind23CVC5_SORT_KIND_SET_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3ea920d755c286901c4846b1389d1243f76"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_SET_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind23CVC5_SORT_KIND_SET_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>A set sort, whose argument sort is the element sort of the set.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::mkSetSort(Sort) </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind26CVC5_SORT_KIND_STRING_SORTE">
+<span id="_CPPv3N12Cvc5SortKind26CVC5_SORT_KIND_STRING_SORTE"></span><span id="_CPPv2N12Cvc5SortKind26CVC5_SORT_KIND_STRING_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3ea051609267db36240cf8c64e32a5e84c8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_STRING_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind26CVC5_SORT_KIND_STRING_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>The string sort.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::getStringSort() </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind25CVC5_SORT_KIND_TUPLE_SORTE">
+<span id="_CPPv3N12Cvc5SortKind25CVC5_SORT_KIND_TUPLE_SORTE"></span><span id="_CPPv2N12Cvc5SortKind25CVC5_SORT_KIND_TUPLE_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3eaf7ce10be6e96e88001ab7382130a0e5a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_TUPLE_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind25CVC5_SORT_KIND_TUPLE_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>A tuple sort, whose argument sorts denote the sorts of the direct children of the tuple.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::mkTupleSort(const std::vector&lt;Sort&gt;&amp;) </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind28CVC5_SORT_KIND_NULLABLE_SORTE">
+<span id="_CPPv3N12Cvc5SortKind28CVC5_SORT_KIND_NULLABLE_SORTE"></span><span id="_CPPv2N12Cvc5SortKind28CVC5_SORT_KIND_NULLABLE_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3ea0eec6475d0101f2c8d589cc16cc823c6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_NULLABLE_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind28CVC5_SORT_KIND_NULLABLE_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>A nullable sort, whose argument sort denotes the sort of the direct child of the nullable.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::mkNullableSort(const Sort&amp;) </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind33CVC5_SORT_KIND_UNINTERPRETED_SORTE">
+<span id="_CPPv3N12Cvc5SortKind33CVC5_SORT_KIND_UNINTERPRETED_SORTE"></span><span id="_CPPv2N12Cvc5SortKind33CVC5_SORT_KIND_UNINTERPRETED_SORTE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3ea34f1862bec41375788f09ae096f05fce"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_UNINTERPRETED_SORT</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind33CVC5_SORT_KIND_UNINTERPRETED_SORTE" title="Link to this definition"></a><br /></dt>
+<dd><p>An uninterpreted sort.</p>
+<p><ul class="simple">
+<li><p>Create Sort of this Kind with:<ul>
+<li><p>TermManager::mkUninterpretedSort(const std::optional&lt;std::string&gt;&amp;) </p></li>
+</ul>
+</p></li>
+</ul>
+</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12Cvc5SortKind29CVC5_SORT_KIND_LAST_SORT_KINDE">
+<span id="_CPPv3N12Cvc5SortKind29CVC5_SORT_KIND_LAST_SORT_KINDE"></span><span id="_CPPv2N12Cvc5SortKind29CVC5_SORT_KIND_LAST_SORT_KINDE"></span><span class="target" id="cvc5__kind_8h_1a1395ee54f745702f3f554ed2d3678a3eaa464270a4e27a159a672ad9d432b2292"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5_SORT_KIND_LAST_SORT_KIND</span></span></span><a class="headerlink" href="#_CPPv4N12Cvc5SortKind29CVC5_SORT_KIND_LAST_SORT_KINDE" title="Link to this definition"></a><br /></dt>
+<dd><p>Marks the upper-bound of this enumeration. </p>
+</dd></dl>
+
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv424cvc5_sort_kind_to_string12Cvc5SortKind">
+<span id="_CPPv324cvc5_sort_kind_to_string12Cvc5SortKind"></span><span id="_CPPv224cvc5_sort_kind_to_string12Cvc5SortKind"></span><span id="cvc5_sort_kind_to_string__Cvc5SortKind"></span><span class="target" id="cvc5__kind_8h_1abb5fdf80aa042f7486da2efdec633d62"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_sort_kind_to_string</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv412Cvc5SortKind" title="Cvc5SortKind"><span class="n"><span class="pre">Cvc5SortKind</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">kind</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424cvc5_sort_kind_to_string12Cvc5SortKind" title="Link to this definition"></a><br /></dt>
+<dd><p>Get a string representation of a Cvc5SortKind. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kind</strong> – The sort kind. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The string representation. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419cvc5_sort_kind_hash12Cvc5SortKind">
+<span id="_CPPv319cvc5_sort_kind_hash12Cvc5SortKind"></span><span id="_CPPv219cvc5_sort_kind_hash12Cvc5SortKind"></span><span id="cvc5_sort_kind_hash__Cvc5SortKind"></span><span class="target" id="cvc5__kind_8h_1a28e0c6b8c0a48c8f1d79837b8505f51b"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_sort_kind_hash</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv412Cvc5SortKind" title="Cvc5SortKind"><span class="n"><span class="pre">Cvc5SortKind</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">kind</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419cvc5_sort_kind_hash12Cvc5SortKind" title="Link to this definition"></a><br /></dt>
+<dd><p>Hash function for Cvc5SortKinds. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kind</strong> – The kind. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The hash value. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cvc5kind.html" class="btn btn-neutral float-left" title="Cvc5Kind" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cvc5roundingmode.html" class="btn btn-neutral float-right" title="Cvc5RoundingMode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
