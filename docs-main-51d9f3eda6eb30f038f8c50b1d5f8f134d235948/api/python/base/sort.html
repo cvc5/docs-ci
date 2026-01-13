@@ -1,0 +1,927 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sort &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="SortKind" href="sortkind.html" />
+    <link rel="prev" title="Solver" href="solver.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../cpp/cpp.html">C++ API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../c/c.html">C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../python.html">Python API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pythonic/pythonic.html">Pythonic API</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="python.html">Base Python API</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="command.html">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatype.html">Datatype</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypeconstructor.html">DatatypeConstructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypeconstructordecl.html">DatatypeConstructorDecl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypedecl.html">DatatypeDecl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypeselector.html">DatatypeSelector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="grammar.html">Grammar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="inputparser.html">InputParser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kind.html">Kind</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modes.html">Modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="op.html">Op</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plugin.html">Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="proof.html">Proof</a></li>
+<li class="toctree-l4"><a class="reference internal" href="result.html">Result</a></li>
+<li class="toctree-l4"><a class="reference internal" href="roundingmode.html">RoundingMode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solver.html">Solver</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Sort</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#cvc5.Sort"><code class="docutils literal notranslate"><span class="pre">Sort</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="sortkind.html">SortKind</a></li>
+<li class="toctree-l4"><a class="reference internal" href="statistics.html">Statistics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="symbolmanager.html">SymbolManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="synthresult.html">SynthResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="term.html">Term</a></li>
+<li class="toctree-l4"><a class="reference internal" href="termmanager.html">TermManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="unknownexplanation.html">UnknownExplanation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python.html#classes">Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python.html#enums">Enums</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#which-python-api-should-i-use">Which Python API should I use?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#installation-from-pypi">Installation (from PyPi)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#installation-from-source">Installation (from source)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../python.html">Python API</a></li>
+          <li class="breadcrumb-item"><a href="python.html">Base Python API</a></li>
+      <li class="breadcrumb-item active">Sort</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sort">
+<h1>Sort<a class="headerlink" href="#sort" title="Link to this heading"></a></h1>
+<p>The <a class="reference internal" href="#cvc5.Sort" title="cvc5.Sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sort</span></code></a> class represents the sort of a
+<a class="reference internal" href="term.html#cvc5.Term" title="cvc5.Term"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Term</span></code></a>.
+Its kind is represented as enum class <a class="reference internal" href="sortkind.html#cvc5.SortKind" title="cvc5.SortKind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cvc5.SortKind</span></code></a>.</p>
+<p>A <a class="reference internal" href="#cvc5.Sort" title="cvc5.Sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sort</span></code></a> can be hashed (using
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">std.hash&lt;cvc5.Sort&gt;</span></code>) and represented as a string
+(using <code class="xref py py-func docutils literal notranslate"><span class="pre">cvc5.Sort.__str__()</span></code>).</p>
+<p>Class <a class="reference internal" href="#cvc5.Sort" title="cvc5.Sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cvc5.Sort</span></code></a> only provides the default constructor
+to create a null Sort. Class <a class="reference internal" href="termmanager.html#cvc5.TermManager" title="cvc5.TermManager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TermManager</span></code></a>
+provides factory functions for all other sorts, e.g.,
+<a class="reference internal" href="termmanager.html#cvc5.TermManager.getBooleanSort" title="cvc5.TermManager.getBooleanSort"><code class="xref py py-func docutils literal notranslate"><span class="pre">cvc5.TermManager.getBooleanSort()</span></code></a> for the Boolean sort and
+<a class="reference internal" href="termmanager.html#cvc5.TermManager.mkBitVectorSort" title="cvc5.TermManager.mkBitVectorSort"><code class="xref py py-func docutils literal notranslate"><span class="pre">cvc5.TermManager.mkBitVectorSort()</span></code></a> for bit-vector
+sorts.</p>
+<p>Sorts are defined as standardized in the SMT-LIB standard for standardized
+theories. Additionally, we introduce the following sorts for non-standardized
+theories:</p>
+<ul class="simple">
+<li><p><em>Bag</em> (<a class="reference internal" href="../../../theories/bags.html"><span class="doc">Theory of Bags</span></a>)</p>
+<ul>
+<li><p>Created with <a class="reference internal" href="termmanager.html#cvc5.TermManager.mkBagSort" title="cvc5.TermManager.mkBagSort"><code class="xref py py-func docutils literal notranslate"><span class="pre">cvc5.TermManager.mkBagSort()</span></code></a></p></li>
+</ul>
+</li>
+<li><p><em>Set</em> (<a class="reference internal" href="../../../theories/sets-and-relations.html"><span class="doc">Theory of Sets and Relations</span></a>)</p>
+<ul>
+<li><p>Created with <a class="reference internal" href="termmanager.html#cvc5.TermManager.mkSetSort" title="cvc5.TermManager.mkSetSort"><code class="xref py py-func docutils literal notranslate"><span class="pre">cvc5.TermManager.mkSetSort()</span></code></a></p></li>
+</ul>
+</li>
+<li><p><em>Relation</em> (<a class="reference internal" href="../../../theories/sets-and-relations.html"><span class="doc">Theory of Sets and Relations</span></a>)</p>
+<ul>
+<li><p>Created with <a class="reference internal" href="termmanager.html#cvc5.TermManager.mkSetSort" title="cvc5.TermManager.mkSetSort"><code class="xref py py-func docutils literal notranslate"><span class="pre">cvc5.TermManager.mkSetSort()</span></code></a> as a set of tuple
+sorts</p></li>
+</ul>
+</li>
+<li><p><em>Table</em></p>
+<ul>
+<li><p>Created with <a class="reference internal" href="termmanager.html#cvc5.TermManager.mkBagSort" title="cvc5.TermManager.mkBagSort"><code class="xref py py-func docutils literal notranslate"><span class="pre">cvc5.TermManager.mkBagSort()</span></code></a> as a bag of tuple
+sorts</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<dl class="py class">
+<dt class="sig sig-object py" id="cvc5.Sort">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5.</span></span><span class="sig-name descname"><span class="pre">Sort</span></span><a class="headerlink" href="#cvc5.Sort" title="Link to this definition"></a></dt>
+<dd><p>The sort of a cvc5 term.</p>
+<p>Wrapper class for <a class="reference internal" href="../../cpp/classes/sort.html#_CPPv4N4cvc54SortE" title="cvc5::Sort"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">cvc5::Sort</span></code></a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getAbstractedKind">
+<span class="sig-name descname"><span class="pre">getAbstractedKind</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getAbstractedKind" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The sort kind of an abstract sort, which denotes the kind
+of sorts that this abstract sort denotes.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getArrayElementSort">
+<span class="sig-name descname"><span class="pre">getArrayElementSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getArrayElementSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The array element sort of an array sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getArrayIndexSort">
+<span class="sig-name descname"><span class="pre">getArrayIndexSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getArrayIndexSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The array index sort of an array sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getBagElementSort">
+<span class="sig-name descname"><span class="pre">getBagElementSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getBagElementSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The element sort of a bag sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getBitVectorSize">
+<span class="sig-name descname"><span class="pre">getBitVectorSize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getBitVectorSize" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The bit-width of the bit-vector sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getDatatype">
+<span class="sig-name descname"><span class="pre">getDatatype</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getDatatype" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The underlying datatype of a datatype sort</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getDatatypeArity">
+<span class="sig-name descname"><span class="pre">getDatatypeArity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getDatatypeArity" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The arity of a datatype sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getDatatypeConstructorArity">
+<span class="sig-name descname"><span class="pre">getDatatypeConstructorArity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getDatatypeConstructorArity" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The arity of a datatype constructor sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getDatatypeConstructorCodomainSort">
+<span class="sig-name descname"><span class="pre">getDatatypeConstructorCodomainSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getDatatypeConstructorCodomainSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The codomain sort of a datatype constructor sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getDatatypeConstructorDomainSorts">
+<span class="sig-name descname"><span class="pre">getDatatypeConstructorDomainSorts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getDatatypeConstructorDomainSorts" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The domain sorts of a datatype constructor sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getDatatypeSelectorCodomainSort">
+<span class="sig-name descname"><span class="pre">getDatatypeSelectorCodomainSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getDatatypeSelectorCodomainSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The codomain sort of a datatype selector sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getDatatypeSelectorDomainSort">
+<span class="sig-name descname"><span class="pre">getDatatypeSelectorDomainSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getDatatypeSelectorDomainSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The domain sort of a datatype selector sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getDatatypeTesterCodomainSort">
+<span class="sig-name descname"><span class="pre">getDatatypeTesterCodomainSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getDatatypeTesterCodomainSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the codomain sort of a datatype tester sort, which is the
+Boolean sort</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getDatatypeTesterDomainSort">
+<span class="sig-name descname"><span class="pre">getDatatypeTesterDomainSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getDatatypeTesterDomainSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The domain sort of a datatype tester sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getFiniteFieldSize">
+<span class="sig-name descname"><span class="pre">getFiniteFieldSize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getFiniteFieldSize" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The size of the finite field sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getFloatingPointExponentSize">
+<span class="sig-name descname"><span class="pre">getFloatingPointExponentSize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getFloatingPointExponentSize" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The bit-width of the exponent of the floating-point sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getFloatingPointSignificandSize">
+<span class="sig-name descname"><span class="pre">getFloatingPointSignificandSize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getFloatingPointSignificandSize" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The width of the significand of the floating-point sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getFunctionArity">
+<span class="sig-name descname"><span class="pre">getFunctionArity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getFunctionArity" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The arity of a function sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getFunctionCodomainSort">
+<span class="sig-name descname"><span class="pre">getFunctionCodomainSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getFunctionCodomainSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The codomain sort of a function sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getFunctionDomainSorts">
+<span class="sig-name descname"><span class="pre">getFunctionDomainSorts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getFunctionDomainSorts" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The domain sorts of a function sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getInstantiatedParameters">
+<span class="sig-name descname"><span class="pre">getInstantiatedParameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getInstantiatedParameters" title="Link to this definition"></a></dt>
+<dd><p>Get the sorts used to instantiate the sort parameters of a
+parametric sort (parametric datatype or uninterpreted sort
+constructor sort, see <a class="reference internal" href="#cvc5.Sort.instantiate" title="cvc5.Sort.instantiate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">instantiate()</span></code></a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The sorts used to instantiate the sort parameters of a
+parametric sort</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getKind">
+<span class="sig-name descname"><span class="pre">getKind</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getKind" title="Link to this definition"></a></dt>
+<dd><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The <a class="reference internal" href="sortkind.html#cvc5.SortKind" title="cvc5.SortKind"><code class="xref py py-class docutils literal notranslate"><span class="pre">SortKind</span></code></a> of this sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getNullableElementSort">
+<span class="sig-name descname"><span class="pre">getNullableElementSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getNullableElementSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The element sort of a nullable sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getSequenceElementSort">
+<span class="sig-name descname"><span class="pre">getSequenceElementSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getSequenceElementSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The element sort of a sequence sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getSetElementSort">
+<span class="sig-name descname"><span class="pre">getSetElementSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getSetElementSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The element sort of a set sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getSymbol">
+<span class="sig-name descname"><span class="pre">getSymbol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getSymbol" title="Link to this definition"></a></dt>
+<dd><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Asserts <a class="reference internal" href="#cvc5.Sort.hasSymbol" title="cvc5.Sort.hasSymbol"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hasSymbol()</span></code></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The raw symbol of the sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getTupleLength">
+<span class="sig-name descname"><span class="pre">getTupleLength</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getTupleLength" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The length of a tuple sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getTupleSorts">
+<span class="sig-name descname"><span class="pre">getTupleSorts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getTupleSorts" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The element sorts of a tuple sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getUninterpretedSortConstructor">
+<span class="sig-name descname"><span class="pre">getUninterpretedSortConstructor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getUninterpretedSortConstructor" title="Link to this definition"></a></dt>
+<dd><p>Get the associated uninterpreted sort constructor of an
+instantiated uninterpreted sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The uninterpreted sort constructor sort</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.getUninterpretedSortConstructorArity">
+<span class="sig-name descname"><span class="pre">getUninterpretedSortConstructorArity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.getUninterpretedSortConstructorArity" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The arity of a sort constructor sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.hasSymbol">
+<span class="sig-name descname"><span class="pre">hasSymbol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.hasSymbol" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True iff this sort has a symbol.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.instantiate">
+<span class="sig-name descname"><span class="pre">instantiate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.instantiate" title="Link to this definition"></a></dt>
+<dd><p>Instantiate a parameterized datatype sort or uninterpreted sort
+constructor sort.</p>
+<p>Create sorts parameter with <a class="reference internal" href="termmanager.html#cvc5.TermManager.mkParamSort" title="cvc5.TermManager.mkParamSort"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TermManager.mkParamSort()</span></code></a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>params</strong> – The list of sort parameters to instantiate with</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The instantiated sort</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isAbstract">
+<span class="sig-name descname"><span class="pre">isAbstract</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isAbstract" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is an abstract sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is an abstract sort.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isArray">
+<span class="sig-name descname"><span class="pre">isArray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isArray" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is an array sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is an array sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isBag">
+<span class="sig-name descname"><span class="pre">isBag</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isBag" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a bag sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a bag sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isBitVector">
+<span class="sig-name descname"><span class="pre">isBitVector</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isBitVector" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a bit-vector sort (SMT-LIB: <code class="docutils literal notranslate"><span class="pre">(_</span> <span class="pre">BitVec</span> <span class="pre">i)</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a bit-vector sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isBoolean">
+<span class="sig-name descname"><span class="pre">isBoolean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isBoolean" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is the Boolean sort (SMT-LIB: <code class="docutils literal notranslate"><span class="pre">Bool</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is the Boolean sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isDatatype">
+<span class="sig-name descname"><span class="pre">isDatatype</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isDatatype" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a datatype sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a datatype sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isDatatypeConstructor">
+<span class="sig-name descname"><span class="pre">isDatatypeConstructor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isDatatypeConstructor" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a datatype constructor sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a datatype constructor sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isDatatypeSelector">
+<span class="sig-name descname"><span class="pre">isDatatypeSelector</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isDatatypeSelector" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a datatype selector sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a datatype selector sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isDatatypeTester">
+<span class="sig-name descname"><span class="pre">isDatatypeTester</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isDatatypeTester" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a tester sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a selector sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isDatatypeUpdater">
+<span class="sig-name descname"><span class="pre">isDatatypeUpdater</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isDatatypeUpdater" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a datatype updater sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a datatype updater sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isFiniteField">
+<span class="sig-name descname"><span class="pre">isFiniteField</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isFiniteField" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a finite field sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is an array sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isFloatingPoint">
+<span class="sig-name descname"><span class="pre">isFloatingPoint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isFloatingPoint" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a floatingpoint sort
+(SMT-LIB: <code class="docutils literal notranslate"><span class="pre">(_</span> <span class="pre">FloatingPoint</span> <span class="pre">eb</span> <span class="pre">sb)</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a bit-vector sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isFunction">
+<span class="sig-name descname"><span class="pre">isFunction</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isFunction" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a function sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a function sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isInstantiated">
+<span class="sig-name descname"><span class="pre">isInstantiated</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isInstantiated" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is an instantiated (parametric datatype or
+uninterpreted sort constructor) sort.</p>
+<p>An instantiated sort is a sort that has been constructed from
+instantiating a sort parameters with sort arguments
+(see <a class="reference internal" href="#cvc5.Sort.instantiate" title="cvc5.Sort.instantiate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">instantiate()</span></code></a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this is an instantiated sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isInteger">
+<span class="sig-name descname"><span class="pre">isInteger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isInteger" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is the integer sort (SMT-LIB: <code class="docutils literal notranslate"><span class="pre">Int</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is the integer sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isNull">
+<span class="sig-name descname"><span class="pre">isNull</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isNull" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this Sort is a null sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isNullable">
+<span class="sig-name descname"><span class="pre">isNullable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isNullable" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a nullable sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a nullable sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isPredicate">
+<span class="sig-name descname"><span class="pre">isPredicate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isPredicate" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a predicate sort.</p>
+<p>A predicate sort is a function sort that maps to the Boolean sort.
+All predicate sorts are also function sorts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a predicate sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isReal">
+<span class="sig-name descname"><span class="pre">isReal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isReal" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is the real sort (SMT-LIB: <cite>Real</cite>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is the real sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isRecord">
+<span class="sig-name descname"><span class="pre">isRecord</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isRecord" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a record sort.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a record sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isRegExp">
+<span class="sig-name descname"><span class="pre">isRegExp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isRegExp" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is the regular expression sort (SMT-LIB:
+<code class="docutils literal notranslate"><span class="pre">RegLan</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is the regexp sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isRoundingMode">
+<span class="sig-name descname"><span class="pre">isRoundingMode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isRoundingMode" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is the rounding mode sort (SMT-LIB:
+<code class="docutils literal notranslate"><span class="pre">RoundingMode</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is the rounding mode sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isSequence">
+<span class="sig-name descname"><span class="pre">isSequence</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isSequence" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a sequence sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a sequence sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isSet">
+<span class="sig-name descname"><span class="pre">isSet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isSet" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a set sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a set sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isString">
+<span class="sig-name descname"><span class="pre">isString</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isString" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is the string sort (SMT-LIB: <cite>String</cite>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is the string sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isTuple">
+<span class="sig-name descname"><span class="pre">isTuple</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isTuple" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a tuple sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a tuple sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isUninterpretedSort">
+<span class="sig-name descname"><span class="pre">isUninterpretedSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isUninterpretedSort" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a sort uninterpreted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is uninterpreted.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.isUninterpretedSortConstructor">
+<span class="sig-name descname"><span class="pre">isUninterpretedSortConstructor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.isUninterpretedSortConstructor" title="Link to this definition"></a></dt>
+<dd><p>Determine if this is a sort constructor kind.</p>
+<p>An uninterpreted sort constructor is an uninterpreted sort with
+arity &gt; 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this a sort constructor kind.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Sort.substitute">
+<span class="sig-name descname"><span class="pre">substitute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Sort.substitute" title="Link to this definition"></a></dt>
+<dd><p>Substitution of Sorts.</p>
+<p>Note that this replacement is applied during a pre-order traversal
+and only once to the sort. It is not run until fix point. In the
+case that sort_or_list_1 contains duplicates, the replacement
+earliest in the list takes priority.</p>
+<p>For example,
+<code class="docutils literal notranslate"><span class="pre">(Array</span> <span class="pre">A</span> <span class="pre">B)</span> <span class="pre">.substitute([A,</span> <span class="pre">C],</span> <span class="pre">[(Array</span> <span class="pre">C</span> <span class="pre">D),</span> <span class="pre">(Array</span> <span class="pre">A</span> <span class="pre">B)])</span></code>
+will return <code class="docutils literal notranslate"><span class="pre">(Array</span> <span class="pre">(Array</span> <span class="pre">C</span> <span class="pre">D)</span> <span class="pre">B)</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort_or_list_1</strong> – The subsort or subsorts to be substituted
+within this sort.</p></li>
+<li><p><strong>sort_or_list_2</strong> – The sort or list of sorts replacing the
+substituted subsort.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="solver.html" class="btn btn-neutral float-left" title="Solver" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sortkind.html" class="btn btn-neutral float-right" title="SortKind" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
