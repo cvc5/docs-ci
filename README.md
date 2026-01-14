@@ -1,13 +1,14 @@
 
 
-* [Documentation for PR #12361](docs-pr12361/) (built from [96b042e](https://github.com/cvc5/cvc5/commit/96b042e) @ [PR #12361](https://github.com/cvc5/cvc5/pull/12361), Jan Wed 14, 03:30 UTC)
+* [Documentation for PR #12362](docs-pr12362/) (built from [4cec9bf](https://github.com/cvc5/cvc5/commit/4cec9bf) @ [PR #12362](https://github.com/cvc5/cvc5/pull/12362), Jan Wed 14, 04:00 UTC)
 
 ***
 
 
 * [Documentation for main](docs-main/) (built from [8017930](https://github.com/cvc5/cvc5/commit/8017930) @ [main](https://github.com/cvc5/cvc5/tree/main), 8 hours ago)
-* [Documentation for PR #12361](docs-pr12361/) (built from [96b042e](https://github.com/cvc5/cvc5/commit/96b042e) @ [PR #12361](https://github.com/cvc5/cvc5/pull/12361), now)
-* [Documentation for PR #12360](docs-pr12360/) (built from [1f54b7e](https://github.com/cvc5/cvc5/commit/1f54b7e) @ [PR #12360](https://github.com/cvc5/cvc5/pull/12360), 7 hours ago)
+* [Documentation for PR #12362](docs-pr12362/) (built from [4cec9bf](https://github.com/cvc5/cvc5/commit/4cec9bf) @ [PR #12362](https://github.com/cvc5/cvc5/pull/12362), now)
+* [Documentation for PR #12361](docs-pr12361/) (built from [96b042e](https://github.com/cvc5/cvc5/commit/96b042e) @ [PR #12361](https://github.com/cvc5/cvc5/pull/12361), 30 minutes ago)
+* [Documentation for PR #12360](docs-pr12360/) (built from [1f54b7e](https://github.com/cvc5/cvc5/commit/1f54b7e) @ [PR #12360](https://github.com/cvc5/cvc5/pull/12360), 8 hours ago)
 * [Documentation for PR #12359](docs-pr12359/) (built from [eccaa3e](https://github.com/cvc5/cvc5/commit/eccaa3e) @ [PR #12359](https://github.com/cvc5/cvc5/pull/12359), 26 hours ago)
 * [Documentation for PR #12358](docs-pr12358/) (built from [13d778b](https://github.com/cvc5/cvc5/commit/13d778b) @ [PR #12358](https://github.com/cvc5/cvc5/pull/12358), 2 days ago)
 * [Documentation for PR #12357](docs-pr12357/) (built from [7964592](https://github.com/cvc5/cvc5/commit/7964592) @ [PR #12357](https://github.com/cvc5/cvc5/pull/12357), 2 days ago)
