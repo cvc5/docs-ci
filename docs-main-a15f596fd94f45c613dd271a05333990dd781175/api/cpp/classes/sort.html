@@ -1,0 +1,1177 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sort &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="SortKind" href="../enums/sortkind.html" />
+    <link rel="prev" title="Solver" href="solver.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../cpp.html">C++ API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exceptions/exceptions.html">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="command.html">Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatype.html">Datatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypeconstructor.html">DatatypeConstructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypeconstructordecl.html">DatatypeConstructorDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypedecl.html">DatatypeDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypeselector.html">DatatypeSelector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="driveroptions.html">DriverOptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="grammar.html">Grammar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inputparser.html">InputParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/kind.html">Kind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/modes.html">Modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="op.html">Op</a></li>
+<li class="toctree-l3"><a class="reference internal" href="optioninfo.html">OptionInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin.html">Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="proof.html">Proof</a></li>
+<li class="toctree-l3"><a class="reference internal" href="result.html">Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/roundingmode.html">RoundingMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solver.html">Solver</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Sort</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N4cvc54SortE"><code class="docutils literal notranslate"><span class="pre">cvc5::Sort</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc54Sort4SortEv"><code class="docutils literal notranslate"><span class="pre">Sort()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc54SortD0Ev"><code class="docutils literal notranslate"><span class="pre">~Sort()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54SorteqERK4Sort"><code class="docutils literal notranslate"><span class="pre">operator==()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54SortneERK4Sort"><code class="docutils literal notranslate"><span class="pre">operator!=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54SortltERK4Sort"><code class="docutils literal notranslate"><span class="pre">operator&lt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54SortgtERK4Sort"><code class="docutils literal notranslate"><span class="pre">operator&gt;()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54SortleERK4Sort"><code class="docutils literal notranslate"><span class="pre">operator&lt;=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54SortgeERK4Sort"><code class="docutils literal notranslate"><span class="pre">operator&gt;=()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort7getKindEv"><code class="docutils literal notranslate"><span class="pre">getKind()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort9hasSymbolEv"><code class="docutils literal notranslate"><span class="pre">hasSymbol()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort9getSymbolEv"><code class="docutils literal notranslate"><span class="pre">getSymbol()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort6isNullEv"><code class="docutils literal notranslate"><span class="pre">isNull()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort9isBooleanEv"><code class="docutils literal notranslate"><span class="pre">isBoolean()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort9isIntegerEv"><code class="docutils literal notranslate"><span class="pre">isInteger()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort6isRealEv"><code class="docutils literal notranslate"><span class="pre">isReal()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort8isStringEv"><code class="docutils literal notranslate"><span class="pre">isString()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort8isRegExpEv"><code class="docutils literal notranslate"><span class="pre">isRegExp()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort14isRoundingModeEv"><code class="docutils literal notranslate"><span class="pre">isRoundingMode()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort11isBitVectorEv"><code class="docutils literal notranslate"><span class="pre">isBitVector()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort15isFloatingPointEv"><code class="docutils literal notranslate"><span class="pre">isFloatingPoint()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort10isDatatypeEv"><code class="docutils literal notranslate"><span class="pre">isDatatype()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort21isDatatypeConstructorEv"><code class="docutils literal notranslate"><span class="pre">isDatatypeConstructor()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort18isDatatypeSelectorEv"><code class="docutils literal notranslate"><span class="pre">isDatatypeSelector()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort16isDatatypeTesterEv"><code class="docutils literal notranslate"><span class="pre">isDatatypeTester()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort17isDatatypeUpdaterEv"><code class="docutils literal notranslate"><span class="pre">isDatatypeUpdater()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort10isFunctionEv"><code class="docutils literal notranslate"><span class="pre">isFunction()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort11isPredicateEv"><code class="docutils literal notranslate"><span class="pre">isPredicate()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort7isTupleEv"><code class="docutils literal notranslate"><span class="pre">isTuple()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort10isNullableEv"><code class="docutils literal notranslate"><span class="pre">isNullable()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort8isRecordEv"><code class="docutils literal notranslate"><span class="pre">isRecord()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort7isArrayEv"><code class="docutils literal notranslate"><span class="pre">isArray()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort13isFiniteFieldEv"><code class="docutils literal notranslate"><span class="pre">isFiniteField()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort5isSetEv"><code class="docutils literal notranslate"><span class="pre">isSet()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort5isBagEv"><code class="docutils literal notranslate"><span class="pre">isBag()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort10isSequenceEv"><code class="docutils literal notranslate"><span class="pre">isSequence()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort10isAbstractEv"><code class="docutils literal notranslate"><span class="pre">isAbstract()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort19isUninterpretedSortEv"><code class="docutils literal notranslate"><span class="pre">isUninterpretedSort()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort30isUninterpretedSortConstructorEv"><code class="docutils literal notranslate"><span class="pre">isUninterpretedSortConstructor()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort14isInstantiatedEv"><code class="docutils literal notranslate"><span class="pre">isInstantiated()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort31getUninterpretedSortConstructorEv"><code class="docutils literal notranslate"><span class="pre">getUninterpretedSortConstructor()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort11getDatatypeEv"><code class="docutils literal notranslate"><span class="pre">getDatatype()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort11instantiateERKNSt6vectorI4SortEE"><code class="docutils literal notranslate"><span class="pre">instantiate()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort25getInstantiatedParametersEv"><code class="docutils literal notranslate"><span class="pre">getInstantiatedParameters()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort10substituteERK4SortRK4Sort"><code class="docutils literal notranslate"><span class="pre">substitute()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort10substituteERKNSt6vectorI4SortEERKNSt6vectorI4SortEE"><code class="docutils literal notranslate"><span class="pre">substitute()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort8toStreamERNSt7ostreamE"><code class="docutils literal notranslate"><span class="pre">toStream()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort8toStringEv"><code class="docutils literal notranslate"><span class="pre">toString()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort27getDatatypeConstructorArityEv"><code class="docutils literal notranslate"><span class="pre">getDatatypeConstructorArity()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort33getDatatypeConstructorDomainSortsEv"><code class="docutils literal notranslate"><span class="pre">getDatatypeConstructorDomainSorts()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort34getDatatypeConstructorCodomainSortEv"><code class="docutils literal notranslate"><span class="pre">getDatatypeConstructorCodomainSort()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort29getDatatypeSelectorDomainSortEv"><code class="docutils literal notranslate"><span class="pre">getDatatypeSelectorDomainSort()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort31getDatatypeSelectorCodomainSortEv"><code class="docutils literal notranslate"><span class="pre">getDatatypeSelectorCodomainSort()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort27getDatatypeTesterDomainSortEv"><code class="docutils literal notranslate"><span class="pre">getDatatypeTesterDomainSort()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort29getDatatypeTesterCodomainSortEv"><code class="docutils literal notranslate"><span class="pre">getDatatypeTesterCodomainSort()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort16getFunctionArityEv"><code class="docutils literal notranslate"><span class="pre">getFunctionArity()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort22getFunctionDomainSortsEv"><code class="docutils literal notranslate"><span class="pre">getFunctionDomainSorts()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort23getFunctionCodomainSortEv"><code class="docutils literal notranslate"><span class="pre">getFunctionCodomainSort()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort17getArrayIndexSortEv"><code class="docutils literal notranslate"><span class="pre">getArrayIndexSort()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort19getArrayElementSortEv"><code class="docutils literal notranslate"><span class="pre">getArrayElementSort()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort17getSetElementSortEv"><code class="docutils literal notranslate"><span class="pre">getSetElementSort()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort17getBagElementSortEv"><code class="docutils literal notranslate"><span class="pre">getBagElementSort()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort22getSequenceElementSortEv"><code class="docutils literal notranslate"><span class="pre">getSequenceElementSort()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort17getAbstractedKindEv"><code class="docutils literal notranslate"><span class="pre">getAbstractedKind()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort36getUninterpretedSortConstructorArityEv"><code class="docutils literal notranslate"><span class="pre">getUninterpretedSortConstructorArity()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort16getBitVectorSizeEv"><code class="docutils literal notranslate"><span class="pre">getBitVectorSize()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort18getFiniteFieldSizeEv"><code class="docutils literal notranslate"><span class="pre">getFiniteFieldSize()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort28getFloatingPointExponentSizeEv"><code class="docutils literal notranslate"><span class="pre">getFloatingPointExponentSize()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort31getFloatingPointSignificandSizeEv"><code class="docutils literal notranslate"><span class="pre">getFloatingPointSignificandSize()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort16getDatatypeArityEv"><code class="docutils literal notranslate"><span class="pre">getDatatypeArity()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort14getTupleLengthEv"><code class="docutils literal notranslate"><span class="pre">getTupleLength()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort13getTupleSortsEv"><code class="docutils literal notranslate"><span class="pre">getTupleSorts()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc54Sort22getNullableElementSortEv"><code class="docutils literal notranslate"><span class="pre">getNullableElementSort()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N4cvc5lsERNSt7ostreamERK4Sort"><code class="docutils literal notranslate"><span class="pre">operator&lt;&lt;()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4IENSt4hashIN4cvc54SortEEE"><code class="docutils literal notranslate"><span class="pre">std::hash&lt;</span> <span class="pre">cvc5::Sort</span> <span class="pre">&gt;</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NKSt4hashIN4cvc54SortEEclERKN4cvc54SortE"><code class="docutils literal notranslate"><span class="pre">operator()()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/sortkind.html">SortKind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistics.html">Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="symbolmanager.html">SymbolManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="synthresult.html">SynthResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="term.html">Term</a></li>
+<li class="toctree-l3"><a class="reference internal" href="termmanager.html">TermManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/unknownexplanation.html">UnknownExplanation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cpp.html#class-hierarchy">Class hierarchy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../c/c.html">C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/python.html">Python API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../cpp.html">C++ API</a></li>
+      <li class="breadcrumb-item active">Sort</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sort">
+<h1>Sort<a class="headerlink" href="#sort" title="Link to this heading"></a></h1>
+<p>The <a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Sort</span></code></a> class represents the sort of a
+<a class="reference internal" href="term.html#_CPPv4N4cvc54TermE" title="cvc5::Term"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Term</span></code></a>.
+Its kind is represented as enum class <a class="reference internal" href="../enums/sortkind.html#_CPPv4N4cvc58SortKindE" title="cvc5::SortKind"><code class="xref cpp cpp-enum docutils literal notranslate"><span class="pre">cvc5::SortKind</span></code></a>.</p>
+<p>A <a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Sort</span></code></a> can be hashed (using
+<a class="reference internal" href="#_CPPv4IENSt4hashIN4cvc54SortEEE" title="std::hash&lt;cvc5::Sort&gt;"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">std::hash&lt;cvc5::Sort&gt;</span></code></a>) and serialized to an output stream
+(using function
+<a class="reference internal" href="#_CPPv4N4cvc5lsERNSt7ostreamERK4Sort" title="std::ostream &amp;cvc5::operator&lt;&lt;(std::ostream &amp;out, const Sort &amp;s)"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">std::ostream&amp;</span> <span class="pre">cvc5::operator&lt;&lt;</span> <span class="pre">(std::ostream&amp;</span> <span class="pre">out,</span> <span class="pre">const</span> <span class="pre">Sort&amp;</span> <span class="pre">s)</span></code></a>).</p>
+<p>Class <a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">cvc5::Sort</span></code></a> only provides the default constructor
+to create a null Sort. Class <a class="reference internal" href="termmanager.html#_CPPv4N4cvc511TermManagerE" title="cvc5::TermManager"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">TermManager</span></code></a>
+provides factory functions for all other sorts, e.g.,
+<a class="reference internal" href="termmanager.html#_CPPv4N4cvc511TermManager14getBooleanSortEv" title="cvc5::TermManager::getBooleanSort"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5::TermManager::getBooleanSort()</span></code></a> for the Boolean sort and
+<a class="reference internal" href="termmanager.html#_CPPv4N4cvc511TermManager15mkBitVectorSortE8uint32_t" title="cvc5::TermManager::mkBitVectorSort"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5::TermManager::mkBitVectorSort()</span></code></a> for bit-vector
+sorts.</p>
+<p>Sorts are defined as standardized in the SMT-LIB standard for standardized
+theories. Additionally, we introduce the following sorts for non-standardized
+theories:</p>
+<ul class="simple">
+<li><p><em>Bag</em> (<a class="reference internal" href="../../../theories/bags.html"><span class="doc">Theory of Bags</span></a>)</p>
+<ul>
+<li><p>Created with <a class="reference internal" href="termmanager.html#_CPPv4N4cvc511TermManager9mkBagSortERK4Sort" title="cvc5::TermManager::mkBagSort"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5::TermManager::mkBagSort()</span></code></a></p></li>
+</ul>
+</li>
+<li><p><em>Set</em> (<a class="reference internal" href="../../../theories/sets-and-relations.html"><span class="doc">Theory of Sets and Relations</span></a>)</p>
+<ul>
+<li><p>Created with <a class="reference internal" href="termmanager.html#_CPPv4N4cvc511TermManager9mkSetSortERK4Sort" title="cvc5::TermManager::mkSetSort"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5::TermManager::mkSetSort()</span></code></a></p></li>
+</ul>
+</li>
+<li><p><em>Relation</em> (<a class="reference internal" href="../../../theories/sets-and-relations.html"><span class="doc">Theory of Sets and Relations</span></a>)</p>
+<ul>
+<li><p>Created with <a class="reference internal" href="termmanager.html#_CPPv4N4cvc511TermManager9mkSetSortERK4Sort" title="cvc5::TermManager::mkSetSort"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5::TermManager::mkSetSort()</span></code></a> as a set of tuple
+sorts</p></li>
+</ul>
+</li>
+<li><p><em>Table</em></p>
+<ul>
+<li><p>Created with <a class="reference internal" href="termmanager.html#_CPPv4N4cvc511TermManager9mkBagSortERK4Sort" title="cvc5::TermManager::mkBagSort"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5::TermManager::mkBagSort()</span></code></a> as a bag of tuple
+sorts</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>class <a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">cvc5::Sort</span></code></a></p></li>
+<li><p><a class="reference internal" href="#_CPPv4N4cvc5lsERNSt7ostreamERK4Sort" title="std::ostream &amp;cvc5::operator&lt;&lt;(std::ostream &amp;out, const Sort &amp;s)"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">std::ostream&amp;</span> <span class="pre">cvc5::operator&lt;&lt;</span> <span class="pre">(std::ostream&amp;</span> <span class="pre">out,</span> <span class="pre">const</span> <span class="pre">Sort&amp;</span> <span class="pre">s)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#_CPPv4IENSt4hashIN4cvc54SortEEE" title="std::hash&lt;cvc5::Sort&gt;"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">std::hash&lt;cvc5::Sort&gt;</span></code></a></p></li>
+</ul>
+<hr class="docutils" />
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc54SortE">
+<span id="_CPPv3N4cvc54SortE"></span><span id="_CPPv2N4cvc54SortE"></span><span id="cvc5::Sort"></span><span class="target" id="classcvc5_1_1Sort"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Sort</span></span></span><a class="headerlink" href="#_CPPv4N4cvc54SortE" title="Link to this definition"></a><br /></dt>
+<dd><p>The sort of a cvc5 term. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc54Sort4SortEv">
+<span id="_CPPv3N4cvc54Sort4SortEv"></span><span id="_CPPv2N4cvc54Sort4SortEv"></span><span id="cvc5::Sort::Sort"></span><span class="target" id="classcvc5_1_1Sort_1ac242e6658455b51b925b7f59450ccca0"></span><span class="sig-name descname"><span class="n"><span class="pre">Sort</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc54Sort4SortEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc54SortD0Ev">
+<span id="_CPPv3N4cvc54SortD0Ev"></span><span id="_CPPv2N4cvc54SortD0Ev"></span><span id="cvc5::Sort::~Sort"></span><span class="target" id="classcvc5_1_1Sort_1aaedc0af5a5ddb90cc846cefe875ee88e"></span><span class="sig-name descname"><span class="n"><span class="pre">~Sort</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc54SortD0Ev" title="Link to this definition"></a><br /></dt>
+<dd><p>Destructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54SorteqERK4Sort">
+<span id="_CPPv3NK4cvc54SorteqERK4Sort"></span><span id="_CPPv2NK4cvc54SorteqERK4Sort"></span><span id="cvc5::Sort::eq-operator__SortCRC"></span><span class="target" id="classcvc5_1_1Sort_1aca0da3c2d8c4d2a027d43382ab5aabf7"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">==</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54SorteqERK4Sort" title="Link to this definition"></a><br /></dt>
+<dd><p>Comparison for structural equality. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – The sort to compare to. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the sorts are equal. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54SortneERK4Sort">
+<span id="_CPPv3NK4cvc54SortneERK4Sort"></span><span id="_CPPv2NK4cvc54SortneERK4Sort"></span><span id="cvc5::Sort::neq-operator__SortCRC"></span><span class="target" id="classcvc5_1_1Sort_1aab22e9027c5eba8ce4252731782249bd"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">!=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54SortneERK4Sort" title="Link to this definition"></a><br /></dt>
+<dd><p>Comparison for structural disequality. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – The sort to compare to. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the sorts are not equal. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54SortltERK4Sort">
+<span id="_CPPv3NK4cvc54SortltERK4Sort"></span><span id="_CPPv2NK4cvc54SortltERK4Sort"></span><span id="cvc5::Sort::lt-operator__SortCRC"></span><span class="target" id="classcvc5_1_1Sort_1afd66da11011e48129eaae58505adea19"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54SortltERK4Sort" title="Link to this definition"></a><br /></dt>
+<dd><p>Comparison for ordering on sorts. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – The sort to compare to. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if this sort is less than s. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54SortgtERK4Sort">
+<span id="_CPPv3NK4cvc54SortgtERK4Sort"></span><span id="_CPPv2NK4cvc54SortgtERK4Sort"></span><span id="cvc5::Sort::gt-operator__SortCRC"></span><span class="target" id="classcvc5_1_1Sort_1ab26cced2cdbb5cb65df26db8ca6b34b5"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54SortgtERK4Sort" title="Link to this definition"></a><br /></dt>
+<dd><p>Comparison for ordering on sorts. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – The sort to compare to. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if this sort is greater than s. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54SortleERK4Sort">
+<span id="_CPPv3NK4cvc54SortleERK4Sort"></span><span id="_CPPv2NK4cvc54SortleERK4Sort"></span><span id="cvc5::Sort::lte-operator__SortCRC"></span><span class="target" id="classcvc5_1_1Sort_1ae9ff38f667b12332264c8e01a9558f06"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54SortleERK4Sort" title="Link to this definition"></a><br /></dt>
+<dd><p>Comparison for ordering on sorts. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – The sort to compare to. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if this sort is less than or equal to s. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54SortgeERK4Sort">
+<span id="_CPPv3NK4cvc54SortgeERK4Sort"></span><span id="_CPPv2NK4cvc54SortgeERK4Sort"></span><span id="cvc5::Sort::gte-operator__SortCRC"></span><span class="target" id="classcvc5_1_1Sort_1a7df67013276b53c22e23f3dba891e1f7"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&gt;=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54SortgeERK4Sort" title="Link to this definition"></a><br /></dt>
+<dd><p>Comparison for ordering on sorts. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – The sort to compare to. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if this sort is greater than or equal to s. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort7getKindEv">
+<span id="_CPPv3NK4cvc54Sort7getKindEv"></span><span id="_CPPv2NK4cvc54Sort7getKindEv"></span><span id="cvc5::Sort::getKindC"></span><span class="target" id="classcvc5_1_1Sort_1a94f660973de1d8830b2f0767bae68918"></span><a class="reference internal" href="../enums/sortkind.html#_CPPv4N4cvc58SortKindE" title="cvc5::SortKind"><span class="n"><span class="pre">SortKind</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getKind</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort7getKindEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the kind of this sort. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The kind of the sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort9hasSymbolEv">
+<span id="_CPPv3NK4cvc54Sort9hasSymbolEv"></span><span id="_CPPv2NK4cvc54Sort9hasSymbolEv"></span><span id="cvc5::Sort::hasSymbolC"></span><span class="target" id="classcvc5_1_1Sort_1a8bc7fbba639c7ab69c9103b9e00fcca5"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasSymbol</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort9hasSymbolEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this sort has a symbol (a name).</p>
+<p>For example, uninterpreted sorts and uninterpreted sort constructors have symbols.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort has a symbol. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort9getSymbolEv">
+<span id="_CPPv3NK4cvc54Sort9getSymbolEv"></span><span id="_CPPv2NK4cvc54Sort9getSymbolEv"></span><span id="cvc5::Sort::getSymbolC"></span><span class="target" id="classcvc5_1_1Sort_1a6982e1c1138da76749ce6759820fb296"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSymbol</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort9getSymbolEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the symbol of this <a class="reference internal" href="#classcvc5_1_1Sort"><span class="std std-ref">Sort</span></a>.</p>
+<p>
+The symbol of this sort is the string that was provided when constructing it via <a class="reference internal" href="termmanager.html#classcvc5_1_1TermManager_1aa530f51230afe8eb991fbc685c013c60"><span class="std std-ref">TermManager::mkUninterpretedSort(const std::optional&lt;std::string&gt;&amp;)</span></a>, or <a class="reference internal" href="termmanager.html#classcvc5_1_1TermManager_1a0a1095fdb89f6ac7137249982454b1ac"><span class="std std-ref">TermManager::mkUninterpretedSortConstructorSort(size_t, const std::optional&lt;std::string&gt;&amp;)</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Asserts <a class="reference internal" href="#classcvc5_1_1Sort_1a8bc7fbba639c7ab69c9103b9e00fcca5"><span class="std std-ref">hasSymbol()</span></a>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The raw symbol of the sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort6isNullEv">
+<span id="_CPPv3NK4cvc54Sort6isNullEv"></span><span id="_CPPv2NK4cvc54Sort6isNullEv"></span><span id="cvc5::Sort::isNullC"></span><span class="target" id="classcvc5_1_1Sort_1a292a8d63b321b4bf7a32d53227e9f747"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isNull</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort6isNullEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is the null sort (<a class="reference internal" href="#classcvc5_1_1Sort_1ac242e6658455b51b925b7f59450ccca0"><span class="std std-ref">Sort::Sort()</span></a>). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this <a class="reference internal" href="#classcvc5_1_1Sort"><span class="std std-ref">Sort</span></a> is the null sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort9isBooleanEv">
+<span id="_CPPv3NK4cvc54Sort9isBooleanEv"></span><span id="_CPPv2NK4cvc54Sort9isBooleanEv"></span><span id="cvc5::Sort::isBooleanC"></span><span class="target" id="classcvc5_1_1Sort_1a005a3c7eeceaf4a97933cc0a7faa213a"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isBoolean</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort9isBooleanEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is the Boolean sort (SMT-LIB: <code class="docutils literal notranslate"><span class="pre">Bool</span></code>). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this sort is the Boolean sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort9isIntegerEv">
+<span id="_CPPv3NK4cvc54Sort9isIntegerEv"></span><span id="_CPPv2NK4cvc54Sort9isIntegerEv"></span><span id="cvc5::Sort::isIntegerC"></span><span class="target" id="classcvc5_1_1Sort_1a2b756a4b5c0788aef4cd821df40c339e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isInteger</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort9isIntegerEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is the integer sort (SMT-LIB: <code class="docutils literal notranslate"><span class="pre">Int</span></code>). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this sort is the integer sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort6isRealEv">
+<span id="_CPPv3NK4cvc54Sort6isRealEv"></span><span id="_CPPv2NK4cvc54Sort6isRealEv"></span><span id="cvc5::Sort::isRealC"></span><span class="target" id="classcvc5_1_1Sort_1a228e09bb3c051f1185f76691a1756839"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isReal</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort6isRealEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is the real sort (SMT-LIB: <code class="docutils literal notranslate"><span class="pre">Real</span></code>). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this sort is the real sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort8isStringEv">
+<span id="_CPPv3NK4cvc54Sort8isStringEv"></span><span id="_CPPv2NK4cvc54Sort8isStringEv"></span><span id="cvc5::Sort::isStringC"></span><span class="target" id="classcvc5_1_1Sort_1a5ebfdd58a27cdc942b1bbafd81b79f2b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isString</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort8isStringEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is the string sort (SMT-LIB: <code class="docutils literal notranslate"><span class="pre">String</span></code>). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this sort is the string sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort8isRegExpEv">
+<span id="_CPPv3NK4cvc54Sort8isRegExpEv"></span><span id="_CPPv2NK4cvc54Sort8isRegExpEv"></span><span id="cvc5::Sort::isRegExpC"></span><span class="target" id="classcvc5_1_1Sort_1a414127bd20af8417d240bf1de0459312"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isRegExp</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort8isRegExpEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is the regular expression sort (SMT-LIB: <code class="docutils literal notranslate"><span class="pre">RegLan</span></code>). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this sort is the regular expression sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort14isRoundingModeEv">
+<span id="_CPPv3NK4cvc54Sort14isRoundingModeEv"></span><span id="_CPPv2NK4cvc54Sort14isRoundingModeEv"></span><span id="cvc5::Sort::isRoundingModeC"></span><span class="target" id="classcvc5_1_1Sort_1aa56d764de21a1e93d4472ac57d30ad45"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isRoundingMode</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort14isRoundingModeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is the rounding mode sort (SMT-LIB: <code class="docutils literal notranslate"><span class="pre">RoundingMode</span></code>). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this sort is the rounding mode sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort11isBitVectorEv">
+<span id="_CPPv3NK4cvc54Sort11isBitVectorEv"></span><span id="_CPPv2NK4cvc54Sort11isBitVectorEv"></span><span id="cvc5::Sort::isBitVectorC"></span><span class="target" id="classcvc5_1_1Sort_1ac751d6668ccf00c84d01949614f35673"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isBitVector</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort11isBitVectorEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is a bit-vector sort (SMT-LIB: <code class="docutils literal notranslate"><span class="pre">(_</span> <span class="pre">BitVec</span> <span class="pre">i)</span></code>). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this sort is a bit-vector sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort15isFloatingPointEv">
+<span id="_CPPv3NK4cvc54Sort15isFloatingPointEv"></span><span id="_CPPv2NK4cvc54Sort15isFloatingPointEv"></span><span id="cvc5::Sort::isFloatingPointC"></span><span class="target" id="classcvc5_1_1Sort_1a9a899fe8d7c91a429e3f3a6fb88f36e7"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isFloatingPoint</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort15isFloatingPointEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is a floatingpoint sort (SMT-LIB: <code class="docutils literal notranslate"><span class="pre">(_</span> <span class="pre">FloatingPoint</span> <span class="pre">eb</span> <span class="pre">sb)</span></code>). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this sort is a floating-point sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort10isDatatypeEv">
+<span id="_CPPv3NK4cvc54Sort10isDatatypeEv"></span><span id="_CPPv2NK4cvc54Sort10isDatatypeEv"></span><span id="cvc5::Sort::isDatatypeC"></span><span class="target" id="classcvc5_1_1Sort_1a48ac0f511d5f7daffed8bbef60a70200"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isDatatype</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort10isDatatypeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is a datatype sort. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this sort is a datatype sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort21isDatatypeConstructorEv">
+<span id="_CPPv3NK4cvc54Sort21isDatatypeConstructorEv"></span><span id="_CPPv2NK4cvc54Sort21isDatatypeConstructorEv"></span><span id="cvc5::Sort::isDatatypeConstructorC"></span><span class="target" id="classcvc5_1_1Sort_1a4616b1efc562aa20b9da278567139013"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isDatatypeConstructor</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort21isDatatypeConstructorEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is a datatype constructor sort. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this sort is a datatype constructor sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort18isDatatypeSelectorEv">
+<span id="_CPPv3NK4cvc54Sort18isDatatypeSelectorEv"></span><span id="_CPPv2NK4cvc54Sort18isDatatypeSelectorEv"></span><span id="cvc5::Sort::isDatatypeSelectorC"></span><span class="target" id="classcvc5_1_1Sort_1a330faf0e7558aeb3392030453e3febd9"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isDatatypeSelector</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort18isDatatypeSelectorEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is a datatype selector sort. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this sort is a datatype selector sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort16isDatatypeTesterEv">
+<span id="_CPPv3NK4cvc54Sort16isDatatypeTesterEv"></span><span id="_CPPv2NK4cvc54Sort16isDatatypeTesterEv"></span><span id="cvc5::Sort::isDatatypeTesterC"></span><span class="target" id="classcvc5_1_1Sort_1a3366f245bc307b3121b640c3a2104423"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isDatatypeTester</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort16isDatatypeTesterEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is a datatype tester sort. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this sort is a datatype tester sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort17isDatatypeUpdaterEv">
+<span id="_CPPv3NK4cvc54Sort17isDatatypeUpdaterEv"></span><span id="_CPPv2NK4cvc54Sort17isDatatypeUpdaterEv"></span><span id="cvc5::Sort::isDatatypeUpdaterC"></span><span class="target" id="classcvc5_1_1Sort_1a728baf884639f83731f83f06619a6e79"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isDatatypeUpdater</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort17isDatatypeUpdaterEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is a datatype updater sort. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this sort is a datatype updater sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort10isFunctionEv">
+<span id="_CPPv3NK4cvc54Sort10isFunctionEv"></span><span id="_CPPv2NK4cvc54Sort10isFunctionEv"></span><span id="cvc5::Sort::isFunctionC"></span><span class="target" id="classcvc5_1_1Sort_1a0bbf476acfe4f85df0d151b3cca47092"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isFunction</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort10isFunctionEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is a function sort. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this sort is a function sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort11isPredicateEv">
+<span id="_CPPv3NK4cvc54Sort11isPredicateEv"></span><span id="_CPPv2NK4cvc54Sort11isPredicateEv"></span><span id="cvc5::Sort::isPredicateC"></span><span class="target" id="classcvc5_1_1Sort_1a05a3f8a79174d0526efbd2d4882c2860"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isPredicate</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort11isPredicateEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is a predicate sort.</p>
+<p>A predicate sort is a function sort that maps to the Boolean sort. All predicate sorts are also function sorts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this sort is a predicate sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort7isTupleEv">
+<span id="_CPPv3NK4cvc54Sort7isTupleEv"></span><span id="_CPPv2NK4cvc54Sort7isTupleEv"></span><span id="cvc5::Sort::isTupleC"></span><span class="target" id="classcvc5_1_1Sort_1a5dbd10d349d3b0caf76496b5c9081992"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isTuple</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort7isTupleEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is a tuple sort. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this sort is a tuple sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort10isNullableEv">
+<span id="_CPPv3NK4cvc54Sort10isNullableEv"></span><span id="_CPPv2NK4cvc54Sort10isNullableEv"></span><span id="cvc5::Sort::isNullableC"></span><span class="target" id="classcvc5_1_1Sort_1aa4709b11903f831b5f3527eaffc5c01c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isNullable</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort10isNullableEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is a nullable sort. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a nullable sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort8isRecordEv">
+<span id="_CPPv3NK4cvc54Sort8isRecordEv"></span><span id="_CPPv2NK4cvc54Sort8isRecordEv"></span><span id="cvc5::Sort::isRecordC"></span><span class="target" id="classcvc5_1_1Sort_1a26ae77bdc1f79961650f3b98705a9808"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isRecord</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort8isRecordEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is a record sort. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a record sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort7isArrayEv">
+<span id="_CPPv3NK4cvc54Sort7isArrayEv"></span><span id="_CPPv2NK4cvc54Sort7isArrayEv"></span><span id="cvc5::Sort::isArrayC"></span><span class="target" id="classcvc5_1_1Sort_1a6a9a67e9be795c5edbd31a1ef8c78502"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isArray</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort7isArrayEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is an array sort. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is an array sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort13isFiniteFieldEv">
+<span id="_CPPv3NK4cvc54Sort13isFiniteFieldEv"></span><span id="_CPPv2NK4cvc54Sort13isFiniteFieldEv"></span><span id="cvc5::Sort::isFiniteFieldC"></span><span class="target" id="classcvc5_1_1Sort_1ad14c442c2a5625369d5ff5bbf1c94b7f"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isFiniteField</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort13isFiniteFieldEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is a finite field sort. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a finite field sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort5isSetEv">
+<span id="_CPPv3NK4cvc54Sort5isSetEv"></span><span id="_CPPv2NK4cvc54Sort5isSetEv"></span><span id="cvc5::Sort::isSetC"></span><span class="target" id="classcvc5_1_1Sort_1a12ff82b95b9b7342ec3fece1fab4208d"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isSet</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort5isSetEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is a Set sort. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a Set sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort5isBagEv">
+<span id="_CPPv3NK4cvc54Sort5isBagEv"></span><span id="_CPPv2NK4cvc54Sort5isBagEv"></span><span id="cvc5::Sort::isBagC"></span><span class="target" id="classcvc5_1_1Sort_1aa094616bf28b9a394d099d0bd6bba49c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isBag</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort5isBagEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is a Bag sort. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a Bag sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort10isSequenceEv">
+<span id="_CPPv3NK4cvc54Sort10isSequenceEv"></span><span id="_CPPv2NK4cvc54Sort10isSequenceEv"></span><span id="cvc5::Sort::isSequenceC"></span><span class="target" id="classcvc5_1_1Sort_1abc8d0fbba29d1677048dad13eaabadcb"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isSequence</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort10isSequenceEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is a Sequence sort. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a Sequence sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort10isAbstractEv">
+<span id="_CPPv3NK4cvc54Sort10isAbstractEv"></span><span id="_CPPv2NK4cvc54Sort10isAbstractEv"></span><span id="cvc5::Sort::isAbstractC"></span><span class="target" id="classcvc5_1_1Sort_1aa479f6bf87e380b58117d2cc64cc7c91"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isAbstract</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort10isAbstractEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is an abstract sort. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the sort is a abstract sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort19isUninterpretedSortEv">
+<span id="_CPPv3NK4cvc54Sort19isUninterpretedSortEv"></span><span id="_CPPv2NK4cvc54Sort19isUninterpretedSortEv"></span><span id="cvc5::Sort::isUninterpretedSortC"></span><span class="target" id="classcvc5_1_1Sort_1a7df6b45ed25719d65179d6bb8313b4ae"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isUninterpretedSort</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort19isUninterpretedSortEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is an uninterpreted sort. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this is an uninterpreted sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort30isUninterpretedSortConstructorEv">
+<span id="_CPPv3NK4cvc54Sort30isUninterpretedSortConstructorEv"></span><span id="_CPPv2NK4cvc54Sort30isUninterpretedSortConstructorEv"></span><span id="cvc5::Sort::isUninterpretedSortConstructorC"></span><span class="target" id="classcvc5_1_1Sort_1a3677991b99605faee4c641c86f15eb51"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isUninterpretedSortConstructor</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort30isUninterpretedSortConstructorEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is an uninterpreted sort constructor.</p>
+<p>An uninterpreted sort constructor has arity &gt; 0 and can be instantiated to construct uninterpreted sorts with given sort parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this is of sort constructor kind. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort14isInstantiatedEv">
+<span id="_CPPv3NK4cvc54Sort14isInstantiatedEv"></span><span id="_CPPv2NK4cvc54Sort14isInstantiatedEv"></span><span id="cvc5::Sort::isInstantiatedC"></span><span class="target" id="classcvc5_1_1Sort_1ad00d150c60bb78fabbba53b978c0e718"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isInstantiated</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort14isInstantiatedEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this is an instantiated (parametric datatype or uninterpreted sort constructor) sort.</p>
+<p>An instantiated sort is a sort that has been constructed from instantiating a sort with sort arguments (see <a class="reference internal" href="#classcvc5_1_1Sort_1a7546cef9e0335d711c70f541dccff329"><span class="std std-ref">Sort::instantiate(const std::vector&lt;Sort&gt;&amp;) const</span></a>)).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this is an instantiated sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort31getUninterpretedSortConstructorEv">
+<span id="_CPPv3NK4cvc54Sort31getUninterpretedSortConstructorEv"></span><span id="_CPPv2NK4cvc54Sort31getUninterpretedSortConstructorEv"></span><span id="cvc5::Sort::getUninterpretedSortConstructorC"></span><span class="target" id="classcvc5_1_1Sort_1a602b8bf786df8152aec073408b486fda"></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getUninterpretedSortConstructor</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort31getUninterpretedSortConstructorEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the associated uninterpreted sort constructor of an instantiated uninterpreted sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The uninterpreted sort constructor sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort11getDatatypeEv">
+<span id="_CPPv3NK4cvc54Sort11getDatatypeEv"></span><span id="_CPPv2NK4cvc54Sort11getDatatypeEv"></span><span id="cvc5::Sort::getDatatypeC"></span><span class="target" id="classcvc5_1_1Sort_1a7103c59da17195d7a31eafd015945585"></span><a class="reference internal" href="datatype.html#_CPPv4N4cvc58DatatypeE" title="cvc5::Datatype"><span class="n"><span class="pre">Datatype</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDatatype</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort11getDatatypeEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The underlying datatype of a datatype sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort11instantiateERKNSt6vectorI4SortEE">
+<span id="_CPPv3NK4cvc54Sort11instantiateERKNSt6vectorI4SortEE"></span><span id="_CPPv2NK4cvc54Sort11instantiateERKNSt6vectorI4SortEE"></span><span id="cvc5::Sort::instantiate__std::vector:Sort:CRC"></span><span class="target" id="classcvc5_1_1Sort_1a7546cef9e0335d711c70f541dccff329"></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">instantiate</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">params</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort11instantiateERKNSt6vectorI4SortEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Instantiate a parameterized datatype sort or uninterpreted sort constructor sort.</p>
+<p>Create sort parameters with <a class="reference internal" href="termmanager.html#classcvc5_1_1TermManager_1a2c0505815639eafd375228753b8eb815"><span class="std std-ref">TermManager::mkParamSort()</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>params</strong> – The list of sort parameters to instantiate with. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The instantiated sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort25getInstantiatedParametersEv">
+<span id="_CPPv3NK4cvc54Sort25getInstantiatedParametersEv"></span><span id="_CPPv2NK4cvc54Sort25getInstantiatedParametersEv"></span><span id="cvc5::Sort::getInstantiatedParametersC"></span><span class="target" id="classcvc5_1_1Sort_1a16fad1821c164be85aee1e90afb7aea7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getInstantiatedParameters</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort25getInstantiatedParametersEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the sorts used to instantiate the sort parameters of a parametric sort (parametric datatype or uninterpreted sort constructor sort, see Sort::instantiate(const std::vector&lt;Sort&gt;&amp; const)).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The sorts used to instantiate the sort parameters of a parametric sort </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort10substituteERK4SortRK4Sort">
+<span id="_CPPv3NK4cvc54Sort10substituteERK4SortRK4Sort"></span><span id="_CPPv2NK4cvc54Sort10substituteERK4SortRK4Sort"></span><span id="cvc5::Sort::substitute__SortCR.SortCRC"></span><span class="target" id="classcvc5_1_1Sort_1a20cbfa4483d32c714e2718fe30581368"></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">substitute</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sort</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">replacement</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort10substituteERK4SortRK4Sort" title="Link to this definition"></a><br /></dt>
+<dd><p>Substitution of Sorts.</p>
+<p>Note that this replacement is applied during a pre-order traversal and only once to the sort. It is not run until fix point.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">(Array</span> <span class="pre">A</span> <span class="pre">B).substitute({A,</span> <span class="pre">C},</span> <span class="pre">{(Array</span> <span class="pre">C</span> <span class="pre">D),</span> <span class="pre">(Array</span> <span class="pre">A</span> <span class="pre">B)})</span></code> will return <code class="docutils literal notranslate"><span class="pre">(Array</span> <span class="pre">(Array</span> <span class="pre">C</span> <span class="pre">D)</span> <span class="pre">B)</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort</strong> – The subsort to be substituted within this sort. </p></li>
+<li><p><strong>replacement</strong> – The sort replacing the substituted subsort. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort10substituteERKNSt6vectorI4SortEERKNSt6vectorI4SortEE">
+<span id="_CPPv3NK4cvc54Sort10substituteERKNSt6vectorI4SortEERKNSt6vectorI4SortEE"></span><span id="_CPPv2NK4cvc54Sort10substituteERKNSt6vectorI4SortEERKNSt6vectorI4SortEE"></span><span id="cvc5::Sort::substitute__std::vector:Sort:CR.std::vector:Sort:CRC"></span><span class="target" id="classcvc5_1_1Sort_1a94e6fa43fe83a50d6f1bfade00662bcd"></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">substitute</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sorts</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">replacements</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort10substituteERKNSt6vectorI4SortEERKNSt6vectorI4SortEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Simultaneous substitution of Sorts.</p>
+<p>Note that this replacement is applied during a pre-order traversal and only once to the sort. It is not run until fix point. In the case that sorts contains duplicates, the replacement earliest in the vector takes priority.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sorts</strong> – The subsorts to be substituted within this sort. </p></li>
+<li><p><strong>replacements</strong> – The sort replacing the substituted subsorts. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort8toStreamERNSt7ostreamE">
+<span id="_CPPv3NK4cvc54Sort8toStreamERNSt7ostreamE"></span><span id="_CPPv2NK4cvc54Sort8toStreamERNSt7ostreamE"></span><span id="cvc5::Sort::toStream__osRC"></span><span class="target" id="classcvc5_1_1Sort_1aa914c8668193b910f78cade32b02bfd7"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toStream</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort8toStreamERNSt7ostreamE" title="Link to this definition"></a><br /></dt>
+<dd><p>Output a string representation of this sort to a given stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>out</strong> – The output stream. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort8toStringEv">
+<span id="_CPPv3NK4cvc54Sort8toStringEv"></span><span id="_CPPv2NK4cvc54Sort8toStringEv"></span><span id="cvc5::Sort::toStringC"></span><span class="target" id="classcvc5_1_1Sort_1a30efb58f10ba7d5655c5f01b95b17b2f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toString</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort8toStringEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A string representation of this sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort27getDatatypeConstructorArityEv">
+<span id="_CPPv3NK4cvc54Sort27getDatatypeConstructorArityEv"></span><span id="_CPPv2NK4cvc54Sort27getDatatypeConstructorArityEv"></span><span id="cvc5::Sort::getDatatypeConstructorArityC"></span><span class="target" id="classcvc5_1_1Sort_1a9507b28c555f41993a45278777af7d09"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDatatypeConstructorArity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort27getDatatypeConstructorArityEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The arity of a datatype constructor sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort33getDatatypeConstructorDomainSortsEv">
+<span id="_CPPv3NK4cvc54Sort33getDatatypeConstructorDomainSortsEv"></span><span id="_CPPv2NK4cvc54Sort33getDatatypeConstructorDomainSortsEv"></span><span id="cvc5::Sort::getDatatypeConstructorDomainSortsC"></span><span class="target" id="classcvc5_1_1Sort_1aa926a8444088c78ab84f4756b6ec5e84"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDatatypeConstructorDomainSorts</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort33getDatatypeConstructorDomainSortsEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The domain sorts of a datatype constructor sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort34getDatatypeConstructorCodomainSortEv">
+<span id="_CPPv3NK4cvc54Sort34getDatatypeConstructorCodomainSortEv"></span><span id="_CPPv2NK4cvc54Sort34getDatatypeConstructorCodomainSortEv"></span><span id="cvc5::Sort::getDatatypeConstructorCodomainSortC"></span><span class="target" id="classcvc5_1_1Sort_1ac1390e3c91dbc61dffd8e290b8be490f"></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDatatypeConstructorCodomainSort</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort34getDatatypeConstructorCodomainSortEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The codomain sort of a constructor sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort29getDatatypeSelectorDomainSortEv">
+<span id="_CPPv3NK4cvc54Sort29getDatatypeSelectorDomainSortEv"></span><span id="_CPPv2NK4cvc54Sort29getDatatypeSelectorDomainSortEv"></span><span id="cvc5::Sort::getDatatypeSelectorDomainSortC"></span><span class="target" id="classcvc5_1_1Sort_1ae21c69d75ed8097fa9cc2974e357e0e4"></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDatatypeSelectorDomainSort</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort29getDatatypeSelectorDomainSortEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The domain sort of a datatype selector sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort31getDatatypeSelectorCodomainSortEv">
+<span id="_CPPv3NK4cvc54Sort31getDatatypeSelectorCodomainSortEv"></span><span id="_CPPv2NK4cvc54Sort31getDatatypeSelectorCodomainSortEv"></span><span id="cvc5::Sort::getDatatypeSelectorCodomainSortC"></span><span class="target" id="classcvc5_1_1Sort_1a9e310d2dc49dda0f7e1edb57a4f9f2ed"></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDatatypeSelectorCodomainSort</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort31getDatatypeSelectorCodomainSortEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The codomain sort of a datatype selector sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort27getDatatypeTesterDomainSortEv">
+<span id="_CPPv3NK4cvc54Sort27getDatatypeTesterDomainSortEv"></span><span id="_CPPv2NK4cvc54Sort27getDatatypeTesterDomainSortEv"></span><span id="cvc5::Sort::getDatatypeTesterDomainSortC"></span><span class="target" id="classcvc5_1_1Sort_1a937b11139bc7848102583e00d4b94df2"></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDatatypeTesterDomainSort</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort27getDatatypeTesterDomainSortEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The domain sort of a datatype tester sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort29getDatatypeTesterCodomainSortEv">
+<span id="_CPPv3NK4cvc54Sort29getDatatypeTesterCodomainSortEv"></span><span id="_CPPv2NK4cvc54Sort29getDatatypeTesterCodomainSortEv"></span><span id="cvc5::Sort::getDatatypeTesterCodomainSortC"></span><span class="target" id="classcvc5_1_1Sort_1a875fd3d88b47401723e6d4b245198317"></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDatatypeTesterCodomainSort</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort29getDatatypeTesterCodomainSortEv" title="Link to this definition"></a><br /></dt>
+<dd><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We mainly need this for the symbol table, which doesn’t have access to the solver object. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The codomain sort of a datatype tester sort, which is the Boolean sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort16getFunctionArityEv">
+<span id="_CPPv3NK4cvc54Sort16getFunctionArityEv"></span><span id="_CPPv2NK4cvc54Sort16getFunctionArityEv"></span><span id="cvc5::Sort::getFunctionArityC"></span><span class="target" id="classcvc5_1_1Sort_1a2a74d10afbf4b65858eca6296e535fce"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFunctionArity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort16getFunctionArityEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The arity of a function sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort22getFunctionDomainSortsEv">
+<span id="_CPPv3NK4cvc54Sort22getFunctionDomainSortsEv"></span><span id="_CPPv2NK4cvc54Sort22getFunctionDomainSortsEv"></span><span id="cvc5::Sort::getFunctionDomainSortsC"></span><span class="target" id="classcvc5_1_1Sort_1ad51ee199a8c5f0e6bf8be14c6c89b953"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFunctionDomainSorts</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort22getFunctionDomainSortsEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The domain sorts of a function sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort23getFunctionCodomainSortEv">
+<span id="_CPPv3NK4cvc54Sort23getFunctionCodomainSortEv"></span><span id="_CPPv2NK4cvc54Sort23getFunctionCodomainSortEv"></span><span id="cvc5::Sort::getFunctionCodomainSortC"></span><span class="target" id="classcvc5_1_1Sort_1a7afffa010928631f7e56fe395cc1923f"></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFunctionCodomainSort</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort23getFunctionCodomainSortEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The codomain sort of a function sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort17getArrayIndexSortEv">
+<span id="_CPPv3NK4cvc54Sort17getArrayIndexSortEv"></span><span id="_CPPv2NK4cvc54Sort17getArrayIndexSortEv"></span><span id="cvc5::Sort::getArrayIndexSortC"></span><span class="target" id="classcvc5_1_1Sort_1aa8c74122d2e90225004702c06ffda71f"></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getArrayIndexSort</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort17getArrayIndexSortEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The array index sort of an array sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort19getArrayElementSortEv">
+<span id="_CPPv3NK4cvc54Sort19getArrayElementSortEv"></span><span id="_CPPv2NK4cvc54Sort19getArrayElementSortEv"></span><span id="cvc5::Sort::getArrayElementSortC"></span><span class="target" id="classcvc5_1_1Sort_1ad2dc27d8eb73903655218cc3eb48fc9f"></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getArrayElementSort</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort19getArrayElementSortEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The array element sort of an array sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort17getSetElementSortEv">
+<span id="_CPPv3NK4cvc54Sort17getSetElementSortEv"></span><span id="_CPPv2NK4cvc54Sort17getSetElementSortEv"></span><span id="cvc5::Sort::getSetElementSortC"></span><span class="target" id="classcvc5_1_1Sort_1a17bec9321832a5ccf67a1908be92ee74"></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSetElementSort</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort17getSetElementSortEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The element sort of a set sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort17getBagElementSortEv">
+<span id="_CPPv3NK4cvc54Sort17getBagElementSortEv"></span><span id="_CPPv2NK4cvc54Sort17getBagElementSortEv"></span><span id="cvc5::Sort::getBagElementSortC"></span><span class="target" id="classcvc5_1_1Sort_1ab0e3a6d5a227ea4d1d69e7166aa1be97"></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getBagElementSort</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort17getBagElementSortEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The element sort of a bag sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort22getSequenceElementSortEv">
+<span id="_CPPv3NK4cvc54Sort22getSequenceElementSortEv"></span><span id="_CPPv2NK4cvc54Sort22getSequenceElementSortEv"></span><span id="cvc5::Sort::getSequenceElementSortC"></span><span class="target" id="classcvc5_1_1Sort_1a9dde7cee7d728c37e1f4f240e4aa0750"></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSequenceElementSort</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort22getSequenceElementSortEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The element sort of a sequence sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort17getAbstractedKindEv">
+<span id="_CPPv3NK4cvc54Sort17getAbstractedKindEv"></span><span id="_CPPv2NK4cvc54Sort17getAbstractedKindEv"></span><span id="cvc5::Sort::getAbstractedKindC"></span><span class="target" id="classcvc5_1_1Sort_1a6eee3614c8c53da787c14b70c6d592c5"></span><a class="reference internal" href="../enums/sortkind.html#_CPPv4N4cvc58SortKindE" title="cvc5::SortKind"><span class="n"><span class="pre">SortKind</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getAbstractedKind</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort17getAbstractedKindEv" title="Link to this definition"></a><br /></dt>
+<dd><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The sort kind of an abstract sort, which denotes the kind of sorts that this abstract sort denotes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort36getUninterpretedSortConstructorArityEv">
+<span id="_CPPv3NK4cvc54Sort36getUninterpretedSortConstructorArityEv"></span><span id="_CPPv2NK4cvc54Sort36getUninterpretedSortConstructorArityEv"></span><span id="cvc5::Sort::getUninterpretedSortConstructorArityC"></span><span class="target" id="classcvc5_1_1Sort_1a48a0455163a4fde914c30730340dd5f3"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getUninterpretedSortConstructorArity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort36getUninterpretedSortConstructorArityEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The arity of an uninterpreted sort constructor sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort16getBitVectorSizeEv">
+<span id="_CPPv3NK4cvc54Sort16getBitVectorSizeEv"></span><span id="_CPPv2NK4cvc54Sort16getBitVectorSizeEv"></span><span id="cvc5::Sort::getBitVectorSizeC"></span><span class="target" id="classcvc5_1_1Sort_1ac382085ab838b6befe7a6ec21e863fe3"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getBitVectorSize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort16getBitVectorSizeEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The bit-width of the bit-vector sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort18getFiniteFieldSizeEv">
+<span id="_CPPv3NK4cvc54Sort18getFiniteFieldSizeEv"></span><span id="_CPPv2NK4cvc54Sort18getFiniteFieldSizeEv"></span><span id="cvc5::Sort::getFiniteFieldSizeC"></span><span class="target" id="classcvc5_1_1Sort_1a75fa7b2a5a5c3240f4a1fb164e4b30a2"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFiniteFieldSize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort18getFiniteFieldSizeEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The size of the finite field sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort28getFloatingPointExponentSizeEv">
+<span id="_CPPv3NK4cvc54Sort28getFloatingPointExponentSizeEv"></span><span id="_CPPv2NK4cvc54Sort28getFloatingPointExponentSizeEv"></span><span id="cvc5::Sort::getFloatingPointExponentSizeC"></span><span class="target" id="classcvc5_1_1Sort_1a6231c7849ce3d19dacb24b53cfb9532b"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFloatingPointExponentSize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort28getFloatingPointExponentSizeEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The bit-width of the exponent of the floating-point sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort31getFloatingPointSignificandSizeEv">
+<span id="_CPPv3NK4cvc54Sort31getFloatingPointSignificandSizeEv"></span><span id="_CPPv2NK4cvc54Sort31getFloatingPointSignificandSizeEv"></span><span id="cvc5::Sort::getFloatingPointSignificandSizeC"></span><span class="target" id="classcvc5_1_1Sort_1ad42344e10c80e36d764e93fd5fd30191"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFloatingPointSignificandSize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort31getFloatingPointSignificandSizeEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The width of the significand of the floating-point sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort16getDatatypeArityEv">
+<span id="_CPPv3NK4cvc54Sort16getDatatypeArityEv"></span><span id="_CPPv2NK4cvc54Sort16getDatatypeArityEv"></span><span id="cvc5::Sort::getDatatypeArityC"></span><span class="target" id="classcvc5_1_1Sort_1abbfd3f5d45a98ee7c8c0aaba58b66a89"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDatatypeArity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort16getDatatypeArityEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the arity of a datatype sort, which is the number of type parameters if the datatype is parametric, or 0 otherwise. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The arity of a datatype sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort14getTupleLengthEv">
+<span id="_CPPv3NK4cvc54Sort14getTupleLengthEv"></span><span id="_CPPv2NK4cvc54Sort14getTupleLengthEv"></span><span id="cvc5::Sort::getTupleLengthC"></span><span class="target" id="classcvc5_1_1Sort_1a274294d71b05ac572c7bbe870040aa31"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTupleLength</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort14getTupleLengthEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The length of a tuple sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort13getTupleSortsEv">
+<span id="_CPPv3NK4cvc54Sort13getTupleSortsEv"></span><span id="_CPPv2NK4cvc54Sort13getTupleSortsEv"></span><span id="cvc5::Sort::getTupleSortsC"></span><span class="target" id="classcvc5_1_1Sort_1aea2530a3298fc6d1e4f995b2dec9abad"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTupleSorts</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort13getTupleSortsEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The element sorts of a tuple sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc54Sort22getNullableElementSortEv">
+<span id="_CPPv3NK4cvc54Sort22getNullableElementSortEv"></span><span id="_CPPv2NK4cvc54Sort22getNullableElementSortEv"></span><span id="cvc5::Sort::getNullableElementSortC"></span><span class="target" id="classcvc5_1_1Sort_1a4727cb9c33706a709f47fd621566e986"></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNullableElementSort</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc54Sort22getNullableElementSortEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The element sort of a nullable sort. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-friends">Friends</p>
+<dl>
+<dt class="sig sig-object cpp">
+<em class="property"><span class="pre">friend</span> <span class="pre">class</span></em> <span class="pre">parser::Cmd</span></dt>
+</dl>
+
+<dl>
+<dt class="sig sig-object cpp">
+<em class="property"><span class="pre">friend</span> <span class="pre">struct</span></em> <span class="pre">std::hash&lt;</span> <span class="pre">Sort</span> <span class="pre">&gt;</span></dt>
+</dl>
+
+</div>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc5lsERNSt7ostreamERK4Sort">
+<span id="_CPPv3N4cvc5lsERNSt7ostreamERK4Sort"></span><span id="_CPPv2N4cvc5lsERNSt7ostreamERK4Sort"></span><span id="cvc5::lshift-operator__osR.SortCR"></span><span class="target" id="namespacecvc5_1a27487fc6c72e0c5cb84781f1f85c56ac"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">cvc5</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;&lt;</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc5lsERNSt7ostreamERK4Sort" title="Link to this definition"></a><br /></dt>
+<dd><p>Serialize a sort to given stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>out</strong> – The output stream. </p></li>
+<li><p><strong>s</strong> – The sort to be serialized to the given output stream. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The output stream. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4IENSt4hashIN4cvc54SortEEE">
+<span id="_CPPv3IENSt4hashIN4cvc54SortEEE"></span><span id="_CPPv2IENSt4hashIN4cvc54SortEEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="structstd_1_1hash_3_01cvc5_1_1Sort_01_4"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hash</span></span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">cvc5</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4IENSt4hashIN4cvc54SortEEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Hash function for Sorts. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NKSt4hashIN4cvc54SortEEclERKN4cvc54SortE">
+<span id="_CPPv3NKSt4hashIN4cvc54SortEEclERKN4cvc54SortE"></span><span id="_CPPv2NKSt4hashIN4cvc54SortEEclERKN4cvc54SortE"></span><span id="std::hash:cvc5::Sort:::call-operator__cvc5::SortCRC"></span><span class="target" id="structstd_1_1hash_3_01cvc5_1_1Sort_01_4_1ab92deef78e67c8eab43cd7ae5255ddf2"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">()</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">cvc5</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NKSt4hashIN4cvc54SortEEclERKN4cvc54SortE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="solver.html" class="btn btn-neutral float-left" title="Solver" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../enums/sortkind.html" class="btn btn-neutral float-right" title="SortKind" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
