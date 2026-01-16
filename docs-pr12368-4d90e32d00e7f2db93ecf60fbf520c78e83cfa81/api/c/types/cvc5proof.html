@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cvc5Proof &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Cvc5Result" href="cvc5result.html" />
+    <link rel="prev" title="Cvc5Op" href="cvc5op.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../cpp/cpp.html">C++ API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../c.html">C API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5.html">Cvc5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5command.html">Cvc5Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatype.html">Cvc5Datatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypedecl.html">Cvc5DatatypeDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypeconstructor.html">Cvc5DatatypeConstructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypeconstructordecl.html">Cvc5DatatypeConstructorDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypeselector.html">Cvc5DatatypeSelector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5grammar.html">Cvc5Grammar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5inputparser.html">Cvc5InputParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5op.html">Cvc5Op</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Cvc5Proof</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv49Cvc5Proof"><code class="docutils literal notranslate"><span class="pre">Cvc5Proof</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv419cvc5_proof_get_rule9Cvc5Proof"><code class="docutils literal notranslate"><span class="pre">cvc5_proof_get_rule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv427cvc5_proof_get_rewrite_rule9Cvc5Proof"><code class="docutils literal notranslate"><span class="pre">cvc5_proof_get_rewrite_rule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv421cvc5_proof_get_result9Cvc5Proof"><code class="docutils literal notranslate"><span class="pre">cvc5_proof_get_result()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv423cvc5_proof_get_children9Cvc5ProofP6size_t"><code class="docutils literal notranslate"><span class="pre">cvc5_proof_get_children()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv424cvc5_proof_get_arguments9Cvc5ProofP6size_t"><code class="docutils literal notranslate"><span class="pre">cvc5_proof_get_arguments()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv419cvc5_proof_is_equal9Cvc5Proof9Cvc5Proof"><code class="docutils literal notranslate"><span class="pre">cvc5_proof_is_equal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv422cvc5_proof_is_disequal9Cvc5Proof9Cvc5Proof"><code class="docutils literal notranslate"><span class="pre">cvc5_proof_is_disequal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv415cvc5_proof_hash9Cvc5Proof"><code class="docutils literal notranslate"><span class="pre">cvc5_proof_hash()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv415cvc5_proof_copy9Cvc5Proof"><code class="docutils literal notranslate"><span class="pre">cvc5_proof_copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv418cvc5_proof_release9Cvc5Proof"><code class="docutils literal notranslate"><span class="pre">cvc5_proof_release()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5result.html">Cvc5Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5sort.html">Cvc5Sort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5statistics.html">Cvc5Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5symbolmanager.html">Cvc5SymbolManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5synthresult.html">Cvc5SynthResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5term.html">Cvc5Term</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5termmanager.html">Cvc5TermManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../structs/cvc5optioninfo.html">Cvc5OptionInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../structs/cvc5plugin.html">Cvc5Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5kind.html">Cvc5Kind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5sortkind.html">Cvc5SortKind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5roundingmode.html">Cvc5RoundingMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5unknownexplanation.html">Cvc5UnknownExplanation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/modes.html">Modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#types">Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#structs">Structs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#enums">Enums</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/python.html">Python API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../c.html">C API</a></li>
+      <li class="breadcrumb-item active">Cvc5Proof</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cvc5proof">
+<h1>Cvc5Proof<a class="headerlink" href="#cvc5proof" title="Link to this heading"></a></h1>
+<p>This struct encapsulates a cvc5 proof object, which can be retrieved via
+function <a class="reference internal" href="cvc5.html#_CPPv414cvc5_get_proofP4Cvc518Cvc5ProofComponentP6size_t" title="cvc5_get_proof"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5_get_proof()</span></code></a> after a <a class="reference internal" href="cvc5.html#_CPPv414cvc5_check_satP4Cvc5" title="cvc5_check_sat"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5_check_sat()</span></code></a>
+query returns an <cite>unsat</cite> result.</p>
+<div class="hide-toctree docutils container">
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<hr class="docutils" />
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv49Cvc5Proof">
+<span id="_CPPv39Cvc5Proof"></span><span id="_CPPv29Cvc5Proof"></span><span id="Cvc5Proof"></span><span class="target" id="cvc5_8h_1aaccf913b122c7cf5feb7cb6a89c48264"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">cvc5_proof_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Cvc5Proof</span></span></span><a class="headerlink" href="#_CPPv49Cvc5Proof" title="Link to this definition"></a><br /></dt>
+<dd><p>A cvc5 proof. </p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419cvc5_proof_get_rule9Cvc5Proof">
+<span id="_CPPv319cvc5_proof_get_rule9Cvc5Proof"></span><span id="_CPPv219cvc5_proof_get_rule9Cvc5Proof"></span><span id="cvc5_proof_get_rule__Cvc5Proof"></span><span class="target" id="group__c__cvc5proof_1gac3465e3d565627ab623ebc8c7040c623"></span><a class="reference internal" href="../enums/cvc5proofrule.html#_CPPv413Cvc5ProofRule" title="Cvc5ProofRule"><span class="n"><span class="pre">Cvc5ProofRule</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_proof_get_rule</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Cvc5Proof" title="Cvc5Proof"><span class="n"><span class="pre">Cvc5Proof</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">proof</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419cvc5_proof_get_rule9Cvc5Proof" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the proof rule used by the root step of a given proof. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The proof rule. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv427cvc5_proof_get_rewrite_rule9Cvc5Proof">
+<span id="_CPPv327cvc5_proof_get_rewrite_rule9Cvc5Proof"></span><span id="_CPPv227cvc5_proof_get_rewrite_rule9Cvc5Proof"></span><span id="cvc5_proof_get_rewrite_rule__Cvc5Proof"></span><span class="target" id="group__c__cvc5proof_1gaa2dd6dd7a19f9cb6c30965c997c463d1"></span><a class="reference internal" href="../enums/cvc5proofrule.html#_CPPv420Cvc5ProofRewriteRule" title="Cvc5ProofRewriteRule"><span class="n"><span class="pre">Cvc5ProofRewriteRule</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_proof_get_rewrite_rule</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Cvc5Proof" title="Cvc5Proof"><span class="n"><span class="pre">Cvc5Proof</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">proof</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427cvc5_proof_get_rewrite_rule9Cvc5Proof" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the proof rewrite rule used by the root step of the proof.</p>
+<p>Requires that <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5proof_1gac3465e3d565627ab623ebc8c7040c623"><span class="std std-ref"><span class="pre">cvc5_proof_get_rule()</span></span></a></code> does not return <a class="reference internal" href="../enums/cvc5proofrule.html#cvc5__proof__rule_8h_1a1057a8682596ebb92a60e135ff650c56a6d720aa002b3f5eb21089a865f70ea67"><span class="std std-ref">CVC5_PROOF_RULE_DSL_REWRITE</span></a> or <a class="reference internal" href="../enums/cvc5proofrule.html#cvc5__proof__rule_8h_1a1057a8682596ebb92a60e135ff650c56a1b4fdd4cf4d15a4c64b7e80c2680b627"><span class="std std-ref">CVC5_PROOF_RULE_THEORY_REWRITE</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>proof</strong> – The proof. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The proof rewrite rule. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv421cvc5_proof_get_result9Cvc5Proof">
+<span id="_CPPv321cvc5_proof_get_result9Cvc5Proof"></span><span id="_CPPv221cvc5_proof_get_result9Cvc5Proof"></span><span id="cvc5_proof_get_result__Cvc5Proof"></span><span class="target" id="group__c__cvc5proof_1ga79e9d23ec5d9642b445d7211d579abae"></span><a class="reference internal" href="cvc5term.html#_CPPv48Cvc5Term" title="Cvc5Term"><span class="n"><span class="pre">Cvc5Term</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_proof_get_result</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Cvc5Proof" title="Cvc5Proof"><span class="n"><span class="pre">Cvc5Proof</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">proof</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421cvc5_proof_get_result9Cvc5Proof" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the conclusion of the root step of a given proof. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>proof</strong> – The proof. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The conclusion term. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv423cvc5_proof_get_children9Cvc5ProofP6size_t">
+<span id="_CPPv323cvc5_proof_get_children9Cvc5ProofP6size_t"></span><span id="_CPPv223cvc5_proof_get_children9Cvc5ProofP6size_t"></span><span id="cvc5_proof_get_children__Cvc5Proof.sP"></span><span class="target" id="group__c__cvc5proof_1ga0777eae38ef4004596df30602f268be1"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49Cvc5Proof" title="Cvc5Proof"><span class="n"><span class="pre">Cvc5Proof</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_proof_get_children</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Cvc5Proof" title="Cvc5Proof"><span class="n"><span class="pre">Cvc5Proof</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">proof</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423cvc5_proof_get_children9Cvc5ProofP6size_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the premises of the root step of a given proof. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The returned Cvc5Proof array pointer is only valid until the next call to this function. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>proof</strong> – The proof. </p></li>
+<li><p><strong>size</strong> – Output parameter to store the number of resulting premise proofs. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The premise proofs. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv424cvc5_proof_get_arguments9Cvc5ProofP6size_t">
+<span id="_CPPv324cvc5_proof_get_arguments9Cvc5ProofP6size_t"></span><span id="_CPPv224cvc5_proof_get_arguments9Cvc5ProofP6size_t"></span><span id="cvc5_proof_get_arguments__Cvc5Proof.sP"></span><span class="target" id="group__c__cvc5proof_1ga2c5028e6678d3a61e641886aba59e3ca"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="cvc5term.html#_CPPv48Cvc5Term" title="Cvc5Term"><span class="n"><span class="pre">Cvc5Term</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_proof_get_arguments</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Cvc5Proof" title="Cvc5Proof"><span class="n"><span class="pre">Cvc5Proof</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">proof</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424cvc5_proof_get_arguments9Cvc5ProofP6size_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the arguments of the root step of a given proof. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>proof</strong> – The proof. </p></li>
+<li><p><strong>size</strong> – Output parameter to store the number of resulting argument terms. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The argument terms. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419cvc5_proof_is_equal9Cvc5Proof9Cvc5Proof">
+<span id="_CPPv319cvc5_proof_is_equal9Cvc5Proof9Cvc5Proof"></span><span id="_CPPv219cvc5_proof_is_equal9Cvc5Proof9Cvc5Proof"></span><span id="cvc5_proof_is_equal__Cvc5Proof.Cvc5Proof"></span><span class="target" id="group__c__cvc5proof_1gacd2e36138ba40bc181d4d0c1c6b5c9a6"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_proof_is_equal</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Cvc5Proof" title="Cvc5Proof"><span class="n"><span class="pre">Cvc5Proof</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <a class="reference internal" href="#_CPPv49Cvc5Proof" title="Cvc5Proof"><span class="n"><span class="pre">Cvc5Proof</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419cvc5_proof_is_equal9Cvc5Proof9Cvc5Proof" title="Link to this definition"></a><br /></dt>
+<dd><p>Compare two proofs for referential equality. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – The first proof. </p></li>
+<li><p><strong>b</strong> – The second proof. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if both proof pointers point to the same internal proof object. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv422cvc5_proof_is_disequal9Cvc5Proof9Cvc5Proof">
+<span id="_CPPv322cvc5_proof_is_disequal9Cvc5Proof9Cvc5Proof"></span><span id="_CPPv222cvc5_proof_is_disequal9Cvc5Proof9Cvc5Proof"></span><span id="cvc5_proof_is_disequal__Cvc5Proof.Cvc5Proof"></span><span class="target" id="group__c__cvc5proof_1gaa6f58048e835f51a8a974b1cc23f4679"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_proof_is_disequal</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Cvc5Proof" title="Cvc5Proof"><span class="n"><span class="pre">Cvc5Proof</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <a class="reference internal" href="#_CPPv49Cvc5Proof" title="Cvc5Proof"><span class="n"><span class="pre">Cvc5Proof</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422cvc5_proof_is_disequal9Cvc5Proof9Cvc5Proof" title="Link to this definition"></a><br /></dt>
+<dd><p>Compare two proofs for referential disequality. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – The first proof. </p></li>
+<li><p><strong>b</strong> – The second proof. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if both proof pointers point to different internal proof objects. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415cvc5_proof_hash9Cvc5Proof">
+<span id="_CPPv315cvc5_proof_hash9Cvc5Proof"></span><span id="_CPPv215cvc5_proof_hash9Cvc5Proof"></span><span id="cvc5_proof_hash__Cvc5Proof"></span><span class="target" id="group__c__cvc5proof_1ga9fa53d27e4f64f7d4771f0fbcd3b94ec"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_proof_hash</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Cvc5Proof" title="Cvc5Proof"><span class="n"><span class="pre">Cvc5Proof</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">proof</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415cvc5_proof_hash9Cvc5Proof" title="Link to this definition"></a><br /></dt>
+<dd><p>Compute the hash value of a proof. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>proof</strong> – The proof. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The hash value of the proof. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415cvc5_proof_copy9Cvc5Proof">
+<span id="_CPPv315cvc5_proof_copy9Cvc5Proof"></span><span id="_CPPv215cvc5_proof_copy9Cvc5Proof"></span><span id="cvc5_proof_copy__Cvc5Proof"></span><span class="target" id="group__c__cvc5proof_1gab2763b026eb4053b386f6f351a8ee22f"></span><a class="reference internal" href="#_CPPv49Cvc5Proof" title="Cvc5Proof"><span class="n"><span class="pre">Cvc5Proof</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_proof_copy</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Cvc5Proof" title="Cvc5Proof"><span class="n"><span class="pre">Cvc5Proof</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">proof</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415cvc5_proof_copy9Cvc5Proof" title="Link to this definition"></a><br /></dt>
+<dd><p>Make copy of proof, increases reference counter of <code class="docutils literal notranslate"><span class="pre">proof</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step is optional and allows users to manage resources in a more fine-grained manner. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>proof</strong> – The proof to copy. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The same proof with its reference count increased by one.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv418cvc5_proof_release9Cvc5Proof">
+<span id="_CPPv318cvc5_proof_release9Cvc5Proof"></span><span id="_CPPv218cvc5_proof_release9Cvc5Proof"></span><span id="cvc5_proof_release__Cvc5Proof"></span><span class="target" id="group__c__cvc5proof_1ga6aad942e48165646592ada1ea264ffe0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_proof_release</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Cvc5Proof" title="Cvc5Proof"><span class="n"><span class="pre">Cvc5Proof</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">proof</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418cvc5_proof_release9Cvc5Proof" title="Link to this definition"></a><br /></dt>
+<dd><p>Release copy of proof, decrements reference counter of <code class="docutils literal notranslate"><span class="pre">proof</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step is optional and allows users to release resources in a more fine-grained manner. Further, any API function that returns a copy that is owned by the callee of the function and thus, can be released. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>proof</strong> – The proof to release.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cvc5op.html" class="btn btn-neutral float-left" title="Cvc5Op" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cvc5result.html" class="btn btn-neutral float-right" title="Cvc5Result" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
