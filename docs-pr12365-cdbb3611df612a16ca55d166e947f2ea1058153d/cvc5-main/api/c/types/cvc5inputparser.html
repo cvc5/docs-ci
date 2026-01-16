@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cvc5InputParser &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Cvc5Op" href="cvc5op.html" />
+    <link rel="prev" title="Cvc5Grammar" href="cvc5grammar.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../cpp/cpp.html">C++ API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../c.html">C API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5.html">Cvc5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5command.html">Cvc5Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatype.html">Cvc5Datatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypedecl.html">Cvc5DatatypeDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypeconstructor.html">Cvc5DatatypeConstructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypeconstructordecl.html">Cvc5DatatypeConstructorDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypeselector.html">Cvc5DatatypeSelector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5grammar.html">Cvc5Grammar</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Cvc5InputParser</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv415Cvc5InputParser"><code class="docutils literal notranslate"><span class="pre">Cvc5InputParser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv415cvc5_parser_newP4Cvc5P17Cvc5SymbolManager"><code class="docutils literal notranslate"><span class="pre">cvc5_parser_new()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv418cvc5_parser_deleteP15Cvc5InputParser"><code class="docutils literal notranslate"><span class="pre">cvc5_parser_delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv419cvc5_parser_releaseP15Cvc5InputParser"><code class="docutils literal notranslate"><span class="pre">cvc5_parser_release()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv422cvc5_parser_get_solverP15Cvc5InputParser"><code class="docutils literal notranslate"><span class="pre">cvc5_parser_get_solver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv418cvc5_parser_get_smP15Cvc5InputParser"><code class="docutils literal notranslate"><span class="pre">cvc5_parser_get_sm()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv426cvc5_parser_set_file_inputP15Cvc5InputParser17Cvc5InputLanguagePKc"><code class="docutils literal notranslate"><span class="pre">cvc5_parser_set_file_input()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv425cvc5_parser_set_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKcPKc"><code class="docutils literal notranslate"><span class="pre">cvc5_parser_set_str_input()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv429cvc5_parser_set_inc_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKc"><code class="docutils literal notranslate"><span class="pre">cvc5_parser_set_inc_str_input()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv432cvc5_parser_append_inc_str_inputP15Cvc5InputParserPKc"><code class="docutils literal notranslate"><span class="pre">cvc5_parser_append_inc_str_input()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv424cvc5_parser_next_commandP15Cvc5InputParserPPKc"><code class="docutils literal notranslate"><span class="pre">cvc5_parser_next_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv421cvc5_parser_next_termP15Cvc5InputParserPPKc"><code class="docutils literal notranslate"><span class="pre">cvc5_parser_next_term()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv416cvc5_parser_doneP15Cvc5InputParser"><code class="docutils literal notranslate"><span class="pre">cvc5_parser_done()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5op.html">Cvc5Op</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5proof.html">Cvc5Proof</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5result.html">Cvc5Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5sort.html">Cvc5Sort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5statistics.html">Cvc5Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5symbolmanager.html">Cvc5SymbolManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5synthresult.html">Cvc5SynthResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5term.html">Cvc5Term</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5termmanager.html">Cvc5TermManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../structs/cvc5optioninfo.html">Cvc5OptionInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../structs/cvc5plugin.html">Cvc5Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5kind.html">Cvc5Kind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5sortkind.html">Cvc5SortKind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5roundingmode.html">Cvc5RoundingMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5unknownexplanation.html">Cvc5UnknownExplanation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/modes.html">Modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#types">Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#structs">Structs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#enums">Enums</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/python.html">Python API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../c.html">C API</a></li>
+      <li class="breadcrumb-item active">Cvc5InputParser</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cvc5inputparser">
+<h1>Cvc5InputParser<a class="headerlink" href="#cvc5inputparser" title="Link to this heading"></a></h1>
+<p>This struct is the main interface for retrieving <a class="reference internal" href="cvc5command.html#_CPPv411Cvc5Command" title="Cvc5Command"><code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">commands</span></code></a> and <a class="reference internal" href="cvc5term.html#_CPPv48Cvc5Term" title="Cvc5Term"><code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">expressions</span></code></a> from an input.</p>
+<div class="hide-toctree docutils container">
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<hr class="docutils" />
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv415Cvc5InputParser">
+<span id="_CPPv315Cvc5InputParser"></span><span id="_CPPv215Cvc5InputParser"></span><span id="Cvc5InputParser"></span><span class="target" id="cvc5__parser_8h_1a4fdc3394e8b956baa43d7d44950f1003"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Cvc5InputParser</span></span></span><a class="headerlink" href="#_CPPv415Cvc5InputParser" title="Link to this definition"></a><br /></dt>
+<dd><p>This struct is the main interface for retrieving commands and expressions from an input using a parser.</p>
+<p>After construction, it is expected that an input is first configure via, e.g., <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5inputparser_1gab173fdd3194af4d5d6b5bb7203e65718"><span class="std std-ref"><span class="pre">cvc5_parser_set_file_input()</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5inputparser_1gabddf953f8c6b5b2f4a2c09192097df18"><span class="std std-ref"><span class="pre">cvc5_parser_set_str_input()</span></span></a></code> or <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5inputparser_1gac31e20058bfcf85a0dd559b8a78ae8d2"><span class="std std-ref"><span class="pre">cvc5_parser_set_inc_str_input()</span></span></a></code> and <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5inputparser_1ga0910aaa8583192c859a46f0e7efe9d87"><span class="std std-ref"><span class="pre">cvc5_parser_append_inc_str_input()</span></span></a></code>. Then, functions <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5inputparser_1ga15675eaa41361f27d0285bdb6083ca47"><span class="std std-ref"><span class="pre">cvc5_parser_next_command()</span></span></a></code> and <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5inputparser_1ga4e397aa09ea0e103b8b4689682a7ba3c"><span class="std std-ref"><span class="pre">cvc5_parser_next_term()</span></span></a></code> can be invoked to parse the input.</p>
+<p>The input parser interacts with a symbol manager, which determines which symbols are defined in the current context, based on the background logic and user-defined symbols. If no symbol manager is provided, then the input parser will construct (an initially empty) one.</p>
+<p>If provided, the symbol manager must have a logic that is compatible with the provided solver. That is, if both the solver and symbol manager have their logics set (<code class="docutils literal notranslate"><a class="reference internal" href="cvc5symbolmanager.html#group__c__cvc5symbolmanager_1gab41322ea6081b606cdf78e2013c914aa"><span class="std std-ref"><span class="pre">cvc5_sm_is_logic_set()</span></span></a></code> and <code class="docutils literal notranslate"><a class="reference internal" href="cvc5.html#group__c__cvc5_1gae57a55ccea9da97769deabd644a9cce5"><span class="std std-ref"><span class="pre">cvc5_is_logic_set()</span></span></a></code>), then their logics must be the same.</p>
+<p>Upon setting an input source, if either the solver (resp. symbol manager) has its logic set, then the symbol manager (resp. solver) is set to use that logic, if its logic is not already set. </p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415cvc5_parser_newP4Cvc5P17Cvc5SymbolManager">
+<span id="_CPPv315cvc5_parser_newP4Cvc5P17Cvc5SymbolManager"></span><span id="_CPPv215cvc5_parser_newP4Cvc5P17Cvc5SymbolManager"></span><span id="cvc5_parser_new__Cvc5P.Cvc5SymbolManagerP"></span><span class="target" id="group__c__cvc5inputparser_1ga5d4f59c08115fc02453e2b4af0eb9116"></span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_new</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="cvc5.html#_CPPv44Cvc5" title="Cvc5"><span class="n"><span class="pre">Cvc5</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">cvc5</span></span>, <a class="reference internal" href="cvc5symbolmanager.html#_CPPv417Cvc5SymbolManager" title="Cvc5SymbolManager"><span class="n"><span class="pre">Cvc5SymbolManager</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">sm</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415cvc5_parser_newP4Cvc5P17Cvc5SymbolManager" title="Link to this definition"></a><br /></dt>
+<dd><p>Construct a new instance of a cvc5 input parser. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cvc5</strong> – The associated solver instance. </p></li>
+<li><p><strong>sm</strong> – The associated symbol manager instance, contains a symbol table that maps symbols to terms and sorts. Must have a logic that is compatible with the solver. May be NULL to start with and initially empty symbol manager. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The cvc5 symbol manager instance. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv418cvc5_parser_deleteP15Cvc5InputParser">
+<span id="_CPPv318cvc5_parser_deleteP15Cvc5InputParser"></span><span id="_CPPv218cvc5_parser_deleteP15Cvc5InputParser"></span><span id="cvc5_parser_delete__Cvc5InputParserP"></span><span class="target" id="group__c__cvc5inputparser_1ga83ed429025d2a79b0ebe56b5cff93436"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_delete</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418cvc5_parser_deleteP15Cvc5InputParser" title="Link to this definition"></a><br /></dt>
+<dd><p>Delete a cvc5 input parser instance. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parser</strong> – The input parser instance. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419cvc5_parser_releaseP15Cvc5InputParser">
+<span id="_CPPv319cvc5_parser_releaseP15Cvc5InputParser"></span><span id="_CPPv219cvc5_parser_releaseP15Cvc5InputParser"></span><span id="cvc5_parser_release__Cvc5InputParserP"></span><span class="target" id="group__c__cvc5inputparser_1ga8109cccbf570019f68cf5cda0b35ad7e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_release</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419cvc5_parser_releaseP15Cvc5InputParser" title="Link to this definition"></a><br /></dt>
+<dd><p>Release all objects managed by the parser.</p>
+<p>This will free all memory used by any managed objects allocated by the parser.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This invalidates all managed objects created by the parser.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parser</strong> – The parser instance. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv422cvc5_parser_get_solverP15Cvc5InputParser">
+<span id="_CPPv322cvc5_parser_get_solverP15Cvc5InputParser"></span><span id="_CPPv222cvc5_parser_get_solverP15Cvc5InputParser"></span><span id="cvc5_parser_get_solver__Cvc5InputParserP"></span><span class="target" id="group__c__cvc5inputparser_1ga949d06ed7d7bfddd6759bf492b612fc1"></span><a class="reference internal" href="cvc5.html#_CPPv44Cvc5" title="Cvc5"><span class="n"><span class="pre">Cvc5</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_get_solver</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422cvc5_parser_get_solverP15Cvc5InputParser" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the associated solver instance of a given parser. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parser</strong> – The parser instance. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The solver. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv418cvc5_parser_get_smP15Cvc5InputParser">
+<span id="_CPPv318cvc5_parser_get_smP15Cvc5InputParser"></span><span id="_CPPv218cvc5_parser_get_smP15Cvc5InputParser"></span><span id="cvc5_parser_get_sm__Cvc5InputParserP"></span><span class="target" id="group__c__cvc5inputparser_1ga6e79023419004ce860ced4f8e015f3e2"></span><a class="reference internal" href="cvc5symbolmanager.html#_CPPv417Cvc5SymbolManager" title="Cvc5SymbolManager"><span class="n"><span class="pre">Cvc5SymbolManager</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_get_sm</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418cvc5_parser_get_smP15Cvc5InputParser" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the associated symbol manager of a given parser. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parser</strong> – The parser instance. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The symbol manager. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv426cvc5_parser_set_file_inputP15Cvc5InputParser17Cvc5InputLanguagePKc">
+<span id="_CPPv326cvc5_parser_set_file_inputP15Cvc5InputParser17Cvc5InputLanguagePKc"></span><span id="_CPPv226cvc5_parser_set_file_inputP15Cvc5InputParser17Cvc5InputLanguagePKc"></span><span id="cvc5_parser_set_file_input__Cvc5InputParserP.Cvc5InputLanguage.cCP"></span><span class="target" id="group__c__cvc5inputparser_1gab173fdd3194af4d5d6b5bb7203e65718"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_set_file_input</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span>, <span class="n"><span class="pre">Cvc5InputLanguage</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lang</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426cvc5_parser_set_file_inputP15Cvc5InputParser17Cvc5InputLanguagePKc" title="Link to this definition"></a><br /></dt>
+<dd><p>Configure given file as input to a given input parser. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parser</strong> – The input parser instance. </p></li>
+<li><p><strong>lang</strong> – the input language (e.g., CVC5_INPUT_LANGUAGE_SMT_LIB_2_6) </p></li>
+<li><p><strong>filename</strong> – The name of the file to configure. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv425cvc5_parser_set_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKcPKc">
+<span id="_CPPv325cvc5_parser_set_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKcPKc"></span><span id="_CPPv225cvc5_parser_set_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKcPKc"></span><span id="cvc5_parser_set_str_input__Cvc5InputParserP.Cvc5InputLanguage.cCP.cCP"></span><span class="target" id="group__c__cvc5inputparser_1gabddf953f8c6b5b2f4a2c09192097df18"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_set_str_input</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span>, <span class="n"><span class="pre">Cvc5InputLanguage</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lang</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">input</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425cvc5_parser_set_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKcPKc" title="Link to this definition"></a><br /></dt>
+<dd><p>Configure a given concrete input string as the input to a given input parser. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parser</strong> – The input parser instance. </p></li>
+<li><p><strong>lang</strong> – The input language of the input string. </p></li>
+<li><p><strong>input</strong> – The input string. </p></li>
+<li><p><strong>name</strong> – The name to use as input stream name for error messages. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv429cvc5_parser_set_inc_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKc">
+<span id="_CPPv329cvc5_parser_set_inc_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKc"></span><span id="_CPPv229cvc5_parser_set_inc_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKc"></span><span id="cvc5_parser_set_inc_str_input__Cvc5InputParserP.Cvc5InputLanguage.cCP"></span><span class="target" id="group__c__cvc5inputparser_1gac31e20058bfcf85a0dd559b8a78ae8d2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_set_inc_str_input</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span>, <span class="n"><span class="pre">Cvc5InputLanguage</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lang</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429cvc5_parser_set_inc_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKc" title="Link to this definition"></a><br /></dt>
+<dd><p>Configure that we will be feeding strings to a given input parser via <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5inputparser_1ga0910aaa8583192c859a46f0e7efe9d87"><span class="std std-ref"><span class="pre">cvc5_parser_append_inc_str_input()</span></span></a></code> below. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parser</strong> – The input parser instance. </p></li>
+<li><p><strong>lang</strong> – The input language of the input string. </p></li>
+<li><p><strong>name</strong> – The name to use as input stream name for error messages. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv432cvc5_parser_append_inc_str_inputP15Cvc5InputParserPKc">
+<span id="_CPPv332cvc5_parser_append_inc_str_inputP15Cvc5InputParserPKc"></span><span id="_CPPv232cvc5_parser_append_inc_str_inputP15Cvc5InputParserPKc"></span><span id="cvc5_parser_append_inc_str_input__Cvc5InputParserP.cCP"></span><span class="target" id="group__c__cvc5inputparser_1ga0910aaa8583192c859a46f0e7efe9d87"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_append_inc_str_input</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">input</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv432cvc5_parser_append_inc_str_inputP15Cvc5InputParserPKc" title="Link to this definition"></a><br /></dt>
+<dd><p>Append string to the input being parsed by this parser. Should be called after calling <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5inputparser_1gac31e20058bfcf85a0dd559b8a78ae8d2"><span class="std std-ref"><span class="pre">cvc5_parser_set_inc_str_input()</span></span></a></code>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parser</strong> – The input parser instance. </p></li>
+<li><p><strong>input</strong> – The input string. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv424cvc5_parser_next_commandP15Cvc5InputParserPPKc">
+<span id="_CPPv324cvc5_parser_next_commandP15Cvc5InputParserPPKc"></span><span id="_CPPv224cvc5_parser_next_commandP15Cvc5InputParserPPKc"></span><span id="cvc5_parser_next_command__Cvc5InputParserP.cCPP"></span><span class="target" id="group__c__cvc5inputparser_1ga15675eaa41361f27d0285bdb6083ca47"></span><a class="reference internal" href="cvc5command.html#_CPPv411Cvc5Command" title="Cvc5Command"><span class="n"><span class="pre">Cvc5Command</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_next_command</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">error_msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424cvc5_parser_next_commandP15Cvc5InputParserPPKc" title="Link to this definition"></a><br /></dt>
+<dd><p>Parse and return the next command. Will initialize the logic to “ALL” or the forced logic if no logic is set prior to this point and a command is read that requires initializing the logic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parser</strong> – The input parser instance. </p></li>
+<li><p><strong>error_msg</strong> – Output parameter for the error message in case of a parse error, NULL if no error occurred. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The parsed command. NULL if no command was read. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv421cvc5_parser_next_termP15Cvc5InputParserPPKc">
+<span id="_CPPv321cvc5_parser_next_termP15Cvc5InputParserPPKc"></span><span id="_CPPv221cvc5_parser_next_termP15Cvc5InputParserPPKc"></span><span id="cvc5_parser_next_term__Cvc5InputParserP.cCPP"></span><span class="target" id="group__c__cvc5inputparser_1ga4e397aa09ea0e103b8b4689682a7ba3c"></span><a class="reference internal" href="cvc5term.html#_CPPv48Cvc5Term" title="Cvc5Term"><span class="n"><span class="pre">Cvc5Term</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_next_term</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">error_msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421cvc5_parser_next_termP15Cvc5InputParserPPKc" title="Link to this definition"></a><br /></dt>
+<dd><p>Parse and return the next term. Requires setting the logic prior to this point. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parser</strong> – The input parser instance. </p></li>
+<li><p><strong>error_msg</strong> – Output parameter for the error message in case of a parse error, NULL if no error occurred. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The parsed term. NULL if no term was read. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv416cvc5_parser_doneP15Cvc5InputParser">
+<span id="_CPPv316cvc5_parser_doneP15Cvc5InputParser"></span><span id="_CPPv216cvc5_parser_doneP15Cvc5InputParser"></span><span id="cvc5_parser_done__Cvc5InputParserP"></span><span class="target" id="group__c__cvc5inputparser_1ga6daa57081be408adf5ce115e496f429e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_done</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416cvc5_parser_doneP15Cvc5InputParser" title="Link to this definition"></a><br /></dt>
+<dd><p>Is this parser done reading input? </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parser</strong> – The input parser instance. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if parser is done reading input. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cvc5grammar.html" class="btn btn-neutral float-left" title="Cvc5Grammar" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cvc5op.html" class="btn btn-neutral float-right" title="Cvc5Op" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
