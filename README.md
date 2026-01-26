@@ -1,12 +1,12 @@
 
 
-* [Documentation for PR #12389](docs-pr12389/) (built from [50c32e3](https://github.com/cvc5/cvc5/commit/50c32e3) @ [PR #12389](https://github.com/cvc5/cvc5/pull/12389), Jan Mon 26, 20:33 UTC)
+* [Documentation for main](docs-main/) (built from [c674fba](https://github.com/cvc5/cvc5/commit/c674fba) @ [main](https://github.com/cvc5/cvc5/tree/main), Jan Mon 26, 21:10 UTC)
 
 ***
 
 
-* [Documentation for main](docs-main/) (built from [6528c0f](https://github.com/cvc5/cvc5/commit/6528c0f) @ [main](https://github.com/cvc5/cvc5/tree/main), 3 hours ago)
-* [Documentation for PR #12389](docs-pr12389/) (built from [50c32e3](https://github.com/cvc5/cvc5/commit/50c32e3) @ [PR #12389](https://github.com/cvc5/cvc5/pull/12389), now)
+* [Documentation for main](docs-main/) (built from [c674fba](https://github.com/cvc5/cvc5/commit/c674fba) @ [main](https://github.com/cvc5/cvc5/tree/main), now)
+* [Documentation for PR #12389](docs-pr12389/) (built from [50c32e3](https://github.com/cvc5/cvc5/commit/50c32e3) @ [PR #12389](https://github.com/cvc5/cvc5/pull/12389), 37 minutes ago)
 * [Documentation for PR #12385](docs-pr12385/) (built from [6f20207](https://github.com/cvc5/cvc5/commit/6f20207) @ [PR #12385](https://github.com/cvc5/cvc5/pull/12385), 3 days ago)
 * [Documentation for PR #12384](docs-pr12384/) (built from [27bebdf](https://github.com/cvc5/cvc5/commit/27bebdf) @ [PR #12384](https://github.com/cvc5/cvc5/pull/12384), 3 days ago)
 * [Documentation for PR #12382](docs-pr12382/) (built from [13214fd](https://github.com/cvc5/cvc5/commit/13214fd) @ [PR #12382](https://github.com/cvc5/cvc5/pull/12382), 5 days ago)
