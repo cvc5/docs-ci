@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InputParser &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Kind" href="../enums/kind.html" />
+    <link rel="prev" title="Grammar" href="grammar.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../cpp.html">C++ API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exceptions/exceptions.html">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="command.html">Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatype.html">Datatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypeconstructor.html">DatatypeConstructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypeconstructordecl.html">DatatypeConstructorDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypedecl.html">DatatypeDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypeselector.html">DatatypeSelector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="driveroptions.html">DriverOptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="grammar.html">Grammar</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">InputParser</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N4cvc56parser11InputParserE"><code class="docutils literal notranslate"><span class="pre">cvc5::parser::InputParser</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc56parser11InputParser11InputParserEP6SolverP13SymbolManager"><code class="docutils literal notranslate"><span class="pre">InputParser()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc56parser11InputParser11InputParserEP6Solver"><code class="docutils literal notranslate"><span class="pre">InputParser()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc56parser11InputParser9getSolverEv"><code class="docutils literal notranslate"><span class="pre">getSolver()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc56parser11InputParser16getSymbolManagerEv"><code class="docutils literal notranslate"><span class="pre">getSymbolManager()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc56parser11InputParser12setFileInputEN5modes13InputLanguageERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setFileInput()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc56parser11InputParser14setStreamInputEN5modes13InputLanguageERNSt7istreamERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setStreamInput()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc56parser11InputParser14setStringInputEN5modes13InputLanguageERKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setStringInput()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc56parser11InputParser25setIncrementalStringInputEN5modes13InputLanguageERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">setIncrementalStringInput()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc56parser11InputParser28appendIncrementalStringInputERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">appendIncrementalStringInput()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc56parser11InputParser11nextCommandEv"><code class="docutils literal notranslate"><span class="pre">nextCommand()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc56parser11InputParser8nextTermEv"><code class="docutils literal notranslate"><span class="pre">nextTerm()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc56parser11InputParser4doneEv"><code class="docutils literal notranslate"><span class="pre">done()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/kind.html">Kind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/modes.html">Modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="op.html">Op</a></li>
+<li class="toctree-l3"><a class="reference internal" href="optioninfo.html">OptionInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin.html">Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="proof.html">Proof</a></li>
+<li class="toctree-l3"><a class="reference internal" href="result.html">Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/roundingmode.html">RoundingMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solver.html">Solver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sort.html">Sort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/sortkind.html">SortKind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistics.html">Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="symbolmanager.html">SymbolManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="synthresult.html">SynthResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="term.html">Term</a></li>
+<li class="toctree-l3"><a class="reference internal" href="termmanager.html">TermManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/unknownexplanation.html">UnknownExplanation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cpp.html#class-hierarchy">Class hierarchy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../c/c.html">C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/python.html">Python API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../cpp.html">C++ API</a></li>
+      <li class="breadcrumb-item active">InputParser</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="inputparser">
+<h1>InputParser<a class="headerlink" href="#inputparser" title="Link to this heading"></a></h1>
+<p>This class is the main interface for retrieving <a class="reference internal" href="command.html#_CPPv4N4cvc56parser7CommandE" title="cvc5::parser::Command"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">commands</span></code></a> and <a class="reference internal" href="term.html#_CPPv4N4cvc54TermE" title="cvc5::Term"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">expressions</span></code></a> from an
+input.</p>
+<hr class="docutils" />
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser11InputParserE">
+<span id="_CPPv3N4cvc56parser11InputParserE"></span><span id="_CPPv2N4cvc56parser11InputParserE"></span><span id="cvc5::parser::InputParser"></span><span class="target" id="classcvc5_1_1parser_1_1InputParser"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InputParser</span></span></span><a class="headerlink" href="#_CPPv4N4cvc56parser11InputParserE" title="Link to this definition"></a><br /></dt>
+<dd><p>This class is the main interface for retrieving commands and expressions from an input using a parser.</p>
+<p>After construction, it is expected that an input is first configured via, e.g., <code class="docutils literal notranslate"><a class="reference internal" href="#classcvc5_1_1parser_1_1InputParser_1a1c368a60d54a8eaee6a9af54782172be"><span class="std std-ref"><span class="pre">InputParser::setFileInput()</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="#classcvc5_1_1parser_1_1InputParser_1a7f4b8f08cdd0d5d2abeb5327aca2687e"><span class="std std-ref"><span class="pre">InputParser::setStreamInput()</span></span></a></code>, <code class="docutils literal notranslate"><a class="reference internal" href="#classcvc5_1_1parser_1_1InputParser_1a2b2f81e2e75e60747e401f066a5f9244"><span class="std std-ref"><span class="pre">InputParser::setStringInput()</span></span></a></code> or <code class="docutils literal notranslate"><a class="reference internal" href="#classcvc5_1_1parser_1_1InputParser_1ac8c938640703cf310526ebb4b6f88116"><span class="std std-ref"><span class="pre">InputParser::setIncrementalStringInput()</span></span></a></code> and <code class="docutils literal notranslate"><a class="reference internal" href="#classcvc5_1_1parser_1_1InputParser_1a697367f42314e9fbc8c1094096ec3d25"><span class="std std-ref"><span class="pre">InputParser::appendIncrementalStringInput()</span></span></a></code>. Then, functions <code class="docutils literal notranslate"><a class="reference internal" href="#classcvc5_1_1parser_1_1InputParser_1a2dbb04b76fdd0763b2d7b0be7a284594"><span class="std std-ref"><span class="pre">InputParser::nextCommand()</span></span></a></code> and <code class="docutils literal notranslate"><span class="pre">InputParser::nextExpression()</span></code> can be invoked to parse the input.</p>
+<p>The input parser interacts with a symbol manager, which determines which symbols are defined in the current context, based on the background logic and user-defined symbols. If no symbol manager is provided, then the input parser will construct (an initially empty) one.</p>
+<p>If provided, the symbol manager must have a logic that is compatible with the provided solver. That is, if both the solver and symbol manager have their logics set (<code class="docutils literal notranslate"><a class="reference internal" href="symbolmanager.html#classcvc5_1_1parser_1_1SymbolManager_1a33e9508b2a3b5a57eed87dc35ee1ab07"><span class="std std-ref"><span class="pre">SymbolManager::isLogicSet()</span></span></a></code> and <code class="docutils literal notranslate"><a class="reference internal" href="solver.html#classcvc5_1_1Solver_1a9cdd7a230576bf07c3eaff9c571731f5"><span class="std std-ref"><span class="pre">Solver::isLogicSet()</span></span></a></code>), then their logics must be the same.</p>
+<p>Upon setting an input source, if either the solver (resp. symbol manager) has its logic set, then the symbol manager (resp. solver) is set to use that logic, if its logic is not already set. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser11InputParser11InputParserEP6SolverP13SymbolManager">
+<span id="_CPPv3N4cvc56parser11InputParser11InputParserEP6SolverP13SymbolManager"></span><span id="_CPPv2N4cvc56parser11InputParser11InputParserEP6SolverP13SymbolManager"></span><span id="cvc5::parser::InputParser::InputParser__SolverP.SymbolManagerP"></span><span class="target" id="classcvc5_1_1parser_1_1InputParser_1a0ecd5b8ee95c3e4893592ebf4d12fe64"></span><span class="sig-name descname"><span class="n"><span class="pre">InputParser</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="solver.html#_CPPv4N4cvc56SolverE" title="cvc5::Solver"><span class="n"><span class="pre">Solver</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">solver</span></span>, <a class="reference internal" href="symbolmanager.html#_CPPv4N4cvc56parser13SymbolManagerE" title="cvc5::parser::SymbolManager"><span class="n"><span class="pre">SymbolManager</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">sm</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc56parser11InputParser11InputParserEP6SolverP13SymbolManager" title="Link to this definition"></a><br /></dt>
+<dd><p>Construct an input parser</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solver</strong> – The solver (e.g. for constructing terms and sorts) </p></li>
+<li><p><strong>sm</strong> – The symbol manager, which contains a symbol table that maps symbols to terms and sorts. Must have a logic that is compatible with the solver. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser11InputParser11InputParserEP6Solver">
+<span id="_CPPv3N4cvc56parser11InputParser11InputParserEP6Solver"></span><span id="_CPPv2N4cvc56parser11InputParser11InputParserEP6Solver"></span><span id="cvc5::parser::InputParser::InputParser__SolverP"></span><span class="target" id="classcvc5_1_1parser_1_1InputParser_1a737e3233c455d4604be8a64b2a5a60fa"></span><span class="sig-name descname"><span class="n"><span class="pre">InputParser</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="solver.html#_CPPv4N4cvc56SolverE" title="cvc5::Solver"><span class="n"><span class="pre">Solver</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">solver</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc56parser11InputParser11InputParserEP6Solver" title="Link to this definition"></a><br /></dt>
+<dd><p>Construct an input parser with an initially empty symbol manager. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>solver</strong> – The solver (e.g. for constructing terms and sorts) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser11InputParser9getSolverEv">
+<span id="_CPPv3N4cvc56parser11InputParser9getSolverEv"></span><span id="_CPPv2N4cvc56parser11InputParser9getSolverEv"></span><span id="cvc5::parser::InputParser::getSolver"></span><span class="target" id="classcvc5_1_1parser_1_1InputParser_1a7158bb09bd7598de6086bca445d2d759"></span><a class="reference internal" href="solver.html#_CPPv4N4cvc56SolverE" title="cvc5::Solver"><span class="n"><span class="pre">Solver</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getSolver</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc56parser11InputParser9getSolverEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the associated solver instance of this input parser. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The solver instance. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser11InputParser16getSymbolManagerEv">
+<span id="_CPPv3N4cvc56parser11InputParser16getSymbolManagerEv"></span><span id="_CPPv2N4cvc56parser11InputParser16getSymbolManagerEv"></span><span id="cvc5::parser::InputParser::getSymbolManager"></span><span class="target" id="classcvc5_1_1parser_1_1InputParser_1ac2c959ebeec0f57851b6d0ec9132a7f7"></span><a class="reference internal" href="symbolmanager.html#_CPPv4N4cvc56parser13SymbolManagerE" title="cvc5::parser::SymbolManager"><span class="n"><span class="pre">SymbolManager</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getSymbolManager</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc56parser11InputParser16getSymbolManagerEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the associated symbol manager of this input parser. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The associated symbol manager. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser11InputParser12setFileInputEN5modes13InputLanguageERKNSt6stringE">
+<span id="_CPPv3N4cvc56parser11InputParser12setFileInputEN5modes13InputLanguageERKNSt6stringE"></span><span id="_CPPv2N4cvc56parser11InputParser12setFileInputEN5modes13InputLanguageERKNSt6stringE"></span><span id="cvc5::parser::InputParser::setFileInput__modes::InputLanguage.ssCR"></span><span class="target" id="classcvc5_1_1parser_1_1InputParser_1a1c368a60d54a8eaee6a9af54782172be"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setFileInput</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">modes</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">InputLanguage</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lang</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc56parser11InputParser12setFileInputEN5modes13InputLanguageERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Configure given file as input. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lang</strong> – The input language (e.g., <code class="docutils literal notranslate"><span class="pre">modes::InputLanguage::SMT_LIB_2_6</span></code>). </p></li>
+<li><p><strong>filename</strong> – The name of the file to configure. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser11InputParser14setStreamInputEN5modes13InputLanguageERNSt7istreamERKNSt6stringE">
+<span id="_CPPv3N4cvc56parser11InputParser14setStreamInputEN5modes13InputLanguageERNSt7istreamERKNSt6stringE"></span><span id="_CPPv2N4cvc56parser11InputParser14setStreamInputEN5modes13InputLanguageERNSt7istreamERKNSt6stringE"></span><span id="cvc5::parser::InputParser::setStreamInput__modes::InputLanguage.isR.ssCR"></span><span class="target" id="classcvc5_1_1parser_1_1InputParser_1a7f4b8f08cdd0d5d2abeb5327aca2687e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setStreamInput</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">modes</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">InputLanguage</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lang</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">istream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">input</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc56parser11InputParser14setStreamInputEN5modes13InputLanguageERNSt7istreamERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Configure given stream as input. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lang</strong> – The input language. </p></li>
+<li><p><strong>input</strong> – The input stream. </p></li>
+<li><p><strong>name</strong> – The name of the stream, for use in error messages. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser11InputParser14setStringInputEN5modes13InputLanguageERKNSt6stringERKNSt6stringE">
+<span id="_CPPv3N4cvc56parser11InputParser14setStringInputEN5modes13InputLanguageERKNSt6stringERKNSt6stringE"></span><span id="_CPPv2N4cvc56parser11InputParser14setStringInputEN5modes13InputLanguageERKNSt6stringERKNSt6stringE"></span><span id="cvc5::parser::InputParser::setStringInput__modes::InputLanguage.ssCR.ssCR"></span><span class="target" id="classcvc5_1_1parser_1_1InputParser_1a2b2f81e2e75e60747e401f066a5f9244"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setStringInput</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">modes</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">InputLanguage</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lang</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">input</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc56parser11InputParser14setStringInputEN5modes13InputLanguageERKNSt6stringERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Configure a given concrete input string as the input to this parser. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lang</strong> – The input language of the input string. </p></li>
+<li><p><strong>input</strong> – The input string. </p></li>
+<li><p><strong>name</strong> – The name to use as input stream name for error messages. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser11InputParser25setIncrementalStringInputEN5modes13InputLanguageERKNSt6stringE">
+<span id="_CPPv3N4cvc56parser11InputParser25setIncrementalStringInputEN5modes13InputLanguageERKNSt6stringE"></span><span id="_CPPv2N4cvc56parser11InputParser25setIncrementalStringInputEN5modes13InputLanguageERKNSt6stringE"></span><span id="cvc5::parser::InputParser::setIncrementalStringInput__modes::InputLanguage.ssCR"></span><span class="target" id="classcvc5_1_1parser_1_1InputParser_1ac8c938640703cf310526ebb4b6f88116"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setIncrementalStringInput</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">modes</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">InputLanguage</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lang</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc56parser11InputParser25setIncrementalStringInputEN5modes13InputLanguageERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Configure that we will be feeding strings to this parser via <code class="docutils literal notranslate"><a class="reference internal" href="#classcvc5_1_1parser_1_1InputParser_1a697367f42314e9fbc8c1094096ec3d25"><span class="std std-ref"><span class="pre">appendIncrementalStringInput()</span></span></a></code> below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lang</strong> – the input language </p></li>
+<li><p><strong>name</strong> – the name of the stream, for use in error messages </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser11InputParser28appendIncrementalStringInputERKNSt6stringE">
+<span id="_CPPv3N4cvc56parser11InputParser28appendIncrementalStringInputERKNSt6stringE"></span><span id="_CPPv2N4cvc56parser11InputParser28appendIncrementalStringInputERKNSt6stringE"></span><span id="cvc5::parser::InputParser::appendIncrementalStringInput__ssCR"></span><span class="target" id="classcvc5_1_1parser_1_1InputParser_1a697367f42314e9fbc8c1094096ec3d25"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">appendIncrementalStringInput</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">input</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc56parser11InputParser28appendIncrementalStringInputERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Append string to the input being parsed by this parser. Should be called after calling <code class="docutils literal notranslate"><a class="reference internal" href="#classcvc5_1_1parser_1_1InputParser_1ac8c938640703cf310526ebb4b6f88116"><span class="std std-ref"><span class="pre">setIncrementalStringInput()</span></span></a></code>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> – The input string </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser11InputParser11nextCommandEv">
+<span id="_CPPv3N4cvc56parser11InputParser11nextCommandEv"></span><span id="_CPPv2N4cvc56parser11InputParser11nextCommandEv"></span><span id="cvc5::parser::InputParser::nextCommand"></span><span class="target" id="classcvc5_1_1parser_1_1InputParser_1a2dbb04b76fdd0763b2d7b0be7a284594"></span><a class="reference internal" href="command.html#_CPPv4N4cvc56parser7CommandE" title="cvc5::parser::Command"><span class="n"><span class="pre">Command</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nextCommand</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc56parser11InputParser11nextCommandEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Parse and return the next command. Will initialize the logic to “ALL” or the forced logic if no logic is set prior to this point and a command is read that requires initializing the logic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The parsed command. This is the null command if no command was read. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser11InputParser8nextTermEv">
+<span id="_CPPv3N4cvc56parser11InputParser8nextTermEv"></span><span id="_CPPv2N4cvc56parser11InputParser8nextTermEv"></span><span id="cvc5::parser::InputParser::nextTerm"></span><span class="target" id="classcvc5_1_1parser_1_1InputParser_1a7d7162eb817b672fe10b54afdf2c87d9"></span><a class="reference internal" href="term.html#_CPPv4N4cvc54TermE" title="cvc5::Term"><span class="n"><span class="pre">Term</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nextTerm</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc56parser11InputParser8nextTermEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Parse and return the next term. Requires setting the logic prior to this point. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The parsed term. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc56parser11InputParser4doneEv">
+<span id="_CPPv3NK4cvc56parser11InputParser4doneEv"></span><span id="_CPPv2NK4cvc56parser11InputParser4doneEv"></span><span id="cvc5::parser::InputParser::doneC"></span><span class="target" id="classcvc5_1_1parser_1_1InputParser_1acf80e095f9fc34bd0dd6a4481c73cb99"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">done</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc56parser11InputParser4doneEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Is this parser done reading input? </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if parser is done reading input. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-friends">Friends</p>
+<dl>
+<dt class="sig sig-object cpp">
+<em class="property"><span class="pre">friend</span> <span class="pre">class</span></em> <span class="pre">internal::InteractiveShell</span></dt>
+</dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="grammar.html" class="btn btn-neutral float-left" title="Grammar" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../enums/kind.html" class="btn btn-neutral float-right" title="Kind" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
