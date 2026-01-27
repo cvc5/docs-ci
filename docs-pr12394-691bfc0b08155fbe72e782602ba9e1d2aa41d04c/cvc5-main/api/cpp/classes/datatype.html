@@ -1,0 +1,613 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datatype &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="DatatypeConstructor" href="datatypeconstructor.html" />
+    <link rel="prev" title="Command" href="command.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../cpp.html">C++ API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exceptions/exceptions.html">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="command.html">Command</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Datatype</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N4cvc58DatatypeE"><code class="docutils literal notranslate"><span class="pre">cvc5::Datatype</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc58Datatype8DatatypeEv"><code class="docutils literal notranslate"><span class="pre">Datatype()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc58DatatypeD0Ev"><code class="docutils literal notranslate"><span class="pre">~Datatype()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58DatatypeeqERK8Datatype"><code class="docutils literal notranslate"><span class="pre">operator==()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58DatatypeixE6size_t"><code class="docutils literal notranslate"><span class="pre">operator[]()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58DatatypeixERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">operator[]()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58Datatype14getConstructorERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getConstructor()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58Datatype11getSelectorERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getSelector()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58Datatype7getNameEv"><code class="docutils literal notranslate"><span class="pre">getName()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58Datatype18getNumConstructorsEv"><code class="docutils literal notranslate"><span class="pre">getNumConstructors()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58Datatype13getParametersEv"><code class="docutils literal notranslate"><span class="pre">getParameters()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58Datatype12isParametricEv"><code class="docutils literal notranslate"><span class="pre">isParametric()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58Datatype12isCodatatypeEv"><code class="docutils literal notranslate"><span class="pre">isCodatatype()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58Datatype7isTupleEv"><code class="docutils literal notranslate"><span class="pre">isTuple()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58Datatype8isRecordEv"><code class="docutils literal notranslate"><span class="pre">isRecord()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58Datatype8isFiniteEv"><code class="docutils literal notranslate"><span class="pre">isFinite()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58Datatype13isWellFoundedEv"><code class="docutils literal notranslate"><span class="pre">isWellFounded()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58Datatype6isNullEv"><code class="docutils literal notranslate"><span class="pre">isNull()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58Datatype8toStringEv"><code class="docutils literal notranslate"><span class="pre">toString()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58Datatype5beginEv"><code class="docutils literal notranslate"><span class="pre">begin()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc58Datatype3endEv"><code class="docutils literal notranslate"><span class="pre">end()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc58Datatype14const_iteratorE"><code class="docutils literal notranslate"><span class="pre">cvc5::Datatype::const_iterator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N4cvc5lsERNSt7ostreamERK8Datatype"><code class="docutils literal notranslate"><span class="pre">operator&lt;&lt;()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="datatypeconstructor.html">DatatypeConstructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypeconstructordecl.html">DatatypeConstructorDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypedecl.html">DatatypeDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypeselector.html">DatatypeSelector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="driveroptions.html">DriverOptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="grammar.html">Grammar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inputparser.html">InputParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/kind.html">Kind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/modes.html">Modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="op.html">Op</a></li>
+<li class="toctree-l3"><a class="reference internal" href="optioninfo.html">OptionInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plugin.html">Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="proof.html">Proof</a></li>
+<li class="toctree-l3"><a class="reference internal" href="result.html">Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/roundingmode.html">RoundingMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solver.html">Solver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sort.html">Sort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/sortkind.html">SortKind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="statistics.html">Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="symbolmanager.html">SymbolManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="synthresult.html">SynthResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="term.html">Term</a></li>
+<li class="toctree-l3"><a class="reference internal" href="termmanager.html">TermManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/unknownexplanation.html">UnknownExplanation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cpp.html#class-hierarchy">Class hierarchy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../c/c.html">C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/python.html">Python API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../cpp.html">C++ API</a></li>
+      <li class="breadcrumb-item active">Datatype</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="datatype">
+<h1>Datatype<a class="headerlink" href="#datatype" title="Link to this heading"></a></h1>
+<p>This class represents a datatype. A <a class="reference internal" href="#_CPPv4N4cvc58DatatypeE" title="cvc5::Datatype"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">cvc5::Datatype</span></code></a> is encapsulated
+by a datatype <a class="reference internal" href="sort.html#_CPPv4N4cvc54SortE" title="cvc5::Sort"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Sort</span></code></a> and can be retrieved from a
+datatype sort via <a class="reference internal" href="sort.html#_CPPv4NK4cvc54Sort11getDatatypeEv" title="cvc5::Sort::getDatatype"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5::Sort::getDatatype()</span></code></a>.
+Datatypes are specified by a <a class="reference internal" href="datatypedecl.html#_CPPv4N4cvc512DatatypeDeclE" title="cvc5::DatatypeDecl"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">cvc5::DatatypeDecl</span></code></a> via
+<a class="reference internal" href="termmanager.html#_CPPv4N4cvc511TermManager14mkDatatypeDeclERKNSt6stringEb" title="cvc5::TermManager::mkDatatypeDecl"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5::TermManager::mkDatatypeDecl()</span></code></a> when constructing a datatype
+sort.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>class <a class="reference internal" href="#_CPPv4N4cvc58DatatypeE" title="cvc5::Datatype"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">cvc5::Datatype</span></code></a></p></li>
+<li><p><a class="reference internal" href="#_CPPv4N4cvc5lsERNSt7ostreamERK8Datatype" title="std::ostream &amp;cvc5::operator&lt;&lt;(std::ostream &amp;out, const Datatype &amp;dt)"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">std::ostream&amp;</span> <span class="pre">cvc5::operator&lt;&lt;</span> <span class="pre">(std::ostream&amp;</span> <span class="pre">out,</span> <span class="pre">const</span> <span class="pre">Datatype&amp;</span> <span class="pre">dt)</span></code></a></p></li>
+</ul>
+<hr class="docutils" />
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc58DatatypeE">
+<span id="_CPPv3N4cvc58DatatypeE"></span><span id="_CPPv2N4cvc58DatatypeE"></span><span id="cvc5::Datatype"></span><span class="target" id="classcvc5_1_1Datatype"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Datatype</span></span></span><a class="headerlink" href="#_CPPv4N4cvc58DatatypeE" title="Link to this definition"></a><br /></dt>
+<dd><p>A cvc5 datatype. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc58Datatype8DatatypeEv">
+<span id="_CPPv3N4cvc58Datatype8DatatypeEv"></span><span id="_CPPv2N4cvc58Datatype8DatatypeEv"></span><span id="cvc5::Datatype::Datatype"></span><span class="target" id="classcvc5_1_1Datatype_1aeafbfc4299eb520949fc34ad57178ec5"></span><span class="sig-name descname"><span class="n"><span class="pre">Datatype</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc58Datatype8DatatypeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Constructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc58DatatypeD0Ev">
+<span id="_CPPv3N4cvc58DatatypeD0Ev"></span><span id="_CPPv2N4cvc58DatatypeD0Ev"></span><span id="cvc5::Datatype::~Datatype"></span><span class="target" id="classcvc5_1_1Datatype_1adf4f956fb46c6fdafb6b972c2df3b5cb"></span><span class="sig-name descname"><span class="n"><span class="pre">~Datatype</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc58DatatypeD0Ev" title="Link to this definition"></a><br /></dt>
+<dd><p>Destructor. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58DatatypeeqERK8Datatype">
+<span id="_CPPv3NK4cvc58DatatypeeqERK8Datatype"></span><span id="_CPPv2NK4cvc58DatatypeeqERK8Datatype"></span><span id="cvc5::Datatype::eq-operator__DatatypeCRC"></span><span class="target" id="classcvc5_1_1Datatype_1ac5fd1ba2cfc9fae92241a43e223a6c9e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">==</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4cvc58DatatypeE" title="cvc5::Datatype"><span class="n"><span class="pre">Datatype</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dt</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58DatatypeeqERK8Datatype" title="Link to this definition"></a><br /></dt>
+<dd><p>Equality operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dt</strong> – The datatype to compare to for equality. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the datatypes are equal. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58DatatypeixE6size_t">
+<span id="_CPPv3NK4cvc58DatatypeixE6size_t"></span><span id="_CPPv2NK4cvc58DatatypeixE6size_t"></span><span id="cvc5::Datatype::subscript-operator__sC"></span><span class="target" id="classcvc5_1_1Datatype_1ab49d4978e9e002fca0614a23e60b0c88"></span><a class="reference internal" href="datatypeconstructor.html#_CPPv4N4cvc519DatatypeConstructorE" title="cvc5::DatatypeConstructor"><span class="n"><span class="pre">DatatypeConstructor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">[]</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">idx</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58DatatypeixE6size_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the datatype constructor at a given index. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>idx</strong> – The index of the datatype constructor to return. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The datatype constructor with the given index. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58DatatypeixERKNSt6stringE">
+<span id="_CPPv3NK4cvc58DatatypeixERKNSt6stringE"></span><span id="_CPPv2NK4cvc58DatatypeixERKNSt6stringE"></span><span id="cvc5::Datatype::subscript-operator__ssCRC"></span><span class="target" id="classcvc5_1_1Datatype_1a4fa1f5511f271ecb5d091bf72808b86e"></span><a class="reference internal" href="datatypeconstructor.html#_CPPv4N4cvc519DatatypeConstructorE" title="cvc5::DatatypeConstructor"><span class="n"><span class="pre">DatatypeConstructor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">[]</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58DatatypeixERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the datatype constructor with the given name. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a linear search through the constructors, so in case of multiple, similarly-named constructors, the first is returned. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – The name of the datatype constructor. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The datatype constructor with the given name. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype14getConstructorERKNSt6stringE">
+<span id="_CPPv3NK4cvc58Datatype14getConstructorERKNSt6stringE"></span><span id="_CPPv2NK4cvc58Datatype14getConstructorERKNSt6stringE"></span><span id="cvc5::Datatype::getConstructor__ssCRC"></span><span class="target" id="classcvc5_1_1Datatype_1ac302fd08f65d7b8326c1532176f47728"></span><a class="reference internal" href="datatypeconstructor.html#_CPPv4N4cvc519DatatypeConstructorE" title="cvc5::DatatypeConstructor"><span class="n"><span class="pre">DatatypeConstructor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getConstructor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype14getConstructorERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype11getSelectorERKNSt6stringE">
+<span id="_CPPv3NK4cvc58Datatype11getSelectorERKNSt6stringE"></span><span id="_CPPv2NK4cvc58Datatype11getSelectorERKNSt6stringE"></span><span id="cvc5::Datatype::getSelector__ssCRC"></span><span class="target" id="classcvc5_1_1Datatype_1a636edc35f6e205a6c2c5adf116d91a46"></span><a class="reference internal" href="datatypeselector.html#_CPPv4N4cvc516DatatypeSelectorE" title="cvc5::DatatypeSelector"><span class="n"><span class="pre">DatatypeSelector</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSelector</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype11getSelectorERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the datatype selector with the given name. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a linear search through the constructors and their selectors, so in case of multiple, similarly-named selectors, the first is returned. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – The name of the datatype selector. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The datatype selector with the given name. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype7getNameEv">
+<span id="_CPPv3NK4cvc58Datatype7getNameEv"></span><span id="_CPPv2NK4cvc58Datatype7getNameEv"></span><span id="cvc5::Datatype::getNameC"></span><span class="target" id="classcvc5_1_1Datatype_1a847ee55417b5b566cdabecbede915c36"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getName</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype7getNameEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the name of this datatype. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype18getNumConstructorsEv">
+<span id="_CPPv3NK4cvc58Datatype18getNumConstructorsEv"></span><span id="_CPPv2NK4cvc58Datatype18getNumConstructorsEv"></span><span id="cvc5::Datatype::getNumConstructorsC"></span><span class="target" id="classcvc5_1_1Datatype_1ac7c7b9b3ebcb83f1bb2953264bfd01bb"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNumConstructors</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype18getNumConstructorsEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the number of constructors of this datatype. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The number of constructors. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype13getParametersEv">
+<span id="_CPPv3NK4cvc58Datatype13getParametersEv"></span><span id="_CPPv2NK4cvc58Datatype13getParametersEv"></span><span id="cvc5::Datatype::getParametersC"></span><span class="target" id="classcvc5_1_1Datatype_1a5466bd4dbb75f8be89699a25ba1de868"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="sort.html#_CPPv4N4cvc54SortE" title="cvc5::Sort"><span class="n"><span class="pre">Sort</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getParameters</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype13getParametersEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the parameters of this datatype, if it is parametric.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Asserts that this datatype is parametric.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The parameters of this datatype. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype12isParametricEv">
+<span id="_CPPv3NK4cvc58Datatype12isParametricEv"></span><span id="_CPPv2NK4cvc58Datatype12isParametricEv"></span><span id="cvc5::Datatype::isParametricC"></span><span class="target" id="classcvc5_1_1Datatype_1afebe3697e0adc95cea9ec6f22f779501"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isParametric</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype12isParametricEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this datatype is parametric. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this datatype is parametric. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype12isCodatatypeEv">
+<span id="_CPPv3NK4cvc58Datatype12isCodatatypeEv"></span><span id="_CPPv2NK4cvc58Datatype12isCodatatypeEv"></span><span id="cvc5::Datatype::isCodatatypeC"></span><span class="target" id="classcvc5_1_1Datatype_1a36df4df220ec0b77d893bd4b7c323c81"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isCodatatype</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype12isCodatatypeEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this datatype corresponds to a co-datatype. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this datatype corresponds to a co-datatype. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype7isTupleEv">
+<span id="_CPPv3NK4cvc58Datatype7isTupleEv"></span><span id="_CPPv2NK4cvc58Datatype7isTupleEv"></span><span id="cvc5::Datatype::isTupleC"></span><span class="target" id="classcvc5_1_1Datatype_1a75a36326c74ecac79d5a81de6146f1f1"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isTuple</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype7isTupleEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this datatype corresponds to a tuple. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this datatype corresponds to a tuple. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype8isRecordEv">
+<span id="_CPPv3NK4cvc58Datatype8isRecordEv"></span><span id="_CPPv2NK4cvc58Datatype8isRecordEv"></span><span id="cvc5::Datatype::isRecordC"></span><span class="target" id="classcvc5_1_1Datatype_1a85c38c8e436c29d307818798d9f25801"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isRecord</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype8isRecordEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this datatype corresponds to a record. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this datatype corresponds to a record. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype8isFiniteEv">
+<span id="_CPPv3NK4cvc58Datatype8isFiniteEv"></span><span id="_CPPv2NK4cvc58Datatype8isFiniteEv"></span><span id="cvc5::Datatype::isFiniteC"></span><span class="target" id="classcvc5_1_1Datatype_1acf007e1ff9f777ee48da0c25ee726f03"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isFinite</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype8isFiniteEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if a given datatype is finite. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this datatype is finite. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype13isWellFoundedEv">
+<span id="_CPPv3NK4cvc58Datatype13isWellFoundedEv"></span><span id="_CPPv2NK4cvc58Datatype13isWellFoundedEv"></span><span id="cvc5::Datatype::isWellFoundedC"></span><span class="target" id="classcvc5_1_1Datatype_1ab2f62233b04d0d64b4a20ad3196921ad"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isWellFounded</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype13isWellFoundedEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if this datatype is well-founded.</p>
+<p>If this datatype is not a codatatype, this returns false if there are no values of this datatype that are of finite size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this datatype is well-founded. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype6isNullEv">
+<span id="_CPPv3NK4cvc58Datatype6isNullEv"></span><span id="_CPPv2NK4cvc58Datatype6isNullEv"></span><span id="cvc5::Datatype::isNullC"></span><span class="target" id="classcvc5_1_1Datatype_1a81d35ae69759a7cba2faba8c65c377f8"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isNull</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype6isNullEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if this <a class="reference internal" href="#classcvc5_1_1Datatype"><span class="std std-ref">Datatype</span></a> is a null object. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype8toStringEv">
+<span id="_CPPv3NK4cvc58Datatype8toStringEv"></span><span id="_CPPv2NK4cvc58Datatype8toStringEv"></span><span id="cvc5::Datatype::toStringC"></span><span class="target" id="classcvc5_1_1Datatype_1a19f4269cfa091e67b5df36c9de9eb820"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toString</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype8toStringEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A string representation of this datatype. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype5beginEv">
+<span id="_CPPv3NK4cvc58Datatype5beginEv"></span><span id="_CPPv2NK4cvc58Datatype5beginEv"></span><span id="cvc5::Datatype::beginC"></span><span class="target" id="classcvc5_1_1Datatype_1a9af728bab632fb3f058f0e3f88eab8b2"></span><a class="reference internal" href="#_CPPv4N4cvc58Datatype14const_iteratorE" title="cvc5::Datatype::const_iterator"><span class="n"><span class="pre">const_iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype5beginEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An iterator to the first constructor of this datatype. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype3endEv">
+<span id="_CPPv3NK4cvc58Datatype3endEv"></span><span id="_CPPv2NK4cvc58Datatype3endEv"></span><span id="cvc5::Datatype::endC"></span><span class="target" id="classcvc5_1_1Datatype_1a72c4ec951bcf39f7a4a5a9c94b645263"></span><a class="reference internal" href="#_CPPv4N4cvc58Datatype14const_iteratorE" title="cvc5::Datatype::const_iterator"><span class="n"><span class="pre">const_iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype3endEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An iterator to one-off-the-last constructor of this datatype. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-friends">Friends</p>
+<dl>
+<dt class="sig sig-object cpp">
+<em class="property"><span class="pre">friend</span> <span class="pre">struct</span></em> <span class="pre">std::hash&lt;</span> <span class="pre">Datatype</span> <span class="pre">&gt;</span></dt>
+</dl>
+
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc58Datatype14const_iteratorE">
+<span id="_CPPv3N4cvc58Datatype14const_iteratorE"></span><span id="_CPPv2N4cvc58Datatype14const_iteratorE"></span><span id="cvc5::Datatype::const_iterator"></span><span class="target" id="classcvc5_1_1Datatype_1_1const__iterator"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">const_iterator</span></span></span><a class="headerlink" href="#_CPPv4N4cvc58Datatype14const_iteratorE" title="Link to this definition"></a><br /></dt>
+<dd><p>Iterator for the constructors of a datatype. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc58Datatype14const_iterator17iterator_categoryE">
+<span id="_CPPv3N4cvc58Datatype14const_iterator17iterator_categoryE"></span><span id="_CPPv2N4cvc58Datatype14const_iterator17iterator_categoryE"></span><span class="target" id="classcvc5_1_1Datatype_1_1const__iterator_1ae4731af760fa6a0ac1283e43eab9f72e"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">iterator_category</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">forward_iterator_tag</span></span><a class="headerlink" href="#_CPPv4N4cvc58Datatype14const_iterator17iterator_categoryE" title="Link to this definition"></a><br /></dt>
+<dd><p>Iterator tag </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc58Datatype14const_iterator10value_typeE">
+<span id="_CPPv3N4cvc58Datatype14const_iterator10value_typeE"></span><span id="_CPPv2N4cvc58Datatype14const_iterator10value_typeE"></span><span class="target" id="classcvc5_1_1Datatype_1_1const__iterator_1a63a15df57ffcf9a59dc8d22f3326fc90"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">value_type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4cvc58DatatypeE" title="cvc5::Datatype"><span class="n"><span class="pre">Datatype</span></span></a><a class="headerlink" href="#_CPPv4N4cvc58Datatype14const_iterator10value_typeE" title="Link to this definition"></a><br /></dt>
+<dd><p>The type of the item </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc58Datatype14const_iterator7pointerE">
+<span id="_CPPv3N4cvc58Datatype14const_iterator7pointerE"></span><span id="_CPPv2N4cvc58Datatype14const_iterator7pointerE"></span><span class="target" id="classcvc5_1_1Datatype_1_1const__iterator_1ad592c9fdfea86b5bff16e8ff904dec2c"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pointer</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4cvc58DatatypeE" title="cvc5::Datatype"><span class="n"><span class="pre">Datatype</span></span></a><span class="p"><span class="pre">*</span></span><a class="headerlink" href="#_CPPv4N4cvc58Datatype14const_iterator7pointerE" title="Link to this definition"></a><br /></dt>
+<dd><p>The pointer type of the item </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc58Datatype14const_iterator9referenceE">
+<span id="_CPPv3N4cvc58Datatype14const_iterator9referenceE"></span><span id="_CPPv2N4cvc58Datatype14const_iterator9referenceE"></span><span class="target" id="classcvc5_1_1Datatype_1_1const__iterator_1a30321c8e3b6023a333087547b02f9092"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reference</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4cvc58DatatypeE" title="cvc5::Datatype"><span class="n"><span class="pre">Datatype</span></span></a><span class="p"><span class="pre">&amp;</span></span><a class="headerlink" href="#_CPPv4N4cvc58Datatype14const_iterator9referenceE" title="Link to this definition"></a><br /></dt>
+<dd><p>The reference type of the item </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc58Datatype14const_iterator15difference_typeE">
+<span id="_CPPv3N4cvc58Datatype14const_iterator15difference_typeE"></span><span id="_CPPv2N4cvc58Datatype14const_iterator15difference_typeE"></span><span class="target" id="classcvc5_1_1Datatype_1_1const__iterator_1a2032755f36f90b31b7e7b523488eeddc"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">difference_type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ptrdiff_t</span></span><a class="headerlink" href="#_CPPv4N4cvc58Datatype14const_iterator15difference_typeE" title="Link to this definition"></a><br /></dt>
+<dd><p>The type returned when two iterators are subtracted </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc58Datatype14const_iterator14const_iteratorEv">
+<span id="_CPPv3N4cvc58Datatype14const_iterator14const_iteratorEv"></span><span id="_CPPv2N4cvc58Datatype14const_iterator14const_iteratorEv"></span><span id="cvc5::Datatype::const_iterator::const_iterator"></span><span class="target" id="classcvc5_1_1Datatype_1_1const__iterator_1a3cc50f97ad060280cdce7dea6785404a"></span><span class="sig-name descname"><span class="n"><span class="pre">const_iterator</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc58Datatype14const_iterator14const_iteratorEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Nullary constructor (required for Cython). </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc58Datatype14const_iteratoraSERK14const_iterator">
+<span id="_CPPv3N4cvc58Datatype14const_iteratoraSERK14const_iterator"></span><span id="_CPPv2N4cvc58Datatype14const_iteratoraSERK14const_iterator"></span><span id="cvc5::Datatype::const_iterator::assign-operator__const_iteratorCR"></span><span class="target" id="classcvc5_1_1Datatype_1_1const__iterator_1ada770178d95e643aa1085ad16223a1c8"></span><a class="reference internal" href="#_CPPv4N4cvc58Datatype14const_iteratorE" title="cvc5::Datatype::const_iterator"><span class="n"><span class="pre">const_iterator</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4cvc58Datatype14const_iteratorE" title="cvc5::Datatype::const_iterator"><span class="n"><span class="pre">const_iterator</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">it</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc58Datatype14const_iteratoraSERK14const_iterator" title="Link to this definition"></a><br /></dt>
+<dd><p>Assignment operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>it</strong> – The iterator to assign to. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The reference to the iterator after assignment. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype14const_iteratoreqERK14const_iterator">
+<span id="_CPPv3NK4cvc58Datatype14const_iteratoreqERK14const_iterator"></span><span id="_CPPv2NK4cvc58Datatype14const_iteratoreqERK14const_iterator"></span><span id="cvc5::Datatype::const_iterator::eq-operator__const_iteratorCRC"></span><span class="target" id="classcvc5_1_1Datatype_1_1const__iterator_1af498ac5843f973333e91432870674be3"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">==</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4cvc58Datatype14const_iteratorE" title="cvc5::Datatype::const_iterator"><span class="n"><span class="pre">const_iterator</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">it</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype14const_iteratoreqERK14const_iterator" title="Link to this definition"></a><br /></dt>
+<dd><p>Equality operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>it</strong> – The iterator to compare to for equality. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the iterators are equal. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype14const_iteratorneERK14const_iterator">
+<span id="_CPPv3NK4cvc58Datatype14const_iteratorneERK14const_iterator"></span><span id="_CPPv2NK4cvc58Datatype14const_iteratorneERK14const_iterator"></span><span id="cvc5::Datatype::const_iterator::neq-operator__const_iteratorCRC"></span><span class="target" id="classcvc5_1_1Datatype_1_1const__iterator_1aa9956936af446ee773eda5ce5236f0fd"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">!=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4cvc58Datatype14const_iteratorE" title="cvc5::Datatype::const_iterator"><span class="n"><span class="pre">const_iterator</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">it</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype14const_iteratorneERK14const_iterator" title="Link to this definition"></a><br /></dt>
+<dd><p>Disequality operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>it</strong> – The iterator to compare to for disequality. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the iterators are disequal. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc58Datatype14const_iteratorppEv">
+<span id="_CPPv3N4cvc58Datatype14const_iteratorppEv"></span><span id="_CPPv2N4cvc58Datatype14const_iteratorppEv"></span><span id="cvc5::Datatype::const_iterator::inc-operator"></span><span class="target" id="classcvc5_1_1Datatype_1_1const__iterator_1a71367b6dfa626bda60873ca9ab8baf05"></span><a class="reference internal" href="#_CPPv4N4cvc58Datatype14const_iteratorE" title="cvc5::Datatype::const_iterator"><span class="n"><span class="pre">const_iterator</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">++</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc58Datatype14const_iteratorppEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Increment operator (prefix). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A reference to the iterator after incrementing by one. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc58Datatype14const_iteratorppEi">
+<span id="_CPPv3N4cvc58Datatype14const_iteratorppEi"></span><span id="_CPPv2N4cvc58Datatype14const_iteratorppEi"></span><span id="cvc5::Datatype::const_iterator::inc-operator__i"></span><span class="target" id="classcvc5_1_1Datatype_1_1const__iterator_1aeb2b480a4d2bceec5a366be717850a10"></span><a class="reference internal" href="#_CPPv4N4cvc58Datatype14const_iteratorE" title="cvc5::Datatype::const_iterator"><span class="n"><span class="pre">const_iterator</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">++</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc58Datatype14const_iteratorppEi" title="Link to this definition"></a><br /></dt>
+<dd><p>Increment operator (postfix). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A reference to the iterator after incrementing by one. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype14const_iteratormlEv">
+<span id="_CPPv3NK4cvc58Datatype14const_iteratormlEv"></span><span id="_CPPv2NK4cvc58Datatype14const_iteratormlEv"></span><span id="cvc5::Datatype::const_iterator::mul-operatorC"></span><span class="target" id="classcvc5_1_1Datatype_1_1const__iterator_1a6509ad3d4129dbb94631a9e9cdc2894f"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="datatypeconstructor.html#_CPPv4N4cvc519DatatypeConstructorE" title="cvc5::DatatypeConstructor"><span class="n"><span class="pre">DatatypeConstructor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">*</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype14const_iteratormlEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Dereference operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A reference to the constructor this iterator points to. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc58Datatype14const_iteratorptEv">
+<span id="_CPPv3NK4cvc58Datatype14const_iteratorptEv"></span><span id="_CPPv2NK4cvc58Datatype14const_iteratorptEv"></span><span id="cvc5::Datatype::const_iterator::pointer-operatorC"></span><span class="target" id="classcvc5_1_1Datatype_1_1const__iterator_1a9a19aefc6f53ddac6b879beab78b2b31"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="datatypeconstructor.html#_CPPv4N4cvc519DatatypeConstructorE" title="cvc5::DatatypeConstructor"><span class="n"><span class="pre">DatatypeConstructor</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">-&gt;</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc58Datatype14const_iteratorptEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Dereference operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A pointer to the constructor this iterator points to. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc5lsERNSt7ostreamERK8Datatype">
+<span id="_CPPv3N4cvc5lsERNSt7ostreamERK8Datatype"></span><span id="_CPPv2N4cvc5lsERNSt7ostreamERK8Datatype"></span><span id="cvc5::lshift-operator__osR.DatatypeCR"></span><span class="target" id="namespacecvc5_1ac4adc79cf14a6242f93823b5058e74b9"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">cvc5</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;&lt;</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">out</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N4cvc58DatatypeE" title="cvc5::Datatype"><span class="n"><span class="pre">Datatype</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dtype</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc5lsERNSt7ostreamERK8Datatype" title="Link to this definition"></a><br /></dt>
+<dd><p>Serialize a datatype to given stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>out</strong> – The output stream. </p></li>
+<li><p><strong>dtype</strong> – The datatype to be serialized to given stream. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The output stream. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="command.html" class="btn btn-neutral float-left" title="Command" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datatypeconstructor.html" class="btn btn-neutral float-right" title="DatatypeConstructor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
