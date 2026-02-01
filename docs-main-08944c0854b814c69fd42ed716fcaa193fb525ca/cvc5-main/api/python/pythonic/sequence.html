@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sequences &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Quantifiers" href="quant.html" />
+    <link rel="prev" title="Strings" href="string.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../cpp/cpp.html">C++ API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../c/c.html">C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../python.html">Python API</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pythonic.html">Pythonic API</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="boolean.html">Core &amp; Booleans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arith.html">Arithmetic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="array.html">Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bitvec.html">Bit-Vectors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dt.html">Datatypes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="finite_field.html">Finite Fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fp.html">Floating Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="set.html">Sets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="string.html">Strings</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Sequences</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#basic-sequence-term-builders">Basic Sequence Term Builders</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#sequence-operators">Sequence Operators</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#classes-with-overloads">Classes (with overloads)</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="quant.html">Quantifiers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solver.html">Solvers &amp; Results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="internals.html">Internals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../base/python.html">Base Python API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#which-python-api-should-i-use">Which Python API should I use?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#installation-from-pypi">Installation (from PyPi)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#installation-from-source">Installation (from source)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../python.html">Python API</a></li>
+          <li class="breadcrumb-item"><a href="pythonic.html">Pythonic API</a></li>
+      <li class="breadcrumb-item active">Sequences</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sequences">
+<h1>Sequences<a class="headerlink" href="#sequences" title="Link to this heading"></a></h1>
+<section id="basic-sequence-term-builders">
+<h2>Basic Sequence Term Builders<a class="headerlink" href="#basic-sequence-term-builders" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.SeqSort">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">SeqSort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SeqSort" title="Link to this definition"></a></dt>
+<dd><p>Create a sequence sort over elements provided in the argument
+&gt;&gt;&gt; s = SeqSort(IntSort())
+&gt;&gt;&gt; s == Unit(IntVal(1)).sort()
+True</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.Unit">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">Unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.Unit" title="Link to this definition"></a></dt>
+<dd><p>Create a singleton sequence</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="n">Unit</span><span class="p">(</span><span class="n">IntVal</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">(Seq Int)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="sequence-operators">
+<h2>Sequence Operators<a class="headerlink" href="#sequence-operators" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.Empty">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">Empty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.Empty" title="Link to this definition"></a></dt>
+<dd><p>Create the empty sequence of the given sort</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="n">Empty</span><span class="p">(</span><span class="n">StringSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e2</span> <span class="o">=</span> <span class="n">StringVal</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">e2</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">e3</span> <span class="o">=</span> <span class="n">Empty</span><span class="p">(</span><span class="n">SeqSort</span><span class="p">(</span><span class="n">IntSort</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">e3</span><span class="p">)</span>
+<span class="go">(as seq.empty (Seq Int))()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.Length">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">Length</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.Length" title="Link to this definition"></a></dt>
+<dd><p>obtain the length of a string or sequence s</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">StringVal</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="n">Length</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.SubSeq">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">SubSeq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SubSeq" title="Link to this definition"></a></dt>
+<dd><p>Extract subsequence starting at offset</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span> <span class="o">=</span> <span class="n">Concat</span><span class="p">(</span><span class="n">Unit</span><span class="p">(</span><span class="n">IntVal</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span><span class="n">Unit</span><span class="p">(</span><span class="n">IntVal</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">SubSeq</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="go">(seq.unit 2)()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">SubSeq</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="go">(as seq.empty (Seq Int))()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.SeqUpdate">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">SeqUpdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SeqUpdate" title="Link to this definition"></a></dt>
+<dd><p>Update a sequence s by replacing its content starting at index i with sequence t.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lst</span> <span class="o">=</span> <span class="n">Unit</span><span class="p">(</span><span class="n">IntVal</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="n">Unit</span><span class="p">(</span><span class="n">IntVal</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="n">Unit</span><span class="p">(</span><span class="n">IntVal</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+<span class="go">(seq.++ (seq.unit 1) (seq.unit 2) (seq.unit 3))()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">SeqUpdate</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span><span class="n">Unit</span><span class="p">(</span><span class="n">IntVal</span><span class="p">(</span><span class="mi">4</span><span class="p">)),</span><span class="mi">2</span><span class="p">))</span>
+<span class="go">(seq.++ (seq.unit 1) (seq.unit 2) (seq.unit 4))()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">SeqUpdate</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span><span class="n">Unit</span><span class="p">(</span><span class="n">IntVal</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span><span class="mi">4</span><span class="p">))</span>
+<span class="go">(seq.++ (seq.unit 1) (seq.unit 2) (seq.unit 3))()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p>See the following operator overload for sequence terms:</p>
+<ul class="simple">
+<li><p>is member: <a class="reference internal" href="#cvc5.pythonic.SeqRef.__getitem__" title="cvc5.pythonic.SeqRef.__getitem__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.SeqRef.__getitem__()</span></code></a></p></li>
+</ul>
+</section>
+<section id="classes-with-overloads">
+<h2>Classes (with overloads)<a class="headerlink" href="#classes-with-overloads" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cvc5.pythonic.SeqSortRef">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">SeqSortRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SeqSortRef" title="Link to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SeqSortRef.elem_sort">
+<span class="sig-name descname"><span class="pre">elem_sort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SeqSortRef.elem_sort" title="Link to this definition"></a></dt>
+<dd><p>Get the element sort for this sequence</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">SeqSort</span><span class="p">(</span><span class="n">IntSort</span><span class="p">())</span><span class="o">.</span><span class="n">elem_sort</span><span class="p">()</span>
+<span class="go">Int</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SeqSort</span><span class="p">(</span><span class="n">SeqSort</span><span class="p">(</span><span class="n">IntSort</span><span class="p">()))</span><span class="o">.</span><span class="n">elem_sort</span><span class="p">()</span>
+<span class="go">(Seq Int)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SeqSortRef.is_string">
+<span class="sig-name descname"><span class="pre">is_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SeqSortRef.is_string" title="Link to this definition"></a></dt>
+<dd><p>Determine if sort is a string</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">StringSort</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">is_string</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">SeqSort</span><span class="p">(</span><span class="n">IntSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">is_string</span><span class="p">()</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="cvc5.pythonic.SeqRef">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">SeqRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse_children</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SeqRef" title="Link to this definition"></a></dt>
+<dd><p>Sequence Expressions</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SeqRef.__add__">
+<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SeqRef.__add__" title="Link to this definition"></a></dt>
+<dd><p>Concatenation of two sequences.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">,</span><span class="n">t</span> <span class="o">=</span> <span class="n">Consts</span><span class="p">(</span><span class="s1">&#39;s t&#39;</span><span class="p">,</span><span class="n">SeqSort</span><span class="p">(</span><span class="n">RealSort</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">+</span><span class="n">t</span>
+<span class="go">Concat(s, t)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">(Seq Real)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SeqRef.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SeqRef.__getitem__" title="Link to this definition"></a></dt>
+<dd><p>Return the SMT expression <cite>self[arg]</cite></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span> <span class="o">=</span> <span class="n">Const</span><span class="p">(</span><span class="s1">&#39;seq&#39;</span><span class="p">,</span><span class="n">SeqSort</span><span class="p">(</span><span class="n">IntSort</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">seq [] 0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">Int</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SeqRef.as_string">
+<span class="sig-name descname"><span class="pre">as_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SeqRef.as_string" title="Link to this definition"></a></dt>
+<dd><p>Return a string representation of sequence expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">Unit</span><span class="p">(</span><span class="n">IntVal</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="n">Unit</span><span class="p">(</span><span class="n">IntVal</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">as_string</span><span class="p">()</span>
+<span class="go">&#39;(seq.++ (seq.unit 1) (seq.unit 2))&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Unit</span><span class="p">(</span><span class="n">RealVal</span><span class="p">(</span><span class="mf">1.5</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">as_string</span><span class="p">())</span>
+<span class="go">(seq.unit (/ 3 2))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SeqRef.at">
+<span class="sig-name descname"><span class="pre">at</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SeqRef.at" title="Link to this definition"></a></dt>
+<dd><p>Return the sequence at index i</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span> <span class="o">=</span> <span class="n">Const</span><span class="p">(</span><span class="s1">&#39;seq&#39;</span><span class="p">,</span><span class="n">SeqSort</span><span class="p">(</span><span class="n">IntSort</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">At(seq, 0)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seq</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">(Seq Int)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SeqRef.is_string_value">
+<span class="sig-name descname"><span class="pre">is_string_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SeqRef.is_string_value" title="Link to this definition"></a></dt>
+<dd><p>Return True if self is a string value</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">String</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">is_string_value</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">StringVal</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">is_string_value</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="string.html" class="btn btn-neutral float-left" title="Strings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="quant.html" class="btn btn-neutral float-right" title="Quantifiers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
