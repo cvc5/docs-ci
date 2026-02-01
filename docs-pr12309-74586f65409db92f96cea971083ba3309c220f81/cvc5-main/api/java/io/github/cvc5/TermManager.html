@@ -1,0 +1,2479 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+
+<title>TermManager</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="declaration: package: io.github.cvc5, class: TermManager">
+<meta name="generator" content="javadoc/ClassWriterImpl">
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../script-dir/jquery-ui.min.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+<script type="text/javascript" src="../../../script-dir/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="../../../script-dir/jquery-ui.min.js"></script>
+</head>
+<body class="class-declaration-page">
+<script type="text/javascript">var pathtoroot = "../../../";
+loadScripts(document, 'script');</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<div class="flex-box">
+<header role="banner" class="flex-header">
+<nav role="navigation">
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="top-nav" id="navbar-top"><button id="navbar-toggle-button" aria-controls="navbar-top" aria-expanded="false" aria-label="Toggle navigation links"><span class="nav-bar-toggle-icon">&nbsp;</span><span class="nav-bar-toggle-icon">&nbsp;</span><span class="nav-bar-toggle-icon">&nbsp;</span></button>
+<div class="skip-nav"><a href="#skip-navbar-top" title="Skip navigation links">Skip navigation links</a></div>
+<div class="about-language"> <script> window.MathJax = { 'loader': { 'load': ['[tex]/ams','[tex]/bussproofs'], }, 'tex': { 'packages': { '[+]': ['ams','bussproofs'], }, 'macros': { 'xor': '\\mathbin{xor}', 'ite': ['#1~\\mathbin{?}~#2~\\mathbin{:}~#3',3], 'inferrule': ['\\begin{prooftree}\\AxiomC{$#1$}\\UnaryInfC{$#2$}\\end{prooftree}',2], 'inferruleSC': ['\\begin{prooftree}\\AxiomC{$#1$}\\RightLabel{~#3}\\UnaryInfC{$#2$}\\end{prooftree}',3], } } } </script> <script type='text/javascript' id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'> </script> </div>
+<ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
+<li><a href="../../../index.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="nav-bar-cell1-rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html#class">Help</a></li>
+</ul>
+<ul class="sub-nav-list-small">
+<li>
+<p>Summary:</p>
+<ul>
+<li>Nested</li>
+<li><a href="#field-summary">Field</a></li>
+<li><a href="#constructor-summary">Constr</a></li>
+<li><a href="#method-summary">Method</a></li>
+</ul>
+</li>
+<li>
+<p>Detail:</p>
+<ul>
+<li><a href="#field-detail">Field</a></li>
+<li><a href="#constructor-detail">Constr</a></li>
+<li><a href="#method-detail">Method</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sub-nav">
+<div id="navbar-sub-list">
+<ul class="sub-nav-list">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field-summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor-summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method-summary">Method</a></li>
+</ul>
+<ul class="sub-nav-list">
+<li>Detail:&nbsp;</li>
+<li><a href="#field-detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor-detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method-detail">Method</a></li>
+</ul>
+</div>
+<div class="nav-list-search"><a href="../../../search.html">SEARCH</a>
+<input type="text" id="search-input" disabled placeholder="Search">
+<input type="reset" id="reset-button" disabled value="reset">
+</div>
+</div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<span class="skip-nav" id="skip-navbar-top"></span></nav>
+</header>
+<div class="flex-content">
+<main role="main">
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">io.github.cvc5</a></div>
+<h1 title="Class TermManager" class="title">Class TermManager</h1>
+</div>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance">io.github.cvc5.TermManager</div>
+</div>
+<section class="class-description" id="class-description">
+<hr>
+<div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">TermManager</span>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">A cvc5 term manager.</div>
+</section>
+<section class="summary">
+<ul class="summary-list">
+<!-- =========== FIELD SUMMARY =========== -->
+<li>
+<section class="field-summary" id="field-summary">
+<h2>Field Summary</h2>
+<div class="caption"><span>Fields</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Field</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>protected long</code></div>
+<div class="col-second even-row-color"><code><a href="#pointer" class="member-name-link">pointer</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">The raw native pointer value.</div>
+</div>
+</div>
+</section>
+</li>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<li>
+<section class="constructor-summary" id="constructor-summary">
+<h2>Constructor Summary</h2>
+<div class="caption"><span>Constructors</span></div>
+<div class="summary-table two-column-summary">
+<div class="table-header col-first">Constructor</div>
+<div class="table-header col-last">Description</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">TermManager</a>()</code></div>
+<div class="col-last even-row-color">
+<div class="block">Create a term manager instance.</div>
+</div>
+</div>
+</section>
+</li>
+<!-- ========== METHOD SUMMARY =========== -->
+<li>
+<section class="method-summary" id="method-summary">
+<h2>Method Summary</h2>
+<div id="method-summary-table">
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deletePointer()" class="member-name-link">deletePointer</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Free the native resource associated with this pointer.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deletePointer(long)" class="member-name-link">deletePointer</a><wbr>(long&nbsp;pointer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Delete the native resource associated with the specified pointer.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBooleanSort()" class="member-name-link">getBooleanSort</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the Boolean sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIntegerSort()" class="member-name-link">getIntegerSort</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the integer sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNumIndicesForSkolemId(io.github.cvc5.SkolemId)" class="member-name-link">getNumIndicesForSkolemId</a><wbr>(<a href="SkolemId.html" title="enum class in io.github.cvc5">SkolemId</a>&nbsp;id)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the number of indices for a given skolem id.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPointer()" class="member-name-link">getPointer</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Return the raw native pointer.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRealSort()" class="member-name-link">getRealSort</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the real sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRegExpSort()" class="member-name-link">getRegExpSort</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the regular expression sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRoundingModeSort()" class="member-name-link">getRoundingModeSort</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the floating-point rounding mode sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Statistics.html" title="class in io.github.cvc5">Statistics</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStatistics()" class="member-name-link">getStatistics</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get a snapshot of the current state of the statistic values of this
+ term manager.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStringSort()" class="member-name-link">getStringSort</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the string sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkAbstractSort(io.github.cvc5.SortKind)" class="member-name-link">mkAbstractSort</a><wbr>(<a href="SortKind.html" title="enum class in io.github.cvc5">SortKind</a>&nbsp;kind)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create an abstract sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkArraySort(io.github.cvc5.Sort,io.github.cvc5.Sort)" class="member-name-link">mkArraySort</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;indexSort,
+ <a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;elemSort)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create an array sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkBagSort(io.github.cvc5.Sort)" class="member-name-link">mkBagSort</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;elemSort)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a bag sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkBitVector(int)" class="member-name-link">mkBitVector</a><wbr>(int&nbsp;size)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a bit-vector constant of given size and value = 0.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkBitVector(int,long)" class="member-name-link">mkBitVector</a><wbr>(int&nbsp;size,
+ long&nbsp;val)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a bit-vector constant of given size and value.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkBitVector(int,java.lang.String,int)" class="member-name-link">mkBitVector</a><wbr>(int&nbsp;size,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
+ int&nbsp;base)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a bit-vector constant of a given bit-width from a given string of
+ base 2, 10 or 16.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkBitVectorSort(int)" class="member-name-link">mkBitVectorSort</a><wbr>(int&nbsp;size)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a bit-vector sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkBoolean(boolean)" class="member-name-link">mkBoolean</a><wbr>(boolean&nbsp;val)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a Boolean constant.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkCardinalityConstraint(io.github.cvc5.Sort,int)" class="member-name-link">mkCardinalityConstraint</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort,
+ int&nbsp;upperBound)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a cardinality constraint for an uninterpreted sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkConst(io.github.cvc5.Sort)" class="member-name-link">mkConst</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a free constant with a default symbol name.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkConst(io.github.cvc5.Sort,java.lang.String)" class="member-name-link">mkConst</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a free constant.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkConstArray(io.github.cvc5.Sort,io.github.cvc5.Term)" class="member-name-link">mkConstArray</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;val)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a constant array with the provided constant value stored at
+ every index</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DatatypeConstructorDecl.html" title="class in io.github.cvc5">DatatypeConstructorDecl</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkDatatypeConstructorDecl(java.lang.String)" class="member-name-link">mkDatatypeConstructorDecl</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a datatype constructor declaration.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DatatypeDecl.html" title="class in io.github.cvc5">DatatypeDecl</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkDatatypeDecl(java.lang.String)" class="member-name-link">mkDatatypeDecl</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a datatype declaration.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DatatypeDecl.html" title="class in io.github.cvc5">DatatypeDecl</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkDatatypeDecl(java.lang.String,boolean)" class="member-name-link">mkDatatypeDecl</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ boolean&nbsp;isCoDatatype)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a datatype declaration.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DatatypeDecl.html" title="class in io.github.cvc5">DatatypeDecl</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkDatatypeDecl(java.lang.String,io.github.cvc5.Sort%5B%5D)" class="member-name-link">mkDatatypeDecl</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]&nbsp;params)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a datatype declaration.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DatatypeDecl.html" title="class in io.github.cvc5">DatatypeDecl</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkDatatypeDecl(java.lang.String,io.github.cvc5.Sort%5B%5D,boolean)" class="member-name-link">mkDatatypeDecl</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]&nbsp;params,
+ boolean&nbsp;isCoDatatype)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a datatype declaration.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkDatatypeSort(io.github.cvc5.DatatypeDecl)" class="member-name-link">mkDatatypeSort</a><wbr>(<a href="DatatypeDecl.html" title="class in io.github.cvc5">DatatypeDecl</a>&nbsp;dtypedecl)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a datatype sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkDatatypeSorts(io.github.cvc5.DatatypeDecl%5B%5D)" class="member-name-link">mkDatatypeSorts</a><wbr>(<a href="DatatypeDecl.html" title="class in io.github.cvc5">DatatypeDecl</a>[]&nbsp;dtypedecls)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a vector of datatype sorts.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkEmptyBag(io.github.cvc5.Sort)" class="member-name-link">mkEmptyBag</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a constant representing an empty bag of the given sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkEmptySequence(io.github.cvc5.Sort)" class="member-name-link">mkEmptySequence</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create an empty sequence of the given element sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkEmptySet(io.github.cvc5.Sort)" class="member-name-link">mkEmptySet</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a constant representing an empty set of the given sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkFalse()" class="member-name-link">mkFalse</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a Boolean <code>false</code> constant.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkFiniteFieldElem(java.lang.String,io.github.cvc5.Sort,int)" class="member-name-link">mkFiniteFieldElem</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;val,
+ <a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort,
+ int&nbsp;base)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a finite field constant in a given field and for a given value.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkFiniteFieldSort(java.lang.String,int)" class="member-name-link">mkFiniteFieldSort</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;size,
+ int&nbsp;base)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a finite field sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkFloatingPoint(int,int,io.github.cvc5.Term)" class="member-name-link">mkFloatingPoint</a><wbr>(int&nbsp;exp,
+ int&nbsp;sig,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;val)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a floating-point value from a bit-vector given in IEEE-754
+ format.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkFloatingPoint(io.github.cvc5.Term,io.github.cvc5.Term,io.github.cvc5.Term)" class="member-name-link">mkFloatingPoint</a><wbr>(<a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;sign,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;exp,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;sig)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a floating-point value from its three IEEE-754 bit-vector value
+ components (sign bit, exponent, significand).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkFloatingPointNaN(int,int)" class="member-name-link">mkFloatingPointNaN</a><wbr>(int&nbsp;exp,
+ int&nbsp;sig)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a not-a-number floating-point constant (SMT-LIB: <code>NaN</code>).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkFloatingPointNegInf(int,int)" class="member-name-link">mkFloatingPointNegInf</a><wbr>(int&nbsp;exp,
+ int&nbsp;sig)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a negative infinity floating-point constant (SMT-LIB: <code>-oo</code>).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkFloatingPointNegZero(int,int)" class="member-name-link">mkFloatingPointNegZero</a><wbr>(int&nbsp;exp,
+ int&nbsp;sig)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a negative zero floating-point constant (SMT-LIB: <code>-zero</code>).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkFloatingPointPosInf(int,int)" class="member-name-link">mkFloatingPointPosInf</a><wbr>(int&nbsp;exp,
+ int&nbsp;sig)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a positive infinity floating-point constant (SMT-LIB: <code>+oo</code>).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkFloatingPointPosZero(int,int)" class="member-name-link">mkFloatingPointPosZero</a><wbr>(int&nbsp;exp,
+ int&nbsp;sig)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a positive zero floating-point constant (SMT-LIB: <code>+zero</code>).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkFloatingPointSort(int,int)" class="member-name-link">mkFloatingPointSort</a><wbr>(int&nbsp;exp,
+ int&nbsp;sig)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a floating-point sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkFunctionSort(io.github.cvc5.Sort%5B%5D,io.github.cvc5.Sort)" class="member-name-link">mkFunctionSort</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]&nbsp;sorts,
+ <a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;codomain)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create function sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkFunctionSort(io.github.cvc5.Sort,io.github.cvc5.Sort)" class="member-name-link">mkFunctionSort</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;domain,
+ <a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;codomain)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create function sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkInteger(long)" class="member-name-link">mkInteger</a><wbr>(long&nbsp;val)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create an integer constant from a C++ <code>int</code>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkInteger(java.lang.String)" class="member-name-link">mkInteger</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create an integer constant from a string.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkNullableIsNull(io.github.cvc5.Term)" class="member-name-link">mkNullableIsNull</a><wbr>(<a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;term)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a null tester for a nullable term.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkNullableIsSome(io.github.cvc5.Term)" class="member-name-link">mkNullableIsSome</a><wbr>(<a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;term)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a some tester for a nullable term.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkNullableLift(io.github.cvc5.Kind,io.github.cvc5.Term%5B%5D)" class="member-name-link">mkNullableLift</a><wbr>(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>[]&nbsp;args)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a term that lifts kind to nullable terms.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkNullableNull(io.github.cvc5.Sort)" class="member-name-link">mkNullableNull</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a constant representing a null value of the given sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkNullableSome(io.github.cvc5.Term)" class="member-name-link">mkNullableSome</a><wbr>(<a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;term)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a nullable some term.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkNullableSort(io.github.cvc5.Sort)" class="member-name-link">mkNullableSort</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a nullable sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkNullableVal(io.github.cvc5.Term)" class="member-name-link">mkNullableVal</a><wbr>(<a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;term)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a selector for nullable term.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Op.html" title="class in io.github.cvc5">Op</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkOp(io.github.cvc5.Kind)" class="member-name-link">mkOp</a><wbr>(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create an operator for a builtin Kind
+ The Kind may not be the Kind for an indexed operator
+ (e.g., <a href="Kind.html#BITVECTOR_EXTRACT"><code>Kind.BITVECTOR_EXTRACT</code></a>).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Op.html" title="class in io.github.cvc5">Op</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkOp(io.github.cvc5.Kind,int)" class="member-name-link">mkOp</a><wbr>(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ int&nbsp;arg)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create operator of kind:
+ 
+   DIVISIBLE
+   BITVECTOR_REPEAT
+   BITVECTOR_ZERO_EXTEND
+   BITVECTOR_SIGN_EXTEND
+   BITVECTOR_ROTATE_LEFT
+   BITVECTOR_ROTATE_RIGHT
+   INT_TO_BITVECTOR
+   FLOATINGPOINT_TO_UBV
+   FLOATINGPOINT_TO_UBV_TOTAL
+   FLOATINGPOINT_TO_SBV
+   FLOATINGPOINT_TO_SBV_TOTAL
+   TUPLE_UPDATE
+ 
+ See enum <a href="Kind.html" title="enum class in io.github.cvc5"><code>Kind</code></a> for a description of the parameters.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Op.html" title="class in io.github.cvc5">Op</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkOp(io.github.cvc5.Kind,int%5B%5D)" class="member-name-link">mkOp</a><wbr>(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ int[]&nbsp;args)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create operator of Kind:
+ 
+   TUPLE_PROJECT
+ 
+ See enum <a href="Kind.html" title="enum class in io.github.cvc5"><code>Kind</code></a> for a description of the parameters.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Op.html" title="class in io.github.cvc5">Op</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkOp(io.github.cvc5.Kind,int,int)" class="member-name-link">mkOp</a><wbr>(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ int&nbsp;arg1,
+ int&nbsp;arg2)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create operator of Kind:
+ 
+   BITVECTOR_EXTRACT
+   FLOATINGPOINT_TO_FP_FROM_IEEE_BV
+   FLOATINGPOINT_TO_FP_FROM_FP
+   FLOATINGPOINT_TO_FP_FROM_REAL
+   FLOATINGPOINT_TO_FP_FROM_SBV
+   FLOATINGPOINT_TO_FP_FROM_UBV
+ 
+ See enum <a href="Kind.html" title="enum class in io.github.cvc5"><code>Kind</code></a> for a description of the parameters.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Op.html" title="class in io.github.cvc5">Op</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkOp(io.github.cvc5.Kind,java.lang.String)" class="member-name-link">mkOp</a><wbr>(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;arg)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create operator of kind:
+ 
+   
+     <a href="Kind.html#DIVISIBLE"><code>Kind.DIVISIBLE</code></a> (to support arbitrary precision integers)
+   
+ 
+ See enum <a href="Kind.html" title="enum class in io.github.cvc5"><code>Kind</code></a> for a description of the parameters.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkParamSort()" class="member-name-link">mkParamSort</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a sort parameter.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkParamSort(java.lang.String)" class="member-name-link">mkParamSort</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a sort parameter.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkPi()" class="member-name-link">mkPi</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a constant representing the number Pi.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkPredicateSort(io.github.cvc5.Sort%5B%5D)" class="member-name-link">mkPredicateSort</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]&nbsp;sorts)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a predicate sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkReal(long)" class="member-name-link">mkReal</a><wbr>(long&nbsp;val)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a real constant from an integer.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkReal(long,long)" class="member-name-link">mkReal</a><wbr>(long&nbsp;num,
+ long&nbsp;den)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a real constant from a rational.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkReal(java.lang.String)" class="member-name-link">mkReal</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a real constant from a string.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkRecordSort(io.github.cvc5.Pair%5B%5D)" class="member-name-link">mkRecordSort</a><wbr>(<a href="Pair.html" title="class in io.github.cvc5">Pair</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="Sort.html" title="class in io.github.cvc5">Sort</a>&gt;[]&nbsp;fields)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a record sort</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkRegexpAll()" class="member-name-link">mkRegexpAll</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a regular expression all (<code>re.all</code>) term.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkRegexpAllchar()" class="member-name-link">mkRegexpAllchar</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a regular expression allchar (<code>re.allchar</code>) term.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkRegexpNone()" class="member-name-link">mkRegexpNone</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a regular expression none (<code>re.none</code>) term.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkRoundingMode(io.github.cvc5.RoundingMode)" class="member-name-link">mkRoundingMode</a><wbr>(<a href="RoundingMode.html" title="enum class in io.github.cvc5">RoundingMode</a>&nbsp;rm)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a rounding mode constant.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkSepEmp()" class="member-name-link">mkSepEmp</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a separation logic empty term.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkSepNil(io.github.cvc5.Sort)" class="member-name-link">mkSepNil</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a separation logic nil term.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkSequenceSort(io.github.cvc5.Sort)" class="member-name-link">mkSequenceSort</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;elemSort)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a sequence sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkSetSort(io.github.cvc5.Sort)" class="member-name-link">mkSetSort</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;elemSort)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a set sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkSkolem(io.github.cvc5.SkolemId,io.github.cvc5.Term%5B%5D)" class="member-name-link">mkSkolem</a><wbr>(<a href="SkolemId.html" title="enum class in io.github.cvc5">SkolemId</a>&nbsp;skolemId,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>[]&nbsp;indices)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a skolem</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkString(int%5B%5D)" class="member-name-link">mkString</a><wbr>(int[]&nbsp;s)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a String constant.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkString(java.lang.String)" class="member-name-link">mkString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a String constant.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkString(java.lang.String,boolean)" class="member-name-link">mkString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
+ boolean&nbsp;useEscSequences)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a String constant.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkTerm(io.github.cvc5.Kind)" class="member-name-link">mkTerm</a><wbr>(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create 0-ary term of given kind.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkTerm(io.github.cvc5.Kind,io.github.cvc5.Term)" class="member-name-link">mkTerm</a><wbr>(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a unary term of given kind.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkTerm(io.github.cvc5.Kind,io.github.cvc5.Term%5B%5D)" class="member-name-link">mkTerm</a><wbr>(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>[]&nbsp;children)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create n-ary term of given kind.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkTerm(io.github.cvc5.Kind,io.github.cvc5.Term,io.github.cvc5.Term)" class="member-name-link">mkTerm</a><wbr>(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child1,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child2)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create binary term of given kind.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkTerm(io.github.cvc5.Kind,io.github.cvc5.Term,io.github.cvc5.Term,io.github.cvc5.Term)" class="member-name-link">mkTerm</a><wbr>(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child1,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child2,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child3)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create ternary term of given kind.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkTerm(io.github.cvc5.Op)" class="member-name-link">mkTerm</a><wbr>(<a href="Op.html" title="class in io.github.cvc5">Op</a>&nbsp;op)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create nullary term of given kind from a given operator.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkTerm(io.github.cvc5.Op,io.github.cvc5.Term)" class="member-name-link">mkTerm</a><wbr>(<a href="Op.html" title="class in io.github.cvc5">Op</a>&nbsp;op,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create unary term of given kind from a given operator.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkTerm(io.github.cvc5.Op,io.github.cvc5.Term%5B%5D)" class="member-name-link">mkTerm</a><wbr>(<a href="Op.html" title="class in io.github.cvc5">Op</a>&nbsp;op,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>[]&nbsp;children)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create n-ary term of given kind from a given operator.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkTerm(io.github.cvc5.Op,io.github.cvc5.Term,io.github.cvc5.Term)" class="member-name-link">mkTerm</a><wbr>(<a href="Op.html" title="class in io.github.cvc5">Op</a>&nbsp;op,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child1,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child2)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create binary term of given kind from a given operator.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkTerm(io.github.cvc5.Op,io.github.cvc5.Term,io.github.cvc5.Term,io.github.cvc5.Term)" class="member-name-link">mkTerm</a><wbr>(<a href="Op.html" title="class in io.github.cvc5">Op</a>&nbsp;op,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child1,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child2,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child3)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create ternary term of given kind from a given operator.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkTrue()" class="member-name-link">mkTrue</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a Boolean <code>true</code> constant.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkTuple(io.github.cvc5.Term%5B%5D)" class="member-name-link">mkTuple</a><wbr>(<a href="Term.html" title="class in io.github.cvc5">Term</a>[]&nbsp;terms)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a tuple term.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkTupleSort(io.github.cvc5.Sort%5B%5D)" class="member-name-link">mkTupleSort</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]&nbsp;sorts)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a tuple sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkUninterpretedSort()" class="member-name-link">mkUninterpretedSort</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create an uninterpreted sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkUninterpretedSort(java.lang.String)" class="member-name-link">mkUninterpretedSort</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create an uninterpreted sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkUninterpretedSortConstructorSort(int)" class="member-name-link">mkUninterpretedSortConstructorSort</a><wbr>(int&nbsp;arity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a sort constructor sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkUninterpretedSortConstructorSort(int,java.lang.String)" class="member-name-link">mkUninterpretedSortConstructorSort</a><wbr>(int&nbsp;arity,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a sort constructor sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkUniverseSet(io.github.cvc5.Sort)" class="member-name-link">mkUniverseSet</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a universe set of the given sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkUnresolvedDatatypeSort(java.lang.String)" class="member-name-link">mkUnresolvedDatatypeSort</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create an unresolved datatype sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkUnresolvedDatatypeSort(java.lang.String,int)" class="member-name-link">mkUnresolvedDatatypeSort</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol,
+ int&nbsp;arity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create an unresolved datatype sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkVar(io.github.cvc5.Sort)" class="member-name-link">mkVar</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a bound variable to be used in a binder (i.e., a quantifier, a
+ lambda, or a witness binder).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Term.html" title="class in io.github.cvc5">Term</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mkVar(io.github.cvc5.Sort,java.lang.String)" class="member-name-link">mkVar</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Create a bound variable to be used in a binder (i.e., a quantifier, a
+ lambda, or a witness binder).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Return a string representation of the pointer.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString(long)" class="member-name-link">toString</a><wbr>(long&nbsp;pointer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Return a string representation of the specified native pointer.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+</section>
+</li>
+</ul>
+</section>
+<section class="details">
+<ul class="details-list">
+<!-- ============ FIELD DETAIL =========== -->
+<li>
+<section class="field-details" id="field-detail">
+<h2>Field Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="pointer">
+<h3>pointer</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">pointer</span></div>
+<div class="block">The raw native pointer value.</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<li>
+<section class="constructor-details" id="constructor-detail">
+<h2>Constructor Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="&lt;init&gt;()">
+<h3>TermManager</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">TermManager</span>()</div>
+<div class="block">Create a term manager instance.</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<!-- ============ METHOD DETAIL ========== -->
+<li>
+<section class="method-details" id="method-detail">
+<h2>Method Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="deletePointer(long)">
+<h3>deletePointer</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deletePointer</span><wbr><span class="parameters">(long&nbsp;pointer)</span></div>
+<div class="block">Delete the native resource associated with the specified pointer.
+ <p>
+ Subclasses must implement this method to provide resource-specific cleanup logic.
+ </p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>pointer</code> - the native pointer to delete</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="toString(long)">
+<h3>toString</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span><wbr><span class="parameters">(long&nbsp;pointer)</span></div>
+<div class="block">Return a string representation of the specified native pointer.
+ <p>
+ Subclasses must implement this method to convert the native pointer
+ into a meaningful string.
+ </p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>pointer</code> - the native pointer</dd>
+<dt>Returns:</dt>
+<dd>a string representation of the pointer</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="equals(java.lang.Object)">
+<h3>equals</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</span></div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getStatistics()">
+<h3>getStatistics</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Statistics.html" title="class in io.github.cvc5">Statistics</a></span>&nbsp;<span class="element-name">getStatistics</span>()</div>
+<div class="block">Get a snapshot of the current state of the statistic values of this
+ term manager.
+
+ Term manager statistics are independent from any solver instance. The
+ returned object is completely decoupled from the term manager and will
+ not change when the solver is used again.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>A snapshot of the current state of the statistic values.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getBooleanSort()">
+<h3>getBooleanSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getBooleanSort</span>()</div>
+<div class="block">Get the Boolean sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>Sort Boolean.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getIntegerSort()">
+<h3>getIntegerSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getIntegerSort</span>()</div>
+<div class="block">Get the integer sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>Sort Integer.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getRealSort()">
+<h3>getRealSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getRealSort</span>()</div>
+<div class="block">Get the real sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>Sort Real.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getRegExpSort()">
+<h3>getRegExpSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getRegExpSort</span>()</div>
+<div class="block">Get the regular expression sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>Sort RegExp.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getRoundingModeSort()">
+<h3>getRoundingModeSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getRoundingModeSort</span>()
+                         throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Get the floating-point rounding mode sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>Sort RoundingMode.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getStringSort()">
+<h3>getStringSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getStringSort</span>()</div>
+<div class="block">Get the string sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>Sort String.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkArraySort(io.github.cvc5.Sort,io.github.cvc5.Sort)">
+<h3>mkArraySort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkArraySort</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;indexSort,
+ <a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;elemSort)</span></div>
+<div class="block">Create an array sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>indexSort</code> - The array index sort.</dd>
+<dd><code>elemSort</code> - The array element sort.</dd>
+<dt>Returns:</dt>
+<dd>The array sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkBitVectorSort(int)">
+<h3>mkBitVectorSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkBitVectorSort</span><wbr><span class="parameters">(int&nbsp;size)</span>
+                     throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a bit-vector sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>size</code> - The bit-width of the bit-vector sort.</dd>
+<dt>Returns:</dt>
+<dd>The bit-vector sort.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkFiniteFieldSort(java.lang.String,int)">
+<h3>mkFiniteFieldSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkFiniteFieldSort</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;size,
+ int&nbsp;base)</span>
+                       throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a finite field sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>size</code> - The size of the finite field sort.</dd>
+<dd><code>base</code> - The base of the string representation.</dd>
+<dt>Returns:</dt>
+<dd>The finite field sort.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkFloatingPointSort(int,int)">
+<h3>mkFloatingPointSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkFloatingPointSort</span><wbr><span class="parameters">(int&nbsp;exp,
+ int&nbsp;sig)</span>
+                         throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a floating-point sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>exp</code> - The bit-width of the exponent of the floating-point sort.</dd>
+<dd><code>sig</code> - The bit-width of the significand of the floating-point sort.</dd>
+<dt>Returns:</dt>
+<dd>The floating-point sort.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkDatatypeSort(io.github.cvc5.DatatypeDecl)">
+<h3>mkDatatypeSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkDatatypeSort</span><wbr><span class="parameters">(<a href="DatatypeDecl.html" title="class in io.github.cvc5">DatatypeDecl</a>&nbsp;dtypedecl)</span>
+                    throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a datatype sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>dtypedecl</code> - The datatype declaration from which the sort is created.</dd>
+<dt>Returns:</dt>
+<dd>The datatype sort.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkDatatypeSorts(io.github.cvc5.DatatypeDecl[])">
+<h3>mkDatatypeSorts</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]</span>&nbsp;<span class="element-name">mkDatatypeSorts</span><wbr><span class="parameters">(<a href="DatatypeDecl.html" title="class in io.github.cvc5">DatatypeDecl</a>[]&nbsp;dtypedecls)</span>
+                       throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a vector of datatype sorts.
+
+ The names of the datatype declarations must be distinct.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>dtypedecls</code> - The datatype declarations from which the sort is created.</dd>
+<dt>Returns:</dt>
+<dd>The datatype sorts.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkFunctionSort(io.github.cvc5.Sort,io.github.cvc5.Sort)">
+<h3>mkFunctionSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkFunctionSort</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;domain,
+ <a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;codomain)</span></div>
+<div class="block">Create function sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>domain</code> - The sort of the fuction argument.</dd>
+<dd><code>codomain</code> - The sort of the function return value.</dd>
+<dt>Returns:</dt>
+<dd>The function sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkFunctionSort(io.github.cvc5.Sort[],io.github.cvc5.Sort)">
+<h3>mkFunctionSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkFunctionSort</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]&nbsp;sorts,
+ <a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;codomain)</span></div>
+<div class="block">Create function sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sorts</code> - The sort of the function arguments.</dd>
+<dd><code>codomain</code> - The sort of the function return value.</dd>
+<dt>Returns:</dt>
+<dd>The function sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkParamSort(java.lang.String)">
+<h3>mkParamSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkParamSort</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</span></div>
+<div class="block">Create a sort parameter.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>symbol</code> - The name of the sort.</dd>
+<dt>Returns:</dt>
+<dd>The sort parameter.</dd>
+<dt>Note:</dt>
+<dd>This method is experimental and may change in future versions.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkParamSort()">
+<h3>mkParamSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkParamSort</span>()</div>
+<div class="block">Create a sort parameter.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The sort parameter.</dd>
+<dt>Note:</dt>
+<dd>This method is experimental and may change in future versions.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkSkolem(io.github.cvc5.SkolemId,io.github.cvc5.Term[])">
+<h3>mkSkolem</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkSkolem</span><wbr><span class="parameters">(<a href="SkolemId.html" title="enum class in io.github.cvc5">SkolemId</a>&nbsp;skolemId,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>[]&nbsp;indices)</span></div>
+<div class="block">Create a skolem</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>skolemId</code> - The id of the skolem.</dd>
+<dd><code>indices</code> - The indices of the skolem.</dd>
+<dt>Returns:</dt>
+<dd>The skolem.</dd>
+<dt>Note:</dt>
+<dd>This method is experimental and may change in future versions.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getNumIndicesForSkolemId(io.github.cvc5.SkolemId)">
+<h3>getNumIndicesForSkolemId</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getNumIndicesForSkolemId</span><wbr><span class="parameters">(<a href="SkolemId.html" title="enum class in io.github.cvc5">SkolemId</a>&nbsp;id)</span></div>
+<div class="block">Get the number of indices for a given skolem id.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>id</code> - The skolem id.</dd>
+<dt>Returns:</dt>
+<dd>The number of indices for the given skolem id.</dd>
+<dt>Note:</dt>
+<dd>This method is experimental and may change in future versions.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkPredicateSort(io.github.cvc5.Sort[])">
+<h3>mkPredicateSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkPredicateSort</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]&nbsp;sorts)</span></div>
+<div class="block">Create a predicate sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sorts</code> - The list of sorts of the predicate.</dd>
+<dt>Returns:</dt>
+<dd>The predicate sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkRecordSort(io.github.cvc5.Pair[])">
+<h3>mkRecordSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkRecordSort</span><wbr><span class="parameters">(<a href="Pair.html" title="class in io.github.cvc5">Pair</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="Sort.html" title="class in io.github.cvc5">Sort</a>&gt;[]&nbsp;fields)</span></div>
+<div class="block">Create a record sort</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>fields</code> - The list of fields of the record.</dd>
+<dt>Returns:</dt>
+<dd>The record sort.</dd>
+<dt>Note:</dt>
+<dd>This method is experimental and may change in future versions.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkSetSort(io.github.cvc5.Sort)">
+<h3>mkSetSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkSetSort</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;elemSort)</span></div>
+<div class="block">Create a set sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>elemSort</code> - The sort of the set elements.</dd>
+<dt>Returns:</dt>
+<dd>The set sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkBagSort(io.github.cvc5.Sort)">
+<h3>mkBagSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkBagSort</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;elemSort)</span></div>
+<div class="block">Create a bag sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>elemSort</code> - The sort of the bag elements.</dd>
+<dt>Returns:</dt>
+<dd>The bag sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkSequenceSort(io.github.cvc5.Sort)">
+<h3>mkSequenceSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkSequenceSort</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;elemSort)</span></div>
+<div class="block">Create a sequence sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>elemSort</code> - The sort of the sequence elements.</dd>
+<dt>Returns:</dt>
+<dd>The sequence sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkAbstractSort(io.github.cvc5.SortKind)">
+<h3>mkAbstractSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkAbstractSort</span><wbr><span class="parameters">(<a href="SortKind.html" title="enum class in io.github.cvc5">SortKind</a>&nbsp;kind)</span></div>
+<div class="block">Create an abstract sort. An abstract sort represents a sort for a given
+ kind whose parameters and arguments are unspecified.
+
+ The <a href="SortKind.html" title="enum class in io.github.cvc5"><code>SortKind</code></a> k must be the kind of a sort that can be abstracted,
+ i.e., a sort that has indices or argument sorts. For example,
+ <a href="SortKind.html#ARRAY_SORT"><code>SortKind.ARRAY_SORT</code></a> and <a href="SortKind.html#BITVECTOR_SORT"><code>SortKind.BITVECTOR_SORT</code></a> can be
+ passed as the <a href="SortKind.html" title="enum class in io.github.cvc5"><code>SortKind</code></a> k to this method, while
+ <a href="SortKind.html#INTEGER_SORT"><code>SortKind.INTEGER_SORT</code></a> and  <a href="SortKind.html#STRING_SORT"><code>SortKind.STRING_SORT</code></a> cannot.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>kind</code> - The kind of the abstract sort</dd>
+<dt>Returns:</dt>
+<dd>The abstract sort.</dd>
+<dt>Note:</dt>
+<dd>Providing the kind  <a href="SortKind.html#ABSTRACT_SORT"><code>SortKind.ABSTRACT_SORT</code></a> as an
+           argument to this method returns the (fully) unspecified sort,
+           often denoted <code>?</code>., Providing a kind <code>k</code> that has no indices and a fixed arity
+           of argument sorts will return the sort of <a href="SortKind.html" title="enum class in io.github.cvc5"><code>SortKind</code></a> k
+           whose arguments are the unspecified sort. For example,
+           <code>mkAbstractSort(ARRAY_SORT)</code> will return the sort
+           <code>(ARRAY_SORT ? ?)</code> instead of the abstract sort whose
+           abstract kind is <a href="SortKind.html#ABSTRACT_SORT"><code>SortKind.ABSTRACT_SORT</code></a>., This method is experimental and may change in future versions.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkUninterpretedSort(java.lang.String)">
+<h3>mkUninterpretedSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkUninterpretedSort</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</span></div>
+<div class="block">Create an uninterpreted sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>symbol</code> - The name of the sort.</dd>
+<dt>Returns:</dt>
+<dd>The uninterpreted sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkUninterpretedSort()">
+<h3>mkUninterpretedSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkUninterpretedSort</span>()</div>
+<div class="block">Create an uninterpreted sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The uninterpreted sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkUnresolvedDatatypeSort(java.lang.String,int)">
+<h3>mkUnresolvedDatatypeSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkUnresolvedDatatypeSort</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol,
+ int&nbsp;arity)</span>
+                              throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create an unresolved datatype sort.
+
+ This is for creating yet unresolved sort placeholders for mutually
+ recursive parametric datatypes.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>symbol</code> - The symbol of the sort.</dd>
+<dd><code>arity</code> - The number of sort parameters of the sort.</dd>
+<dt>Returns:</dt>
+<dd>The unresolved sort.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkUnresolvedDatatypeSort(java.lang.String)">
+<h3>mkUnresolvedDatatypeSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkUnresolvedDatatypeSort</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</span>
+                              throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create an unresolved datatype sort.
+
+ This is for creating yet unresolved sort placeholders for mutually
+ recursive datatypes without sort parameters.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>symbol</code> - The symbol of the sort.</dd>
+<dt>Returns:</dt>
+<dd>The unresolved sort.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkUninterpretedSortConstructorSort(int,java.lang.String)">
+<h3>mkUninterpretedSortConstructorSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkUninterpretedSortConstructorSort</span><wbr><span class="parameters">(int&nbsp;arity,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</span>
+                                        throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a sort constructor sort.
+
+ An uninterpreted sort constructor is an uninterpreted sort with
+ arity &gt; 0.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>arity</code> - The arity of the sort (must be &gt; 0)</dd>
+<dd><code>symbol</code> - The symbol of the sort.</dd>
+<dt>Returns:</dt>
+<dd>The sort constructor sort.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkUninterpretedSortConstructorSort(int)">
+<h3>mkUninterpretedSortConstructorSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkUninterpretedSortConstructorSort</span><wbr><span class="parameters">(int&nbsp;arity)</span>
+                                        throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a sort constructor sort.
+
+ An uninterpreted sort constructor is an uninterpreted sort with
+ arity &gt; 0.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>arity</code> - The arity of the sort (must be &gt; 0)</dd>
+<dt>Returns:</dt>
+<dd>The sort constructor sort.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkTupleSort(io.github.cvc5.Sort[])">
+<h3>mkTupleSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkTupleSort</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]&nbsp;sorts)</span></div>
+<div class="block">Create a tuple sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sorts</code> - Of the elements of the tuple.</dd>
+<dt>Returns:</dt>
+<dd>The tuple sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkNullableSort(io.github.cvc5.Sort)">
+<h3>mkNullableSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">mkNullableSort</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</span></div>
+<div class="block">Create a nullable sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sort</code> - The sort of the element of the nullable.</dd>
+<dt>Returns:</dt>
+<dd>The nullable sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkTerm(io.github.cvc5.Kind)">
+<h3>mkTerm</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkTerm</span><wbr><span class="parameters">(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind)</span></div>
+<div class="block">Create 0-ary term of given kind.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>kind</code> - The kind of the term.</dd>
+<dt>Returns:</dt>
+<dd>The Term.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkTerm(io.github.cvc5.Kind,io.github.cvc5.Term)">
+<h3>mkTerm</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkTerm</span><wbr><span class="parameters">(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child)</span></div>
+<div class="block">Create a unary term of given kind.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>kind</code> - The kind of the term.</dd>
+<dd><code>child</code> - The child of the term.</dd>
+<dt>Returns:</dt>
+<dd>The Term.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkTerm(io.github.cvc5.Kind,io.github.cvc5.Term,io.github.cvc5.Term)">
+<h3>mkTerm</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkTerm</span><wbr><span class="parameters">(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child1,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child2)</span></div>
+<div class="block">Create binary term of given kind.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>kind</code> - The kind of the term.</dd>
+<dd><code>child1</code> - The first child of the term.</dd>
+<dd><code>child2</code> - The second child of the term.</dd>
+<dt>Returns:</dt>
+<dd>The Term.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkTerm(io.github.cvc5.Kind,io.github.cvc5.Term,io.github.cvc5.Term,io.github.cvc5.Term)">
+<h3>mkTerm</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkTerm</span><wbr><span class="parameters">(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child1,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child2,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child3)</span></div>
+<div class="block">Create ternary term of given kind.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>kind</code> - The kind of the term.</dd>
+<dd><code>child1</code> - The first child of the term.</dd>
+<dd><code>child2</code> - The second child of the term.</dd>
+<dd><code>child3</code> - The third child of the term.</dd>
+<dt>Returns:</dt>
+<dd>The Term.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkTerm(io.github.cvc5.Kind,io.github.cvc5.Term[])">
+<h3>mkTerm</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkTerm</span><wbr><span class="parameters">(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>[]&nbsp;children)</span></div>
+<div class="block">Create n-ary term of given kind.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>kind</code> - The kind of the term.</dd>
+<dd><code>children</code> - The children of the term.</dd>
+<dt>Returns:</dt>
+<dd>The Term.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkTerm(io.github.cvc5.Op)">
+<h3>mkTerm</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkTerm</span><wbr><span class="parameters">(<a href="Op.html" title="class in io.github.cvc5">Op</a>&nbsp;op)</span></div>
+<div class="block">Create nullary term of given kind from a given operator.
+ Create operators with <a href="#mkOp(io.github.cvc5.Kind)"><code>mkOp(Kind)</code></a>,
+ <a href="#mkOp(io.github.cvc5.Kind,java.lang.String)"><code>mkOp(Kind, String)</code></a>, <a href="#mkOp(io.github.cvc5.Kind,int%5B%5D)"><code>mkOp(Kind, int[])</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>op</code> - The operator.</dd>
+<dt>Returns:</dt>
+<dd>The Term.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkTerm(io.github.cvc5.Op,io.github.cvc5.Term)">
+<h3>mkTerm</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkTerm</span><wbr><span class="parameters">(<a href="Op.html" title="class in io.github.cvc5">Op</a>&nbsp;op,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child)</span></div>
+<div class="block">Create unary term of given kind from a given operator.
+ Create operators with <a href="#mkOp(io.github.cvc5.Kind)"><code>mkOp(Kind)</code></a>,
+ <a href="#mkOp(io.github.cvc5.Kind,java.lang.String)"><code>mkOp(Kind, String)</code></a>, <a href="#mkOp(io.github.cvc5.Kind,int%5B%5D)"><code>mkOp(Kind, int[])</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>op</code> - The operator.</dd>
+<dd><code>child</code> - The child of the term.</dd>
+<dt>Returns:</dt>
+<dd>The Term.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkTerm(io.github.cvc5.Op,io.github.cvc5.Term,io.github.cvc5.Term)">
+<h3>mkTerm</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkTerm</span><wbr><span class="parameters">(<a href="Op.html" title="class in io.github.cvc5">Op</a>&nbsp;op,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child1,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child2)</span></div>
+<div class="block">Create binary term of given kind from a given operator.
+ Create operators with <a href="#mkOp(io.github.cvc5.Kind)"><code>mkOp(Kind)</code></a>,
+ <a href="#mkOp(io.github.cvc5.Kind,java.lang.String)"><code>mkOp(Kind, String)</code></a>, <a href="#mkOp(io.github.cvc5.Kind,int%5B%5D)"><code>mkOp(Kind, int[])</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>op</code> - The operator.</dd>
+<dd><code>child1</code> - The first child of the term.</dd>
+<dd><code>child2</code> - The second child of the term.</dd>
+<dt>Returns:</dt>
+<dd>The Term.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkTerm(io.github.cvc5.Op,io.github.cvc5.Term,io.github.cvc5.Term,io.github.cvc5.Term)">
+<h3>mkTerm</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkTerm</span><wbr><span class="parameters">(<a href="Op.html" title="class in io.github.cvc5">Op</a>&nbsp;op,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child1,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child2,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;child3)</span></div>
+<div class="block">Create ternary term of given kind from a given operator.
+ Create operators with <a href="#mkOp(io.github.cvc5.Kind)"><code>mkOp(Kind)</code></a>,
+ <a href="#mkOp(io.github.cvc5.Kind,java.lang.String)"><code>mkOp(Kind, String)</code></a>, <a href="#mkOp(io.github.cvc5.Kind,int%5B%5D)"><code>mkOp(Kind, int[])</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>op</code> - The operator.</dd>
+<dd><code>child1</code> - The first child of the term.</dd>
+<dd><code>child2</code> - The second child of the term.</dd>
+<dd><code>child3</code> - The third child of the term.</dd>
+<dt>Returns:</dt>
+<dd>The Term.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkTerm(io.github.cvc5.Op,io.github.cvc5.Term[])">
+<h3>mkTerm</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkTerm</span><wbr><span class="parameters">(<a href="Op.html" title="class in io.github.cvc5">Op</a>&nbsp;op,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>[]&nbsp;children)</span></div>
+<div class="block">Create n-ary term of given kind from a given operator.
+ Create operators with <a href="#mkOp(io.github.cvc5.Kind)"><code>mkOp(Kind)</code></a>,
+ <a href="#mkOp(io.github.cvc5.Kind,java.lang.String)"><code>mkOp(Kind, String)</code></a>, <a href="#mkOp(io.github.cvc5.Kind,int%5B%5D)"><code>mkOp(Kind, int[])</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>op</code> - The operator.</dd>
+<dd><code>children</code> - The children of the term.</dd>
+<dt>Returns:</dt>
+<dd>The Term.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkTuple(io.github.cvc5.Term[])">
+<h3>mkTuple</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkTuple</span><wbr><span class="parameters">(<a href="Term.html" title="class in io.github.cvc5">Term</a>[]&nbsp;terms)</span></div>
+<div class="block">Create a tuple term.
+ Terms are automatically converted if sorts are compatible.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>terms</code> - The elements in the tuple.</dd>
+<dt>Returns:</dt>
+<dd>The tuple Term.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkNullableSome(io.github.cvc5.Term)">
+<h3>mkNullableSome</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkNullableSome</span><wbr><span class="parameters">(<a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;term)</span></div>
+<div class="block">Create a nullable some term.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>term</code> - The element value.</dd>
+<dt>Returns:</dt>
+<dd>the Element value wrapped in some constructor.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkNullableVal(io.github.cvc5.Term)">
+<h3>mkNullableVal</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkNullableVal</span><wbr><span class="parameters">(<a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;term)</span></div>
+<div class="block">Create a selector for nullable term.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>term</code> - A nullable term.</dd>
+<dt>Returns:</dt>
+<dd>The element value of the nullable term.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkNullableIsNull(io.github.cvc5.Term)">
+<h3>mkNullableIsNull</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkNullableIsNull</span><wbr><span class="parameters">(<a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;term)</span></div>
+<div class="block">Create a null tester for a nullable term.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>term</code> - A nullable term.</dd>
+<dt>Returns:</dt>
+<dd>A tester whether term is null.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkNullableIsSome(io.github.cvc5.Term)">
+<h3>mkNullableIsSome</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkNullableIsSome</span><wbr><span class="parameters">(<a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;term)</span></div>
+<div class="block">Create a some tester for a nullable term.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>term</code> - A nullable term.</dd>
+<dt>Returns:</dt>
+<dd>A tester whether term is some.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkNullableNull(io.github.cvc5.Sort)">
+<h3>mkNullableNull</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkNullableNull</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</span></div>
+<div class="block">Create a constant representing a null value of the given sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sort</code> - The sort of the Nullable element.</dd>
+<dt>Returns:</dt>
+<dd>The null constant.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkNullableLift(io.github.cvc5.Kind,io.github.cvc5.Term[])">
+<h3>mkNullableLift</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkNullableLift</span><wbr><span class="parameters">(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>[]&nbsp;args)</span></div>
+<div class="block">Create a term that lifts kind to nullable terms.
+ Example:
+ If we have the term ((_ nullable.lift +) x y),
+ where x, y of type (Nullable Int), then
+ kind would be ADD, and args would be [x, y].
+ This function would return
+ (nullable.lift (lambda ((a Int) (b Int)) (+ a b)) x y)</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>kind</code> - The lifted operator.</dd>
+<dd><code>args</code> - The arguments of the lifted operator.</dd>
+<dt>Returns:</dt>
+<dd>A term of Kind NULLABLE_LIFT where the first child
+ is a lambda expression, and the remaining children are
+ the original arguments.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkOp(io.github.cvc5.Kind)">
+<h3>mkOp</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Op.html" title="class in io.github.cvc5">Op</a></span>&nbsp;<span class="element-name">mkOp</span><wbr><span class="parameters">(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind)</span></div>
+<div class="block">Create an operator for a builtin Kind
+ The Kind may not be the Kind for an indexed operator
+ (e.g., <a href="Kind.html#BITVECTOR_EXTRACT"><code>Kind.BITVECTOR_EXTRACT</code></a>).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>kind</code> - The kind to wrap.</dd>
+<dt>Returns:</dt>
+<dd>The operator.</dd>
+<dt>Note:</dt>
+<dd>In this case, the Op simply wraps the Kind. The Kind can be used
+          in mkTerm directly without creating an op first.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkOp(io.github.cvc5.Kind,java.lang.String)">
+<h3>mkOp</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Op.html" title="class in io.github.cvc5">Op</a></span>&nbsp;<span class="element-name">mkOp</span><wbr><span class="parameters">(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;arg)</span></div>
+<div class="block">Create operator of kind:
+ <ul>
+   <li>
+     <a href="Kind.html#DIVISIBLE"><code>Kind.DIVISIBLE</code></a> (to support arbitrary precision integers)
+   </li>
+ </ul>
+ See enum <a href="Kind.html" title="enum class in io.github.cvc5"><code>Kind</code></a> for a description of the parameters.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>kind</code> - The kind of the operator.</dd>
+<dd><code>arg</code> - The string argument to this operator.</dd>
+<dt>Returns:</dt>
+<dd>The operator.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkOp(io.github.cvc5.Kind,int)">
+<h3>mkOp</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Op.html" title="class in io.github.cvc5">Op</a></span>&nbsp;<span class="element-name">mkOp</span><wbr><span class="parameters">(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ int&nbsp;arg)</span>
+        throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create operator of kind:
+ <ul>
+   <li>DIVISIBLE</li>
+   <li>BITVECTOR_REPEAT</li>
+   <li>BITVECTOR_ZERO_EXTEND</li>
+   <li>BITVECTOR_SIGN_EXTEND</li>
+   <li>BITVECTOR_ROTATE_LEFT</li>
+   <li>BITVECTOR_ROTATE_RIGHT</li>
+   <li>INT_TO_BITVECTOR</li>
+   <li>FLOATINGPOINT_TO_UBV</li>
+   <li>FLOATINGPOINT_TO_UBV_TOTAL</li>
+   <li>FLOATINGPOINT_TO_SBV</li>
+   <li>FLOATINGPOINT_TO_SBV_TOTAL</li>
+   <li>TUPLE_UPDATE</li>
+ </ul>
+ See enum <a href="Kind.html" title="enum class in io.github.cvc5"><code>Kind</code></a> for a description of the parameters.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>kind</code> - The kind of the operator.</dd>
+<dd><code>arg</code> - The unsigned int argument to this operator.</dd>
+<dt>Returns:</dt>
+<dd>The operator.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkOp(io.github.cvc5.Kind,int,int)">
+<h3>mkOp</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Op.html" title="class in io.github.cvc5">Op</a></span>&nbsp;<span class="element-name">mkOp</span><wbr><span class="parameters">(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ int&nbsp;arg1,
+ int&nbsp;arg2)</span>
+        throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create operator of Kind:
+ <ul>
+   <li>BITVECTOR_EXTRACT</li>
+   <li>FLOATINGPOINT_TO_FP_FROM_IEEE_BV</li>
+   <li>FLOATINGPOINT_TO_FP_FROM_FP</li>
+   <li>FLOATINGPOINT_TO_FP_FROM_REAL</li>
+   <li>FLOATINGPOINT_TO_FP_FROM_SBV</li>
+   <li>FLOATINGPOINT_TO_FP_FROM_UBV</li>
+ </ul>
+ See enum <a href="Kind.html" title="enum class in io.github.cvc5"><code>Kind</code></a> for a description of the parameters.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>kind</code> - The kind of the operator.</dd>
+<dd><code>arg1</code> - The first unsigned int argument to this operator.</dd>
+<dd><code>arg2</code> - The second unsigned int argument to this operator.</dd>
+<dt>Returns:</dt>
+<dd>The operator.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkOp(io.github.cvc5.Kind,int[])">
+<h3>mkOp</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Op.html" title="class in io.github.cvc5">Op</a></span>&nbsp;<span class="element-name">mkOp</span><wbr><span class="parameters">(<a href="Kind.html" title="enum class in io.github.cvc5">Kind</a>&nbsp;kind,
+ int[]&nbsp;args)</span>
+        throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create operator of Kind:
+ <ul>
+   <li>TUPLE_PROJECT</li>
+ </ul>
+ See enum <a href="Kind.html" title="enum class in io.github.cvc5"><code>Kind</code></a> for a description of the parameters.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>kind</code> - The kind of the operator.</dd>
+<dd><code>args</code> - The arguments (indices) of the operator.</dd>
+<dt>Returns:</dt>
+<dd>The operator.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkTrue()">
+<h3>mkTrue</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkTrue</span>()</div>
+<div class="block">Create a Boolean <code>true</code> constant.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The true constant.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkFalse()">
+<h3>mkFalse</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkFalse</span>()</div>
+<div class="block">Create a Boolean <code>false</code> constant.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The false constant.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkBoolean(boolean)">
+<h3>mkBoolean</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkBoolean</span><wbr><span class="parameters">(boolean&nbsp;val)</span></div>
+<div class="block">Create a Boolean constant.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>val</code> - The value of the constant.</dd>
+<dt>Returns:</dt>
+<dd>The Boolean constant.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkPi()">
+<h3>mkPi</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkPi</span>()</div>
+<div class="block">Create a constant representing the number Pi.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>A constant representing Pi.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkInteger(java.lang.String)">
+<h3>mkInteger</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkInteger</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</span>
+               throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create an integer constant from a string.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>s</code> - The string representation of the constant, may represent an.
+          integer (e.g., "123").</dd>
+<dt>Returns:</dt>
+<dd>A constant of sort Integer assuming <code>s</code> represents an
+         integer).</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkInteger(long)">
+<h3>mkInteger</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkInteger</span><wbr><span class="parameters">(long&nbsp;val)</span></div>
+<div class="block">Create an integer constant from a C++ <code>int</code>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>val</code> - The value of the constant.</dd>
+<dt>Returns:</dt>
+<dd>A constant of sort Integer.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkReal(java.lang.String)">
+<h3>mkReal</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkReal</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</span>
+            throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a real constant from a string.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>s</code> - The string representation of the constant, may represent an.
+          integer (e.g., "123") or real constant (e.g., "12.34" or
+ "12/34").</dd>
+<dt>Returns:</dt>
+<dd>A constant of sort Real.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkReal(long)">
+<h3>mkReal</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkReal</span><wbr><span class="parameters">(long&nbsp;val)</span></div>
+<div class="block">Create a real constant from an integer.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>val</code> - The value of the constant.</dd>
+<dt>Returns:</dt>
+<dd>A constant of sort Integer.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkReal(long,long)">
+<h3>mkReal</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkReal</span><wbr><span class="parameters">(long&nbsp;num,
+ long&nbsp;den)</span></div>
+<div class="block">Create a real constant from a rational.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>num</code> - The value of the numerator.</dd>
+<dd><code>den</code> - The value of the denominator.</dd>
+<dt>Returns:</dt>
+<dd>A constant of sort Real.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkRegexpNone()">
+<h3>mkRegexpNone</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkRegexpNone</span>()</div>
+<div class="block">Create a regular expression none (<code>re.none</code>) term.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The none term.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkRegexpAll()">
+<h3>mkRegexpAll</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkRegexpAll</span>()</div>
+<div class="block">Create a regular expression all (<code>re.all</code>) term.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The all term.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkRegexpAllchar()">
+<h3>mkRegexpAllchar</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkRegexpAllchar</span>()</div>
+<div class="block">Create a regular expression allchar (<code>re.allchar</code>) term.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The allchar term.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkEmptySet(io.github.cvc5.Sort)">
+<h3>mkEmptySet</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkEmptySet</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</span></div>
+<div class="block">Create a constant representing an empty set of the given sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sort</code> - The sort of the set elements.</dd>
+<dt>Returns:</dt>
+<dd>The empty set constant.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkEmptyBag(io.github.cvc5.Sort)">
+<h3>mkEmptyBag</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkEmptyBag</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</span></div>
+<div class="block">Create a constant representing an empty bag of the given sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sort</code> - The sort of the bag elements.</dd>
+<dt>Returns:</dt>
+<dd>The empty bag constant.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkSepEmp()">
+<h3>mkSepEmp</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkSepEmp</span>()</div>
+<div class="block">Create a separation logic empty term.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The separation logic empty term.</dd>
+<dt>Note:</dt>
+<dd>This method is experimental and may change in future versions.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkSepNil(io.github.cvc5.Sort)">
+<h3>mkSepNil</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkSepNil</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</span></div>
+<div class="block">Create a separation logic nil term.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sort</code> - The sort of the nil term.</dd>
+<dt>Returns:</dt>
+<dd>The separation logic nil term.</dd>
+<dt>Note:</dt>
+<dd>This method is experimental and may change in future versions.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkString(java.lang.String)">
+<h3>mkString</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkString</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s)</span></div>
+<div class="block">Create a String constant.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>s</code> - The string this constant represents.</dd>
+<dt>Returns:</dt>
+<dd>The String constant.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkString(java.lang.String,boolean)">
+<h3>mkString</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkString</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
+ boolean&nbsp;useEscSequences)</span></div>
+<div class="block">Create a String constant.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>s</code> - The string this constant represents.</dd>
+<dd><code>useEscSequences</code> - Determines whether escape sequences in <code>s</code>
+                        should be converted to the corresponding unicode
+                        character.</dd>
+<dt>Returns:</dt>
+<dd>The String constant.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkString(int[])">
+<h3>mkString</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkString</span><wbr><span class="parameters">(int[]&nbsp;s)</span>
+              throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a String constant.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>s</code> - A list of unsigned (unicode) values this constant represents
+          as string.</dd>
+<dt>Returns:</dt>
+<dd>The String constant.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkEmptySequence(io.github.cvc5.Sort)">
+<h3>mkEmptySequence</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkEmptySequence</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</span></div>
+<div class="block">Create an empty sequence of the given element sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sort</code> - The element sort of the sequence.</dd>
+<dt>Returns:</dt>
+<dd>The empty sequence with given element sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkUniverseSet(io.github.cvc5.Sort)">
+<h3>mkUniverseSet</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkUniverseSet</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</span></div>
+<div class="block">Create a universe set of the given sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sort</code> - The sort of the set elements.</dd>
+<dt>Returns:</dt>
+<dd>The universe set constant.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkBitVector(int)">
+<h3>mkBitVector</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkBitVector</span><wbr><span class="parameters">(int&nbsp;size)</span>
+                 throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a bit-vector constant of given size and value = 0.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>size</code> - The bit-width of the bit-vector sort.</dd>
+<dt>Returns:</dt>
+<dd>The bit-vector constant.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkBitVector(int,long)">
+<h3>mkBitVector</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkBitVector</span><wbr><span class="parameters">(int&nbsp;size,
+ long&nbsp;val)</span>
+                 throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a bit-vector constant of given size and value.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>size</code> - The bit-width of the bit-vector sort.</dd>
+<dd><code>val</code> - The value of the constant.</dd>
+<dt>Returns:</dt>
+<dd>The bit-vector constant.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+<dt>Note:</dt>
+<dd>The given value must fit into a bit-vector of the given size.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkBitVector(int,java.lang.String,int)">
+<h3>mkBitVector</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkBitVector</span><wbr><span class="parameters">(int&nbsp;size,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
+ int&nbsp;base)</span>
+                 throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a bit-vector constant of a given bit-width from a given string of
+ base 2, 10 or 16.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>size</code> - The bit-width of the constant.</dd>
+<dd><code>s</code> - The string representation of the constant.</dd>
+<dd><code>base</code> - The base of the string representation (2, 10, or 16)</dd>
+<dt>Returns:</dt>
+<dd>The bit-vector constant.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+<dt>Note:</dt>
+<dd>The given value must fit into a bit-vector of the given size.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkFiniteFieldElem(java.lang.String,io.github.cvc5.Sort,int)">
+<h3>mkFiniteFieldElem</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkFiniteFieldElem</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;val,
+ <a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort,
+ int&nbsp;base)</span>
+                       throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a finite field constant in a given field and for a given value.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>val</code> - The value of the constant.</dd>
+<dd><code>sort</code> - The sort of the finite field.</dd>
+<dd><code>base</code> - The base of the string representation.</dd>
+<dt>Returns:</dt>
+<dd>The finite field constant.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+<dt>Note:</dt>
+<dd>The given value must fit into a the given finite field.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkConstArray(io.github.cvc5.Sort,io.github.cvc5.Term)">
+<h3>mkConstArray</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkConstArray</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;val)</span></div>
+<div class="block">Create a constant array with the provided constant value stored at
+ every index</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sort</code> - The sort of the constant array (must be an array sort)</dd>
+<dd><code>val</code> - The constant value to store (must match the sort's element
+            sort).</dd>
+<dt>Returns:</dt>
+<dd>The constant array term.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkFloatingPointPosInf(int,int)">
+<h3>mkFloatingPointPosInf</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkFloatingPointPosInf</span><wbr><span class="parameters">(int&nbsp;exp,
+ int&nbsp;sig)</span>
+                           throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a positive infinity floating-point constant (SMT-LIB: <code>+oo</code>).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>exp</code> - Number of bits in the exponent.</dd>
+<dd><code>sig</code> - Number of bits in the significand.</dd>
+<dt>Returns:</dt>
+<dd>The floating-point constant.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkFloatingPointNegInf(int,int)">
+<h3>mkFloatingPointNegInf</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkFloatingPointNegInf</span><wbr><span class="parameters">(int&nbsp;exp,
+ int&nbsp;sig)</span>
+                           throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a negative infinity floating-point constant (SMT-LIB: <code>-oo</code>).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>exp</code> - Number of bits in the exponent.</dd>
+<dd><code>sig</code> - Number of bits in the significand.</dd>
+<dt>Returns:</dt>
+<dd>The floating-point constant.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkFloatingPointNaN(int,int)">
+<h3>mkFloatingPointNaN</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkFloatingPointNaN</span><wbr><span class="parameters">(int&nbsp;exp,
+ int&nbsp;sig)</span>
+                        throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a not-a-number floating-point constant (SMT-LIB: <code>NaN</code>).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>exp</code> - Number of bits in the exponent.</dd>
+<dd><code>sig</code> - Number of bits in the significand.</dd>
+<dt>Returns:</dt>
+<dd>The floating-point constant.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkFloatingPointPosZero(int,int)">
+<h3>mkFloatingPointPosZero</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkFloatingPointPosZero</span><wbr><span class="parameters">(int&nbsp;exp,
+ int&nbsp;sig)</span>
+                            throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a positive zero floating-point constant (SMT-LIB: <code>+zero</code>).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>exp</code> - Number of bits in the exponent.</dd>
+<dd><code>sig</code> - Number of bits in the significand.</dd>
+<dt>Returns:</dt>
+<dd>The floating-point constant.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkFloatingPointNegZero(int,int)">
+<h3>mkFloatingPointNegZero</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkFloatingPointNegZero</span><wbr><span class="parameters">(int&nbsp;exp,
+ int&nbsp;sig)</span>
+                            throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a negative zero floating-point constant (SMT-LIB: <code>-zero</code>).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>exp</code> - Number of bits in the exponent.</dd>
+<dd><code>sig</code> - Number of bits in the significand.</dd>
+<dt>Returns:</dt>
+<dd>The floating-point constant.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkRoundingMode(io.github.cvc5.RoundingMode)">
+<h3>mkRoundingMode</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkRoundingMode</span><wbr><span class="parameters">(<a href="RoundingMode.html" title="enum class in io.github.cvc5">RoundingMode</a>&nbsp;rm)</span></div>
+<div class="block">Create a rounding mode constant.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>rm</code> - The floating point rounding mode this constant represents.</dd>
+<dt>Returns:</dt>
+<dd>The rounding mode.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkFloatingPoint(int,int,io.github.cvc5.Term)">
+<h3>mkFloatingPoint</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkFloatingPoint</span><wbr><span class="parameters">(int&nbsp;exp,
+ int&nbsp;sig,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;val)</span>
+                     throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a floating-point value from a bit-vector given in IEEE-754
+ format.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>exp</code> - Size of the exponent.</dd>
+<dd><code>sig</code> - Size of the significand.</dd>
+<dd><code>val</code> - Value of the floating-point constant as a bit-vector term.</dd>
+<dt>Returns:</dt>
+<dd>The floating-point value.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkFloatingPoint(io.github.cvc5.Term,io.github.cvc5.Term,io.github.cvc5.Term)">
+<h3>mkFloatingPoint</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkFloatingPoint</span><wbr><span class="parameters">(<a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;sign,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;exp,
+ <a href="Term.html" title="class in io.github.cvc5">Term</a>&nbsp;sig)</span>
+                     throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a floating-point value from its three IEEE-754 bit-vector value
+ components (sign bit, exponent, significand).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sign</code> - The sign bit.</dd>
+<dd><code>exp</code> - The bit-vector representing the exponent.</dd>
+<dd><code>sig</code> - The bit-vector representing the significand.</dd>
+<dt>Returns:</dt>
+<dd>The floating-point value.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkCardinalityConstraint(io.github.cvc5.Sort,int)">
+<h3>mkCardinalityConstraint</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkCardinalityConstraint</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort,
+ int&nbsp;upperBound)</span>
+                             throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Create a cardinality constraint for an uninterpreted sort.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sort</code> - The sort the cardinality constraint is for.</dd>
+<dd><code>upperBound</code> - The upper bound on the cardinality of the sort.</dd>
+<dt>Returns:</dt>
+<dd>The cardinality constraint.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+<dt>Note:</dt>
+<dd>This method is experimental and may change in future versions.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkConst(io.github.cvc5.Sort,java.lang.String)">
+<h3>mkConst</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkConst</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</span></div>
+<div class="block">Create a free constant.
+
+ SMT-LIB:
+ <code>
+   ( declare-const &lt;symbol&gt; &lt;sort&gt; )
+   ( declare-fun &lt;symbol&gt; ( ) &lt;sort&gt; )
+ </code></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sort</code> - The sort of the constant.</dd>
+<dd><code>symbol</code> - The name of the constant.</dd>
+<dt>Returns:</dt>
+<dd>The first-order constant.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkConst(io.github.cvc5.Sort)">
+<h3>mkConst</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkConst</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</span></div>
+<div class="block">Create a free constant with a default symbol name.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sort</code> - The sort of the constant.</dd>
+<dt>Returns:</dt>
+<dd>The first-order constant.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkVar(io.github.cvc5.Sort)">
+<h3>mkVar</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkVar</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort)</span></div>
+<div class="block">Create a bound variable to be used in a binder (i.e., a quantifier, a
+ lambda, or a witness binder).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sort</code> - The sort of the variable.</dd>
+<dt>Returns:</dt>
+<dd>The variable.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkVar(io.github.cvc5.Sort,java.lang.String)">
+<h3>mkVar</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Term.html" title="class in io.github.cvc5">Term</a></span>&nbsp;<span class="element-name">mkVar</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbol)</span></div>
+<div class="block">Create a bound variable to be used in a binder (i.e., a quantifier, a
+ lambda, or a witness binder).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sort</code> - The sort of the variable.</dd>
+<dd><code>symbol</code> - The name of the variable.</dd>
+<dt>Returns:</dt>
+<dd>The variable.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkDatatypeConstructorDecl(java.lang.String)">
+<h3>mkDatatypeConstructorDecl</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DatatypeConstructorDecl.html" title="class in io.github.cvc5">DatatypeConstructorDecl</a></span>&nbsp;<span class="element-name">mkDatatypeConstructorDecl</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<div class="block">Create a datatype constructor declaration.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>name</code> - The name of the datatype constructor.</dd>
+<dt>Returns:</dt>
+<dd>The DatatypeConstructorDecl.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkDatatypeDecl(java.lang.String)">
+<h3>mkDatatypeDecl</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DatatypeDecl.html" title="class in io.github.cvc5">DatatypeDecl</a></span>&nbsp;<span class="element-name">mkDatatypeDecl</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<div class="block">Create a datatype declaration.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>name</code> - The name of the datatype.</dd>
+<dt>Returns:</dt>
+<dd>The DatatypeDecl.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkDatatypeDecl(java.lang.String,boolean)">
+<h3>mkDatatypeDecl</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DatatypeDecl.html" title="class in io.github.cvc5">DatatypeDecl</a></span>&nbsp;<span class="element-name">mkDatatypeDecl</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ boolean&nbsp;isCoDatatype)</span></div>
+<div class="block">Create a datatype declaration.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>name</code> - The name of the datatype.</dd>
+<dd><code>isCoDatatype</code> - True if a codatatype is to be constructed.</dd>
+<dt>Returns:</dt>
+<dd>The DatatypeDecl.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkDatatypeDecl(java.lang.String,io.github.cvc5.Sort[])">
+<h3>mkDatatypeDecl</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DatatypeDecl.html" title="class in io.github.cvc5">DatatypeDecl</a></span>&nbsp;<span class="element-name">mkDatatypeDecl</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]&nbsp;params)</span></div>
+<div class="block">Create a datatype declaration.
+
+ Create sorts parameter with <a href="#mkParamSort(java.lang.String)"><code>mkParamSort(String)</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>name</code> - The name of the datatype.</dd>
+<dd><code>params</code> - A list of sort parameters.</dd>
+<dt>Returns:</dt>
+<dd>The DatatypeDecl.</dd>
+<dt>Note:</dt>
+<dd>This method is experimental and may change in future versions.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="mkDatatypeDecl(java.lang.String,io.github.cvc5.Sort[],boolean)">
+<h3>mkDatatypeDecl</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DatatypeDecl.html" title="class in io.github.cvc5">DatatypeDecl</a></span>&nbsp;<span class="element-name">mkDatatypeDecl</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]&nbsp;params,
+ boolean&nbsp;isCoDatatype)</span></div>
+<div class="block">Create a datatype declaration.
+
+ Create sorts parameter with <a href="#mkParamSort(java.lang.String)"><code>mkParamSort(String)</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>name</code> - The name of the datatype.</dd>
+<dd><code>params</code> - A list of sort parameters.</dd>
+<dd><code>isCoDatatype</code> - True if a codatatype is to be constructed.</dd>
+<dt>Returns:</dt>
+<dd>The DatatypeDecl.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getPointer()">
+<h3>getPointer</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getPointer</span>()</div>
+<div class="block">Return the raw native pointer.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the pointer value</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="deletePointer()">
+<h3>deletePointer</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deletePointer</span>()</div>
+<div class="block">Free the native resource associated with this pointer.
+ <p>
+ This method should be called to explicitly clean up the underlying native resource.
+ It removes this instance from the <code>Context</code>, then invokes the subclass-defined
+ <a href="#deletePointer(long)"><code>deletePointer(long)</code></a> method to perform the actual cleanup.
+ </p></div>
+</section>
+</li>
+<li>
+<section class="detail" id="toString()">
+<h3>toString</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="block">Return a string representation of the pointer.</div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Returns:</dt>
+<dd>a string representation of the pointer</dd>
+</dl>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+<!-- ========= END OF CLASS DATA ========= -->
+</main>
+</div>
+</div>
+</body>
+</html>
