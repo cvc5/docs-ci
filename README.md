@@ -1,11 +1,11 @@
 
 
-* [Documentation for main](docs-main/) (built from [d81b999](https://github.com/cvc5/cvc5/commit/d81b999) @ [main](https://github.com/cvc5/cvc5/tree/main), Feb Tue 03, 20:51 UTC)
+* [Documentation for main](docs-main/) (built from [4928d54](https://github.com/cvc5/cvc5/commit/4928d54) @ [main](https://github.com/cvc5/cvc5/tree/main), Feb Tue 03, 20:55 UTC)
 
 ***
 
 
-* [Documentation for main](docs-main/) (built from [d81b999](https://github.com/cvc5/cvc5/commit/d81b999) @ [main](https://github.com/cvc5/cvc5/tree/main), now)
+* [Documentation for main](docs-main/) (built from [4928d54](https://github.com/cvc5/cvc5/commit/4928d54) @ [main](https://github.com/cvc5/cvc5/tree/main), now)
 * [Documentation for PR #12411](docs-pr12411/) (built from [2501d4b](https://github.com/cvc5/cvc5/commit/2501d4b) @ [PR #12411](https://github.com/cvc5/cvc5/pull/12411), 4 hours ago)
 * [Documentation for PR #12410](docs-pr12410/) (built from [66bbc2b](https://github.com/cvc5/cvc5/commit/66bbc2b) @ [PR #12410](https://github.com/cvc5/cvc5/pull/12410), 5 hours ago)
 * [Documentation for PR #12409](docs-pr12409/) (built from [3ea4184](https://github.com/cvc5/cvc5/commit/3ea4184) @ [PR #12409](https://github.com/cvc5/cvc5/pull/12409), 6 hours ago)

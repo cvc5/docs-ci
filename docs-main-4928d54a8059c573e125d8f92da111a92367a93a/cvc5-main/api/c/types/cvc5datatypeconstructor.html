@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cvc5DatatypeConstructor &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Cvc5DatatypeConstructorDecl" href="cvc5datatypeconstructordecl.html" />
+    <link rel="prev" title="Cvc5DatatypeDecl" href="cvc5datatypedecl.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../cpp/cpp.html">C++ API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../c.html">C API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5.html">Cvc5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5command.html">Cvc5Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatype.html">Cvc5Datatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypedecl.html">Cvc5DatatypeDecl</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Cvc5DatatypeConstructor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv423Cvc5DatatypeConstructor"><code class="docutils literal notranslate"><span class="pre">Cvc5DatatypeConstructor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv417cvc5_dt_cons_copy23Cvc5DatatypeConstructor"><code class="docutils literal notranslate"><span class="pre">cvc5_dt_cons_copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv420cvc5_dt_cons_release23Cvc5DatatypeConstructor"><code class="docutils literal notranslate"><span class="pre">cvc5_dt_cons_release()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv421cvc5_dt_cons_is_equal23Cvc5DatatypeConstructor23Cvc5DatatypeConstructor"><code class="docutils literal notranslate"><span class="pre">cvc5_dt_cons_is_equal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv421cvc5_dt_cons_get_name23Cvc5DatatypeConstructor"><code class="docutils literal notranslate"><span class="pre">cvc5_dt_cons_get_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv421cvc5_dt_cons_get_term23Cvc5DatatypeConstructor"><code class="docutils literal notranslate"><span class="pre">cvc5_dt_cons_get_term()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv434cvc5_dt_cons_get_instantiated_term23Cvc5DatatypeConstructor8Cvc5Sort"><code class="docutils literal notranslate"><span class="pre">cvc5_dt_cons_get_instantiated_term()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv428cvc5_dt_cons_get_tester_term23Cvc5DatatypeConstructor"><code class="docutils literal notranslate"><span class="pre">cvc5_dt_cons_get_tester_term()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv430cvc5_dt_cons_get_num_selectors23Cvc5DatatypeConstructor"><code class="docutils literal notranslate"><span class="pre">cvc5_dt_cons_get_num_selectors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv425cvc5_dt_cons_get_selector23Cvc5DatatypeConstructor6size_t"><code class="docutils literal notranslate"><span class="pre">cvc5_dt_cons_get_selector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv433cvc5_dt_cons_get_selector_by_name23Cvc5DatatypeConstructorPKc"><code class="docutils literal notranslate"><span class="pre">cvc5_dt_cons_get_selector_by_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv422cvc5_dt_cons_to_string23Cvc5DatatypeConstructor"><code class="docutils literal notranslate"><span class="pre">cvc5_dt_cons_to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv417cvc5_dt_cons_hash23Cvc5DatatypeConstructor"><code class="docutils literal notranslate"><span class="pre">cvc5_dt_cons_hash()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypeconstructordecl.html">Cvc5DatatypeConstructorDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypeselector.html">Cvc5DatatypeSelector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5grammar.html">Cvc5Grammar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5inputparser.html">Cvc5InputParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5op.html">Cvc5Op</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5proof.html">Cvc5Proof</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5result.html">Cvc5Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5sort.html">Cvc5Sort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5statistics.html">Cvc5Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5symbolmanager.html">Cvc5SymbolManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5synthresult.html">Cvc5SynthResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5term.html">Cvc5Term</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5termmanager.html">Cvc5TermManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../structs/cvc5optioninfo.html">Cvc5OptionInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../structs/cvc5plugin.html">Cvc5Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5kind.html">Cvc5Kind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5sortkind.html">Cvc5SortKind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5roundingmode.html">Cvc5RoundingMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5unknownexplanation.html">Cvc5UnknownExplanation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/modes.html">Modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#types">Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#structs">Structs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#enums">Enums</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/python.html">Python API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../c.html">C API</a></li>
+      <li class="breadcrumb-item active">Cvc5DatatypeConstructor</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cvc5datatypeconstructor">
+<h1>Cvc5DatatypeConstructor<a class="headerlink" href="#cvc5datatypeconstructor" title="Link to this heading"></a></h1>
+<p>This struct represents a datatype constructor. Datatype constructors are
+specified by a <a class="reference internal" href="cvc5datatypeconstructordecl.html#_CPPv427Cvc5DatatypeConstructorDecl" title="Cvc5DatatypeConstructorDecl"><code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">datatype</span> <span class="pre">constructor</span> <span class="pre">declaration</span></code></a> via <cite>cvc5_mk_dt_cons_decl()</cite> when
+constructing a datatype sort and can be retrieved from a
+<a class="reference internal" href="cvc5datatype.html#_CPPv412Cvc5Datatype" title="Cvc5Datatype"><code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">Cvc5Datatype</span></code></a> via <a class="reference internal" href="cvc5datatype.html#_CPPv423cvc5_dt_get_constructor12Cvc5Datatype6size_t" title="cvc5_dt_get_constructor"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5_dt_get_constructor()</span></code></a>.</p>
+<div class="hide-toctree docutils container">
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<hr class="docutils" />
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv423Cvc5DatatypeConstructor">
+<span id="_CPPv323Cvc5DatatypeConstructor"></span><span id="_CPPv223Cvc5DatatypeConstructor"></span><span id="Cvc5DatatypeConstructor"></span><span class="target" id="cvc5_8h_1a0ebd45a9602d1ca444c9964af346d128"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">cvc5_dt_cons_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Cvc5DatatypeConstructor</span></span></span><a class="headerlink" href="#_CPPv423Cvc5DatatypeConstructor" title="Link to this definition"></a><br /></dt>
+<dd><p>A cvc5 datatype constructor. </p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv417cvc5_dt_cons_copy23Cvc5DatatypeConstructor">
+<span id="_CPPv317cvc5_dt_cons_copy23Cvc5DatatypeConstructor"></span><span id="_CPPv217cvc5_dt_cons_copy23Cvc5DatatypeConstructor"></span><span id="cvc5_dt_cons_copy__Cvc5DatatypeConstructor"></span><span class="target" id="group__c__cvc5dtcons_1ga60bb60012c8d6e4541930ea8e3ebae07"></span><a class="reference internal" href="#_CPPv423Cvc5DatatypeConstructor" title="Cvc5DatatypeConstructor"><span class="n"><span class="pre">Cvc5DatatypeConstructor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_dt_cons_copy</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv423Cvc5DatatypeConstructor" title="Cvc5DatatypeConstructor"><span class="n"><span class="pre">Cvc5DatatypeConstructor</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">cons</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417cvc5_dt_cons_copy23Cvc5DatatypeConstructor" title="Link to this definition"></a><br /></dt>
+<dd><p>Make copy of datatype constructor, increases reference counter of <code class="docutils literal notranslate"><span class="pre">cons</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step is optional and allows users to manage resources in a more fine-grained manner. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cons</strong> – The datatype constructor to copy. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The same datatype constructor with its reference count increased by one.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv420cvc5_dt_cons_release23Cvc5DatatypeConstructor">
+<span id="_CPPv320cvc5_dt_cons_release23Cvc5DatatypeConstructor"></span><span id="_CPPv220cvc5_dt_cons_release23Cvc5DatatypeConstructor"></span><span id="cvc5_dt_cons_release__Cvc5DatatypeConstructor"></span><span class="target" id="group__c__cvc5dtcons_1gaadfe9118034fdb8cc8d69c990313b755"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_dt_cons_release</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv423Cvc5DatatypeConstructor" title="Cvc5DatatypeConstructor"><span class="n"><span class="pre">Cvc5DatatypeConstructor</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">cons</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cvc5_dt_cons_release23Cvc5DatatypeConstructor" title="Link to this definition"></a><br /></dt>
+<dd><p>Release copy of datatype constructor, decrements reference counter of <code class="docutils literal notranslate"><span class="pre">cons</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step is optional and allows users to release resources in a more fine-grained manner. Further, any API function that returns a Cvc5DatatypeConstructor returns a copy that is owned by the callee of the function and thus, can be released. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cons</strong> – The datatype constructor to release.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv421cvc5_dt_cons_is_equal23Cvc5DatatypeConstructor23Cvc5DatatypeConstructor">
+<span id="_CPPv321cvc5_dt_cons_is_equal23Cvc5DatatypeConstructor23Cvc5DatatypeConstructor"></span><span id="_CPPv221cvc5_dt_cons_is_equal23Cvc5DatatypeConstructor23Cvc5DatatypeConstructor"></span><span id="cvc5_dt_cons_is_equal__Cvc5DatatypeConstructor.Cvc5DatatypeConstructor"></span><span class="target" id="group__c__cvc5dtcons_1ga0189e344797d9a246f2929f1d7199ece"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_dt_cons_is_equal</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv423Cvc5DatatypeConstructor" title="Cvc5DatatypeConstructor"><span class="n"><span class="pre">Cvc5DatatypeConstructor</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <a class="reference internal" href="#_CPPv423Cvc5DatatypeConstructor" title="Cvc5DatatypeConstructor"><span class="n"><span class="pre">Cvc5DatatypeConstructor</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421cvc5_dt_cons_is_equal23Cvc5DatatypeConstructor23Cvc5DatatypeConstructor" title="Link to this definition"></a><br /></dt>
+<dd><p>Compare two datatype constructors for structural equality. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – The first datatype constructor. </p></li>
+<li><p><strong>b</strong> – The second datatype constructor. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the datatype constructors are equal. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv421cvc5_dt_cons_get_name23Cvc5DatatypeConstructor">
+<span id="_CPPv321cvc5_dt_cons_get_name23Cvc5DatatypeConstructor"></span><span id="_CPPv221cvc5_dt_cons_get_name23Cvc5DatatypeConstructor"></span><span id="cvc5_dt_cons_get_name__Cvc5DatatypeConstructor"></span><span class="target" id="group__c__cvc5dtcons_1gabaa4a40cde5023726502a34328ad01df"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_dt_cons_get_name</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv423Cvc5DatatypeConstructor" title="Cvc5DatatypeConstructor"><span class="n"><span class="pre">Cvc5DatatypeConstructor</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">cons</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421cvc5_dt_cons_get_name23Cvc5DatatypeConstructor" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the name of a given datatype constructor. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The returned char* pointer is only valid until the next call to this function. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cons</strong> – The datatype constructor. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The name. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv421cvc5_dt_cons_get_term23Cvc5DatatypeConstructor">
+<span id="_CPPv321cvc5_dt_cons_get_term23Cvc5DatatypeConstructor"></span><span id="_CPPv221cvc5_dt_cons_get_term23Cvc5DatatypeConstructor"></span><span id="cvc5_dt_cons_get_term__Cvc5DatatypeConstructor"></span><span class="target" id="group__c__cvc5dtcons_1gaf9315b2ac97460a54132fe17821cae31"></span><a class="reference internal" href="cvc5term.html#_CPPv48Cvc5Term" title="Cvc5Term"><span class="n"><span class="pre">Cvc5Term</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_dt_cons_get_term</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv423Cvc5DatatypeConstructor" title="Cvc5DatatypeConstructor"><span class="n"><span class="pre">Cvc5DatatypeConstructor</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">cons</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421cvc5_dt_cons_get_term23Cvc5DatatypeConstructor" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the constructor term of a given datatype constructor.</p>
+<p>Datatype constructors are a special class of function-like terms whose sort is datatype constructor (<a class="reference internal" href="cvc5sort.html#group__c__cvc5sort_1gadf02c967b23d8144246b5618a431bfd3"><span class="std std-ref">cvc5_sort_is_dt_constructor()</span></a>). All datatype constructors, including nullary ones, should be used as the first argument to Terms whose kind is <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fa53aa8d906e44e99ade24aeebf0112fa5"><span class="std std-ref">CVC5_KIND_APPLY_CONSTRUCTOR</span></a>. For example, the nil list can be constructed by <code class="docutils literal notranslate"><span class="pre">cvc5_mk_term(CVC5_KIND_APPLY_CONSTRUCTOR,</span> <span class="pre">{t})</span></code>, where <code class="docutils literal notranslate"><span class="pre">t</span></code> is the term returned by this function.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function should not be used for parametric datatypes. Instead, use the function <a class="reference internal" href="#group__c__cvc5dtcons_1gaec9821d840db73c3c9ff47f697939a59"><span class="std std-ref">cvc5_dt_cons_get_instantiated_term()</span></a> below.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cons</strong> – The datatype constructor. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The constructor term. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv434cvc5_dt_cons_get_instantiated_term23Cvc5DatatypeConstructor8Cvc5Sort">
+<span id="_CPPv334cvc5_dt_cons_get_instantiated_term23Cvc5DatatypeConstructor8Cvc5Sort"></span><span id="_CPPv234cvc5_dt_cons_get_instantiated_term23Cvc5DatatypeConstructor8Cvc5Sort"></span><span id="cvc5_dt_cons_get_instantiated_term__Cvc5DatatypeConstructor.Cvc5Sort"></span><span class="target" id="group__c__cvc5dtcons_1gaec9821d840db73c3c9ff47f697939a59"></span><a class="reference internal" href="cvc5term.html#_CPPv48Cvc5Term" title="Cvc5Term"><span class="n"><span class="pre">Cvc5Term</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_dt_cons_get_instantiated_term</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv423Cvc5DatatypeConstructor" title="Cvc5DatatypeConstructor"><span class="n"><span class="pre">Cvc5DatatypeConstructor</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">cons</span></span>, <a class="reference internal" href="cvc5sort.html#_CPPv48Cvc5Sort" title="Cvc5Sort"><span class="n"><span class="pre">Cvc5Sort</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">sort</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv434cvc5_dt_cons_get_instantiated_term23Cvc5DatatypeConstructor8Cvc5Sort" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the constructor term of this datatype constructor whose return type is <code class="docutils literal notranslate"><span class="pre">sort</span></code>.</p>
+<p>This function is intended to be used on constructors of parametric datatypes and can be seen as returning the constructor term that has been explicitly cast to the given sort.</p>
+<p>This function is required for constructors of parametric datatypes whose return type cannot be determined by type inference. For example, given:</p>
+<p><div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">declare-datatype</span> <span class="n">List</span>
+    (<span class="n">par</span> (<span class="n">T</span>) ((<span class="n">nil</span>) (<span class="n">cons</span> (<span class="n">head</span> <span class="n">T</span>) (<span class="n">tail</span> (<span class="n">List</span> <span class="n">T</span>))))))
+</pre></div>
+</div>
+</p>
+<p>The type of nil terms must be provided by the user. In SMT version 2.6, this is done via the syntax for qualified identifiers:</p>
+<p><div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">as</span> <span class="n">nil</span> (<span class="n">List</span> <span class="na">Int</span>))
+</pre></div>
+</div>
+</p>
+<p>This function is equivalent of applying the above, where the datatype constructor is the one corresponding to <code class="docutils literal notranslate"><span class="pre">nil</span></code>, and <code class="docutils literal notranslate"><span class="pre">sort</span></code> is <code class="docutils literal notranslate"><span class="pre">(List</span> <span class="pre">Int)</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The returned constructor term <code class="docutils literal notranslate"><span class="pre">t</span></code> is used to construct the above (nullary) application of <code class="docutils literal notranslate"><span class="pre">nil</span></code> with <code class="docutils literal notranslate"><span class="pre">cvc5_mk_term(CVC5_KIND_APPLY_CONSTRUCTOR,</span> <span class="pre">{t})</span></code>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cons</strong> – The datatype constructor. </p></li>
+<li><p><strong>sort</strong> – The desired return sort of the constructor. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The constructor term. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv428cvc5_dt_cons_get_tester_term23Cvc5DatatypeConstructor">
+<span id="_CPPv328cvc5_dt_cons_get_tester_term23Cvc5DatatypeConstructor"></span><span id="_CPPv228cvc5_dt_cons_get_tester_term23Cvc5DatatypeConstructor"></span><span id="cvc5_dt_cons_get_tester_term__Cvc5DatatypeConstructor"></span><span class="target" id="group__c__cvc5dtcons_1ga8f1fe355fb1da0558d93feaf801f4273"></span><a class="reference internal" href="cvc5term.html#_CPPv48Cvc5Term" title="Cvc5Term"><span class="n"><span class="pre">Cvc5Term</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_dt_cons_get_tester_term</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv423Cvc5DatatypeConstructor" title="Cvc5DatatypeConstructor"><span class="n"><span class="pre">Cvc5DatatypeConstructor</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">cons</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428cvc5_dt_cons_get_tester_term23Cvc5DatatypeConstructor" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the tester term of a given datatype constructor.</p>
+<p>Similar to constructors, testers are a class of function-like terms of tester sort (<a class="reference internal" href="cvc5sort.html#group__c__cvc5sort_1gadf02c967b23d8144246b5618a431bfd3"><span class="std std-ref">cvc5_sort_is_dt_constructor()</span></a>) which should be used as the first argument of Terms of kind <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fa1274fae18554c824629c9b198dc6cc56"><span class="std std-ref">CVC5_KIND_APPLY_TESTER</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cons</strong> – The datatype constructor. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The tester term. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv430cvc5_dt_cons_get_num_selectors23Cvc5DatatypeConstructor">
+<span id="_CPPv330cvc5_dt_cons_get_num_selectors23Cvc5DatatypeConstructor"></span><span id="_CPPv230cvc5_dt_cons_get_num_selectors23Cvc5DatatypeConstructor"></span><span id="cvc5_dt_cons_get_num_selectors__Cvc5DatatypeConstructor"></span><span class="target" id="group__c__cvc5dtcons_1ga0c4dcd5848c0ba311c5f02c1a475637c"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_dt_cons_get_num_selectors</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv423Cvc5DatatypeConstructor" title="Cvc5DatatypeConstructor"><span class="n"><span class="pre">Cvc5DatatypeConstructor</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">cons</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430cvc5_dt_cons_get_num_selectors23Cvc5DatatypeConstructor" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the number of selectors of a given datatype constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cons</strong> – The datatype constructor. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of selectors. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv425cvc5_dt_cons_get_selector23Cvc5DatatypeConstructor6size_t">
+<span id="_CPPv325cvc5_dt_cons_get_selector23Cvc5DatatypeConstructor6size_t"></span><span id="_CPPv225cvc5_dt_cons_get_selector23Cvc5DatatypeConstructor6size_t"></span><span id="cvc5_dt_cons_get_selector__Cvc5DatatypeConstructor.s"></span><span class="target" id="group__c__cvc5dtcons_1ga2fc45cca58d49b70875312cd6d64c37c"></span><a class="reference internal" href="cvc5datatypeselector.html#_CPPv420Cvc5DatatypeSelector" title="Cvc5DatatypeSelector"><span class="n"><span class="pre">Cvc5DatatypeSelector</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_dt_cons_get_selector</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv423Cvc5DatatypeConstructor" title="Cvc5DatatypeConstructor"><span class="n"><span class="pre">Cvc5DatatypeConstructor</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">cons</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">index</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425cvc5_dt_cons_get_selector23Cvc5DatatypeConstructor6size_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the selector at index <code class="docutils literal notranslate"><span class="pre">i</span></code> of a given datatype constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cons</strong> – The datatype constructor. </p></li>
+<li><p><strong>index</strong> – The index of the selector. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The i^th DatatypeSelector. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv433cvc5_dt_cons_get_selector_by_name23Cvc5DatatypeConstructorPKc">
+<span id="_CPPv333cvc5_dt_cons_get_selector_by_name23Cvc5DatatypeConstructorPKc"></span><span id="_CPPv233cvc5_dt_cons_get_selector_by_name23Cvc5DatatypeConstructorPKc"></span><span id="cvc5_dt_cons_get_selector_by_name__Cvc5DatatypeConstructor.cCP"></span><span class="target" id="group__c__cvc5dtcons_1ga23db48d583d4d84188f8b924bb7d4c05"></span><a class="reference internal" href="cvc5datatypeselector.html#_CPPv420Cvc5DatatypeSelector" title="Cvc5DatatypeSelector"><span class="n"><span class="pre">Cvc5DatatypeSelector</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_dt_cons_get_selector_by_name</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv423Cvc5DatatypeConstructor" title="Cvc5DatatypeConstructor"><span class="n"><span class="pre">Cvc5DatatypeConstructor</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">cons</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv433cvc5_dt_cons_get_selector_by_name23Cvc5DatatypeConstructorPKc" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the datatype selector with the given name. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a linear search through the selectors, so in case of multiple, similarly-named selectors, the first is returned. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cons</strong> – The datatype constructor. </p></li>
+<li><p><strong>name</strong> – The name of the datatype selector. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The first datatype selector with the given name. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv422cvc5_dt_cons_to_string23Cvc5DatatypeConstructor">
+<span id="_CPPv322cvc5_dt_cons_to_string23Cvc5DatatypeConstructor"></span><span id="_CPPv222cvc5_dt_cons_to_string23Cvc5DatatypeConstructor"></span><span id="cvc5_dt_cons_to_string__Cvc5DatatypeConstructor"></span><span class="target" id="group__c__cvc5dtcons_1gaed213d47655844c858ebe2b3dc759f54"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_dt_cons_to_string</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv423Cvc5DatatypeConstructor" title="Cvc5DatatypeConstructor"><span class="n"><span class="pre">Cvc5DatatypeConstructor</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">cons</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422cvc5_dt_cons_to_string23Cvc5DatatypeConstructor" title="Link to this definition"></a><br /></dt>
+<dd><p>Get a string representation of a given datatype constructor. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The returned char* pointer is only valid until the next call to this function. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cons</strong> – The datatype constructor. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The string representation. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv417cvc5_dt_cons_hash23Cvc5DatatypeConstructor">
+<span id="_CPPv317cvc5_dt_cons_hash23Cvc5DatatypeConstructor"></span><span id="_CPPv217cvc5_dt_cons_hash23Cvc5DatatypeConstructor"></span><span id="cvc5_dt_cons_hash__Cvc5DatatypeConstructor"></span><span class="target" id="group__c__cvc5dtcons_1ga4be90faeadd289f0327cdf90cb867234"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_dt_cons_hash</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv423Cvc5DatatypeConstructor" title="Cvc5DatatypeConstructor"><span class="n"><span class="pre">Cvc5DatatypeConstructor</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">cons</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417cvc5_dt_cons_hash23Cvc5DatatypeConstructor" title="Link to this definition"></a><br /></dt>
+<dd><p>Compute the hash value of a datatype constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cons</strong> – The datatype constructor. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The hash value of the datatype constructor. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cvc5datatypedecl.html" class="btn btn-neutral float-left" title="Cvc5DatatypeDecl" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cvc5datatypeconstructordecl.html" class="btn btn-neutral float-right" title="Cvc5DatatypeConstructorDecl" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
