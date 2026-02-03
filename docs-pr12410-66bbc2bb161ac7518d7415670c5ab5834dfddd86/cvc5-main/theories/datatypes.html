@@ -1,0 +1,446 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Theory Reference: Datatypes &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../static/jquery.js?v=5d32c60e"></script>
+      <script src="../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../static/doctools.js?v=9bcbadda"></script>
+      <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Theory Reference: Finite Fields" href="finite_field.html" />
+    <link rel="prev" title="Theory Reference: Bags" href="bags.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="theories.html">Theory References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="theories.html#standardized-theories">Standardized theories</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="theories.html#non-standard-or-extended-theories">Non-standard or extended theories</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="bags.html">Theory Reference: Bags</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Theory Reference: Datatypes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#logic">Logic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#syntax">Syntax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#semantics">Semantics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-declarations">Example Declarations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datatype-updaters">Datatype Updaters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parametric-datatypes">Parametric Datatypes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tuples">Tuples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#codatatypes">Codatatypes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#syntax-api">Syntax/API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="finite_field.html">Theory Reference: Finite Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="separation-logic.html">Theory Reference: Separation Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sequences.html">Theory Reference: Sequences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sets-and-relations.html">Theory Reference: Sets and Relations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strings.html">Theory Reference: Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transcendentals.html">Theory Reference: Transcendentals</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="theories.html">Theory References</a></li>
+      <li class="breadcrumb-item active">Theory Reference: Datatypes</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="theory-reference-datatypes">
+<h1>Theory Reference: Datatypes<a class="headerlink" href="#theory-reference-datatypes" title="Link to this heading"></a></h1>
+<p>cvc5 implements some extensions to the support for datatypes in SMT-LIB 2.</p>
+<section id="logic">
+<h2>Logic<a class="headerlink" href="#logic" title="Link to this heading"></a></h2>
+<p>To enable cvc5’s decision procedure for datatypes, include <code class="docutils literal notranslate"><span class="pre">DT</span></code> in the logic:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">set-logic</span> <span class="n">QF_DT</span>)
+</pre></div>
+</div>
+<p>Alternatively, use the <code class="docutils literal notranslate"><span class="pre">ALL</span></code> logic:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">set-logic</span> <span class="n">ALL</span>)
+</pre></div>
+</div>
+</section>
+<section id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Link to this heading"></a></h2>
+<p>cvc5 supports the following syntax for declaring mutually recursive blocks of
+datatypes in <code class="docutils literal notranslate"><span class="pre">*.smt2</span></code> input files in the smt lib 2.6 format:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">declare-datatypes</span> ((<span class="n">D1</span> <span class="n">n1</span>) <span class="n">...</span> (<span class="n">Dk</span> <span class="n">nk</span>))
+ (((<span class="n">C1</span> (<span class="n">S11</span> <span class="n">T1</span>) <span class="n">...</span> (<span class="n">S1i</span> <span class="n">Ti</span>)) <span class="n">...</span> (<span class="n">Cj</span> <span class="n">...</span> ))
+  <span class="n">...</span>
+  ((<span class="n">...</span>) <span class="n">...</span> (<span class="n">...</span>)))
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">D1</span> <span class="pre">...</span> <span class="pre">Dk</span></code> are datatype types, <code class="docutils literal notranslate"><span class="pre">C1</span> <span class="pre">...</span> <span class="pre">Cj</span></code> are the constructors for
+datatype <code class="docutils literal notranslate"><span class="pre">D1</span></code>,
+<code class="docutils literal notranslate"><span class="pre">S11</span> <span class="pre">...</span> <span class="pre">S1i</span></code> are the selectors (or “destructors”) of constructor <code class="docutils literal notranslate"><span class="pre">C1</span></code>, and
+each <code class="docutils literal notranslate"><span class="pre">T1</span> <span class="pre">...</span> <span class="pre">Ti</span></code> is a previously declared type or one of <code class="docutils literal notranslate"><span class="pre">D1</span> <span class="pre">...</span> <span class="pre">Dk</span></code>.
+The numbers <code class="docutils literal notranslate"><span class="pre">n1</span> <span class="pre">...</span> <span class="pre">nk</span></code> denote the number of type
+parameters for the datatype, where <code class="docutils literal notranslate"><span class="pre">0</span></code> is used for non-parametric datatypes.</p>
+<p>In addition to declaring symbols for constructors and selectors, the above
+command also allows for tester (or “discriminator”) indexed symbols of the form
+<code class="docutils literal notranslate"><span class="pre">(_</span> <span class="pre">is</span> <span class="pre">C)</span></code> for each constructor <code class="docutils literal notranslate"><span class="pre">C</span></code>, which are unary predicates which
+evaluate to true iff their argument has top-symbol <code class="docutils literal notranslate"><span class="pre">C</span></code>. It also allows for
+updater indexed symbols of the form <code class="docutils literal notranslate"><span class="pre">(_</span> <span class="pre">update</span> <span class="pre">Sij)</span></code> for each selector <code class="docutils literal notranslate"><span class="pre">Sij</span></code>,
+whose semantics are described below.</p>
+</section>
+<section id="semantics">
+<h2>Semantics<a class="headerlink" href="#semantics" title="Link to this heading"></a></h2>
+<p>The decision procedure for inductive datatypes is described in
+<span id="id1">[<a class="reference internal" href="../references.html#id8" title="Clark W. Barrett, Igor Shikanian, and Cesare Tinelli. An abstract decision procedure for a theory of inductive data types. J. Satisf. Boolean Model. Comput., 3(1-2):21–46, 2007. doi:10.3233/sat190028.">BST07</a>]</span>.</p>
+</section>
+<section id="example-declarations">
+<h2>Example Declarations<a class="headerlink" href="#example-declarations" title="Link to this heading"></a></h2>
+<p>An enumeration:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">declare-datatypes</span> ((<span class="n">Color</span> <span class="m">0</span>))
+ (((<span class="n">Red</span>) (<span class="n">Black</span>))))
+</pre></div>
+</div>
+<p>A List of <code class="docutils literal notranslate"><span class="pre">Int</span></code> with <code class="docutils literal notranslate"><span class="pre">cons</span></code> and <code class="docutils literal notranslate"><span class="pre">nil</span></code> as constructors:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">declare-datatypes</span> ((<span class="n">list</span> <span class="m">0</span>))
+ (((<span class="n">cons</span> (<span class="n">head</span> <span class="na">Int</span>) (<span class="n">tail</span> <span class="n">list</span>)) (<span class="n">nil</span>))))
+</pre></div>
+</div>
+<p>A parametric List of T’s:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">declare-datatypes</span> ((<span class="n">list</span> <span class="m">1</span>))
+ ((<span class="n">par</span> (<span class="n">T</span>) ((<span class="n">cons</span> (<span class="n">head</span> <span class="n">T</span>) (<span class="n">tail</span> (<span class="n">list</span> <span class="n">T</span>))) (<span class="n">nil</span>)))))
+</pre></div>
+</div>
+<p>Mutual recursion:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">declare-datatypes</span> ((<span class="n">list</span> <span class="m">0</span>) (<span class="n">tree</span> <span class="m">0</span>))
+ (((<span class="n">cons</span> (<span class="n">head</span> <span class="n">tree</span>) (<span class="n">tail</span> <span class="n">list</span>)) (<span class="n">nil</span>))
+  ((<span class="n">node</span> (<span class="n">data</span> <span class="na">Int</span>) (<span class="n">children</span> <span class="n">list</span>)))))
+</pre></div>
+</div>
+<p>A (non-recursive) record type:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">declare-datatypes</span> ((<span class="n">record</span> <span class="m">0</span>))
+ (((<span class="n">rec</span> (<span class="n">fname</span> <span class="na">String</span>) (<span class="n">lname</span> <span class="na">String</span>) (<span class="n">id</span> <span class="na">Int</span>)))))
+</pre></div>
+</div>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">declare-datatypes</span> ((<span class="n">list</span> <span class="m">0</span>))
+   (((<span class="n">cons</span> (<span class="n">head</span> <span class="na">Int</span>) (<span class="n">tail</span> <span class="n">list</span>)) (<span class="n">nil</span>))))
+ (<span class="k">declare-const</span> <span class="n">a</span> <span class="n">list</span>)
+ (<span class="k">declare-const</span> <span class="n">b</span> <span class="n">list</span>)
+ (<span class="k">assert</span> (<span class="o">and</span> (<span class="o">=</span> (<span class="n">tail</span> <span class="n">a</span>) <span class="n">b</span>) (<span class="o">not</span> ((<span class="na">_</span> <span class="n">is</span> <span class="n">nil</span>) <span class="n">b</span>)) (<span class="o">&gt;</span> (<span class="n">head</span> <span class="n">b</span>) <span class="m">0</span>)))
+ (<span class="k">check-sat</span>)
+</pre></div>
+</div>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">declare-datatypes</span> ((<span class="n">record</span> <span class="m">0</span>))
+  (((<span class="n">rec</span> (<span class="n">fname</span> <span class="na">String</span>) (<span class="n">lname</span> <span class="na">String</span>) (<span class="n">id</span> <span class="na">Int</span>)))))
+(<span class="k">declare-const</span> <span class="n">x</span> <span class="n">record</span>)
+(<span class="k">assert</span> (<span class="o">and</span> (<span class="o">=</span> (<span class="n">fname</span> <span class="n">x</span>) <span class="s">&quot;John&quot;</span>) (<span class="o">=</span> (<span class="n">lname</span> <span class="n">x</span>) <span class="s">&quot;Smith&quot;</span>)))
+(<span class="k">check-sat</span>)
+</pre></div>
+</div>
+</section>
+<section id="datatype-updaters">
+<h2>Datatype Updaters<a class="headerlink" href="#datatype-updaters" title="Link to this heading"></a></h2>
+<p>Datatype updaters are a (non-standard) extension available in datatype logics.
+The term:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>((<span class="na">_</span> <span class="n">update</span> <span class="n">Sij</span>) <span class="n">t</span> <span class="n">u</span>)
+</pre></div>
+</div>
+<p>is equivalent to replacing the field of <code class="docutils literal notranslate"><span class="pre">t</span></code> denoted by the selector <code class="docutils literal notranslate"><span class="pre">Sij</span></code>
+with the value <code class="docutils literal notranslate"><span class="pre">u</span></code>, or <code class="docutils literal notranslate"><span class="pre">t</span></code> itself if that selector does not apply to the
+constructor symbol of <code class="docutils literal notranslate"><span class="pre">t</span></code>.  For example, for the list datatype, we have that:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>((<span class="na">_</span> <span class="n">update</span> <span class="n">head</span>) (<span class="n">cons</span> <span class="m">4</span> <span class="n">nil</span>) <span class="m">7</span>) <span class="o">=</span> (<span class="n">cons</span> <span class="m">7</span> <span class="n">nil</span>)
+((<span class="na">_</span> <span class="n">update</span> <span class="n">tail</span>) (<span class="n">cons</span> <span class="m">4</span> <span class="n">nil</span>) (<span class="n">cons</span> <span class="m">5</span> <span class="n">nil</span>)) <span class="o">=</span> (<span class="n">cons</span> <span class="m">4</span> (<span class="n">cons</span> <span class="m">5</span> <span class="n">nil</span>))
+((<span class="na">_</span> <span class="n">update</span> <span class="n">head</span>) <span class="n">nil</span> <span class="m">5</span>) <span class="o">=</span> <span class="n">nil</span>
+</pre></div>
+</div>
+<p>Note that datatype updaters can be seen as syntax sugar for an if-then-else
+term that checks whether the constructor of <code class="docutils literal notranslate"><span class="pre">t</span></code> is the same as the one
+associated with the given selector.</p>
+</section>
+<section id="parametric-datatypes">
+<h2>Parametric Datatypes<a class="headerlink" href="#parametric-datatypes" title="Link to this heading"></a></h2>
+<p>Instances of parametric datatypes must have their arguments instantiated with
+concrete types. For instance, in the example:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">declare-datatypes</span> ((<span class="n">list</span> <span class="m">1</span>)) ((<span class="n">par</span> (<span class="n">T</span>) (<span class="n">cons</span> (<span class="n">head</span> <span class="n">T</span>) (<span class="n">tail</span> (<span class="n">list</span> <span class="n">T</span>))) (<span class="n">nil</span>))))
+</pre></div>
+</div>
+<p>To declare a list of <code class="docutils literal notranslate"><span class="pre">Int</span></code>, use the command:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">declare-const</span> <span class="n">f</span> (<span class="n">list</span> <span class="na">Int</span>))
+</pre></div>
+</div>
+<p>Use of constructors that are ambiguously typed must be cast to a concrete type,
+for instance all occurrences of <code class="docutils literal notranslate"><span class="pre">nil</span></code> for the above datatype must be cast with
+the syntax:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">as</span> <span class="n">nil</span> (<span class="n">list</span> <span class="na">Int</span>))
+</pre></div>
+</div>
+</section>
+<section id="tuples">
+<h2>Tuples<a class="headerlink" href="#tuples" title="Link to this heading"></a></h2>
+<p>Tuples are a particular instance of an inductive datatype. cvc5 supports
+special syntax for tuples as an extension of the SMT-LIB version 2 format.
+For example:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">declare-const</span> <span class="n">t</span> (<span class="na">Tuple</span> <span class="na">Int</span> <span class="na">Int</span>))
+(<span class="k">assert</span> (<span class="o">=</span> ((<span class="na">_</span> <span class="o">tuple.select</span> <span class="m">0</span>) <span class="n">t</span>) <span class="m">3</span>))
+(<span class="k">assert</span> (<span class="o">not</span> (<span class="o">=</span> <span class="n">t</span> (<span class="o">tuple</span> <span class="m">3</span> <span class="m">4</span>))))
+</pre></div>
+</div>
+</section>
+<section id="codatatypes">
+<h2>Codatatypes<a class="headerlink" href="#codatatypes" title="Link to this heading"></a></h2>
+<p>cvc5 also supports co-inductive datatypes, as described in
+<span id="id2">[<a class="reference internal" href="../references.html#id7" title="Andrew Reynolds and Jasmin Christian Blanchette. A decision procedure for (co)datatypes in SMT solvers. In Amy P. Felty and Aart Middeldorp, editors, Automated Deduction - CADE-25 - 25th International Conference on Automated Deduction, Berlin, Germany, August 1-7, 2015, Proceedings, volume 9195 of Lecture Notes in Computer Science, 197–213. Springer, 2015. doi:10.1007/978-3-319-21401-6_13.">RB15</a>]</span>.</p>
+<p>The syntax for declaring mutually recursive coinductive datatype blocks is
+identical to inductive datatypes, except that <code class="docutils literal notranslate"><span class="pre">declare-datatypes</span></code> is replaced
+by <code class="docutils literal notranslate"><span class="pre">declare-codatatypes</span></code>. For example, the following declares the type denote
+streams of <code class="docutils literal notranslate"><span class="pre">Int</span></code>:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">declare-codatatypes</span> ((<span class="n">stream</span> <span class="m">0</span>))
+ (((<span class="n">cons</span> (<span class="n">head</span> <span class="na">Int</span>) (<span class="n">tail</span> <span class="n">stream</span>)))))
+</pre></div>
+</div>
+</section>
+<section id="syntax-api">
+<h2>Syntax/API<a class="headerlink" href="#syntax-api" title="Link to this heading"></a></h2>
+<p>For the C++ API examples in the table below, we assume that we have created
+a <cite>cvc5::Solver solver</cite> object.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td></td>
+<td><p>SMTLIB language</p></td>
+<td><p>C++ API</p></td>
+</tr>
+<tr class="row-even"><td><p>Logic String</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(set-logic</span> <span class="pre">QF_DT)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">solver.setLogic(&quot;QF_DT&quot;);</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Datatype Sort</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(declare-datatype</span> <span class="pre">...)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">solver.mkDatatypeSort(...);</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Datatype Sorts</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(declare-datatypes</span> <span class="pre">...)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">std::vector&lt;Sort&gt;</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">solver.mkDatatypeSorts(...);</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Constructor</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(Ci</span> <span class="pre">&lt;Term_1&gt;,</span> <span class="pre">...,</span> <span class="pre">&lt;Term_n&gt;)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">solver.mkDatatypeSort(...);</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Datatype</span> <span class="pre">dt</span> <span class="pre">=</span> <span class="pre">s.getDatatype();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">ci</span> <span class="pre">=</span> <span class="pre">dt[i].getTerm();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">r</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::APPLY_CONSTRUCTOR,</span> <span class="pre">{ci,</span> <span class="pre">&lt;Term_1&gt;,</span> <span class="pre">...,</span> <span class="pre">&lt;Term_n&gt;});</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Selector</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(Sij</span> <span class="pre">t)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">solver.mkDatatypeSort(...);</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Datatype</span> <span class="pre">dt</span> <span class="pre">=</span> <span class="pre">s.getDatatype();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">sij</span> <span class="pre">=</span> <span class="pre">dt[i].getSelector(j).getTerm();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">r</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::APPLY_SELECTOR,</span> <span class="pre">{sij,</span> <span class="pre">t});</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Updater</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">((_</span> <span class="pre">update</span> <span class="pre">Sij)</span> <span class="pre">t</span> <span class="pre">u)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">solver.mkDatatypeSort(...);</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Datatype</span> <span class="pre">dt</span> <span class="pre">=</span> <span class="pre">s.getDatatype();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">upd</span> <span class="pre">=</span> <span class="pre">dt[i].getSelector(j).getUpdaterTerm();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">r</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::APPLY_UPDATER,</span> <span class="pre">{upd,</span> <span class="pre">t,</span> <span class="pre">u});</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Tester</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">((_</span> <span class="pre">is</span> <span class="pre">Ci)</span> <span class="pre">t)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">solver.mkDatatypeSort(...);</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Datatype</span> <span class="pre">dt</span> <span class="pre">=</span> <span class="pre">s.getDatatype();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">upd</span> <span class="pre">=</span> <span class="pre">dt[i].getTesterTerm();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">r</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::APPLY_TESTER,</span> <span class="pre">{upd,</span> <span class="pre">t,</span> <span class="pre">u});</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Tuple Sort</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(Tuple</span> <span class="pre">&lt;Sort_1&gt;,</span> <span class="pre">...,</span> <span class="pre">&lt;Sort_n&gt;)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">std::vector&lt;cvc5::Sort&gt;</span> <span class="pre">sorts</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">...</span> <span class="pre">};</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">solver.mkTupleSort(sorts);</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(declare-const</span> <span class="pre">t</span> <span class="pre">(Tuple</span> <span class="pre">Int</span> <span class="pre">Int))</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s_int</span> <span class="pre">=</span> <span class="pre">solver.getIntegerSort();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">solver.mkTupleSort({s_int,</span> <span class="pre">s_int});</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkConst(s,</span> <span class="pre">&quot;t&quot;);</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Tuple Constructor</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(tuple</span>&#160; <span class="pre">&lt;Term_1&gt;,</span> <span class="pre">...,</span> <span class="pre">&lt;Term_n&gt;)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">r</span> <span class="pre">=</span> <span class="pre">solver.mkTuple({&lt;Term_1&gt;,</span> <span class="pre">...,</span> <span class="pre">&lt;Term_n&gt;});</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Unit Tuple Sort</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">UnitTuple</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">solver.mkTupleSort({});</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Tuple Unit</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tuple.unit</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">r</span> <span class="pre">=</span> <span class="pre">solver.mkTuple({});</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Tuple Selector</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">((_</span> <span class="pre">tuple.select</span> <span class="pre">i)</span> <span class="pre">t)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">solver.mkTupleSort(sorts);</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Datatype</span> <span class="pre">dt</span> <span class="pre">=</span> <span class="pre">s.getDatatype();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">sel</span> <span class="pre">=</span> <span class="pre">dt[0].getSelector(i).getTerm();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">r</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::APPLY_SELECTOR,</span> <span class="pre">{sel,</span> <span class="pre">t});</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Tuple Updater</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">((_</span> <span class="pre">tuple.update</span> <span class="pre">i)</span> <span class="pre">t</span> <span class="pre">u)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">solver.mkTupleSort(sorts);</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Datatype</span> <span class="pre">dt</span> <span class="pre">=</span> <span class="pre">s.getDatatype();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">upd</span> <span class="pre">=</span> <span class="pre">dt[0].getSelector(i).getUpdaterTerm();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">r</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::APPLY_UPDATER,</span> <span class="pre">{upd,</span> <span class="pre">t,</span> <span class="pre">u});</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Tuple Projection</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">((_</span> <span class="pre">tuple.project</span> <span class="pre">i1</span> <span class="pre">...</span> <span class="pre">in)</span> <span class="pre">t)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">solver.mkTupleSort(sorts);</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Datatype</span> <span class="pre">dt</span> <span class="pre">=</span> <span class="pre">s.getDatatype();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">proj</span> <span class="pre">=</span> <span class="pre">solver.mkOp(Kind::TUPLE_PROJECT,</span> <span class="pre">{i1,</span> <span class="pre">...,</span> <span class="pre">in});</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">r</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::TUPLE_PROJECT,</span> <span class="pre">{proj,</span> <span class="pre">t});</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Record Sort</p></td>
+<td><p>n/a</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">mkRecordSort(const</span> <span class="pre">std::vector&lt;std::pair&lt;std::string,</span> <span class="pre">Sort&gt;&gt;&amp;</span> <span class="pre">fields);</span></code></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>n/a</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">std::vector&lt;std::pair&lt;std::string,</span> <span class="pre">Sort&gt;&gt;</span> <span class="pre">fields;</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">fields.push_back(std::pair&lt;std::string,</span> <span class="pre">Sort&gt;(&quot;fst&quot;,</span> <span class="pre">solver.getIntegerSort()));</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">fields.push_back(std::pair&lt;std::string,</span> <span class="pre">Sort&gt;(&quot;snd&quot;,</span> <span class="pre">solver.getIntegerSort()));</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">mkRecordSort(fields);</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Record Constructor</p></td>
+<td><p>n/a</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">mkRecordSort(fields);</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Datatype</span> <span class="pre">dt</span> <span class="pre">=</span> <span class="pre">s.getDatatype();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">dt[0].getTerm();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">r</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::APPLY_CONSTRUCTOR,</span> <span class="pre">{c,</span> <span class="pre">&lt;Term_1&gt;,</span> <span class="pre">...,</span> <span class="pre">&lt;Term_n&gt;});</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Record Selector</p></td>
+<td><p>n/a</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">mkRecordSort(fields);</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Datatype</span> <span class="pre">dt</span> <span class="pre">=</span> <span class="pre">s.getDatatype();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">sel</span> <span class="pre">=</span> <span class="pre">dt[0].getSelector(name).getSelectorTerm();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">r</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::APPLY_SELECTOR,</span> <span class="pre">{sel,</span> <span class="pre">t});</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Record Updater</p></td>
+<td><p>n/a</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">solver.mkRecordSort(sorts);</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Datatype</span> <span class="pre">dt</span> <span class="pre">=</span> <span class="pre">s.getDatatype();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">upd</span> <span class="pre">=</span> <span class="pre">dt[0].getSelector(name).getUpdaterTerm();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">r</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::APPLY_UPDATER,</span> <span class="pre">{upd,</span> <span class="pre">t,</span> <span class="pre">u});</span></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bags.html" class="btn btn-neutral float-left" title="Theory Reference: Bags" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="finite_field.html" class="btn btn-neutral float-right" title="Theory Reference: Finite Fields" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
