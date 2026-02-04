@@ -1,0 +1,646 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../static/jquery.js?v=5d32c60e"></script>
+      <script src="../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../static/doctools.js?v=9bcbadda"></script>
+      <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Binary Documentation" href="../binary/binary.html" />
+    <link rel="prev" title="cvc5 Documentation" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#building-cvc5">Building cvc5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supported-operating-systems">Supported Operating Systems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#compilation-on-macos">Compilation on macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compilation-on-windows">Compilation on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cross-compiling-for-windows">Cross-compiling for Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#webassembly-compilation">WebAssembly Compilation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#build-dependencies">Build dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cadical-sat-solver">CaDiCaL (SAT solver)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmp-gnu-multi-precision-arithmetic-library">GMP (GNU Multi-Precision arithmetic library)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#symfpu-support-for-the-theory-of-floating-point-numbers">SymFPU (Support for the Theory of Floating Point Numbers)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-dependencies">Optional Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cryptominisat-optional-sat-solver">CryptoMiniSat (Optional SAT solver)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kissat-optional-sat-solver">Kissat (Optional SAT solver)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#libpoly-v0-2-1-optional-polynomial-library">LibPoly &gt;= v0.2.1 (Optional polynomial library)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cocoa-optional-computer-algebra-library">CoCoA (Optional computer algebra library)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cln-v1-3-class-library-for-numbers">CLN &gt;= v1.3 (Class Library for Numbers)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#glpk-cut-log-a-fork-of-the-gnu-linear-programming-kit">glpk-cut-log (A fork of the GNU Linear Programming Kit)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#editline-library-improved-interactive-experience">Editline library (Improved Interactive Experience)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#normaliz-optional-rational-cones-library">Normaliz (Optional rational cones library)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#google-test-unit-testing-framework-unit-tests">Google Test Unit Testing Framework (Unit Tests)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#language-bindings">Language bindings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dependencies-for-language-bindings">Dependencies for Language Bindings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#building-the-api-documentation">Building the API Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-the-examples">Building the Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Testing cvc5</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#testing-api-tests">Testing API Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-unit-tests">Testing Unit Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-regression-tests">Testing Regression Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-targets">Custom Targets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#recompiling-a-specific-cvc5-version-with-different-lgpl-library-versions">Recompiling a specific cvc5 version with different LGPL library versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
+<section id="building-cvc5">
+<h2>Building cvc5<a class="headerlink" href="#building-cvc5" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./configure.sh
+<span class="w">    </span><span class="c1"># use --prefix to specify an install prefix (default: /usr/local)</span>
+<span class="w">    </span><span class="c1"># use --name=&lt;PATH&gt; for custom build directory</span>
+<span class="w">    </span><span class="c1"># use --auto-download to download and build missing, required or</span>
+<span class="w">    </span><span class="c1">#   enabled, dependencies</span>
+<span class="nb">cd</span><span class="w"> </span>&lt;build_dir&gt;<span class="w">   </span><span class="c1"># default is ./build</span>
+make<span class="w">             </span><span class="c1"># use -jN for parallel build with N threads</span>
+make<span class="w"> </span>check<span class="w">       </span><span class="c1"># to run default set of tests</span>
+make<span class="w"> </span>install<span class="w">     </span><span class="c1"># to install into the prefix specified above</span>
+</pre></div>
+</div>
+<p>All binaries are built into <code class="docutils literal notranslate"><span class="pre">&lt;build_dir&gt;/bin</span></code>, the cvc5 libraries are built into
+<code class="docutils literal notranslate"><span class="pre">&lt;build_dir&gt;/lib</span></code>.</p>
+</section>
+<section id="supported-operating-systems">
+<h2>Supported Operating Systems<a class="headerlink" href="#supported-operating-systems" title="Link to this heading"></a></h2>
+<p>cvc5 can be built natively on Linux and macOS. Native compilation on Windows is also
+possible using MSYS2. Additionally, cvc5 supports cross-compilation for x86_64 Windows
+using Mingw-w64 and for ARM64 on both Linux and macOS.
+We generally recommend a 64-bit operating system.</p>
+<section id="compilation-on-macos">
+<h3>Compilation on macOS<a class="headerlink" href="#compilation-on-macos" title="Link to this heading"></a></h3>
+<p>On macOS, we recommend using <a class="reference external" href="https://brew.sh/">Homebrew</a> to install the
+dependencies.  We also have a Homebrew Tap available at
+<a class="reference external" href="https://github.com/cvc5/homebrew-cvc5">https://github.com/cvc5/homebrew-cvc5</a>.
+Note that linking system libraries statically is
+<a class="reference external" href="https://developer.apple.com/library/archive/qa/qa1118/_index.html">strongly discouraged</a>
+on macOS. Using <code class="docutils literal notranslate"><span class="pre">./configure.sh</span> <span class="pre">--static</span></code> will thus produce a binary
+that uses static versions of all our dependencies, but is still a dynamically
+linked binary.</p>
+</section>
+<section id="compilation-on-windows">
+<h3>Compilation on Windows<a class="headerlink" href="#compilation-on-windows" title="Link to this heading"></a></h3>
+<p>Install <a class="reference external" href="https://www.msys2.org/">MSYS2</a> and <a class="reference external" href="https://www.python.org/downloads/windows/">Python</a> on your system.
+Then, launch the appropriate <a class="reference external" href="https://www.msys2.org/docs/environments/">MSYS2 environment</a> and
+install the required dependencies:</p>
+<ul class="simple">
+<li><p>On x86_64 machines, open a <cite>CLANG64</cite> shell and run:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pacman<span class="w"> </span>-S<span class="w"> </span>git<span class="w"> </span>make<span class="w"> </span>mingw-w64-clang-x86_64-cmake<span class="w"> </span>mingw-w64-clang-x86_64-clang<span class="w"> </span>mingw-w64-clang-x86_64-gmp<span class="w"> </span>zip
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>On ARM64 machines, open a <cite>CLANGARM64</cite> shell and run:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pacman<span class="w"> </span>-S<span class="w"> </span>git<span class="w"> </span>make<span class="w"> </span>mingw-w64-clang-aarch64-cmake<span class="w"> </span>mingw-w64-clang-aarch64-clang<span class="w"> </span>mingw-w64-clang-aarch64-gmp<span class="w"> </span>zip
+</pre></div>
+</div>
+<p>After that, clone the cvc5 repository and follow the general build steps above.
+The built binary <code class="docutils literal notranslate"><span class="pre">cvc5.exe</span></code> and the DLL libraries are located in
+<code class="docutils literal notranslate"><span class="pre">&lt;build_dir&gt;/bin</span></code>. The import libraries and the static libraries
+can be found in <code class="docutils literal notranslate"><span class="pre">&lt;build_dir&gt;/lib</span></code>.</p>
+</section>
+<section id="cross-compiling-for-windows">
+<h3>Cross-compiling for Windows<a class="headerlink" href="#cross-compiling-for-windows" title="Link to this heading"></a></h3>
+<p>Cross-compiling cvc5 for Windows requires the POSIX version of MinGW-w64.
+On some Linux distributions, this is the default variant. On others, like Ubuntu,
+you may need to set it manually as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--set<span class="w"> </span>x86_64-w64-mingw32-gcc<span class="w"> </span>/usr/bin/x86_64-w64-mingw32-gcc-posix
+sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--set<span class="w"> </span>x86_64-w64-mingw32-g++<span class="w"> </span>/usr/bin/x86_64-w64-mingw32-g++-posix
+</pre></div>
+</div>
+<p>Once the POSIX variant of MinGW-w64 is installed and set on your system,
+you can cross-compile cvc5 as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./configure.sh<span class="w"> </span>--win64<span class="w"> </span>--static<span class="w"> </span>&lt;configure<span class="w"> </span>options...&gt;
+
+<span class="nb">cd</span><span class="w"> </span>&lt;build_dir&gt;<span class="w">   </span><span class="c1"># default is ./build</span>
+make<span class="w">             </span><span class="c1"># use -jN for parallel build with N threads</span>
+</pre></div>
+</div>
+<p>The built binary <code class="docutils literal notranslate"><span class="pre">cvc5.exe</span></code> and the DLL libraries are located in
+<code class="docutils literal notranslate"><span class="pre">&lt;build_dir&gt;/bin</span></code>. The import libraries and the static libraries
+can be found in <code class="docutils literal notranslate"><span class="pre">&lt;build_dir&gt;/lib</span></code>.</p>
+</section>
+<section id="webassembly-compilation">
+<h3>WebAssembly Compilation<a class="headerlink" href="#webassembly-compilation" title="Link to this heading"></a></h3>
+<p>Compiling cvc5 to WebAssembly needs the Emscripten SDK (version 3.1.70 or
+latter). Setting up emsdk can be done as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/emscripten-core/emsdk.git
+<span class="nb">cd</span><span class="w"> </span>emsdk
+./emsdk<span class="w"> </span>install<span class="w"> </span>&lt;version&gt;<span class="w">   </span><span class="c1"># &lt;version&gt; = &#39;3.1.70&#39; is preferable, but</span>
+<span class="w">                            </span><span class="c1"># &lt;version&gt; = &#39;latest&#39; has high chance of working</span>
+./emsdk<span class="w"> </span>activate<span class="w"> </span>&lt;version&gt;
+<span class="nb">source</span><span class="w"> </span>./emsdk_env.sh<span class="w">   </span><span class="c1"># Activate PATH and other environment variables in the</span>
+<span class="w">                        </span><span class="c1"># current terminal. Whenever Emscripten is going to be</span>
+<span class="w">                        </span><span class="c1"># used this command needs to be called before because</span>
+<span class="w">                        </span><span class="c1"># emsdk doesn&#39;t insert the binaries paths directly in</span>
+<span class="w">                        </span><span class="c1"># the system PATH variable.</span>
+</pre></div>
+</div>
+<p>Refer to the <a class="reference external" href="https://emscripten.org/docs/getting_started/downloads.html#platform-specific-notes">emscripten dependencies list</a>
+to ensure that all required dependencies are installed on the system.</p>
+<p>Then, in the cvc5 directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./configure.sh<span class="w"> </span>--static<span class="w"> </span>--static-binary<span class="w"> </span>--auto-download<span class="w"> </span>--wasm<span class="o">=</span>&lt;value&gt;<span class="w"> </span>--wasm-flags<span class="o">=</span><span class="s1">&#39;&lt;emscripten flags&gt;&#39;</span><span class="w"> </span>&lt;configure<span class="w"> </span>options...&gt;
+
+<span class="nb">cd</span><span class="w"> </span>&lt;build_dir&gt;<span class="w">   </span><span class="c1"># default is ./build</span>
+make<span class="w">             </span><span class="c1"># use -jN for parallel build with N threads</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">--wasm</span></code> can take three values: <code class="docutils literal notranslate"><span class="pre">WASM</span></code> (will generate the wasm file for cvc5), <code class="docutils literal notranslate"><span class="pre">JS</span></code>
+(not only the wasm, but the .js glue code for web integration) and <code class="docutils literal notranslate"><span class="pre">HTML</span></code> (both
+the last two files and also an .html file which supports the run of the glue
+code).</p>
+<p><code class="docutils literal notranslate"><span class="pre">--wasm-flags</span></code> take a string wrapped by a single quote containing the
+<a class="reference external" href="https://github.com/emscripten-core/emscripten/blob/main/src/settings.js">emscripten flags</a>,
+which modifies how the wasm and glue code are built and how they behave. An <code class="docutils literal notranslate"><span class="pre">-s</span></code>
+should precede each flag.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--wasm-web</span></code> provides predefined configurations optimized for web deployment.
+This option takes precedence over <code class="docutils literal notranslate"><span class="pre">--wasm</span></code> and <code class="docutils literal notranslate"><span class="pre">--wasm-flags</span></code> if used together.
+Available configurations:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">no-modular-static-page</span></code>: Optimized for static web pages with runtime methods,
+environment settings, and memory configuration pre-configured for web deployment.</p></li>
+</ul>
+<p>For example, to generate a HTML page, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./configure.sh<span class="w"> </span>--static<span class="w"> </span>--static-binary<span class="w"> </span>--auto-download<span class="w"> </span>--wasm<span class="o">=</span>HTML<span class="w"> </span>--name<span class="o">=</span>prod
+
+<span class="nb">cd</span><span class="w"> </span>prod
+make<span class="w">            </span><span class="c1"># use -jN for parallel build with N threads</span>
+</pre></div>
+</div>
+<p>After that, you can run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">http.server</span></code> within <code class="docutils literal notranslate"><span class="pre">prod/bin</span></code>, open <a class="reference external" href="http://0.0.0.0:8000/cvc5.html">http://0.0.0.0:8000/cvc5.html</a> with Chrome to visualize the page generated by Emscripten, write down a valid SMTLIB input, and press ESC twice to obtain its output.</p>
+<p>On the other hand, to generate a modularized glue code to be imported by custom web pages, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./configure.sh<span class="w"> </span>--static<span class="w"> </span>--static-binary<span class="w"> </span>--auto-download<span class="w"> </span>--wasm<span class="o">=</span>JS<span class="w"> </span>--wasm-flags<span class="o">=</span><span class="s1">&#39;-s MODULARIZE&#39;</span><span class="w"> </span>--name<span class="o">=</span>prod
+
+<span class="nb">cd</span><span class="w"> </span>prod
+make<span class="w">            </span><span class="c1"># use -jN for parallel build with N threads</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="build-dependencies">
+<h2>Build dependencies<a class="headerlink" href="#build-dependencies" title="Link to this heading"></a></h2>
+<p>cvc5 makes uses of a number of tools and libraries. Some of these are required
+while others are only used with certain configuration options. If
+<code class="docutils literal notranslate"><span class="pre">--auto-download</span></code> is given, cvc5 can automatically download and build most
+libraries that are not already installed on your system. If your libraries are
+installed in a non-standard location, you can use <code class="docutils literal notranslate"><span class="pre">--dep-path</span></code> to define an
+additional search path for all dependencies. Versions given are minimum
+versions; more recent versions should be compatible.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://gcc.gnu.org">GNU C and C++ (gcc and g++, &gt;= 7)</a>
+or <a class="reference external" href="https://clang.llvm.org">Clang (&gt;= 5)</a></p></li>
+<li><p><a class="reference external" href="https://cmake.org">CMake &gt;= 3.16</a></p></li>
+<li><p><a class="reference external" href="https://www.gnu.org/software/make/">GNU Make</a>
+or <a class="reference external" href="https://ninja-build.org/">Ninja</a></p></li>
+<li><p><a class="reference external" href="https://www.python.org">Python &gt;= 3.7</a>
++ module <a class="reference external" href="https://pypi.org/project/tomli/">tomli</a> (Python &lt; 3.11)
++ module <a class="reference external" href="https://pypi.org/project/pyparsing/">pyparsing</a></p></li>
+<li><p><a class="reference external" href="https://gmplib.org">GMP v6.3 (GNU Multi-Precision arithmetic library)</a></p></li>
+<li><p><a class="reference external" href="https://github.com/arminbiere/cadical">CaDiCaL &gt;= 2.1.0 (SAT solver)</a></p></li>
+<li><p><a class="reference external" href="https://github.com/martin-cs/symfpu/tree/CVC4">SymFPU</a></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">--auto-download</span></code> is given, the Python modules will be installed automatically in
+a virtual environment if they are missing. To install the modules globally and skip
+the creation of the virtual environment, configure cvc5 with <code class="docutils literal notranslate"><span class="pre">./configure.sh</span> <span class="pre">--no-pyvenv</span></code>.</p>
+<section id="cadical-sat-solver">
+<h3>CaDiCaL (SAT solver)<a class="headerlink" href="#cadical-sat-solver" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://github.com/arminbiere/cadical">CaDiCaL</a> is a SAT solver that can be
+used for the bit-vector solver. It can be downloaded and built automatically.</p>
+</section>
+<section id="gmp-gnu-multi-precision-arithmetic-library">
+<h3>GMP (GNU Multi-Precision arithmetic library)<a class="headerlink" href="#gmp-gnu-multi-precision-arithmetic-library" title="Link to this heading"></a></h3>
+<p>GMP is usually available on your distribution and should be used from there. If
+it is not, or you want to cross-compile, or you want to build cvc5 statically
+but the distribution does not ship static libraries, cvc5 builds GMP
+automatically when <code class="docutils literal notranslate"><span class="pre">--auto-download</span></code> is given.</p>
+</section>
+<section id="symfpu-support-for-the-theory-of-floating-point-numbers">
+<h3>SymFPU (Support for the Theory of Floating Point Numbers)<a class="headerlink" href="#symfpu-support-for-the-theory-of-floating-point-numbers" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://github.com/martin-cs/symfpu/tree/CVC4">SymFPU</a> is an implementation
+of SMT-LIB/IEEE-754 floating-point operations in terms of bit-vector operations.
+It is required for supporting the theory of floating-point numbers and can be
+downloaded and built automatically.</p>
+</section>
+</section>
+<section id="optional-dependencies">
+<h2>Optional Dependencies<a class="headerlink" href="#optional-dependencies" title="Link to this heading"></a></h2>
+<section id="cryptominisat-optional-sat-solver">
+<h3>CryptoMiniSat (Optional SAT solver)<a class="headerlink" href="#cryptominisat-optional-sat-solver" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://github.com/msoos/cryptominisat">CryptoMinisat</a> is a SAT solver that
+can be used for solving bit-vector problems with eager bit-blasting. This
+dependency may improve performance. It can be downloaded and built
+automatically. Configure cvc5 with <code class="docutils literal notranslate"><span class="pre">configure.sh</span> <span class="pre">--cryptominisat</span></code> to build
+with this dependency. Minimum version required is <code class="docutils literal notranslate"><span class="pre">5.11.2</span></code>.</p>
+</section>
+<section id="kissat-optional-sat-solver">
+<h3>Kissat (Optional SAT solver)<a class="headerlink" href="#kissat-optional-sat-solver" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://github.com/arminbiere/kissat">Kissat</a> is a SAT solver that can be
+used for solving bit-vector problems with eager bit-blasting. This dependency
+may improve performance. It can be downloaded and built automatically. Configure
+cvc5 with <code class="docutils literal notranslate"><span class="pre">configure.sh</span> <span class="pre">--kissat</span></code> to build with this dependency.</p>
+</section>
+<section id="libpoly-v0-2-1-optional-polynomial-library">
+<h3>LibPoly &gt;= v0.2.1 (Optional polynomial library)<a class="headerlink" href="#libpoly-v0-2-1-optional-polynomial-library" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://github.com/SRI-CSL/libpoly">LibPoly</a> is required for CAD-based
+nonlinear reasoning. It can be downloaded and built automatically. Configure
+cvc5 with <code class="docutils literal notranslate"><span class="pre">configure.sh</span> <span class="pre">--poly</span></code> to build with this dependency.</p>
+</section>
+<section id="cocoa-optional-computer-algebra-library">
+<h3>CoCoA (Optional computer algebra library)<a class="headerlink" href="#cocoa-optional-computer-algebra-library" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://cocoa.dima.unige.it/cocoa/">CoCoA</a> is required for some non-linear
+reasoning and for finite field reasoning. We use a patched version of it, so we
+recommend downloading it using the <code class="docutils literal notranslate"><span class="pre">--auto-download</span></code> configuration flag,
+which applies our patch automatically. It is included in the build through the
+<code class="docutils literal notranslate"><span class="pre">--cocoa</span> <span class="pre">--gpl</span></code> configuration flag.</p>
+<p>CoCoA is covered by the GPLv3 license. See below for the ramifications of this.</p>
+</section>
+<section id="cln-v1-3-class-library-for-numbers">
+<h3>CLN &gt;= v1.3 (Class Library for Numbers)<a class="headerlink" href="#cln-v1-3-class-library-for-numbers" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="http://www.ginac.de/CLN">CLN</a> is an alternative multiprecision arithmetic
+package that may offer better performance and memory footprint than GMP.
+Configure cvc5 with <code class="docutils literal notranslate"><span class="pre">configure.sh</span> <span class="pre">--cln</span> <span class="pre">--gpl</span></code> to build with this dependency.</p>
+<p>Note that CLN is covered by the <a class="reference external" href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU General Public License, version 3</a>. If you choose to use cvc5 with
+CLN support, you are licensing cvc5 under that same license. (Usually cvc5’s
+license is more permissive than GPL, see the file <cite>COPYING</cite> in the cvc5 source
+distribution for details.)</p>
+</section>
+<section id="glpk-cut-log-a-fork-of-the-gnu-linear-programming-kit">
+<h3>glpk-cut-log (A fork of the GNU Linear Programming Kit)<a class="headerlink" href="#glpk-cut-log-a-fork-of-the-gnu-linear-programming-kit" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://github.com/timothy-king/glpk-cut-log/">glpk-cut-log</a> is a fork of
+<a class="reference external" href="http://www.gnu.org/software/glpk/">GLPK</a> (the GNU Linear Programming Kit).
+This can be used to speed up certain classes of problems for the arithmetic
+implementation in cvc5. (This is not recommended for most users.)</p>
+<p>cvc5 is not compatible with the official version of the GLPK library.
+To use the patched version of it, we recommend downloading it using
+the <code class="docutils literal notranslate"><span class="pre">--auto-download</span></code> configuration flag, which applies
+the patch automatically.
+Configure cvc5 with <code class="docutils literal notranslate"><span class="pre">configure.sh</span> <span class="pre">--glpk</span> <span class="pre">--gpl</span></code> to build with this dependency.</p>
+<p>Note that GLPK and glpk-cut-log are covered by the <a class="reference external" href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU General Public License,
+version 3</a>. If you choose to use
+cvc5 with GLPK support, you are licensing cvc5 under that same license. (Usually
+cvc5’s license is more permissive; see above discussion.)</p>
+</section>
+<section id="editline-library-improved-interactive-experience">
+<h3>Editline library (Improved Interactive Experience)<a class="headerlink" href="#editline-library-improved-interactive-experience" title="Link to this heading"></a></h3>
+<p>The <a class="reference external" href="https://thrysoee.dk/editline/">Editline Library</a> is optionally
+used to provide command editing, tab completion, and history functionality at
+the cvc5 prompt (when running in interactive mode).  Check your distribution for
+a package named <cite>libedit-dev</cite>, <cite>libedit-devel</cite>, or similar.  Configure cvc5 with
+<code class="docutils literal notranslate"><span class="pre">configure.sh</span> <span class="pre">--editline</span></code> to build with this dependency.  Additionally,
+to run tests related to interactive mode with this dependency, you will need
+the Python module <a class="reference external" href="https://pexpect.readthedocs.io/en/stable/">pexpect</a>.</p>
+</section>
+<section id="normaliz-optional-rational-cones-library">
+<h3>Normaliz (Optional rational cones library)<a class="headerlink" href="#normaliz-optional-rational-cones-library" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://www.normaliz.uni-osnabrueck.de/">Normaliz</a> is required for int.star-contains
+operator and for bags reasoning. We recommend downloading it using the <code class="docutils literal notranslate"><span class="pre">--auto-download</span></code>
+configuration flag. It is included in the build through the
+<code class="docutils literal notranslate"><span class="pre">--normaliz</span> <span class="pre">--gpl</span></code> configuration flag.</p>
+<p>Normaliz is covered by the GPLv3 license. See below for the ramifications of this.</p>
+</section>
+<section id="google-test-unit-testing-framework-unit-tests">
+<h3>Google Test Unit Testing Framework (Unit Tests)<a class="headerlink" href="#google-test-unit-testing-framework-unit-tests" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://github.com/google/googletest">Google Test</a> is required to optionally
+run cvc5’s unit tests (included with the distribution).
+See <a class="reference external" href="#testing-cvc5">Testing cvc5</a>
+below for more details.</p>
+</section>
+</section>
+<section id="language-bindings">
+<h2>Language bindings<a class="headerlink" href="#language-bindings" title="Link to this heading"></a></h2>
+<p>cvc5 provides a complete and flexible C++ API (see <code class="docutils literal notranslate"><span class="pre">examples/api</span></code> for
+examples). It further provides Java (see <code class="docutils literal notranslate"><span class="pre">examples/SimpleVC.java</span></code> and
+<code class="docutils literal notranslate"><span class="pre">examples/api/java</span></code>) and Python (see <code class="docutils literal notranslate"><span class="pre">examples/api/python</span></code>) API bindings.</p>
+<p>Configure cvc5 with <code class="docutils literal notranslate"><span class="pre">configure.sh</span> <span class="pre">--&lt;lang&gt;-bindings</span></code> to build with language
+bindings for <code class="docutils literal notranslate"><span class="pre">&lt;lang&gt;</span></code>.</p>
+<section id="dependencies-for-language-bindings">
+<h3>Dependencies for Language Bindings<a class="headerlink" href="#dependencies-for-language-bindings" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Java</p>
+<ul>
+<li><p><a class="reference external" href="https://www.java.com">JDK &gt;= 1.8</a></p></li>
+</ul>
+</li>
+<li><p>Python</p>
+<ul>
+<li><p><a class="reference external" href="https://cython.org/">Cython</a> &gt;= 3.0.0</p></li>
+<li><p><a class="reference external" href="https://pip.pypa.io/">pip</a> &gt;= 23.0</p></li>
+<li><p><a class="reference external" href="https://docs.pytest.org/en/6.2.x/">pytest</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jvolkman/repairwheel">repairwheel</a> &gt;= 0.3.2</p></li>
+<li><p><a class="reference external" href="https://setuptools.pypa.io/">setuptools</a> &gt;= 66.1.0</p></li>
+<li><p>The source for the <a class="reference external" href="https://github.com/cvc5/cvc5_pythonic_api">pythonic API</a></p></li>
+</ul>
+</li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">--auto-download</span></code> is given, the Python modules will be installed automatically in
+a virtual environment if they are missing. To install the modules globally and skip
+the creation of the virtual environment, configure cvc5 with <code class="docutils literal notranslate"><span class="pre">./configure.sh</span> <span class="pre">--no-pyvenv</span></code>.</p>
+<p>If configured with <code class="docutils literal notranslate"><span class="pre">--pythonic-path=PATH</span></code>, the build system will expect the Pythonic API’s source to be at <code class="docutils literal notranslate"><span class="pre">PATH</span></code>.
+Otherwise, if configured with <code class="docutils literal notranslate"><span class="pre">--auto-download</span></code>, the build system will download it.</p>
+<p>Installing the Python bindings after building from source requires a Python environment with
+pip version 20.3 or higher.</p>
+<p>If you’re interested in helping to develop, maintain, and test a language
+binding, please contact the cvc5 team via <a class="reference external" href="https://github.com/cvc5/cvc5/issues">our issue tracker</a>.</p>
+</section>
+</section>
+<section id="building-the-api-documentation">
+<h2>Building the API Documentation<a class="headerlink" href="#building-the-api-documentation" title="Link to this heading"></a></h2>
+<p>Building the API documentation of cvc5 requires the following dependencies:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.doxygen.nl">Doxygen</a></p></li>
+<li><p><a class="reference external" href="https://www.sphinx-doc.org">Sphinx</a>,
+<a class="reference external" href="https://sphinx-rtd-theme.readthedocs.io/">sphinx-rtd-theme</a>,
+<a class="reference external" href="https://sphinx-tabs.readthedocs.io/">sphinx-tabs</a>,
+<a class="reference external" href="https://sphinxcontrib-bibtex.readthedocs.io">sphinxcontrib-bibtex</a>,
+<a class="reference external" href="https://sphinxcontrib-programoutput.readthedocs.io">sphinxcontrib-programoutput</a></p></li>
+<li><p><a class="reference external" href="https://breathe.readthedocs.io">Breathe</a></p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">--auto-download</span></code> is given, Sphinx, the Sphinx extensions, and Breathe will be installed
+automatically in a virtual Python environment if they are missing. To install the modules globally and skip
+the creation of the virtual environment, configure cvc5 with <code class="docutils literal notranslate"><span class="pre">./configure.sh</span> <span class="pre">--no-pyvenv</span></code>.</p>
+<p>To build the documentation, configure cvc5 with <code class="docutils literal notranslate"><span class="pre">./configure.sh</span> <span class="pre">--docs</span></code> and
+run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">docs</span></code> from within the build directory.</p>
+<p>The API documentation can then be found at
+<code class="docutils literal notranslate"><span class="pre">&lt;build_dir&gt;/docs/sphinx/index.html</span></code>.</p>
+<p>To build the documentation for GitHub pages, change to the build directory and
+call <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">docs-gh</span></code>. The content of directory <code class="docutils literal notranslate"><span class="pre">&lt;build_dir&gt;/docs/sphinx-gh</span></code>
+can then be copied over to GitHub pages.</p>
+</section>
+<section id="building-the-examples">
+<h2>Building the Examples<a class="headerlink" href="#building-the-examples" title="Link to this heading"></a></h2>
+<p>See <code class="docutils literal notranslate"><span class="pre">examples/README.md</span></code> for instructions on how to build and run the
+examples.</p>
+</section>
+<section id="id3">
+<span id="id4"></span><h2>Testing cvc5<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>We use <code class="docutils literal notranslate"><span class="pre">ctest</span></code> as test infrastructure. For all command-line options of ctest,
+see <code class="docutils literal notranslate"><span class="pre">ctest</span> <span class="pre">-h</span></code>. Some useful options are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ctest</span> <span class="o">-</span><span class="n">R</span> <span class="o">&lt;</span><span class="n">regex</span><span class="o">&gt;</span>           <span class="c1"># run all tests with names matching &lt;regex&gt;</span>
+<span class="n">ctest</span> <span class="o">-</span><span class="n">E</span> <span class="o">&lt;</span><span class="n">regex</span><span class="o">&gt;</span>           <span class="c1"># exclude tests with names matching &lt;regex&gt;</span>
+<span class="n">ctest</span> <span class="o">-</span><span class="n">L</span> <span class="o">&lt;</span><span class="n">regex</span><span class="o">&gt;</span>           <span class="c1"># run all tests with labels matching &lt;regex&gt;</span>
+<span class="n">ctest</span> <span class="o">-</span><span class="n">LE</span> <span class="o">&lt;</span><span class="n">regex</span><span class="o">&gt;</span>          <span class="c1"># exclude tests with labels matching &lt;regex&gt;</span>
+<span class="n">ctest</span>                      <span class="c1"># run all tests</span>
+<span class="n">ctest</span> <span class="o">-</span><span class="n">jN</span>                  <span class="c1"># run all tests in parallel with N threads</span>
+<span class="n">ctest</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">failure</span>  <span class="c1"># run all tests and print output of failed tests</span>
+</pre></div>
+</div>
+<p>We have 3 categories of tests:</p>
+<ul class="simple">
+<li><p><strong>api tests</strong> in directory <code class="docutils literal notranslate"><span class="pre">test/api</span></code> (label: <strong>api</strong>)</p></li>
+<li><p><strong>regression tests</strong> (5 levels) in directory <code class="docutils literal notranslate"><span class="pre">test/regress</span></code> (label:
+<strong>regressN</strong> with N the regression level)</p></li>
+<li><p><strong>unit tests</strong> in directory <code class="docutils literal notranslate"><span class="pre">test/unit</span></code> (label: <strong>unit</strong>)</p></li>
+</ul>
+<section id="testing-api-tests">
+<h3>Testing API Tests<a class="headerlink" href="#testing-api-tests" title="Link to this heading"></a></h3>
+<p>The API tests are not built by default.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">apitests</span>                         <span class="c1"># build and run all API tests</span>
+<span class="n">make</span> <span class="n">capitests</span>                        <span class="c1"># build and run all API C tests</span>
+<span class="n">make</span> <span class="n">cppapitests</span>                      <span class="c1"># build and run all API C++ tests</span>
+<span class="n">make</span> <span class="o">&lt;</span><span class="n">api_test</span><span class="o">&gt;</span>                       <span class="c1"># build test/api/cpp/&lt;api_test&gt;.cpp</span>
+<span class="n">make</span> <span class="n">capi_</span><span class="o">&lt;</span><span class="n">api_test</span><span class="o">&gt;</span>                  <span class="c1"># build test/api/c/&lt;api_test&gt;.c</span>
+<span class="n">ctest</span> <span class="n">api</span><span class="o">/</span><span class="n">cpp</span><span class="o">/&lt;</span><span class="n">api_test</span><span class="o">&gt;</span>              <span class="c1"># run test/api/cpp/&lt;api_test&gt;&lt;.ext&gt;</span>
+<span class="n">ctest</span> <span class="n">api</span><span class="o">/</span><span class="n">c</span><span class="o">/</span><span class="n">capi_</span><span class="o">&lt;</span><span class="n">api_test</span><span class="o">&gt;</span>           <span class="c1"># run test/api/cpp/capi_&lt;api_test&gt;&lt;.ext&gt;</span>
+</pre></div>
+</div>
+<p>All API test binaries are built into <code class="docutils literal notranslate"><span class="pre">&lt;build_dir&gt;/bin/test/api</span></code>.</p>
+<p>We use prefix <code class="docutils literal notranslate"><span class="pre">api/cpp/</span></code> + <code class="docutils literal notranslate"><span class="pre">&lt;api_test&gt;</span></code> (for <code class="docutils literal notranslate"><span class="pre">&lt;api_test&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">test/api/cpp</span></code>)
+and <code class="docutils literal notranslate"><span class="pre">api/c/</span></code> + <code class="docutils literal notranslate"><span class="pre">capi_&lt;api_test&gt;</span></code> (for <code class="docutils literal notranslate"><span class="pre">&lt;api_test&gt;</span></code> in <code class="docutils literal notranslate"><span class="pre">test/api/c</span></code>)
+as test target name.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>make ouroborous                       # build test/api/cpp/ouroborous.cpp
+make capi_ouroborous                  # build test/api/c/ouroborous.c
+ctest -R ouroborous                   # run all tests that match &#39;*ouroborous*&#39;
+                                      # &gt; runs api/cpp/ouroborous, api/c/capi_ouroborous
+ctest -R ouroborous$                  # run all tests that match &#39;*ouroborous&#39;
+                                      # &gt; runs api/cpp/ouroborous, api/c/capi_ouroborous
+ctest -R api/cpp/ouroborous$          # run all tests that match &#39;*api/cpp/ouroborous&#39;
+                                      # &gt; runs api/cpp/ouroborous
+</pre></div>
+</div>
+</section>
+<section id="testing-unit-tests">
+<h3>Testing Unit Tests<a class="headerlink" href="#testing-unit-tests" title="Link to this heading"></a></h3>
+<p>The unit tests are not built by default.</p>
+<p>Note that cvc5 can only be configured with unit tests in non-static builds with
+assertions enabled (e.g. <code class="docutils literal notranslate"><span class="pre">./configure.sh</span> <span class="pre">--unit-testing</span> <span class="pre">--assertions</span></code>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">units</span>                            <span class="c1"># build and run all unit tests</span>
+<span class="n">make</span> <span class="o">&lt;</span><span class="n">unit_test</span><span class="o">&gt;</span>                      <span class="c1"># build test/unit/&lt;subdir&gt;/&lt;unit_test&gt;.&lt;ext&gt;</span>
+<span class="n">ctest</span> <span class="n">unit</span><span class="o">/&lt;</span><span class="n">subdir</span><span class="o">&gt;/&lt;</span><span class="n">unit_test</span><span class="o">&gt;</span>       <span class="c1"># run test/unit/&lt;subdir&gt;/&lt;unit_test&gt;.&lt;ext&gt;</span>
+</pre></div>
+</div>
+<p>All unit test binaries are built into <code class="docutils literal notranslate"><span class="pre">&lt;build_dir&gt;/bin/test/unit</span></code>.</p>
+<p>We use prefix <code class="docutils literal notranslate"><span class="pre">unit/</span></code> + <code class="docutils literal notranslate"><span class="pre">&lt;subdir&gt;/</span></code> + <code class="docutils literal notranslate"><span class="pre">&lt;unit_test&gt;</span></code> (for <code class="docutils literal notranslate"><span class="pre">&lt;unit_test&gt;</span></code>
+in <code class="docutils literal notranslate"><span class="pre">test/unit/&lt;subdir&gt;</span></code>) as test target name.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>make map_util_black                   # build test/unit/base/map_util_black.cpp
+ctest -R map_util_black               # run all tests that match &#39;*map_util_black*&#39;
+                                      # &gt; runs unit/base/map_util_black
+ctest -R base/map_util_black$         # run all tests that match &#39;*base/map_util_black&#39;
+                                      # &gt; runs unit/base/map_util_black
+ctest -R unit/base/map_util_black$    # run all tests that match &#39;*unit/base/map_util_black&#39;
+                                      # &gt; runs unit/base/map_util_black
+</pre></div>
+</div>
+</section>
+<section id="testing-regression-tests">
+<h3>Testing Regression Tests<a class="headerlink" href="#testing-regression-tests" title="Link to this heading"></a></h3>
+<p>We use prefix <code class="docutils literal notranslate"><span class="pre">regressN/</span></code> + <code class="docutils literal notranslate"><span class="pre">&lt;subdir&gt;/</span></code> + <code class="docutils literal notranslate"><span class="pre">&lt;regress_test&gt;</span></code> (for
+<code class="docutils literal notranslate"><span class="pre">&lt;regress_test&gt;</span></code> in level <code class="docutils literal notranslate"><span class="pre">N</span></code> in <code class="docutils literal notranslate"><span class="pre">test/regress/regressN/&lt;subdir&gt;</span></code>) as test
+target name.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ctest</span> <span class="o">-</span><span class="n">L</span> <span class="n">regress</span>                      <span class="c1"># run all regression tests</span>
+<span class="n">ctest</span> <span class="o">-</span><span class="n">L</span> <span class="n">regress0</span>                     <span class="c1"># run all regression tests in level 0</span>
+<span class="n">ctest</span> <span class="o">-</span><span class="n">L</span> <span class="n">regress</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                 <span class="c1"># run all regression tests in level 0 and 1</span>
+<span class="n">ctest</span> <span class="o">-</span><span class="n">R</span> <span class="n">regress</span>                      <span class="c1"># run all regression tests</span>
+<span class="n">ctest</span> <span class="o">-</span><span class="n">R</span> <span class="n">regress0</span>                     <span class="c1"># run all regression tests in level 0</span>
+<span class="n">ctest</span> <span class="o">-</span><span class="n">R</span> <span class="n">regress</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                 <span class="c1"># run all regression tests in level 0 and 1</span>
+<span class="n">ctest</span> <span class="o">-</span><span class="n">R</span> <span class="n">regress0</span><span class="o">/</span><span class="n">bug288b</span>             <span class="c1"># run all tests that match &#39;*regress0/bug288b*&#39;</span>
+                                      <span class="c1"># &gt; runs regress0/bug288b</span>
+</pre></div>
+</div>
+</section>
+<section id="custom-targets">
+<h3>Custom Targets<a class="headerlink" href="#custom-targets" title="Link to this heading"></a></h3>
+<p>All custom test targets build and run a preconfigured set of tests.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">check</span> <span class="pre">[-jN]</span> <span class="pre">[ARGS=-jN]</span></code>
+The default build-and-test target for cvc5, builds and runs all examples,
+all system and unit tests, and regression tests from levels 0 to 2.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">apitests</span> <span class="pre">[-jN]</span> <span class="pre">[ARGS=-jN]</span></code>
+Build and run all API tests.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">units</span> <span class="pre">[-jN]</span> <span class="pre">[ARGS=-jN]</span></code>
+Build and run all unit tests.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">regress</span> <span class="pre">[-jN]</span> <span class="pre">[ARGS=-jN]</span></code>
+Build and run regression tests from levels 0 to 2.</p></li>
+</ul>
+<p>To build the tests without executing them, run <cite>make build-tests</cite>.</p>
+<p>We use <code class="docutils literal notranslate"><span class="pre">ctest</span></code> as test infrastructure, and by default all test targets
+are configured to <strong>run</strong> in parallel with the maximum number of threads
+available on the system. Override with <code class="docutils literal notranslate"><span class="pre">ARGS=-jN</span></code>.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">-jN</span></code> for parallel <strong>building</strong> with <code class="docutils literal notranslate"><span class="pre">N</span></code> threads.</p>
+</section>
+</section>
+<section id="recompiling-a-specific-cvc5-version-with-different-lgpl-library-versions">
+<h2>Recompiling a specific cvc5 version with different LGPL library versions<a class="headerlink" href="#recompiling-a-specific-cvc5-version-with-different-lgpl-library-versions" title="Link to this heading"></a></h2>
+<p>To recompile a specific static binary of cvc5 with different versions of the
+linked LGPL libraries perform the following steps:</p>
+<ol class="arabic simple">
+<li><p>Make sure that you have installed the desired LGPL library versions.
+You can check the versions found by cvc5’s build system during the configure
+phase.</p></li>
+<li><p>Determine the commit sha and configuration of the cvc5 binary</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cvc5</span> <span class="o">--</span><span class="n">show</span><span class="o">-</span><span class="n">config</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Download the specific source code version:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">cvc5</span><span class="o">/</span><span class="n">cvc5</span><span class="o">/</span><span class="n">archive</span><span class="o">/&lt;</span><span class="n">commit</span><span class="o">-</span><span class="n">sha</span><span class="o">&gt;.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Extract the source code</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="n">xf</span> <span class="o">&lt;</span><span class="n">commit</span><span class="o">-</span><span class="n">sha</span><span class="o">&gt;.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Change into source code directory</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">cvc5</span><span class="o">-&lt;</span><span class="n">commit</span><span class="o">-</span><span class="n">sha</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Configure cvc5 with options listed by <code class="docutils literal notranslate"><span class="pre">cvc5</span> <span class="pre">--show-config</span></code></p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">configure</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">static</span> <span class="o">&lt;</span><span class="n">options</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Follow remaining steps from <a class="reference external" href="#building-cvc5">build instructions</a></p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="cvc5 Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../binary/binary.html" class="btn btn-neutral float-right" title="Binary Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
