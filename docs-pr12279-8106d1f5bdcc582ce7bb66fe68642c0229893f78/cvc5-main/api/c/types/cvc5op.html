@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cvc5Op &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Cvc5Proof" href="cvc5proof.html" />
+    <link rel="prev" title="Cvc5InputParser" href="cvc5inputparser.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../cpp/cpp.html">C++ API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../c.html">C API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5.html">Cvc5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5command.html">Cvc5Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatype.html">Cvc5Datatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypedecl.html">Cvc5DatatypeDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypeconstructor.html">Cvc5DatatypeConstructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypeconstructordecl.html">Cvc5DatatypeConstructorDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5datatypeselector.html">Cvc5DatatypeSelector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5grammar.html">Cvc5Grammar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5inputparser.html">Cvc5InputParser</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Cvc5Op</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv46Cvc5Op"><code class="docutils literal notranslate"><span class="pre">Cvc5Op</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv412cvc5_op_copy6Cvc5Op"><code class="docutils literal notranslate"><span class="pre">cvc5_op_copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv415cvc5_op_release6Cvc5Op"><code class="docutils literal notranslate"><span class="pre">cvc5_op_release()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv416cvc5_op_is_equal6Cvc5Op6Cvc5Op"><code class="docutils literal notranslate"><span class="pre">cvc5_op_is_equal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv419cvc5_op_is_disequal6Cvc5Op6Cvc5Op"><code class="docutils literal notranslate"><span class="pre">cvc5_op_is_disequal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv416cvc5_op_get_kind6Cvc5Op"><code class="docutils literal notranslate"><span class="pre">cvc5_op_get_kind()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv418cvc5_op_is_indexed6Cvc5Op"><code class="docutils literal notranslate"><span class="pre">cvc5_op_is_indexed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv423cvc5_op_get_num_indices6Cvc5Op"><code class="docutils literal notranslate"><span class="pre">cvc5_op_get_num_indices()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv417cvc5_op_get_index6Cvc5Op6size_t"><code class="docutils literal notranslate"><span class="pre">cvc5_op_get_index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv417cvc5_op_to_string6Cvc5Op"><code class="docutils literal notranslate"><span class="pre">cvc5_op_to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv412cvc5_op_hash6Cvc5Op"><code class="docutils literal notranslate"><span class="pre">cvc5_op_hash()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5proof.html">Cvc5Proof</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5result.html">Cvc5Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5sort.html">Cvc5Sort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5statistics.html">Cvc5Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5symbolmanager.html">Cvc5SymbolManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5synthresult.html">Cvc5SynthResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5term.html">Cvc5Term</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvc5termmanager.html">Cvc5TermManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../structs/cvc5optioninfo.html">Cvc5OptionInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../structs/cvc5plugin.html">Cvc5Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5kind.html">Cvc5Kind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5sortkind.html">Cvc5SortKind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5roundingmode.html">Cvc5RoundingMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/cvc5unknownexplanation.html">Cvc5UnknownExplanation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/modes.html">Modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#types">Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#structs">Structs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c.html#enums">Enums</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/python.html">Python API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../c.html">C API</a></li>
+      <li class="breadcrumb-item active">Cvc5Op</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cvc5op">
+<h1>Cvc5Op<a class="headerlink" href="#cvc5op" title="Link to this heading"></a></h1>
+<p>The <a class="reference internal" href="#_CPPv46Cvc5Op" title="Cvc5Op"><code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">Cvc5Op</span></code></a> struct represents a cvc5 operator, instantiated with
+the parameters it requires (if any).</p>
+<p>A <a class="reference internal" href="cvc5term.html#_CPPv48Cvc5Term" title="Cvc5Term"><code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">Cvc5Term</span></code></a> of operator kind that does not require additional
+parameters, e.g., <a class="reference internal" href="../enums/cvc5kind.html#_CPPv4N8Cvc5Kind13CVC5_KIND_ADDE" title="CVC5_KIND_ADD"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">CVC5_KIND_ADD</span></code></a>, is usually constructed via
+<a class="reference internal" href="cvc5termmanager.html#_CPPv412cvc5_mk_termP15Cvc5TermManager8Cvc5Kind6size_tA_K8Cvc5Term" title="Cvc5Term cvc5_mk_term(Cvc5TermManager *tm, Cvc5Kind kind, size_t size, const Cvc5Term args[])"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">Cvc5Term</span> <span class="pre">cvc5_mk_term(Cvc5TermManager*</span> <span class="pre">tm,</span> <span class="pre">Cvc5Kind</span> <span class="pre">kind,</span> <span class="pre">size_t</span> <span class="pre">size,</span> <span class="pre">const</span> <span class="pre">Cvc5Term</span> <span class="pre">args[])</span></code></a>.
+Alternatively, any <a class="reference internal" href="cvc5term.html#_CPPv48Cvc5Term" title="Cvc5Term"><code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">Cvc5Term</span></code></a> can be constructed via first
+instantiating a corresponding <a class="reference internal" href="#_CPPv46Cvc5Op" title="Cvc5Op"><code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">Cvc5Op</span></code></a>, even if the operator does
+not require additional parameters.
+Terms with operators that require additional parameters, e.g.,
+<a class="reference internal" href="../enums/cvc5kind.html#_CPPv4N8Cvc5Kind27CVC5_KIND_BITVECTOR_EXTRACTE" title="CVC5_KIND_BITVECTOR_EXTRACT"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">CVC5_KIND_BITVECTOR_EXTRACT</span></code></a>, must be created via
+<a class="reference internal" href="cvc5termmanager.html#_CPPv410cvc5_mk_opP15Cvc5TermManager8Cvc5Kind6size_tA_K8uint32_t" title="cvc5_mk_op"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5_mk_op()</span></code></a> (or <a class="reference internal" href="cvc5termmanager.html#_CPPv419cvc5_mk_op_from_strP15Cvc5TermManager8Cvc5KindPKc" title="cvc5_mk_op_from_str"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5_mk_op_from_str()</span></code></a>) and
+<a class="reference internal" href="cvc5termmanager.html#_CPPv420cvc5_mk_term_from_opP15Cvc5TermManager6Cvc5Op6size_tA_K8Cvc5Term" title="cvc5_mk_term_from_op"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5_mk_term_from_op()</span></code></a>.</p>
+<div class="hide-toctree docutils container">
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<hr class="docutils" />
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv46Cvc5Op">
+<span id="_CPPv36Cvc5Op"></span><span id="_CPPv26Cvc5Op"></span><span id="Cvc5Op"></span><span class="target" id="cvc5_8h_1a38fc6b0c22c6f35f76c7b9c2a0ea64d5"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">cvc5_op_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">Cvc5Op</span></span></span><a class="headerlink" href="#_CPPv46Cvc5Op" title="Link to this definition"></a><br /></dt>
+<dd><p>A cvc5 operator.</p>
+<p>An operator is a term that represents certain operators, instantiated with its required parameters, e.g., a Term of kind <a class="reference internal" href="../enums/cvc5kind.html#cvc5__kind_8h_1adb3aea484c80a0fbfc8863f2b855237fa660128e062baeb49daa8d69d8e959f0e"><span class="std std-ref">CVC5_KIND_BITVECTOR_EXTRACT</span></a>. </p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv412cvc5_op_copy6Cvc5Op">
+<span id="_CPPv312cvc5_op_copy6Cvc5Op"></span><span id="_CPPv212cvc5_op_copy6Cvc5Op"></span><span id="cvc5_op_copy__Cvc5Op"></span><span class="target" id="group__c__cvc5op_1gab715c83c0ebff591f9a8897f0776a291"></span><a class="reference internal" href="#_CPPv46Cvc5Op" title="Cvc5Op"><span class="n"><span class="pre">Cvc5Op</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_op_copy</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv46Cvc5Op" title="Cvc5Op"><span class="n"><span class="pre">Cvc5Op</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">op</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412cvc5_op_copy6Cvc5Op" title="Link to this definition"></a><br /></dt>
+<dd><p>Make copy of operator, increases reference counter of <code class="docutils literal notranslate"><span class="pre">op</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step is optional and allows users to manage resources in a more fine-grained manner. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> – The op to copy. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The same op with its reference count increased by one.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415cvc5_op_release6Cvc5Op">
+<span id="_CPPv315cvc5_op_release6Cvc5Op"></span><span id="_CPPv215cvc5_op_release6Cvc5Op"></span><span id="cvc5_op_release__Cvc5Op"></span><span class="target" id="group__c__cvc5op_1ga1f317a9434325dfa29057706c4f67303"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_op_release</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv46Cvc5Op" title="Cvc5Op"><span class="n"><span class="pre">Cvc5Op</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">op</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415cvc5_op_release6Cvc5Op" title="Link to this definition"></a><br /></dt>
+<dd><p>Release copy of operator, decrements reference counter of <code class="docutils literal notranslate"><span class="pre">op</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step is optional and allows users to release resources in a more fine-grained manner. Further, any API function that returns a Cvc5Op returns a copy that is owned by the callee of the function and thus, can be released. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> – The op to release.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv416cvc5_op_is_equal6Cvc5Op6Cvc5Op">
+<span id="_CPPv316cvc5_op_is_equal6Cvc5Op6Cvc5Op"></span><span id="_CPPv216cvc5_op_is_equal6Cvc5Op6Cvc5Op"></span><span id="cvc5_op_is_equal__Cvc5Op.Cvc5Op"></span><span class="target" id="group__c__cvc5op_1ga042c0c0e15899bf7691725acddf99751"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_op_is_equal</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv46Cvc5Op" title="Cvc5Op"><span class="n"><span class="pre">Cvc5Op</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <a class="reference internal" href="#_CPPv46Cvc5Op" title="Cvc5Op"><span class="n"><span class="pre">Cvc5Op</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416cvc5_op_is_equal6Cvc5Op6Cvc5Op" title="Link to this definition"></a><br /></dt>
+<dd><p>Compare two operators for syntactic equality.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – The first operator. </p></li>
+<li><p><strong>b</strong> – The second operator. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if both operators are syntactically identical. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419cvc5_op_is_disequal6Cvc5Op6Cvc5Op">
+<span id="_CPPv319cvc5_op_is_disequal6Cvc5Op6Cvc5Op"></span><span id="_CPPv219cvc5_op_is_disequal6Cvc5Op6Cvc5Op"></span><span id="cvc5_op_is_disequal__Cvc5Op.Cvc5Op"></span><span class="target" id="group__c__cvc5op_1gae2607397af69c4aba6281097071bc6bb"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_op_is_disequal</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv46Cvc5Op" title="Cvc5Op"><span class="n"><span class="pre">Cvc5Op</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <a class="reference internal" href="#_CPPv46Cvc5Op" title="Cvc5Op"><span class="n"><span class="pre">Cvc5Op</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419cvc5_op_is_disequal6Cvc5Op6Cvc5Op" title="Link to this definition"></a><br /></dt>
+<dd><p>Compare two operators for syntactic disequality.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – The first operator. </p></li>
+<li><p><strong>b</strong> – The second operator. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if both operators are syntactically disequal. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv416cvc5_op_get_kind6Cvc5Op">
+<span id="_CPPv316cvc5_op_get_kind6Cvc5Op"></span><span id="_CPPv216cvc5_op_get_kind6Cvc5Op"></span><span id="cvc5_op_get_kind__Cvc5Op"></span><span class="target" id="group__c__cvc5op_1gaa383a9181926f294482f4d6c962adf44"></span><a class="reference internal" href="../enums/cvc5kind.html#_CPPv48Cvc5Kind" title="Cvc5Kind"><span class="n"><span class="pre">Cvc5Kind</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_op_get_kind</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv46Cvc5Op" title="Cvc5Op"><span class="n"><span class="pre">Cvc5Op</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">op</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416cvc5_op_get_kind6Cvc5Op" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the kind of a given operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> – The operator. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The kind of the operator. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv418cvc5_op_is_indexed6Cvc5Op">
+<span id="_CPPv318cvc5_op_is_indexed6Cvc5Op"></span><span id="_CPPv218cvc5_op_is_indexed6Cvc5Op"></span><span id="cvc5_op_is_indexed__Cvc5Op"></span><span class="target" id="group__c__cvc5op_1ga56ff0f69e8232cd4d19c58d916bb0e20"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_op_is_indexed</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv46Cvc5Op" title="Cvc5Op"><span class="n"><span class="pre">Cvc5Op</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">op</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418cvc5_op_is_indexed6Cvc5Op" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if a given operator is indexed. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> – The operator. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True iff the operator is indexed. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv423cvc5_op_get_num_indices6Cvc5Op">
+<span id="_CPPv323cvc5_op_get_num_indices6Cvc5Op"></span><span id="_CPPv223cvc5_op_get_num_indices6Cvc5Op"></span><span id="cvc5_op_get_num_indices__Cvc5Op"></span><span class="target" id="group__c__cvc5op_1ga88442de4643ef16fcc5357cdfe880f48"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_op_get_num_indices</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv46Cvc5Op" title="Cvc5Op"><span class="n"><span class="pre">Cvc5Op</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">op</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423cvc5_op_get_num_indices6Cvc5Op" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the number of indices of a given operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> – The operator. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of indices of the operator. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv417cvc5_op_get_index6Cvc5Op6size_t">
+<span id="_CPPv317cvc5_op_get_index6Cvc5Op6size_t"></span><span id="_CPPv217cvc5_op_get_index6Cvc5Op6size_t"></span><span id="cvc5_op_get_index__Cvc5Op.s"></span><span class="target" id="group__c__cvc5op_1ga7a56c74d66f49061794de40dd9d34439"></span><a class="reference internal" href="cvc5term.html#_CPPv48Cvc5Term" title="Cvc5Term"><span class="n"><span class="pre">Cvc5Term</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_op_get_index</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv46Cvc5Op" title="Cvc5Op"><span class="n"><span class="pre">Cvc5Op</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">op</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417cvc5_op_get_index6Cvc5Op6size_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the index at position <code class="docutils literal notranslate"><span class="pre">i</span></code> of an indexed operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>op</strong> – The operator. </p></li>
+<li><p><strong>i</strong> – The position of the index to return. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The index at position i. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv417cvc5_op_to_string6Cvc5Op">
+<span id="_CPPv317cvc5_op_to_string6Cvc5Op"></span><span id="_CPPv217cvc5_op_to_string6Cvc5Op"></span><span id="cvc5_op_to_string__Cvc5Op"></span><span class="target" id="group__c__cvc5op_1ga109cfb19790c426870b92ebfda43ad7d"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_op_to_string</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv46Cvc5Op" title="Cvc5Op"><span class="n"><span class="pre">Cvc5Op</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">op</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417cvc5_op_to_string6Cvc5Op" title="Link to this definition"></a><br /></dt>
+<dd><p>Get a string representation of a given operator. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The returned char* pointer is only valid until the next call to this function. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> – The operator. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A string representation of the operator. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv412cvc5_op_hash6Cvc5Op">
+<span id="_CPPv312cvc5_op_hash6Cvc5Op"></span><span id="_CPPv212cvc5_op_hash6Cvc5Op"></span><span id="cvc5_op_hash__Cvc5Op"></span><span class="target" id="group__c__cvc5op_1gaea94d96bc537ac5d88f0b8438edf3744"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_op_hash</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv46Cvc5Op" title="Cvc5Op"><span class="n"><span class="pre">Cvc5Op</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">op</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412cvc5_op_hash6Cvc5Op" title="Link to this definition"></a><br /></dt>
+<dd><p>Compute the hash value of an operator. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>op</strong> – The operator. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The hash value of the operator. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cvc5inputparser.html" class="btn btn-neutral float-left" title="Cvc5InputParser" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cvc5proof.html" class="btn btn-neutral float-right" title="Cvc5Proof" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
