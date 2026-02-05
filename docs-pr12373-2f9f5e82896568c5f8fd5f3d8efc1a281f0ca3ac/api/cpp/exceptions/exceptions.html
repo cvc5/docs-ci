@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exceptions &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Command" href="../classes/command.html" />
+    <link rel="prev" title="Quickstart Guide" href="../quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../cpp.html">C++ API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Exceptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N4cvc516CVC5ApiExceptionE"><code class="docutils literal notranslate"><span class="pre">cvc5::CVC5ApiException</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc516CVC5ApiException16CVC5ApiExceptionERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">CVC5ApiException()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc516CVC5ApiException16CVC5ApiExceptionERKNSt12stringstreamE"><code class="docutils literal notranslate"><span class="pre">CVC5ApiException()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc516CVC5ApiException10getMessageEv"><code class="docutils literal notranslate"><span class="pre">getMessage()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc516CVC5ApiException4whatEv"><code class="docutils literal notranslate"><span class="pre">what()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc516CVC5ApiException8toStreamERNSt7ostreamE"><code class="docutils literal notranslate"><span class="pre">toStream()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N4cvc527CVC5ApiRecoverableExceptionE"><code class="docutils literal notranslate"><span class="pre">cvc5::CVC5ApiRecoverableException</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc527CVC5ApiRecoverableException27CVC5ApiRecoverableExceptionERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">CVC5ApiRecoverableException()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc527CVC5ApiRecoverableException27CVC5ApiRecoverableExceptionERKNSt12stringstreamE"><code class="docutils literal notranslate"><span class="pre">CVC5ApiRecoverableException()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N4cvc56parser15ParserExceptionE"><code class="docutils literal notranslate"><span class="pre">cvc5::parser::ParserException</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc56parser15ParserException15ParserExceptionEv"><code class="docutils literal notranslate"><span class="pre">ParserException()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc56parser15ParserException15ParserExceptionERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">ParserException()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc56parser15ParserException15ParserExceptionEPKc"><code class="docutils literal notranslate"><span class="pre">ParserException()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4N4cvc56parser15ParserException15ParserExceptionERKNSt6stringERKNSt6stringEmm"><code class="docutils literal notranslate"><span class="pre">ParserException()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc56parser15ParserException8toStreamERNSt7ostreamE"><code class="docutils literal notranslate"><span class="pre">toStream()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc56parser15ParserException11getFilenameEv"><code class="docutils literal notranslate"><span class="pre">getFilename()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc56parser15ParserException7getLineEv"><code class="docutils literal notranslate"><span class="pre">getLine()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#_CPPv4NK4cvc56parser15ParserException9getColumnEv"><code class="docutils literal notranslate"><span class="pre">getColumn()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/command.html">Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/datatype.html">Datatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/datatypeconstructor.html">DatatypeConstructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/datatypeconstructordecl.html">DatatypeConstructorDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/datatypedecl.html">DatatypeDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/datatypeselector.html">DatatypeSelector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/driveroptions.html">DriverOptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/grammar.html">Grammar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/inputparser.html">InputParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/kind.html">Kind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/modes.html">Modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/op.html">Op</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/optioninfo.html">OptionInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/plugin.html">Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/proof.html">Proof</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/result.html">Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/roundingmode.html">RoundingMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/solver.html">Solver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/sort.html">Sort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/sortkind.html">SortKind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/statistics.html">Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/symbolmanager.html">SymbolManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/synthresult.html">SynthResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/term.html">Term</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classes/termmanager.html">TermManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../enums/unknownexplanation.html">UnknownExplanation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cpp.html#class-hierarchy">Class hierarchy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../c/c.html">C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/python.html">Python API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../cpp.html">C++ API</a></li>
+      <li class="breadcrumb-item active">Exceptions</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="exceptions">
+<h1>Exceptions<a class="headerlink" href="#exceptions" title="Link to this heading"></a></h1>
+<p>The cvc5 API communicates certain errors using exceptions. We broadly
+distinguish two types of exceptions: <a class="reference internal" href="#_CPPv4N4cvc516CVC5ApiExceptionE" title="cvc5::CVC5ApiException"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">CVC5ApiException</span></code></a> and <a class="reference internal" href="#_CPPv4N4cvc527CVC5ApiRecoverableExceptionE" title="cvc5::CVC5ApiRecoverableException"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">CVC5ApiRecoverableException</span></code></a> (which is derived from
+<a class="reference internal" href="#_CPPv4N4cvc516CVC5ApiExceptionE" title="cvc5::CVC5ApiException"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">CVC5ApiException</span></code></a>).</p>
+<p>If any method fails with a <a class="reference internal" href="#_CPPv4N4cvc527CVC5ApiRecoverableExceptionE" title="cvc5::CVC5ApiRecoverableException"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">CVC5ApiRecoverableException</span></code></a>, the solver behaves as if the failing
+method was not called. The solver can still be used safely.</p>
+<p>If, however, a method fails with a <a class="reference internal" href="#_CPPv4N4cvc516CVC5ApiExceptionE" title="cvc5::CVC5ApiException"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">CVC5ApiException</span></code></a>, the associated object may be in an unsafe state
+and it should no longer be used.</p>
+<p>If the <a class="reference internal" href="../classes/inputparser.html#_CPPv4N4cvc56parser11InputParserE" title="cvc5::parser::InputParser"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">cvc5::parser::InputParser</span></code></a> encounters an error, it will
+throw a <a class="reference internal" href="#_CPPv4N4cvc56parser15ParserExceptionE" title="cvc5::parser::ParserException"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">cvc5::parser::ParserException</span></code></a>.
+If thrown, API objects can still be used</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc516CVC5ApiExceptionE">
+<span id="_CPPv3N4cvc516CVC5ApiExceptionE"></span><span id="_CPPv2N4cvc516CVC5ApiExceptionE"></span><span id="cvc5::CVC5ApiException"></span><span class="target" id="classcvc5_1_1CVC5ApiException"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5ApiException</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">exception</span></span><a class="headerlink" href="#_CPPv4N4cvc516CVC5ApiExceptionE" title="Link to this definition"></a><br /></dt>
+<dd><p>Base class for all API exceptions. If thrown, all API objects may be in an unsafe state. </p>
+<p>Subclassed by <a class="reference internal" href="#classcvc5_1_1CVC5ApiRecoverableException"><span class="std std-ref">cvc5::CVC5ApiRecoverableException</span></a>, <a class="reference internal" href="#classcvc5_1_1parser_1_1ParserException"><span class="std std-ref">cvc5::parser::ParserException</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc516CVC5ApiException16CVC5ApiExceptionERKNSt6stringE">
+<span id="_CPPv3N4cvc516CVC5ApiException16CVC5ApiExceptionERKNSt6stringE"></span><span id="_CPPv2N4cvc516CVC5ApiException16CVC5ApiExceptionERKNSt6stringE"></span><span id="cvc5::CVC5ApiException::CVC5ApiException__ssCR"></span><span class="target" id="classcvc5_1_1CVC5ApiException_1aa50672edb68671684d3cd2d28e554c41"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5ApiException</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">str</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc516CVC5ApiException16CVC5ApiExceptionERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Construct with message from a string. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>str</strong> – The error message. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc516CVC5ApiException16CVC5ApiExceptionERKNSt12stringstreamE">
+<span id="_CPPv3N4cvc516CVC5ApiException16CVC5ApiExceptionERKNSt12stringstreamE"></span><span id="_CPPv2N4cvc516CVC5ApiException16CVC5ApiExceptionERKNSt12stringstreamE"></span><span id="cvc5::CVC5ApiException::CVC5ApiException__std::stringstreamCR"></span><span class="target" id="classcvc5_1_1CVC5ApiException_1aabf28007adbdcd72c8c501fb2351b076"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5ApiException</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stringstream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc516CVC5ApiException16CVC5ApiExceptionERKNSt12stringstreamE" title="Link to this definition"></a><br /></dt>
+<dd><p>Construct with message from a string stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stream</strong> – The error message. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc516CVC5ApiException10getMessageEv">
+<span id="_CPPv3NK4cvc516CVC5ApiException10getMessageEv"></span><span id="_CPPv2NK4cvc516CVC5ApiException10getMessageEv"></span><span id="cvc5::CVC5ApiException::getMessageC"></span><span class="target" id="classcvc5_1_1CVC5ApiException_1a1a12b30ec0413a71454c810f28f32044"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getMessage</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc516CVC5ApiException10getMessageEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Retrieve the message from this exception. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The error message. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc516CVC5ApiException4whatEv">
+<span id="_CPPv3NK4cvc516CVC5ApiException4whatEv"></span><span id="_CPPv2NK4cvc516CVC5ApiException4whatEv"></span><span id="cvc5::CVC5ApiException::whatC"></span><span class="target" id="classcvc5_1_1CVC5ApiException_1a68dfe5638df4ee35a97db92490335d4e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">what</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK4cvc516CVC5ApiException4whatEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Retrieve the message as a C-style array. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The error message. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc516CVC5ApiException8toStreamERNSt7ostreamE">
+<span id="_CPPv3NK4cvc516CVC5ApiException8toStreamERNSt7ostreamE"></span><span id="_CPPv2NK4cvc516CVC5ApiException8toStreamERNSt7ostreamE"></span><span id="cvc5::CVC5ApiException::toStream__osRC"></span><span class="target" id="classcvc5_1_1CVC5ApiException_1a018764e959324a4d7385fbc43bba0e57"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toStream</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">os</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc516CVC5ApiException8toStreamERNSt7ostreamE" title="Link to this definition"></a><br /></dt>
+<dd><p>Printing: feel free to redefine <a class="reference internal" href="#classcvc5_1_1CVC5ApiException_1a018764e959324a4d7385fbc43bba0e57"><span class="std std-ref">toStream()</span></a>. When overridden in a derived class, it’s recommended that this method print the type of exception before the actual message. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc527CVC5ApiRecoverableExceptionE">
+<span id="_CPPv3N4cvc527CVC5ApiRecoverableExceptionE"></span><span id="_CPPv2N4cvc527CVC5ApiRecoverableExceptionE"></span><span id="cvc5::CVC5ApiRecoverableException"></span><span class="target" id="classcvc5_1_1CVC5ApiRecoverableException"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5ApiRecoverableException</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">cvc5</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N4cvc516CVC5ApiExceptionE" title="cvc5::CVC5ApiException"><span class="n"><span class="pre">CVC5ApiException</span></span></a><a class="headerlink" href="#_CPPv4N4cvc527CVC5ApiRecoverableExceptionE" title="Link to this definition"></a><br /></dt>
+<dd><p>A recoverable API exception. If thrown, API objects can still be used. </p>
+<p>Subclassed by cvc5::CVC5ApiOptionException, cvc5::CVC5ApiUnsupportedException</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc527CVC5ApiRecoverableException27CVC5ApiRecoverableExceptionERKNSt6stringE">
+<span id="_CPPv3N4cvc527CVC5ApiRecoverableException27CVC5ApiRecoverableExceptionERKNSt6stringE"></span><span id="_CPPv2N4cvc527CVC5ApiRecoverableException27CVC5ApiRecoverableExceptionERKNSt6stringE"></span><span id="cvc5::CVC5ApiRecoverableException::CVC5ApiRecoverableException__ssCR"></span><span class="target" id="classcvc5_1_1CVC5ApiRecoverableException_1aee242af287a0f13a057a2f918be2b3a6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5ApiRecoverableException</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">str</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc527CVC5ApiRecoverableException27CVC5ApiRecoverableExceptionERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Construct with message from a string. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>str</strong> – The error message. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc527CVC5ApiRecoverableException27CVC5ApiRecoverableExceptionERKNSt12stringstreamE">
+<span id="_CPPv3N4cvc527CVC5ApiRecoverableException27CVC5ApiRecoverableExceptionERKNSt12stringstreamE"></span><span id="_CPPv2N4cvc527CVC5ApiRecoverableException27CVC5ApiRecoverableExceptionERKNSt12stringstreamE"></span><span id="cvc5::CVC5ApiRecoverableException::CVC5ApiRecoverableException__std::stringstreamCR"></span><span class="target" id="classcvc5_1_1CVC5ApiRecoverableException_1a38ab21717981a004f6332af764c581ca"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CVC5ApiRecoverableException</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">stringstream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">stream</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc527CVC5ApiRecoverableException27CVC5ApiRecoverableExceptionERKNSt12stringstreamE" title="Link to this definition"></a><br /></dt>
+<dd><p>Construct with message from a string stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stream</strong> – The error message. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser15ParserExceptionE">
+<span id="_CPPv3N4cvc56parser15ParserExceptionE"></span><span id="_CPPv2N4cvc56parser15ParserExceptionE"></span><span id="cvc5::parser::ParserException"></span><span class="target" id="classcvc5_1_1parser_1_1ParserException"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ParserException</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">cvc5</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N4cvc516CVC5ApiExceptionE" title="cvc5::CVC5ApiException"><span class="n"><span class="pre">CVC5ApiException</span></span></a><a class="headerlink" href="#_CPPv4N4cvc56parser15ParserExceptionE" title="Link to this definition"></a><br /></dt>
+<dd><p>Base class for all Parser exceptions. If thrown, API objects can still be used </p>
+<p>Subclassed by cvc5::parser::ParserEndOfFileException</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser15ParserException15ParserExceptionEv">
+<span id="_CPPv3N4cvc56parser15ParserException15ParserExceptionEv"></span><span id="_CPPv2N4cvc56parser15ParserException15ParserExceptionEv"></span><span id="cvc5::parser::ParserException::ParserException"></span><span class="target" id="classcvc5_1_1parser_1_1ParserException_1a1364703ef4254a5a7862d4153a2b14d6"></span><span class="sig-name descname"><span class="n"><span class="pre">ParserException</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc56parser15ParserException15ParserExceptionEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Default constructor </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser15ParserException15ParserExceptionERKNSt6stringE">
+<span id="_CPPv3N4cvc56parser15ParserException15ParserExceptionERKNSt6stringE"></span><span id="_CPPv2N4cvc56parser15ParserException15ParserExceptionERKNSt6stringE"></span><span id="cvc5::parser::ParserException::ParserException__ssCR"></span><span class="target" id="classcvc5_1_1parser_1_1ParserException_1a30026bc34cd8b19f0f3a56395829ef27"></span><span class="sig-name descname"><span class="n"><span class="pre">ParserException</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc56parser15ParserException15ParserExceptionERKNSt6stringE" title="Link to this definition"></a><br /></dt>
+<dd><p>Construct with message from a string. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>msg</strong> – The error message. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser15ParserException15ParserExceptionEPKc">
+<span id="_CPPv3N4cvc56parser15ParserException15ParserExceptionEPKc"></span><span id="_CPPv2N4cvc56parser15ParserException15ParserExceptionEPKc"></span><span id="cvc5::parser::ParserException::ParserException__cCP"></span><span class="target" id="classcvc5_1_1parser_1_1ParserException_1a363b23f4a7d0d10e8a3ceb3794b3ffa2"></span><span class="sig-name descname"><span class="n"><span class="pre">ParserException</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc56parser15ParserException15ParserExceptionEPKc" title="Link to this definition"></a><br /></dt>
+<dd><p>Construct with message from a C string. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>msg</strong> – The error message. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4cvc56parser15ParserException15ParserExceptionERKNSt6stringERKNSt6stringEmm">
+<span id="_CPPv3N4cvc56parser15ParserException15ParserExceptionERKNSt6stringERKNSt6stringEmm"></span><span id="_CPPv2N4cvc56parser15ParserException15ParserExceptionERKNSt6stringERKNSt6stringEmm"></span><span id="cvc5::parser::ParserException::ParserException__ssCR.ssCR.unsigned-l.unsigned-l"></span><span class="target" id="classcvc5_1_1parser_1_1ParserException_1ad3bf058bcedc0ea7a4bd38c436f873d5"></span><span class="sig-name descname"><span class="n"><span class="pre">ParserException</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">line</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">column</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4cvc56parser15ParserException15ParserExceptionERKNSt6stringERKNSt6stringEmm" title="Link to this definition"></a><br /></dt>
+<dd><p>Construct with message from a string. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>msg</strong> – The error message. </p></li>
+<li><p><strong>filename</strong> – name of the file. </p></li>
+<li><p><strong>line</strong> – The error line number. </p></li>
+<li><p><strong>column</strong> – The error column number. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc56parser15ParserException8toStreamERNSt7ostreamE">
+<span id="_CPPv3NK4cvc56parser15ParserException8toStreamERNSt7ostreamE"></span><span id="_CPPv2NK4cvc56parser15ParserException8toStreamERNSt7ostreamE"></span><span id="cvc5::parser::ParserException::toStream__osRC"></span><span class="target" id="classcvc5_1_1parser_1_1ParserException_1ac31436ea95461388fd70348425fa373f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toStream</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">os</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK4cvc56parser15ParserException8toStreamERNSt7ostreamE" title="Link to this definition"></a><br /></dt>
+<dd><p>Print error to output stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>os</strong> – The output stream to write the error on. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc56parser15ParserException11getFilenameEv">
+<span id="_CPPv3NK4cvc56parser15ParserException11getFilenameEv"></span><span id="_CPPv2NK4cvc56parser15ParserException11getFilenameEv"></span><span id="cvc5::parser::ParserException::getFilenameC"></span><span class="target" id="classcvc5_1_1parser_1_1ParserException_1aa6f11bdfd7960b8b71b90eaa24be5399"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getFilename</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc56parser15ParserException11getFilenameEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The file name. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc56parser15ParserException7getLineEv">
+<span id="_CPPv3NK4cvc56parser15ParserException7getLineEv"></span><span id="_CPPv2NK4cvc56parser15ParserException7getLineEv"></span><span id="cvc5::parser::ParserException::getLineC"></span><span class="target" id="classcvc5_1_1parser_1_1ParserException_1a02097c9a6ae1b63ee432d354c8dd076b"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getLine</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc56parser15ParserException7getLineEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The line number of the parsing error. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4cvc56parser15ParserException9getColumnEv">
+<span id="_CPPv3NK4cvc56parser15ParserException9getColumnEv"></span><span id="_CPPv2NK4cvc56parser15ParserException9getColumnEv"></span><span id="cvc5::parser::ParserException::getColumnC"></span><span class="target" id="classcvc5_1_1parser_1_1ParserException_1ae0cdbfa6d26ac61e273c0ba7246a880d"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">long</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getColumn</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4cvc56parser15ParserException9getColumnEv" title="Link to this definition"></a><br /></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The column number of the parsing error. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../quickstart.html" class="btn btn-neutral float-left" title="Quickstart Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../classes/command.html" class="btn btn-neutral float-right" title="Command" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
