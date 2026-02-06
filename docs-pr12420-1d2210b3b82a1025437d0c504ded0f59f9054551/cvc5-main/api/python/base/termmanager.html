@@ -1,0 +1,1283 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TermManager &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="UnknownExplanation" href="unknownexplanation.html" />
+    <link rel="prev" title="Term" href="term.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../cpp/cpp.html">C++ API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../c/c.html">C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../python.html">Python API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pythonic/pythonic.html">Pythonic API</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="python.html">Base Python API</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="command.html">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatype.html">Datatype</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypeconstructor.html">DatatypeConstructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypeconstructordecl.html">DatatypeConstructorDecl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypedecl.html">DatatypeDecl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypeselector.html">DatatypeSelector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="grammar.html">Grammar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="inputparser.html">InputParser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kind.html">Kind</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modes.html">Modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="op.html">Op</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plugin.html">Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="proof.html">Proof</a></li>
+<li class="toctree-l4"><a class="reference internal" href="result.html">Result</a></li>
+<li class="toctree-l4"><a class="reference internal" href="roundingmode.html">RoundingMode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solver.html">Solver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sort.html">Sort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sortkind.html">SortKind</a></li>
+<li class="toctree-l4"><a class="reference internal" href="statistics.html">Statistics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="symbolmanager.html">SymbolManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="synthresult.html">SynthResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="term.html">Term</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">TermManager</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#cvc5.TermManager"><code class="docutils literal notranslate"><span class="pre">TermManager</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="unknownexplanation.html">UnknownExplanation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python.html#classes">Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python.html#enums">Enums</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#which-python-api-should-i-use">Which Python API should I use?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#installation-from-pypi">Installation (from PyPi)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#installation-from-source">Installation (from source)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../python.html">Python API</a></li>
+          <li class="breadcrumb-item"><a href="python.html">Base Python API</a></li>
+      <li class="breadcrumb-item active">TermManager</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="termmanager">
+<h1>TermManager<a class="headerlink" href="#termmanager" title="Link to this heading"></a></h1>
+<p>This class represents a cvc5 term manager instance.</p>
+<p><a class="reference internal" href="term.html#cvc5.Term" title="cvc5.Term"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Terms</span></code></a>, <a class="reference internal" href="sort.html#cvc5.Sort" title="cvc5.Sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sorts</span></code></a> and
+<a class="reference internal" href="op.html#cvc5.Op" title="cvc5.Op"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ops</span></code></a> are not tied to a <a class="reference internal" href="solver.html#cvc5.Solver" title="cvc5.Solver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cvc5.Solver</span></code></a>
+but associated with a <a class="reference internal" href="#cvc5.TermManager" title="cvc5.TermManager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cvc5.TermManager</span></code></a> instance, which can be
+shared between solver instances (and thus allows sharing of terms and sorts
+between solver instances).
+Term kinds are defined via enum class <a class="reference internal" href="kind.html"><span class="doc">cvc5.Kind</span></a>, and
+sort kinds via enum class <a class="reference internal" href="sortkind.html"><span class="doc">cvc5.SortKind</span></a>.</p>
+<hr class="docutils" />
+<dl class="py class">
+<dt class="sig sig-object py" id="cvc5.TermManager">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5.</span></span><span class="sig-name descname"><span class="pre">TermManager</span></span><a class="headerlink" href="#cvc5.TermManager" title="Link to this definition"></a></dt>
+<dd><p>A cvc5 term manager.</p>
+<p>Wrapper class for <a class="reference internal" href="../../cpp/classes/termmanager.html#_CPPv4N4cvc511TermManagerE" title="cvc5::TermManager"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">cvc5::TermManager</span></code></a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.getBooleanSort">
+<span class="sig-name descname"><span class="pre">getBooleanSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.getBooleanSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Sort Boolean.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.getIntegerSort">
+<span class="sig-name descname"><span class="pre">getIntegerSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.getIntegerSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Sort Integer.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.getNumIndicesForSkolemId">
+<span class="sig-name descname"><span class="pre">getNumIndicesForSkolemId</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.getNumIndicesForSkolemId" title="Link to this definition"></a></dt>
+<dd><p>Get the number of indices for a skolem id.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> – The skolem id.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of indice for a skolem with the given id.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.getRealSort">
+<span class="sig-name descname"><span class="pre">getRealSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.getRealSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Sort Real.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.getRegExpSort">
+<span class="sig-name descname"><span class="pre">getRegExpSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.getRegExpSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The sort of regular expressions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.getRoundingModeSort">
+<span class="sig-name descname"><span class="pre">getRoundingModeSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.getRoundingModeSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Sort RoundingMode.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.getStatistics">
+<span class="sig-name descname"><span class="pre">getStatistics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.getStatistics" title="Link to this definition"></a></dt>
+<dd><p>Get a snapshot of the current state of the statistic values of
+this term manager.</p>
+<p>Term manager statistics are independent from any solver instance.
+The returned object is completely decoupled from the term manager
+and will not change when the solver is used again.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A snapshot of the current state of the statistic values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.getStringSort">
+<span class="sig-name descname"><span class="pre">getStringSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.getStringSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Sort String.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkAbstractSort">
+<span class="sig-name descname"><span class="pre">mkAbstractSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkAbstractSort" title="Link to this definition"></a></dt>
+<dd><p>Create an abstract sort. An abstract sort represents a sort for a
+given kind whose parameters and arguments are unspecified.</p>
+<p>Given <code class="docutils literal notranslate"><span class="pre">kind</span></code> must be the kind of a sort that can be abstracted,
+i.e., a sort that has indices or argument sorts. For example,
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">ARRAY_SORT</span></code>
+and <code class="xref py py-obj docutils literal notranslate"><span class="pre">BITVECTOR_SORT</span></code> can be
+passed as the kind <code class="docutils literal notranslate"><span class="pre">k</span></code> to this method, while
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">INTEGER_SORT</span></code> and
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">STRING_SORT</span></code> cannot.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Providing the kind <code class="xref py py-obj docutils literal notranslate"><span class="pre">ABSTRACT_SORT</span></code>
+as an argument to this method returns the (fully) unspecified
+sort, denoted <code class="docutils literal notranslate"><span class="pre">?</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Providing a kind of sort that has no indices and a fixed arity
+of argument sorts will return the sort of kind <code class="docutils literal notranslate"><span class="pre">kind</span></code> whose
+arguments are the unspecified sort. For example,
+<code class="docutils literal notranslate"><span class="pre">mkAbstractSort(ARRAY_SORT)</span></code> will return the sort
+<code class="docutils literal notranslate"><span class="pre">(ARRAY_SORT</span> <span class="pre">?</span> <span class="pre">?)</span></code> instead of the abstract sort whose
+abstract kind is py:obj:<cite>ARRAY_SORT &lt;Kind.ARRAY_SORT&gt;</cite>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>k</strong> – The kind of the abstract sort</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The abstract sort.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkArraySort">
+<span class="sig-name descname"><span class="pre">mkArraySort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkArraySort" title="Link to this definition"></a></dt>
+<dd><p>Create an array sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>indexSort</strong> – The array index sort.</p></li>
+<li><p><strong>elemSort</strong> – The array element sort.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The array sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkBagSort">
+<span class="sig-name descname"><span class="pre">mkBagSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkBagSort" title="Link to this definition"></a></dt>
+<dd><p>Create a bag sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>elemSort</strong> – The sort of the bag elements.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The bag sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkBitVector">
+<span class="sig-name descname"><span class="pre">mkBitVector</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkBitVector" title="Link to this definition"></a></dt>
+<dd><p>Create bit-vector value.</p>
+<p>Supports the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkBitVector(int</span> <span class="pre">size,</span> <span class="pre">int</span> <span class="pre">val=0)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkBitVector(int</span> <span class="pre">size,</span> <span class="pre">string</span> <span class="pre">val,</span> <span class="pre">int</span> <span class="pre">base)</span></code></p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> – The bit-width.</p></li>
+<li><p><strong>val</strong> – An integer representating the value, in the first form.
+In the second form, a string representing the value.</p></li>
+<li><p><strong>base</strong> – The base of the string representation (second form
+only).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Term representing a bit-vector value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkBitVectorSort">
+<span class="sig-name descname"><span class="pre">mkBitVectorSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkBitVectorSort" title="Link to this definition"></a></dt>
+<dd><p>Create a bit-vector sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>size</strong> – The bit-width of the bit-vector sort</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The bit-vector sort</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkBoolean">
+<span class="sig-name descname"><span class="pre">mkBoolean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkBoolean" title="Link to this definition"></a></dt>
+<dd><p>Create a Boolean constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The Boolean constant.</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>val</strong> – The value of the constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkCardinalityConstraint">
+<span class="sig-name descname"><span class="pre">mkCardinalityConstraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkCardinalityConstraint" title="Link to this definition"></a></dt>
+<dd><p>Create cardinality constraint.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort</strong> – Sort of the constraint.</p></li>
+<li><p><strong>index</strong> – The upper bound for the cardinality of the sort.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkConst">
+<span class="sig-name descname"><span class="pre">mkConst</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkConst" title="Link to this definition"></a></dt>
+<dd><p>Create (first-order) constant (0-arity function symbol).</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">declare-const</span> <span class="n">&lt;symbol&gt;</span> <span class="n">&lt;sort&gt;</span> )
+( <span class="k">declare-fun</span> <span class="n">&lt;symbol&gt;</span> ( ) <span class="n">&lt;sort&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort</strong> – The sort of the constant.</p></li>
+<li><p><strong>symbol</strong> – The name of the constant. If None, a default symbol
+is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The first-order constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkConstArray">
+<span class="sig-name descname"><span class="pre">mkConstArray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkConstArray" title="Link to this definition"></a></dt>
+<dd><p>Create a constant array with the provided constant value stored at
+every index</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort</strong> – The sort of the constant array (must be an array sort).</p></li>
+<li><p><strong>val</strong> – The constant value to store (must match the sort’s
+element sort).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The constant array term.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkDatatypeConstructorDecl">
+<span class="sig-name descname"><span class="pre">mkDatatypeConstructorDecl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkDatatypeConstructorDecl" title="Link to this definition"></a></dt>
+<dd><p>Create datatype constructor declaration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – The name of the constructor.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The datatype constructor declaration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkDatatypeDecl">
+<span class="sig-name descname"><span class="pre">mkDatatypeDecl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkDatatypeDecl" title="Link to this definition"></a></dt>
+<dd><p>Create a datatype declaration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – The name of the datatype.</p></li>
+<li><p><strong>isCoDatatype</strong> – True if a codatatype is to be constructed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The datatype declaration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkDatatypeSort">
+<span class="sig-name descname"><span class="pre">mkDatatypeSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkDatatypeSort" title="Link to this definition"></a></dt>
+<dd><p>Create a datatype sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dtypedecl</strong> – The datatype declaration from which the sort is
+created.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The datatype sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkDatatypeSorts">
+<span class="sig-name descname"><span class="pre">mkDatatypeSorts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkDatatypeSorts" title="Link to this definition"></a></dt>
+<dd><p>Create a vector of datatype sorts using unresolved sorts. The names
+of the datatype declarations in dtypedecls must be distinct.</p>
+<p>When constructing datatypes, unresolved sorts are replaced by the
+datatype sort constructed for the datatype declaration it is
+associated with.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dtypedecls</strong> – The datatype declarations from which the sort is
+created.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The datatype sorts.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkEmptyBag">
+<span class="sig-name descname"><span class="pre">mkEmptyBag</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkEmptyBag" title="Link to this definition"></a></dt>
+<dd><p>Create a constant representing an empty bag of the given sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sort</strong> – The sort of the bag elements.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The empty bag constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkEmptySequence">
+<span class="sig-name descname"><span class="pre">mkEmptySequence</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkEmptySequence" title="Link to this definition"></a></dt>
+<dd><p>Create an empty sequence of the given element sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sort</strong> – The element sort of the sequence.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The empty sequence with given element sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkEmptySet">
+<span class="sig-name descname"><span class="pre">mkEmptySet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkEmptySet" title="Link to this definition"></a></dt>
+<dd><p>Create a constant representing an empty set of the given sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sort</strong> – The sort of the set elements.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The empty set constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkFalse">
+<span class="sig-name descname"><span class="pre">mkFalse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkFalse" title="Link to this definition"></a></dt>
+<dd><p>Create a Boolean false constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The false constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkFiniteFieldElem">
+<span class="sig-name descname"><span class="pre">mkFiniteFieldElem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkFiniteFieldElem" title="Link to this definition"></a></dt>
+<dd><p>Create finite field value.</p>
+<p>Supports the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkFiniteFieldElem(int</span> <span class="pre">value,</span> <span class="pre">Sort</span> <span class="pre">sort)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkFiniteFieldElem(string</span> <span class="pre">value,</span> <span class="pre">Sort</span> <span class="pre">sort)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkFiniteFieldElem(string</span> <span class="pre">value,</span> <span class="pre">Sort</span> <span class="pre">sort,</span> <span class="pre">int</span> <span class="pre">base)</span></code></p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – The value of the element’s integer representation.
+An integer or string of base 10 if the base is not
+explicitly given, and else a string in the given base.</p></li>
+<li><p><strong>sort</strong> – The field to create the element in.</p></li>
+<li><p><strong>base</strong> – The base of the string representation of <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Term representing a finite field value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkFiniteFieldSort">
+<span class="sig-name descname"><span class="pre">mkFiniteFieldSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkFiniteFieldSort" title="Link to this definition"></a></dt>
+<dd><p>Create a finite field sort.</p>
+<p>Supports the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">mkFiniteFieldSort(int</span> <span class="pre">size)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">mkFiniteFieldSort(string</span> <span class="pre">size)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">mkFiniteFieldSort(string</span> <span class="pre">size,</span> <span class="pre">int</span> <span class="pre">base)</span></code></p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> – The size of the field. Must be a prime-power.
+An integer or string of base 10 if the base is not
+explicitly given, and else a string in the given base.</p></li>
+<li><p><strong>base</strong> – The base of the string representation of <code class="docutils literal notranslate"><span class="pre">size</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkFloatingPoint">
+<span class="sig-name descname"><span class="pre">mkFloatingPoint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkFloatingPoint" title="Link to this definition"></a></dt>
+<dd><p>Create a floating-point value from a bit-vector given in IEEE-754
+format, or from its three IEEE-754 bit-vector value components
+(sign bit, exponent, significand). Arguments must be either given
+as (int, int, Term) or (Term, Term, Term).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arg0</strong> – The size of the exponent or the sign bit.</p></li>
+<li><p><strong>arg1</strong> – The size of the signifcand or the bit-vector
+representing the exponent.</p></li>
+<li><p><strong>arg2</strong> – The value of the floating-point constant as a
+bit-vector term or the bit-vector representing the
+significand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The floating-point value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkFloatingPointNaN">
+<span class="sig-name descname"><span class="pre">mkFloatingPointNaN</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkFloatingPointNaN" title="Link to this definition"></a></dt>
+<dd><p>Create a not-a-number (NaN) floating-point constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exp</strong> – Number of bits in the exponent.</p></li>
+<li><p><strong>sig</strong> – Number of bits in the significand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The floating-point constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkFloatingPointNegInf">
+<span class="sig-name descname"><span class="pre">mkFloatingPointNegInf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkFloatingPointNegInf" title="Link to this definition"></a></dt>
+<dd><p>Create a negative infinity floating-point constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exp</strong> – Number of bits in the exponent.</p></li>
+<li><p><strong>sig</strong> – Number of bits in the significand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The floating-point constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkFloatingPointNegZero">
+<span class="sig-name descname"><span class="pre">mkFloatingPointNegZero</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkFloatingPointNegZero" title="Link to this definition"></a></dt>
+<dd><p>Create a negative zero (+0.0) floating-point constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exp</strong> – Number of bits in the exponent.</p></li>
+<li><p><strong>sig</strong> – Number of bits in the significand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The floating-point constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkFloatingPointPosInf">
+<span class="sig-name descname"><span class="pre">mkFloatingPointPosInf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkFloatingPointPosInf" title="Link to this definition"></a></dt>
+<dd><p>Create a positive infinity floating-point constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exp</strong> – Number of bits in the exponent.</p></li>
+<li><p><strong>sig</strong> – Number of bits in the significand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The floating-point constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkFloatingPointPosZero">
+<span class="sig-name descname"><span class="pre">mkFloatingPointPosZero</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkFloatingPointPosZero" title="Link to this definition"></a></dt>
+<dd><p>Create a positive zero (+0.0) floating-point constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exp</strong> – Number of bits in the exponent.</p></li>
+<li><p><strong>sig</strong> – Number of bits in the significand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The floating-point constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkFloatingPointSort">
+<span class="sig-name descname"><span class="pre">mkFloatingPointSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkFloatingPointSort" title="Link to this definition"></a></dt>
+<dd><p>Create a floating-point sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exp</strong> – The bit-width of the exponent of the floating-point
+sort.</p></li>
+<li><p><strong>sig</strong> – The bit-width of the significand of the floating-point
+sort.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkFunctionSort">
+<span class="sig-name descname"><span class="pre">mkFunctionSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkFunctionSort" title="Link to this definition"></a></dt>
+<dd><p>Create function sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sorts</strong> – The sort of the function arguments.</p></li>
+<li><p><strong>codomain</strong> – The sort of the function return value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The function sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkInteger">
+<span class="sig-name descname"><span class="pre">mkInteger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkInteger" title="Link to this definition"></a></dt>
+<dd><p>Create an integer constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – Representation of the constant: either a string or
+integer.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A constant of sort Integer.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkNullableIsNull">
+<span class="sig-name descname"><span class="pre">mkNullableIsNull</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkNullableIsNull" title="Link to this definition"></a></dt>
+<dd><p>Create a null tester for a nullable term.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>term</strong> – A nullable term.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tester whether term is null.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkNullableIsSome">
+<span class="sig-name descname"><span class="pre">mkNullableIsSome</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkNullableIsSome" title="Link to this definition"></a></dt>
+<dd><p>Create a some tester for a nullable term.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>term</strong> – A nullable term.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tester whether term is some.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkNullableLift">
+<span class="sig-name descname"><span class="pre">mkNullableLift</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkNullableLift" title="Link to this definition"></a></dt>
+<dd><p>Create a term that lifts kind to nullable terms.
+Example:
+If we have the term ((_ nullable.lift +) x y),
+where x, y of type (Nullable Int), then
+kind would be ADD, and args would be [x, y].
+This function would return
+(nullable.lift (lambda ((a Int) (b Int)) (+ a b)) x y)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kind</strong> – The lifted operator.</p></li>
+<li><p><strong>args</strong> – The arguments of the lifted operator.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A term of Kind NULLABLE_LIFT where the first child
+is a lambda expression, and the remaining children are
+the original arguments.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkNullableNull">
+<span class="sig-name descname"><span class="pre">mkNullableNull</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkNullableNull" title="Link to this definition"></a></dt>
+<dd><p>Create a constant representing an null of the given sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>term</strong> – The sort of the Nullable element.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The null constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkNullableSome">
+<span class="sig-name descname"><span class="pre">mkNullableSome</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkNullableSome" title="Link to this definition"></a></dt>
+<dd><p>Create a nullable some term.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>term</strong> – The elements value.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The element value wrapped in some constructor.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkNullableSort">
+<span class="sig-name descname"><span class="pre">mkNullableSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkNullableSort" title="Link to this definition"></a></dt>
+<dd><p>Create a nullable sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>elemSort</strong> – The sort of the element of the nullable.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The nullable sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkNullableVal">
+<span class="sig-name descname"><span class="pre">mkNullableVal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkNullableVal" title="Link to this definition"></a></dt>
+<dd><p>Create a selector for nullable term.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>term</strong> – A nullable term.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The element value of the nullable term.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkOp">
+<span class="sig-name descname"><span class="pre">mkOp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkOp" title="Link to this definition"></a></dt>
+<dd><p>Create operator.</p>
+<p>Supports the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Op</span> <span class="pre">mkOp(Kind</span> <span class="pre">kind)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Op</span> <span class="pre">mkOp(Kind</span> <span class="pre">kind,</span> <span class="pre">const</span> <span class="pre">string&amp;</span> <span class="pre">arg)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Op</span> <span class="pre">mkOp(Kind</span> <span class="pre">kind,</span> <span class="pre">uint32_t</span> <span class="pre">arg0,</span> <span class="pre">...)</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkParamSort">
+<span class="sig-name descname"><span class="pre">mkParamSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkParamSort" title="Link to this definition"></a></dt>
+<dd><p>Create a sort parameter.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>symbol</strong> – The name of the sort.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The sort parameter.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkPi">
+<span class="sig-name descname"><span class="pre">mkPi</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkPi" title="Link to this definition"></a></dt>
+<dd><p>Create a constant representing the number Pi.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A constant representing <a class="reference internal" href="kind.html#cvc5.Kind.PI" title="cvc5.Kind.PI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PI</span></code></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkPredicateSort">
+<span class="sig-name descname"><span class="pre">mkPredicateSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkPredicateSort" title="Link to this definition"></a></dt>
+<dd><p>Create a predicate sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sorts</strong> – The list of sorts of the predicate.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The predicate sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkReal">
+<span class="sig-name descname"><span class="pre">mkReal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkReal" title="Link to this definition"></a></dt>
+<dd><p>Create a real constant from a numerator and an optional denominator.</p>
+<p>First converts the arguments to a temporary string, either
+<code class="docutils literal notranslate"><span class="pre">&quot;&lt;numerator&gt;&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;&lt;numerator&gt;/&lt;denominator&gt;&quot;</span></code>. This temporary
+string is forwarded to <a class="reference internal" href="../../cpp/classes/termmanager.html#_CPPv4N4cvc511TermManager6mkRealERKNSt6stringE" title="cvc5::TermManager::mkReal"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5::TermManager::mkReal()</span></code></a> and should
+thus represent an integer, a decimal number or a fraction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>numerator</strong> – The numerator.</p></li>
+<li><p><strong>denominator</strong> – The denominator, or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A real term with literal value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkRecordSort">
+<span class="sig-name descname"><span class="pre">mkRecordSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkRecordSort" title="Link to this definition"></a></dt>
+<dd><p>Create a record sort</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fields</strong> – The list of fields of the record.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The record sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkRegexpAll">
+<span class="sig-name descname"><span class="pre">mkRegexpAll</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkRegexpAll" title="Link to this definition"></a></dt>
+<dd><p>Create a regular expression all (<code class="docutils literal notranslate"><span class="pre">re.all</span></code>) term.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The all term.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkRegexpAllchar">
+<span class="sig-name descname"><span class="pre">mkRegexpAllchar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkRegexpAllchar" title="Link to this definition"></a></dt>
+<dd><p>Create a regular expression allchar (<code class="docutils literal notranslate"><span class="pre">re.allchar</span></code>) term.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The allchar term.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkRegexpNone">
+<span class="sig-name descname"><span class="pre">mkRegexpNone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkRegexpNone" title="Link to this definition"></a></dt>
+<dd><p>Create a regular expression none (<code class="docutils literal notranslate"><span class="pre">re.none</span></code>) term.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The none term.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkRoundingMode">
+<span class="sig-name descname"><span class="pre">mkRoundingMode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkRoundingMode" title="Link to this definition"></a></dt>
+<dd><p>Create a roundingmode constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rm</strong> – The floating point rounding mode this constant
+represents.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkSepEmp">
+<span class="sig-name descname"><span class="pre">mkSepEmp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkSepEmp" title="Link to this definition"></a></dt>
+<dd><p>Create a separation logic empty term.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The separation logic empty term.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkSepNil">
+<span class="sig-name descname"><span class="pre">mkSepNil</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkSepNil" title="Link to this definition"></a></dt>
+<dd><p>Create a separation logic nil term.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sort</strong> – The sort of the nil term.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The separation logic nil term.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkSequenceSort">
+<span class="sig-name descname"><span class="pre">mkSequenceSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkSequenceSort" title="Link to this definition"></a></dt>
+<dd><p>Create a sequence sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>elemSort</strong> – The sort of the sequence elements</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The sequence sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkSetSort">
+<span class="sig-name descname"><span class="pre">mkSetSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkSetSort" title="Link to this definition"></a></dt>
+<dd><p>Create a set sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>elemSort</strong> – The sort of the set elements.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The set sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkSkolem">
+<span class="sig-name descname"><span class="pre">mkSkolem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkSkolem" title="Link to this definition"></a></dt>
+<dd><p>Create a skolem.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – The skolem id.</p></li>
+<li><p><strong>indices</strong> – The indices for the skolem.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The skolem with the given id and indices.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkString">
+<span class="sig-name descname"><span class="pre">mkString</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkString" title="Link to this definition"></a></dt>
+<dd><p>Create a String constant from a <code class="docutils literal notranslate"><span class="pre">str</span></code> which may contain SMT-LIB
+compatible escape sequences like <code class="docutils literal notranslate"><span class="pre">\u1234</span></code> to encode unicode
+characters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> – The string this constant represents.</p></li>
+<li><p><strong>useEscSequences</strong> – Determines whether escape sequences in <cite>s</cite>
+should be converted to the corresponding
+unicode character</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The String constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkTerm">
+<span class="sig-name descname"><span class="pre">mkTerm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkTerm" title="Link to this definition"></a></dt>
+<dd><p>Create a term.</p>
+<p>Supports the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkTerm(Kind</span> <span class="pre">kind)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkTerm(Op</span> <span class="pre">op)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkTerm(Kind</span> <span class="pre">kind,</span> <span class="pre">*args)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkTerm(Op</span> <span class="pre">op,</span> <span class="pre">*args)</span></code></p></li>
+</ul>
+<p>where <code class="docutils literal notranslate"><span class="pre">*args</span></code> is a comma-separated list of terms.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkTrue">
+<span class="sig-name descname"><span class="pre">mkTrue</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkTrue" title="Link to this definition"></a></dt>
+<dd><p>Create a Boolean true constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The true constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkTuple">
+<span class="sig-name descname"><span class="pre">mkTuple</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkTuple" title="Link to this definition"></a></dt>
+<dd><p>Create a tuple term. Terms are automatically converted if sorts are
+compatible.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>terms</strong> – The elements in the tuple.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The tuple Term.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkTupleSort">
+<span class="sig-name descname"><span class="pre">mkTupleSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkTupleSort" title="Link to this definition"></a></dt>
+<dd><p>Create a tuple sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sorts</strong> – Of the elements of the tuple.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The tuple sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkUninterpretedSort">
+<span class="sig-name descname"><span class="pre">mkUninterpretedSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkUninterpretedSort" title="Link to this definition"></a></dt>
+<dd><p>Create an uninterpreted sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>symbol</strong> – The name of the sort.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The uninterpreted sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkUninterpretedSortConstructorSort">
+<span class="sig-name descname"><span class="pre">mkUninterpretedSortConstructorSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkUninterpretedSortConstructorSort" title="Link to this definition"></a></dt>
+<dd><p>Create a sort constructor sort.</p>
+<p>An uninterpreted sort constructor is an uninterpreted sort with
+arity &gt; 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong> – The symbol of the sort.</p></li>
+<li><p><strong>arity</strong> – The arity of the sort (must be &gt; 0).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The sort constructor sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkUniverseSet">
+<span class="sig-name descname"><span class="pre">mkUniverseSet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkUniverseSet" title="Link to this definition"></a></dt>
+<dd><p>Create a universe set of the given sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sort</strong> – The sort of the set elements</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The universe set constant</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkUnresolvedDatatypeSort">
+<span class="sig-name descname"><span class="pre">mkUnresolvedDatatypeSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkUnresolvedDatatypeSort" title="Link to this definition"></a></dt>
+<dd><p>Create an unresolved datatype sort.</p>
+<p>This is for creating yet unresolved sort placeholders for mutually
+recursive datatypes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong> – The name of the sort.</p></li>
+<li><p><strong>arity</strong> – The number of sort parameters of the sort.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The unresolved sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.TermManager.mkVar">
+<span class="sig-name descname"><span class="pre">mkVar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.TermManager.mkVar" title="Link to this definition"></a></dt>
+<dd><p>Create a bound variable to be used in a binder (i.e. a quantifier,
+a lambda, or a witness binder).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort</strong> – The sort of the variable.</p></li>
+<li><p><strong>symbol</strong> – The name of the variable.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The variable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="term.html" class="btn btn-neutral float-left" title="Term" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="unknownexplanation.html" class="btn btn-neutral float-right" title="UnknownExplanation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
