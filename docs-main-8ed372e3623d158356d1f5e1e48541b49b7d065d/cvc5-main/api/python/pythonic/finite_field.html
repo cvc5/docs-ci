@@ -1,0 +1,550 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finite Fields &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Floating Point" href="fp.html" />
+    <link rel="prev" title="Datatypes" href="dt.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../cpp/cpp.html">C++ API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../c/c.html">C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../python.html">Python API</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pythonic.html">Pythonic API</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="boolean.html">Core &amp; Booleans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arith.html">Arithmetic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="array.html">Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bitvec.html">Bit-Vectors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dt.html">Datatypes</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Finite Fields</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#basic-finitefield-term-builders">Basic FiniteField Term Builders</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#arithmetic-overloads">Arithmetic Overloads</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#testers">Testers</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#classes-with-overloads">Classes (with overloads)</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="fp.html">Floating Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="set.html">Sets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="string.html">Strings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sequence.html">Sequences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quant.html">Quantifiers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solver.html">Solvers &amp; Results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="internals.html">Internals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../base/python.html">Base Python API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#which-python-api-should-i-use">Which Python API should I use?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#installation-from-pypi">Installation (from PyPi)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#installation-from-source">Installation (from source)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../python.html">Python API</a></li>
+          <li class="breadcrumb-item"><a href="pythonic.html">Pythonic API</a></li>
+      <li class="breadcrumb-item active">Finite Fields</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="finite-fields">
+<h1>Finite Fields<a class="headerlink" href="#finite-fields" title="Link to this heading"></a></h1>
+<section id="basic-finitefield-term-builders">
+<h2>Basic FiniteField Term Builders<a class="headerlink" href="#basic-finitefield-term-builders" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldElem">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">FiniteFieldElem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldElem" title="Link to this definition"></a></dt>
+<dd><p>Return a finite field constant named <cite>name</cite>. <cite>ff</cite> may be the number of bits of a finite field sort.
+If <cite>ctx=None</cite>, then the global context is used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>  <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_ff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">17</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">FiniteField(17)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">word</span> <span class="o">=</span> <span class="n">FiniteFieldSort</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x2</span> <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eq</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldVal">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">FiniteFieldVal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldVal" title="Link to this definition"></a></dt>
+<dd><p>Return a finite field value with the given number of bits. If <cite>ctx=None</cite>, then the global context is used.
+The second argument can be a number of bits (integer) or a finite field sort.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">FiniteFieldVal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;0x</span><span class="si">%.8x</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">v</span><span class="o">.</span><span class="n">as_long</span><span class="p">())</span>
+<span class="go">0x0000000a</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">FiniteFieldSort</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">FiniteFieldVal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldSort">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">FiniteFieldSort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldSort" title="Link to this definition"></a></dt>
+<dd><p>Return an SMT finite field sort of the given size. If <cite>ctx=None</cite>, then the global context is used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f7</span> <span class="o">=</span> <span class="n">FiniteFieldSort</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f7</span>
+<span class="go">FiniteField(7)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Const</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">f7</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eq</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldElems">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">FiniteFieldElems</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldElems" title="Link to this definition"></a></dt>
+<dd><p>Return a tuple of finite field constants of size ff.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">FiniteFieldElems</span><span class="p">(</span><span class="s1">&#39;x y z&#39;</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">17</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">FiniteField(17)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="go">x + y + z</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Product</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="go">x*y*z</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="arithmetic-overloads">
+<h2>Arithmetic Overloads<a class="headerlink" href="#arithmetic-overloads" title="Link to this heading"></a></h2>
+<p>See the following operator overloads for building finite field terms. These
+terms can also be built with builder functions listed below.</p>
+<dl class="simple">
+<dt>addition (<code class="docutils literal notranslate"><span class="pre">+</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.FiniteFieldRef.__add__" title="cvc5.pythonic.FiniteFieldRef.__add__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.FiniteFieldRef.__add__()</span></code></a></p>
+</dd>
+<dt>subtraction (<code class="docutils literal notranslate"><span class="pre">-</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.FiniteFieldRef.__sub__" title="cvc5.pythonic.FiniteFieldRef.__sub__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.FiniteFieldRef.__sub__()</span></code></a></p>
+</dd>
+<dt>negation (<code class="docutils literal notranslate"><span class="pre">-</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.FiniteFieldRef.__neg__" title="cvc5.pythonic.FiniteFieldRef.__neg__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.FiniteFieldRef.__neg__()</span></code></a></p>
+</dd>
+<dt>multiplication (<code class="docutils literal notranslate"><span class="pre">*</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.FiniteFieldRef.__mul__" title="cvc5.pythonic.FiniteFieldRef.__mul__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.FiniteFieldRef.__mul__()</span></code></a></p>
+</dd>
+<dt>equality (<code class="docutils literal notranslate"><span class="pre">==</span></code>)</dt><dd><p><a class="reference internal" href="boolean.html#cvc5.pythonic.ExprRef.__eq__" title="cvc5.pythonic.ExprRef.__eq__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.ExprRef.__eq__()</span></code></a></p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.FFAdd">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">FFAdd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FFAdd" title="Link to this definition"></a></dt>
+<dd><p>Create a sum of finite fields.</p>
+<p>See also the __add__ overload (+ operator) for FiniteFieldRef.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">FiniteFieldElems</span><span class="p">(</span><span class="s1">&#39;x y z&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">FFAdd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="go">x + y + z</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.FFSub">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">FFSub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FFSub" title="Link to this definition"></a></dt>
+<dd><p>Create a difference of finite fields.</p>
+<p>See also the __sub__ overload (- operator) for FiniteFieldRef.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">FiniteFieldElems</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">FFSub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">x + -y</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.FFNeg">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">FFNeg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FFNeg" title="Link to this definition"></a></dt>
+<dd><p>Create a negation of a finite field elemetn</p>
+<p>See also the __neg__ overload (unary - operator) for FiniteFieldRef.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">FFNeg</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">-x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.FFMult">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">FFMult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FFMult" title="Link to this definition"></a></dt>
+<dd><p>Create a product of finite fields.</p>
+<p>See also the __mul__ overload (* operator) for FiniteFieldRef.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">FiniteFieldElems</span><span class="p">(</span><span class="s1">&#39;x y z&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">FFMult</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="go">x*y*z</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="testers">
+<h2>Testers<a class="headerlink" href="#testers" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_ff_sort">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_ff_sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_ff_sort" title="Link to this definition"></a></dt>
+<dd><p>Return True if <cite>s</cite> is an SMT finite field sort.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_ff_sort</span><span class="p">(</span><span class="n">FiniteFieldSort</span><span class="p">(</span><span class="mi">29</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_ff_sort</span><span class="p">(</span><span class="n">IntSort</span><span class="p">())</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_ff">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_ff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_ff" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>a</cite> is an SMT finite field expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_ff</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_ff</span><span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_ff</span><span class="p">(</span><span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">))</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_ff_value">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_ff_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_ff_value" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>a</cite> is an SMT finite field numeral value.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_ff_value</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">FiniteFieldVal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_ff_value</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="classes-with-overloads">
+<h2>Classes (with overloads)<a class="headerlink" href="#classes-with-overloads" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldSortRef">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">FiniteFieldSortRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldSortRef" title="Link to this definition"></a></dt>
+<dd><p>Bit-vector sort.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldSortRef.cast">
+<span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldSortRef.cast" title="Link to this definition"></a></dt>
+<dd><p>Try to cast <cite>val</cite> as a finite field</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">FiniteFieldSort</span><span class="p">(</span><span class="mi">31</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;#f10m31&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldSortRef.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldSortRef.size" title="Link to this definition"></a></dt>
+<dd><p>Return the size (number of elements) of the finite field sort <cite>self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">FiniteFieldSort</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">17</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldRef">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">FiniteFieldRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse_children</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldRef" title="Link to this definition"></a></dt>
+<dd><p>Bit-vector expressions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldRef.__add__">
+<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldRef.__add__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression <cite>self + other</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="go">x + y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">FiniteField(29)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldRef.__mul__">
+<span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldRef.__mul__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression <cite>self * other</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<span class="go">x*y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">FiniteField(29)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldRef.__neg__">
+<span class="sig-name descname"><span class="pre">__neg__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldRef.__neg__" title="Link to this definition"></a></dt>
+<dd><p>Return an expression representing <cite>-self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">-</span><span class="n">x</span>
+<span class="go">-x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">([</span><span class="o">-</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span> <span class="o">!=</span> <span class="n">x</span><span class="p">])</span>
+<span class="go">no solution</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldRef.__pos__">
+<span class="sig-name descname"><span class="pre">__pos__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldRef.__pos__" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">+</span><span class="n">x</span>
+<span class="go">x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldRef.__radd__">
+<span class="sig-name descname"><span class="pre">__radd__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldRef.__radd__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression <cite>other + self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">+</span> <span class="n">x</span>
+<span class="go">10 + x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldRef.__rmul__">
+<span class="sig-name descname"><span class="pre">__rmul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldRef.__rmul__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression <cite>other * self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">*</span> <span class="n">x</span>
+<span class="go">10*x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldRef.__rsub__">
+<span class="sig-name descname"><span class="pre">__rsub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldRef.__rsub__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression <cite>other - self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">-</span> <span class="n">x</span>
+<span class="go">10 + -x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">+</span> <span class="o">-</span><span class="n">x</span>
+<span class="go">10 + -x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldRef.__sub__">
+<span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldRef.__sub__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression <cite>self - other</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+<span class="go">x + -y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">FiniteField(29)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldRef.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldRef.size" title="Link to this definition"></a></dt>
+<dd><p>Return the number of bits of the finite field expression <cite>self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">29</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldRef.sort">
+<span class="sig-name descname"><span class="pre">sort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldRef.sort" title="Link to this definition"></a></dt>
+<dd><p>Return the sort of the finite field expression <cite>self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">FiniteFieldElem</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">FiniteField(29)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="o">==</span> <span class="n">FiniteFieldSort</span><span class="p">(</span><span class="mi">29</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldNumRef">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">FiniteFieldNumRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse_children</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldNumRef" title="Link to this definition"></a></dt>
+<dd><p>Bit-vector values.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldNumRef.as_long">
+<span class="sig-name descname"><span class="pre">as_long</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldNumRef.as_long" title="Link to this definition"></a></dt>
+<dd><p>Return an SMT finite field numeral as a positive Python long (bignum) numeral.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">FiniteFieldVal</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span>
+<span class="go">-1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">as_long</span><span class="p">()</span>
+<span class="go">28</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FiniteFieldNumRef.as_signed_long">
+<span class="sig-name descname"><span class="pre">as_signed_long</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FiniteFieldNumRef.as_signed_long" title="Link to this definition"></a></dt>
+<dd><p>Return an SMT finite field numeral as a Python long (bignum) numeral.</p>
+<p>Returns the numeral of minimum absolute value, so the additive inverse of 1 is “-1”.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">FiniteFieldVal</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">as_signed_long</span><span class="p">()</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">FiniteFieldVal</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">as_signed_long</span><span class="p">()</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">FiniteFieldVal</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">as_signed_long</span><span class="p">()</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">FiniteFieldVal</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span><span class="o">.</span><span class="n">as_signed_long</span><span class="p">()</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dt.html" class="btn btn-neutral float-left" title="Datatypes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fp.html" class="btn btn-neutral float-right" title="Floating Point" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
