@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Theory Reference: Sequences &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../static/jquery.js?v=5d32c60e"></script>
+      <script src="../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../static/doctools.js?v=9bcbadda"></script>
+      <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Theory Reference: Sets and Relations" href="sets-and-relations.html" />
+    <link rel="prev" title="Theory Reference: Separation Logic" href="separation-logic.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="theories.html">Theory References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="theories.html#standardized-theories">Standardized theories</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="theories.html#non-standard-or-extended-theories">Non-standard or extended theories</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="bags.html">Theory Reference: Bags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html">Theory Reference: Datatypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="finite_field.html">Theory Reference: Finite Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="separation-logic.html">Theory Reference: Separation Logic</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Theory Reference: Sequences</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#semantics">Semantics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#syntax">Syntax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="sets-and-relations.html">Theory Reference: Sets and Relations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strings.html">Theory Reference: Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transcendentals.html">Theory Reference: Transcendentals</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="theories.html">Theory References</a></li>
+      <li class="breadcrumb-item active">Theory Reference: Sequences</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="theory-reference-sequences">
+<h1>Theory Reference: Sequences<a class="headerlink" href="#theory-reference-sequences" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>cvc5 currently only supports sequences where the element sort either has an
+infinite domain, e.g., sequences of integers, or a finite domain of a fixed
+cardinality, e.g. bit-vectors.</p>
+</div>
+<section id="semantics">
+<h2>Semantics<a class="headerlink" href="#semantics" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>* (seq.empty (Seq S))
+
+  ⟦seq.empty⟧ = []
+
+* (seq.unit S (Seq S))
+
+  ⟦seq.unit⟧(x) = [x]
+
+* (seq.len (Seq S) Int)
+
+  ⟦seq.len⟧(s) is the length of the sequence s, denoted as |s|.
+
+* (seq.nth ((Seq S) Int) S)
+
+  ⟦seq.nth⟧(s, i) is the n-th element in the sequence s,
+                  denoted as nth(s, i).
+                  It is uninterpreted if i out of bounds,
+                  i.e. i &lt; 0 or i &gt;= |s|.
+
+* (seq.update ((Seq S) Int (Seq S)) (Seq S))
+
+  ⟦seq.update⟧(s, i, sub) is a sequence obtained by updating the continuous
+                          sub-sequence of s starting at index i by sub.
+                          The updated sequence has the same length as |s|.
+                          If i + |sub| &gt; |s|,
+                          the out of bounds part of sub is ignored.
+                          If i out of bounds, i.e. i &lt; 0 or i &gt;= |s|,
+                          the updated sequence remains same with s.
+
+* (seq.extract ((Seq S) Int Int) (Seq S))
+
+  ⟦seq.extract⟧(s, i, j) is the maximal sub-sequence of s that starts at
+                         index i and has length at most j,
+                         in case both i and j are non-negative and i is
+                         smaller than |s|.
+                         Otherwise, the return value is the empty sequence.
+
+ * (seq.++ ((Seq S) (Seq S)) (Seq S))
+
+  ⟦seq.++⟧(s1, s2) is a sequence that is the concatenation of s1 and s2.
+
+ * (seq.at ((Seq S) Int) (Seq S))
+
+  ⟦seq.at⟧(s, i) is a unit sequence that contains the i-th element of s as
+                 the only element, or is the empty sequence if i &lt; 0 or i &gt; |s|.
+
+ * (seq.contains ((Seq S) (Seq S)) Bool)
+
+  ⟦seq.contains⟧(s, sub) is true if sub is a continuous sub-sequence of s,
+                         i.e. sub = seq.extract(s, i, j) for some i, j,
+                         and false if otherwise.
+
+ * (seq.indexof ((Seq S) (Seq S) Int) Int)
+
+  ⟦seq.indexof⟧(s, sub, i) is the first position of sub at or after i in s,
+                           and -1 if there is no occurrence.
+
+ * (seq.replace ((Seq S) (Seq S) (Seq S)) (Seq S))
+
+  ⟦seq.replace⟧(s, src, dst) is the sequence obtained by replacing the
+                             first occurrence of src by dst in s.
+                             It is s if there is no occurrence.
+
+ * (seq.replace_all ((Seq S) (Seq S) (Seq S)) (Seq S))
+
+  ⟦seq.replace_all⟧(s, src, dst) is the sequence obtained by replacing all
+                                 the occurrences of src by dst in s,
+                                 in the order from left to right.
+                                 It is s if there is no occurrence.
+
+ * (seq.rev (Seq S) (Seq S))
+
+  ⟦seq.rev⟧(s) is the sequence obtained by reversing s.
+
+ * (seq.prefixof ((Seq S) (Seq S)) Bool)
+
+  ⟦seq.prefixof⟧(pre s) is true if pre is a prefix of s, false otherwise.
+
+ * (seq.suffixof ((Seq S) (Seq S)) Bool)
+
+  ⟦seq.suffixof⟧(suf s) is true if suf is a suffix of s, false otherwise.
+</pre></div>
+</div>
+</section>
+<section id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Link to this heading"></a></h2>
+<p>For the C++ API examples in the table below, we assume that we have created
+a <a class="reference internal" href="../api/cpp/classes/solver.html#_CPPv4N4cvc56SolverE" title="cvc5::Solver"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">Solver</span></code></a> object <code class="docutils literal notranslate"><span class="pre">solver</span></code>.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td></td>
+<td><p>SMT-LIB language</p></td>
+<td><p>C++ API</p></td>
+</tr>
+<tr class="row-even"><td><p>Logic String</p></td>
+<td><p>use <cite>S</cite> for sequences and strings</p>
+<p><code class="docutils literal notranslate"><span class="pre">(set-logic</span> <span class="pre">QF_SLIA)</span></code></p>
+</td>
+<td><p>use <cite>S</cite> for sequences and strings</p>
+<p><code class="docutils literal notranslate"><span class="pre">solver.setLogic(&quot;QF_SLIA&quot;);</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Sort</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(Seq</span> <span class="pre">&lt;Sort&gt;)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">solver.mkSequenceSort(&lt;Sort&gt;);</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Constants</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(declare-const</span> <span class="pre">X</span> <span class="pre">(Seq</span> <span class="pre">Int))</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">solver.mkSequenceSort(solver.getIntegerSort());</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">X</span> <span class="pre">=</span> <span class="pre">solver.mkConst(s,</span> <span class="pre">&quot;X&quot;);</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Empty sequence</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(as</span> <span class="pre">seq.empty</span> <span class="pre">(Seq</span> <span class="pre">Int))</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">intSort</span> <span class="pre">=</span> <span class="pre">solver.getIntegerSort();</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkEmptySequence(intSort);</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Unit sequence</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(seq.unit</span> <span class="pre">1)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::SEQ_UNIT,</span> <span class="pre">{solver.mkInteger(1)});</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Sequence length</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(seq.len</span> <span class="pre">X)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::SEQ_LENGTH,</span> <span class="pre">{X});</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Element access</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(seq.nth</span> <span class="pre">X</span> <span class="pre">i)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::SEQ_NTH,</span> <span class="pre">{X,</span> <span class="pre">i});</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Element update</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(seq.update</span> <span class="pre">X</span> <span class="pre">i</span> <span class="pre">Y)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::SEQ_UPDATE,</span> <span class="pre">{X,</span> <span class="pre">i,</span> <span class="pre">Y});</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Extraction</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(seq.extract</span> <span class="pre">X</span> <span class="pre">i</span> <span class="pre">j)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::SEQ_EXTRACT,</span> <span class="pre">{X,</span> <span class="pre">i,</span> <span class="pre">j});</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Concatenation</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(seq.++</span> <span class="pre">X</span> <span class="pre">Y)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::SEQ_CONCAT,</span> <span class="pre">{X,</span> <span class="pre">Y});</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Sub-sequence with
+single element</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(seq.at</span> <span class="pre">X</span> <span class="pre">i)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::SEQ_AT,</span> <span class="pre">{X,</span> <span class="pre">i});</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Sequence containment</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(seq.contains</span> <span class="pre">X</span> <span class="pre">Y)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::SEQ_CONTAINS,</span> <span class="pre">{X,</span> <span class="pre">Y});</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Sequence indexof</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(seq.indexof</span> <span class="pre">X</span> <span class="pre">Y</span> <span class="pre">i)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::SEQ_INDEXOF,</span> <span class="pre">{X,</span> <span class="pre">Y,</span> <span class="pre">i});</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Sub-sequence replace</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(seq.replace</span> <span class="pre">X</span> <span class="pre">Y</span> <span class="pre">Z)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::SEQ_REPLACE,</span> <span class="pre">{X,</span> <span class="pre">Y,</span> <span class="pre">Z});</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Sub-sequence
+replace all</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(seq.replace_all</span> <span class="pre">X</span> <span class="pre">Y</span> <span class="pre">Z)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::SEQ_REPLACE_ALL,</span> <span class="pre">{X,</span> <span class="pre">Y,</span> <span class="pre">Z});</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Sequence reverse</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(seq.rev</span> <span class="pre">X)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::SEQ_REV,</span> <span class="pre">{X});</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Sequence prefix of</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(seq.prefixof</span> <span class="pre">X</span> <span class="pre">Y)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::SEQ_PREFIX,</span> <span class="pre">{X,</span> <span class="pre">Y});</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Sequence suffix of</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(seq.suffixof</span> <span class="pre">X</span> <span class="pre">Y)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::SEQ_SUFFIX,</span> <span class="pre">{X,</span> <span class="pre">Y});</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">set-logic</span> <span class="n">QF_SLIA</span>)
+(<span class="k">set-info</span> <span class="na">:status</span> <span class="n">unsat</span>)
+(<span class="k">declare-fun</span> <span class="n">x</span> () (<span class="na">Seq</span> <span class="na">Int</span>))
+(<span class="k">declare-fun</span> <span class="n">y</span> () (<span class="na">Seq</span> <span class="na">Int</span>))
+(<span class="k">declare-fun</span> <span class="n">z</span> () (<span class="na">Seq</span> <span class="na">Int</span>))
+(<span class="k">declare-fun</span> <span class="n">a</span> () <span class="na">Int</span>)
+(<span class="k">declare-fun</span> <span class="n">b</span> () <span class="na">Int</span>)
+(<span class="k">assert</span> (<span class="o">=</span> <span class="n">y</span> (<span class="o">seq.update</span> <span class="n">x</span> <span class="m">0</span> (<span class="o">seq.unit</span> <span class="n">a</span>))))
+(<span class="k">assert</span> (<span class="o">=</span> <span class="n">z</span> (<span class="o">seq.update</span> <span class="n">x</span> <span class="m">0</span> (<span class="o">seq.unit</span> <span class="n">b</span>))))
+(<span class="k">assert</span> (<span class="o">not</span> (<span class="o">=</span> <span class="n">a</span> <span class="n">b</span>)))
+(<span class="k">assert</span> (<span class="o">=</span> <span class="n">y</span> <span class="n">z</span>))
+(<span class="k">assert</span> (<span class="o">&gt;</span> (<span class="o">seq.len</span> <span class="n">y</span>) <span class="m">0</span>))
+(<span class="k">check-sat</span>)
+</pre></div>
+</div>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">set-logic</span> <span class="n">QF_SLIA</span>)
+(<span class="k">set-info</span> <span class="na">:status</span> <span class="n">unsat</span>)
+(<span class="k">declare-fun</span> <span class="n">A</span> () (<span class="na">Seq</span> <span class="na">Int</span>))
+(<span class="k">declare-fun</span> <span class="n">S</span> () (<span class="na">Seq</span> <span class="na">Int</span>))
+(<span class="k">declare-fun</span> <span class="n">i</span> () <span class="na">Int</span>)
+(<span class="k">assert</span> (<span class="o">&lt;=</span> <span class="m">0</span> <span class="n">i</span>))
+(<span class="k">assert</span> (<span class="o">&lt;</span> <span class="n">i</span> (<span class="o">-</span> (<span class="o">seq.len</span> <span class="n">A</span>) <span class="m">1</span>)))
+(<span class="k">assert</span> (<span class="o">=</span> <span class="n">S</span> (<span class="o">seq.extract</span> <span class="n">A</span> <span class="n">i</span> <span class="m">1</span>)))
+(<span class="k">assert</span> (<span class="o">distinct</span> (<span class="o">seq.nth</span> <span class="n">S</span> <span class="m">0</span>) (<span class="o">seq.nth</span> <span class="n">A</span> <span class="n">i</span>)))
+(<span class="k">check-sat</span>)
+</pre></div>
+</div>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">set-logic</span> <span class="n">QF_SLIA</span>)
+(<span class="k">set-info</span> <span class="na">:status</span> <span class="n">unsat</span>)
+(<span class="k">declare-fun</span> <span class="n">x</span> () (<span class="na">Seq</span> <span class="na">Int</span>))
+(<span class="k">declare-fun</span> <span class="n">y</span> () (<span class="na">Seq</span> <span class="na">Int</span>))
+(<span class="k">declare-fun</span> <span class="n">a</span> () <span class="na">Int</span>)
+(<span class="k">declare-fun</span> <span class="n">b</span> () <span class="na">Int</span>)
+(<span class="k">assert</span> (<span class="o">=</span> (<span class="o">seq.++</span> (<span class="o">seq.unit</span> <span class="n">a</span>) <span class="n">y</span>) (<span class="o">seq.update</span> <span class="n">x</span> <span class="m">0</span> (<span class="o">seq.unit</span> <span class="n">b</span>))))
+(<span class="k">assert</span> (<span class="o">not</span> (<span class="o">=</span> <span class="n">a</span> <span class="n">b</span>)))
+(<span class="k">check-sat</span>)
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="separation-logic.html" class="btn btn-neutral float-left" title="Theory Reference: Separation Logic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sets-and-relations.html" class="btn btn-neutral float-right" title="Theory Reference: Sets and Relations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
