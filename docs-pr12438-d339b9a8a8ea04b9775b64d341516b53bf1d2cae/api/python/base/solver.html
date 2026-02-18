@@ -1,0 +1,2946 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solver &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+      <script>window.MathJax = {"loader": {"load": ["[tex]/ams", "[tex]/bussproofs"]}, "tex": {"packages": {"[+]": ["ams", "bussproofs"]}, "macros": {"xor": "\\mathbin{xor}", "ite": ["#1 \\mathbin{?} #2 \\mathbin{:} #3", 3], "inferrule": ["\\begin{prooftree}\\AxiomC{$#1$}\\UnaryInfC{$#2$}\\end{prooftree}", 2], "inferruleSC": ["\\begin{prooftree}\\AxiomC{$#1$}\\RightLabel{ #3}\\UnaryInfC{$#2$}\\end{prooftree}", 3]}}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Sort" href="sort.html" />
+    <link rel="prev" title="RoundingMode" href="roundingmode.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../cpp/cpp.html">C++ API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../c/c.html">C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../python.html">Python API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pythonic/pythonic.html">Pythonic API</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="python.html">Base Python API</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="command.html">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatype.html">Datatype</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypeconstructor.html">DatatypeConstructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypeconstructordecl.html">DatatypeConstructorDecl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypedecl.html">DatatypeDecl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypeselector.html">DatatypeSelector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="grammar.html">Grammar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="inputparser.html">InputParser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kind.html">Kind</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modes.html">Modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="op.html">Op</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plugin.html">Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="proof.html">Proof</a></li>
+<li class="toctree-l4"><a class="reference internal" href="result.html">Result</a></li>
+<li class="toctree-l4"><a class="reference internal" href="roundingmode.html">RoundingMode</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Solver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#cvc5.Solver"><code class="docutils literal notranslate"><span class="pre">Solver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="sort.html">Sort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sortkind.html">SortKind</a></li>
+<li class="toctree-l4"><a class="reference internal" href="statistics.html">Statistics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="symbolmanager.html">SymbolManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="synthresult.html">SynthResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="term.html">Term</a></li>
+<li class="toctree-l4"><a class="reference internal" href="termmanager.html">TermManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="unknownexplanation.html">UnknownExplanation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python.html#classes">Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python.html#enums">Enums</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#which-python-api-should-i-use">Which Python API should I use?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#installation-from-pypi">Installation (from PyPi)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#installation-from-source">Installation (from source)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../python.html">Python API</a></li>
+          <li class="breadcrumb-item"><a href="python.html">Base Python API</a></li>
+      <li class="breadcrumb-item active">Solver</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="solver">
+<h1>Solver<a class="headerlink" href="#solver" title="Link to this heading"></a></h1>
+<p>This class represents a cvc5 solver instance.</p>
+<p><a class="reference internal" href="term.html#cvc5.Term" title="cvc5.Term"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Terms</span></code></a>, <a class="reference internal" href="sort.html#cvc5.Sort" title="cvc5.Sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sorts</span></code></a> and
+<a class="reference internal" href="op.html#cvc5.Op" title="cvc5.Op"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ops</span></code></a> are not tied to a <a class="reference internal" href="#cvc5.Solver" title="cvc5.Solver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cvc5.Solver</span></code></a>
+but associated with a <a class="reference internal" href="termmanager.html#cvc5.TermManager" title="cvc5.TermManager"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cvc5.TermManager</span></code></a> instance, which can be
+shared between solver instances.</p>
+<p>Solver options are configured via <a class="reference internal" href="#cvc5.Solver.setOption" title="cvc5.Solver.setOption"><code class="xref py py-func docutils literal notranslate"><span class="pre">cvc5.Solver.setOption()</span></code></a>
+and queried via <a class="reference internal" href="#cvc5.Solver.getOption" title="cvc5.Solver.getOption"><code class="xref py py-func docutils literal notranslate"><span class="pre">cvc5.Solver.getOption()</span></code></a>
+(for more information on configuration options, see <a class="reference internal" href="../../../options.html"><span class="doc">Options</span></a>).</p>
+<hr class="docutils" />
+<dl class="py class">
+<dt class="sig sig-object py" id="cvc5.Solver">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5.</span></span><span class="sig-name descname"><span class="pre">Solver</span></span><a class="headerlink" href="#cvc5.Solver" title="Link to this definition"></a></dt>
+<dd><p>A cvc5 solver.</p>
+<p>Wrapper class for <a class="reference internal" href="../../cpp/classes/solver.html#_CPPv4N4cvc56SolverE" title="cvc5::Solver"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">cvc5::Solver</span></code></a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.addPlugin">
+<span class="sig-name descname"><span class="pre">addPlugin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.addPlugin" title="Link to this definition"></a></dt>
+<dd><p>Add plugin to this solver. Its callbacks will be called throughout the
+lifetime of this solver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p</strong> – The plugin to add to this solver.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.addSygusAssume">
+<span class="sig-name descname"><span class="pre">addSygusAssume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.addSygusAssume" title="Link to this definition"></a></dt>
+<dd><p>Add a formula to the set of Sygus assumptions.</p>
+<p>SyGuS v2:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">assume</span> <span class="n">&lt;term&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>term</strong> – The formuula to add as an assumption.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.addSygusConstraint">
+<span class="sig-name descname"><span class="pre">addSygusConstraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.addSygusConstraint" title="Link to this definition"></a></dt>
+<dd><p>Add a formula to the set of SyGuS constraints.</p>
+<p>SyGuS v2:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">constraint</span> <span class="n">&lt;term&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>term</strong> – The formula to add as a constraint.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.addSygusInvConstraint">
+<span class="sig-name descname"><span class="pre">addSygusInvConstraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.addSygusInvConstraint" title="Link to this definition"></a></dt>
+<dd><p>Add a set of SyGuS constraints to the current state that correspond
+to an invariant synthesis problem.</p>
+<p>SyGuS v2:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">inv-constraint</span> <span class="n">&lt;inv&gt;</span> <span class="n">&lt;pre&gt;</span> <span class="n">&lt;trans&gt;</span> <span class="n">&lt;post&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inv</strong> – The function-to-synthesize.</p></li>
+<li><p><strong>pre</strong> – The pre-condition.</p></li>
+<li><p><strong>trans</strong> – The transition relation.</p></li>
+<li><p><strong>post</strong> – The post-condition.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.assertFormula">
+<span class="sig-name descname"><span class="pre">assertFormula</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.assertFormula" title="Link to this definition"></a></dt>
+<dd><p>Assert a formula</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">assert</span> <span class="n">&lt;term&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>term</strong> – The formula to assert.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.blockModel">
+<span class="sig-name descname"><span class="pre">blockModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.blockModel" title="Link to this definition"></a></dt>
+<dd><p>Block the current model. Can be called only if immediately preceded
+by a SAT or INVALID query.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">block-model</span>)
+</pre></div>
+</div>
+<p>Requires enabling option
+<a class="reference internal" href="../../../options.html#lbl-option-produce-models"><span class="std std-ref">produce-models</span></a>
+to a mode other than <code class="docutils literal notranslate"><span class="pre">none</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mode</strong> – The mode to use for blocking</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.blockModelValues">
+<span class="sig-name descname"><span class="pre">blockModelValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.blockModelValues" title="Link to this definition"></a></dt>
+<dd><p>Block the current model values of (at least) the values in terms.
+Can be called only if immediately preceded by a SAT query.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">block-model-values</span> ( <span class="n">&lt;terms&gt;+</span> ))
+</pre></div>
+</div>
+<p>Requires enabling option
+<a class="reference internal" href="../../../options.html#lbl-option-produce-models"><span class="std std-ref">produce-models</span></a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.checkSat">
+<span class="sig-name descname"><span class="pre">checkSat</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.checkSat" title="Link to this definition"></a></dt>
+<dd><p>Check satisfiability.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">check-sat</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The result of the satisfiability check.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.checkSatAssuming">
+<span class="sig-name descname"><span class="pre">checkSatAssuming</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.checkSatAssuming" title="Link to this definition"></a></dt>
+<dd><p>Check satisfiability assuming the given formula.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">check-sat-assuming</span> ( <span class="n">&lt;prop_literal&gt;</span> ) )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>assumptions</strong> – The formulas to assume.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result of the satisfiability check.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.checkSynth">
+<span class="sig-name descname"><span class="pre">checkSynth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.checkSynth" title="Link to this definition"></a></dt>
+<dd><p>Try to find a solution for the synthesis conjecture corresponding
+to the current list of functions-to-synthesize, universal variables
+and constraints.</p>
+<p>SyGuS v2:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">check-synth</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The result of the check, which is “solution” if the check
+found a solution in which case solutions are available via
+getSynthSolutions, “no solution” if it was determined
+there is no solution, or “unknown” otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.checkSynthNext">
+<span class="sig-name descname"><span class="pre">checkSynthNext</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.checkSynthNext" title="Link to this definition"></a></dt>
+<dd><p>Try to find a next solution for the synthesis conjecture
+corresponding to the current list of functions-to-synthesize,
+universal variables and constraints. Must be called immediately
+after a successful call to check-synth or check-synth-next.
+Requires incremental mode.</p>
+<p>SyGuS v2:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">check-synth</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The result of the check, which is “solution” if the check
+found a solution in which case solutions are available via
+getSynthSolutions, “no solution” if it was determined
+there is no solution, or “unknown” otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.declareDatatype">
+<span class="sig-name descname"><span class="pre">declareDatatype</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.declareDatatype" title="Link to this definition"></a></dt>
+<dd><p>Create datatype sort.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">declare-datatype</span> <span class="n">&lt;symbol&gt;</span> <span class="n">&lt;datatype_decl&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong> – The name of the datatype sort.</p></li>
+<li><p><strong>ctors</strong> – The constructor declarations of the datatype sort.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The datatype sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.declareFun">
+<span class="sig-name descname"><span class="pre">declareFun</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.declareFun" title="Link to this definition"></a></dt>
+<dd><p>Declare n-ary function symbol.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">declare-fun</span> <span class="n">&lt;symbol&gt;</span> ( <span class="n">&lt;sort&gt;*</span> ) <span class="n">&lt;sort&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong> – The name of the function.</p></li>
+<li><p><strong>sorts</strong> – The sorts of the parameters to this function.</p></li>
+<li><p><strong>sort</strong> – The sort of the return value of this function.</p></li>
+<li><p><strong>fresh</strong> – If true, then this method always returns a new Term.
+Otherwise, this method will always return the
+same Term for each call with the given sorts and
+symbol where fresh is false.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.declarePool">
+<span class="sig-name descname"><span class="pre">declarePool</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.declarePool" title="Link to this definition"></a></dt>
+<dd><p>Declare a symbolic pool of terms with the given initial value.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">declare-pool</span> <span class="n">&lt;symbol&gt;</span> <span class="n">&lt;sort&gt;</span> ( <span class="n">&lt;term&gt;*</span> ) )
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong> – The name of the pool.</p></li>
+<li><p><strong>sort</strong> – The sort of the elements of the pool.</p></li>
+<li><p><strong>initValue</strong> – The initial value of the pool.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.declareSepHeap">
+<span class="sig-name descname"><span class="pre">declareSepHeap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.declareSepHeap" title="Link to this definition"></a></dt>
+<dd><p>When using separation logic, this sets the location sort and the
+datatype sort to the given ones. This function should be invoked
+exactly once, before any separation logic constraints are provided.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>locSort</strong> – The location sort of the heap.</p></li>
+<li><p><strong>dataSort</strong> – The data sort of the heap.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.declareSort">
+<span class="sig-name descname"><span class="pre">declareSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.declareSort" title="Link to this definition"></a></dt>
+<dd><p>Declare uninterpreted sort.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">declare-sort</span> <span class="n">&lt;symbol&gt;</span> <span class="n">&lt;numeral&gt;</span> )
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This corresponds to <a class="reference internal" href="termmanager.html#cvc5.TermManager.mkUninterpretedSort" title="cvc5.TermManager.mkUninterpretedSort"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TermManager.mkUninterpretedSort()</span></code></a> if
+arity = 0, and to
+<a class="reference internal" href="termmanager.html#cvc5.TermManager.mkUninterpretedSortConstructorSort" title="cvc5.TermManager.mkUninterpretedSortConstructorSort"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TermManager.mkUninterpretedSortConstructorSort()</span></code></a> if
+arity &gt; 0.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong> – The name of the sort.</p></li>
+<li><p><strong>arity</strong> – The arity of the sort.</p></li>
+<li><p><strong>fresh</strong> – If true, then this method always returns a new Sort.
+Otherwise, this method will always return the same
+Sort for each call with the given arity and symbol
+where fresh is false.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The sort.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.declareSygusVar">
+<span class="sig-name descname"><span class="pre">declareSygusVar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.declareSygusVar" title="Link to this definition"></a></dt>
+<dd><p>Append symbol to the current list of universal variables.</p>
+<p>SyGuS v2:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">declare-var</span> <span class="n">&lt;symbol&gt;</span> <span class="n">&lt;sort&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort</strong> – The sort of the universal variable.</p></li>
+<li><p><strong>symbol</strong> – The name of the universal variable.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The universal variable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.defineFun">
+<span class="sig-name descname"><span class="pre">defineFun</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.defineFun" title="Link to this definition"></a></dt>
+<dd><p>Define n-ary function.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">define-fun</span> <span class="n">&lt;function_def&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong> – The name of the function.</p></li>
+<li><p><strong>bound_vars</strong> – The parameters to this function.</p></li>
+<li><p><strong>sort</strong> – The sort of the return value of this function.</p></li>
+<li><p><strong>term</strong> – The function body.</p></li>
+<li><p><strong>glbl</strong> – Determines whether this definition is global (i.e.
+persists when popping the context).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.defineFunRec">
+<span class="sig-name descname"><span class="pre">defineFunRec</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.defineFunRec" title="Link to this definition"></a></dt>
+<dd><p>Define recursive functions.</p>
+<p>Supports the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">defineFunRec(str</span> <span class="pre">symbol,</span> <span class="pre">List[Term]</span> <span class="pre">bound_vars,</span> <span class="pre">Sort</span> <span class="pre">sort,</span> <span class="pre">Term</span> <span class="pre">term,</span> <span class="pre">bool</span> <span class="pre">glbl)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">defineFunRec(Term</span> <span class="pre">fun,</span> <span class="pre">List[Term]</span> <span class="pre">bound_vars,</span> <span class="pre">Term</span> <span class="pre">term,</span> <span class="pre">bool</span> <span class="pre">glbl)</span></code></p></li>
+</ul>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">define-funs-rec</span> ( <span class="n">&lt;function_decl&gt;^n</span> ) ( <span class="n">&lt;term&gt;^n</span> ) )
+</pre></div>
+</div>
+<p>Create elements of parameter <code class="docutils literal notranslate"><span class="pre">funs</span></code> with <a class="reference internal" href="#cvc5.Solver.mkConst" title="cvc5.Solver.mkConst"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mkConst()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>funs</strong> – The sorted functions.</p></li>
+<li><p><strong>bound_vars</strong> – The list of parameters to the functions.</p></li>
+<li><p><strong>terms</strong> – The list of function bodies of the functions.</p></li>
+<li><p><strong>global</strong> – Determines whether this definition is global (i.e.
+persists when popping the context).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.defineFunsRec">
+<span class="sig-name descname"><span class="pre">defineFunsRec</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.defineFunsRec" title="Link to this definition"></a></dt>
+<dd><p>Define recursive functions.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">define-funs-rec</span> ( <span class="n">&lt;function_decl&gt;^n</span> ) ( <span class="n">&lt;term&gt;^n</span> ) )
+</pre></div>
+</div>
+<p>Create elements of parameter <code class="docutils literal notranslate"><span class="pre">funs</span></code> with <a class="reference internal" href="#cvc5.Solver.mkConst" title="cvc5.Solver.mkConst"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mkConst()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>funs</strong> – The sorted functions.</p></li>
+<li><p><strong>bound_vars</strong> – The list of parameters to the functions.</p></li>
+<li><p><strong>terms</strong> – The list of function bodies of the functions.</p></li>
+<li><p><strong>glb</strong> – Determines whether this definition is global (i.e.
+persists when popping the context).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.findSynth">
+<span class="sig-name descname"><span class="pre">findSynth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.findSynth" title="Link to this definition"></a></dt>
+<dd><p>Find a target term of interest using sygus enumeration with a
+provided grammar.</p>
+<p>SyGuS v2:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="n">find-synth</span> <span class="na">:target</span> <span class="n">G</span>)
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fst</strong> – The identifier specifying what kind of term to find.</p></li>
+<li><p><strong>grammar</strong> – The grammar for the term.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result of the find, which is the null term if this
+call failed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.findSynthNext">
+<span class="sig-name descname"><span class="pre">findSynthNext</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.findSynthNext" title="Link to this definition"></a></dt>
+<dd><p>Try to find a next solution for the synthesis conjecture
+corresponding to the current list of functions-to-synthesize,
+universal variables and constraints. Must be called immediately
+after a successful call to check-synth or check-synth-next.
+Requires incremental mode.</p>
+<p>SyGuS v2:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="n">find-synth-next</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The result of the find, which is the null term if this
+call failed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getAbduct">
+<span class="sig-name descname"><span class="pre">getAbduct</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getAbduct" title="Link to this definition"></a></dt>
+<dd><p>Get an abduct.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">get-abduct</span> <span class="n">&lt;conj&gt;</span> )
+( <span class="k">get-abduct</span> <span class="n">&lt;conj&gt;</span> <span class="n">&lt;grammar&gt;</span> )
+</pre></div>
+</div>
+<p>Requires to enable option
+<a class="reference internal" href="../../../options.html#lbl-option-produce-abducts"><span class="std std-ref">produce-abducts</span></a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conj</strong> – The conjecture term.</p></li>
+<li><p><strong>grammar</strong> – A grammar for the abduct.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The abduct.
+See <a class="reference internal" href="../../cpp/classes/solver.html#_CPPv4NK4cvc56Solver9getAbductERK4Term" title="cvc5::Solver::getAbduct"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5::Solver::getAbduct()</span></code></a> for details.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getAbductNext">
+<span class="sig-name descname"><span class="pre">getAbductNext</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getAbductNext" title="Link to this definition"></a></dt>
+<dd><p>Get the next abduct.</p>
+<p>Can only be called immediately after a successful call to
+<a class="reference internal" href="#cvc5.Solver.getAbduct" title="cvc5.Solver.getAbduct"><code class="xref py py-func docutils literal notranslate"><span class="pre">Solver.getAbduct()</span></code></a> or
+<a class="reference internal" href="#cvc5.Solver.getAbductNext" title="cvc5.Solver.getAbductNext"><code class="xref py py-func docutils literal notranslate"><span class="pre">Solver.getAbductNext()</span></code></a>.
+Is guaranteed to produce a syntactically different abduct wrt the
+last returned abduct if successful.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">get-abduct-next</span> )
+</pre></div>
+</div>
+<p>Requires to enable incremental mode, and
+option <a class="reference internal" href="../../../options.html#lbl-option-produce-abducts"><span class="std std-ref">produce-abducts</span></a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>output</strong> – The term where the result will be stored.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True iff an abduct was found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getAssertions">
+<span class="sig-name descname"><span class="pre">getAssertions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getAssertions" title="Link to this definition"></a></dt>
+<dd><p>Get the list of asserted formulas.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">get-assertions</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The list of asserted formulas.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getBooleanSort">
+<span class="sig-name descname"><span class="pre">getBooleanSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getBooleanSort" title="Link to this definition"></a></dt>
+<dd><p>Get the Boolean sort.
+:return: Sort Boolean.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getDifficulty">
+<span class="sig-name descname"><span class="pre">getDifficulty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getDifficulty" title="Link to this definition"></a></dt>
+<dd><p>Get a difficulty estimate for an asserted formula. This function is
+intended to be called immediately after any response to a
+<a class="reference internal" href="#cvc5.Solver.checkSat" title="cvc5.Solver.checkSat"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Solver.checkSat()</span></code></a> call.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A map from (a subset of) the input assertions to a real
+value that is an estimate of how difficult each assertion
+was to solver. Unmentioned assertions can be assumed to
+have zero difficulty.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getInfo">
+<span class="sig-name descname"><span class="pre">getInfo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getInfo" title="Link to this definition"></a></dt>
+<dd><p>Get info from the solver.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">get-info</span> <span class="n">&lt;info_flag&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>flag</strong> – The info flag.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The info.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getInstantiations">
+<span class="sig-name descname"><span class="pre">getInstantiations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getInstantiations" title="Link to this definition"></a></dt>
+<dd><p>Return a string that contains information about all instantiations
+made by the quantifiers module.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getIntegerSort">
+<span class="sig-name descname"><span class="pre">getIntegerSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getIntegerSort" title="Link to this definition"></a></dt>
+<dd><p>Get the integer sort.
+:return: Sort Integer.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getInterpolant">
+<span class="sig-name descname"><span class="pre">getInterpolant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getInterpolant" title="Link to this definition"></a></dt>
+<dd><p>Get an interpolant.
+Assuming that <span class="math notranslate nohighlight">\(A \rightarrow B\)</span> is valid,
+this function
+determines a term <span class="math notranslate nohighlight">\(I\)</span>
+over the shared variables of 
+<span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>,
+optionally with respect to a
+a given grammar, such that <span class="math notranslate nohighlight">\(A \rightarrow I\)</span> and
+<span class="math notranslate nohighlight">\(I \rightarrow B\)</span> are valid, if such a term exits.
+<span class="math notranslate nohighlight">\(A\)</span> is the current set of assertions and <span class="math notranslate nohighlight">\(B\)</span> is the
+conjecture, given as <code class="code docutils literal notranslate"><span class="pre">conj</span></code>.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">get-interpolant</span> <span class="n">&lt;symbol&gt;</span> <span class="n">&lt;conj&gt;</span> )
+( <span class="k">get-interpolant</span> <span class="n">&lt;symbol&gt;</span> <span class="n">&lt;conj&gt;</span> <span class="n">&lt;grammar&gt;</span> )
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In SMT-LIB, <code class="code docutils literal notranslate"><span class="pre">&lt;symbol&gt;</span></code> assigns a symbol to the
+interpolant.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Requires option
+<a class="reference internal" href="../../../options.html#lbl-option-produce-interpolants"><span class="std std-ref">produce-interpolants</span></a>
+to be set to a mode different from <code class="code docutils literal notranslate"><span class="pre">none</span></code>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conj</strong> – The conjecture term.</p></li>
+<li><p><strong>grammar</strong> – A grammar for the interpolant.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The interpolant, if such a term exists.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getInterpolantNext">
+<span class="sig-name descname"><span class="pre">getInterpolantNext</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getInterpolantNext" title="Link to this definition"></a></dt>
+<dd><p>Get the next interpolant.</p>
+<p>Can only be called immediately after a successful call to
+<a class="reference internal" href="#cvc5.Solver.getInterpolant" title="cvc5.Solver.getInterpolant"><code class="xref py py-func docutils literal notranslate"><span class="pre">Solver.getInterpolant()</span></code></a> or
+<a class="reference internal" href="#cvc5.Solver.getInterpolantNext" title="cvc5.Solver.getInterpolantNext"><code class="xref py py-func docutils literal notranslate"><span class="pre">Solver.getInterpolantNext()</span></code></a>.
+Is guaranteed to produce a syntactically different interpolant wrt
+the last returned interpolant if successful.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="n">get-interpolant-next</span> )
+</pre></div>
+</div>
+<p>Requires to enable incremental mode, and option
+<a class="reference internal" href="../../../options.html#lbl-option-produce-interpolants"><span class="std std-ref">produce-interpolants</span></a> to be
+set to a mode different from <code class="docutils literal notranslate"><span class="pre">none</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>output</strong> – The term where the result will be stored.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True iff an interpolant was found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getLearnedLiterals">
+<span class="sig-name descname"><span class="pre">getLearnedLiterals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getLearnedLiterals" title="Link to this definition"></a></dt>
+<dd><p>Get a list of literals that are entailed by the current set of assertions</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="n">get-learned-literals</span> )
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>type</strong> – The type of learned literals to return</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The list of literals.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getLogic">
+<span class="sig-name descname"><span class="pre">getLogic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getLogic" title="Link to this definition"></a></dt>
+<dd><p>Get the logic set the solver.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Asserts isLogicSet().</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The logic used by the solver.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getModel">
+<span class="sig-name descname"><span class="pre">getModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getModel" title="Link to this definition"></a></dt>
+<dd><p>Get the model</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">get-model</span>)
+</pre></div>
+</div>
+<p>Requires to enable option
+<a class="reference internal" href="../../../options.html#lbl-option-produce-models"><span class="std std-ref">produce-models</span></a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sorts</strong> – The list of uninterpreted sorts that should be
+printed in the model.</p></li>
+<li><p><strong>vars</strong> – The list of free constants that should be printed in
+the model. A subset of these may be printed based on
+<a class="reference internal" href="#cvc5.Solver.isModelCoreSymbol" title="cvc5.Solver.isModelCoreSymbol"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Solver.isModelCoreSymbol()</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A string representing the model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getModelDomainElements">
+<span class="sig-name descname"><span class="pre">getModelDomainElements</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getModelDomainElements" title="Link to this definition"></a></dt>
+<dd><p>Get the domain elements of uninterpreted sort s in the current
+model. The current model interprets s as the finite sort whose
+domain elements are given in the return value of this method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – The uninterpreted sort in question.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The domain elements of s in the current model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getNumIndicesForSkolemId">
+<span class="sig-name descname"><span class="pre">getNumIndicesForSkolemId</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getNumIndicesForSkolemId" title="Link to this definition"></a></dt>
+<dd><p>Get the number of indices for a skolem id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> – The skolem id.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of indice for a skolem with the given id.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getOption">
+<span class="sig-name descname"><span class="pre">getOption</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getOption" title="Link to this definition"></a></dt>
+<dd><p>Get the value of a given option.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">get-option</span> <span class="n">&lt;keyword&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>option</strong> – The option for which the value is queried.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A string representation of the option value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getOptionInfo">
+<span class="sig-name descname"><span class="pre">getOptionInfo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getOptionInfo" title="Link to this definition"></a></dt>
+<dd><p>Get some information about the given option.
+Returns the information provided by the C++
+<a class="reference internal" href="../../cpp/classes/optioninfo.html#_CPPv4N4cvc510OptionInfoE" title="cvc5::OptionInfo"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">OptionInfo</span></code></a> as a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Information about the given option.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getOptionNames">
+<span class="sig-name descname"><span class="pre">getOptionNames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getOptionNames" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Get all option names that can be used with
+<a class="reference internal" href="#cvc5.Solver.setOption" title="cvc5.Solver.setOption"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Solver.setOption()</span></code></a>, <a class="reference internal" href="#cvc5.Solver.getOption" title="cvc5.Solver.getOption"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Solver.getOption()</span></code></a>
+and <a class="reference internal" href="#cvc5.Solver.getOptionInfo" title="cvc5.Solver.getOptionInfo"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Solver.getOptionInfo()</span></code></a>.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>All option names.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getProof">
+<span class="sig-name descname"><span class="pre">getProof</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getProof" title="Link to this definition"></a></dt>
+<dd><p>Get a proof associated with the most recent call to checkSat.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">get-proof</span> <span class="na">:c</span>)
+</pre></div>
+</div>
+<p>Requires to enable option
+<a class="reference internal" href="../../../options.html#lbl-option-produce-proofs"><span class="std std-ref">produce-proofs</span></a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>c</strong> – The component of the proof to return.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A vector of proof nodes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getQuantifierElimination">
+<span class="sig-name descname"><span class="pre">getQuantifierElimination</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getQuantifierElimination" title="Link to this definition"></a></dt>
+<dd><p>Do quantifier elimination.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">get-qe</span> <span class="n">&lt;q&gt;</span> )
+</pre></div>
+</div>
+<p>Requires a logic that supports quantifier elimination.
+Currently, the only logics supported by quantifier elimination
+are LRA and LIA.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>q</strong> – A quantified formula of the form
+<span class="math notranslate nohighlight">\(Q\bar{x_1}\dots Q\bar{x}_n. P( x_1 \dots x_i, y_1 \dots y_j)\)</span>
+where
+<span class="math notranslate nohighlight">\(Q\bar{x}\)</span> is a set of quantified variables of the
+form <span class="math notranslate nohighlight">\(Q x_1...x_k\)</span> and
+<span class="math notranslate nohighlight">\(P( x_1...x_i, y_1...y_j )\)</span> is a quantifier-free
+formula</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>A formula <span class="math notranslate nohighlight">\(\phi\)</span> such that, given the current set
+of formulas <span class="math notranslate nohighlight">\(A\)</span> asserted to this solver:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((A \wedge q)\)</span> <span class="math notranslate nohighlight">\((A \wedge \phi)\)</span> are
+equivalent</p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> is quantifier-free formula containing only
+free variables in <span class="math notranslate nohighlight">\(y_1...y_n\)</span>.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getQuantifierEliminationDisjunct">
+<span class="sig-name descname"><span class="pre">getQuantifierEliminationDisjunct</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getQuantifierEliminationDisjunct" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Do partial quantifier elimination, which can be used for
+incrementally computing the result of a quantifier elimination.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">get-qe-disjunct</span> <span class="n">&lt;q&gt;</span> )
+</pre></div>
+</div>
+<p>Requires a logic that supports quantifier elimination.
+Currently, the only logics supported by quantifier elimination
+are LRA and LIA.</p>
+</div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<blockquote>
+<div><p>This function is experimental and may change in future versions.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">param q<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A quantified formula of the form
+<span class="math notranslate nohighlight">\(Q\bar{x_1} ... Q\bar{x_n}. P( x_1...x_i, y_1...y_j)\)</span>
+where <span class="math notranslate nohighlight">\(Q\bar{x}\)</span> is a set of quantified variables of
+the form <span class="math notranslate nohighlight">\(Q x_1...x_k\)</span> and
+<span class="math notranslate nohighlight">\(P( x_1...x_i, y_1...y_j )\)</span> is a quantifier-free formula.</p>
+</dd>
+<dt class="field-even">return<span class="colon">:</span></dt>
+<dd class="field-even"><p>A formula <span class="math notranslate nohighlight">\(\phi\)</span> such that, given the current set
+of formulas <span class="math notranslate nohighlight">\(A\)</span> asserted to this solver:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((A \wedge q \implies A \wedge \phi)\)</span> if <span class="math notranslate nohighlight">\(Q\)</span>
+is <span class="math notranslate nohighlight">\(\forall\)</span>, and
+<span class="math notranslate nohighlight">\((A \wedge \phi \implies A \wedge q)\)</span> if
+<span class="math notranslate nohighlight">\(Q\)</span> is <span class="math notranslate nohighlight">\(\exists\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> is quantifier-free formula containing only
+free variables in <span class="math notranslate nohighlight">\(y_1...y_n\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(Q\)</span> is <span class="math notranslate nohighlight">\(\exists\)</span>, let <span class="math notranslate nohighlight">\((A \wedge Q_n)\)</span>
+be the formula
+<span class="math notranslate nohighlight">\((A \wedge \neg (\phi \wedge Q_1) \wedge ... \wedge \neg (\phi \wedge Q_n))\)</span>
+where for each <span class="math notranslate nohighlight">\(i = 1...n\)</span>, formula
+<span class="math notranslate nohighlight">\((\phi \wedge Q_i)\)</span> is the result of calling
+<a class="reference internal" href="#cvc5.Solver.getQuantifierEliminationDisjunct" title="cvc5.Solver.getQuantifierEliminationDisjunct"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getQuantifierEliminationDisjunct()</span></code></a>
+for <span class="math notranslate nohighlight">\(q\)</span> with the set of assertions
+<span class="math notranslate nohighlight">\((A \wedge Q_{i-1})\)</span>.
+Similarly, if <span class="math notranslate nohighlight">\(Q\)</span> is <span class="math notranslate nohighlight">\(\forall\)</span>, then let
+<span class="math notranslate nohighlight">\((A \wedge Q_n)\)</span> be
+<span class="math notranslate nohighlight">\((A \wedge (\phi \wedge Q_1) \wedge ... \wedge (\phi \wedge Q_n))\)</span>
+where <span class="math notranslate nohighlight">\((\phi \wedge Q_i)\)</span> is the same as above.
+In either case, we have that <span class="math notranslate nohighlight">\((\phi \wedge Q_j)\)</span>
+will eventually be true or false, for some finite <span class="math notranslate nohighlight">\(j\)</span>.</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getRealSort">
+<span class="sig-name descname"><span class="pre">getRealSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getRealSort" title="Link to this definition"></a></dt>
+<dd><p>Get the real sort.
+:return: Sort Real.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getRegExpSort">
+<span class="sig-name descname"><span class="pre">getRegExpSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getRegExpSort" title="Link to this definition"></a></dt>
+<dd><p>Get the regular expression sort.
+:return: The sort of regular expressions.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getRoundingModeSort">
+<span class="sig-name descname"><span class="pre">getRoundingModeSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getRoundingModeSort" title="Link to this definition"></a></dt>
+<dd><p>Get the rounding mode sort.
+:return: Sort RoundingMode.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getStatistics">
+<span class="sig-name descname"><span class="pre">getStatistics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getStatistics" title="Link to this definition"></a></dt>
+<dd><p>Return a snapshot of the current state of the statistic values of
+this solver. The returned object is completely decoupled from the
+solver and will not change when the solver is used again.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getStringSort">
+<span class="sig-name descname"><span class="pre">getStringSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getStringSort" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Sort String.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getSygusAssumptions">
+<span class="sig-name descname"><span class="pre">getSygusAssumptions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getSygusAssumptions" title="Link to this definition"></a></dt>
+<dd><p>Get the list of sygus assumptions.
+:return: The list of sygus assumptions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getSygusConstraints">
+<span class="sig-name descname"><span class="pre">getSygusConstraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getSygusConstraints" title="Link to this definition"></a></dt>
+<dd><p>Get the list of sygus constraints.
+:return: The list of sygus constraints.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getSynthSolution">
+<span class="sig-name descname"><span class="pre">getSynthSolution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getSynthSolution" title="Link to this definition"></a></dt>
+<dd><p>Get the synthesis solution of the given term. This function should be
+called immediately after the solver answers unsat for sygus input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>term</strong> – The term for which the synthesis solution is queried.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The synthesis solution of the given term.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getSynthSolutions">
+<span class="sig-name descname"><span class="pre">getSynthSolutions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getSynthSolutions" title="Link to this definition"></a></dt>
+<dd><p>Get the synthesis solutions of the given terms. This function should
+be called immediately after the solver answers unsat for sygus
+input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>terms</strong> – The terms for which the synthesis solutions is
+queried.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The synthesis solutions of the given terms.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getTermManager">
+<span class="sig-name descname"><span class="pre">getTermManager</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getTermManager" title="Link to this definition"></a></dt>
+<dd><p>Get the associated term manager instance.
+:return: The term manager instance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getTimeoutCore">
+<span class="sig-name descname"><span class="pre">getTimeoutCore</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getTimeoutCore" title="Link to this definition"></a></dt>
+<dd><p>Get a timeout core, which computes a subset of the current
+assertions that cause a timeout. Note it does not require being
+proceeded by a call to checkSat.</p>
+<p>This function may make multiple checks for satisfiability internally,
+each limited by the timeout value given by
+<a class="reference internal" href="../../../options.html#lbl-option-timeout-core-timeout"><span class="std std-ref">timeout-core-timeout</span></a>.</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="n">get-timeout-core</span>)
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The result of the timeout core computation. This is a pair
+containing a result and a list of formulas. If the result is unknown
+and the reason is timeout, then the list of formulas correspond to a
+subset of the current assertions that cause a timeout in the
+specified time
+<a class="reference internal" href="../../../options.html#lbl-option-timeout-core-timeout"><span class="std std-ref">timeout-core-timeout</span></a>.
+If the result is unsat, then the list of formulas correspond to an
+unsat core for the current assertions. Otherwise, the result is sat,
+indicating that the current assertions are satisfiable, and
+the list of formulas is empty.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getTimeoutCoreAssuming">
+<span class="sig-name descname"><span class="pre">getTimeoutCoreAssuming</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getTimeoutCoreAssuming" title="Link to this definition"></a></dt>
+<dd><p>Get a timeout core, which computes a subset of the given assumptions
+that cause a timeout when added to the current assertions. Note it
+does not require being proceeded by a call to checkSat.</p>
+<p>This function may make multiple checks for satisfiability internally,
+each limited by the timeout value given by
+<a class="reference internal" href="../../../options.html#lbl-option-timeout-core-timeout"><span class="std std-ref">timeout-core-timeout</span></a>.</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="n">get-timeout-core</span>)
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>assumptions</strong> – The formulas to assume.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The result of the timeout core computation. This is a pair
+containing a result and a list of formulas. If the result is unknown
+and the reason is timeout, then the list of formulas correspond to a
+subset of assumptions that cause a timeout when added to the current
+assertions in the specified time
+<a class="reference internal" href="../../../options.html#lbl-option-timeout-core-timeout"><span class="std std-ref">timeout-core-timeout</span></a>.
+If the result is unsat, then the list of formulas plus the current
+assertions correspond to an unsat core for the current assertions.
+Otherwise, the result is sat, indicating that the given assumptions plus
+the current assertions are satisfiable, and the list of formulas is empty.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getUnsatAssumptions">
+<span class="sig-name descname"><span class="pre">getUnsatAssumptions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getUnsatAssumptions" title="Link to this definition"></a></dt>
+<dd><p>Get the set of unsat (“failed”) assumptions.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">get-unsat-assumptions</span> )
+</pre></div>
+</div>
+<p>Requires to enable option <a class="reference internal" href="../../../options.html#lbl-option-produce-unsat-assumptions"><span class="std std-ref">produce-unsat-assumptions</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The set of unsat assumptions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getUnsatCore">
+<span class="sig-name descname"><span class="pre">getUnsatCore</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getUnsatCore" title="Link to this definition"></a></dt>
+<dd><p>Get the unsatisfiable core.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">get-unsat-core</span>)
+</pre></div>
+</div>
+<p>Requires to enable option <a class="reference internal" href="../../../options.html#lbl-option-produce-unsat-cores"><span class="std std-ref">produce-unsat-cores</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In contrast to SMT-LIB, the API does not distinguish between
+named and unnamed assertions when producing an unsatisfiable
+core. Additionally, the API allows this option to be called
+after a check with assumptions. A subset of those assumptions
+may be included in the unsatisfiable core returned by this
+method.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A set of terms representing the unsatisfiable core.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getUnsatCoreLemmas">
+<span class="sig-name descname"><span class="pre">getUnsatCoreLemmas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getUnsatCoreLemmas" title="Link to this definition"></a></dt>
+<dd><p>Get the lemmas used to derive unsatisfiability.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="n">get-unsat-core-lemmas</span>)
+</pre></div>
+</div>
+<p>Requires the SAT proof unsat core mode, so to enable option
+<a class="reference internal" href="../../../options.html#lbl-option-unsat-cores-mode"><span class="std std-ref">unsat-cores-mode=sat-proof</span></a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A set of terms representing the lemmas used to derive
+unsatisfiability.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getValue">
+<span class="sig-name descname"><span class="pre">getValue</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getValue" title="Link to this definition"></a></dt>
+<dd><p>Get the value of the given term or list of terms in the current
+model.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">get-value</span> ( <span class="n">&lt;term&gt;*</span> ) )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>term_or_list</strong> – The term or list of terms for which the value
+is queried.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value or list of values of the given term or list of
+terms.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getValueSepHeap">
+<span class="sig-name descname"><span class="pre">getValueSepHeap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getValueSepHeap" title="Link to this definition"></a></dt>
+<dd><p>When using separation logic, obtain the term for the heap.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The term for the heap.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getValueSepNil">
+<span class="sig-name descname"><span class="pre">getValueSepNil</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getValueSepNil" title="Link to this definition"></a></dt>
+<dd><p>When using separation logic, obtain the term for nil.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The term for nil.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.getVersion">
+<span class="sig-name descname"><span class="pre">getVersion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.getVersion" title="Link to this definition"></a></dt>
+<dd><p>Return a string representation of the version of this solver.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.isLogicSet">
+<span class="sig-name descname"><span class="pre">isLogicSet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.isLogicSet" title="Link to this definition"></a></dt>
+<dd><p>Is logic set? Returns whether we called setLogic yet for this
+solver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>whether we called setLogic yet for this solver.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.isModelCoreSymbol">
+<span class="sig-name descname"><span class="pre">isModelCoreSymbol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.isModelCoreSymbol" title="Link to this definition"></a></dt>
+<dd><p>This returns False if the model value of free constant v was not
+essential for showing the satisfiability of the last call to
+checkSat using the current model. This function will only return
+false (for any v) if the model-cores option has been set.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>v</strong> – The term in question.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if v is a model core symbol.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkAbstractSort">
+<span class="sig-name descname"><span class="pre">mkAbstractSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkAbstractSort" title="Link to this definition"></a></dt>
+<dd><p>Create an abstract sort. An abstract sort represents a sort for a
+given kind whose parameters and arguments are unspecified.</p>
+<p>Parameter <code class="docutils literal notranslate"><span class="pre">kind</span></code> must be the kind of a sort that can be
+abstracted, i.e., a sort that has indices or argument sorts. For
+example, <code class="xref py py-obj docutils literal notranslate"><span class="pre">ARRAY_SORT</span></code> and
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">BITVECTOR_SORT</span></code> can be passed as the
+to this function, while
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">INTEGER_SORT</span></code> and
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">STRING_SORT</span></code> cannot.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Providing the kind <code class="xref py py-obj docutils literal notranslate"><span class="pre">ABSTRACT_SORT</span></code>
+as an argument to this method returns the (fully) unspecified
+sort, denoted <code class="docutils literal notranslate"><span class="pre">?</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Providing a kind of sort that has no indices and a fixed arity
+of argument sorts will return the sort of <code class="docutils literal notranslate"><span class="pre">kind</span></code> whose
+arguments are the unspecified sort. For example,
+<code class="docutils literal notranslate"><span class="pre">mkAbstractSort(ARRAY_SORT)</span></code> will return the sort
+<code class="docutils literal notranslate"><span class="pre">(ARRAY_SORT</span> <span class="pre">?</span> <span class="pre">?)</span></code> instead of the abstract sort whose
+abstract kind is py:obj:<cite>ARRAY_SORT &lt;Kind.ARRAY_SORT&gt;</cite>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>k</strong> – The kind of the abstract sort</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The abstract sort.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkArraySort">
+<span class="sig-name descname"><span class="pre">mkArraySort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkArraySort" title="Link to this definition"></a></dt>
+<dd><p>Create an array sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>indexSort</strong> – The array index sort.</p></li>
+<li><p><strong>elemSort</strong> – The array element sort.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The array sort.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkBagSort">
+<span class="sig-name descname"><span class="pre">mkBagSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkBagSort" title="Link to this definition"></a></dt>
+<dd><p>Create a bag sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>elemSort</strong> – The sort of the bag elements.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The bag sort.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkBitVector">
+<span class="sig-name descname"><span class="pre">mkBitVector</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkBitVector" title="Link to this definition"></a></dt>
+<dd><p>Create bit-vector value.</p>
+<p>Supports the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkBitVector(int</span> <span class="pre">size,</span> <span class="pre">int</span> <span class="pre">val=0)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkBitVector(int</span> <span class="pre">size,</span> <span class="pre">string</span> <span class="pre">val,</span> <span class="pre">int</span> <span class="pre">base)</span></code></p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> – The bit-width.</p></li>
+<li><p><strong>val</strong> – An integer representating the value, in the first form.
+In the second form, a string representing the value.</p></li>
+<li><p><strong>base</strong> – The base of the string representation (second form
+only).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Term representing a bit-vector value.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkBitVectorSort">
+<span class="sig-name descname"><span class="pre">mkBitVectorSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkBitVectorSort" title="Link to this definition"></a></dt>
+<dd><p>Create a bit-vector sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>size</strong> – The bit-width of the bit-vector sort</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The bit-vector sort</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkBoolean">
+<span class="sig-name descname"><span class="pre">mkBoolean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkBoolean" title="Link to this definition"></a></dt>
+<dd><p>Create a Boolean constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – The value of the constant.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The Boolean constant.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkCardinalityConstraint">
+<span class="sig-name descname"><span class="pre">mkCardinalityConstraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkCardinalityConstraint" title="Link to this definition"></a></dt>
+<dd><p>Create cardinality constraint.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort</strong> – Sort of the constraint.</p></li>
+<li><p><strong>index</strong> – The upper bound for the cardinality of the sort.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkConst">
+<span class="sig-name descname"><span class="pre">mkConst</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkConst" title="Link to this definition"></a></dt>
+<dd><p>Create (first-order) constant (0-arity function symbol).</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">declare-const</span> <span class="n">&lt;symbol&gt;</span> <span class="n">&lt;sort&gt;</span> )
+( <span class="k">declare-fun</span> <span class="n">&lt;symbol&gt;</span> ( ) <span class="n">&lt;sort&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort</strong> – The sort of the constant.</p></li>
+<li><p><strong>symbol</strong> – The name of the constant. If None, a default symbol
+is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The first-order constant.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkConstArray">
+<span class="sig-name descname"><span class="pre">mkConstArray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkConstArray" title="Link to this definition"></a></dt>
+<dd><p>Create a constant array with the provided constant value stored at
+every index</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort</strong> – The sort of the constant array (must be an array sort).</p></li>
+<li><p><strong>val</strong> – The constant value to store (must match the sort’s
+element sort).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The constant array term.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkDatatypeConstructorDecl">
+<span class="sig-name descname"><span class="pre">mkDatatypeConstructorDecl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkDatatypeConstructorDecl" title="Link to this definition"></a></dt>
+<dd><p>Create datatype constructor declaration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – The name of the constructor.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The datatype constructor declaration.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkDatatypeDecl">
+<span class="sig-name descname"><span class="pre">mkDatatypeDecl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkDatatypeDecl" title="Link to this definition"></a></dt>
+<dd><p>Create a datatype declaration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – The name of the datatype.</p></li>
+<li><p><strong>isCoDatatype</strong> – True if a codatatype is to be constructed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The datatype declaration.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkDatatypeSort">
+<span class="sig-name descname"><span class="pre">mkDatatypeSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkDatatypeSort" title="Link to this definition"></a></dt>
+<dd><p>Create a datatype sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dtypedecl</strong> – The datatype declaration from which the sort is
+created.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The datatype sort.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkDatatypeSorts">
+<span class="sig-name descname"><span class="pre">mkDatatypeSorts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkDatatypeSorts" title="Link to this definition"></a></dt>
+<dd><p>Create a vector of datatype sorts using unresolved sorts. The names
+of the datatype declarations in dtypedecls must be distinct.</p>
+<p>When constructing datatypes, unresolved sorts are replaced by the
+datatype sort constructed for the datatype declaration it is
+associated with.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dtypedecls</strong> – The datatype declarations from which the sort is
+created.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The datatype sorts.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkEmptyBag">
+<span class="sig-name descname"><span class="pre">mkEmptyBag</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkEmptyBag" title="Link to this definition"></a></dt>
+<dd><p>Create a constant representing an empty bag of the given sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sort</strong> – The sort of the bag elements.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The empty bag constant.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkEmptySequence">
+<span class="sig-name descname"><span class="pre">mkEmptySequence</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkEmptySequence" title="Link to this definition"></a></dt>
+<dd><p>Create an empty sequence of the given element sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sort</strong> – The element sort of the sequence.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The empty sequence with given element sort.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkEmptySet">
+<span class="sig-name descname"><span class="pre">mkEmptySet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkEmptySet" title="Link to this definition"></a></dt>
+<dd><p>Create a constant representing an empty set of the given sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sort</strong> – The sort of the set elements.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The empty set constant.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkFalse">
+<span class="sig-name descname"><span class="pre">mkFalse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkFalse" title="Link to this definition"></a></dt>
+<dd><p>Create a Boolean false constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The false constant.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkFiniteFieldElem">
+<span class="sig-name descname"><span class="pre">mkFiniteFieldElem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkFiniteFieldElem" title="Link to this definition"></a></dt>
+<dd><p>Create finite field value.</p>
+<p>Supports the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkFiniteFieldElem(int</span> <span class="pre">value,</span> <span class="pre">Sort</span> <span class="pre">sort)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkFiniteFieldElem(string</span> <span class="pre">value,</span> <span class="pre">Sort</span> <span class="pre">sort)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkFiniteFieldElem(string</span> <span class="pre">value,</span> <span class="pre">Sort</span> <span class="pre">sort,</span> <span class="pre">int</span> <span class="pre">base)</span></code></p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – The value of the element’s integer representation.
+An integer or string of base 10 if the base is not
+explicitly given, and else a string in the given base.</p></li>
+<li><p><strong>sort</strong> – The field to create the element in.</p></li>
+<li><p><strong>base</strong> – The base of the string representation of <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Term representing a finite field value.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkFiniteFieldSort">
+<span class="sig-name descname"><span class="pre">mkFiniteFieldSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkFiniteFieldSort" title="Link to this definition"></a></dt>
+<dd><p>Create a finite field sort.</p>
+<p>Supports the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">mkFiniteFieldSort(int</span> <span class="pre">size)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">mkFiniteFieldSort(string</span> <span class="pre">size)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">mkFiniteFieldSort(string</span> <span class="pre">size,</span> <span class="pre">int</span> <span class="pre">base)</span></code></p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> – The size of the field. Must be a prime-power.
+An integer or string of base 10 if the base is not
+explicitly given, and else a string in the given base.</p></li>
+<li><p><strong>base</strong> – The base of the string representation of <code class="docutils literal notranslate"><span class="pre">size</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkFloatingPoint">
+<span class="sig-name descname"><span class="pre">mkFloatingPoint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkFloatingPoint" title="Link to this definition"></a></dt>
+<dd><p>Create a floating-point value from a bit-vector given in IEEE-754
+format, or from its three IEEE-754 bit-vector value components
+(sign bit, exponent, significand). Arguments must be either given
+as (int, int, Term) or (Term, Term, Term).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arg0</strong> – The size of the exponent or the sign bit.</p></li>
+<li><p><strong>arg1</strong> – The size of the signifcand or the bit-vector
+representing the exponent.</p></li>
+<li><p><strong>arg2</strong> – The value of the floating-point constant as a
+bit-vector term or the bit-vector representing the
+significand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The floating-point value.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkFloatingPointNaN">
+<span class="sig-name descname"><span class="pre">mkFloatingPointNaN</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkFloatingPointNaN" title="Link to this definition"></a></dt>
+<dd><p>Create a not-a-number (NaN) floating-point constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exp</strong> – Number of bits in the exponent.</p></li>
+<li><p><strong>sig</strong> – Number of bits in the significand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The floating-point constant.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkFloatingPointNegInf">
+<span class="sig-name descname"><span class="pre">mkFloatingPointNegInf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkFloatingPointNegInf" title="Link to this definition"></a></dt>
+<dd><p>Create a negative infinity floating-point constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exp</strong> – Number of bits in the exponent.</p></li>
+<li><p><strong>sig</strong> – Number of bits in the significand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The floating-point constant.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkFloatingPointNegZero">
+<span class="sig-name descname"><span class="pre">mkFloatingPointNegZero</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkFloatingPointNegZero" title="Link to this definition"></a></dt>
+<dd><p>Create a negative zero (+0.0) floating-point constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exp</strong> – Number of bits in the exponent.</p></li>
+<li><p><strong>sig</strong> – Number of bits in the significand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The floating-point constant.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkFloatingPointPosInf">
+<span class="sig-name descname"><span class="pre">mkFloatingPointPosInf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkFloatingPointPosInf" title="Link to this definition"></a></dt>
+<dd><p>Create a positive infinity floating-point constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exp</strong> – Number of bits in the exponent.</p></li>
+<li><p><strong>sig</strong> – Number of bits in the significand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The floating-point constant.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkFloatingPointPosZero">
+<span class="sig-name descname"><span class="pre">mkFloatingPointPosZero</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkFloatingPointPosZero" title="Link to this definition"></a></dt>
+<dd><p>Create a positive zero (+0.0) floating-point constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exp</strong> – Number of bits in the exponent.</p></li>
+<li><p><strong>sig</strong> – Number of bits in the significand.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The floating-point constant.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkFloatingPointSort">
+<span class="sig-name descname"><span class="pre">mkFloatingPointSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkFloatingPointSort" title="Link to this definition"></a></dt>
+<dd><p>Create a floating-point sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exp</strong> – The bit-width of the exponent of the floating-point
+sort.</p></li>
+<li><p><strong>sig</strong> – The bit-width of the significand of the floating-point
+sort.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkFunctionSort">
+<span class="sig-name descname"><span class="pre">mkFunctionSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkFunctionSort" title="Link to this definition"></a></dt>
+<dd><p>Create function sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sorts</strong> – The sort of the function arguments.</p></li>
+<li><p><strong>codomain</strong> – The sort of the function return value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The function sort.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkGrammar">
+<span class="sig-name descname"><span class="pre">mkGrammar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkGrammar" title="Link to this definition"></a></dt>
+<dd><p>Create a SyGuS grammar. The first non-terminal is treated as the
+starting non-terminal, so the order of non-terminals matters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>boundVars</strong> – The parameters to corresponding
+synth-fun/synth-inv.</p></li>
+<li><p><strong>ntSymbols</strong> – The pre-declaration of the non-terminal symbols.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The grammar.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkInteger">
+<span class="sig-name descname"><span class="pre">mkInteger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkInteger" title="Link to this definition"></a></dt>
+<dd><p>Create an integer constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>val</strong> – Representation of the constant: either a string or
+integer.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A constant of sort Integer.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkNullableIsNull">
+<span class="sig-name descname"><span class="pre">mkNullableIsNull</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkNullableIsNull" title="Link to this definition"></a></dt>
+<dd><p>Create a null tester for a nullable term.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>term</strong> – A nullable term.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tester whether term is null.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkNullableIsSome">
+<span class="sig-name descname"><span class="pre">mkNullableIsSome</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkNullableIsSome" title="Link to this definition"></a></dt>
+<dd><p>Create a some tester for a nullable term.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>term</strong> – A nullable term.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tester whether term is some.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkNullableLift">
+<span class="sig-name descname"><span class="pre">mkNullableLift</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkNullableLift" title="Link to this definition"></a></dt>
+<dd><p>Create a term that lifts kind to nullable terms.
+Example:
+If we have the term ((_ nullable.lift +) x y),
+where x, y of type (Nullable Int), then
+kind would be ADD, and args would be [x, y].
+This function would return
+(nullable.lift (lambda ((a Int) (b Int)) (+ a b)) x y)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kind</strong> – The lifted operator.</p></li>
+<li><p><strong>args</strong> – The arguments of the lifted operator.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A term of Kind NULLABLE_LIFT where the first child
+is a lambda expression, and the remaining children are
+the original arguments.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkNullableNull">
+<span class="sig-name descname"><span class="pre">mkNullableNull</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkNullableNull" title="Link to this definition"></a></dt>
+<dd><p>Create a constant representing an null of the given sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>term</strong> – The sort of the Nullable element.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The null constant.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkNullableSome">
+<span class="sig-name descname"><span class="pre">mkNullableSome</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkNullableSome" title="Link to this definition"></a></dt>
+<dd><p>Create a nullable some term.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>term</strong> – The elements value.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The element value wrapped in some constructor.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkNullableSort">
+<span class="sig-name descname"><span class="pre">mkNullableSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkNullableSort" title="Link to this definition"></a></dt>
+<dd><p>Create a nullable sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>elemSort</strong> – The sort of the element of the nullable.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The nullable sort.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkNullableVal">
+<span class="sig-name descname"><span class="pre">mkNullableVal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkNullableVal" title="Link to this definition"></a></dt>
+<dd><p>Create a selector for nullable term.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>term</strong> – A nullable term.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The element value of the nullable term.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkOp">
+<span class="sig-name descname"><span class="pre">mkOp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkOp" title="Link to this definition"></a></dt>
+<dd><p>Create operator.</p>
+<p>Supports the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Op</span> <span class="pre">mkOp(Kind</span> <span class="pre">kind)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Op</span> <span class="pre">mkOp(Kind</span> <span class="pre">kind,</span> <span class="pre">const</span> <span class="pre">string&amp;</span> <span class="pre">arg)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Op</span> <span class="pre">mkOp(Kind</span> <span class="pre">kind,</span> <span class="pre">uint32_t</span> <span class="pre">arg0,</span> <span class="pre">...)</span></code></p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkParamSort">
+<span class="sig-name descname"><span class="pre">mkParamSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkParamSort" title="Link to this definition"></a></dt>
+<dd><p>Create a sort parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>symbol</strong> – The name of the sort.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The sort parameter.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkPi">
+<span class="sig-name descname"><span class="pre">mkPi</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkPi" title="Link to this definition"></a></dt>
+<dd><p>Create a constant representing the number Pi.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A constant representing <a class="reference internal" href="kind.html#cvc5.Kind.PI" title="cvc5.Kind.PI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PI</span></code></a>.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkPredicateSort">
+<span class="sig-name descname"><span class="pre">mkPredicateSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkPredicateSort" title="Link to this definition"></a></dt>
+<dd><p>Create a predicate sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sorts</strong> – The list of sorts of the predicate.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The predicate sort.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkReal">
+<span class="sig-name descname"><span class="pre">mkReal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkReal" title="Link to this definition"></a></dt>
+<dd><p>Create a real constant from a numerator and an optional denominator.</p>
+<p>First converts the arguments to a temporary string, either
+<code class="docutils literal notranslate"><span class="pre">&quot;&lt;numerator&gt;&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;&lt;numerator&gt;/&lt;denominator&gt;&quot;</span></code>. This temporary
+string is forwarded to <a class="reference internal" href="../../cpp/classes/termmanager.html#_CPPv4N4cvc511TermManager6mkRealERKNSt6stringE" title="cvc5::TermManager::mkReal"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5::TermManager::mkReal()</span></code></a> and should
+thus represent an integer, a decimal number or a fraction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>numerator</strong> – The numerator.</p></li>
+<li><p><strong>denominator</strong> – The denominator, or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A real term with literal value.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkRecordSort">
+<span class="sig-name descname"><span class="pre">mkRecordSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkRecordSort" title="Link to this definition"></a></dt>
+<dd><p>Create a record sort</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fields</strong> – The list of fields of the record.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The record sort.</p>
+</dd>
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p>This function is deprecated and will be removed in a future
+release.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkRegexpAll">
+<span class="sig-name descname"><span class="pre">mkRegexpAll</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkRegexpAll" title="Link to this definition"></a></dt>
+<dd><p>Create a regular expression all (<code class="docutils literal notranslate"><span class="pre">re.all</span></code>) term.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The all term.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkRegexpAllchar">
+<span class="sig-name descname"><span class="pre">mkRegexpAllchar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkRegexpAllchar" title="Link to this definition"></a></dt>
+<dd><p>Create a regular expression allchar (<code class="docutils literal notranslate"><span class="pre">re.allchar</span></code>) term.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The allchar term.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkRegexpNone">
+<span class="sig-name descname"><span class="pre">mkRegexpNone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkRegexpNone" title="Link to this definition"></a></dt>
+<dd><p>Create a regular expression none (<code class="docutils literal notranslate"><span class="pre">re.none</span></code>) term.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The none term.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkRoundingMode">
+<span class="sig-name descname"><span class="pre">mkRoundingMode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkRoundingMode" title="Link to this definition"></a></dt>
+<dd><p>Create a roundingmode constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rm</strong> – The floating point rounding mode this constant
+represents.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkSepEmp">
+<span class="sig-name descname"><span class="pre">mkSepEmp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkSepEmp" title="Link to this definition"></a></dt>
+<dd><p>Create a separation logic empty term.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The separation logic empty term.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkSepNil">
+<span class="sig-name descname"><span class="pre">mkSepNil</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkSepNil" title="Link to this definition"></a></dt>
+<dd><p>Create a separation logic nil term.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sort</strong> – The sort of the nil term.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The separation logic nil term.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkSequenceSort">
+<span class="sig-name descname"><span class="pre">mkSequenceSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkSequenceSort" title="Link to this definition"></a></dt>
+<dd><p>Create a sequence sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>elemSort</strong> – The sort of the sequence elements</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The sequence sort.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkSetSort">
+<span class="sig-name descname"><span class="pre">mkSetSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkSetSort" title="Link to this definition"></a></dt>
+<dd><p>Create a set sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>elemSort</strong> – The sort of the set elements.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The set sort.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkSkolem">
+<span class="sig-name descname"><span class="pre">mkSkolem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkSkolem" title="Link to this definition"></a></dt>
+<dd><p>Create a skolem.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – The skolem id.</p></li>
+<li><p><strong>indices</strong> – The indices for the skolem.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The skolem with the given id and indices.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkString">
+<span class="sig-name descname"><span class="pre">mkString</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkString" title="Link to this definition"></a></dt>
+<dd><p>Create a String constant from a <code class="docutils literal notranslate"><span class="pre">str</span></code> which may contain SMT-LIB
+compatible escape sequences like <code class="docutils literal notranslate"><span class="pre">\u1234</span></code> to encode unicode
+characters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> – The string this constant represents.</p></li>
+<li><p><strong>useEscSequences</strong> – Determines whether escape sequences in <cite>s</cite>
+should be converted to the corresponding
+unicode character</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The String constant.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkTerm">
+<span class="sig-name descname"><span class="pre">mkTerm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkTerm" title="Link to this definition"></a></dt>
+<dd><p>Create a term.</p>
+<p>Supports the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkTerm(Kind</span> <span class="pre">kind)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkTerm(Op</span> <span class="pre">op)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkTerm(Kind</span> <span class="pre">kind,</span> <span class="pre">*args)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">mkTerm(Op</span> <span class="pre">op,</span> <span class="pre">*args)</span></code></p></li>
+</ul>
+<p>where <code class="docutils literal notranslate"><span class="pre">*args</span></code> is a comma-separated list of terms.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkTrue">
+<span class="sig-name descname"><span class="pre">mkTrue</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkTrue" title="Link to this definition"></a></dt>
+<dd><p>Create a Boolean true constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The true constant.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkTuple">
+<span class="sig-name descname"><span class="pre">mkTuple</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkTuple" title="Link to this definition"></a></dt>
+<dd><p>Create a tuple term. Terms are automatically converted if sorts are
+compatible.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>terms</strong> – The elements in the tuple.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The tuple Term.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkTupleSort">
+<span class="sig-name descname"><span class="pre">mkTupleSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkTupleSort" title="Link to this definition"></a></dt>
+<dd><p>Create a tuple sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sorts</strong> – Of the elements of the tuple.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The tuple sort.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkUninterpretedSort">
+<span class="sig-name descname"><span class="pre">mkUninterpretedSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkUninterpretedSort" title="Link to this definition"></a></dt>
+<dd><p>Create an uninterpreted sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>symbol</strong> – The name of the sort.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The uninterpreted sort.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkUninterpretedSortConstructorSort">
+<span class="sig-name descname"><span class="pre">mkUninterpretedSortConstructorSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkUninterpretedSortConstructorSort" title="Link to this definition"></a></dt>
+<dd><p>Create a sort constructor sort.</p>
+<p>An uninterpreted sort constructor is an uninterpreted sort with
+arity &gt; 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong> – The symbol of the sort.</p></li>
+<li><p><strong>arity</strong> – The arity of the sort (must be &gt; 0).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The sort constructor sort.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkUniverseSet">
+<span class="sig-name descname"><span class="pre">mkUniverseSet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkUniverseSet" title="Link to this definition"></a></dt>
+<dd><p>Create a universe set of the given sort.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sort</strong> – The sort of the set elements</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The universe set constant</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkUnresolvedDatatypeSort">
+<span class="sig-name descname"><span class="pre">mkUnresolvedDatatypeSort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkUnresolvedDatatypeSort" title="Link to this definition"></a></dt>
+<dd><p>Create an unresolved datatype sort.</p>
+<p>This is for creating yet unresolved sort placeholders for mutually
+recursive datatypes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong> – The name of the sort.</p></li>
+<li><p><strong>arity</strong> – The number of sort parameters of the sort.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The unresolved sort.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.mkVar">
+<span class="sig-name descname"><span class="pre">mkVar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.mkVar" title="Link to this definition"></a></dt>
+<dd><p>Create a bound variable to be used in a binder (i.e. a quantifier,
+a lambda, or a witness binder).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort</strong> – The sort of the variable.</p></li>
+<li><p><strong>symbol</strong> – The name of the variable.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The variable.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is deprecated and will be removed in a future
+release.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.pop">
+<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.pop" title="Link to this definition"></a></dt>
+<dd><p>Pop <code class="docutils literal notranslate"><span class="pre">nscopes</span></code> level(s) from the assertion stack.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">pop</span> <span class="n">&lt;numeral&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nscopes</strong> – The number of levels to pop.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.proofToString">
+<span class="sig-name descname"><span class="pre">proofToString</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.proofToString" title="Link to this definition"></a></dt>
+<dd><p>Prints proof into a string with a selected proof format mode.
+Other aspects of printing are taken from the solver options.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>proof</strong> – A proof, usually obtained from
+<a class="reference internal" href="#cvc5.Solver.getProof" title="cvc5.Solver.getProof"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getProof()</span></code></a>.</p></li>
+<li><p><strong>format</strong> – The proof format used to print the proof.  Must be
+“None” if the proof is not a full proof.</p></li>
+<li><p><strong>assertionNames</strong> – Mapping between assertions and names, if
+they were  given by the user.  This is used
+by the Alethe proof format.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The proof printed in the current format.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.push">
+<span class="sig-name descname"><span class="pre">push</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.push" title="Link to this definition"></a></dt>
+<dd><p>Push <code class="docutils literal notranslate"><span class="pre">nscopes</span></code> level(s) to the assertion stack.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">push</span> <span class="n">&lt;numeral&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nscopes</strong> – The number of levels to push.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.resetAssertions">
+<span class="sig-name descname"><span class="pre">resetAssertions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.resetAssertions" title="Link to this definition"></a></dt>
+<dd><p>Remove all assertions.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">reset-assertions</span> )
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.setInfo">
+<span class="sig-name descname"><span class="pre">setInfo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.setInfo" title="Link to this definition"></a></dt>
+<dd><p>Set info.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">set-info</span> <span class="n">&lt;attribute&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keyword</strong> – The info flag.</p></li>
+<li><p><strong>value</strong> – The value of the info flag.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.setLogic">
+<span class="sig-name descname"><span class="pre">setLogic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.setLogic" title="Link to this definition"></a></dt>
+<dd><p>Set logic.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">set-logic</span> <span class="n">&lt;symbol&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>logic</strong> – The logic to set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.setOption">
+<span class="sig-name descname"><span class="pre">setOption</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.setOption" title="Link to this definition"></a></dt>
+<dd><p>Set option.</p>
+<p>SMT-LIB:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">set-option</span> <span class="n">&lt;option&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>option</strong> – The option name.</p></li>
+<li><p><strong>value</strong> – The option value.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.simplify">
+<span class="sig-name descname"><span class="pre">simplify</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.simplify" title="Link to this definition"></a></dt>
+<dd><p>Simplify a term or formula based on rewriting and (optionally)
+applying substitutions for solved variables.</p>
+<p>If applySubs is true, then for example, if <cite>(= x 0)</cite> was asserted to
+this solver, this method may replace occurrences of <cite>x</cite> with <cite>0</cite>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is experimental and may change in future versions.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> – The term to simplify.</p></li>
+<li><p><strong>applySubs</strong> – Whether to apply substitutions for solved
+variables.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The simplified term.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Solver.synthFun">
+<span class="sig-name descname"><span class="pre">synthFun</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Solver.synthFun" title="Link to this definition"></a></dt>
+<dd><p>Synthesize n-ary function following specified syntactic constraints.</p>
+<p>SyGuS v2:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>( <span class="k">synth-fun</span> <span class="n">&lt;symbol&gt;</span> ( <span class="n">&lt;boundVars&gt;*</span> ) <span class="n">&lt;sort&gt;</span> <span class="n">&lt;g&gt;</span> )
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong> – The name of the function.</p></li>
+<li><p><strong>boundVars</strong> – The parameters to this function.</p></li>
+<li><p><strong>sort</strong> – The sort of the return value of this function.</p></li>
+<li><p><strong>grammar</strong> – The syntactic constraints.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="roundingmode.html" class="btn btn-neutral float-left" title="RoundingMode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sort.html" class="btn btn-neutral float-right" title="Sort" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
