@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Theory Reference: Separation Logic &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../static/jquery.js?v=5d32c60e"></script>
+      <script src="../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../static/doctools.js?v=9bcbadda"></script>
+      <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
+      <script>window.MathJax = {"loader": {"load": ["[tex]/ams", "[tex]/bussproofs"]}, "tex": {"packages": {"[+]": ["ams", "bussproofs"]}, "macros": {"xor": "\\mathbin{xor}", "ite": ["#1 \\mathbin{?} #2 \\mathbin{:} #3", 3], "inferrule": ["\\begin{prooftree}\\AxiomC{$#1$}\\UnaryInfC{$#2$}\\end{prooftree}", 2], "inferruleSC": ["\\begin{prooftree}\\AxiomC{$#1$}\\RightLabel{ #3}\\UnaryInfC{$#2$}\\end{prooftree}", 3]}}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Theory Reference: Sequences" href="sequences.html" />
+    <link rel="prev" title="Theory Reference: Finite Fields" href="finite_field.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="theories.html">Theory References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="theories.html#standardized-theories">Standardized theories</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="theories.html#non-standard-or-extended-theories">Non-standard or extended theories</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="bags.html">Theory Reference: Bags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html">Theory Reference: Datatypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="finite_field.html">Theory Reference: Finite Fields</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Theory Reference: Separation Logic</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#signature">Signature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#semantics">Semantics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#syntax">Syntax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="sequences.html">Theory Reference: Sequences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sets-and-relations.html">Theory Reference: Sets and Relations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strings.html">Theory Reference: Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transcendentals.html">Theory Reference: Transcendentals</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="theories.html">Theory References</a></li>
+      <li class="breadcrumb-item active">Theory Reference: Separation Logic</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="theory-reference-separation-logic">
+<h1>Theory Reference: Separation Logic<a class="headerlink" href="#theory-reference-separation-logic" title="Link to this heading"></a></h1>
+<p>cvc5 supports a syntax for separation logic as an extension of the SMT-LIB 2.6
+language.</p>
+<section id="signature">
+<h2>Signature<a class="headerlink" href="#signature" title="Link to this heading"></a></h2>
+<p>Given a (decidable) base theory <span class="math notranslate nohighlight">\(T\)</span>, cvc5 implements a decision procedure
+for quantifier-free <span class="math notranslate nohighlight">\(SL(T)_{Loc,Data}\)</span> formulas <span id="id1">[<a class="reference internal" href="../references.html#id6" title="Andrew Reynolds, Radu Iosif, Cristina Serban, and Tim King. A decision procedure for separation logic in SMT. In Cyrille Artho, Axel Legay, and Doron Peled, editors, Automated Technology for Verification and Analysis - 14th International Symposium, ATVA 2016, Chiba, Japan, October 17-20, 2016, Proceedings, volume 9938 of Lecture Notes in Computer Science, 244–261. 2016. doi:10.1007/978-3-319-46520-3_16.">RISK16</a>]</span>,
+where <span class="math notranslate nohighlight">\(Loc\)</span> and <span class="math notranslate nohighlight">\(Data\)</span> are any sort belonging to <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p>A <span class="math notranslate nohighlight">\(SL(T)_{Loc,Data}\)</span> formula is one from the following grammar:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">F</span> <span class="p">:</span> <span class="n">L</span> <span class="o">|</span> <span class="n">sep</span><span class="o">.</span><span class="n">emp</span> <span class="o">|</span> <span class="p">(</span><span class="n">pto</span> <span class="n">t</span> <span class="n">u</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">sep</span> <span class="n">F1</span> <span class="o">...</span> <span class="n">Fn</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">wand</span> <span class="n">F1</span> <span class="n">F2</span><span class="p">)</span> <span class="o">|</span> <span class="o">~</span><span class="n">F1</span> <span class="o">|</span> <span class="n">F1</span> <span class="n">op</span> <span class="o">...</span> <span class="n">op</span> <span class="n">Fn</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">op</span></code> is any classical Boolean connective, <code class="docutils literal notranslate"><span class="pre">t</span></code> and <code class="docutils literal notranslate"><span class="pre">u</span></code> are terms
+built from symbols in the signature of <span class="math notranslate nohighlight">\(T\)</span> of sort <span class="math notranslate nohighlight">\(Loc\)</span> and
+<span class="math notranslate nohighlight">\(Data\)</span> respectively, and <span class="math notranslate nohighlight">\(L\)</span> is a <span class="math notranslate nohighlight">\(T\)</span>-literal.</p>
+<p>The operator <code class="docutils literal notranslate"><span class="pre">sep.emp</span></code> denotes the empty heap constraint, the operator <code class="docutils literal notranslate"><span class="pre">pto</span></code>
+denotes the points-to predicate, the operator <code class="docutils literal notranslate"><span class="pre">sep</span></code> denotes separation start
+and is variadic, and the operator <code class="docutils literal notranslate"><span class="pre">wand</span></code> denote magic wand.</p>
+</section>
+<section id="semantics">
+<h2>Semantics<a class="headerlink" href="#semantics" title="Link to this heading"></a></h2>
+<p>A satisfiability relation <span class="math notranslate nohighlight">\(I,h \models_{SL} \varphi\)</span> is defined for
+<span class="math notranslate nohighlight">\(SL(T)_{Loc,Data}\)</span> formulas <span class="math notranslate nohighlight">\(\varphi\)</span>,
+where <span class="math notranslate nohighlight">\(I\)</span> is an interpretation, and <span class="math notranslate nohighlight">\(h\)</span> is a heap.</p>
+<p>The semantics of separation logic operators are as follows:</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(I,h \models_{SL} L\)</span></p></td>
+<td><p>Iff</p></td>
+<td><p><span class="math notranslate nohighlight">\(I \models L\)</span>, if <span class="math notranslate nohighlight">\(L\)</span> is a <span class="math notranslate nohighlight">\(T\)</span>-literal</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(I,h \models_{SL}\)</span> (emp <span class="math notranslate nohighlight">\(t \ u\)</span>)</p></td>
+<td><p>Iff</p></td>
+<td><p><span class="math notranslate nohighlight">\(h = \emptyset\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(I,h \models_{SL}\)</span> (pto <span class="math notranslate nohighlight">\(t \ u\)</span>)</p></td>
+<td><p>Iff</p></td>
+<td><p><span class="math notranslate nohighlight">\(h = \{(t^I,u^I)\} \text{ and } t^I\not=nil^I\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(I,h \models_{SL}\)</span> (sep <span class="math notranslate nohighlight">\(\phi_1 \ldots \phi_n)\)</span></p></td>
+<td><p>Iff</p></td>
+<td><p>there exist heaps <span class="math notranslate nohighlight">\(h_1,\ldots,h_n\)</span> s.t. <span class="math notranslate nohighlight">\(h=h_1\uplus \ldots \uplus h_n\)</span></p>
+<p>and <span class="math notranslate nohighlight">\(I,h_i \models_{SL} \phi_i, i = 1,\ldots,n\)</span></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(I,h \models_{SL}\)</span> (wand <span class="math notranslate nohighlight">\(\phi_1 \ \phi_2\)</span>)</p></td>
+<td><p>Iff</p></td>
+<td><p>for all heaps <span class="math notranslate nohighlight">\(h'\)</span> if <span class="math notranslate nohighlight">\(h'\#h\)</span> and <span class="math notranslate nohighlight">\(I,h' \models_{SL} \phi_1\)</span></p>
+<p>then <span class="math notranslate nohighlight">\(I,h'\uplus h \models_{SL} \phi_2\)</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>where <span class="math notranslate nohighlight">\(h_1 \uplus \ldots \uplus h_n\)</span> denotes the disjoint union of heaps
+<span class="math notranslate nohighlight">\(h_1, \ldots, h_n\)</span> and <span class="math notranslate nohighlight">\(h'\#h\)</span> denotes that heaps <span class="math notranslate nohighlight">\(h'\)</span> and
+<span class="math notranslate nohighlight">\(h\)</span> are disjoint, and <span class="math notranslate nohighlight">\(nil\)</span> is a distinguished variable of sort
+<span class="math notranslate nohighlight">\(Loc\)</span>.
+All classical Boolean connectives are interpreted as expected.</p>
+</section>
+<section id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Link to this heading"></a></h2>
+<p>Separation logic in cvc5 requires the <code class="docutils literal notranslate"><span class="pre">QF_ALL</span></code> logic, and for the types of the heap to be declared via the <cite>declare-heap</cite> command:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="n">declare-heap</span> (<span class="n">T1</span> <span class="n">T2</span>))
+</pre></div>
+</div>
+<p>This command must be executed when the solver is in its Start mode (see page 52 of the SMT-LIB 2.6 standard <span id="id2">[<a class="reference internal" href="../references.html#id10" title="Clark Barrett, Pascal Fontaine, and Cesare Tinelli. The SMT-LIB Standard: Version 2.6. Technical Report, Department of Computer Science, The University of Iowa, 2017. Available at \tt www.SMT-LIB.org.">BFT17</a>]</span>). This command sets the location type of the heap <span class="math notranslate nohighlight">\(Loc\)</span> to <span class="math notranslate nohighlight">\(T1\)</span> and the data type <span class="math notranslate nohighlight">\(Data\)</span> to <span class="math notranslate nohighlight">\(T2\)</span>, where <span class="math notranslate nohighlight">\(T1\)</span> and <span class="math notranslate nohighlight">\(T2\)</span> are any defined types. This command can only be executed once in any context, and is reset only via a <cite>reset</cite> command.</p>
+<p>The syntax for the operators of separation logic is summarized in the following
+table. For the C++ API examples in this table, we assume that we have created
+a <a class="reference internal" href="../api/cpp/classes/solver.html#_CPPv4N4cvc56SolverE" title="cvc5::Solver"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">cvc5::Solver</span></code></a> object.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td></td>
+<td><p>SMTLIB language</p></td>
+<td><p>C++ API</p></td>
+</tr>
+<tr class="row-even"><td><p>Logic String</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(set-logic</span> <span class="pre">QF_ALL)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">solver.setLogic(&quot;QF_ALL&quot;);</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Empty Heap</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sep.emp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">solver.mkSepEmp();</span></code></p>
+<p>where <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are of sort <code class="docutils literal notranslate"><span class="pre">&lt;Sort_1&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;Sort_2&gt;</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Points-To</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(pto</span> <span class="pre">x</span> <span class="pre">y)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">solver.mkTerm(Kind::SEP_PTO,</span> <span class="pre">{x,</span> <span class="pre">y});</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Separation Star</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(sep</span> <span class="pre">c1</span> <span class="pre">..</span> <span class="pre">cn)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">solver.mkTerm(Kind::SEP_STAR,</span> <span class="pre">{c1,</span> <span class="pre">...,</span> <span class="pre">cn});</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Magic Wand</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(wand</span> <span class="pre">c1</span> <span class="pre">c1)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">solver.mkTerm(Kind::SEP_WAND,</span> <span class="pre">{c1,</span> <span class="pre">c2});</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Nil Element</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(as</span> <span class="pre">sep.nil</span> <span class="pre">&lt;Sort&gt;)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">solver.mkSepNil(cvc5::Sort</span> <span class="pre">sort);</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
+<p>The following input on heaps <code class="docutils literal notranslate"><span class="pre">Int</span> <span class="pre">-&gt;</span> <span class="pre">Int</span></code> is unsatisfiable:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">set-logic</span> <span class="n">QF_ALL</span>)
+(<span class="n">declare-heap</span> (<span class="na">Int</span> <span class="na">Int</span>))
+(<span class="k">set-info</span> <span class="na">:status</span> <span class="n">unsat</span>)
+(<span class="k">declare-const</span> <span class="n">x</span> <span class="na">Int</span>)
+(<span class="k">declare-const</span> <span class="n">a</span> <span class="na">Int</span>)
+(<span class="k">declare-const</span> <span class="n">b</span> <span class="na">Int</span>)
+(<span class="k">assert</span> (<span class="o">and</span> (<span class="o">pto</span> <span class="n">x</span> <span class="n">a</span>) (<span class="o">pto</span> <span class="n">x</span> <span class="n">b</span>)))
+(<span class="k">assert</span> (<span class="o">not</span> (<span class="o">=</span> <span class="n">a</span> <span class="n">b</span>)))
+(<span class="k">check-sat</span>)
+</pre></div>
+</div>
+<p>The following input on heaps <code class="docutils literal notranslate"><span class="pre">U</span> <span class="pre">-&gt;</span> <span class="pre">Int</span></code> is satisfiable. Notice that the
+formula <code class="docutils literal notranslate"><span class="pre">(not</span> <span class="pre">sep.emp)</span></code> is satisfied by heaps <code class="docutils literal notranslate"><span class="pre">U</span> <span class="pre">-&gt;</span> <span class="pre">Int</span></code> whose domain is
+non-empty.</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">set-logic</span> <span class="n">QF_ALL</span>)
+(<span class="k">set-info</span> <span class="na">:status</span> <span class="n">sat</span>)
+(<span class="k">declare-sort</span> <span class="n">U</span> <span class="m">0</span>)
+(<span class="n">declare-heap</span> (<span class="n">U</span> <span class="na">Int</span>))
+(<span class="k">declare-const</span> <span class="n">x</span> <span class="n">U</span>)
+(<span class="k">declare-const</span> <span class="n">a</span> <span class="na">Int</span>)
+(<span class="k">assert</span> (<span class="o">and</span> (<span class="o">not</span> <span class="o">sep.emp</span>) (<span class="o">pto</span> <span class="n">x</span> <span class="n">a</span>)))
+(<span class="k">check-sat</span>)
+</pre></div>
+</div>
+<p>The following input on heaps <code class="docutils literal notranslate"><span class="pre">Int</span> <span class="pre">-&gt;</span> <span class="pre">Node</span></code> is satisfiable, where <code class="docutils literal notranslate"><span class="pre">Node</span></code>
+denotes a user-defined inductive <a class="reference internal" href="datatypes.html"><span class="doc">Theory Reference: Datatypes</span></a>.</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">set-logic</span> <span class="n">QF_ALL</span>)
+(<span class="k">set-info</span> <span class="na">:status</span> <span class="n">sat</span>)
+(<span class="k">declare-const</span> <span class="n">x</span> <span class="na">Int</span>)
+(<span class="k">declare-const</span> <span class="n">y</span> <span class="na">Int</span>)
+(<span class="k">declare-const</span> <span class="n">z</span> <span class="na">Int</span>)
+(<span class="k">declare-datatype</span> <span class="n">Node</span> ((<span class="n">node</span> (<span class="n">data</span> <span class="na">Int</span>) (<span class="n">left</span> <span class="na">Int</span>) (<span class="n">right</span> <span class="na">Int</span>))))
+(<span class="n">declare-heap</span> (<span class="na">Int</span> <span class="n">Node</span>))
+(<span class="k">assert</span> (<span class="o">pto</span> <span class="n">x</span> (<span class="n">node</span> <span class="m">0</span> <span class="n">y</span> <span class="n">z</span>)))
+(<span class="k">check-sat</span>)
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Given a separation logic input, the sorts <span class="math notranslate nohighlight">\(Loc\)</span> and <span class="math notranslate nohighlight">\(Data\)</span>
+declared via the <cite>declare-heap</cite> command must match all separation logic
+predicates in the input. cvc5 does not accept an input such as:</p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span>(<span class="k">set-logic</span> <span class="n">QF_ALL</span>)
+(<span class="k">declare-sort</span> <span class="n">U</span> <span class="m">0</span>)
+(<span class="n">declare-heap</span> (<span class="n">U</span> <span class="na">Int</span>))
+(<span class="k">declare-const</span> <span class="n">x</span> <span class="n">U</span>)
+(<span class="k">assert</span> (<span class="o">and</span> (<span class="o">pto</span> <span class="n">x</span> <span class="m">0</span>) (<span class="o">pto</span> <span class="m">1</span> <span class="m">2</span>)))
+(<span class="k">check-sat</span>)
+</pre></div>
+</div>
+<p>since the second points-to predicate uses Int for its location type.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="finite_field.html" class="btn btn-neutral float-left" title="Theory Reference: Finite Fields" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sequences.html" class="btn btn-neutral float-right" title="Theory Reference: Sequences" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
