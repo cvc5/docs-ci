@@ -1,0 +1,859 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Theory Reference: Bags &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../static/jquery.js?v=5d32c60e"></script>
+      <script src="../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../static/doctools.js?v=9bcbadda"></script>
+      <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
+      <script>window.MathJax = {"loader": {"load": ["[tex]/ams", "[tex]/bussproofs"]}, "tex": {"packages": {"[+]": ["ams", "bussproofs"]}, "macros": {"xor": "\\mathbin{xor}", "ite": ["#1 \\mathbin{?} #2 \\mathbin{:} #3", 3], "inferrule": ["\\begin{prooftree}\\AxiomC{$#1$}\\UnaryInfC{$#2$}\\end{prooftree}", 2], "inferruleSC": ["\\begin{prooftree}\\AxiomC{$#1$}\\RightLabel{ #3}\\UnaryInfC{$#2$}\\end{prooftree}", 3]}}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../static/tabs.js?v=3030b3cb"></script>
+    <script src="../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Theory Reference: Datatypes" href="datatypes.html" />
+    <link rel="prev" title="Theory References" href="theories.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="theories.html">Theory References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="theories.html#standardized-theories">Standardized theories</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="theories.html#non-standard-or-extended-theories">Non-standard or extended theories</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Theory Reference: Bags</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#finite-bags">Finite Bags</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#semantics">Semantics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html">Theory Reference: Datatypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="finite_field.html">Theory Reference: Finite Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="separation-logic.html">Theory Reference: Separation Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sequences.html">Theory Reference: Sequences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sets-and-relations.html">Theory Reference: Sets and Relations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strings.html">Theory Reference: Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transcendentals.html">Theory Reference: Transcendentals</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="theories.html">Theory References</a></li>
+      <li class="breadcrumb-item active">Theory Reference: Bags</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="theory-reference-bags">
+<h1>Theory Reference: Bags<a class="headerlink" href="#theory-reference-bags" title="Link to this heading"></a></h1>
+<section id="finite-bags">
+<h2>Finite Bags<a class="headerlink" href="#finite-bags" title="Link to this heading"></a></h2>
+<p>cvc5 supports the theory of finite bags using the following sorts, constants,
+functions and predicates.</p>
+<p>For the C++ API examples in the table below, we assume that we have created
+a <cite>cvc5::Solver solver</cite> object.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td></td>
+<td><p>SMTLIB language</p></td>
+<td><p>C++ API</p></td>
+</tr>
+<tr class="row-even"><td><p>Logic String</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(set-logic</span> <span class="pre">ALL)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">solver.setLogic(&quot;ALL&quot;);</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Sort</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(Bag</span> <span class="pre">&lt;Sort&gt;)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">solver.mkBagSort(cvc5::Sort</span> <span class="pre">elementSort);</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Constants</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(declare-const</span> <span class="pre">X</span> <span class="pre">(Bag</span> <span class="pre">String))</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">solver.mkBagSort(solver.getStringSort());</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">X</span> <span class="pre">=</span> <span class="pre">solver.mkConst(s,</span> <span class="pre">&quot;X&quot;);</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Union disjoint</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(bag.union_disjoint</span> <span class="pre">X</span> <span class="pre">Y)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">Y</span> <span class="pre">=</span> <span class="pre">solver.mkConst(s,</span> <span class="pre">&quot;Y&quot;);</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::BAG_UNION_DISJOINT,</span> <span class="pre">{X,</span> <span class="pre">Y});</span></code></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>Union max</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(bag.union_max</span> <span class="pre">X</span> <span class="pre">Y)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">Y</span> <span class="pre">=</span> <span class="pre">solver.mkConst(s,</span> <span class="pre">&quot;Y&quot;);</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::BAG_UNION_MAX,</span> <span class="pre">{X,</span> <span class="pre">Y});</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Intersection min</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(bag.inter_min</span> <span class="pre">X</span> <span class="pre">Y)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::BAG_INTER_MIN,</span> <span class="pre">{X,</span> <span class="pre">Y});</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Difference subtract</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(bag.difference_subtract</span> <span class="pre">X</span> <span class="pre">Y)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::BAG_DIFFERENCE_SUBTRACT,</span> <span class="pre">{X,</span> <span class="pre">Y});</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Duplicate elimination</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(bag.setof</span> <span class="pre">X)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::BAG_SETOF,</span> <span class="pre">{X});</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Membership</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(bag.member</span> <span class="pre">x</span> <span class="pre">X)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">solver.mkConst(solver.getStringSort(),</span> <span class="pre">&quot;x&quot;);</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::BAG_MEMBER,</span> <span class="pre">{x,</span> <span class="pre">X});</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Subbag</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(bag.subbag</span> <span class="pre">X</span> <span class="pre">Y)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::BAG_SUBBAG,</span> <span class="pre">{X,</span> <span class="pre">Y});</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Emptybag</p></td>
+<td colspan="2"><p><code class="docutils literal notranslate"><span class="pre">(as</span> <span class="pre">bag.empty</span> <span class="pre">(Bag</span> <span class="pre">Int))</span></code>                  | <code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkEmptyBag(s);</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Make bag</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(bag</span> <span class="pre">&quot;a&quot;</span> <span class="pre">3)</span></code></p></td>
+<td><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">t</span> <span class="pre">=</span> <span class="pre">solver.mkTerm(Kind::BAG_MAKE,</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">{solver.mkString(&quot;a&quot;),</span> <span class="pre">solver.mkInteger(1)});</span></code></p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<section id="semantics">
+<h3>Semantics<a class="headerlink" href="#semantics" title="Link to this heading"></a></h3>
+<p>A bag (or a multiset) <span class="math notranslate nohighlight">\(m\)</span> can be defined as a function from the domain of its elements
+to the set of natural numbers (i.e., <span class="math notranslate nohighlight">\(m : D \rightarrow \mathbb{N}\)</span>),
+where <span class="math notranslate nohighlight">\(m(e)\)</span> represents the multiplicity of element <span class="math notranslate nohighlight">\(e\)</span> in the bag <span class="math notranslate nohighlight">\(m\)</span>.</p>
+<p>The semantics of supported bag operators is given in the table below.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Bag operator</p></td>
+<td><p>cvc5 operator</p></td>
+<td><p>Semantics</p></td>
+</tr>
+<tr class="row-even"><td><p>union disjoint <span class="math notranslate nohighlight">\(m_1 \uplus m_2\)</span></p></td>
+<td><p>bag.union_disjoint</p></td>
+<td><p><span class="math notranslate nohighlight">\(\forall e. \; (m_1 \uplus m_2)(e) = m_1(e) + m_2 (e)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>union max <span class="math notranslate nohighlight">\(m_1 \cup m_2\)</span></p></td>
+<td><p>bag.union_max</p></td>
+<td><p><span class="math notranslate nohighlight">\(\forall e. \; (m_1 \cup m_2)(e) = max(m_1(e), m_2 (e))\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>intersection <span class="math notranslate nohighlight">\(m_1 \cap m_2\)</span></p></td>
+<td><p>bag.inter_min</p></td>
+<td><p><span class="math notranslate nohighlight">\(\forall e. \; (m_1 \cap m_2)(e) = min(m_1(e), m_2 (e))\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>difference subtract <span class="math notranslate nohighlight">\(m_1 \setminus m_2\)</span></p></td>
+<td><p>bag.difference_subtract</p></td>
+<td><p><span class="math notranslate nohighlight">\(\forall e. \; (m_1 \setminus m_2)(e) = max(m_1(e) - m_2 (e), 0)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>difference remove <span class="math notranslate nohighlight">\(m_1 \setminus\setminus m_2\)</span></p></td>
+<td><p>bag.difference_remove</p></td>
+<td><p><span class="math notranslate nohighlight">\(\forall e. \; (m_1 \setminus\setminus m_2)(e) = ite(m_2(e) = 0, m_1(e), 0)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>setof <span class="math notranslate nohighlight">\(\delta(m)\)</span></p></td>
+<td><p>bag.setof</p></td>
+<td><p><span class="math notranslate nohighlight">\(\forall e. \; (\delta(m))(e) = ite(1 \leq m(e), 1, 0)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>subbag <span class="math notranslate nohighlight">\(m_1 \subseteq m_2\)</span></p></td>
+<td><p>bag.subbag</p></td>
+<td><p><span class="math notranslate nohighlight">\(\forall e. \; m_1(e) \leq m_2(e)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>equality <span class="math notranslate nohighlight">\(m_1 = m_2\)</span></p></td>
+<td><p>=</p></td>
+<td><p><span class="math notranslate nohighlight">\(\forall e. \; m_1(e) = m_2(e)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>membership <span class="math notranslate nohighlight">\(e \in m\)</span></p></td>
+<td><p>bag.member</p></td>
+<td><p><span class="math notranslate nohighlight">\(m(e) \geq 1\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Below is a more extensive example on how to use finite bags:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">C++</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">C</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Java</button><button aria-controls="panel-0-0-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-3" name="0-3" role="tab" tabindex="-1">Python (base)</button><button aria-controls="panel-0-0-4" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-4" name="0-4" role="tab" tabindex="-1">SMT-LIBv2</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p class="fa fa-download icon-margin"><a class="reference external" href="https://github.com/cvc5/cvc5/tree/main/examples/api/cpp/bags.cpp">examples/api/cpp/bags.cpp</a></p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="cm">/******************************************************************************</span>
+<span class="linenos">  2</span><span class="cm"> * Top contributors (to current version):</span>
+<span class="linenos">  3</span><span class="cm"> *   Mudathir Mohamed, Aina Niemetz</span>
+<span class="linenos">  4</span><span class="cm"> *</span>
+<span class="linenos">  5</span><span class="cm"> * This file is part of the cvc5 project.</span>
+<span class="linenos">  6</span><span class="cm"> *</span>
+<span class="linenos">  7</span><span class="cm"> * Copyright (c) 2009-2025 by the authors listed in the file AUTHORS</span>
+<span class="linenos">  8</span><span class="cm"> * in the top-level source directory and their institutional affiliations.</span>
+<span class="linenos">  9</span><span class="cm"> * All rights reserved.  See the file COPYING in the top-level source</span>
+<span class="linenos"> 10</span><span class="cm"> * directory for licensing information.</span>
+<span class="linenos"> 11</span><span class="cm"> * ****************************************************************************</span>
+<span class="linenos"> 12</span><span class="cm"> *</span>
+<span class="linenos"> 13</span><span class="cm"> * A simple demonstration of reasoning about bags.</span>
+<span class="linenos"> 14</span><span class="cm"> */</span>
+<span class="linenos"> 15</span>
+<span class="linenos"> 16</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cvc5/cvc5.h&gt;</span>
+<span class="linenos"> 17</span>
+<span class="linenos"> 18</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="linenos"> 19</span>
+<span class="linenos"> 20</span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<span class="linenos"> 21</span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">cvc5</span><span class="p">;</span>
+<span class="linenos"> 22</span>
+<span class="linenos"> 23</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="linenos"> 24</span><span class="p">{</span>
+<span class="linenos"> 25</span><span class="w">  </span><span class="n">TermManager</span><span class="w"> </span><span class="n">tm</span><span class="p">;</span>
+<span class="linenos"> 26</span><span class="w">  </span><span class="n">Solver</span><span class="w"> </span><span class="n">slv</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+<span class="linenos"> 27</span><span class="w">  </span><span class="n">slv</span><span class="p">.</span><span class="n">setLogic</span><span class="p">(</span><span class="s">&quot;ALL&quot;</span><span class="p">);</span>
+<span class="linenos"> 28</span><span class="w">  </span><span class="c1">// Produce models</span>
+<span class="linenos"> 29</span><span class="w">  </span><span class="n">slv</span><span class="p">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;produce-models&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="linenos"> 30</span><span class="w">  </span><span class="n">slv</span><span class="p">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;incremental&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="linenos"> 31</span>
+<span class="linenos"> 32</span><span class="w">  </span><span class="n">Sort</span><span class="w"> </span><span class="n">bag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkBagSort</span><span class="p">(</span><span class="n">tm</span><span class="p">.</span><span class="n">getStringSort</span><span class="p">());</span>
+<span class="linenos"> 33</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">bag</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;A&quot;</span><span class="p">);</span>
+<span class="linenos"> 34</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">bag</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;B&quot;</span><span class="p">);</span>
+<span class="linenos"> 35</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">bag</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="p">);</span>
+<span class="linenos"> 36</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">tm</span><span class="p">.</span><span class="n">getStringSort</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">);</span>
+<span class="linenos"> 37</span>
+<span class="linenos"> 38</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">intersectionAC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">BAG_INTER_MIN</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="p">});</span>
+<span class="linenos"> 39</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">intersectionBC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">BAG_INTER_MIN</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="p">});</span>
+<span class="linenos"> 40</span>
+<span class="linenos"> 41</span><span class="w">  </span><span class="c1">// union disjoint does not distribute over intersection</span>
+<span class="linenos"> 42</span><span class="w">  </span><span class="p">{</span>
+<span class="linenos"> 43</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">unionDisjointAB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">BAG_UNION_DISJOINT</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">});</span>
+<span class="linenos"> 44</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">lhs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">BAG_INTER_MIN</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">unionDisjointAB</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="p">});</span>
+<span class="linenos"> 45</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">rhs</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos"> 46</span><span class="w">        </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">BAG_UNION_DISJOINT</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">intersectionAC</span><span class="p">,</span><span class="w"> </span><span class="n">intersectionBC</span><span class="p">});</span>
+<span class="linenos"> 47</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">guess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">EQUAL</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">});</span>
+<span class="linenos"> 48</span><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;cvc5 reports: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">guess</span><span class="p">.</span><span class="n">notTerm</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; is &quot;</span>
+<span class="linenos"> 49</span><span class="w">         </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="n">checkSatAssuming</span><span class="p">(</span><span class="n">guess</span><span class="p">.</span><span class="n">notTerm</span><span class="p">())</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos"> 50</span>
+<span class="linenos"> 51</span><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos"> 52</span><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">B</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos"> 53</span><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">C</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos"> 54</span><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">lhs</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">lhs</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos"> 55</span><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">rhs</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos"> 56</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos"> 57</span>
+<span class="linenos"> 58</span><span class="w">  </span><span class="c1">// union max distributes over intersection</span>
+<span class="linenos"> 59</span><span class="w">  </span><span class="p">{</span>
+<span class="linenos"> 60</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">unionMaxAB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">BAG_UNION_MAX</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">});</span>
+<span class="linenos"> 61</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">lhs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">BAG_INTER_MIN</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">unionMaxAB</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="p">});</span>
+<span class="linenos"> 62</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">rhs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">BAG_UNION_MAX</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">intersectionAC</span><span class="p">,</span><span class="w"> </span><span class="n">intersectionBC</span><span class="p">});</span>
+<span class="linenos"> 63</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">theorem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">EQUAL</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">});</span>
+<span class="linenos"> 64</span><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;cvc5 reports: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">theorem</span><span class="p">.</span><span class="n">notTerm</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; is &quot;</span>
+<span class="linenos"> 65</span><span class="w">         </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="n">checkSatAssuming</span><span class="p">(</span><span class="n">theorem</span><span class="p">.</span><span class="n">notTerm</span><span class="p">())</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos"> 66</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos"> 67</span>
+<span class="linenos"> 68</span><span class="w">  </span><span class="c1">// Verify emptbag is a subbag of any bag</span>
+<span class="linenos"> 69</span><span class="w">  </span><span class="p">{</span>
+<span class="linenos"> 70</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">emptybag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkEmptyBag</span><span class="p">(</span><span class="n">bag</span><span class="p">);</span>
+<span class="linenos"> 71</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">theorem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">BAG_SUBBAG</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">emptybag</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">});</span>
+<span class="linenos"> 72</span>
+<span class="linenos"> 73</span><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;cvc5 reports: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">theorem</span><span class="p">.</span><span class="n">notTerm</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; is &quot;</span>
+<span class="linenos"> 74</span><span class="w">         </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="n">checkSatAssuming</span><span class="p">(</span><span class="n">theorem</span><span class="p">.</span><span class="n">notTerm</span><span class="p">())</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos"> 75</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos"> 76</span>
+<span class="linenos"> 77</span><span class="w">  </span><span class="c1">// find an element with multiplicity 4 in the disjoint union of</span>
+<span class="linenos"> 78</span><span class="w">  </span><span class="c1">// ; {|&quot;a&quot;, &quot;a&quot;, &quot;b&quot;, &quot;b&quot;, &quot;b&quot;|} and {|&quot;b&quot;, &quot;c&quot;, &quot;c&quot;|}</span>
+<span class="linenos"> 79</span>
+<span class="linenos"> 80</span><span class="w">  </span><span class="p">{</span>
+<span class="linenos"> 81</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkInteger</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos"> 82</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkInteger</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="linenos"> 83</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">three</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkInteger</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="linenos"> 84</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">four</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkInteger</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="linenos"> 85</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkString</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">);</span>
+<span class="linenos"> 86</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkString</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">);</span>
+<span class="linenos"> 87</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkString</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">);</span>
+<span class="linenos"> 88</span>
+<span class="linenos"> 89</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">bag_a_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">BAG_MAKE</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">two</span><span class="p">});</span>
+<span class="linenos"> 90</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">bag_b_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">BAG_MAKE</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">three</span><span class="p">});</span>
+<span class="linenos"> 91</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">bag_b_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">BAG_MAKE</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">one</span><span class="p">});</span>
+<span class="linenos"> 92</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">bag_c_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">BAG_MAKE</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">two</span><span class="p">});</span>
+<span class="linenos"> 93</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">bag_a_2_b_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">BAG_UNION_DISJOINT</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">bag_a_2</span><span class="p">,</span><span class="w"> </span><span class="n">bag_b_3</span><span class="p">});</span>
+<span class="linenos"> 94</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">bag_b_1_c_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">BAG_UNION_DISJOINT</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">bag_b_1</span><span class="p">,</span><span class="w"> </span><span class="n">bag_c_2</span><span class="p">});</span>
+<span class="linenos"> 95</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">union_disjoint</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos"> 96</span><span class="w">        </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">BAG_UNION_DISJOINT</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">bag_a_2_b_3</span><span class="p">,</span><span class="w"> </span><span class="n">bag_b_1_c_2</span><span class="p">});</span>
+<span class="linenos"> 97</span>
+<span class="linenos"> 98</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">count_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">BAG_COUNT</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">union_disjoint</span><span class="p">});</span>
+<span class="linenos"> 99</span><span class="w">    </span><span class="n">Term</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">EQUAL</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">four</span><span class="p">,</span><span class="w"> </span><span class="n">count_x</span><span class="p">});</span>
+<span class="linenos">100</span><span class="w">    </span><span class="n">Result</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="n">checkSatAssuming</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+<span class="linenos">101</span>
+<span class="linenos">102</span><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;cvc5 reports: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">103</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">isSat</span><span class="p">())</span>
+<span class="linenos">104</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">105</span><span class="w">      </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">106</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">107</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">108</span><span class="p">}</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p class="fa fa-download icon-margin"><a class="reference external" href="https://github.com/cvc5/cvc5/tree/main/examples/api/c/bags.c">examples/api/c/bags.c</a></p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="cm">/******************************************************************************</span>
+<span class="linenos">  2</span><span class="cm"> * Top contributors (to current version):</span>
+<span class="linenos">  3</span><span class="cm"> *   Aina Niemetz</span>
+<span class="linenos">  4</span><span class="cm"> *</span>
+<span class="linenos">  5</span><span class="cm"> * This file is part of the cvc5 project.</span>
+<span class="linenos">  6</span><span class="cm"> *</span>
+<span class="linenos">  7</span><span class="cm"> * Copyright (c) 2009-2025 by the authors listed in the file AUTHORS</span>
+<span class="linenos">  8</span><span class="cm"> * in the top-level source directory and their institutional affiliations.</span>
+<span class="linenos">  9</span><span class="cm"> * All rights reserved.  See the file COPYING in the top-level source</span>
+<span class="linenos"> 10</span><span class="cm"> * directory for licensing information.</span>
+<span class="linenos"> 11</span><span class="cm"> * ****************************************************************************</span>
+<span class="linenos"> 12</span><span class="cm"> *</span>
+<span class="linenos"> 13</span><span class="cm"> * A simple demonstration of reasoning about bags.</span>
+<span class="linenos"> 14</span><span class="cm"> */</span>
+<span class="linenos"> 15</span>
+<span class="linenos"> 16</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cvc5/c/cvc5.h&gt;</span>
+<span class="linenos"> 17</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="linenos"> 18</span>
+<span class="linenos"> 19</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="linenos"> 20</span><span class="p">{</span>
+<span class="linenos"> 21</span><span class="w">  </span><span class="n">Cvc5TermManager</span><span class="o">*</span><span class="w"> </span><span class="n">tm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_term_manager_new</span><span class="p">();</span>
+<span class="linenos"> 22</span><span class="w">  </span><span class="n">Cvc5</span><span class="o">*</span><span class="w"> </span><span class="n">slv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_new</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+<span class="linenos"> 23</span><span class="w">  </span><span class="n">cvc5_set_logic</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ALL&quot;</span><span class="p">);</span>
+<span class="linenos"> 24</span><span class="w">  </span><span class="c1">// Produce models</span>
+<span class="linenos"> 25</span><span class="w">  </span><span class="n">cvc5_set_option</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;produce-models&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="linenos"> 26</span><span class="w">  </span><span class="n">cvc5_set_option</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;incremental&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="linenos"> 27</span>
+<span class="linenos"> 28</span><span class="w">  </span><span class="n">Cvc5Sort</span><span class="w"> </span><span class="n">bag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_bag_sort</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_get_string_sort</span><span class="p">(</span><span class="n">tm</span><span class="p">));</span>
+<span class="linenos"> 29</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">bag</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;A&quot;</span><span class="p">);</span>
+<span class="linenos"> 30</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">bag</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;B&quot;</span><span class="p">);</span>
+<span class="linenos"> 31</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">bag</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="p">);</span>
+<span class="linenos"> 32</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_get_string_sort</span><span class="p">(</span><span class="n">tm</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">);</span>
+<span class="linenos"> 33</span>
+<span class="linenos"> 34</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="linenos"> 35</span>
+<span class="linenos"> 36</span><span class="w">  </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">;</span>
+<span class="linenos"> 37</span><span class="w">  </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">C</span><span class="p">;</span>
+<span class="linenos"> 38</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">interAC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_BAG_INTER_MIN</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos"> 39</span><span class="w">  </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">B</span><span class="p">;</span>
+<span class="linenos"> 40</span><span class="w">  </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">C</span><span class="p">;</span>
+<span class="linenos"> 41</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">interBC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_BAG_INTER_MIN</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos"> 42</span>
+<span class="linenos"> 43</span><span class="w">  </span><span class="c1">// union disjoint does not distribute over intersection</span>
+<span class="linenos"> 44</span><span class="w">  </span><span class="p">{</span>
+<span class="linenos"> 45</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">;</span>
+<span class="linenos"> 46</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">B</span><span class="p">;</span>
+<span class="linenos"> 47</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">union_disAB</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos"> 48</span><span class="w">        </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_BAG_UNION_DISJOINT</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos"> 49</span>
+<span class="linenos"> 50</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">union_disAB</span><span class="p">;</span>
+<span class="linenos"> 51</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">C</span><span class="p">;</span>
+<span class="linenos"> 52</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">lhs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_BAG_INTER_MIN</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos"> 53</span>
+<span class="linenos"> 54</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">interAC</span><span class="p">;</span>
+<span class="linenos"> 55</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">interBC</span><span class="p">;</span>
+<span class="linenos"> 56</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">rhs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_BAG_UNION_DISJOINT</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos"> 57</span>
+<span class="linenos"> 58</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lhs</span><span class="p">;</span>
+<span class="linenos"> 59</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">;</span>
+<span class="linenos"> 60</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">guess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_EQUAL</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos"> 61</span>
+<span class="linenos"> 62</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">args_not</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">guess</span><span class="p">};</span>
+<span class="linenos"> 63</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">not_guess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_NOT</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">args_not</span><span class="p">);</span>
+<span class="linenos"> 64</span>
+<span class="linenos"> 65</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">assumptions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">not_guess</span><span class="p">};</span>
+<span class="linenos"> 66</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;cvc5 reports: %s is %s.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="linenos"> 67</span><span class="w">           </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">not_guess</span><span class="p">),</span>
+<span class="linenos"> 68</span><span class="w">           </span><span class="n">cvc5_result_to_string</span><span class="p">(</span><span class="n">cvc5_check_sat_assuming</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">assumptions</span><span class="p">)));</span>
+<span class="linenos"> 69</span>
+<span class="linenos"> 70</span><span class="w">    </span><span class="c1">// Note: The const char* returned by cvc5_term_to_string is only valid</span>
+<span class="linenos"> 71</span><span class="w">    </span><span class="c1">//       until the next call to cvc5_term_to_string. Thus, we cannot</span>
+<span class="linenos"> 72</span><span class="w">    </span><span class="c1">//       chain calls to this function like this:</span>
+<span class="linenos"> 73</span><span class="w">    </span><span class="c1">//         printf(&quot;%s: %s\n&quot;,</span>
+<span class="linenos"> 74</span><span class="w">    </span><span class="c1">//                cvc5_term_to_string(A),</span>
+<span class="linenos"> 75</span><span class="w">    </span><span class="c1">//                cvc5_term_to_string(cvc5_get_value(slv, A)));</span>
+<span class="linenos"> 76</span><span class="w">    </span><span class="c1">//       Instead, we have to split such printf calls into two.</span>
+<span class="linenos"> 77</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">A</span><span class="p">));</span>
+<span class="linenos"> 78</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">)));</span>
+<span class="linenos"> 79</span>
+<span class="linenos"> 80</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">B</span><span class="p">));</span>
+<span class="linenos"> 81</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">)));</span>
+<span class="linenos"> 82</span>
+<span class="linenos"> 83</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">C</span><span class="p">));</span>
+<span class="linenos"> 84</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="p">)));</span>
+<span class="linenos"> 85</span>
+<span class="linenos"> 86</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">lhs</span><span class="p">));</span>
+<span class="linenos"> 87</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">lhs</span><span class="p">)));</span>
+<span class="linenos"> 88</span>
+<span class="linenos"> 89</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">rhs</span><span class="p">));</span>
+<span class="linenos"> 90</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">)));</span>
+<span class="linenos"> 91</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos"> 92</span>
+<span class="linenos"> 93</span><span class="w">  </span><span class="c1">// union max distributes over intersection</span>
+<span class="linenos"> 94</span><span class="w">  </span><span class="p">{</span>
+<span class="linenos"> 95</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">;</span>
+<span class="linenos"> 96</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">B</span><span class="p">;</span>
+<span class="linenos"> 97</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">union_maxAB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_BAG_UNION_MAX</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos"> 98</span>
+<span class="linenos"> 99</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">union_maxAB</span><span class="p">;</span>
+<span class="linenos">100</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">C</span><span class="p">;</span>
+<span class="linenos">101</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">lhs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_BAG_INTER_MIN</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos">102</span>
+<span class="linenos">103</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">interAC</span><span class="p">;</span>
+<span class="linenos">104</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">interBC</span><span class="p">;</span>
+<span class="linenos">105</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">rhs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_BAG_UNION_MAX</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos">106</span>
+<span class="linenos">107</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lhs</span><span class="p">;</span>
+<span class="linenos">108</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rhs</span><span class="p">;</span>
+<span class="linenos">109</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">theorem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_EQUAL</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos">110</span>
+<span class="linenos">111</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">not_args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">theorem</span><span class="p">};</span>
+<span class="linenos">112</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">not_theorem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_NOT</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">not_args</span><span class="p">);</span>
+<span class="linenos">113</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">assumptions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">not_theorem</span><span class="p">};</span>
+<span class="linenos">114</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;cvc5 reports: %s is %s.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="linenos">115</span><span class="w">           </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">not_theorem</span><span class="p">),</span>
+<span class="linenos">116</span><span class="w">           </span><span class="n">cvc5_result_to_string</span><span class="p">(</span><span class="n">cvc5_check_sat_assuming</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">assumptions</span><span class="p">)));</span>
+<span class="linenos">117</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">118</span>
+<span class="linenos">119</span><span class="w">  </span><span class="c1">// Verify emptbag is a subbag of any bag</span>
+<span class="linenos">120</span><span class="w">  </span><span class="p">{</span>
+<span class="linenos">121</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">empty_bag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_empty_bag</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">bag</span><span class="p">);</span>
+<span class="linenos">122</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">empty_bag</span><span class="p">;</span>
+<span class="linenos">123</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">;</span>
+<span class="linenos">124</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">theorem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_BAG_SUBBAG</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos">125</span>
+<span class="linenos">126</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">not_args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">theorem</span><span class="p">};</span>
+<span class="linenos">127</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">not_theorem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_NOT</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">not_args</span><span class="p">);</span>
+<span class="linenos">128</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">assumptions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">not_theorem</span><span class="p">};</span>
+<span class="linenos">129</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;cvc5 reports: %s is %s.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="linenos">130</span><span class="w">           </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">not_theorem</span><span class="p">),</span>
+<span class="linenos">131</span><span class="w">           </span><span class="n">cvc5_result_to_string</span><span class="p">(</span><span class="n">cvc5_check_sat_assuming</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">assumptions</span><span class="p">)));</span>
+<span class="linenos">132</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">133</span>
+<span class="linenos">134</span><span class="w">  </span><span class="c1">// find an element with multiplicity 4 in the disjoint union of</span>
+<span class="linenos">135</span><span class="w">  </span><span class="c1">// ; {|&quot;a&quot;, &quot;a&quot;, &quot;b&quot;, &quot;b&quot;, &quot;b&quot;|} and {|&quot;b&quot;, &quot;c&quot;, &quot;c&quot;|}</span>
+<span class="linenos">136</span>
+<span class="linenos">137</span><span class="w">  </span><span class="p">{</span>
+<span class="linenos">138</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_integer_int64</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos">139</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_integer_int64</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="linenos">140</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">three</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_integer_int64</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="linenos">141</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">four</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_integer_int64</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="linenos">142</span>
+<span class="linenos">143</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_string</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span>
+<span class="linenos">144</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_string</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span>
+<span class="linenos">145</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_string</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span>
+<span class="linenos">146</span>
+<span class="linenos">147</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="linenos">148</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">two</span><span class="p">;</span>
+<span class="linenos">149</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">bag_a_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_BAG_MAKE</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos">150</span>
+<span class="linenos">151</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="linenos">152</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">three</span><span class="p">;</span>
+<span class="linenos">153</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">bag_b_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_BAG_MAKE</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos">154</span>
+<span class="linenos">155</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="linenos">156</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">one</span><span class="p">;</span>
+<span class="linenos">157</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">bag_b_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_BAG_MAKE</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos">158</span>
+<span class="linenos">159</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="linenos">160</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">two</span><span class="p">;</span>
+<span class="linenos">161</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">bag_c_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_BAG_MAKE</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos">162</span>
+<span class="linenos">163</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bag_a_2</span><span class="p">;</span>
+<span class="linenos">164</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bag_b_3</span><span class="p">;</span>
+<span class="linenos">165</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">bag_a_2_b_3</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos">166</span><span class="w">        </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_BAG_UNION_DISJOINT</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos">167</span>
+<span class="linenos">168</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bag_b_1</span><span class="p">;</span>
+<span class="linenos">169</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bag_c_2</span><span class="p">;</span>
+<span class="linenos">170</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">bag_b_1_c_2</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos">171</span><span class="w">        </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_BAG_UNION_DISJOINT</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos">172</span>
+<span class="linenos">173</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bag_a_2_b_3</span><span class="p">;</span>
+<span class="linenos">174</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bag_b_1_c_2</span><span class="p">;</span>
+<span class="linenos">175</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">union_disjoint</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos">176</span><span class="w">        </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_BAG_UNION_DISJOINT</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos">177</span>
+<span class="linenos">178</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="linenos">179</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">union_disjoint</span><span class="p">;</span>
+<span class="linenos">180</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">count_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_BAG_COUNT</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos">181</span>
+<span class="linenos">182</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">four</span><span class="p">;</span>
+<span class="linenos">183</span><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">count_x</span><span class="p">;</span>
+<span class="linenos">184</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_EQUAL</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="linenos">185</span>
+<span class="linenos">186</span><span class="w">    </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">assumptions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">e</span><span class="p">};</span>
+<span class="linenos">187</span><span class="w">    </span><span class="n">Cvc5Result</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_check_sat_assuming</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">assumptions</span><span class="p">);</span>
+<span class="linenos">188</span>
+<span class="linenos">189</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;cvc5 reports: %s is %s.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="linenos">190</span><span class="w">           </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">e</span><span class="p">),</span>
+<span class="linenos">191</span><span class="w">           </span><span class="n">cvc5_result_to_string</span><span class="p">(</span><span class="n">result</span><span class="p">));</span>
+<span class="linenos">192</span>
+<span class="linenos">193</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cvc5_result_is_sat</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+<span class="linenos">194</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">195</span><span class="w">      </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="linenos">196</span><span class="w">      </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)));</span>
+<span class="linenos">197</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">198</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">199</span>
+<span class="linenos">200</span><span class="w">  </span><span class="n">cvc5_delete</span><span class="p">(</span><span class="n">slv</span><span class="p">);</span>
+<span class="linenos">201</span><span class="w">  </span><span class="n">cvc5_term_manager_delete</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+<span class="linenos">202</span><span class="p">}</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><p class="fa fa-download icon-margin"><a class="reference external" href="https://github.com/cvc5/cvc5/tree/main/examples/api/java/Bags.java">examples/api/java/Bags.java</a></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="cm">/******************************************************************************</span>
+<span class="linenos">  2</span><span class="cm"> * Top contributors (to current version):</span>
+<span class="linenos">  3</span><span class="cm"> *   Mudathir Mohamed, Daniel Larraz, Andres Noetzli</span>
+<span class="linenos">  4</span><span class="cm"> *</span>
+<span class="linenos">  5</span><span class="cm"> * This file is part of the cvc5 project.</span>
+<span class="linenos">  6</span><span class="cm"> *</span>
+<span class="linenos">  7</span><span class="cm"> * Copyright (c) 2009-2025 by the authors listed in the file AUTHORS</span>
+<span class="linenos">  8</span><span class="cm"> * in the top-level source directory and their institutional affiliations.</span>
+<span class="linenos">  9</span><span class="cm"> * All rights reserved.  See the file COPYING in the top-level source</span>
+<span class="linenos"> 10</span><span class="cm"> * directory for licensing information.</span>
+<span class="linenos"> 11</span><span class="cm"> * ****************************************************************************</span>
+<span class="linenos"> 12</span><span class="cm"> *</span>
+<span class="linenos"> 13</span><span class="cm"> * A simple demonstration of reasoning about bags with cvc5.</span>
+<span class="linenos"> 14</span><span class="cm"> */</span>
+<span class="linenos"> 15</span>
+<span class="linenos"> 16</span><span class="kn">import static</span><span class="w"> </span><span class="nn">io.github.cvc5.Kind.*</span><span class="p">;</span>
+<span class="linenos"> 17</span>
+<span class="linenos"> 18</span><span class="kn">import</span><span class="w"> </span><span class="nn">io.github.cvc5.*</span><span class="p">;</span>
+<span class="linenos"> 19</span>
+<span class="linenos"> 20</span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Bags</span>
+<span class="linenos"> 21</span><span class="p">{</span>
+<span class="linenos"> 22</span><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">args</span><span class="o">[]</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">CVC5ApiException</span>
+<span class="linenos"> 23</span>
+<span class="linenos"> 24</span><span class="w">  </span><span class="p">{</span>
+<span class="linenos"> 25</span><span class="w">    </span><span class="n">TermManager</span><span class="w"> </span><span class="n">tm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TermManager</span><span class="p">();</span>
+<span class="linenos"> 26</span><span class="w">    </span><span class="n">Solver</span><span class="w"> </span><span class="n">slv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Solver</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+<span class="linenos"> 27</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos"> 28</span><span class="w">      </span><span class="n">slv</span><span class="p">.</span><span class="na">setLogic</span><span class="p">(</span><span class="s">&quot;ALL&quot;</span><span class="p">);</span>
+<span class="linenos"> 29</span>
+<span class="linenos"> 30</span><span class="w">      </span><span class="c1">// Produce models</span>
+<span class="linenos"> 31</span><span class="w">      </span><span class="n">slv</span><span class="p">.</span><span class="na">setOption</span><span class="p">(</span><span class="s">&quot;produce-models&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="linenos"> 32</span><span class="w">      </span><span class="n">slv</span><span class="p">.</span><span class="na">setOption</span><span class="p">(</span><span class="s">&quot;incremental&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="linenos"> 33</span>
+<span class="linenos"> 34</span><span class="w">      </span><span class="n">Sort</span><span class="w"> </span><span class="n">bag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkBagSort</span><span class="p">(</span><span class="n">tm</span><span class="p">.</span><span class="na">getStringSort</span><span class="p">());</span>
+<span class="linenos"> 35</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">bag</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;A&quot;</span><span class="p">);</span>
+<span class="linenos"> 36</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">bag</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;B&quot;</span><span class="p">);</span>
+<span class="linenos"> 37</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">bag</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="p">);</span>
+<span class="linenos"> 38</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">tm</span><span class="p">.</span><span class="na">getStringSort</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">);</span>
+<span class="linenos"> 39</span>
+<span class="linenos"> 40</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">intersectionAC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">BAG_INTER_MIN</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="p">});</span>
+<span class="linenos"> 41</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">intersectionBC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">BAG_INTER_MIN</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="p">});</span>
+<span class="linenos"> 42</span>
+<span class="linenos"> 43</span><span class="w">      </span><span class="c1">// union disjoint does not distribute over intersection</span>
+<span class="linenos"> 44</span><span class="w">      </span><span class="p">{</span>
+<span class="linenos"> 45</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">unionDisjointAB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">BAG_UNION_DISJOINT</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">});</span>
+<span class="linenos"> 46</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">lhs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">BAG_INTER_MIN</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">unionDisjointAB</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="p">});</span>
+<span class="linenos"> 47</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">rhs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">BAG_UNION_DISJOINT</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">intersectionAC</span><span class="p">,</span><span class="w"> </span><span class="n">intersectionBC</span><span class="p">});</span>
+<span class="linenos"> 48</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">guess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">EQUAL</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">});</span>
+<span class="linenos"> 49</span>
+<span class="linenos"> 50</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;cvc5 reports: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">guess</span><span class="p">.</span><span class="na">notTerm</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; is &quot;</span>
+<span class="linenos"> 51</span><span class="w">            </span><span class="o">+</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="na">checkSatAssuming</span><span class="p">(</span><span class="n">guess</span><span class="p">.</span><span class="na">notTerm</span><span class="p">())</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+<span class="linenos"> 52</span>
+<span class="linenos"> 53</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">A</span><span class="p">));</span>
+<span class="linenos"> 54</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">B</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">B</span><span class="p">));</span>
+<span class="linenos"> 55</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">C</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">C</span><span class="p">));</span>
+<span class="linenos"> 56</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">lhs</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">lhs</span><span class="p">));</span>
+<span class="linenos"> 57</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">rhs</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">rhs</span><span class="p">));</span>
+<span class="linenos"> 58</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos"> 59</span>
+<span class="linenos"> 60</span><span class="w">      </span><span class="c1">// union max distributes over intersection</span>
+<span class="linenos"> 61</span><span class="w">      </span><span class="p">{</span>
+<span class="linenos"> 62</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">unionMaxAB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">BAG_UNION_MAX</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">});</span>
+<span class="linenos"> 63</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">lhs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">BAG_INTER_MIN</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">unionMaxAB</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="p">});</span>
+<span class="linenos"> 64</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">rhs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">BAG_UNION_MAX</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">intersectionAC</span><span class="p">,</span><span class="w"> </span><span class="n">intersectionBC</span><span class="p">});</span>
+<span class="linenos"> 65</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">theorem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">EQUAL</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="n">rhs</span><span class="p">});</span>
+<span class="linenos"> 66</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;cvc5 reports: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theorem</span><span class="p">.</span><span class="na">notTerm</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; is &quot;</span>
+<span class="linenos"> 67</span><span class="w">            </span><span class="o">+</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="na">checkSatAssuming</span><span class="p">(</span><span class="n">theorem</span><span class="p">.</span><span class="na">notTerm</span><span class="p">())</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+<span class="linenos"> 68</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos"> 69</span>
+<span class="linenos"> 70</span><span class="w">      </span><span class="c1">// Verify emptbag is a subbag of any bag</span>
+<span class="linenos"> 71</span><span class="w">      </span><span class="p">{</span>
+<span class="linenos"> 72</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">emptybag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkEmptyBag</span><span class="p">(</span><span class="n">bag</span><span class="p">);</span>
+<span class="linenos"> 73</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">theorem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">BAG_SUBBAG</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">emptybag</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">});</span>
+<span class="linenos"> 74</span>
+<span class="linenos"> 75</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;cvc5 reports: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theorem</span><span class="p">.</span><span class="na">notTerm</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; is &quot;</span>
+<span class="linenos"> 76</span><span class="w">            </span><span class="o">+</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="na">checkSatAssuming</span><span class="p">(</span><span class="n">theorem</span><span class="p">.</span><span class="na">notTerm</span><span class="p">())</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+<span class="linenos"> 77</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos"> 78</span>
+<span class="linenos"> 79</span><span class="w">      </span><span class="c1">// find an element with multiplicity 4 in the disjoint union of</span>
+<span class="linenos"> 80</span><span class="w">      </span><span class="c1">// ; {|&quot;a&quot;, &quot;a&quot;, &quot;b&quot;, &quot;b&quot;, &quot;b&quot;|} and {|&quot;b&quot;, &quot;c&quot;, &quot;c&quot;|}</span>
+<span class="linenos"> 81</span><span class="w">      </span><span class="p">{</span>
+<span class="linenos"> 82</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkInteger</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="linenos"> 83</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkInteger</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="linenos"> 84</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">three</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkInteger</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="linenos"> 85</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">four</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkInteger</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="linenos"> 86</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkString</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">);</span>
+<span class="linenos"> 87</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkString</span><span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">);</span>
+<span class="linenos"> 88</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkString</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">);</span>
+<span class="linenos"> 89</span>
+<span class="linenos"> 90</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">bag_a_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">BAG_MAKE</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">two</span><span class="p">});</span>
+<span class="linenos"> 91</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">bag_b_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">BAG_MAKE</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">three</span><span class="p">});</span>
+<span class="linenos"> 92</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">bag_b_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">BAG_MAKE</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">one</span><span class="p">});</span>
+<span class="linenos"> 93</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">bag_c_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">BAG_MAKE</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">two</span><span class="p">});</span>
+<span class="linenos"> 94</span>
+<span class="linenos"> 95</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">bag_a_2_b_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">BAG_UNION_DISJOINT</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">bag_a_2</span><span class="p">,</span><span class="w"> </span><span class="n">bag_b_3</span><span class="p">});</span>
+<span class="linenos"> 96</span>
+<span class="linenos"> 97</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">bag_b_1_c_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">BAG_UNION_DISJOINT</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">bag_b_1</span><span class="p">,</span><span class="w"> </span><span class="n">bag_c_2</span><span class="p">});</span>
+<span class="linenos"> 98</span>
+<span class="linenos"> 99</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">union_disjoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">BAG_UNION_DISJOINT</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">bag_a_2_b_3</span><span class="p">,</span><span class="w"> </span><span class="n">bag_b_1_c_2</span><span class="p">});</span>
+<span class="linenos">100</span>
+<span class="linenos">101</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">count_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">BAG_COUNT</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">union_disjoint</span><span class="p">});</span>
+<span class="linenos">102</span><span class="w">        </span><span class="n">Term</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">EQUAL</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">four</span><span class="p">,</span><span class="w"> </span><span class="n">count_x</span><span class="p">});</span>
+<span class="linenos">103</span><span class="w">        </span><span class="n">Result</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="na">checkSatAssuming</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+<span class="linenos">104</span>
+<span class="linenos">105</span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;cvc5 reports: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+<span class="linenos">106</span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="na">isSat</span><span class="p">())</span>
+<span class="linenos">107</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">108</span><span class="w">          </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">slv</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="linenos">109</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">110</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos">111</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">112</span><span class="w">    </span><span class="n">Context</span><span class="p">.</span><span class="na">deletePointers</span><span class="p">();</span>
+<span class="linenos">113</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">114</span><span class="p">}</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-3" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-3" name="0-3" role="tabpanel" tabindex="0"><p class="fa fa-download icon-margin"><a class="reference external" href="https://github.com/cvc5/cvc5/tree/main/examples/api/python/bags.py">examples/api/python/bags.py</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/usr/bin/env python</span>
+<span class="linenos"> 2</span><span class="c1">###############################################################################</span>
+<span class="linenos"> 3</span><span class="c1"># Top contributors (to current version):</span>
+<span class="linenos"> 4</span><span class="c1">#   Aina Niemetz, Mudathir Mohamed</span>
+<span class="linenos"> 5</span><span class="c1">#</span>
+<span class="linenos"> 6</span><span class="c1"># This file is part of the cvc5 project.</span>
+<span class="linenos"> 7</span><span class="c1">#</span>
+<span class="linenos"> 8</span><span class="c1"># Copyright (c) 2009-2025 by the authors listed in the file AUTHORS</span>
+<span class="linenos"> 9</span><span class="c1"># in the top-level source directory and their institutional affiliations.</span>
+<span class="linenos">10</span><span class="c1"># All rights reserved.  See the file COPYING in the top-level source</span>
+<span class="linenos">11</span><span class="c1"># directory for licensing information.</span>
+<span class="linenos">12</span><span class="c1"># #############################################################################</span>
+<span class="linenos">13</span><span class="c1">#</span>
+<span class="linenos">14</span><span class="c1"># A simple demonstration of reasoning about bags.</span>
+<span class="linenos">15</span><span class="c1">##</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="kn">import</span><span class="w"> </span><span class="nn">cvc5</span>
+<span class="linenos">18</span><span class="kn">from</span><span class="w"> </span><span class="nn">cvc5</span><span class="w"> </span><span class="kn">import</span> <span class="n">Kind</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">21</span>    <span class="n">tm</span> <span class="o">=</span> <span class="n">cvc5</span><span class="o">.</span><span class="n">TermManager</span><span class="p">()</span>
+<span class="linenos">22</span>    <span class="n">slv</span> <span class="o">=</span> <span class="n">cvc5</span><span class="o">.</span><span class="n">Solver</span><span class="p">(</span><span class="n">tm</span><span class="p">)</span>
+<span class="linenos">23</span>    <span class="n">slv</span><span class="o">.</span><span class="n">setLogic</span><span class="p">(</span><span class="s2">&quot;ALL&quot;</span><span class="p">)</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span>    <span class="c1"># Produce models</span>
+<span class="linenos">26</span>    <span class="n">slv</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s2">&quot;produce-models&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<span class="linenos">27</span>    <span class="n">slv</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s2">&quot;incremental&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span>    <span class="n">bag</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkBagSort</span><span class="p">(</span><span class="n">tm</span><span class="o">.</span><span class="n">getStringSort</span><span class="p">())</span>
+<span class="linenos">30</span>    <span class="n">A</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">bag</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="linenos">31</span>    <span class="n">B</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">bag</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="linenos">32</span>    <span class="n">C</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">bag</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
+<span class="linenos">33</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">tm</span><span class="o">.</span><span class="n">getStringSort</span><span class="p">(),</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span>    <span class="n">intersectionAC</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">BAG_INTER_MIN</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+<span class="linenos">36</span>    <span class="n">intersectionBC</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">BAG_INTER_MIN</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span>    <span class="c1"># union disjoint does not distribute over intersection</span>
+<span class="linenos">39</span>    <span class="n">unionDisjointAB</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">BAG_UNION_DISJOINT</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="linenos">40</span>    <span class="n">lhs</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">BAG_INTER_MIN</span><span class="p">,</span> <span class="n">unionDisjointAB</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+<span class="linenos">41</span>    <span class="n">rhs</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">BAG_UNION_DISJOINT</span><span class="p">,</span> <span class="n">intersectionAC</span><span class="p">,</span> <span class="n">intersectionBC</span><span class="p">)</span>
+<span class="linenos">42</span>    <span class="n">guess</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">EQUAL</span><span class="p">,</span> <span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span>
+<span class="linenos">43</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cvc5 reports: </span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="linenos">44</span>        <span class="n">guess</span><span class="o">.</span><span class="n">notTerm</span><span class="p">(),</span> <span class="n">slv</span><span class="o">.</span><span class="n">checkSatAssuming</span><span class="p">(</span><span class="n">guess</span><span class="o">.</span><span class="n">notTerm</span><span class="p">())))</span>
+<span class="linenos">45</span>
+<span class="linenos">46</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">slv</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">A</span><span class="p">)))</span>
+<span class="linenos">47</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">slv</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">B</span><span class="p">)))</span>
+<span class="linenos">48</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">slv</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">C</span><span class="p">)))</span>
+<span class="linenos">49</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lhs</span><span class="p">,</span> <span class="n">slv</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">lhs</span><span class="p">)))</span>
+<span class="linenos">50</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rhs</span><span class="p">,</span> <span class="n">slv</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">rhs</span><span class="p">)))</span>
+<span class="linenos">51</span>
+<span class="linenos">52</span>    <span class="c1"># union max distributes over intersection</span>
+<span class="linenos">53</span>    <span class="n">unionMaxAB</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">BAG_UNION_MAX</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="linenos">54</span>    <span class="n">lhs</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">BAG_INTER_MIN</span><span class="p">,</span> <span class="n">unionMaxAB</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+<span class="linenos">55</span>    <span class="n">rhs</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">BAG_UNION_MAX</span><span class="p">,</span> <span class="n">intersectionAC</span><span class="p">,</span> <span class="n">intersectionBC</span><span class="p">)</span>
+<span class="linenos">56</span>    <span class="n">theorem</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">EQUAL</span><span class="p">,</span> <span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span>
+<span class="linenos">57</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cvc5 reports: </span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="linenos">58</span>        <span class="n">theorem</span><span class="o">.</span><span class="n">notTerm</span><span class="p">(),</span> <span class="n">slv</span><span class="o">.</span><span class="n">checkSatAssuming</span><span class="p">(</span><span class="n">theorem</span><span class="o">.</span><span class="n">notTerm</span><span class="p">())))</span>
+<span class="linenos">59</span>
+<span class="linenos">60</span>    <span class="c1"># Verify emptbag is a subbag of any bag</span>
+<span class="linenos">61</span>    <span class="n">emptybag</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkEmptyBag</span><span class="p">(</span><span class="n">bag</span><span class="p">)</span>
+<span class="linenos">62</span>    <span class="n">theorem</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">BAG_SUBBAG</span><span class="p">,</span> <span class="n">emptybag</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+<span class="linenos">63</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cvc5 reports: </span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="linenos">64</span>        <span class="n">theorem</span><span class="o">.</span><span class="n">notTerm</span><span class="p">(),</span> <span class="n">slv</span><span class="o">.</span><span class="n">checkSatAssuming</span><span class="p">(</span><span class="n">theorem</span><span class="o">.</span><span class="n">notTerm</span><span class="p">())))</span>
+<span class="linenos">65</span>
+<span class="linenos">66</span>    <span class="c1"># find an element with multiplicity 4 in the disjoint union of</span>
+<span class="linenos">67</span>    <span class="c1">#  {|&quot;a&quot;, &quot;a&quot;, &quot;b&quot;, &quot;b&quot;, &quot;b&quot;|} and {|&quot;b&quot;, &quot;c&quot;, &quot;c&quot;|}</span>
+<span class="linenos">68</span>    <span class="n">one</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkInteger</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">69</span>    <span class="n">two</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkInteger</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">70</span>    <span class="n">three</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkInteger</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="linenos">71</span>    <span class="n">four</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkInteger</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="linenos">72</span>    <span class="n">a</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkString</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="linenos">73</span>    <span class="n">b</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkString</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<span class="linenos">74</span>    <span class="n">c</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkString</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
+<span class="linenos">75</span>
+<span class="linenos">76</span>    <span class="n">bag_a_2</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">BAG_MAKE</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">two</span><span class="p">)</span>
+<span class="linenos">77</span>    <span class="n">bag_b_3</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">BAG_MAKE</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">three</span><span class="p">)</span>
+<span class="linenos">78</span>    <span class="n">bag_b_1</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">BAG_MAKE</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">one</span><span class="p">)</span>
+<span class="linenos">79</span>    <span class="n">bag_c_2</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">BAG_MAKE</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">two</span><span class="p">)</span>
+<span class="linenos">80</span>    <span class="n">bag_a_2_b_3</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">BAG_UNION_DISJOINT</span><span class="p">,</span> <span class="n">bag_a_2</span><span class="p">,</span> <span class="n">bag_b_3</span><span class="p">)</span>
+<span class="linenos">81</span>    <span class="n">bag_b_1_c_2</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">BAG_UNION_DISJOINT</span><span class="p">,</span> <span class="n">bag_b_1</span><span class="p">,</span> <span class="n">bag_c_2</span><span class="p">)</span>
+<span class="linenos">82</span>    <span class="n">UnionDisjoint</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span>
+<span class="linenos">83</span>            <span class="n">Kind</span><span class="o">.</span><span class="n">BAG_UNION_DISJOINT</span><span class="p">,</span> <span class="n">bag_a_2_b_3</span><span class="p">,</span> <span class="n">bag_b_1_c_2</span><span class="p">)</span>
+<span class="linenos">84</span>
+<span class="linenos">85</span>    <span class="n">count_x</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">BAG_COUNT</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">UnionDisjoint</span><span class="p">)</span>
+<span class="linenos">86</span>    <span class="n">e</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">EQUAL</span><span class="p">,</span> <span class="n">four</span><span class="p">,</span> <span class="n">count_x</span><span class="p">)</span>
+<span class="linenos">87</span>    <span class="n">result</span> <span class="o">=</span> <span class="n">slv</span><span class="o">.</span><span class="n">checkSatAssuming</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="linenos">88</span>
+<span class="linenos">89</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cvc5 reports: </span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">result</span><span class="p">))</span>
+<span class="linenos">90</span>    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">isSat</span><span class="p">():</span>
+<span class="linenos">91</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">slv</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-4" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-4" name="0-4" role="tabpanel" tabindex="0"><p class="fa fa-download icon-margin"><a class="reference external" href="https://github.com/cvc5/cvc5/tree/main/examples/api/smtlib/bags.smt2">examples/api/smtlib/bags.smt2</a></p>
+<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>(<span class="k">set-logic</span> <span class="n">ALL</span>)
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>(<span class="k">set-option</span> <span class="na">:produce-models</span> <span class="o">true</span>)
+<span class="linenos"> 4</span>(<span class="k">set-option</span> <span class="na">:incremental</span> <span class="o">true</span>)
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>(<span class="k">declare-const</span> <span class="n">A</span> (<span class="na">Bag</span> <span class="na">String</span>))
+<span class="linenos"> 7</span>(<span class="k">declare-const</span> <span class="n">B</span> (<span class="na">Bag</span> <span class="na">String</span>))
+<span class="linenos"> 8</span>(<span class="k">declare-const</span> <span class="n">C</span> (<span class="na">Bag</span> <span class="na">String</span>))
+<span class="linenos"> 9</span>(<span class="k">declare-const</span> <span class="n">x</span> <span class="na">String</span>)
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="c">; union disjoint does not distribute over intersection</span>
+<span class="linenos">12</span><span class="c">; sat</span>
+<span class="linenos">13</span>(<span class="k">check-sat-assuming</span>
+<span class="linenos">14</span> ((<span class="o">distinct</span>
+<span class="linenos">15</span>   (<span class="n">bag.inter_min</span> (<span class="n">bag.union_disjoint</span> <span class="n">A</span> <span class="n">B</span>) <span class="n">C</span>)
+<span class="linenos">16</span>   (<span class="n">bag.union_disjoint</span> (<span class="n">bag.inter_min</span> <span class="n">A</span> <span class="n">C</span>) (<span class="n">bag.inter_min</span> <span class="n">B</span> <span class="n">C</span>)))))
+<span class="linenos">17</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span>(<span class="k">get-value</span> (<span class="n">A</span>))
+<span class="linenos">20</span>(<span class="k">get-value</span> (<span class="n">B</span>))
+<span class="linenos">21</span>(<span class="k">get-value</span> (<span class="n">C</span>))
+<span class="linenos">22</span>(<span class="k">get-value</span> ((<span class="n">bag.inter_min</span> (<span class="n">bag.union_disjoint</span> <span class="n">A</span> <span class="n">B</span>) <span class="n">C</span>)))
+<span class="linenos">23</span>(<span class="k">get-value</span> ((<span class="n">bag.union_disjoint</span> (<span class="n">bag.inter_min</span> <span class="n">A</span> <span class="n">C</span>) (<span class="n">bag.inter_min</span> <span class="n">B</span> <span class="n">C</span>))))
+<span class="linenos">24</span>
+<span class="linenos">25</span><span class="c">; union max distributes over intersection</span>
+<span class="linenos">26</span><span class="c">; unsat</span>
+<span class="linenos">27</span>(<span class="k">check-sat-assuming</span>
+<span class="linenos">28</span> ((<span class="o">distinct</span>
+<span class="linenos">29</span>   (<span class="n">bag.inter_min</span> (<span class="n">bag.union_max</span> <span class="n">A</span> <span class="n">B</span>) <span class="n">C</span>)
+<span class="linenos">30</span>   (<span class="n">bag.union_max</span> (<span class="n">bag.inter_min</span> <span class="n">A</span> <span class="n">C</span>) (<span class="n">bag.inter_min</span> <span class="n">B</span> <span class="n">C</span>)))))
+<span class="linenos">31</span>
+<span class="linenos">32</span><span class="c">; Verify emptbag is a subbag of any bag</span>
+<span class="linenos">33</span><span class="c">; unsat</span>
+<span class="linenos">34</span>(<span class="k">check-sat-assuming</span>
+<span class="linenos">35</span> ((<span class="o">not</span> (<span class="n">bag.subbag</span> (<span class="k">as</span> <span class="n">bag.empty</span> (<span class="na">Bag</span> <span class="na">String</span>)) <span class="n">A</span>))))
+<span class="linenos">36</span>
+<span class="linenos">37</span><span class="c">; find an element with multiplicity 4 in the disjoint union of</span>
+<span class="linenos">38</span><span class="c">; {|&quot;a&quot;, &quot;a&quot;, &quot;b&quot;, &quot;b&quot;, &quot;b&quot;|} and {|&quot;b&quot;, &quot;c&quot;, &quot;c&quot;|}</span>
+<span class="linenos">39</span>(<span class="k">check-sat-assuming</span>
+<span class="linenos">40</span> ((<span class="o">=</span> <span class="m">4</span>
+<span class="linenos">41</span>     (<span class="n">bag.count</span> <span class="n">x</span>
+<span class="linenos">42</span>                (<span class="n">bag.union_disjoint</span>
+<span class="linenos">43</span>                 (<span class="n">bag.union_disjoint</span> (<span class="n">bag</span> <span class="s">&quot;a&quot;</span> <span class="m">2</span>) (<span class="n">bag</span> <span class="s">&quot;b&quot;</span> <span class="m">3</span>))
+<span class="linenos">44</span>                 (<span class="n">bag.union_disjoint</span> (<span class="n">bag</span> <span class="s">&quot;b&quot;</span> <span class="m">1</span>) (<span class="n">bag</span> <span class="s">&quot;c&quot;</span> <span class="m">2</span>)))))))
+<span class="linenos">45</span>
+<span class="linenos">46</span><span class="c">; x is &quot;b&quot;</span>
+<span class="linenos">47</span>(<span class="k">get-value</span> (<span class="n">x</span>))
+</pre></div>
+</div>
+</div></div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="theories.html" class="btn btn-neutral float-left" title="Theory References" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datatypes.html" class="btn btn-neutral float-right" title="Theory Reference: Datatypes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
