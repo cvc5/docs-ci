@@ -1,5 +1,9 @@
 
 
+* [Documentation for PR #12431](docs-pr12431/) (built from [dad7ad4](https://github.com/cvc5/cvc5/commit/dad7ad4) @ [PR #12431](https://github.com/cvc5/cvc5/pull/12431), Feb Sat 21, 01:36 UTC)
+
+***
+
 
 * [Documentation for main](docs-main/) (built from [398316d](https://github.com/cvc5/cvc5/commit/398316d) @ [main](https://github.com/cvc5/cvc5/tree/main), 7 hours ago)
 * [Documentation for PR #12443](docs-pr12443/) (built from [ef2a637](https://github.com/cvc5/cvc5/commit/ef2a637) @ [PR #12443](https://github.com/cvc5/cvc5/pull/12443), 6 hours ago)
@@ -13,7 +17,7 @@
 * [Documentation for PR #12434](docs-pr12434/) (built from [66fb0ef](https://github.com/cvc5/cvc5/commit/66fb0ef) @ [PR #12434](https://github.com/cvc5/cvc5/pull/12434), 3 days ago)
 * [Documentation for PR #12433](docs-pr12433/) (built from [13cb0e3](https://github.com/cvc5/cvc5/commit/13cb0e3) @ [PR #12433](https://github.com/cvc5/cvc5/pull/12433), 3 days ago)
 * [Documentation for PR #12432](docs-pr12432/) (built from [51fb30a](https://github.com/cvc5/cvc5/commit/51fb30a) @ [PR #12432](https://github.com/cvc5/cvc5/pull/12432), 7 hours ago)
-* [Documentation for PR #12431](docs-pr12431/) (built from [63dd078](https://github.com/cvc5/cvc5/commit/63dd078) @ [PR #12431](https://github.com/cvc5/cvc5/pull/12431), 3 days ago)
+* [Documentation for PR #12431](docs-pr12431/) (built from [dad7ad4](https://github.com/cvc5/cvc5/commit/dad7ad4) @ [PR #12431](https://github.com/cvc5/cvc5/pull/12431), now)
 * [Documentation for PR #12429](docs-pr12429/) (built from [f5b84eb](https://github.com/cvc5/cvc5/commit/f5b84eb) @ [PR #12429](https://github.com/cvc5/cvc5/pull/12429), 7 hours ago)
 * [Documentation for PR #12428](docs-pr12428/) (built from [b41d3ab](https://github.com/cvc5/cvc5/commit/b41d3ab) @ [PR #12428](https://github.com/cvc5/cvc5/pull/12428), 3 days ago)
 * [Documentation for PR #12427](docs-pr12427/) (built from [457b2f0](https://github.com/cvc5/cvc5/commit/457b2f0) @ [PR #12427](https://github.com/cvc5/cvc5/pull/12427), 7 hours ago)
