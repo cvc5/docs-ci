@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grammar &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="InputParser" href="inputparser.html" />
+    <link rel="prev" title="DatatypeSelector" href="datatypeselector.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../cpp/cpp.html">C++ API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../c/c.html">C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../python.html">Python API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pythonic/pythonic.html">Pythonic API</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="python.html">Base Python API</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="command.html">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatype.html">Datatype</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypeconstructor.html">DatatypeConstructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypeconstructordecl.html">DatatypeConstructorDecl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypedecl.html">DatatypeDecl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datatypeselector.html">DatatypeSelector</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Grammar</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#cvc5.Grammar"><code class="docutils literal notranslate"><span class="pre">Grammar</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="inputparser.html">InputParser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kind.html">Kind</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modes.html">Modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="op.html">Op</a></li>
+<li class="toctree-l4"><a class="reference internal" href="plugin.html">Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="proof.html">Proof</a></li>
+<li class="toctree-l4"><a class="reference internal" href="result.html">Result</a></li>
+<li class="toctree-l4"><a class="reference internal" href="roundingmode.html">RoundingMode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solver.html">Solver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sort.html">Sort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sortkind.html">SortKind</a></li>
+<li class="toctree-l4"><a class="reference internal" href="statistics.html">Statistics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="symbolmanager.html">SymbolManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="synthresult.html">SynthResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="term.html">Term</a></li>
+<li class="toctree-l4"><a class="reference internal" href="termmanager.html">TermManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="unknownexplanation.html">UnknownExplanation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python.html#classes">Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python.html#enums">Enums</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#which-python-api-should-i-use">Which Python API should I use?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#installation-from-pypi">Installation (from PyPi)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#installation-from-source">Installation (from source)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../python.html">Python API</a></li>
+          <li class="breadcrumb-item"><a href="python.html">Base Python API</a></li>
+      <li class="breadcrumb-item active">Grammar</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="grammar">
+<h1>Grammar<a class="headerlink" href="#grammar" title="Link to this heading"></a></h1>
+<p>This class encapsulates a SyGuS grammar. It is created via
+<a class="reference internal" href="solver.html#cvc5.Solver.mkGrammar" title="cvc5.Solver.mkGrammar"><code class="xref py py-func docutils literal notranslate"><span class="pre">cvc5.Solver.mkGrammar()</span></code></a> and allows to define a context-free
+grammar of terms, according to the definition of grammars in the SyGuS IF 2.1
+standard.</p>
+<hr class="docutils" />
+<dl class="py class">
+<dt class="sig sig-object py" id="cvc5.Grammar">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5.</span></span><span class="sig-name descname"><span class="pre">Grammar</span></span><a class="headerlink" href="#cvc5.Grammar" title="Link to this definition"></a></dt>
+<dd><p>A Sygus Grammar. This class can be used to define a context-free grammar
+of terms. Its interface coincides with the definition of grammars
+(<code class="docutils literal notranslate"><span class="pre">GrammarDef</span></code>) in the SyGuS IF 2.1 standard.</p>
+<p>Wrapper class for <a class="reference internal" href="../../cpp/classes/grammar.html#_CPPv4N4cvc57GrammarE" title="cvc5::Grammar"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">cvc5::Grammar</span></code></a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Grammar.addAnyConstant">
+<span class="sig-name descname"><span class="pre">addAnyConstant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Grammar.addAnyConstant" title="Link to this definition"></a></dt>
+<dd><p>Allow <code class="docutils literal notranslate"><span class="pre">ntSymbol</span></code> to be an arbitrary constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ntSymbol</strong> – The non-terminal allowed to be constant.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Grammar.addAnyVariable">
+<span class="sig-name descname"><span class="pre">addAnyVariable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Grammar.addAnyVariable" title="Link to this definition"></a></dt>
+<dd><p>Allow <code class="docutils literal notranslate"><span class="pre">ntSymbol</span></code> to be any input variable to corresponding
+synth-fun/synth-inv with the same sort as <code class="docutils literal notranslate"><span class="pre">ntSymbol</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ntSymbol</strong> – The non-terminal allowed to be any input variable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Grammar.addRule">
+<span class="sig-name descname"><span class="pre">addRule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Grammar.addRule" title="Link to this definition"></a></dt>
+<dd><p>Add <code class="docutils literal notranslate"><span class="pre">rule</span></code> to the set of rules corresponding to <code class="docutils literal notranslate"><span class="pre">ntSymbol</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ntSymbol</strong> – The non-terminal to which the rule is added.</p></li>
+<li><p><strong>rule</strong> – The rule to add.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Grammar.addRules">
+<span class="sig-name descname"><span class="pre">addRules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Grammar.addRules" title="Link to this definition"></a></dt>
+<dd><p>Add <code class="docutils literal notranslate"><span class="pre">ntSymbol</span></code> to the set of rules corresponding to <code class="docutils literal notranslate"><span class="pre">ntSymbol</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ntSymbol</strong> – The non-terminal to which the rules are added.</p></li>
+<li><p><strong>rules</strong> – The rules to add.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.Grammar.isNull">
+<span class="sig-name descname"><span class="pre">isNull</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.Grammar.isNull" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datatypeselector.html" class="btn btn-neutral float-left" title="DatatypeSelector" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="inputparser.html" class="btn btn-neutral float-right" title="InputParser" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

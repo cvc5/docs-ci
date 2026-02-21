@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proof Production &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../static/jquery.js?v=5d32c60e"></script>
+      <script src="../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../static/doctools.js?v=9bcbadda"></script>
+      <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ProofRule and ProofRewriteRule" href="../api/cpp/enums/proofrule.html" />
+    <link rel="prev" title="Output tags" href="../output-tags.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../output-tags.html">Output tags</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Proof Production</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#proof-rules">Proof Rules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/cpp/enums/proofrule.html">Proof Rules (C++)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/c/enums/cvc5proofrule.html">Proof Rules (C)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/python/base/proofrule.html">Proof Rules (Python)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#proof-formats">Proof Formats</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="output_cpc.html">CPC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="output_alethe.html">Alethe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="output_lfsc.html">LFSC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="output_dot.html">DOT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Proof Production</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="proof-production">
+<h1>Proof Production<a class="headerlink" href="#proof-production" title="Link to this heading"></a></h1>
+<p>cvc5 produces proofs in a proof calculus that faithfully reflects its
+reasoning. The calculus is called the Cooperating Proof Calculus (CPC).
+cvc5 supports retrieving a proof object via the API
+(see how these objects are defined in <a class="reference internal" href="../api/cpp/classes/proof.html"><span class="doc">C++</span></a>,
+<a class="reference internal" href="../api/c/types/cvc5proof.html"><span class="doc">C</span></a>,
+<a class="reference external" href="../api/../api/java/io/github/cvc5/Proof.html">Java</a>,
+<a class="reference internal" href="../api/python/base/proof.html"><span class="doc">Base Python</span></a>).</p>
+<section id="proof-rules">
+<h2>Proof Rules<a class="headerlink" href="#proof-rules" title="Link to this heading"></a></h2>
+<p>A comprehensive description of the <strong>proof rules</strong> of the Cooperating Proof
+Calculus can be found here:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../api/cpp/enums/proofrule.html"><span class="doc">C++ API</span></a></p></li>
+<li><p><a class="reference internal" href="../api/c/enums/cvc5proofrule.html"><span class="doc">C API</span></a></p></li>
+<li><p><strong>Java API</strong></p>
+<ul>
+<li><p>enum <a class="reference external" href="../api/java/io/github/cvc5/ProofRule.html">ProofRule</a></p></li>
+<li><p>enum <a class="reference external" href="api/java/io/github/cvc5/ProofRewriteRule.html">ProofRewriteRule</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="../api/python/base/proofrule.html"><span class="doc">Base Python API</span></a></p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+<section id="proof-formats">
+<h3>Proof Formats<a class="headerlink" href="#proof-formats" title="Link to this heading"></a></h3>
+<p>Optionally, cvc5 allows to convert and output its internal proofs into the
+following external formats.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="output_cpc.html">CPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output_alethe.html">Alethe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output_lfsc.html">LFSC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output_dot.html">DOT</a></li>
+</ul>
+</div>
+<p>Note that the DOT format is only meant for visualization.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../output-tags.html" class="btn btn-neutral float-left" title="Output tags" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../api/cpp/enums/proofrule.html" class="btn btn-neutral float-right" title="ProofRule and ProofRewriteRule" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

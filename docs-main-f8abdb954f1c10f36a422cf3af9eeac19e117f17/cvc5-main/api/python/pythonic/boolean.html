@@ -1,0 +1,1304 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Core &amp; Booleans &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Arithmetic" href="arith.html" />
+    <link rel="prev" title="Quickstart Guide" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../cpp/cpp.html">C++ API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../c/c.html">C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../python.html">Python API</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pythonic.html">Pythonic API</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Core &amp; Booleans</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#basic-boolean-term-builders">Basic Boolean Term Builders</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#basic-generic-term-builders">Basic Generic Term Builders</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#boolean-operators">Boolean Operators</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#generic-operators">Generic Operators</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#testers">Testers</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#classes-with-overloads">Classes (with overloads)</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="arith.html">Arithmetic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="array.html">Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bitvec.html">Bit-Vectors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dt.html">Datatypes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="finite_field.html">Finite Fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fp.html">Floating Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="set.html">Sets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="string.html">Strings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sequence.html">Sequences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quant.html">Quantifiers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solver.html">Solvers &amp; Results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="internals.html">Internals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../base/python.html">Base Python API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#which-python-api-should-i-use">Which Python API should I use?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#installation-from-pypi">Installation (from PyPi)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#installation-from-source">Installation (from source)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../python.html">Python API</a></li>
+          <li class="breadcrumb-item"><a href="pythonic.html">Pythonic API</a></li>
+      <li class="breadcrumb-item active">Core &amp; Booleans</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="core-booleans">
+<h1>Core &amp; Booleans<a class="headerlink" href="#core-booleans" title="Link to this heading"></a></h1>
+<section id="basic-boolean-term-builders">
+<h2>Basic Boolean Term Builders<a class="headerlink" href="#basic-boolean-term-builders" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.Bool">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">Bool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.Bool" title="Link to this definition"></a></dt>
+<dd><p>Return a Boolean constant named <cite>name</cite>. If <cite>ctx=None</cite>, then the global context is used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Bool</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">Bool</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">And</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="go">And(p, q)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BoolVal">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BoolVal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BoolVal" title="Link to this definition"></a></dt>
+<dd><p>Return the Boolean value <cite>True</cite> or <cite>False</cite>. If <cite>ctx=None</cite>, then the
+global context is used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">BoolVal</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_true</span><span class="p">(</span><span class="n">BoolVal</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_true</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_false</span><span class="p">(</span><span class="n">BoolVal</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BoolSort">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BoolSort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BoolSort" title="Link to this definition"></a></dt>
+<dd><p>Return the Boolean SMT sort. If <cite>ctx=None</cite>, then the global context is used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">BoolSort</span><span class="p">()</span>
+<span class="go">Bool</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Const</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="n">BoolSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_bool</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">BoolSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">r(0, 1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_bool</span><span class="p">(</span><span class="n">r</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.FreshBool">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">FreshBool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'b'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FreshBool" title="Link to this definition"></a></dt>
+<dd><p>Return a fresh Boolean constant in the given context using the given prefix.</p>
+<p>If <cite>ctx=None</cite>, then the global context is used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b1</span> <span class="o">=</span> <span class="n">FreshBool</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b2</span> <span class="o">=</span> <span class="n">FreshBool</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eq</span><span class="p">(</span><span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.Bools">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">Bools</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.Bools" title="Link to this definition"></a></dt>
+<dd><p>Return a tuple of Boolean constants.</p>
+<p><cite>names</cite> is a single string containing all names separated by blank spaces.
+If <cite>ctx=None</cite>, then the global context is used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">Bools</span><span class="p">(</span><span class="s1">&#39;p q r&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">And</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">Or</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
+<span class="go">And(p, Or(q, r))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BoolVector">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BoolVector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BoolVector" title="Link to this definition"></a></dt>
+<dd><p>Return a list of Boolean constants of size <cite>sz</cite>.</p>
+<p>The constants are named using the given prefix.
+If <cite>ctx=None</cite>, then the global context is used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">P</span> <span class="o">=</span> <span class="n">BoolVector</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">P</span>
+<span class="go">[p__0, p__1, p__2]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">And</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+<span class="go">And(p__0, p__1, p__2)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="basic-generic-term-builders">
+<h2>Basic Generic Term Builders<a class="headerlink" href="#basic-generic-term-builders" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.Const">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">Const</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.Const" title="Link to this definition"></a></dt>
+<dd><p>Create a constant of the given sort.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Const</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">())</span>
+<span class="go">x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.Consts">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">Consts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.Consts" title="Link to this definition"></a></dt>
+<dd><p>Create several constants of the given sort.</p>
+<p><cite>names</cite> is a string containing the names of all constants to be created.
+Blank spaces separate the names of different constants.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">Consts</span><span class="p">(</span><span class="s1">&#39;x y z&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
+<span class="go">x + y + z</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.FreshConst">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">FreshConst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'c'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FreshConst" title="Link to this definition"></a></dt>
+<dd><p>Create a fresh constant of a specified sort</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">FreshConst</span><span class="p">(</span><span class="n">BoolSort</span><span class="p">(),</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">FreshConst</span><span class="p">(</span><span class="n">BoolSort</span><span class="p">(),</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.Function">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">Function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">sig</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.Function" title="Link to this definition"></a></dt>
+<dd><p>Create a new SMT uninterpreted function with the given sorts.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">IntSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="go">f(f(0))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.FreshFunction">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">FreshFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">sig</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FreshFunction" title="Link to this definition"></a></dt>
+<dd><p>Create a new fresh SMT uninterpreted function with the given sorts.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">FreshFunction</span><span class="p">(</span><span class="n">IntSort</span><span class="p">(),</span> <span class="n">IntSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">([</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">!=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)])</span>
+<span class="go">no solution</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="boolean-operators">
+<h2>Boolean Operators<a class="headerlink" href="#boolean-operators" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.And">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">And</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.And" title="Link to this definition"></a></dt>
+<dd><p>Create an SMT and-expression or and-probe.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">Bools</span><span class="p">(</span><span class="s1">&#39;p q r&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">And</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="go">And(p, q, r)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">And</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">main_ctx</span><span class="p">())</span>
+<span class="go">And(p, q, r)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">P</span> <span class="o">=</span> <span class="n">BoolVector</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">And</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+<span class="go">And(p__0, p__1, p__2, p__3, p__4)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">And</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">And</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="go">p</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.Or">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">Or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.Or" title="Link to this definition"></a></dt>
+<dd><p>Create an SMT or-expression or or-probe.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">Bools</span><span class="p">(</span><span class="s1">&#39;p q r&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Or</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="go">Or(p, q, r)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Or</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">main_ctx</span><span class="p">())</span>
+<span class="go">Or(p, q, r)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">P</span> <span class="o">=</span> <span class="n">BoolVector</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Or</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+<span class="go">Or(p__0, p__1, p__2, p__3, p__4)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Or</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Or</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="go">p</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.Not">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">Not</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.Not" title="Link to this definition"></a></dt>
+<dd><p>Create an SMT not expression or probe.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Bool</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Not</span><span class="p">(</span><span class="n">Not</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<span class="go">Not(Not(p))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.mk_not">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">mk_not</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.mk_not" title="Link to this definition"></a></dt>
+<dd><p>Negate a boolean expression.
+Strips a negation if one is already present</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Bool</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mk_not</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">Not(x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mk_not</span><span class="p">(</span><span class="n">mk_not</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="go">x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.Implies">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">Implies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.Implies" title="Link to this definition"></a></dt>
+<dd><p>Create an SMT implies expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">Bools</span><span class="p">(</span><span class="s1">&#39;p q&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Implies</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="go">Implies(p, q)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.Xor">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">Xor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.Xor" title="Link to this definition"></a></dt>
+<dd><p>Create an SMT Xor expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">Bools</span><span class="p">(</span><span class="s1">&#39;p q&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Xor</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="go">Xor(p, q)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="generic-operators">
+<h2>Generic Operators<a class="headerlink" href="#generic-operators" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.If">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">If</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.If" title="Link to this definition"></a></dt>
+<dd><p>Create an SMT if-then-else expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">max</span> <span class="o">=</span> <span class="n">If</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">max</span>
+<span class="go">If(x &gt; y, x, y)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">If</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">main_ctx</span><span class="p">())</span>
+<span class="go">If(True, 1, 0)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.Distinct">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">Distinct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.Distinct" title="Link to this definition"></a></dt>
+<dd><p>Create an SMT distinct expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Distinct</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">x != y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Distinct</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="go">Distinct(x, y, z)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<section id="equality">
+<h3>Equality<a class="headerlink" href="#equality" title="Link to this heading"></a></h3>
+<p>See
+<a class="reference internal" href="#cvc5.pythonic.ExprRef.__eq__" title="cvc5.pythonic.ExprRef.__eq__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.ExprRef.__eq__()</span></code></a>
+and
+<a class="reference internal" href="#cvc5.pythonic.ExprRef.__ne__" title="cvc5.pythonic.ExprRef.__ne__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.ExprRef.__ne__()</span></code></a>
+for building equality and disequality terms.</p>
+</section>
+</section>
+<section id="testers">
+<h2>Testers<a class="headerlink" href="#testers" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_bool">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_bool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_bool" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>a</cite> is an SMT Boolean expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Bool</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_bool</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">Bool</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_bool</span><span class="p">(</span><span class="n">And</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Real</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_bool</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_bool</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_bool_value">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_bool_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_bool_value" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>a</cite> is an integer value of sort Int.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_bool_value</span><span class="p">(</span><span class="n">IntVal</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_bool_value</span><span class="p">(</span><span class="n">Bool</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_bool_value</span><span class="p">(</span><span class="n">BoolVal</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_true">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_true</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_true" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>a</cite> is the SMT true expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Bool</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_true</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Real</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_true</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># True is a Python Boolean expression</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_true</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_false">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_false</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_false" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>a</cite> is the SMT false expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Bool</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_false</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_false</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_false</span><span class="p">(</span><span class="n">BoolVal</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_and">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_and</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_and" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>a</cite> is an SMT and expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">Bools</span><span class="p">(</span><span class="s1">&#39;p q&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_and</span><span class="p">(</span><span class="n">And</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_and</span><span class="p">(</span><span class="n">Or</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">))</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_or">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_or" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>a</cite> is an SMT or expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">Bools</span><span class="p">(</span><span class="s1">&#39;p q&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_or</span><span class="p">(</span><span class="n">Or</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_or</span><span class="p">(</span><span class="n">And</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">))</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_implies">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_implies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_implies" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>a</cite> is an SMT implication expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">Bools</span><span class="p">(</span><span class="s1">&#39;p q&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_implies</span><span class="p">(</span><span class="n">Implies</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_implies</span><span class="p">(</span><span class="n">And</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">))</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_not">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_not</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_not" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>a</cite> is an SMT not expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Bool</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_not</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_not</span><span class="p">(</span><span class="n">Not</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_eq">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_eq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_eq" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>a</cite> is an SMT equality expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Ints</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_eq</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_distinct">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_distinct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_distinct" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>a</cite> is an SMT distinct expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">Ints</span><span class="p">(</span><span class="s1">&#39;x y z&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_distinct</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_distinct</span><span class="p">(</span><span class="n">Distinct</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_const">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_const</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_const" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>a</cite> is SMT constant/variable expression.</p>
+<dl class="simple">
+<dt>These include:</dt><dd><ul class="simple">
+<li><p>concrete (i.e. literal, or non-symbolic) values</p></li>
+<li><p>declared constants</p></li>
+</ul>
+</dd>
+<dt>These do not include:</dt><dd><ul class="simple">
+<li><p>bound variables</p></li>
+<li><p>quantified formulae</p></li>
+<li><p>applied operators</p></li>
+</ul>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_const</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_const</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_const</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_const</span><span class="p">(</span><span class="n">IntVal</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_func_decl">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_func_decl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_func_decl" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>a</cite> is an SMT function declaration.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">IntSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_func_decl</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Real</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_func_decl</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="classes-with-overloads">
+<h2>Classes (with overloads)<a class="headerlink" href="#classes-with-overloads" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">ExprRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse_children</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef" title="Link to this definition"></a></dt>
+<dd><p>Constraints, formulas and terms are expressions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.__bool__">
+<span class="sig-name descname"><span class="pre">__bool__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.__bool__" title="Link to this definition"></a></dt>
+<dd><p>Convert this expression to a python boolean.</p>
+<p>Produces
+* the appropriate value for a BoolVal.
+* whether structural equality holds for an EQ-node</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">bool</span><span class="p">(</span><span class="n">BoolVal</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">bool</span><span class="p">(</span><span class="n">BoolVal</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">bool</span><span class="p">(</span><span class="n">BoolVal</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span> <span class="o">==</span> <span class="n">BoolVal</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>  <span class="nb">bool</span><span class="p">(</span><span class="n">Int</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">))</span>
+<span class="gp">... </span><span class="k">except</span> <span class="n">SMTException</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;failed: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">ex</span><span class="p">)</span>
+<span class="go">failed: Symbolic expressions cannot be cast to concrete Boolean values.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.__eq__" title="Link to this definition"></a></dt>
+<dd><p>Return an SMT expression that represents the constraint <cite>self == other</cite>.</p>
+<p>If <cite>other</cite> is <cite>None</cite>, then this method simply returns <cite>False</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+<span class="go">a == b</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">==</span> <span class="kc">None</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.__hash__" title="Link to this definition"></a></dt>
+<dd><p>Hash code.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse_children</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.__ne__">
+<span class="sig-name descname"><span class="pre">__ne__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.__ne__" title="Link to this definition"></a></dt>
+<dd><p>Return an SMT expression that represents the constraint <cite>self != other</cite>.</p>
+<p>If <cite>other</cite> is <cite>None</cite>, then this method simply returns <cite>True</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">!=</span> <span class="n">b</span>
+<span class="go">a != b</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">!=</span> <span class="kc">None</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.__nonzero__">
+<span class="sig-name descname"><span class="pre">__nonzero__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.__nonzero__" title="Link to this definition"></a></dt>
+<dd><p>Convert this expression to a python boolean. See __bool__.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">BoolVal</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span> <span class="o">==</span> <span class="n">BoolVal</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span><span class="o">.</span><span class="n">__nonzero__</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.__repr__" title="Link to this definition"></a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.__str__" title="Link to this definition"></a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#cvc5.pythonic.ExprRef.__weakref__" title="Link to this definition"></a></dt>
+<dd><p>list of weak references to the object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.arg">
+<span class="sig-name descname"><span class="pre">arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.arg" title="Link to this definition"></a></dt>
+<dd><p>Return argument <cite>idx</cite> of the application <cite>self</cite>.</p>
+<p>This method assumes that <cite>self</cite> is a function application with at least
+<cite>idx+1</cite> arguments.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">IntSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">a</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">b</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.as_ast">
+<span class="sig-name descname"><span class="pre">as_ast</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.as_ast" title="Link to this definition"></a></dt>
+<dd><p>Return a pointer to the underlying Term object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.children">
+<span class="sig-name descname"><span class="pre">children</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.children" title="Link to this definition"></a></dt>
+<dd><p>Return a list containing the children of the given expression</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">IntSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">children</span><span class="p">()</span>
+<span class="go">[a, b, 0]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.decl">
+<span class="sig-name descname"><span class="pre">decl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.decl" title="Link to this definition"></a></dt>
+<dd><p>Return the SMT function declaration associated with an SMT application.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">IntSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eq</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">decl</span><span class="p">(),</span> <span class="n">f</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>  <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decl</span><span class="p">()</span>
+<span class="gp">... </span><span class="k">except</span> <span class="n">SMTException</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;failed: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">ex</span><span class="p">)</span>
+<span class="go">failed: Declarations for non-function applications</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.eq">
+<span class="sig-name descname"><span class="pre">eq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.eq" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>self</cite> and <cite>other</cite> are structurally identical.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n1</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n1</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.get_id">
+<span class="sig-name descname"><span class="pre">get_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.get_id" title="Link to this definition"></a></dt>
+<dd><p>Return unique identifier for object.
+It can be used for hash-tables and maps.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">BoolVal</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">get_id</span><span class="p">()</span> <span class="o">==</span> <span class="n">BoolVal</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">get_id</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.hash">
+<span class="sig-name descname"><span class="pre">hash</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.hash" title="Link to this definition"></a></dt>
+<dd><p>Return a hashcode for the <cite>self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n1</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n2</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n1</span><span class="o">.</span><span class="n">hash</span><span class="p">()</span> <span class="o">==</span> <span class="n">n2</span><span class="o">.</span><span class="n">hash</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.is_int">
+<span class="sig-name descname"><span class="pre">is_int</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.is_int" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>self</cite> is of the sort Integer.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">is_int</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">is_int</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Real</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">is_int</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Set</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">())</span><span class="o">.</span><span class="n">is_int</span><span class="p">()</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.kind">
+<span class="sig-name descname"><span class="pre">kind</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.kind" title="Link to this definition"></a></dt>
+<dd><p>Return the Kind of this term</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">IntSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">kind</span><span class="p">()</span> <span class="o">==</span> <span class="n">Kind</span><span class="o">.</span><span class="n">APPLY_UF</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.num_args">
+<span class="sig-name descname"><span class="pre">num_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.num_args" title="Link to this definition"></a></dt>
+<dd><p>Return the number of arguments of an SMT application.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">num_args</span><span class="p">()</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">IntSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">num_args</span><span class="p">()</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.sexpr">
+<span class="sig-name descname"><span class="pre">sexpr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.sexpr" title="Link to this definition"></a></dt>
+<dd><p>Return a string representing the AST node in s-expression notation.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(* (+ x 1) x)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.ExprRef.sort">
+<span class="sig-name descname"><span class="pre">sort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ExprRef.sort" title="Link to this definition"></a></dt>
+<dd><p>Return the sort of expression <cite>self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">Int</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">Real</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">Real</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="cvc5.pythonic.SortRef">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">SortRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SortRef" title="Link to this definition"></a></dt>
+<dd><p>A Sort is essentially a type. Every term has a sort</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SortRef.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SortRef.__eq__" title="Link to this definition"></a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SortRef.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SortRef.__hash__" title="Link to this definition"></a></dt>
+<dd><p>Hash code.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SortRef.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SortRef.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SortRef.__ne__">
+<span class="sig-name descname"><span class="pre">__ne__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SortRef.__ne__" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>self</cite> and <cite>other</cite> are not the same SMT sort.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Bool</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="o">!=</span> <span class="n">BoolSort</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="o">!=</span> <span class="n">IntSort</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SortRef.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SortRef.__repr__" title="Link to this definition"></a></dt>
+<dd><p>A pretty-printed representation of this sort.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">repr</span><span class="p">(</span><span class="n">IntSort</span><span class="p">())</span>
+<span class="go">&#39;Int&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SortRef.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SortRef.__str__" title="Link to this definition"></a></dt>
+<dd><p>A pretty-printed representation of this sort.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">IntSort</span><span class="p">())</span>
+<span class="go">&#39;Int&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cvc5.pythonic.SortRef.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#cvc5.pythonic.SortRef.__weakref__" title="Link to this definition"></a></dt>
+<dd><p>list of weak references to the object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SortRef.as_ast">
+<span class="sig-name descname"><span class="pre">as_ast</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SortRef.as_ast" title="Link to this definition"></a></dt>
+<dd><p>Return a pointer to the underlying Sort object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SortRef.cast">
+<span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SortRef.cast" title="Link to this definition"></a></dt>
+<dd><p>Try to cast <cite>val</cite> as an element of sort <cite>self</cite>.</p>
+<p>This method is used in SMT to convert Python objects such as integers,
+floats, longs and strings into SMT expressions.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">RealSort</span><span class="p">()</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">ToReal(x)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SortRef.eq">
+<span class="sig-name descname"><span class="pre">eq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SortRef.eq" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>self</cite> and <cite>other</cite> are structurally identical.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n1</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n1</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n1</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SortRef.hash">
+<span class="sig-name descname"><span class="pre">hash</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SortRef.hash" title="Link to this definition"></a></dt>
+<dd><p>Return a hashcode for the <cite>self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n1</span> <span class="o">=</span> <span class="n">IntSort</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n2</span> <span class="o">=</span> <span class="n">RealSort</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n1</span><span class="o">.</span><span class="n">hash</span><span class="p">()</span> <span class="o">==</span> <span class="n">n2</span><span class="o">.</span><span class="n">hash</span><span class="p">()</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SortRef.is_int">
+<span class="sig-name descname"><span class="pre">is_int</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SortRef.is_int" title="Link to this definition"></a></dt>
+<dd><p>Subclasses override</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">SetSort</span><span class="p">(</span><span class="n">IntSort</span><span class="p">())</span><span class="o">.</span><span class="n">is_int</span><span class="p">()</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SortRef.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SortRef.name" title="Link to this definition"></a></dt>
+<dd><p>Return the name (string) of sort <cite>self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">BoolSort</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
+<span class="go">&#39;Bool&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ArraySort</span><span class="p">(</span><span class="n">IntSort</span><span class="p">(),</span> <span class="n">IntSort</span><span class="p">())</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
+<span class="go">&#39;(Array Int Int)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SortRef.sexpr">
+<span class="sig-name descname"><span class="pre">sexpr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SortRef.sexpr" title="Link to this definition"></a></dt>
+<dd><p>Return a string representing the AST node in s-expression notation.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntSort</span><span class="p">()</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;Int&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.SortRef.subsort">
+<span class="sig-name descname"><span class="pre">subsort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SortRef.subsort" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>self</cite> is a subsort of <cite>other</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntSort</span><span class="p">()</span><span class="o">.</span><span class="n">subsort</span><span class="p">(</span><span class="n">RealSort</span><span class="p">())</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BoolSort</span><span class="p">()</span><span class="o">.</span><span class="n">subsort</span><span class="p">(</span><span class="n">RealSort</span><span class="p">())</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SetSort</span><span class="p">(</span><span class="n">BitVecSort</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">subsort</span><span class="p">(</span><span class="n">SetSort</span><span class="p">(</span><span class="n">IntSort</span><span class="p">()))</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="cvc5.pythonic.BoolRef">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BoolRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse_children</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BoolRef" title="Link to this definition"></a></dt>
+<dd><p>All Boolean expressions are instances of this class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BoolRef.__and__">
+<span class="sig-name descname"><span class="pre">__and__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BoolRef.__and__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT and expression <cite>self &amp; other</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">(</span><span class="n">Bool</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Bool</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">))</span>
+<span class="go">[x = True, y = True]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BoolRef.__invert__">
+<span class="sig-name descname"><span class="pre">__invert__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BoolRef.__invert__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT not expression <cite>~self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">(</span><span class="o">~</span><span class="n">Bool</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">))</span>
+<span class="go">[x = False]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BoolRef.__mul__">
+<span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BoolRef.__mul__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression <cite>self * other</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Real</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BoolVal</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span>
+<span class="go">If(True, x, 0)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BoolRef.__or__">
+<span class="sig-name descname"><span class="pre">__or__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BoolRef.__or__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT or expression <cite>self | other</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">(</span><span class="n">Bool</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="o">|</span> <span class="n">Bool</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">),</span> <span class="n">Not</span><span class="p">(</span><span class="n">Bool</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)))</span>
+<span class="go">[x = False, y = True]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BoolRef.__rmul__">
+<span class="sig-name descname"><span class="pre">__rmul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BoolRef.__rmul__" title="Link to this definition"></a></dt>
+<dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Real</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">*</span> <span class="n">BoolVal</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">If(True, x, 0)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BoolRef.__xor__">
+<span class="sig-name descname"><span class="pre">__xor__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BoolRef.__xor__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT xor expression <cite>self ^ other</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">(</span><span class="n">Bool</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="o">^</span> <span class="n">Bool</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">),</span> <span class="n">Not</span><span class="p">(</span><span class="n">Bool</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)))</span>
+<span class="go">[x = False, y = True]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BoolRef.sort">
+<span class="sig-name descname"><span class="pre">sort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BoolRef.sort" title="Link to this definition"></a></dt>
+<dd><p>Return the sort of expression <cite>self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">Int</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">Real</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">Real</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="cvc5.pythonic.BoolSortRef">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BoolSortRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BoolSortRef" title="Link to this definition"></a></dt>
+<dd><p>Boolean sort.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BoolSortRef.cast">
+<span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BoolSortRef.cast" title="Link to this definition"></a></dt>
+<dd><p>Try to cast <cite>val</cite> as a Boolean.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BoolSort</span><span class="p">()</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_expr</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_expr</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">Bool</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>  <span class="n">BoolSort</span><span class="p">()</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">Int</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">))</span>
+<span class="gp">... </span><span class="k">except</span> <span class="n">SMTException</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;failed&quot;</span><span class="p">)</span>
+<span class="go">failed</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>  <span class="n">BoolSort</span><span class="p">()</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">... </span><span class="k">except</span> <span class="n">SMTException</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;failed&quot;</span><span class="p">)</span>
+<span class="go">failed</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BoolSortRef.is_bool">
+<span class="sig-name descname"><span class="pre">is_bool</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BoolSortRef.is_bool" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>self</cite> is of the sort Boolean.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BoolSort</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">is_bool</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BoolSortRef.is_int">
+<span class="sig-name descname"><span class="pre">is_int</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BoolSortRef.is_int" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>self</cite> is of the sort Integer.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">IntSort</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">is_int</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">RealSort</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">is_int</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BoolSort</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">is_int</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BoolSortRef.subsort">
+<span class="sig-name descname"><span class="pre">subsort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BoolSortRef.subsort" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>self</cite> is a subsort of <cite>other</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntSort</span><span class="p">()</span><span class="o">.</span><span class="n">subsort</span><span class="p">(</span><span class="n">RealSort</span><span class="p">())</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BoolSort</span><span class="p">()</span><span class="o">.</span><span class="n">subsort</span><span class="p">(</span><span class="n">RealSort</span><span class="p">())</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SetSort</span><span class="p">(</span><span class="n">BitVecSort</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">subsort</span><span class="p">(</span><span class="n">SetSort</span><span class="p">(</span><span class="n">IntSort</span><span class="p">()))</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="cvc5.pythonic.FuncDeclRef">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">FuncDeclRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse_children</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FuncDeclRef" title="Link to this definition"></a></dt>
+<dd><p>Function declaration.
+Every constant and function have an associated declaration.</p>
+<p>The declaration assigns a name, a sort (i.e., type), and for function
+the sort (i.e., type) of each of its arguments. Note that, in SMT,
+a constant is a function with 0 arguments.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FuncDeclRef.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FuncDeclRef.__call__" title="Link to this definition"></a></dt>
+<dd><p>Create an SMT application expression using the function <cite>self</cite>,
+and the given arguments.</p>
+<p>The arguments must be SMT expressions. This method assumes that
+the sorts of the elements in <cite>args</cite> match the sorts of the
+domain. Limited coercion is supported.  For example, if
+args[0] is a Python integer, and the function expects a SMT
+integer, then the argument is automatically converted into a
+SMT integer.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">RealSort</span><span class="p">(),</span> <span class="n">BoolSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">Real</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">f(x, y)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">f(x, ToReal(x))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FuncDeclRef.arity">
+<span class="sig-name descname"><span class="pre">arity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FuncDeclRef.arity" title="Link to this definition"></a></dt>
+<dd><p>Return the number of arguments of a function declaration.
+If <cite>self</cite> is a constant, then <cite>self.arity()</cite> is 0.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">RealSort</span><span class="p">(),</span> <span class="n">BoolSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">arity</span><span class="p">()</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FuncDeclRef.domain">
+<span class="sig-name descname"><span class="pre">domain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FuncDeclRef.domain" title="Link to this definition"></a></dt>
+<dd><p>Return the sort of the argument <cite>i</cite> of a function declaration.
+This method assumes that <cite>0 &lt;= i &lt; self.arity()</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">RealSort</span><span class="p">(),</span> <span class="n">BoolSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">domain</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">Int</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">domain</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">Real</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FuncDeclRef.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FuncDeclRef.name" title="Link to this definition"></a></dt>
+<dd><p>Return the name of the function declaration <cite>self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">IntSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
+<span class="go">&#39;f&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">(),</span> <span class="nb">str</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.FuncDeclRef.range">
+<span class="sig-name descname"><span class="pre">range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.FuncDeclRef.range" title="Link to this definition"></a></dt>
+<dd><p>Return the sort of the range of a function declaration.
+For constants, this is the sort of the constant.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">(),</span> <span class="n">RealSort</span><span class="p">(),</span> <span class="n">BoolSort</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">range</span><span class="p">()</span>
+<span class="go">Bool</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quickstart Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="arith.html" class="btn btn-neutral float-right" title="Arithmetic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
