@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java API &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Quickstart Guide" href="quickstart.html" />
+    <link rel="prev" title="Modes" href="../c/enums/modes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../cpp/cpp.html">C++ API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/c.html">C API</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Java API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-cvc5-java-api-in-a-maven-project">Using the cvc5 Java API in a Maven project</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-self-contained-cvc5-java-api-jar">Using self-contained cvc5 Java API JAR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#building-cvc5-java-api">Building cvc5 Java API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Javadoc API Documentation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id2">Package io.github.cvc5</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id4">Package io.github.cvc5.modes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../python/python.html">Python API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API Documentation</a></li>
+      <li class="breadcrumb-item active">Java API</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="java-api">
+<h1>Java API<a class="headerlink" href="#java-api" title="Link to this heading"></a></h1>
+<p>The Java API of cvc5 mostly mirrors the <a class="reference internal" href="../cpp/cpp.html"><span class="doc">C++ API</span></a> and
+supports operator overloading, iterators, and exceptions.
+There are a few differences from the C++ API, such as using arbitrary-precision
+integer pairs, specifically, pairs of Java <cite>BigInteger</cite> objects, to represent
+rational numbers.
+The <a class="reference internal" href="quickstart.html"><span class="doc">quickstart guide</span></a> gives a short introduction,
+and more examples can be found <a class="reference external" href="../../examples/examples.html">here</a>.</p>
+<p>For most applications, the <a class="reference external" href="io/github/cvc5/Solver.html">Solver</a> class is the
+main entry point to cvc5.
+The class hierarchy of <a class="reference external" href="io/github/cvc5/package-summary.html">cvc5 package</a>
+provides more details on the individual classes.</p>
+<div class="toctree-wrapper compound">
+</div>
+<hr class="docutils" />
+<section id="using-the-cvc5-java-api-in-a-maven-project">
+<h2>Using the cvc5 Java API in a Maven project<a class="headerlink" href="#using-the-cvc5-java-api-in-a-maven-project" title="Link to this heading"></a></h2>
+<p>To use a release version of the library in your Maven project,
+add the following dependencies to your POM file:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependencies&gt;</span>
+<span class="w">  </span><span class="cm">&lt;!-- cvc5 Java bindings (pure Java API) --&gt;</span>
+<span class="w">  </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">    </span><span class="nt">&lt;groupId&gt;</span>io.github.cvc5<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>cvc5<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>${cvc5.version}<span class="nt">&lt;/version&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/dependency&gt;</span>
+
+<span class="w">  </span><span class="cm">&lt;!-- cvc5 native JNI library for the target platform --&gt;</span>
+<span class="w">  </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">    </span><span class="nt">&lt;groupId&gt;</span>io.github.cvc5<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>cvc5<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>${cvc5.version}<span class="nt">&lt;/version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;classifier&gt;</span>${os.classifier}<span class="nt">&lt;/classifier&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;/dependencies&gt;</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">${cvc5.version}</span></code> refers to one of the versions published in
+<a class="reference external" href="https://central.sonatype.com/artifact/io.github.cvc5/cvc5">Maven Central</a>
+(e.g., <code class="docutils literal notranslate"><span class="pre">1.3.2-1</span></code>). The <code class="docutils literal notranslate"><span class="pre">${os.classifier}</span></code> variable specifies
+the operating system and CPU architecture
+(e.g., <code class="docutils literal notranslate"><span class="pre">linux-x86_64</span></code> or <code class="docutils literal notranslate"><span class="pre">osx-aarch_64</span></code>).</p>
+<p>You can make Maven automatically retrieve the correct classifier using
+the <a class="reference external" href="https://github.com/trustin/os-maven-plugin">os-maven-plugin</a>:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;build&gt;</span>
+<span class="w">  </span><span class="nt">&lt;extensions&gt;</span>
+<span class="w">    </span><span class="nt">&lt;extension&gt;</span>
+<span class="w">      </span><span class="nt">&lt;groupId&gt;</span>kr.motd.maven<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">      </span><span class="nt">&lt;artifactId&gt;</span>os-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">      </span><span class="nt">&lt;version&gt;</span>1.7.0<span class="nt">&lt;/version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/extension&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/extensions&gt;</span>
+<span class="nt">&lt;/build&gt;</span>
+</pre></div>
+</div>
+<p>After adding this plugin, use the <code class="docutils literal notranslate"><span class="pre">${os.detected.classifier}</span></code> property
+as the classifier value.</p>
+<p>To use the latest development version of the library,
+as opposed to a release version, add also the following repository to
+your POM file:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;repositories&gt;</span>
+<span class="w">  </span><span class="nt">&lt;repository&gt;</span>
+<span class="w">    </span><span class="nt">&lt;name&gt;</span>Central<span class="w"> </span>Portal<span class="w"> </span>Snapshots<span class="nt">&lt;/name&gt;</span>
+<span class="w">    </span><span class="nt">&lt;id&gt;</span>central-portal-snapshots<span class="nt">&lt;/id&gt;</span>
+<span class="w">    </span><span class="nt">&lt;url&gt;</span>https://central.sonatype.com/repository/maven-snapshots/<span class="nt">&lt;/url&gt;</span>
+<span class="w">    </span><span class="nt">&lt;releases&gt;</span>
+<span class="w">      </span><span class="nt">&lt;enabled&gt;</span>false<span class="nt">&lt;/enabled&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/releases&gt;</span>
+<span class="w">    </span><span class="nt">&lt;snapshots&gt;</span>
+<span class="w">      </span><span class="nt">&lt;enabled&gt;</span>true<span class="nt">&lt;/enabled&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/snapshots&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/repository&gt;</span>
+<span class="nt">&lt;/repositories&gt;</span>
+</pre></div>
+</div>
+<p>Then, use <code class="docutils literal notranslate"><span class="pre">${next.cvc5.version}-SNAPSHOT</span></code> as the version for the library
+dependencies, where <code class="docutils literal notranslate"><span class="pre">${next.cvc5.version}</span></code> must be the version following
+the latest release (e.g., use <code class="docutils literal notranslate"><span class="pre">1.3.3</span></code> if the latest release version is
+<code class="docutils literal notranslate"><span class="pre">1.3.2</span></code>).</p>
+<section id="using-self-contained-cvc5-java-api-jar">
+<h3>Using self-contained cvc5 Java API JAR<a class="headerlink" href="#using-self-contained-cvc5-java-api-jar" title="Link to this heading"></a></h3>
+<p>Starting from version 1.2.1, a JAR file containing the cvc5 Java API and
+all required native libraries is available on the release page for each version.
+To use it, download the appropriate JAR file for your platform. For example,
+if your computer runs Linux x86_64, download <cite>cvc5-Linux-x86_64-java-api.jar</cite> to
+a working directory.</p>
+<p>To compile the <cite>QuickStart.java</cite> example provided in
+the <a class="reference internal" href="quickstart.html"><span class="doc">quickstart guide</span></a>, ensure the file is in
+the same directory as the JAR. Then, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>javac<span class="w"> </span>-cp<span class="w"> </span><span class="s2">&quot;cvc5-Linux-x86_64-java-api.jar&quot;</span><span class="w"> </span>./QuickStart.java<span class="w"> </span>-d<span class="w"> </span>.
+</pre></div>
+</div>
+<p>After compilation, execute the example with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>java<span class="w"> </span>-cp<span class="w"> </span><span class="s2">&quot;cvc5-Linux-x86_64-java-api.jar:.&quot;</span><span class="w"> </span>QuickStart<span class="w"> </span><span class="c1"># Replace : with ; on Windows</span>
+<span class="w">  </span>expected:<span class="w"> </span>sat
+<span class="w">  </span>result:<span class="w"> </span>sat
+<span class="w">  </span>value<span class="w"> </span><span class="k">for</span><span class="w"> </span>x:<span class="w"> </span><span class="m">1</span>/6
+<span class="w">  </span>value<span class="w"> </span><span class="k">for</span><span class="w"> </span>y:<span class="w"> </span><span class="m">1</span>/6
+<span class="w">  </span>value<span class="w"> </span><span class="k">for</span><span class="w"> </span>x<span class="w"> </span>-<span class="w"> </span>y:<span class="w"> </span><span class="m">0</span>/1
+<span class="w">  </span>computed<span class="w"> </span>correctly
+<span class="w">  </span>expected:<span class="w"> </span>unsat
+<span class="w">  </span>result:<span class="w"> </span>unsat
+<span class="w">  </span>unsat<span class="w"> </span>core<span class="w"> </span>size:<span class="w"> </span><span class="m">3</span>
+<span class="w">  </span>unsat<span class="w"> </span>core:
+<span class="w">  </span><span class="o">(</span>&lt;<span class="w"> </span><span class="m">0</span><span class="w"> </span>a<span class="o">)</span>
+<span class="w">  </span><span class="o">(</span>&lt;<span class="w"> </span><span class="m">0</span><span class="w"> </span>b<span class="o">)</span>
+<span class="w">  </span><span class="o">(</span>&lt;<span class="w"> </span><span class="o">(</span>+<span class="w"> </span>a<span class="w"> </span>b<span class="o">)</span><span class="w"> </span><span class="m">1</span><span class="o">)</span>
+</pre></div>
+</div>
+</section>
+<section id="building-cvc5-java-api">
+<h3>Building cvc5 Java API<a class="headerlink" href="#building-cvc5-java-api" title="Link to this heading"></a></h3>
+<p>This section describes how to build the cvc5 Java bindings from source.
+If you want to create a single JNI native library file that includes
+all required library dependencies, pass the <code class="docutils literal notranslate"><span class="pre">--static</span></code> option to <code class="docutils literal notranslate"><span class="pre">configure.sh</span></code>
+in the steps below. This option also generates a JAR file that bundles the JNI library,
+which can be installed into a Maven repository.
+When using <code class="docutils literal notranslate"><span class="pre">--static</span></code>, you may need to recompile some external cvc5 dependencies from
+source rather than relying on the static versions
+provided by your operating system. This ensures that all dependencies are compiled as
+Position-Independent Code (PIC).
+For instance, to statically compile the GMP library with PIC enabled,
+pass the <code class="docutils literal notranslate"><span class="pre">--static</span></code> and <code class="docutils literal notranslate"><span class="pre">--auto-download</span></code> options, along with
+<code class="docutils literal notranslate"><span class="pre">-DBUILD_GMP=1</span></code>. This forces GMP to be built from source with the PIC option enabled.</p>
+<p>To additionally generate the <code class="docutils literal notranslate"><span class="pre">sources</span></code> and <code class="docutils literal notranslate"><span class="pre">javadoc</span></code> JAR files,
+pass the <code class="docutils literal notranslate"><span class="pre">--docs</span></code> option.</p>
+<p>The following example shows a typical build workflow for compiling and installing
+the cvc5 Java bindings with shared libraries. Adjust the configuration options as
+needed (e.g., add <code class="docutils literal notranslate"><span class="pre">--static</span></code> or <code class="docutils literal notranslate"><span class="pre">--docs</span></code>) depending on your desired
+build artifacts.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/cvc5/cvc5
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>cvc5
+$<span class="w"> </span>./configure.sh<span class="w"> </span>production<span class="w"> </span>--java-bindings<span class="w"> </span>--auto-download<span class="w"> </span>--prefix<span class="o">=</span>build/install
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+$<span class="w"> </span>make
+$<span class="w"> </span>make<span class="w"> </span>install
+
+$<span class="w"> </span>ls<span class="w"> </span>install/lib
+<span class="w">  </span>cmake<span class="w">             </span>libcvc5parser.so.1<span class="w">  </span>libpoly.so<span class="w">        </span>libpolyxx.so
+<span class="w">  </span>libcvc5jni.so<span class="w">     </span>libcvc5.so<span class="w">          </span>libpoly.so.0<span class="w">      </span>libpolyxx.so.0
+<span class="w">  </span>libcvc5parser.so<span class="w">  </span>libcvc5.so.1<span class="w">        </span>libpoly.so.0.2.1<span class="w">  </span>libpolyxx.so.0.2.1
+$<span class="w"> </span>ls<span class="w"> </span>install/share/java/
+<span class="w">  </span>cvc5-1.3.2-SNAPSHOT.jar<span class="w">  </span>cvc5.jar
+
+<span class="c1"># compile example QuickStart.java with cvc5 jar file</span>
+$<span class="w"> </span>javac<span class="w"> </span>-cp<span class="w"> </span><span class="s2">&quot;install/share/java/cvc5.jar&quot;</span><span class="w"> </span>../examples/api/java/QuickStart.java<span class="w"> </span>-d<span class="w"> </span>.
+
+<span class="c1"># run example QuickStart with cvc5 jar file and cvc5 shared libraries</span>
+$<span class="w"> </span>java<span class="w"> </span>-cp<span class="w"> </span><span class="s2">&quot;install/share/java/cvc5.jar:.&quot;</span><span class="w"> </span><span class="s2">&quot;-Djava.library.path=install/lib&quot;</span><span class="w"> </span>QuickStart
+<span class="w">  </span>expected:<span class="w"> </span>sat
+<span class="w">  </span>result:<span class="w"> </span>sat
+<span class="w">  </span>value<span class="w"> </span><span class="k">for</span><span class="w"> </span>x:<span class="w"> </span><span class="m">1</span>/6
+<span class="w">  </span>value<span class="w"> </span><span class="k">for</span><span class="w"> </span>y:<span class="w"> </span><span class="m">1</span>/6
+<span class="w">  </span>value<span class="w"> </span><span class="k">for</span><span class="w"> </span>x<span class="w"> </span>-<span class="w"> </span>y:<span class="w"> </span><span class="m">0</span>/1
+<span class="w">  </span>computed<span class="w"> </span>correctly
+<span class="w">  </span>expected:<span class="w"> </span>unsat
+<span class="w">  </span>result:<span class="w"> </span>unsat
+<span class="w">  </span>unsat<span class="w"> </span>core<span class="w"> </span>size:<span class="w"> </span><span class="m">3</span>
+<span class="w">  </span>unsat<span class="w"> </span>core:
+<span class="w">  </span><span class="o">(</span>&lt;<span class="w"> </span><span class="m">0</span><span class="w"> </span>a<span class="o">)</span>
+<span class="w">  </span><span class="o">(</span>&lt;<span class="w"> </span><span class="m">0</span><span class="w"> </span>b<span class="o">)</span>
+<span class="w">  </span><span class="o">(</span>&lt;<span class="w"> </span><span class="o">(</span>+<span class="w"> </span>a<span class="w"> </span>b<span class="o">)</span><span class="w"> </span><span class="m">1</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>After building the project with <code class="docutils literal notranslate"><span class="pre">make</span></code>, you can install
+the generated artifacts into your local Maven repository by running
+<code class="docutils literal notranslate"><span class="pre">mvn</span> <span class="pre">install</span></code> from within the build directory.</p>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h3><a class="reference external" href="index.html">Javadoc API Documentation</a><a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<section id="id2">
+<h4><a class="reference external" href="io/github/cvc5/package-summary.html">Package io.github.cvc5</a><a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ul class="simple">
+<li><p>class <a class="reference external" href="io/github/cvc5/AbstractPlugin.html">AbstractPlugin</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/Command.html">Command</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/Datatype.html">Datatype</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/DatatypeConstructor.html">DatatypeConstructor</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/DatatypeConstructorDecl.html">DatatypeConstructorDecl</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/DatatypeDecl.html">DatatypeDecl</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/DatatypeSelector.html">DatatypeSelector</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/Grammar.html">Grammar</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/InputParser.html">InputParser</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/Op.html">Op</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/OptionInfo.html">OptionInfo</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/Pair.html">Pair&lt;K,V&gt;</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/Proof.html">Proof</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/Result.html">Result</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/Solver.html">Solver</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/Sort.html">Sort</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/Stat.html">Stat</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/Statistics.html">Statistics</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/SymbolManager.html">SymbolManager</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/SynthResult.html">SynthResult</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/Term.html">Term</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/TermManager.html">TermManager</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/Triplet.html">Triplet&lt;A,B,C&gt;</a></p></li>
+<li><p>class <a class="reference external" href="io/github/cvc5/Utils.html">Utils</a></p></li>
+<li><p>enum <a class="reference external" href="io/github/cvc5/Kind.html">Kind</a></p></li>
+<li><p>enum <a class="reference external" href="io/github/cvc5/Result.UnknownExplanation.html">Result.UnknownExplanation</a></p></li>
+<li><p>enum <a class="reference external" href="io/github/cvc5/RoundingMode.html">RoundingMode</a></p></li>
+<li><p>enum <a class="reference external" href="io/github/cvc5/ProofRule.html">ProofRule</a></p></li>
+<li><p>exception <a class="reference external" href="io/github/cvc5/CVC5ApiException.html">CVC5ApiException</a></p></li>
+<li><p>exception <a class="reference external" href="io/github/cvc5/CVC5ApiOptionException.html">CVC5ApiOptionException</a></p></li>
+<li><p>exception <a class="reference external" href="io/github/cvc5/CVC5ApiRecoverableException.html">CVC5ApiRecoverableException</a></p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id4">
+<h4><a class="reference external" href="io/github/cvc5/modes/package-summary.html">Package io.github.cvc5.modes</a><a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
+<blockquote>
+<div><ul class="simple">
+<li><p>enum <a class="reference external" href="io/github/cvc5/modes/BlockModelsMode.html">BlockModelsMode</a></p></li>
+<li><p>enum <a class="reference external" href="io/github/cvc5/modes/FindSynthTarget.html">FindSynthTarget</a></p></li>
+<li><p>enum <a class="reference external" href="io/github/cvc5/modes/InputLanguage.html">InputLanguage</a></p></li>
+<li><p>enum <a class="reference external" href="io/github/cvc5/modes/LearnedLitType.html">LearnedLitType</a></p></li>
+<li><p>enum <a class="reference external" href="io/github/cvc5/modes/OptionCategory.html">OptionCategory</a></p></li>
+<li><p>enum <a class="reference external" href="io/github/cvc5/modes/ProofComponent.html">ProofComponent</a></p></li>
+<li><p>enum <a class="reference external" href="io/github/cvc5/modes/ProofFormat.html">ProofFormat</a></p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../c/enums/modes.html" class="btn btn-neutral float-left" title="Modes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="quickstart.html" class="btn btn-neutral float-right" title="Quickstart Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
