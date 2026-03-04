@@ -1,0 +1,1382 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bit-Vectors &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Datatypes" href="dt.html" />
+    <link rel="prev" title="Arrays" href="array.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../cpp/cpp.html">C++ API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../c/c.html">C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../python.html">Python API</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pythonic.html">Pythonic API</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="boolean.html">Core &amp; Booleans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arith.html">Arithmetic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="array.html">Arrays</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Bit-Vectors</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#basic-bit-vector-term-builders">Basic Bit-Vector Term Builders</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#bit-vector-overloads">Bit-Vector Overloads</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#bit-vector-term-builders">Bit-Vector Term Builders</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#testers">Testers</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#classes-with-overloads">Classes (with overloads)</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dt.html">Datatypes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="finite_field.html">Finite Fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fp.html">Floating Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="set.html">Sets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="string.html">Strings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sequence.html">Sequences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quant.html">Quantifiers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solver.html">Solvers &amp; Results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="internals.html">Internals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../base/python.html">Base Python API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#which-python-api-should-i-use">Which Python API should I use?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#installation-from-pypi">Installation (from PyPi)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#installation-from-source">Installation (from source)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../python.html">Python API</a></li>
+          <li class="breadcrumb-item"><a href="pythonic.html">Pythonic API</a></li>
+      <li class="breadcrumb-item active">Bit-Vectors</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bit-vectors">
+<h1>Bit-Vectors<a class="headerlink" href="#bit-vectors" title="Link to this heading"></a></h1>
+<section id="basic-bit-vector-term-builders">
+<h2>Basic Bit-Vector Term Builders<a class="headerlink" href="#basic-bit-vector-term-builders" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVec">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BitVec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVec" title="Link to this definition"></a></dt>
+<dd><p>Return a bit-vector constant named <cite>name</cite>. <cite>bv</cite> may be the number of bits of a bit-vector sort.
+If <cite>ctx=None</cite>, then the global context is used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>  <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_bv</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">16</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">BitVec(16)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">word</span> <span class="o">=</span> <span class="n">BitVecSort</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x2</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eq</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecVal">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BitVecVal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecVal" title="Link to this definition"></a></dt>
+<dd><p>Return a bit-vector value with the given number of bits. If <cite>ctx=None</cite>, then the global context is used.
+The second argument can be a number of bits (integer) or a bit-vector sort.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">BitVecVal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;0x</span><span class="si">%.8x</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">v</span><span class="o">.</span><span class="n">as_long</span><span class="p">())</span>
+<span class="go">0x0000000a</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">BitVecSort</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">BitVecVal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecSort">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BitVecSort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecSort" title="Link to this definition"></a></dt>
+<dd><p>Return an SMT bit-vector sort of the given size. If <cite>ctx=None</cite>, then the global context is used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Byte</span> <span class="o">=</span> <span class="n">BitVecSort</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Word</span> <span class="o">=</span> <span class="n">BitVecSort</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Byte</span>
+<span class="go">BitVec(8)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Const</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">Byte</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">eq</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecs">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BitVecs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecs" title="Link to this definition"></a></dt>
+<dd><p>Return a tuple of bit-vector constants of size bv.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y z&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">16</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">BitVec(16)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="go">x + y + z</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Product</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="go">x*y*z</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="bit-vector-overloads">
+<h2>Bit-Vector Overloads<a class="headerlink" href="#bit-vector-overloads" title="Link to this heading"></a></h2>
+<p>See the following operator overloads for building bit-vector terms.
+Each kind of term can also be built with a builder function below.</p>
+<ul>
+<li><p>arithmetic</p>
+<dl class="simple">
+<dt>addition (<code class="docutils literal notranslate"><span class="pre">+</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.BitVecRef.__add__" title="cvc5.pythonic.BitVecRef.__add__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.BitVecRef.__add__()</span></code></a></p>
+</dd>
+<dt>subtraction (<code class="docutils literal notranslate"><span class="pre">-</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.BitVecRef.__sub__" title="cvc5.pythonic.BitVecRef.__sub__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.BitVecRef.__sub__()</span></code></a></p>
+</dd>
+<dt>multiplication (<code class="docutils literal notranslate"><span class="pre">*</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.BitVecRef.__mul__" title="cvc5.pythonic.BitVecRef.__mul__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.BitVecRef.__mul__()</span></code></a></p>
+</dd>
+<dt>division (<code class="docutils literal notranslate"><span class="pre">/</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.BitVecRef.__div__" title="cvc5.pythonic.BitVecRef.__div__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.BitVecRef.__div__()</span></code></a></p>
+</dd>
+</dl>
+</li>
+<li><p>bit-wise</p>
+<dl class="simple">
+<dt>or (<code class="docutils literal notranslate"><span class="pre">|</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.BitVecRef.__or__" title="cvc5.pythonic.BitVecRef.__or__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.BitVecRef.__or__()</span></code></a></p>
+</dd>
+<dt>and (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.BitVecRef.__and__" title="cvc5.pythonic.BitVecRef.__and__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.BitVecRef.__and__()</span></code></a></p>
+</dd>
+<dt>xor (<code class="docutils literal notranslate"><span class="pre">^</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.BitVecRef.__xor__" title="cvc5.pythonic.BitVecRef.__xor__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.BitVecRef.__xor__()</span></code></a></p>
+</dd>
+<dt>bit complement (<code class="docutils literal notranslate"><span class="pre">~</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.BitVecRef.__invert__" title="cvc5.pythonic.BitVecRef.__invert__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.BitVecRef.__invert__()</span></code></a></p>
+</dd>
+<dt>negation (<code class="docutils literal notranslate"><span class="pre">-</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.BitVecRef.__neg__" title="cvc5.pythonic.BitVecRef.__neg__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.BitVecRef.__neg__()</span></code></a></p>
+</dd>
+<dt>left shift (<code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.BitVecRef.__lshift__" title="cvc5.pythonic.BitVecRef.__lshift__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.BitVecRef.__lshift__()</span></code></a></p>
+</dd>
+<dt>right shift (<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.BitVecRef.__rshift__" title="cvc5.pythonic.BitVecRef.__rshift__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.BitVecRef.__rshift__()</span></code></a></p>
+</dd>
+</dl>
+</li>
+<li><p>comparisons</p>
+<dl class="simple">
+<dt>signed greater than (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.BitVecRef.__gt__" title="cvc5.pythonic.BitVecRef.__gt__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.BitVecRef.__gt__()</span></code></a></p>
+</dd>
+<dt>signed less than (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.BitVecRef.__lt__" title="cvc5.pythonic.BitVecRef.__lt__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.BitVecRef.__lt__()</span></code></a></p>
+</dd>
+<dt>signed greater than or equal to (<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.BitVecRef.__ge__" title="cvc5.pythonic.BitVecRef.__ge__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.BitVecRef.__ge__()</span></code></a></p>
+</dd>
+<dt>signed less than or equal to (<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>)</dt><dd><p><a class="reference internal" href="#cvc5.pythonic.BitVecRef.__le__" title="cvc5.pythonic.BitVecRef.__le__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.BitVecRef.__le__()</span></code></a></p>
+</dd>
+<dt>equal (<code class="docutils literal notranslate"><span class="pre">==</span></code>)</dt><dd><p><a class="reference internal" href="boolean.html#cvc5.pythonic.ExprRef.__eq__" title="cvc5.pythonic.ExprRef.__eq__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.ExprRef.__eq__()</span></code></a></p>
+</dd>
+<dt>not equal (<code class="docutils literal notranslate"><span class="pre">!=</span></code>)</dt><dd><p><a class="reference internal" href="boolean.html#cvc5.pythonic.ExprRef.__ne__" title="cvc5.pythonic.ExprRef.__ne__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cvc5.pythonic.ExprRef.__ne__()</span></code></a></p>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="bit-vector-term-builders">
+<h2>Bit-Vector Term Builders<a class="headerlink" href="#bit-vector-term-builders" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BV2Int">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BV2Int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_signed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BV2Int" title="Link to this definition"></a></dt>
+<dd><p>Return the SMT expression BV2Int(a).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BV2Int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">Int</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">BV2Int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">x &gt; BV2Int(b)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">BV2Int</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">is_signed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">x &gt; BV2Int(b)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">BV2Int</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">is_signed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">x &gt; If(b &lt; 0, BV2Int(b) - 8, BV2Int(b))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">BV2Int</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">[b = 1, x = 2]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.Int2BV">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">Int2BV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_bits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.Int2BV" title="Link to this definition"></a></dt>
+<dd><p>Return the SMT expression Int2BV(a, num_bits).
+It is a bit-vector of width num_bits and represents the
+modulo of a by 2^num_bits</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv_x</span> <span class="o">=</span> <span class="n">Int2BV</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bv_x_plus_4</span> <span class="o">=</span> <span class="n">Int2BV</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">([</span><span class="n">bv_x</span> <span class="o">!=</span> <span class="n">bv_x_plus_4</span><span class="p">])</span>
+<span class="go">no solution</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.Concat">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">Concat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.Concat" title="Link to this definition"></a></dt>
+<dd><p>Create an SMT bit-vector, string, sequence or regular expression concatenation expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">BitVecVal</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Concat</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="go">Concat(1, 1 + 1, 1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">evaluate</span><span class="p">(</span><span class="n">Concat</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+<span class="go">289</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.3x</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">simplify</span><span class="p">(</span><span class="n">Concat</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span><span class="o">.</span><span class="n">as_long</span><span class="p">())</span>
+<span class="go">121</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.Extract">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">Extract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">high</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.Extract" title="Link to this definition"></a></dt>
+<dd><p>Create an SMT bit-vector extraction expression, or create a string extraction expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Extract</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">Extract(6, 2, x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Extract</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">BitVec(5)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.ULE">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">ULE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ULE" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (unsigned) <cite>other &lt;= self</cite>.</p>
+<p>Use the operator &lt;= for signed less than or equal to.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ULE</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">ULE(x, y)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsle x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ULE</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvule x y)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.ULT">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">ULT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ULT" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (unsigned) <cite>other &lt; self</cite>.</p>
+<p>Use the operator &lt; for signed less than.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ULT</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">ULT(x, y)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvslt x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ULT</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvult x y)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.UGE">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">UGE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.UGE" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (unsigned) <cite>other &gt;= self</cite>.</p>
+<p>Use the operator &gt;= for signed greater than or equal to.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">UGE</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">UGE(x, y)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsge x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">UGE</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvuge x y)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.UGT">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">UGT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.UGT" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (unsigned) <cite>other &gt; self</cite>.</p>
+<p>Use the operator &gt; for signed greater than.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">UGT</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">UGT(x, y)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsgt x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">UGT</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvugt x y)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.SLE">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">SLE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SLE" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (signed) <cite>other &lt;= self</cite>.</p>
+<p>See also the __le__ overload (&lt;= operator) for BitVecRef</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SLE</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsle x y)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.SLT">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">SLT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SLT" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (signed) <cite>other &lt; self</cite>.</p>
+<p>See also the __lt__ overload (&lt; operator) for BitVecRef</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SLT</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvslt x y)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.SGE">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">SGE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SGE" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (signed) <cite>other &gt;= self</cite>.</p>
+<p>See also the __ge__ overload (&gt;= operator) for BitVecRef</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SGE</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsge x y)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.SGT">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">SGT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SGT" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (signed) <cite>other &gt; self</cite>.</p>
+<p>See also the __gt__ overload (&gt; operator) for BitVecRef</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SGT</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsgt x y)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.UDiv">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">UDiv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.UDiv" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (unsigned) division <cite>self / other</cite>.</p>
+<p>Use the operator / for signed division.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">UDiv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">UDiv(x, y)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">UDiv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">BitVec(32)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsdiv x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">UDiv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvudiv x y)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.URem">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">URem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.URem" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (unsigned) remainder <cite>self % other</cite>.</p>
+<p>Use the operator % for signed modulus, and SRem() for signed remainder.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">URem</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">URem(x, y)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">URem</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">BitVec(32)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsmod x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">URem</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvurem x y)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.SDiv">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">SDiv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SDiv" title="Link to this definition"></a></dt>
+<dd><p>Create an SMT signed division expression.</p>
+<p>See also the __div__ overload (/ operator) for BitVecRef.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SDiv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">x/y</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.SMod">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">SMod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SMod" title="Link to this definition"></a></dt>
+<dd><p>Create an SMT expression for the signed modulus <cite>self % other</cite>.</p>
+<p>See also the __mod__ overload (% operator) for BitVecRef.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SMod</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">x%y</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.SRem">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">SRem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SRem" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression signed remainder.</p>
+<p>Use the operator % for signed modulus, and URem() for unsigned remainder.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SRem</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">SRem(x, y)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SRem</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">BitVec(32)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsmod x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SRem</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsrem x y)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.LShR">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">LShR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.LShR" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression logical right shift.</p>
+<p>Use the operator &gt;&gt; for the arithmetical right shift.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LShR</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">LShR(x, y)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvashr x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LShR</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvlshr x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">as_signed_long</span><span class="p">()</span>
+<span class="go">-4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">as_signed_long</span><span class="p">()</span>
+<span class="go">-2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">LShR</span><span class="p">(</span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">LShR</span><span class="p">(</span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.RotateLeft">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">RotateLeft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.RotateLeft" title="Link to this definition"></a></dt>
+<dd><p>Return an expression representing <cite>a</cite> rotated to the left <cite>b</cite> times.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;a b&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">RotateLeft</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">RotateLeft(a, 10)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">RotateLeft</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="go">a</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">RotateLeft</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
+<span class="go">a</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.RotateRight">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">RotateRight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.RotateRight" title="Link to this definition"></a></dt>
+<dd><p>Return an expression representing <cite>a</cite> rotated to the right <cite>b</cite> times.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;a b&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">RotateRight</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">RotateRight(a, 10)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">RotateRight</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="go">a</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">RotateRight</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
+<span class="go">a</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.SignExt">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">SignExt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.SignExt" title="Link to this definition"></a></dt>
+<dd><p>Return a bit-vector expression with <cite>n</cite> extra sign-bits.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">SignExt</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">24</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span>
+<span class="go">SignExt(8, x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">BitVec(24)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v0</span> <span class="o">=</span> <span class="n">BitVecVal</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v0</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v0</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span>  <span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">SignExt</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">v0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span>
+<span class="go">254</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">8</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;%.x&quot;</span> <span class="o">%</span> <span class="n">v</span><span class="o">.</span><span class="n">as_long</span><span class="p">())</span>
+<span class="go">fe</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.ZeroExt">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">ZeroExt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.ZeroExt" title="Link to this definition"></a></dt>
+<dd><p>Return a bit-vector expression with <cite>n</cite> extra zero-bits.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">ZeroExt</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">24</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span>
+<span class="go">ZeroExt(8, x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">BitVec(24)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v0</span> <span class="o">=</span> <span class="n">BitVecVal</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v0</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v0</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span>  <span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">ZeroExt</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">v0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">8</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.RepeatBitVec">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">RepeatBitVec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.RepeatBitVec" title="Link to this definition"></a></dt>
+<dd><p>Return an expression representing <cite>n</cite> copies of <cite>a</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">RepeatBitVec</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span>
+<span class="go">RepeatBitVec(4, x)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">32</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v0</span> <span class="o">=</span> <span class="n">BitVecVal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;%.x&quot;</span> <span class="o">%</span> <span class="n">v0</span><span class="o">.</span><span class="n">as_long</span><span class="p">())</span>
+<span class="go">a</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">RepeatBitVec</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">v0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">16</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;%.x&quot;</span> <span class="o">%</span> <span class="n">v</span><span class="o">.</span><span class="n">as_long</span><span class="p">())</span>
+<span class="go">aaaa</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BVRedAnd">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BVRedAnd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BVRedAnd" title="Link to this definition"></a></dt>
+<dd><p>Return the reduction-and expression of <cite>a</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">([</span><span class="n">BVRedAnd</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">BVRedOr</span><span class="p">(</span><span class="o">~</span><span class="n">x</span><span class="p">)])</span>
+<span class="go">no solution</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BVRedOr">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BVRedOr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BVRedOr" title="Link to this definition"></a></dt>
+<dd><p>Return the reduction-or expression of <cite>a</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">([</span><span class="n">BVRedAnd</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">BVRedOr</span><span class="p">(</span><span class="o">~</span><span class="n">x</span><span class="p">)])</span>
+<span class="go">no solution</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BVAdd">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BVAdd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BVAdd" title="Link to this definition"></a></dt>
+<dd><p>Create a sum of bit-vectors.</p>
+<p>See also the __add__ overload (+ operator) for BitVecRef.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y z&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BVAdd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="go">x + y + z</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BVMult">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BVMult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BVMult" title="Link to this definition"></a></dt>
+<dd><p>Create a product of bit-vectors.</p>
+<p>See also the __mul__ overload (* operator) for BitVecRef.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y z&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BVMult</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="go">x*y*z</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BVSub">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BVSub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BVSub" title="Link to this definition"></a></dt>
+<dd><p>Create a difference of bit-vectors.</p>
+<p>See also the __sub__ overload (- operator) for BitVecRef.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BVSub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="go">x - y</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BVOr">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BVOr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BVOr" title="Link to this definition"></a></dt>
+<dd><p>Create a bit-wise disjunction of bit-vectors.</p>
+<p>See also the __or__ overload (| operator) for BitVecRef.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y z&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BVOr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="go">x | y | z</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BVAnd">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BVAnd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BVAnd" title="Link to this definition"></a></dt>
+<dd><p>Create a bit-wise conjunction of bit-vectors.</p>
+<p>See also the __and__ overload (&amp; operator) for BitVecRef.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y z&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BVAnd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="go">x &amp; y &amp; z</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BVXor">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BVXor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BVXor" title="Link to this definition"></a></dt>
+<dd><p>Create a bit-wise exclusive disjunction of bit-vectors.</p>
+<p>See also the __xor__ overload (^ operator) for BitVecRef.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y z&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BVXor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="go">x ^ y ^ z</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BVNeg">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BVNeg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BVNeg" title="Link to this definition"></a></dt>
+<dd><p>Create a negation (two’s complement) of a bit-vector</p>
+<p>See also the __neg__ overload (unary - operator) for BitVecRef.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BVNeg</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">-x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.BVNot">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BVNot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BVNot" title="Link to this definition"></a></dt>
+<dd><p>Create a bitwise not of a bit-vector</p>
+<p>See also the __invert__ overload (unary ~ operator) for BitVecRef.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BVNot</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">~x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="testers">
+<h2>Testers<a class="headerlink" href="#testers" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_bv_sort">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_bv_sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_bv_sort" title="Link to this definition"></a></dt>
+<dd><p>Return True if <cite>s</cite> is an SMT bit-vector sort.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_bv_sort</span><span class="p">(</span><span class="n">BitVecSort</span><span class="p">(</span><span class="mi">32</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_bv_sort</span><span class="p">(</span><span class="n">IntSort</span><span class="p">())</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_bv">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_bv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_bv" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>a</cite> is an SMT bit-vector expression.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_bv</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_bv</span><span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_bv</span><span class="p">(</span><span class="n">Int</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">))</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cvc5.pythonic.is_bv_value">
+<span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">is_bv_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.is_bv_value" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>a</cite> is an SMT bit-vector numeral value.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_bv_value</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">BitVecVal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_bv_value</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="classes-with-overloads">
+<h2>Classes (with overloads)<a class="headerlink" href="#classes-with-overloads" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecSortRef">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BitVecSortRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecSortRef" title="Link to this definition"></a></dt>
+<dd><p>Bit-vector sort.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecSortRef.cast">
+<span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecSortRef.cast" title="Link to this definition"></a></dt>
+<dd><p>Try to cast <cite>val</cite> as a Bit-Vector.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">BitVecSort</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;#b00000000000000000000000000001010&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecSortRef.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecSortRef.size" title="Link to this definition"></a></dt>
+<dd><p>Return the size (number of bits) of the bit-vector sort <cite>self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">BitVecSort</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">32</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecSortRef.subsort">
+<span class="sig-name descname"><span class="pre">subsort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecSortRef.subsort" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>True</cite> if <cite>self</cite> is a subsort of <cite>other</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntSort</span><span class="p">()</span><span class="o">.</span><span class="n">subsort</span><span class="p">(</span><span class="n">RealSort</span><span class="p">())</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BoolSort</span><span class="p">()</span><span class="o">.</span><span class="n">subsort</span><span class="p">(</span><span class="n">RealSort</span><span class="p">())</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SetSort</span><span class="p">(</span><span class="n">BitVecSort</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">subsort</span><span class="p">(</span><span class="n">SetSort</span><span class="p">(</span><span class="n">IntSort</span><span class="p">()))</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BitVecRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse_children</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef" title="Link to this definition"></a></dt>
+<dd><p>Bit-vector expressions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__add__">
+<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__add__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression <cite>self + other</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="go">x + y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">BitVec(32)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__and__">
+<span class="sig-name descname"><span class="pre">__and__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__and__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression bitwise-and <cite>self &amp; other</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">&amp;</span> <span class="n">y</span>
+<span class="go">x &amp; y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">&amp;</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">BitVec(32)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__div__">
+<span class="sig-name descname"><span class="pre">__div__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__div__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (signed) division <cite>self / other</cite>.</p>
+<p>Use the function UDiv() for unsigned division.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
+<span class="go">x/y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">BitVec(32)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsdiv x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">UDiv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvudiv x y)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__ge__">
+<span class="sig-name descname"><span class="pre">__ge__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__ge__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (signed) <cite>other &gt;= self</cite>.</p>
+<p>Use the function UGE() for unsigned greater than or equal to.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">y</span>
+<span class="go">x &gt;= y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsge x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">UGE</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvuge x y)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__gt__">
+<span class="sig-name descname"><span class="pre">__gt__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__gt__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (signed) <cite>other &gt; self</cite>.</p>
+<p>Use the function UGT() for unsigned greater than.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span>
+<span class="go">x &gt; y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsgt x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">UGT</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvugt x y)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__invert__">
+<span class="sig-name descname"><span class="pre">__invert__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__invert__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression bitwise-not <cite>~self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">~</span><span class="n">x</span>
+<span class="go">~x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">([</span><span class="o">~</span><span class="p">(</span><span class="o">~</span><span class="n">x</span><span class="p">)</span> <span class="o">!=</span> <span class="n">x</span><span class="p">])</span>
+<span class="go">no solution</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__le__">
+<span class="sig-name descname"><span class="pre">__le__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__le__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (signed) <cite>other &lt;= self</cite>.</p>
+<p>Use the function ULE() for unsigned less than or equal to.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">y</span>
+<span class="go">x &lt;= y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsle x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ULE</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvule x y)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__lshift__">
+<span class="sig-name descname"><span class="pre">__lshift__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__lshift__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression left shift <cite>self &lt;&lt; other</cite></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">y</span>
+<span class="go">x &lt;&lt; y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvshl x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">evaluate</span><span class="p">(</span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__lt__">
+<span class="sig-name descname"><span class="pre">__lt__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__lt__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (signed) <cite>other &lt; self</cite>.</p>
+<p>Use the function ULT() for unsigned less than.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span>
+<span class="go">x &lt; y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvslt x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ULT</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvult x y)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__mod__">
+<span class="sig-name descname"><span class="pre">__mod__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__mod__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (signed) mod <cite>self % other</cite>.</p>
+<p>Use the function URem() for unsigned remainder, and SRem() for signed remainder.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">%</span> <span class="n">y</span>
+<span class="go">x%y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">BitVec(32)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsmod x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">URem</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvurem x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SRem</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsrem x y)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__mul__">
+<span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__mul__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression <cite>self * other</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<span class="go">x*y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">BitVec(32)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__neg__">
+<span class="sig-name descname"><span class="pre">__neg__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__neg__" title="Link to this definition"></a></dt>
+<dd><p>Return an expression representing <cite>-self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">-</span><span class="n">x</span>
+<span class="go">-x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">([</span><span class="o">-</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span> <span class="o">!=</span> <span class="n">x</span><span class="p">])</span>
+<span class="go">no solution</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__or__">
+<span class="sig-name descname"><span class="pre">__or__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__or__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression bitwise-or <cite>self | other</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">|</span> <span class="n">y</span>
+<span class="go">x | y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">|</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">BitVec(32)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__pos__">
+<span class="sig-name descname"><span class="pre">__pos__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__pos__" title="Link to this definition"></a></dt>
+<dd><p>Return <cite>self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">+</span><span class="n">x</span>
+<span class="go">x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__radd__">
+<span class="sig-name descname"><span class="pre">__radd__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__radd__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression <cite>other + self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">+</span> <span class="n">x</span>
+<span class="go">10 + x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__rand__">
+<span class="sig-name descname"><span class="pre">__rand__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__rand__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression bitwise-or <cite>other &amp; self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">&amp;</span> <span class="n">x</span>
+<span class="go">10 &amp; x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__rdiv__">
+<span class="sig-name descname"><span class="pre">__rdiv__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__rdiv__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (signed) division <cite>other / self</cite>.</p>
+<p>Use the function UDiv() for unsigned division.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">/</span> <span class="n">x</span>
+<span class="go">10/x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">10</span> <span class="o">/</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsdiv #b00000000000000000000000000001010 x)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">UDiv</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvudiv #b00000000000000000000000000001010 x)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__rlshift__">
+<span class="sig-name descname"><span class="pre">__rlshift__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__rlshift__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression left shift <cite>other &lt;&lt; self</cite>.</p>
+<p>Use the function LShR() for the right logical shift</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">&lt;&lt;</span> <span class="n">x</span>
+<span class="go">10 &lt;&lt; x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">10</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvshl #b00000000000000000000000000001010 x)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__rmod__">
+<span class="sig-name descname"><span class="pre">__rmod__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__rmod__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (signed) mod <cite>other % self</cite>.</p>
+<p>Use the function URem() for unsigned remainder, and SRem() for signed remainder.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">%</span> <span class="n">x</span>
+<span class="go">10%x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">10</span> <span class="o">%</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsmod #b00000000000000000000000000001010 x)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">URem</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvurem #b00000000000000000000000000001010 x)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SRem</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvsrem #b00000000000000000000000000001010 x)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__rmul__">
+<span class="sig-name descname"><span class="pre">__rmul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__rmul__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression <cite>other * self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">*</span> <span class="n">x</span>
+<span class="go">10*x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__ror__">
+<span class="sig-name descname"><span class="pre">__ror__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__ror__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression bitwise-or <cite>other | self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">|</span> <span class="n">x</span>
+<span class="go">10 | x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__rrshift__">
+<span class="sig-name descname"><span class="pre">__rrshift__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__rrshift__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (arithmetical) right shift <cite>other</cite> &gt;&gt; <cite>self</cite>.</p>
+<p>Use the function LShR() for the right logical shift</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">&gt;&gt;</span> <span class="n">x</span>
+<span class="go">10 &gt;&gt; x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">10</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvashr #b00000000000000000000000000001010 x)&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__rshift__">
+<span class="sig-name descname"><span class="pre">__rshift__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__rshift__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (arithmetical) right shift <cite>self &gt;&gt; other</cite></p>
+<p>Use the function LShR() for the right logical shift</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">BitVecs</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="n">y</span>
+<span class="go">x &gt;&gt; y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvashr x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">LShR</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sexpr</span><span class="p">()</span>
+<span class="go">&#39;(bvlshr x y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">as_signed_long</span><span class="p">()</span>
+<span class="go">-4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">evaluate</span><span class="p">(</span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">as_signed_long</span><span class="p">()</span>
+<span class="go">-2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">evaluate</span><span class="p">(</span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">evaluate</span><span class="p">(</span><span class="n">LShR</span><span class="p">(</span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">evaluate</span><span class="p">(</span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">evaluate</span><span class="p">(</span><span class="n">LShR</span><span class="p">(</span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__rsub__">
+<span class="sig-name descname"><span class="pre">__rsub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__rsub__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression <cite>other - self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">-</span> <span class="n">x</span>
+<span class="go">10 - x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__rtruediv__">
+<span class="sig-name descname"><span class="pre">__rtruediv__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__rtruediv__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (signed) division <cite>other / self</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__rxor__">
+<span class="sig-name descname"><span class="pre">__rxor__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__rxor__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression bitwise-xor <cite>other ^ self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">^</span> <span class="n">x</span>
+<span class="go">10 ^ x</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__sub__">
+<span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__sub__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression <cite>self - other</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+<span class="go">x - y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">BitVec(32)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__truediv__">
+<span class="sig-name descname"><span class="pre">__truediv__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__truediv__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression (signed) division <cite>self / other</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.__xor__">
+<span class="sig-name descname"><span class="pre">__xor__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.__xor__" title="Link to this definition"></a></dt>
+<dd><p>Create the SMT expression bitwise-xor <cite>self ^ other</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">^</span> <span class="n">y</span>
+<span class="go">x ^ y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">^</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">BitVec(32)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.size" title="Link to this definition"></a></dt>
+<dd><p>Return the number of bits of the bit-vector expression <cite>self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">32</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Concat</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">64</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecRef.sort">
+<span class="sig-name descname"><span class="pre">sort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecRef.sort" title="Link to this definition"></a></dt>
+<dd><p>Return the sort of the bit-vector expression <cite>self</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="go">BitVec(32)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="o">==</span> <span class="n">BitVecSort</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecNumRef">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5.pythonic.</span></span><span class="sig-name descname"><span class="pre">BitVecNumRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse_children</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecNumRef" title="Link to this definition"></a></dt>
+<dd><p>Bit-vector values.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecNumRef.as_long">
+<span class="sig-name descname"><span class="pre">as_long</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecNumRef.as_long" title="Link to this definition"></a></dt>
+<dd><p>Return an SMT bit-vector numeral as a Python long (bignum) numeral.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">BitVecVal</span><span class="p">(</span><span class="mh">0xbadc0de</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span>
+<span class="go">195936478</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;0x</span><span class="si">%.8x</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">v</span><span class="o">.</span><span class="n">as_long</span><span class="p">())</span>
+<span class="go">0x0badc0de</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cvc5.pythonic.BitVecNumRef.as_signed_long">
+<span class="sig-name descname"><span class="pre">as_signed_long</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5.pythonic.BitVecNumRef.as_signed_long" title="Link to this definition"></a></dt>
+<dd><p>Return an SMT bit-vector numeral as a Python long (bignum) numeral.
+The most significant bit is assumed to be the sign.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">as_signed_long</span><span class="p">()</span>
+<span class="go">-4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">as_signed_long</span><span class="p">()</span>
+<span class="go">-1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">as_signed_long</span><span class="p">()</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">32</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span><span class="o">.</span><span class="n">as_signed_long</span><span class="p">()</span>
+<span class="go">-1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">BitVecVal</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">64</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span><span class="o">.</span><span class="n">as_signed_long</span><span class="p">()</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="array.html" class="btn btn-neutral float-left" title="Arrays" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dt.html" class="btn btn-neutral float-right" title="Datatypes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
