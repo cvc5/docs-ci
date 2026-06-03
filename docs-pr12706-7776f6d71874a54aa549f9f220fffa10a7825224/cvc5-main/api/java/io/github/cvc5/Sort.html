@@ -1,0 +1,1423 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+
+<title>Sort</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="declaration: package: io.github.cvc5, class: Sort">
+<meta name="generator" content="javadoc/ClassWriterImpl">
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../script-dir/jquery-ui.min.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
+<script type="text/javascript" src="../../../script-dir/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="../../../script-dir/jquery-ui.min.js"></script>
+</head>
+<body class="class-declaration-page">
+<script type="text/javascript">var pathtoroot = "../../../";
+loadScripts(document, 'script');</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<div class="flex-box">
+<header role="banner" class="flex-header">
+<nav role="navigation">
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="top-nav" id="navbar-top"><button id="navbar-toggle-button" aria-controls="navbar-top" aria-expanded="false" aria-label="Toggle navigation links"><span class="nav-bar-toggle-icon">&nbsp;</span><span class="nav-bar-toggle-icon">&nbsp;</span><span class="nav-bar-toggle-icon">&nbsp;</span></button>
+<div class="skip-nav"><a href="#skip-navbar-top" title="Skip navigation links">Skip navigation links</a></div>
+<div class="about-language"> <script> window.MathJax = { 'loader': { 'load': ['[tex]/ams','[tex]/bussproofs'], }, 'tex': { 'packages': { '[+]': ['ams','bussproofs'], }, 'macros': { 'xor': '\\mathbin{xor}', 'ite': ['#1~\\mathbin{?}~#2~\\mathbin{:}~#3',3], 'inferrule': ['\\begin{prooftree}\\AxiomC{$#1$}\\UnaryInfC{$#2$}\\end{prooftree}',2], 'inferruleSC': ['\\begin{prooftree}\\AxiomC{$#1$}\\RightLabel{~#3}\\UnaryInfC{$#2$}\\end{prooftree}',3], } } } </script> <script type='text/javascript' id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'> </script> </div>
+<ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
+<li><a href="../../../index.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="nav-bar-cell1-rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html#class">Help</a></li>
+</ul>
+<ul class="sub-nav-list-small">
+<li>
+<p>Summary:</p>
+<ul>
+<li>Nested</li>
+<li><a href="#field-summary">Field</a></li>
+<li><a href="#constructor-summary">Constr</a></li>
+<li><a href="#method-summary">Method</a></li>
+</ul>
+</li>
+<li>
+<p>Detail:</p>
+<ul>
+<li><a href="#field-detail">Field</a></li>
+<li><a href="#constructor-detail">Constr</a></li>
+<li><a href="#method-detail">Method</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sub-nav">
+<div id="navbar-sub-list">
+<ul class="sub-nav-list">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field-summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor-summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method-summary">Method</a></li>
+</ul>
+<ul class="sub-nav-list">
+<li>Detail:&nbsp;</li>
+<li><a href="#field-detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor-detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method-detail">Method</a></li>
+</ul>
+</div>
+<div class="nav-list-search"><a href="../../../search.html">SEARCH</a>
+<input type="text" id="search-input" disabled placeholder="Search">
+<input type="reset" id="reset-button" disabled value="reset">
+</div>
+</div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<span class="skip-nav" id="skip-navbar-top"></span></nav>
+</header>
+<div class="flex-content">
+<main role="main">
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">io.github.cvc5</a></div>
+<h1 title="Class Sort" class="title">Class Sort</h1>
+</div>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance">io.github.cvc5.Sort</div>
+</div>
+<section class="class-description" id="class-description">
+<dl class="notes">
+<dt>All Implemented Interfaces:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&gt;</code></dd>
+</dl>
+<hr>
+<div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Sort</span>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
+implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&gt;</span></div>
+<div class="block">The sort of a cvc5 term.</div>
+</section>
+<section class="summary">
+<ul class="summary-list">
+<!-- =========== FIELD SUMMARY =========== -->
+<li>
+<section class="field-summary" id="field-summary">
+<h2>Field Summary</h2>
+<div class="caption"><span>Fields</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Field</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>protected long</code></div>
+<div class="col-second even-row-color"><code><a href="#pointer" class="member-name-link">pointer</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">The raw native pointer value.</div>
+</div>
+</div>
+</section>
+</li>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<li>
+<section class="constructor-summary" id="constructor-summary">
+<h2>Constructor Summary</h2>
+<div class="caption"><span>Constructors</span></div>
+<div class="summary-table two-column-summary">
+<div class="table-header col-first">Constructor</div>
+<div class="table-header col-last">Description</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">Sort</a>()</code></div>
+<div class="col-last even-row-color">
+<div class="block">Null sort</div>
+</div>
+</div>
+</section>
+</li>
+<!-- ========== METHOD SUMMARY =========== -->
+<li>
+<section class="method-summary" id="method-summary">
+<h2>Method Summary</h2>
+<div id="method-summary-table">
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#compareTo(io.github.cvc5.Sort)" class="member-name-link">compareTo</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;s)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Comparison for ordering on sorts.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deletePointer()" class="member-name-link">deletePointer</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Free the native resource associated with this pointer.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deletePointer(long)" class="member-name-link">deletePointer</a><wbr>(long&nbsp;pointer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Delete the native resource associated with the specified pointer.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;s)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Comparison for structural equality.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SortKind.html" title="enum class in io.github.cvc5">SortKind</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAbstractedKind()" class="member-name-link">getAbstractedKind</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the sort kind of an abstract sort, which denotes the kind of
+ sorts that this abstract sort denotes.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getArrayElementSort()" class="member-name-link">getArrayElementSort</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the array element sort of an array element sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getArrayIndexSort()" class="member-name-link">getArrayIndexSort</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the array index sort of an array sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBagElementSort()" class="member-name-link">getBagElementSort</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the element sort of a bag sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBitVectorSize()" class="member-name-link">getBitVectorSize</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the bit-width of the bit-vector sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Datatype.html" title="class in io.github.cvc5">Datatype</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDatatype()" class="member-name-link">getDatatype</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the underlying datatype of a datatype sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDatatypeArity()" class="member-name-link">getDatatypeArity</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the arity of a datatype sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDatatypeConstructorArity()" class="member-name-link">getDatatypeConstructorArity</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the arity of a datatype constructor sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDatatypeConstructorCodomainSort()" class="member-name-link">getDatatypeConstructorCodomainSort</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the codomain sort of a datatype constructor sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDatatypeConstructorDomainSorts()" class="member-name-link">getDatatypeConstructorDomainSorts</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the domain sorts of a datatype constructor sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDatatypeSelectorCodomainSort()" class="member-name-link">getDatatypeSelectorCodomainSort</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the codomain sort of a datatype selector sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDatatypeSelectorDomainSort()" class="member-name-link">getDatatypeSelectorDomainSort</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the domain sort of a datatype selector sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDatatypeTesterCodomainSort()" class="member-name-link">getDatatypeTesterCodomainSort</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the codomain sort of a datatype tester sort, which is the Boolean sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDatatypeTesterDomainSort()" class="member-name-link">getDatatypeTesterDomainSort</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the domain sort of a datatype tester sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFiniteFieldSize()" class="member-name-link">getFiniteFieldSize</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the bit-width of the bit-vector sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFloatingPointExponentSize()" class="member-name-link">getFloatingPointExponentSize</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the bit-width of the exponent of the floating-point sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFloatingPointSignificandSize()" class="member-name-link">getFloatingPointSignificandSize</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the width of the significand of the floating-point sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFunctionArity()" class="member-name-link">getFunctionArity</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the arity of a function sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFunctionCodomainSort()" class="member-name-link">getFunctionCodomainSort</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the codomain sort of a function sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFunctionDomainSorts()" class="member-name-link">getFunctionDomainSorts</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the domain sorts of a function sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInstantiatedParameters()" class="member-name-link">getInstantiatedParameters</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the sorts used to instantiate the sort parameters of a parametric
+ sort (parametric datatype or uninterpreted sort constructor sort,
+ see <a href="#instantiate(io.github.cvc5.Sort%5B%5D)"><code>instantiate(Sort[])</code></a>).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SortKind.html" title="enum class in io.github.cvc5">SortKind</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getKind()" class="member-name-link">getKind</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the kind of this sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNullableElementSort()" class="member-name-link">getNullableElementSort</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the element sort of a nullable sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPointer()" class="member-name-link">getPointer</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Return the raw native pointer.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSequenceElementSort()" class="member-name-link">getSequenceElementSort</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the element sort of a sequence sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSetElementSort()" class="member-name-link">getSetElementSort</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the element sort of a set sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSymbol()" class="member-name-link">getSymbol</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the raw symbol of the symbol.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTupleLength()" class="member-name-link">getTupleLength</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the length of a tuple sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTupleSorts()" class="member-name-link">getTupleSorts</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the element sorts of a tuple sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUninterpretedSortConstructor()" class="member-name-link">getUninterpretedSortConstructor</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the associated uninterpreted sort constructor of an instantiated
+ uninterpreted sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUninterpretedSortConstructorArity()" class="member-name-link">getUninterpretedSortConstructorArity</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the arity of an uninterpreted sort constructor sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get the hash value of a sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasSymbol()" class="member-name-link">hasSymbol</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if the sort has a symbol.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#instantiate(io.github.cvc5.Sort%5B%5D)" class="member-name-link">instantiate</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]&nbsp;params)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Instantiate a parameterized datatype sort or uninterpreted sort
+ constructor sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAbstract()" class="member-name-link">isAbstract</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is an abstract sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isArray()" class="member-name-link">isArray</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is an array sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBag()" class="member-name-link">isBag</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is a Bag sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBitVector()" class="member-name-link">isBitVector</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is a bit-vector sort (SMT-LIB: <code>(_ BitVec i)</code>).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBoolean()" class="member-name-link">isBoolean</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is the Boolean sort (SMT-LIB: <code>Bool</code>).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDatatype()" class="member-name-link">isDatatype</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is a datatype sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDatatypeConstructor()" class="member-name-link">isDatatypeConstructor</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is a datatype constructor sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDatatypeSelector()" class="member-name-link">isDatatypeSelector</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is a datatype selector sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDatatypeTester()" class="member-name-link">isDatatypeTester</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is a datatype tester sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDatatypeUpdater()" class="member-name-link">isDatatypeUpdater</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is a datatype updater sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFiniteField()" class="member-name-link">isFiniteField</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is a finite field sort (SMT-LIB: <code>(_ FiniteField i)</code>).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFloatingPoint()" class="member-name-link">isFloatingPoint</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is a floatingpoint sort
+ (SMT-LIB: <code>(_ FloatingPoint eb sb)</code>).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFunction()" class="member-name-link">isFunction</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is a function sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInstantiated()" class="member-name-link">isInstantiated</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is an instantiated (parametric datatype or uninterpreted
+ sort constructor) sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInteger()" class="member-name-link">isInteger</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is the integer sort (SMT-LIB: <code>Int</code>).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNull()" class="member-name-link">isNull</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is the null sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNullable()" class="member-name-link">isNullable</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this a nullable sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPredicate()" class="member-name-link">isPredicate</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is a predicate sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isReal()" class="member-name-link">isReal</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is the real sort (SMT-LIB: <code>Real</code>).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRecord()" class="member-name-link">isRecord</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is a record sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRegExp()" class="member-name-link">isRegExp</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is the regular expression sort (SMT-LIB: <code>RegLan</code>).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRoundingMode()" class="member-name-link">isRoundingMode</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is the rounding mode sort (SMT-LIB: <code>RoundingMode</code>).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSequence()" class="member-name-link">isSequence</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is a Sequence sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSet()" class="member-name-link">isSet</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is a Set sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isString()" class="member-name-link">isString</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is the string sort (SMT-LIB: <code>String</code>)..</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTuple()" class="member-name-link">isTuple</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this a tuple sort.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isUninterpretedSort()" class="member-name-link">isUninterpretedSort</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is an uninterpreted sort.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isUninterpretedSortConstructor()" class="member-name-link">isUninterpretedSortConstructor</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if this is an uninterpreted sort constructor.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#substitute(io.github.cvc5.Sort%5B%5D,io.github.cvc5.Sort%5B%5D)" class="member-name-link">substitute</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]&nbsp;sorts,
+ <a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]&nbsp;replacements)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Simultaneous substitution of Sorts.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Sort.html" title="class in io.github.cvc5">Sort</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#substitute(io.github.cvc5.Sort,io.github.cvc5.Sort)" class="member-name-link">substitute</a><wbr>(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort,
+ <a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;replacement)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Substitution of Sorts.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Return a string representation of the pointer.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString(long)" class="member-name-link">toString</a><wbr>(long&nbsp;pointer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Return a string representation of the specified native pointer.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+</section>
+</li>
+</ul>
+</section>
+<section class="details">
+<ul class="details-list">
+<!-- ============ FIELD DETAIL =========== -->
+<li>
+<section class="field-details" id="field-detail">
+<h2>Field Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="pointer">
+<h3>pointer</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">pointer</span></div>
+<div class="block">The raw native pointer value.</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<li>
+<section class="constructor-details" id="constructor-detail">
+<h2>Constructor Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="&lt;init&gt;()">
+<h3>Sort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Sort</span>()</div>
+<div class="block">Null sort</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<!-- ============ METHOD DETAIL ========== -->
+<li>
+<section class="method-details" id="method-detail">
+<h2>Method Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="deletePointer(long)">
+<h3>deletePointer</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deletePointer</span><wbr><span class="parameters">(long&nbsp;pointer)</span></div>
+<div class="block">Delete the native resource associated with the specified pointer.
+ <p>
+ Subclasses must implement this method to provide resource-specific cleanup logic.
+ </p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>pointer</code> - the native pointer to delete</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="equals(java.lang.Object)">
+<h3>equals</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;s)</span></div>
+<div class="block">Comparison for structural equality.</div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>s</code> - The sort to compare to.</dd>
+<dt>Returns:</dt>
+<dd>True if the sorts are equal.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="compareTo(io.github.cvc5.Sort)">
+<h3>compareTo</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">compareTo</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;s)</span></div>
+<div class="block">Comparison for ordering on sorts.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html#compareTo(T)" title="class or interface in java.lang" class="external-link">compareTo</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>s</code> - The sort to compare to.</dd>
+<dt>Returns:</dt>
+<dd>A negative integer, zero, or a positive integer as this sort
+         is less than, equal to, or greater than the specified sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getKind()">
+<h3>getKind</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SortKind.html" title="enum class in io.github.cvc5">SortKind</a></span>&nbsp;<span class="element-name">getKind</span>()
+                 throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Get the kind of this sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The kind of this sort.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+<dt>Note:</dt>
+<dd>This method is experimental and may change in future versions.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="hasSymbol()">
+<h3>hasSymbol</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasSymbol</span>()</div>
+<div class="block">Determine if the sort has a symbol.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if the sort has a symbol.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getSymbol()">
+<h3>getSymbol</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getSymbol</span>()</div>
+<div class="block">Get the raw symbol of the symbol.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The raw symbol of the symbol.</dd>
+<dt>Note:</dt>
+<dd>Asserts hasSymbol().</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isNull()">
+<h3>isNull</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isNull</span>()</div>
+<div class="block">Determine if this is the null sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this Sort is the null sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isBoolean()">
+<h3>isBoolean</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isBoolean</span>()</div>
+<div class="block">Determine if this is the Boolean sort (SMT-LIB: <code>Bool</code>).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is the Boolean sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isInteger()">
+<h3>isInteger</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isInteger</span>()</div>
+<div class="block">Determine if this is the integer sort (SMT-LIB: <code>Int</code>).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is the integer sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isReal()">
+<h3>isReal</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isReal</span>()</div>
+<div class="block">Determine if this is the real sort (SMT-LIB: <code>Real</code>).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is the real sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isString()">
+<h3>isString</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isString</span>()</div>
+<div class="block">Determine if this is the string sort (SMT-LIB: <code>String</code>)..</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is the string sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isRegExp()">
+<h3>isRegExp</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isRegExp</span>()</div>
+<div class="block">Determine if this is the regular expression sort (SMT-LIB: <code>RegLan</code>).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is the regular expression sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isRoundingMode()">
+<h3>isRoundingMode</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isRoundingMode</span>()</div>
+<div class="block">Determine if this is the rounding mode sort (SMT-LIB: <code>RoundingMode</code>).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is the rounding mode sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isBitVector()">
+<h3>isBitVector</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isBitVector</span>()</div>
+<div class="block">Determine if this is a bit-vector sort (SMT-LIB: <code>(_ BitVec i)</code>).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is a bit-vector sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isFiniteField()">
+<h3>isFiniteField</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFiniteField</span>()</div>
+<div class="block">Determine if this is a finite field sort (SMT-LIB: <code>(_ FiniteField i)</code>).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is a finite field sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isFloatingPoint()">
+<h3>isFloatingPoint</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFloatingPoint</span>()</div>
+<div class="block">Determine if this is a floatingpoint sort
+ (SMT-LIB: <code>(_ FloatingPoint eb sb)</code>).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is a floating-point sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isDatatype()">
+<h3>isDatatype</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDatatype</span>()</div>
+<div class="block">Determine if this is a datatype sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is a datatype sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isDatatypeConstructor()">
+<h3>isDatatypeConstructor</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDatatypeConstructor</span>()</div>
+<div class="block">Determine if this is a datatype constructor sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is a datatype constructor sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isDatatypeSelector()">
+<h3>isDatatypeSelector</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDatatypeSelector</span>()</div>
+<div class="block">Determine if this is a datatype selector sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is a datatype selector sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isDatatypeTester()">
+<h3>isDatatypeTester</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDatatypeTester</span>()</div>
+<div class="block">Determine if this is a datatype tester sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is a datatype tester sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isDatatypeUpdater()">
+<h3>isDatatypeUpdater</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDatatypeUpdater</span>()</div>
+<div class="block">Determine if this is a datatype updater sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is a datatype updater sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isFunction()">
+<h3>isFunction</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFunction</span>()</div>
+<div class="block">Determine if this is a function sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is a function sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isPredicate()">
+<h3>isPredicate</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isPredicate</span>()</div>
+<div class="block">Determine if this is a predicate sort.
+
+ A predicate sort is a function sort that maps to the Boolean sort. All
+ predicate sorts are also function sorts.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is a predicate sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isTuple()">
+<h3>isTuple</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isTuple</span>()</div>
+<div class="block">Determine if this a tuple sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is a tuple sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isNullable()">
+<h3>isNullable</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isNullable</span>()</div>
+<div class="block">Determine if this a nullable sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this sort is a nullable sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isRecord()">
+<h3>isRecord</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isRecord</span>()</div>
+<div class="block">Determine if this is a record sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if the sort is a record sort.</dd>
+<dt>Note:</dt>
+<dd>This method is experimental and may change in future versions.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isArray()">
+<h3>isArray</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isArray</span>()</div>
+<div class="block">Determine if this is an array sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if the sort is an array sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isSet()">
+<h3>isSet</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSet</span>()</div>
+<div class="block">Determine if this is a Set sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if the sort is a Set sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isBag()">
+<h3>isBag</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isBag</span>()</div>
+<div class="block">Determine if this is a Bag sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if the sort is a Bag sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isSequence()">
+<h3>isSequence</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSequence</span>()</div>
+<div class="block">Determine if this is a Sequence sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if the sort is a Sequence sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isAbstract()">
+<h3>isAbstract</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAbstract</span>()</div>
+<div class="block">Determine if this is an abstract sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if the sort is a abstract sort.</dd>
+<dt>Note:</dt>
+<dd>This method is experimental and may change in future versions.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isUninterpretedSort()">
+<h3>isUninterpretedSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isUninterpretedSort</span>()</div>
+<div class="block">Determine if this is an uninterpreted sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this is an uninterpreted sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isUninterpretedSortConstructor()">
+<h3>isUninterpretedSortConstructor</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isUninterpretedSortConstructor</span>()</div>
+<div class="block">Determine if this is an uninterpreted sort constructor.
+
+ An uninterpreted sort constructor has arity &gt; 0 and can be instantiated
+ to construct uninterpreted sorts with given sort parameters.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this is a sort constructor kind.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isInstantiated()">
+<h3>isInstantiated</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isInstantiated</span>()</div>
+<div class="block">Determine if this is an instantiated (parametric datatype or uninterpreted
+ sort constructor) sort.
+
+ An instantiated sort is a sort that has been constructed from
+ instantiating a sort with sort arguments
+ (see <a href="#instantiate(io.github.cvc5.Sort%5B%5D)"><code>instantiate(Sort[])</code></a>).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if this is an instantiated sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getUninterpretedSortConstructor()">
+<h3>getUninterpretedSortConstructor</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getUninterpretedSortConstructor</span>()</div>
+<div class="block">Get the associated uninterpreted sort constructor of an instantiated
+ uninterpreted sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The uninterpreted sort constructor sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getDatatype()">
+<h3>getDatatype</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Datatype.html" title="class in io.github.cvc5">Datatype</a></span>&nbsp;<span class="element-name">getDatatype</span>()</div>
+<div class="block">Get the underlying datatype of a datatype sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The underlying datatype of a datatype sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="instantiate(io.github.cvc5.Sort[])">
+<h3>instantiate</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">instantiate</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]&nbsp;params)</span></div>
+<div class="block">Instantiate a parameterized datatype sort or uninterpreted sort
+ constructor sort.
+
+ Create sorts parameter with <a href="TermManager.html#mkParamSort(java.lang.String)"><code>TermManager.mkParamSort(String)</code></a>).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>params</code> - The list of sort parameters to instantiate with.</dd>
+<dt>Returns:</dt>
+<dd>The instantiated sort.</dd>
+<dt>Note:</dt>
+<dd>This method is experimental and may change in future versions.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getInstantiatedParameters()">
+<h3>getInstantiatedParameters</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]</span>&nbsp;<span class="element-name">getInstantiatedParameters</span>()</div>
+<div class="block">Get the sorts used to instantiate the sort parameters of a parametric
+ sort (parametric datatype or uninterpreted sort constructor sort,
+ see <a href="#instantiate(io.github.cvc5.Sort%5B%5D)"><code>instantiate(Sort[])</code></a>).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The sorts used to instantiate the sort parameters of a
+         parametric sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="substitute(io.github.cvc5.Sort,io.github.cvc5.Sort)">
+<h3>substitute</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">substitute</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;sort,
+ <a href="Sort.html" title="class in io.github.cvc5">Sort</a>&nbsp;replacement)</span></div>
+<div class="block">Substitution of Sorts.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sort</code> - The subsort to be substituted within this sort.</dd>
+<dd><code>replacement</code> - The sort replacing the substituted subsort.</dd>
+<dt>Returns:</dt>
+<dd>The sort yielded by substituting the replacement sort within the
+         given sort.</dd>
+<dt>Note:</dt>
+<dd>This replacement is applied during a pre-order traversal and
+ only once to the sort. It is not run until fix point., This method is experimental and may change in future versions.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="substitute(io.github.cvc5.Sort[],io.github.cvc5.Sort[])">
+<h3>substitute</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">substitute</span><wbr><span class="parameters">(<a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]&nbsp;sorts,
+ <a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]&nbsp;replacements)</span></div>
+<div class="block">Simultaneous substitution of Sorts.
+
+ Note that this replacement is applied during a pre-order traversal and
+ only once to the sort. It is not run until fix point. In the case that
+ sorts contains duplicates, the replacement earliest in the list takes
+ priority.
+
+ For example,
+ <code>(Array A B).substitute({A, C}, {(Array C D), (Array A B)})</code> will
+ return <code>(Array (Array C D) B)</code>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sorts</code> - The subsorts to be substituted within this sort.</dd>
+<dd><code>replacements</code> - The sort replacing the substituted subsorts.</dd>
+<dt>Returns:</dt>
+<dd>The sorts yielded by substituting the replacement sort within the
+         given sorts.</dd>
+<dt>Note:</dt>
+<dd>This method is experimental and may change in future versions.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="toString(long)">
+<h3>toString</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span><wbr><span class="parameters">(long&nbsp;pointer)</span></div>
+<div class="block">Return a string representation of the specified native pointer.
+ <p>
+ Subclasses must implement this method to convert the native pointer
+ into a meaningful string.
+ </p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>pointer</code> - the native pointer</dd>
+<dt>Returns:</dt>
+<dd>A string representation of this sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getDatatypeConstructorArity()">
+<h3>getDatatypeConstructorArity</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getDatatypeConstructorArity</span>()</div>
+<div class="block">Get the arity of a datatype constructor sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The arity of a datatype constructor sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getDatatypeConstructorDomainSorts()">
+<h3>getDatatypeConstructorDomainSorts</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]</span>&nbsp;<span class="element-name">getDatatypeConstructorDomainSorts</span>()</div>
+<div class="block">Get the domain sorts of a datatype constructor sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The domain sorts of a datatype constructor sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getDatatypeConstructorCodomainSort()">
+<h3>getDatatypeConstructorCodomainSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getDatatypeConstructorCodomainSort</span>()</div>
+<div class="block">Get the codomain sort of a datatype constructor sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The codomain sort of a datatype constructor sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getDatatypeSelectorDomainSort()">
+<h3>getDatatypeSelectorDomainSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getDatatypeSelectorDomainSort</span>()</div>
+<div class="block">Get the domain sort of a datatype selector sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The domain sort of a datatype selector sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getDatatypeSelectorCodomainSort()">
+<h3>getDatatypeSelectorCodomainSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getDatatypeSelectorCodomainSort</span>()</div>
+<div class="block">Get the codomain sort of a datatype selector sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The codomain sort of a datatype selector sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getDatatypeTesterDomainSort()">
+<h3>getDatatypeTesterDomainSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getDatatypeTesterDomainSort</span>()</div>
+<div class="block">Get the domain sort of a datatype tester sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The domain sort of a datatype tester sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getDatatypeTesterCodomainSort()">
+<h3>getDatatypeTesterCodomainSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getDatatypeTesterCodomainSort</span>()</div>
+<div class="block">Get the codomain sort of a datatype tester sort, which is the Boolean sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The codomain sort of a datatype tester sort, which is the Boolean
+         sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getFunctionArity()">
+<h3>getFunctionArity</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getFunctionArity</span>()</div>
+<div class="block">Get the arity of a function sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The arity of a function sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getFunctionDomainSorts()">
+<h3>getFunctionDomainSorts</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]</span>&nbsp;<span class="element-name">getFunctionDomainSorts</span>()</div>
+<div class="block">Get the domain sorts of a function sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The domain sorts of a function sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getFunctionCodomainSort()">
+<h3>getFunctionCodomainSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getFunctionCodomainSort</span>()</div>
+<div class="block">Get the codomain sort of a function sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The codomain sort of a function sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getArrayIndexSort()">
+<h3>getArrayIndexSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getArrayIndexSort</span>()</div>
+<div class="block">Get the array index sort of an array sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The array index sort of an array sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getArrayElementSort()">
+<h3>getArrayElementSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getArrayElementSort</span>()</div>
+<div class="block">Get the array element sort of an array element sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The array element sort of an array element sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getSetElementSort()">
+<h3>getSetElementSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getSetElementSort</span>()</div>
+<div class="block">Get the element sort of a set sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The element sort of a set sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getBagElementSort()">
+<h3>getBagElementSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getBagElementSort</span>()</div>
+<div class="block">Get the element sort of a bag sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The element sort of a bag sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getSequenceElementSort()">
+<h3>getSequenceElementSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getSequenceElementSort</span>()</div>
+<div class="block">Get the element sort of a sequence sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The element sort of a sequence sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getAbstractedKind()">
+<h3>getAbstractedKind</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SortKind.html" title="enum class in io.github.cvc5">SortKind</a></span>&nbsp;<span class="element-name">getAbstractedKind</span>()
+                           throws <span class="exceptions"><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></span></div>
+<div class="block">Get the sort kind of an abstract sort, which denotes the kind of
+ sorts that this abstract sort denotes.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The sort kind of an abstract sort, which denotes the kind of
+ sorts that this abstract sort denotes.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="CVC5ApiException.html" title="class in io.github.cvc5">CVC5ApiException</a></code> - on error</dd>
+<dt>Note:</dt>
+<dd>This method is experimental and may change in future versions.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getUninterpretedSortConstructorArity()">
+<h3>getUninterpretedSortConstructorArity</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getUninterpretedSortConstructorArity</span>()</div>
+<div class="block">Get the arity of an uninterpreted sort constructor sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The arity of an uninterpreted sort constructor sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getBitVectorSize()">
+<h3>getBitVectorSize</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getBitVectorSize</span>()</div>
+<div class="block">Get the bit-width of the bit-vector sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The bit-width of the bit-vector sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getFiniteFieldSize()">
+<h3>getFiniteFieldSize</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getFiniteFieldSize</span>()</div>
+<div class="block">Get the bit-width of the bit-vector sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The bit-width of the bit-vector sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getFloatingPointExponentSize()">
+<h3>getFloatingPointExponentSize</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getFloatingPointExponentSize</span>()</div>
+<div class="block">Get the bit-width of the exponent of the floating-point sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The bit-width of the exponent of the floating-point sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getFloatingPointSignificandSize()">
+<h3>getFloatingPointSignificandSize</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getFloatingPointSignificandSize</span>()</div>
+<div class="block">Get the width of the significand of the floating-point sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The width of the significand of the floating-point sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getDatatypeArity()">
+<h3>getDatatypeArity</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getDatatypeArity</span>()</div>
+<div class="block">Get the arity of a datatype sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The arity of a datatype sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getTupleLength()">
+<h3>getTupleLength</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getTupleLength</span>()</div>
+<div class="block">Get the length of a tuple sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The length of a tuple sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getTupleSorts()">
+<h3>getTupleSorts</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a>[]</span>&nbsp;<span class="element-name">getTupleSorts</span>()</div>
+<div class="block">Get the element sorts of a tuple sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The element sorts of a tuple sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getNullableElementSort()">
+<h3>getNullableElementSort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Sort.html" title="class in io.github.cvc5">Sort</a></span>&nbsp;<span class="element-name">getNullableElementSort</span>()</div>
+<div class="block">Get the element sort of a nullable sort.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The element sort of a nullable sort.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="hashCode()">
+<h3>hashCode</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">hashCode</span>()</div>
+<div class="block">Get the hash value of a sort.</div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Returns:</dt>
+<dd>The hash value.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getPointer()">
+<h3>getPointer</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getPointer</span>()</div>
+<div class="block">Return the raw native pointer.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the pointer value</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="deletePointer()">
+<h3>deletePointer</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deletePointer</span>()</div>
+<div class="block">Free the native resource associated with this pointer.
+ <p>
+ This method should be called to explicitly clean up the underlying native resource.
+ It removes this instance from the <code>Context</code>, then invokes the subclass-defined
+ <a href="#deletePointer(long)"><code>deletePointer(long)</code></a> method to perform the actual cleanup.
+ </p></div>
+</section>
+</li>
+<li>
+<section class="detail" id="toString()">
+<h3>toString</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="block">Return a string representation of the pointer.</div>
+<dl class="notes">
+<dt>Overrides:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Returns:</dt>
+<dd>a string representation of the pointer</dd>
+</dl>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+<!-- ========= END OF CLASS DATA ========= -->
+</main>
+</div>
+</div>
+</body>
+</html>
