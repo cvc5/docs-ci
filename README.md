@@ -1,6 +1,6 @@
 
 
-* [Documentation for PR #12706](docs-pr12706/) (built from [7776f6d](https://github.com/cvc5/cvc5/commit/7776f6d) @ [PR #12706](https://github.com/cvc5/cvc5/pull/12706), Jun Wed 03, 12:42 UTC)
+* [Documentation for PR #12705](docs-pr12705/) (built from [24e9d40](https://github.com/cvc5/cvc5/commit/24e9d40) @ [PR #12705](https://github.com/cvc5/cvc5/pull/12705), Jun Wed 03, 12:43 UTC)
 
 ***
 
@@ -12,7 +12,7 @@
 * [Documentation for PR #12724](docs-pr12724/) (built from [cc6329e](https://github.com/cvc5/cvc5/commit/cc6329e) @ [PR #12724](https://github.com/cvc5/cvc5/pull/12724), 24 hours ago)
 * [Documentation for PR #12723](docs-pr12723/) (built from [2fe4730](https://github.com/cvc5/cvc5/commit/2fe4730) @ [PR #12723](https://github.com/cvc5/cvc5/pull/12723), 2 days ago)
 * [Documentation for PR #12721](docs-pr12721/) (built from [c97be5e](https://github.com/cvc5/cvc5/commit/c97be5e) @ [PR #12721](https://github.com/cvc5/cvc5/pull/12721), 2 days ago)
-* [Documentation for PR #12720](docs-pr12720/) (built from [29565f5](https://github.com/cvc5/cvc5/commit/29565f5) @ [PR #12720](https://github.com/cvc5/cvc5/pull/12720), 20 hours ago)
+* [Documentation for PR #12720](docs-pr12720/) (built from [29565f5](https://github.com/cvc5/cvc5/commit/29565f5) @ [PR #12720](https://github.com/cvc5/cvc5/pull/12720), 21 hours ago)
 * [Documentation for PR #12719](docs-pr12719/) (built from [b582c8b](https://github.com/cvc5/cvc5/commit/b582c8b) @ [PR #12719](https://github.com/cvc5/cvc5/pull/12719), 6 days ago)
 * [Documentation for PR #12717](docs-pr12717/) (built from [2840efe](https://github.com/cvc5/cvc5/commit/2840efe) @ [PR #12717](https://github.com/cvc5/cvc5/pull/12717), 6 days ago)
 * [Documentation for PR #12716](docs-pr12716/) (built from [7ad56fd](https://github.com/cvc5/cvc5/commit/7ad56fd) @ [PR #12716](https://github.com/cvc5/cvc5/pull/12716), 7 days ago)
@@ -22,9 +22,9 @@
 * [Documentation for PR #12712](docs-pr12712/) (built from [2608ad1](https://github.com/cvc5/cvc5/commit/2608ad1) @ [PR #12712](https://github.com/cvc5/cvc5/pull/12712), 8 days ago)
 * [Documentation for PR #12711](docs-pr12711/) (built from [715ffd9](https://github.com/cvc5/cvc5/commit/715ffd9) @ [PR #12711](https://github.com/cvc5/cvc5/pull/12711), 7 days ago)
 * [Documentation for PR #12710](docs-pr12710/) (built from [0af4ce2](https://github.com/cvc5/cvc5/commit/0af4ce2) @ [PR #12710](https://github.com/cvc5/cvc5/pull/12710), 7 days ago)
-* [Documentation for PR #12706](docs-pr12706/) (built from [7776f6d](https://github.com/cvc5/cvc5/commit/7776f6d) @ [PR #12706](https://github.com/cvc5/cvc5/pull/12706), now)
-* [Documentation for PR #12705](docs-pr12705/) (built from [4c2d0bc](https://github.com/cvc5/cvc5/commit/4c2d0bc) @ [PR #12705](https://github.com/cvc5/cvc5/pull/12705), 30 hours ago)
-* [Documentation for PR #12704](docs-pr12704/) (built from [0f0f653](https://github.com/cvc5/cvc5/commit/0f0f653) @ [PR #12704](https://github.com/cvc5/cvc5/pull/12704), 23 minutes ago)
+* [Documentation for PR #12706](docs-pr12706/) (built from [7776f6d](https://github.com/cvc5/cvc5/commit/7776f6d) @ [PR #12706](https://github.com/cvc5/cvc5/pull/12706), 72 seconds ago)
+* [Documentation for PR #12705](docs-pr12705/) (built from [24e9d40](https://github.com/cvc5/cvc5/commit/24e9d40) @ [PR #12705](https://github.com/cvc5/cvc5/pull/12705), now)
+* [Documentation for PR #12704](docs-pr12704/) (built from [0f0f653](https://github.com/cvc5/cvc5/commit/0f0f653) @ [PR #12704](https://github.com/cvc5/cvc5/pull/12704), 24 minutes ago)
 * [Documentation for PR #12682](docs-pr12682/) (built from [767fa7b](https://github.com/cvc5/cvc5/commit/767fa7b) @ [PR #12682](https://github.com/cvc5/cvc5/pull/12682), 8 days ago)
 * [Documentation for PR #12679](docs-pr12679/) (built from [2acdb2d](https://github.com/cvc5/cvc5/commit/2acdb2d) @ [PR #12679](https://github.com/cvc5/cvc5/pull/12679), 8 days ago)
 * [Documentation for PR #12657](docs-pr12657/) (built from [6bde3ac](https://github.com/cvc5/cvc5/commit/6bde3ac) @ [PR #12657](https://github.com/cvc5/cvc5/pull/12657), 5 days ago)
