@@ -1,9 +1,13 @@
 
 
+* [Documentation for PR #12745](docs-pr12745/) (built from [f99201d](https://github.com/cvc5/cvc5/commit/f99201d) @ [PR #12745](https://github.com/cvc5/cvc5/pull/12745), Jun Tue 16, 02:01 UTC)
+
+***
+
 
 * [Documentation for cvc5-node-id-determinism-12711](docs-cvc5-node-id-determinism-12711/) (built from [19dba49](https://github.com/cvc5/cvc5/commit/19dba49) @ [cvc5-node-id-determinism-12711](https://github.com/cvc5/cvc5/tree/cvc5-node-id-determinism-12711), 4 days ago)
 * [Documentation for main](docs-main/) (built from [b9230e6](https://github.com/cvc5/cvc5/commit/b9230e6) @ [main](https://github.com/cvc5/cvc5/tree/main), 5 hours ago)
-* [Documentation for PR #12745](docs-pr12745/) (built from [4613e71](https://github.com/cvc5/cvc5/commit/4613e71) @ [PR #12745](https://github.com/cvc5/cvc5/pull/12745), 30 minutes ago)
+* [Documentation for PR #12745](docs-pr12745/) (built from [f99201d](https://github.com/cvc5/cvc5/commit/f99201d) @ [PR #12745](https://github.com/cvc5/cvc5/pull/12745), now)
 * [Documentation for PR #12744](docs-pr12744/) (built from [5676159](https://github.com/cvc5/cvc5/commit/5676159) @ [PR #12744](https://github.com/cvc5/cvc5/pull/12744), 10 hours ago)
 * [Documentation for PR #12743](docs-pr12743/) (built from [cb932c6](https://github.com/cvc5/cvc5/commit/cb932c6) @ [PR #12743](https://github.com/cvc5/cvc5/pull/12743), 10 hours ago)
 * [Documentation for PR #12742](docs-pr12742/) (built from [b007579](https://github.com/cvc5/cvc5/commit/b007579) @ [PR #12742](https://github.com/cvc5/cvc5/pull/12742), 10 hours ago)
