@@ -1,11 +1,11 @@
 
 
-* [Documentation for main](docs-main/) (built from [d487a66](https://github.com/cvc5/cvc5/commit/d487a66) @ [main](https://github.com/cvc5/cvc5/tree/main), Jul Wed 01, 14:15 UTC)
+* [Documentation for main](docs-main/) (built from [b99cec4](https://github.com/cvc5/cvc5/commit/b99cec4) @ [main](https://github.com/cvc5/cvc5/tree/main), Jul Wed 01, 14:15 UTC)
 
 ***
 
 
-* [Documentation for main](docs-main/) (built from [d487a66](https://github.com/cvc5/cvc5/commit/d487a66) @ [main](https://github.com/cvc5/cvc5/tree/main), now)
+* [Documentation for main](docs-main/) (built from [b99cec4](https://github.com/cvc5/cvc5/commit/b99cec4) @ [main](https://github.com/cvc5/cvc5/tree/main), now)
 * [Documentation for PR #12774](docs-pr12774/) (built from [8a58e17](https://github.com/cvc5/cvc5/commit/8a58e17) @ [PR #12774](https://github.com/cvc5/cvc5/pull/12774), 23 hours ago)
 * [Documentation for PR #12773](docs-pr12773/) (built from [fc03374](https://github.com/cvc5/cvc5/commit/fc03374) @ [PR #12773](https://github.com/cvc5/cvc5/pull/12773), 2 days ago)
 * [Documentation for PR #12772](docs-pr12772/) (built from [01d35d3](https://github.com/cvc5/cvc5/commit/01d35d3) @ [PR #12772](https://github.com/cvc5/cvc5/pull/12772), 2 days ago)
