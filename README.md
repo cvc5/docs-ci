@@ -1,6 +1,6 @@
 
 
-* [Documentation for PR #12735](docs-pr12735/) (built from [c51e21e](https://github.com/cvc5/cvc5/commit/c51e21e) @ [PR #12735](https://github.com/cvc5/cvc5/pull/12735), Jul Fri 10, 19:51 UTC)
+* [Documentation for PR #12736](docs-pr12736/) (built from [a0e895c](https://github.com/cvc5/cvc5/commit/a0e895c) @ [PR #12736](https://github.com/cvc5/cvc5/pull/12736), Jul Fri 10, 20:04 UTC)
 
 ***
 
@@ -17,7 +17,8 @@
 * [Documentation for PR #12777](docs-pr12777/) (built from [f57e584](https://github.com/cvc5/cvc5/commit/f57e584) @ [PR #12777](https://github.com/cvc5/cvc5/pull/12777), 8 days ago)
 * [Documentation for PR #12776](docs-pr12776/) (built from [213c37d](https://github.com/cvc5/cvc5/commit/213c37d) @ [PR #12776](https://github.com/cvc5/cvc5/pull/12776), 6 days ago)
 * [Documentation for PR #12772](docs-pr12772/) (built from [f6aa018](https://github.com/cvc5/cvc5/commit/f6aa018) @ [PR #12772](https://github.com/cvc5/cvc5/pull/12772), 6 hours ago)
-* [Documentation for PR #12735](docs-pr12735/) (built from [c51e21e](https://github.com/cvc5/cvc5/commit/c51e21e) @ [PR #12735](https://github.com/cvc5/cvc5/pull/12735), now)
+* [Documentation for PR #12736](docs-pr12736/) (built from [a0e895c](https://github.com/cvc5/cvc5/commit/a0e895c) @ [PR #12736](https://github.com/cvc5/cvc5/pull/12736), now)
+* [Documentation for PR #12735](docs-pr12735/) (built from [c51e21e](https://github.com/cvc5/cvc5/commit/c51e21e) @ [PR #12735](https://github.com/cvc5/cvc5/pull/12735), 13 minutes ago)
 * [Documentation for PR #12724](docs-pr12724/) (built from [2273436](https://github.com/cvc5/cvc5/commit/2273436) @ [PR #12724](https://github.com/cvc5/cvc5/pull/12724), 2 days ago)
 * [Documentation for PR #12137](docs-pr12137/) (built from [be80e16](https://github.com/cvc5/cvc5/commit/be80e16) @ [PR #12137](https://github.com/cvc5/cvc5/pull/12137), 2 days ago)
 * [Documentation for PR #12007](docs-pr12007/) (built from [1e5b497](https://github.com/cvc5/cvc5/commit/1e5b497) @ [PR #12007](https://github.com/cvc5/cvc5/pull/12007), 3 days ago)
