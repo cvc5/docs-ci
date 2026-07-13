@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ML12X2V35B');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Error handling &mdash; cvc5  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../static/custom.css?v=b9602cbe" />
+
+  
+      <script src="../../static/jquery.js?v=5d32c60e"></script>
+      <script src="../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Cvc5" href="types/cvc5.html" />
+    <link rel="prev" title="Quickstart Guide" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            cvc5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binary/binary.html">Binary Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../cpp/cpp.html">C++ API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">C API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quickstart Guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Error handling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv414cvc5_has_errorv"><code class="docutils literal notranslate"><span class="pre">cvc5_has_error()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv422cvc5_get_error_messagev"><code class="docutils literal notranslate"><span class="pre">cvc5_get_error_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv416cvc5_reset_errorv"><code class="docutils literal notranslate"><span class="pre">cvc5_reset_error()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5.html">Cvc5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5command.html">Cvc5Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5datatype.html">Cvc5Datatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5datatypedecl.html">Cvc5DatatypeDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5datatypeconstructor.html">Cvc5DatatypeConstructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5datatypeconstructordecl.html">Cvc5DatatypeConstructorDecl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5datatypeselector.html">Cvc5DatatypeSelector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5grammar.html">Cvc5Grammar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5inputparser.html">Cvc5InputParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5op.html">Cvc5Op</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5proof.html">Cvc5Proof</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5result.html">Cvc5Result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5sort.html">Cvc5Sort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5statistics.html">Cvc5Statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5symbolmanager.html">Cvc5SymbolManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5synthresult.html">Cvc5SynthResult</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5term.html">Cvc5Term</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types/cvc5termmanager.html">Cvc5TermManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structs/cvc5optioninfo.html">Cvc5OptionInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structs/cvc5plugin.html">Cvc5Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enums/cvc5kind.html">Cvc5Kind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enums/cvc5sortkind.html">Cvc5SortKind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enums/cvc5roundingmode.html">Cvc5RoundingMode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enums/cvc5unknownexplanation.html">Cvc5UnknownExplanation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enums/modes.html">Modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c.html#types">Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c.html#structs">Structs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c.html#enums">Enums</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../java/java.html">Java API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/python.html">Python API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../output-tags.html">Output tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proofs/proofs.html">Proof Production</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../resource-limits.html">Resource limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../skolem-ids.html">Skolem Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../statistics.html">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theories/theories.html">Theory References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">cvc5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="c.html">C API</a></li>
+      <li class="breadcrumb-item active">Error handling</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="error-handling">
+<h1>Error handling<a class="headerlink" href="#error-handling" title="Link to this heading"></a></h1>
+<p>Unlike the C++ API, which reports errors by throwing exceptions, the C API
+cannot propagate exceptions across the language boundary. Instead of
+terminating the process when an error occurs, cvc5 C API functions record the
+error in <strong>thread-local</strong> state and return a default value (e.g., <code class="docutils literal notranslate"><span class="pre">NULL</span></code>,
+<code class="docutils literal notranslate"><span class="pre">false</span></code>, or <code class="docutils literal notranslate"><span class="pre">0</span></code>).</p>
+<p>After invoking a C API function, the caller can check whether it succeeded via
+<a class="reference internal" href="#_CPPv414cvc5_has_errorv" title="cvc5_has_error"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5_has_error()</span></code></a> and retrieve the associated message via
+<a class="reference internal" href="#_CPPv422cvc5_get_error_messagev" title="cvc5_get_error_message"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5_get_error_message()</span></code></a>. The error state is reset at the start of
+the next C API call that can raise an error, so it reflects the outcome of the
+most recent such call. The query functions <a class="reference internal" href="#_CPPv414cvc5_has_errorv" title="cvc5_has_error"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5_has_error()</span></code></a> and
+<a class="reference internal" href="#_CPPv422cvc5_get_error_messagev" title="cvc5_get_error_message"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5_get_error_message()</span></code></a> never modify the error state themselves; it
+can also be cleared explicitly via <a class="reference internal" href="#_CPPv416cvc5_reset_errorv" title="cvc5_reset_error"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">cvc5_reset_error()</span></code></a>. For example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">Cvc5TermManager</span><span class="o">*</span><span class="w"> </span><span class="n">tm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_term_manager_new</span><span class="p">();</span>
+<span class="n">Cvc5</span><span class="o">*</span><span class="w"> </span><span class="n">cvc5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_new</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+<span class="c1">// Trigger an error by passing an invalid (NULL) argument.</span>
+<span class="n">cvc5_assert_formula</span><span class="p">(</span><span class="n">cvc5</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cvc5_has_error</span><span class="p">())</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cvc5 error: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_get_error_message</span><span class="p">());</span>
+<span class="p">}</span>
+<span class="n">cvc5_delete</span><span class="p">(</span><span class="n">cvc5</span><span class="p">);</span>
+<span class="n">cvc5_term_manager_delete</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="hide-toctree docutils container">
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<hr class="docutils" />
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv414cvc5_has_errorv">
+<span id="_CPPv314cvc5_has_errorv"></span><span id="_CPPv214cvc5_has_errorv"></span><span id="cvc5_has_error__void"></span><span class="target" id="group__c__error__handling_1ga2ef3b0c30671be7a40f14068c5750b48"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_has_error</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414cvc5_has_errorv" title="Link to this definition"></a><br /></dt>
+<dd><p>Determine if an error occurred during the most recent cvc5 C API call on the current thread.</p>
+<p>Rather than terminating the process, cvc5 C API functions record errors in thread-local state and return a default value (e.g., <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code>, or <code class="docutils literal notranslate"><span class="pre">0</span></code>) on failure. After invoking a C API function, the caller can use this function to check whether the call succeeded, and <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__error__handling_1gaf827598d98028642150e7f1098805259"><span class="std std-ref"><span class="pre">cvc5_get_error_message()</span></span></a></code> to retrieve the associated error message.</p>
+<p>The error state is reset at the beginning of each (non-query) C API call, thus it always reflects the outcome of the most recent such call. It can also be reset manually via <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__error__handling_1gad5daf7d2184d5159113dd5759db16342"><span class="std std-ref"><span class="pre">cvc5_reset_error()</span></span></a></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function does not itself modify the error state.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the most recent C API call on this thread resulted in an error. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv422cvc5_get_error_messagev">
+<span id="_CPPv322cvc5_get_error_messagev"></span><span id="_CPPv222cvc5_get_error_messagev"></span><span id="cvc5_get_error_message__void"></span><span class="target" id="group__c__error__handling_1gaf827598d98028642150e7f1098805259"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_get_error_message</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422cvc5_get_error_messagev" title="Link to this definition"></a><br /></dt>
+<dd><p>Retrieve the error message associated with the most recent error on the current thread.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function does not itself modify the error state. The returned pointer is owned by cvc5 and is only valid until the next C API call on this thread.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The message of the most recent error, or the empty string if no error has occurred (i.e., if <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__error__handling_1ga2ef3b0c30671be7a40f14068c5750b48"><span class="std std-ref"><span class="pre">cvc5_has_error()</span></span></a></code> returns false). </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv416cvc5_reset_errorv">
+<span id="_CPPv316cvc5_reset_errorv"></span><span id="_CPPv216cvc5_reset_errorv"></span><span id="cvc5_reset_error__void"></span><span class="target" id="group__c__error__handling_1gad5daf7d2184d5159113dd5759db16342"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_reset_error</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416cvc5_reset_errorv" title="Link to this definition"></a><br /></dt>
+<dd><p>Reset the thread-local error state.</p>
+<p>After calling this function, <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__error__handling_1ga2ef3b0c30671be7a40f14068c5750b48"><span class="std std-ref"><span class="pre">cvc5_has_error()</span></span></a></code> returns false and <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__error__handling_1gaf827598d98028642150e7f1098805259"><span class="std std-ref"><span class="pre">cvc5_get_error_message()</span></span></a></code> returns the empty string, until the next error occurs. </p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quickstart Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="types/cvc5.html" class="btn btn-neutral float-right" title="Cvc5" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, the authors of cvc5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
