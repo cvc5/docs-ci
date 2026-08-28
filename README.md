@@ -1,6 +1,6 @@
 
 
-* [Documentation for PR #12869](docs-pr12869/) (built from [7d9d6ab](https://github.com/cvc5/cvc5/commit/7d9d6ab) @ [PR #12869](https://github.com/cvc5/cvc5/pull/12869), Aug Fri 28, 08:40 UTC)
+* [Documentation for PR #10587](docs-pr10587/) (built from [05094fd](https://github.com/cvc5/cvc5/commit/05094fd) @ [PR #10587](https://github.com/cvc5/cvc5/pull/10587), Aug Fri 28, 08:41 UTC)
 
 ***
 
@@ -21,7 +21,7 @@
 * [Documentation for PR #12886](docs-pr12886/) (built from [69eedc0](https://github.com/cvc5/cvc5/commit/69eedc0) @ [PR #12886](https://github.com/cvc5/cvc5/pull/12886), 3 days ago)
 * [Documentation for PR #12885](docs-pr12885/) (built from [a2b5376](https://github.com/cvc5/cvc5/commit/a2b5376) @ [PR #12885](https://github.com/cvc5/cvc5/pull/12885), 13 hours ago)
 * [Documentation for PR #12883](docs-pr12883/) (built from [d49cfdc](https://github.com/cvc5/cvc5/commit/d49cfdc) @ [PR #12883](https://github.com/cvc5/cvc5/pull/12883), 3 days ago)
-* [Documentation for PR #12882](docs-pr12882/) (built from [d9ac408](https://github.com/cvc5/cvc5/commit/d9ac408) @ [PR #12882](https://github.com/cvc5/cvc5/pull/12882), 48 seconds ago)
+* [Documentation for PR #12882](docs-pr12882/) (built from [d9ac408](https://github.com/cvc5/cvc5/commit/d9ac408) @ [PR #12882](https://github.com/cvc5/cvc5/pull/12882), 2 minutes ago)
 * [Documentation for PR #12881](docs-pr12881/) (built from [43d76c9](https://github.com/cvc5/cvc5/commit/43d76c9) @ [PR #12881](https://github.com/cvc5/cvc5/pull/12881), 3 days ago)
 * [Documentation for PR #12880](docs-pr12880/) (built from [6ccfc05](https://github.com/cvc5/cvc5/commit/6ccfc05) @ [PR #12880](https://github.com/cvc5/cvc5/pull/12880), 2 days ago)
 * [Documentation for PR #12879](docs-pr12879/) (built from [838f49f](https://github.com/cvc5/cvc5/commit/838f49f) @ [PR #12879](https://github.com/cvc5/cvc5/pull/12879), 6 days ago)
@@ -31,7 +31,7 @@
 * [Documentation for PR #12875](docs-pr12875/) (built from [b791867](https://github.com/cvc5/cvc5/commit/b791867) @ [PR #12875](https://github.com/cvc5/cvc5/pull/12875), 7 days ago)
 * [Documentation for PR #12874](docs-pr12874/) (built from [75f9b8b](https://github.com/cvc5/cvc5/commit/75f9b8b) @ [PR #12874](https://github.com/cvc5/cvc5/pull/12874), 8 days ago)
 * [Documentation for PR #12873](docs-pr12873/) (built from [11c256a](https://github.com/cvc5/cvc5/commit/11c256a) @ [PR #12873](https://github.com/cvc5/cvc5/pull/12873), 7 days ago)
-* [Documentation for PR #12869](docs-pr12869/) (built from [7d9d6ab](https://github.com/cvc5/cvc5/commit/7d9d6ab) @ [PR #12869](https://github.com/cvc5/cvc5/pull/12869), now)
+* [Documentation for PR #12869](docs-pr12869/) (built from [7d9d6ab](https://github.com/cvc5/cvc5/commit/7d9d6ab) @ [PR #12869](https://github.com/cvc5/cvc5/pull/12869), 55 seconds ago)
 * [Documentation for PR #12868](docs-pr12868/) (built from [593c84e](https://github.com/cvc5/cvc5/commit/593c84e) @ [PR #12868](https://github.com/cvc5/cvc5/pull/12868), 8 days ago)
 * [Documentation for PR #12866](docs-pr12866/) (built from [034c5cc](https://github.com/cvc5/cvc5/commit/034c5cc) @ [PR #12866](https://github.com/cvc5/cvc5/pull/12866), 8 days ago)
 * [Documentation for PR #12864](docs-pr12864/) (built from [4849e42](https://github.com/cvc5/cvc5/commit/4849e42) @ [PR #12864](https://github.com/cvc5/cvc5/pull/12864), 14 hours ago)
@@ -48,3 +48,4 @@
 * [Documentation for PR #12701](docs-pr12701/) (built from [67c7b5c](https://github.com/cvc5/cvc5/commit/67c7b5c) @ [PR #12701](https://github.com/cvc5/cvc5/pull/12701), 3 days ago)
 * [Documentation for PR #12655](docs-pr12655/) (built from [7b05e7b](https://github.com/cvc5/cvc5/commit/7b05e7b) @ [PR #12655](https://github.com/cvc5/cvc5/pull/12655), 3 days ago)
 * [Documentation for PR #12616](docs-pr12616/) (built from [5003b47](https://github.com/cvc5/cvc5/commit/5003b47) @ [PR #12616](https://github.com/cvc5/cvc5/pull/12616), 2 days ago)
+* [Documentation for PR #10587](docs-pr10587/) (built from [05094fd](https://github.com/cvc5/cvc5/commit/05094fd) @ [PR #10587](https://github.com/cvc5/cvc5/pull/10587), now)
