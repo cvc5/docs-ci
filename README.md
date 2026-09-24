@@ -1,14 +1,14 @@
 
 
-* [Documentation for main](docs-main/) (built from [f8a9eb9](https://github.com/cvc5/cvc5/commit/f8a9eb9) @ [main](https://github.com/cvc5/cvc5/tree/main), Sep Thu 24, 15:25 UTC)
+* [Documentation for main](docs-main/) (built from [58b630f](https://github.com/cvc5/cvc5/commit/58b630f) @ [main](https://github.com/cvc5/cvc5/tree/main), Sep Thu 24, 15:26 UTC)
 
 ***
 
 
 * [Documentation for cvc5-1.4.0](docs-cvc5-1.4.0/) (built from [b432cd7](https://github.com/cvc5/cvc5/commit/b432cd7) @ [cvc5-1.4.0](https://github.com/cvc5/cvc5/tree/cvc5-1.4.0), 7 days ago)
 * [Documentation for fix-news-prerelease](docs-fix-news-prerelease/) (built from [75d2fe5](https://github.com/cvc5/cvc5/commit/75d2fe5) @ [fix-news-prerelease](https://github.com/cvc5/cvc5/tree/fix-news-prerelease), 6 days ago)
-* [Documentation for main](docs-main/) (built from [f8a9eb9](https://github.com/cvc5/cvc5/commit/f8a9eb9) @ [main](https://github.com/cvc5/cvc5/tree/main), now)
-* [Documentation for PR #13006](docs-pr13006/) (built from [0d32ec1](https://github.com/cvc5/cvc5/commit/0d32ec1) @ [PR #13006](https://github.com/cvc5/cvc5/pull/13006), 41 minutes ago)
+* [Documentation for main](docs-main/) (built from [58b630f](https://github.com/cvc5/cvc5/commit/58b630f) @ [main](https://github.com/cvc5/cvc5/tree/main), now)
+* [Documentation for PR #13006](docs-pr13006/) (built from [0d32ec1](https://github.com/cvc5/cvc5/commit/0d32ec1) @ [PR #13006](https://github.com/cvc5/cvc5/pull/13006), 42 minutes ago)
 * [Documentation for PR #13005](docs-pr13005/) (built from [1ad58ef](https://github.com/cvc5/cvc5/commit/1ad58ef) @ [PR #13005](https://github.com/cvc5/cvc5/pull/13005), 2 hours ago)
 * [Documentation for PR #13004](docs-pr13004/) (built from [587a46b](https://github.com/cvc5/cvc5/commit/587a46b) @ [PR #13004](https://github.com/cvc5/cvc5/pull/13004), 6 hours ago)
 * [Documentation for PR #13000](docs-pr13000/) (built from [e1aa296](https://github.com/cvc5/cvc5/commit/e1aa296) @ [PR #13000](https://github.com/cvc5/cvc5/pull/13000), 18 hours ago)
