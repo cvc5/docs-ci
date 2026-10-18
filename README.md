@@ -1,6 +1,6 @@
 
 
-* [Documentation for PR #12821](docs-pr12821/) (built from [62c4de3](https://github.com/cvc5/cvc5/commit/62c4de3) @ [PR #12821](https://github.com/cvc5/cvc5/pull/12821), Oct Sun 18, 20:48 UTC)
+* [Documentation for PR #12827](docs-pr12827/) (built from [9d39374](https://github.com/cvc5/cvc5/commit/9d39374) @ [PR #12827](https://github.com/cvc5/cvc5/pull/12827), Oct Sun 18, 20:52 UTC)
 
 ***
 
@@ -25,7 +25,7 @@
 * [Documentation for PR #13026](docs-pr13026/) (built from [646b613](https://github.com/cvc5/cvc5/commit/646b613) @ [PR #13026](https://github.com/cvc5/cvc5/pull/13026), 6 days ago)
 * [Documentation for PR #13025](docs-pr13025/) (built from [3844c05](https://github.com/cvc5/cvc5/commit/3844c05) @ [PR #13025](https://github.com/cvc5/cvc5/pull/13025), 6 days ago)
 * [Documentation for PR #13017](docs-pr13017/) (built from [66c480e](https://github.com/cvc5/cvc5/commit/66c480e) @ [PR #13017](https://github.com/cvc5/cvc5/pull/13017), 5 days ago)
-* [Documentation for PR #12827](docs-pr12827/) (built from [3f7119b](https://github.com/cvc5/cvc5/commit/3f7119b) @ [PR #12827](https://github.com/cvc5/cvc5/pull/12827), 4 days ago)
-* [Documentation for PR #12821](docs-pr12821/) (built from [62c4de3](https://github.com/cvc5/cvc5/commit/62c4de3) @ [PR #12821](https://github.com/cvc5/cvc5/pull/12821), now)
+* [Documentation for PR #12827](docs-pr12827/) (built from [9d39374](https://github.com/cvc5/cvc5/commit/9d39374) @ [PR #12827](https://github.com/cvc5/cvc5/pull/12827), now)
+* [Documentation for PR #12821](docs-pr12821/) (built from [62c4de3](https://github.com/cvc5/cvc5/commit/62c4de3) @ [PR #12821](https://github.com/cvc5/cvc5/pull/12821), 4 minutes ago)
 * [Documentation for PR #12813](docs-pr12813/) (built from [9a45fc3](https://github.com/cvc5/cvc5/commit/9a45fc3) @ [PR #12813](https://github.com/cvc5/cvc5/pull/12813), 4 days ago)
 * [Documentation for PR #12584](docs-pr12584/) (built from [ac03dbb](https://github.com/cvc5/cvc5/commit/ac03dbb) @ [PR #12584](https://github.com/cvc5/cvc5/pull/12584), 4 days ago)
