@@ -1,7 +1,12 @@
 
 
+* [Documentation for PR #13148](docs-pr13148/) (built from [3e30b65](https://github.com/cvc5/cvc5/commit/3e30b65) @ [PR #13148](https://github.com/cvc5/cvc5/pull/13148), Nov Tue 10, 02:14 UTC)
+
+***
+
 
 * [Documentation for main](docs-main/) (built from [00147fb](https://github.com/cvc5/cvc5/commit/00147fb) @ [main](https://github.com/cvc5/cvc5/tree/main), 4 days ago)
+* [Documentation for PR #13148](docs-pr13148/) (built from [3e30b65](https://github.com/cvc5/cvc5/commit/3e30b65) @ [PR #13148](https://github.com/cvc5/cvc5/pull/13148), now)
 * [Documentation for PR #13147](docs-pr13147/) (built from [01355d5](https://github.com/cvc5/cvc5/commit/01355d5) @ [PR #13147](https://github.com/cvc5/cvc5/pull/13147), 4 days ago)
 * [Documentation for PR #13146](docs-pr13146/) (built from [596ee44](https://github.com/cvc5/cvc5/commit/596ee44) @ [PR #13146](https://github.com/cvc5/cvc5/pull/13146), 4 days ago)
 * [Documentation for PR #13145](docs-pr13145/) (built from [f26405b](https://github.com/cvc5/cvc5/commit/f26405b) @ [PR #13145](https://github.com/cvc5/cvc5/pull/13145), 4 days ago)
